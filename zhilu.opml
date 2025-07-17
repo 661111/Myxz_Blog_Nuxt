@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="2.0">
+  <head>
+    <title>莫言小栈的友链订阅</title>
+    <dateCreated>2020-07-19T00:00:00.000Z</dateCreated>
+    <dateModified>2025-07-17T06:06:26.226Z</dateModified>
+    <ownerName>莫言</ownerName>
+    <ownerEmail>3227988255@qq.com</ownerEmail>
+    <ownerId>https://www.myxz.top/</ownerId>
+    <docs>https://opml.org/spec2.opml</docs>
+  </head>
+  <body>
+    <outline text="莫言小栈" type="rss" xmlUrl="https://www.myxz.top/atom.xml" created="2020-07-19T00:00:00.000Z" description="生生不息，永无止息。" htmlUrl="https://www.myxz.top/"></outline>
+    <outline text="风记星辰" type="rss" xmlUrl="https://www.thyuu.com/feed" created="2024-02-01T00:00:00.000Z" description="热爱你来过的每度温暖" htmlUrl="https://thyuu.com/"></outline>
+    <outline text="清羽飞扬" type="rss" xmlUrl="https://blog.liushen.fun/atom.xml" created="2025-03-15T00:00:00.000Z" description="柳影曳曳，清酒孤灯，扬笔撒墨，心境如霜" htmlUrl="https://blog.liushen.fun/"></outline>
+    <outline text="Leonus" type="rss" xmlUrl="https://blog.leonus.cn/atom.xml" created="2025-04-19T00:00:00.000Z" description="进一寸有进一寸的欢喜。" htmlUrl="https://blog.leonus.cn/"></outline>
+  </body>
+</opml>

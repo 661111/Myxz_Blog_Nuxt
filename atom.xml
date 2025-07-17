@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="/assets/atom.xsl"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <id>https://www.myxz.top/</id>
+  <title>莫言小栈</title>
+  <updated>2025-07-17T06:06:26.226Z</updated>
+  <description>莫言的博客网站，分享技术和魔改。网站界面简洁美观，涵盖了魔改、教程等多个领域，为读者提供了卓越的阅读体验。</description>
+  <author>
+    <name>莫言</name>
+    <email>3227988255@qq.com</email>
+    <uri>https://www.myxz.top/</uri>
+  </author>
+  <link href="https://www.myxz.top/atom.xml" rel="self"></link>
+  <link href="https://www.myxz.top/" rel="alternate"></link>
+  <language>zh-Hans</language>
+  <generator uri="https://github.com/L33Z22L11/blog-v3" version="3.2.2">Zhilu Blog</generator>
+  <icon>https://blog.myxz.top/img/avatar.avif</icon>
+  <logo>https://blog.myxz.top/img/avatar.avif</logo>
+  <rights>© 2025 莫言</rights>
+  <subtitle>生生不息，永无止息。</subtitle>
+  <entry>
+    <id>https://www.myxz.top/2023/2023artitalk</id>
+    <title>2023年artalk部署方式</title>
+    <author>
+      <name>莫言</name>
+    </author>
+    <content type="html">
+      <![CDATA[<img src="https://cloud.myxz.top/d/img/default_cover_12.avif?sign=Fh0qjJ9vC0ggdUzVfIA6NxMOnaSx7pnhVfAzHm45oOs=:0" /> <p>artalk部署方式：</p> <a href="https://www.myxz.top/2023/2023artitalk">点击查看全文</a>]]>
+    </content>
+    <link href="https://www.myxz.top/2023/2023artitalk"></link>
+    <summary>artalk部署方式：</summary>
+    <category term="搭建"></category>
+    <published>2023-01-26T12:05:00.000Z</published>
+  </entry>
+  <entry>
+    <id>https://www.myxz.top/2023/2023bbtalk</id>
+    <title>2023年bbtalk部署方式</title>
+    <author>
+      <name>莫言</name>
+    </author>
+    <content type="html">
+      <![CDATA[<img src="https://cloud.myxz.top/d/img/default_cover_12.avif?sign=Fh0qjJ9vC0ggdUzVfIA6NxMOnaSx7pnhVfAzHm45oOs=:0" /> <p>bbtalk部署方式：</p> <a href="https://www.myxz.top/2023/2023bbtalk">点击查看全文</a>]]>
+    </content>
+    <link href="https://www.myxz.top/2023/2023bbtalk"></link>
+    <summary>bbtalk部署方式：</summary>
+    <category term="搭建"></category>
+    <published>2023-01-27T12:05:00.000Z</published>
+  </entry>
+  <entry>
+    <id>https://www.myxz.top/2025/about-this-site-page-beautification-(remastered-version)</id>
+    <title>关于页面美化</title>
+    <author>
+      <name>莫言</name>
+    </author>
+    <content type="html">
+      <![CDATA[<img src="https://sourceimage.s3.bitiful.net/img/default_cover_11.avif" /> <p>本文章以安知鱼的页面文件为模版进行大幅度修改，仿轻笑的关于页面的模块摆放以及调整CSS样式来进行细致魔改。</p> <a href="https://www.myxz.top/2025/about-this-site-page-beautification-(remastered-version)">点击查看全文</a>]]>
+    </content>
+    <link href="https://www.myxz.top/2025/about-this-site-page-beautification-(remastered-version)"></link>
+    <summary>本文章以安知鱼的页面文件为模版进行大幅度修改，仿轻笑的关于页面的模块摆放以及调整CSS样式来进行细致魔改。</summary>
+    <category term="hexo"></category>
+    <published>2025-03-24T01:00:00.000Z</published>
+  </entry>
+  <entry>
+    <id>https://www.myxz.top/2025/light-laugh-bottom-beautification-(remastered-icon-version)</id>
+    <title>轻笑底部美化</title>
+    <author>
+      <name>莫言</name>
+    </author>
+    <content type="html">
+      <![CDATA[<img src="https://sourceimage.s3.bitiful.net/img/default_cover_15.avif" /> <p>本篇文章讲述了如何在博客的底部模块进行魔改添加图标、来源图片、返回顶部以及建站时间，对建站时间进行js内联到模块中。</p> <a href="https://www.myxz.top/2025/light-laugh-bottom-beautification-(remastered-icon-version)">点击查看全文</a>]]>
+    </content>
+    <link href="https://www.myxz.top/2025/light-laugh-bottom-beautification-(remastered-icon-version)"></link>
+    <summary>本篇文章讲述了如何在博客的底部模块进行魔改添加图标、来源图片、返回顶部以及建站时间，对建站时间进行js内联到模块中。</summary>
+    <category term="hexo"></category>
+    <published>2025-02-27T02:00:00.000Z</published>
+  </entry>
+  <entry>
+    <id>https://www.myxz.top/2025/navigation-bar-(beautified-version)</id>
+    <title>butterfly导航栏修改方案</title>
+    <author>
+      <name>莫言</name>
+    </author>
+    <content type="html">
+      <![CDATA[<img src="https://sourceimage.s3.bitiful.net/img/default_cover_1.avif" /> <p>这篇文章讲述在博客中对导航栏进行修改，并添加多个产品页面地址，且采用安知鱼的导航栏CSS样式表。</p> <a href="https://www.myxz.top/2025/navigation-bar-(beautified-version)">点击查看全文</a>]]>
+    </content>
+    <link href="https://www.myxz.top/2025/navigation-bar-(beautified-version)"></link>
+    <summary>这篇文章讲述在博客中对导航栏进行修改，并添加多个产品页面地址，且采用安知鱼的导航栏CSS样式表。</summary>
+    <category term="hexo"></category>
+    <published>2025-02-05T01:00:00.000Z</published>
+  </entry>
+  <entry>
+    <id>https://www.myxz.top/2025/xterminal_to_sever</id>
+    <title>Xterminal内网穿透到服务器</title>
+    <author>
+      <name>莫言</name>
+    </author>
+    <content type="html">
+      <![CDATA[<img src="https://sourceimage.s3.bitiful.net/img/default_cover_43.avif" /> <p>这篇文章简述了在windows上使用Xterminal软件中的内网穿透服务，且在云服务器上进行反代实现本地无任何公网宽带的服务，在使用的过程中，需要防止被ddos攻击以免造成损失。</p> <a href="https://www.myxz.top/2025/xterminal_to_sever">点击查看全文</a>]]>
+    </content>
+    <link href="https://www.myxz.top/2025/xterminal_to_sever"></link>
+    <summary>这篇文章简述了在windows上使用Xterminal软件中的内网穿透服务，且在云服务器上进行反代实现本地无任何公网宽带的服务，在使用的过程中，需要防止被ddos攻击以免造成损失。</summary>
+    <category term="教程"></category>
+    <published>2025-03-25T12:00:00.000Z</published>
+  </entry>
+  <entry>
+    <id>https://www.myxz.top/2025/link</id>
+    <title>友链魔改</title>
+    <updated>2025-04-19T04:09:00.000Z</updated>
+    <author>
+      <name>莫言</name>
+    </author>
+    <content type="html">
+      <![CDATA[<img src="https://sourceimage.s3.bitiful.net/img/default_cover_18.avif" /> <p>这篇文章讲述了在友链页面中进行魔改，对清羽飞扬的PUG页面模板进行修改，套用轻笑的友链卡片样式。</p> <a href="https://www.myxz.top/2025/link">点击查看全文</a>]]>
+    </content>
+    <link href="https://www.myxz.top/2025/link"></link>
+    <summary>这篇文章讲述了在友链页面中进行魔改，对清羽飞扬的PUG页面模板进行修改，套用轻笑的友链卡片样式。</summary>
+    <category term="hexo"></category>
+    <published>2025-04-19T02:00:00.000Z</published>
+  </entry>
+  <entry>
+    <id>https://www.myxz.top/2025/use-multiple-third-party-storage-as-your-gallery</id>
+    <title>博客基础之静态文件存储</title>
+    <updated>2025-04-01T04:00:00.000Z</updated>
+    <author>
+      <name>莫言</name>
+    </author>
+    <content type="html">
+      <![CDATA[<img src="https://sourceimage.s3.bitiful.net/img/default_cover_26.avif" /> <p>这篇文章讲述使用多个第三方存储作为图库或者静态文件进行存储，在使用第三方存储或者第三方图库不要忘记备份图片以免出现丢失的情况。</p> <a href="https://www.myxz.top/2025/use-multiple-third-party-storage-as-your-gallery">点击查看全文</a>]]>
+    </content>
+    <link href="https://www.myxz.top/2025/use-multiple-third-party-storage-as-your-gallery"></link>
+    <summary>这篇文章讲述使用多个第三方存储作为图库或者静态文件进行存储，在使用第三方存储或者第三方图库不要忘记备份图片以免出现丢失的情况。</summary>
+    <category term="教程"></category>
+    <published>2025-04-01T02:00:00.000Z</published>
+  </entry>
+  <entry>
+    <id>https://www.myxz.top/2025/archive-category-label-three-pages-beautification-and-information-introduction-(laughing-remastered)</id>
+    <title>给页面加上所属分类和标签以及美化</title>
+    <updated>2025-03-24T02:56:09.000Z</updated>
+    <author>
+      <name>莫言</name>
+    </author>
+    <content type="html">
+      <![CDATA[<img src="https://sourceimage.s3.bitiful.net/img/default_cover_37.avif" /> <p>这篇简述如何给自己博客中的归档、分类、标签页三个页面的文章卡片加上所属分类和标签，并说明了具体的实践环境，以最大限度的方式进行CSS美化。但也请注意要经常备份以免出现大量错误。</p> <a href="https://www.myxz.top/2025/archive-category-label-three-pages-beautification-and-information-introduction-(laughing-remastered)">点击查看全文</a>]]>
+    </content>
+    <link href="https://www.myxz.top/2025/archive-category-label-three-pages-beautification-and-information-introduction-(laughing-remastered)"></link>
+    <summary>这篇简述如何给自己博客中的归档、分类、标签页三个页面的文章卡片加上所属分类和标签，并说明了具体的实践环境，以最大限度的方式进行CSS美化。但也请注意要经常备份以免出现大量错误。</summary>
+    <category term="hexo"></category>
+    <published>2025-03-24T00:00:09.000Z</published>
+  </entry>
+  <entry>
+    <id>https://www.myxz.top/2025/small_function_qcqx</id>
+    <title>功能美化</title>
+    <updated>2025-03-06T10:00:00.000Z</updated>
+    <author>
+      <name>莫言</name>
+    </author>
+    <content type="html">
+      <![CDATA[<img src="https://sourceimage.s3.bitiful.net/img/default_cover_45.avif" /> <p>从零开始魔改butterfly</p> <a href="https://www.myxz.top/2025/small_function_qcqx">点击查看全文</a>]]>
+    </content>
+    <link href="https://www.myxz.top/2025/small_function_qcqx"></link>
+    <summary>从零开始魔改butterfly</summary>
+    <category term="hexo"></category>
+    <published>2025-03-05T00:00:00.000Z</published>
+  </entry>
+  <entry>
+    <id>https://www.myxz.top/2025/artice_sort</id>
+    <title>美化文章卡片显示数字</title>
+    <updated>2025-03-06T10:00:00.000Z</updated>
+    <author>
+      <name>莫言</name>
+    </author>
+    <content type="html">
+      <![CDATA[ <p>这篇文章讲述如何给自己博客中的归档、分类、标签页三个页面的文章卡片添加数字来进行编排，以及对添加的数字进行CSS美化，但也请注意要经常备份以免出现错误。</p> <a href="https://www.myxz.top/2025/artice_sort">点击查看全文</a>]]>
+    </content>
+    <link href="https://www.myxz.top/2025/artice_sort"></link>
+    <summary>这篇文章讲述如何给自己博客中的归档、分类、标签页三个页面的文章卡片添加数字来进行编排，以及对添加的数字进行CSS美化，但也请注意要经常备份以免出现错误。</summary>
+    <category term="hexo"></category>
+    <published>2025-03-05T00:00:00.000Z</published>
+  </entry>
+  <entry>
+    <id>https://www.myxz.top/2025/backgroud_qcqx</id>
+    <title>轻笑风格背景</title>
+    <updated>2025-03-06T10:00:00.000Z</updated>
+    <author>
+      <name>莫言</name>
+    </author>
+    <content type="html">
+      <![CDATA[<img src="https://sourceimage.s3.bitiful.net/img/default_cover_21.avif" /> <p>这篇文章讲述如何在页面中添加模块以及使用CSS添加颜色以及背景图片。</p> <a href="https://www.myxz.top/2025/backgroud_qcqx">点击查看全文</a>]]>
+    </content>
+    <link href="https://www.myxz.top/2025/backgroud_qcqx"></link>
+    <summary>这篇文章讲述如何在页面中添加模块以及使用CSS添加颜色以及背景图片。</summary>
+    <category term="hexo"></category>
+    <published>2025-03-05T00:00:00.000Z</published>
+  </entry>
+  <entry>
+    <id>https://www.myxz.top/2025/categorybar_qcqx</id>
+    <title>首页分类条美化</title>
+    <updated>2025-03-06T10:00:00.000Z</updated>
+    <author>
+      <name>莫言</name>
+    </author>
+    <content type="html">
+      <![CDATA[<img src="https://sourceimage.s3.bitiful.net/img/default_cover_19.avif" /> <p>此篇文章以清羽飞扬的教程为蓝本，结合了轻笑的分类条样式，讲述了如何在博客首页中添加分类条模版PUG文件以及CSS美化。</p> <a href="https://www.myxz.top/2025/categorybar_qcqx">点击查看全文</a>]]>
+    </content>
+    <link href="https://www.myxz.top/2025/categorybar_qcqx"></link>
+    <summary>此篇文章以清羽飞扬的教程为蓝本，结合了轻笑的分类条样式，讲述了如何在博客首页中添加分类条模版PUG文件以及CSS美化。</summary>
+    <category term="hexo"></category>
+    <published>2025-03-05T00:00:00.000Z</published>
+  </entry>
+  <entry>
+    <id>https://www.myxz.top/2025/sidebar_qcqx</id>
+    <title>卡片美化</title>
+    <updated>2025-03-06T10:00:00.000Z</updated>
+    <author>
+      <name>莫言</name>
+    </author>
+    <content type="html">
+      <![CDATA[<img src="https://sourceimage.s3.bitiful.net/img/default_cover_29.avif" /> <p>这篇文章讲述了如何美化博客侧边栏，并调整各个卡片内容的样式表。</p> <a href="https://www.myxz.top/2025/sidebar_qcqx">点击查看全文</a>]]>
+    </content>
+    <link href="https://www.myxz.top/2025/sidebar_qcqx"></link>
+    <summary>这篇文章讲述了如何美化博客侧边栏，并调整各个卡片内容的样式表。</summary>
+    <category term="hexo"></category>
+    <published>2025-03-05T00:00:00.000Z</published>
+  </entry>
+  <entry>
+    <id>https://www.myxz.top/2025/instant-article</id>
+    <title>即刻短文的三种部署方案</title>
+    <updated>2025-03-05T06:09:00.000Z</updated>
+    <author>
+      <name>莫言</name>
+    </author>
+    <content type="html">
+      <![CDATA[<img src="https://sourceimage.s3.bitiful.net/img/default_cover_55.avif" /> <p>本篇转载三种来自于不同博客的即刻短文的方案，以及对内容进行整合。</p> <a href="https://www.myxz.top/2025/instant-article">点击查看全文</a>]]>
+    </content>
+    <link href="https://www.myxz.top/2025/instant-article"></link>
+    <summary>本篇转载三种来自于不同博客的即刻短文的方案，以及对内容进行整合。</summary>
+    <category term="hexo"></category>
+    <published>2025-03-06T04:45:00.000Z</published>
+  </entry>
+  <entry>
+    <id>https://www.myxz.top/2025/banner_random_post</id>
+    <title>Banner随机文章展示(轻笑同款)</title>
+    <updated>2025-03-05T04:09:00.000Z</updated>
+    <author>
+      <name>莫言</name>
+    </author>
+    <content type="html">
+      <![CDATA[<img src="https://sourceimage.s3.bitiful.net/img/default_cover_10.avif" /> <p>本文依照轻笑的部分内容，参考首页banner写法以及对首页banner添加鼠标滚动以及移动端滑动，通过CSS样式进行美化整个首页banner，此篇文章重点讲述了如何解决轻笑给的js内容在首页会出现不断加载的问题。</p> <a href="https://www.myxz.top/2025/banner_random_post">点击查看全文</a>]]>
+    </content>
+    <link href="https://www.myxz.top/2025/banner_random_post"></link>
+    <summary>本文依照轻笑的部分内容，参考首页banner写法以及对首页banner添加鼠标滚动以及移动端滑动，通过CSS样式进行美化整个首页banner，此篇文章重点讲述了如何解决轻笑给的js内容在首页会出现不断加载的问题。</summary>
+    <category term="hexo"></category>
+    <published>2025-03-01T02:00:00.000Z</published>
+  </entry>
+  <entry>
+    <id>https://www.myxz.top/2025/menu_verycolor</id>
+    <title>菜单栏多色动态图标</title>
+    <updated>2025-02-07T04:00:00.000Z</updated>
+    <author>
+      <name>莫言</name>
+    </author>
+    <content type="html">
+      <![CDATA[<img src="https://sourceimage.s3.bitiful.net/img/default_cover_9.avif" /> <p>这篇文章主要简述了在博客菜单栏中进行适配彩色动态图标，并教导如何使用彩色动态图标。</p> <a href="https://www.myxz.top/2025/menu_verycolor">点击查看全文</a>]]>
+    </content>
+    <link href="https://www.myxz.top/2025/menu_verycolor"></link>
+    <summary>这篇文章主要简述了在博客菜单栏中进行适配彩色动态图标，并教导如何使用彩色动态图标。</summary>
+    <category term="hexo"></category>
+    <published>2025-02-05T02:00:00.000Z</published>
+  </entry>
+</feed>

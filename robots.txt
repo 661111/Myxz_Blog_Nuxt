@@ -1,0 +1,7 @@
+# START nuxt-robots (indexable)
+User-agent: *
+Disallow: /preview
+Disallow: /previews/*
+
+Sitemap: https://www.myxz.top/sitemap.xml
+# END nuxt-robots

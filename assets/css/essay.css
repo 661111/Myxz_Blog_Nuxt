@@ -195,7 +195,6 @@ body[data-type="essay"] #web_bg {
   opacity: 1;
 }
 #bber ul.list {
-  width: 96%;
   margin: 0 auto;
   display: flex;
   flex-flow: row wrap;

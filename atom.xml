@@ -3,7 +3,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <id>https://www.myxz.top/</id>
   <title>莫言小栈</title>
-  <updated>2025-07-17T14:10:24.621Z</updated>
+  <updated>2025-07-17T14:29:32.863Z</updated>
   <description>莫言的博客网站，分享技术和魔改。网站界面简洁美观，涵盖了魔改、教程等多个领域，为读者提供了卓越的阅读体验。</description>
   <author>
     <name>莫言</name>
@@ -25,7 +25,7 @@
       <name>莫言</name>
     </author>
     <content type="html">
-      <![CDATA[<img src="https://cloud.myxz.top/d/img/default_cover_12.avif?sign=Fh0qjJ9vC0ggdUzVfIA6NxMOnaSx7pnhVfAzHm45oOs=:0" /> <p>artalk部署方式：</p> <a href="https://www.myxz.top/2023/2023artitalk">点击查看全文</a>]]>
+      <![CDATA[<img src="https://sourceimage.s3.bitiful.net/img/default_cover_12.avif" /> <p>artalk部署方式：</p> <a href="https://www.myxz.top/2023/2023artitalk">点击查看全文</a>]]>
     </content>
     <link href="https://www.myxz.top/2023/2023artitalk"></link>
     <summary>artalk部署方式：</summary>
@@ -39,7 +39,7 @@
       <name>莫言</name>
     </author>
     <content type="html">
-      <![CDATA[<img src="https://cloud.myxz.top/d/img/default_cover_12.avif?sign=Fh0qjJ9vC0ggdUzVfIA6NxMOnaSx7pnhVfAzHm45oOs=:0" /> <p>bbtalk部署方式：</p> <a href="https://www.myxz.top/2023/2023bbtalk">点击查看全文</a>]]>
+      <![CDATA[<img src="https://sourceimage.s3.bitiful.net/img/default_cover_13.avif" /> <p>bbtalk部署方式：</p> <a href="https://www.myxz.top/2023/2023bbtalk">点击查看全文</a>]]>
     </content>
     <link href="https://www.myxz.top/2023/2023bbtalk"></link>
     <summary>bbtalk部署方式：</summary>
@@ -141,7 +141,7 @@
       <name>莫言</name>
     </author>
     <content type="html">
-      <![CDATA[ <p>这篇文章讲述如何给自己博客中的归档、分类、标签页三个页面的文章卡片添加数字来进行编排，以及对添加的数字进行CSS美化，但也请注意要经常备份以免出现错误。</p> <a href="https://www.myxz.top/2025/artice-sort">点击查看全文</a>]]>
+      <![CDATA[<img src="https://sourceimage.s3.bitiful.net/img/default_cover_29.avif" /> <p>这篇文章讲述如何给自己博客中的归档、分类、标签页三个页面的文章卡片添加数字来进行编排，以及对添加的数字进行CSS美化，但也请注意要经常备份以免出现错误。</p> <a href="https://www.myxz.top/2025/artice-sort">点击查看全文</a>]]>
     </content>
     <link href="https://www.myxz.top/2025/artice-sort"></link>
     <summary>这篇文章讲述如何给自己博客中的归档、分类、标签页三个页面的文章卡片添加数字来进行编排，以及对添加的数字进行CSS美化，但也请注意要经常备份以免出现错误。</summary>

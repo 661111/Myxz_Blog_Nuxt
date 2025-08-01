@@ -88,6 +88,41 @@
   --anzhiyu-card-border: #42444a;
 }
 
+/* 说说列表额外样式（区分原版与美化） */
+.bber-header {
+    align-items: center;
+    display: flex;
+    gap: 10px;
+}
+.avatar {
+    border-radius: 2em;
+    box-shadow: 2px 4px 1rem var(--ld-shadow);
+    width: 3em;
+}
+.info-name {
+    align-items: center;
+    display: flex;
+    gap: 5px;
+}
+.info-date {
+    color: var(--c-text-3);
+    font-family: var(--font-monospace);
+    font-size: .8rem;
+}
+.bber-tags {
+    display: flex;
+    font-size: .7rem;
+    gap: 4px;
+}
+.bber-tags-name {
+    background-color: var(--c-bg-2);
+    border-radius: 4px;
+    cursor: pointer;
+    display: flex;
+    padding: 2px 4px;
+    transition: all .2s;
+}
+
 /* 说说页面代码 */
 body[data-type="essay"] #page {
   border: 0;

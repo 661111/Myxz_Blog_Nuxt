@@ -89,18 +89,18 @@
 }
 
 /* 说说列表图片额外样式 */
-.zone_imgbox {
+.bber-imgbox {
     display: grid;
     gap: 8px;
     grid-template-columns: repeat(3, 1fr);
 }
-.zone_imgbox .img-item {
+figure.imgBox-item {
     border-radius: 8px;
     overflow: hidden;
     padding-bottom: 100%;
     position: relative;
 }
-.zone_imgbox .img-item img {
+img.image {
     cursor: zoom-in;
     height: 100%;
     top: 0;

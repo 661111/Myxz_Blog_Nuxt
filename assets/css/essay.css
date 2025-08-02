@@ -95,7 +95,6 @@
     grid-template-columns: repeat(3, 1fr);
 }
 figure.imgBox-item {
-    border-radius: 8px;
     overflow: hidden;
     position: relative;
 }

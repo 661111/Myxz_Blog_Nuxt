@@ -123,6 +123,10 @@
     transition: all .2s;
 }
 
+#bber .timeline ul li.bber-item {
+  gap: .5rem;
+}
+
 /* 说说页面代码 */
 body[data-type="essay"] #page {
   border: 0;

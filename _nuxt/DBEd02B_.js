@@ -1,0 +1,1 @@
+import s from"./CTIx_RSE.js";import{d as o,k as u,b as c,c as f}from"./CPdCEupa.js";import"./hbOoBq-x.js";const d=o({name:"Markdown",extends:s,setup(t){const{parent:e}=u(),{between:n,default:a}=c(),r=f(()=>typeof t.unwrap=="string"?t.unwrap.split(" "):["*"]);return{fallbackSlot:a,tags:r,between:n,parent:e}}});export{d as default};

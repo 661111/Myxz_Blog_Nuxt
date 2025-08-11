@@ -234,6 +234,14 @@
     height: 120px;
     border-radius: 30px;
 }
+
+img.no-lightbox {
+    min-width: 100%;
+    min-height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
 /* 动画效果 */
 @keyframes rowup {
   0% {

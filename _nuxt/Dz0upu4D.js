@@ -1,1 +1,0 @@
-import{_ as o,q as n,o as r,v as t}from"./DSM4XPvx.js";const s={};function a(e,c){return r(),n("code",null,[t(e.$slots,"default",{},void 0,!0)])}const l=o(s,[["render",a],["__scopeId","data-v-6a445e19"]]);export{l as default};

@@ -3,7 +3,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <id>https://www.myxz.top/</id>
   <title>莫言小栈</title>
-  <updated>2025-08-12T09:43:27.094Z</updated>
+  <updated>2025-08-12T10:01:50.642Z</updated>
   <description>莫言的博客网站，分享技术和魔改。网站界面简洁美观，涵盖了魔改、教程等多个领域，为读者提供了卓越的阅读体验。</description>
   <author>
     <name>莫言</name>
@@ -47,34 +47,6 @@
     <published>2023-01-27T12:05:00.000Z</published>
   </entry>
   <entry>
-    <id>https://www.myxz.top/2024/about-this-site-page</id>
-    <title>关于页面美化</title>
-    <author>
-      <name>莫言</name>
-    </author>
-    <content type="html">
-      <![CDATA[<img src="https://sourceimage.s3.bitiful.net/img/default_cover_11.avif" /> <p>本文章以安知鱼的页面文件为模版进行大幅度修改，仿轻笑的关于页面的模块摆放以及调整CSS样式来进行细致魔改。</p> <a href="https://www.myxz.top/2024/about-this-site-page">点击查看全文</a>]]>
-    </content>
-    <link href="https://www.myxz.top/2024/about-this-site-page"></link>
-    <summary>本文章以安知鱼的页面文件为模版进行大幅度修改，仿轻笑的关于页面的模块摆放以及调整CSS样式来进行细致魔改。</summary>
-    <category term="hexo"></category>
-    <published>2025-03-24T01:00:00.000Z</published>
-  </entry>
-  <entry>
-    <id>https://www.myxz.top/2024/navigation-bar-(beautified-version)</id>
-    <title>butterfly导航栏修改方案</title>
-    <author>
-      <name>莫言</name>
-    </author>
-    <content type="html">
-      <![CDATA[<img src="https://sourceimage.s3.bitiful.net/img/default_cover_1.avif" /> <p>这篇文章讲述在博客中对导航栏进行修改，并添加多个产品页面地址，且采用安知鱼的导航栏CSS样式表。</p> <a href="https://www.myxz.top/2024/navigation-bar-(beautified-version)">点击查看全文</a>]]>
-    </content>
-    <link href="https://www.myxz.top/2024/navigation-bar-(beautified-version)"></link>
-    <summary>这篇文章讲述在博客中对导航栏进行修改，并添加多个产品页面地址，且采用安知鱼的导航栏CSS样式表。</summary>
-    <category term="hexo"></category>
-    <published>2025-02-05T01:00:00.000Z</published>
-  </entry>
-  <entry>
     <id>https://www.myxz.top/2025/light-laugh-bottom-beautification-(remastered-icon-version)</id>
     <title>轻笑底部美化</title>
     <author>
@@ -103,6 +75,34 @@
     <published>2025-08-11T02:00:00.000Z</published>
   </entry>
   <entry>
+    <id>https://www.myxz.top/2024/about-this-site-page</id>
+    <title>关于页面美化</title>
+    <author>
+      <name>莫言</name>
+    </author>
+    <content type="html">
+      <![CDATA[<img src="https://sourceimage.s3.bitiful.net/img/default_cover_11.avif" /> <p>本文章以安知鱼的页面文件为模版进行大幅度修改，仿轻笑的关于页面的模块摆放以及调整CSS样式来进行细致魔改。</p> <a href="https://www.myxz.top/2024/about-this-site-page">点击查看全文</a>]]>
+    </content>
+    <link href="https://www.myxz.top/2024/about-this-site-page"></link>
+    <summary>本文章以安知鱼的页面文件为模版进行大幅度修改，仿轻笑的关于页面的模块摆放以及调整CSS样式来进行细致魔改。</summary>
+    <category term="hexo"></category>
+    <published>2025-03-24T01:00:00.000Z</published>
+  </entry>
+  <entry>
+    <id>https://www.myxz.top/2024/navigation-bar-(beautified-version)</id>
+    <title>butterfly导航栏修改方案</title>
+    <author>
+      <name>莫言</name>
+    </author>
+    <content type="html">
+      <![CDATA[<img src="https://sourceimage.s3.bitiful.net/img/default_cover_1.avif" /> <p>这篇文章讲述在博客中对导航栏进行修改，并添加多个产品页面地址，且采用安知鱼的导航栏CSS样式表。</p> <a href="https://www.myxz.top/2024/navigation-bar-(beautified-version)">点击查看全文</a>]]>
+    </content>
+    <link href="https://www.myxz.top/2024/navigation-bar-(beautified-version)"></link>
+    <summary>这篇文章讲述在博客中对导航栏进行修改，并添加多个产品页面地址，且采用安知鱼的导航栏CSS样式表。</summary>
+    <category term="hexo"></category>
+    <published>2025-02-05T01:00:00.000Z</published>
+  </entry>
+  <entry>
     <id>https://www.myxz.top/2025/archive-category-label</id>
     <title>给页面加上所属分类和标签以及美化</title>
     <updated>2025-03-24T02:56:09.000Z</updated>
@@ -116,36 +116,6 @@
     <summary>这篇简述如何给自己博客中的归档、分类、标签页三个页面的文章卡片加上所属分类和标签，并说明了具体的实践环境，以最大限度的方式进行CSS美化。但也请注意要经常备份以免出现大量错误。</summary>
     <category term="hexo"></category>
     <published>2025-03-24T00:00:09.000Z</published>
-  </entry>
-  <entry>
-    <id>https://www.myxz.top/2024/small-function-qcqx</id>
-    <title>功能美化</title>
-    <updated>2025-03-06T10:00:00.000Z</updated>
-    <author>
-      <name>莫言</name>
-    </author>
-    <content type="html">
-      <![CDATA[<img src="https://sourceimage.s3.bitiful.net/img/default_cover_45.avif" /> <p>从零开始魔改butterfly</p> <a href="https://www.myxz.top/2024/small-function-qcqx">点击查看全文</a>]]>
-    </content>
-    <link href="https://www.myxz.top/2024/small-function-qcqx"></link>
-    <summary>从零开始魔改butterfly</summary>
-    <category term="hexo"></category>
-    <published>2025-03-05T00:00:00.000Z</published>
-  </entry>
-  <entry>
-    <id>https://www.myxz.top/2024/sidebar-qcqx</id>
-    <title>卡片美化</title>
-    <updated>2025-03-06T10:00:00.000Z</updated>
-    <author>
-      <name>莫言</name>
-    </author>
-    <content type="html">
-      <![CDATA[<img src="https://sourceimage.s3.bitiful.net/img/default_cover_29.avif" /> <p>这篇文章讲述了如何美化博客侧边栏，并调整各个卡片内容的样式表。</p> <a href="https://www.myxz.top/2024/sidebar-qcqx">点击查看全文</a>]]>
-    </content>
-    <link href="https://www.myxz.top/2024/sidebar-qcqx"></link>
-    <summary>这篇文章讲述了如何美化博客侧边栏，并调整各个卡片内容的样式表。</summary>
-    <category term="hexo"></category>
-    <published>2025-03-05T00:00:00.000Z</published>
   </entry>
   <entry>
     <id>https://www.myxz.top/2025/artice-sort</id>
@@ -174,6 +144,36 @@
     </content>
     <link href="https://www.myxz.top/2025/backgroud-qcqx"></link>
     <summary>这篇文章讲述如何在页面中添加模块以及使用CSS添加颜色以及背景图片。</summary>
+    <category term="hexo"></category>
+    <published>2025-03-05T00:00:00.000Z</published>
+  </entry>
+  <entry>
+    <id>https://www.myxz.top/2024/small-function-qcqx</id>
+    <title>功能美化</title>
+    <updated>2025-03-06T10:00:00.000Z</updated>
+    <author>
+      <name>莫言</name>
+    </author>
+    <content type="html">
+      <![CDATA[<img src="https://sourceimage.s3.bitiful.net/img/default_cover_45.avif" /> <p>从零开始魔改butterfly</p> <a href="https://www.myxz.top/2024/small-function-qcqx">点击查看全文</a>]]>
+    </content>
+    <link href="https://www.myxz.top/2024/small-function-qcqx"></link>
+    <summary>从零开始魔改butterfly</summary>
+    <category term="hexo"></category>
+    <published>2025-03-05T00:00:00.000Z</published>
+  </entry>
+  <entry>
+    <id>https://www.myxz.top/2024/sidebar-qcqx</id>
+    <title>卡片美化</title>
+    <updated>2025-03-06T10:00:00.000Z</updated>
+    <author>
+      <name>莫言</name>
+    </author>
+    <content type="html">
+      <![CDATA[<img src="https://sourceimage.s3.bitiful.net/img/default_cover_29.avif" /> <p>这篇文章讲述了如何美化博客侧边栏，并调整各个卡片内容的样式表。</p> <a href="https://www.myxz.top/2024/sidebar-qcqx">点击查看全文</a>]]>
+    </content>
+    <link href="https://www.myxz.top/2024/sidebar-qcqx"></link>
+    <summary>这篇文章讲述了如何美化博客侧边栏，并调整各个卡片内容的样式表。</summary>
     <category term="hexo"></category>
     <published>2025-03-05T00:00:00.000Z</published>
   </entry>

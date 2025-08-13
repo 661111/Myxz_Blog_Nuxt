@@ -3,12 +3,6 @@
     <url>
         <loc>https://www.myxz.top/</loc>
         <image:image>
-            <image:loc>https://bcjyn0fc8o7wifyp.public.blob.vercel-storage.com/img/b486dd9b02c8081a42f7161aa135da0-lUIahC6nFeKNkSKlHnHa38kuYGMlnU.png</image:loc>
-        </image:image>
-        <image:image>
-            <image:loc>https://blog.myxz.top/img/screen.avif</image:loc>
-        </image:image>
-        <image:image>
             <image:loc>https://blog.myxz.top/img/avatar.avif</image:loc>
         </image:image>
         <image:image>
@@ -41,12 +35,6 @@
     </url>
     <url>
         <loc>https://www.myxz.top/archive</loc>
-        <image:image>
-            <image:loc>https://bcjyn0fc8o7wifyp.public.blob.vercel-storage.com/img/b486dd9b02c8081a42f7161aa135da0-lUIahC6nFeKNkSKlHnHa38kuYGMlnU.png</image:loc>
-        </image:image>
-        <image:image>
-            <image:loc>https://blog.myxz.top/img/screen.avif</image:loc>
-        </image:image>
         <image:image>
             <image:loc>https://sourceimage.s3.bitiful.net/img/default_cover_25.avif</image:loc>
         </image:image>
@@ -83,21 +71,9 @@
     </url>
     <url>
         <loc>https://www.myxz.top/comments</loc>
-        <image:image>
-            <image:loc>https://bcjyn0fc8o7wifyp.public.blob.vercel-storage.com/img/b486dd9b02c8081a42f7161aa135da0-lUIahC6nFeKNkSKlHnHa38kuYGMlnU.png</image:loc>
-        </image:image>
-        <image:image>
-            <image:loc>https://blog.myxz.top/img/screen.avif</image:loc>
-        </image:image>
     </url>
     <url>
         <loc>https://www.myxz.top/equipment</loc>
-        <image:image>
-            <image:loc>https://bcjyn0fc8o7wifyp.public.blob.vercel-storage.com/img/b486dd9b02c8081a42f7161aa135da0-lUIahC6nFeKNkSKlHnHa38kuYGMlnU.png</image:loc>
-        </image:image>
-        <image:image>
-            <image:loc>https://blog.myxz.top/img/screen.avif</image:loc>
-        </image:image>
         <image:image>
             <image:loc>https://s11.ax1x.com/2023/06/07/pCiB3vD.jpg</image:loc>
         </image:image>
@@ -105,23 +81,17 @@
     <url>
         <loc>https://www.myxz.top/essays</loc>
         <image:image>
+            <image:loc>https://blog.myxz.top/img/avatar.avif</image:loc>
+        </image:image>
+        <image:image>
             <image:loc>https://bcjyn0fc8o7wifyp.public.blob.vercel-storage.com/img/b486dd9b02c8081a42f7161aa135da0-lUIahC6nFeKNkSKlHnHa38kuYGMlnU.png</image:loc>
         </image:image>
         <image:image>
             <image:loc>https://blog.myxz.top/img/screen.avif</image:loc>
-        </image:image>
-        <image:image>
-            <image:loc>https://blog.myxz.top/img/avatar.avif</image:loc>
         </image:image>
     </url>
     <url>
         <loc>https://www.myxz.top/link</loc>
-        <image:image>
-            <image:loc>https://bcjyn0fc8o7wifyp.public.blob.vercel-storage.com/img/b486dd9b02c8081a42f7161aa135da0-lUIahC6nFeKNkSKlHnHa38kuYGMlnU.png</image:loc>
-        </image:image>
-        <image:image>
-            <image:loc>https://blog.myxz.top/img/screen.avif</image:loc>
-        </image:image>
         <image:image>
             <image:loc>https://blog.liushen.fun/info/avatar.ico</image:loc>
         </image:image>
@@ -176,21 +146,9 @@
     </url>
     <url>
         <loc>https://www.myxz.top/moment</loc>
-        <image:image>
-            <image:loc>https://bcjyn0fc8o7wifyp.public.blob.vercel-storage.com/img/b486dd9b02c8081a42f7161aa135da0-lUIahC6nFeKNkSKlHnHa38kuYGMlnU.png</image:loc>
-        </image:image>
-        <image:image>
-            <image:loc>https://blog.myxz.top/img/screen.avif</image:loc>
-        </image:image>
     </url>
     <url>
         <loc>https://www.myxz.top/page</loc>
-        <image:image>
-            <image:loc>https://bcjyn0fc8o7wifyp.public.blob.vercel-storage.com/img/b486dd9b02c8081a42f7161aa135da0-lUIahC6nFeKNkSKlHnHa38kuYGMlnU.png</image:loc>
-        </image:image>
-        <image:image>
-            <image:loc>https://blog.myxz.top/img/screen.avif</image:loc>
-        </image:image>
         <image:image>
             <image:loc>https://blog.myxz.top/img/avatar.avif</image:loc>
         </image:image>
@@ -224,21 +182,9 @@
     </url>
     <url>
         <loc>https://www.myxz.top/wiki</loc>
-        <image:image>
-            <image:loc>https://bcjyn0fc8o7wifyp.public.blob.vercel-storage.com/img/b486dd9b02c8081a42f7161aa135da0-lUIahC6nFeKNkSKlHnHa38kuYGMlnU.png</image:loc>
-        </image:image>
-        <image:image>
-            <image:loc>https://blog.myxz.top/img/screen.avif</image:loc>
-        </image:image>
     </url>
     <url>
         <loc>https://www.myxz.top/2023/2023artitalk</loc>
-        <image:image>
-            <image:loc>https://bcjyn0fc8o7wifyp.public.blob.vercel-storage.com/img/b486dd9b02c8081a42f7161aa135da0-lUIahC6nFeKNkSKlHnHa38kuYGMlnU.png</image:loc>
-        </image:image>
-        <image:image>
-            <image:loc>https://blog.myxz.top/img/screen.avif</image:loc>
-        </image:image>
         <image:image>
             <image:loc>https://sourceimage.s3.bitiful.net/img/default_cover_12.avif</image:loc>
         </image:image>
@@ -246,23 +192,11 @@
     <url>
         <loc>https://www.myxz.top/2023/2023bbtalk</loc>
         <image:image>
-            <image:loc>https://bcjyn0fc8o7wifyp.public.blob.vercel-storage.com/img/b486dd9b02c8081a42f7161aa135da0-lUIahC6nFeKNkSKlHnHa38kuYGMlnU.png</image:loc>
-        </image:image>
-        <image:image>
-            <image:loc>https://blog.myxz.top/img/screen.avif</image:loc>
-        </image:image>
-        <image:image>
             <image:loc>https://sourceimage.s3.bitiful.net/img/default_cover_13.avif</image:loc>
         </image:image>
     </url>
     <url>
         <loc>https://www.myxz.top/2024/about-this-site-page</loc>
-        <image:image>
-            <image:loc>https://bcjyn0fc8o7wifyp.public.blob.vercel-storage.com/img/b486dd9b02c8081a42f7161aa135da0-lUIahC6nFeKNkSKlHnHa38kuYGMlnU.png</image:loc>
-        </image:image>
-        <image:image>
-            <image:loc>https://blog.myxz.top/img/screen.avif</image:loc>
-        </image:image>
         <image:image>
             <image:loc>https://sourceimage.s3.bitiful.net/img/default_cover_11.avif</image:loc>
         </image:image>
@@ -273,12 +207,6 @@
     <url>
         <loc>https://www.myxz.top/2024/navigation-bar-(beautified-version)</loc>
         <image:image>
-            <image:loc>https://bcjyn0fc8o7wifyp.public.blob.vercel-storage.com/img/b486dd9b02c8081a42f7161aa135da0-lUIahC6nFeKNkSKlHnHa38kuYGMlnU.png</image:loc>
-        </image:image>
-        <image:image>
-            <image:loc>https://blog.myxz.top/img/screen.avif</image:loc>
-        </image:image>
-        <image:image>
             <image:loc>https://sourceimage.s3.bitiful.net/img/default_cover_1.avif</image:loc>
         </image:image>
         <image:image>
@@ -288,35 +216,17 @@
     <url>
         <loc>https://www.myxz.top/2024/sidebar-qcqx</loc>
         <image:image>
-            <image:loc>https://bcjyn0fc8o7wifyp.public.blob.vercel-storage.com/img/b486dd9b02c8081a42f7161aa135da0-lUIahC6nFeKNkSKlHnHa38kuYGMlnU.png</image:loc>
-        </image:image>
-        <image:image>
-            <image:loc>https://blog.myxz.top/img/screen.avif</image:loc>
-        </image:image>
-        <image:image>
             <image:loc>https://sourceimage.s3.bitiful.net/img/default_cover_29.avif</image:loc>
         </image:image>
     </url>
     <url>
         <loc>https://www.myxz.top/2024/small-function-qcqx</loc>
         <image:image>
-            <image:loc>https://bcjyn0fc8o7wifyp.public.blob.vercel-storage.com/img/b486dd9b02c8081a42f7161aa135da0-lUIahC6nFeKNkSKlHnHa38kuYGMlnU.png</image:loc>
-        </image:image>
-        <image:image>
-            <image:loc>https://blog.myxz.top/img/screen.avif</image:loc>
-        </image:image>
-        <image:image>
             <image:loc>https://sourceimage.s3.bitiful.net/img/default_cover_45.avif</image:loc>
         </image:image>
     </url>
     <url>
         <loc>https://www.myxz.top/2025/archive-category-label</loc>
-        <image:image>
-            <image:loc>https://bcjyn0fc8o7wifyp.public.blob.vercel-storage.com/img/b486dd9b02c8081a42f7161aa135da0-lUIahC6nFeKNkSKlHnHa38kuYGMlnU.png</image:loc>
-        </image:image>
-        <image:image>
-            <image:loc>https://blog.myxz.top/img/screen.avif</image:loc>
-        </image:image>
         <image:image>
             <image:loc>https://sourceimage.s3.bitiful.net/img/default_cover_37.avif</image:loc>
         </image:image>
@@ -333,23 +243,11 @@
     <url>
         <loc>https://www.myxz.top/2025/artice-sort</loc>
         <image:image>
-            <image:loc>https://bcjyn0fc8o7wifyp.public.blob.vercel-storage.com/img/b486dd9b02c8081a42f7161aa135da0-lUIahC6nFeKNkSKlHnHa38kuYGMlnU.png</image:loc>
-        </image:image>
-        <image:image>
-            <image:loc>https://blog.myxz.top/img/screen.avif</image:loc>
-        </image:image>
-        <image:image>
             <image:loc>https://sourceimage.s3.bitiful.net/img/default_cover_29.avif</image:loc>
         </image:image>
     </url>
     <url>
         <loc>https://www.myxz.top/2025/backgroud-qcqx</loc>
-        <image:image>
-            <image:loc>https://bcjyn0fc8o7wifyp.public.blob.vercel-storage.com/img/b486dd9b02c8081a42f7161aa135da0-lUIahC6nFeKNkSKlHnHa38kuYGMlnU.png</image:loc>
-        </image:image>
-        <image:image>
-            <image:loc>https://blog.myxz.top/img/screen.avif</image:loc>
-        </image:image>
         <image:image>
             <image:loc>https://sourceimage.s3.bitiful.net/img/default_cover_21.avif</image:loc>
         </image:image>
@@ -357,23 +255,11 @@
     <url>
         <loc>https://www.myxz.top/2025/banner-random-post</loc>
         <image:image>
-            <image:loc>https://bcjyn0fc8o7wifyp.public.blob.vercel-storage.com/img/b486dd9b02c8081a42f7161aa135da0-lUIahC6nFeKNkSKlHnHa38kuYGMlnU.png</image:loc>
-        </image:image>
-        <image:image>
-            <image:loc>https://blog.myxz.top/img/screen.avif</image:loc>
-        </image:image>
-        <image:image>
             <image:loc>https://sourceimage.s3.bitiful.net/img/default_cover_10.avif</image:loc>
         </image:image>
     </url>
     <url>
         <loc>https://www.myxz.top/2025/light-laugh-bottom-beautification-(remastered-icon-version)</loc>
-        <image:image>
-            <image:loc>https://bcjyn0fc8o7wifyp.public.blob.vercel-storage.com/img/b486dd9b02c8081a42f7161aa135da0-lUIahC6nFeKNkSKlHnHa38kuYGMlnU.png</image:loc>
-        </image:image>
-        <image:image>
-            <image:loc>https://blog.myxz.top/img/screen.avif</image:loc>
-        </image:image>
         <image:image>
             <image:loc>https://sourceimage.s3.bitiful.net/img/default_cover_15.avif</image:loc>
         </image:image>
@@ -381,14 +267,8 @@
     <url>
         <loc>https://www.myxz.top/2025/link-page-banner</loc>
         <image:image>
-            <image:loc>https://bcjyn0fc8o7wifyp.public.blob.vercel-storage.com/img/b486dd9b02c8081a42f7161aa135da0-lUIahC6nFeKNkSKlHnHa38kuYGMlnU.png</image:loc>
-        </image:image>
-        <image:image>
-            <image:loc>https://blog.myxz.top/img/screen.avif</image:loc>
-        </image:image>
-        <image:image>
             <image:loc>https://sourceimage.s3.bitiful.net/img/default_cover_25.avif</image:loc>
         </image:image>
     </url>
 </urlset>
-<!-- XML Sitemap generated by @nuxtjs/sitemap v7.2.6 at 2025-08-13T02:43:48.085Z -->
+<!-- XML Sitemap generated by @nuxtjs/sitemap v7.2.6 at 2025-08-13T02:58:24.096Z -->

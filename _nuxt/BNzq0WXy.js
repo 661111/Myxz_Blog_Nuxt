@@ -1,0 +1,1 @@
+import{d as s,x as c,a,u as e,X as t,o as _,_ as p}from"./DFTVe4bk.js";const r=s({__name:"Icon",setup(f){const o=c();return(u,i)=>{const n=t;return _(),a(n,{alt:"",class:"icon",src:e(o).favicon},null,8,["src"])}}}),d=p(r,[["__scopeId","data-v-6580d69d"]]);export{d as default};

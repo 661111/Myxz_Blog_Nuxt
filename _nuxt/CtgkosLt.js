@@ -1,0 +1,1 @@
+import{_ as s,q as t,o as a,v as c}from"./BWFgblQZ.js";const o={},r={class:"card-list"};function d(e,n){return a(),t("div",r,[c(e.$slots,"default",{},void 0,!0)])}const f=s(o,[["render",d],["__scopeId","data-v-fc10fadb"]]);export{f as default};

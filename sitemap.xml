@@ -21,10 +21,10 @@
             <image:loc>https://sourceimage.s3.bitiful.net/img/default_cover_37.avif</image:loc>
         </image:image>
         <image:image>
-            <image:loc>https://sourceimage.s3.bitiful.net/img/default_cover_29.avif</image:loc>
+            <image:loc>https://sourceimage.s3.bitiful.net/img/default_cover_45.avif</image:loc>
         </image:image>
         <image:image>
-            <image:loc>https://sourceimage.s3.bitiful.net/img/default_cover_45.avif</image:loc>
+            <image:loc>https://sourceimage.s3.bitiful.net/img/default_cover_29.avif</image:loc>
         </image:image>
         <image:image>
             <image:loc>https://sourceimage.s3.bitiful.net/img/default_cover_21.avif</image:loc>
@@ -45,10 +45,10 @@
             <image:loc>https://sourceimage.s3.bitiful.net/img/default_cover_37.avif</image:loc>
         </image:image>
         <image:image>
-            <image:loc>https://sourceimage.s3.bitiful.net/img/default_cover_29.avif</image:loc>
+            <image:loc>https://sourceimage.s3.bitiful.net/img/default_cover_45.avif</image:loc>
         </image:image>
         <image:image>
-            <image:loc>https://sourceimage.s3.bitiful.net/img/default_cover_45.avif</image:loc>
+            <image:loc>https://sourceimage.s3.bitiful.net/img/default_cover_29.avif</image:loc>
         </image:image>
         <image:image>
             <image:loc>https://sourceimage.s3.bitiful.net/img/default_cover_21.avif</image:loc>
@@ -80,6 +80,12 @@
     </url>
     <url>
         <loc>https://www.myxz.top/essays</loc>
+    </url>
+    <url>
+        <loc>https://www.myxz.top/fcircle</loc>
+    </url>
+    <url>
+        <loc>https://www.myxz.top/jike</loc>
         <image:image>
             <image:loc>https://blog.myxz.top/img/avatar.avif</image:loc>
         </image:image>
@@ -93,94 +99,490 @@
     <url>
         <loc>https://www.myxz.top/link</loc>
         <image:image>
+            <image:loc>https://cdn.libravatar.org/avatar/646331bff8f19a0e05679c3cc0fc54d6?s=160</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://unavatar.webp.se/gug.thisis.host?w</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://7.isyangs.cn/8/655c9835780a0-8.jpg</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://www.isyangs.cn/favicon.svg</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://wsrv.nl/?url=github.com%2FKazariEX.png%3Fsize%3D92</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://bikari.top/image/favicon.svg</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://wsrv.nl/?url=github.com%2FLYXOfficial.png%3Fsize%3D92</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://blog.yaria.top/favicon.ico</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://wsrv.nl/?url=github.com%2Fabloom25.png%3Fsize%3D92</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://img.miasite.com/local/api/1/2024/12/EEES.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://wsrv.nl/?url=github.com%2Fbandaoworld.png%3Fsize%3D92</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://wsrv.nl/?url=github.com%2Fbandaoworld.png%3Fsize%3D32&amp;amp;mask=circle</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://wsrv.nl/?url=github.com%2FStudyingLover.png%3Fsize%3D92</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://wsrv.nl/?url=github.com%2FStudyingLover.png%3Fsize%3D32&amp;amp;mask=circle</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://wsrv.nl/?url=github.com%2FJiaHuann.png%3Fsize%3D92</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://www.jiahuan.top/favicon.ico</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://wsrv.nl/?url=github.com%2Fzhendewokusi.png%3Fsize%3D92</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://yuanfang.thisis.host/images/logo.svg</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://pic.imgdb.cn/item/65e1df0c9f345e8d03bcdd6a.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://wsrv.nl/?url=github.com%2FPh0m1.png%3Fsize%3D32&amp;amp;mask=circle</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://wsrv.nl/?url=github.com%2FSIMple-lives.png%3Fsize%3D92</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://future.thisis.host/images/favicon-light-32.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://wsrv.nl/?url=github.com%2Ftiny-sky.png%3Fsize%3D92</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://tiny-sky.github.io/img/pwa/favicon.ico</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://wsrv.nl/?url=github.com%2FShawnJeffersonWang.png%3Fsize%3D92</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://wsrv.nl/?url=github.com%2FShawnJeffersonWang.png%3Fsize%3D32&amp;amp;mask=circle</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://q1.qlogo.cn/g?b=qq&amp;amp;nk=1239625475&amp;amp;s=4</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://q1.qlogo.cn/g?b=qq&amp;amp;nk=1239625475&amp;amp;s=3</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://wsrv.nl/?url=github.com%2FTaolinyinjiu.png%3Fsize%3D92</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://www.taolin.site/favicon.ico</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://q1.qlogo.cn/g?b=qq&amp;amp;nk=1623728267&amp;amp;s=4</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://q1.qlogo.cn/g?b=qq&amp;amp;nk=1623728267&amp;amp;s=3</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://wsrv.nl/?url=github.com%2Ffault123.png%3Fsize%3D92</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://wsrv.nl/?url=github.com%2Ffault123.png%3Fsize%3D32&amp;amp;mask=circle</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://wsrv.nl/?url=github.com%2FMonoceros406.png%3Fsize%3D92</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://wsrv.nl/?url=github.com%2FMonoceros406.png%3Fsize%3D32&amp;amp;mask=circle</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://q1.qlogo.cn/g?b=qq&amp;amp;nk=2098600899&amp;amp;s=4</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://yunjianworld.fun/img/fluid.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://7.isyangs.cn/1/657976c27bea6-1.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://unavatar.webp.se/colsrch.cn?w</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://bu.dusays.com/2022/12/28/63ac2812183aa.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://blog.zhheo.com/img/favicon4.0.webp</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://q1.qlogo.cn/g?b=qq&amp;amp;nk=3526514925&amp;amp;s=4</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://wsrv.nl/?url=github.com%2Fchiyuki0325.png%3Fsize%3D32&amp;amp;mask=circle</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://weavatar.com/avatar/20eed6a268787c9a751165bc1ec56e90</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://blog.revincx.icu/images/favico.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://wsrv.nl/?url=github.com%2FJJLibra.png%3Fsize%3D92</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://blog.xxfer.cn/img/siteicon/128.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://blog.kouseki.cn/imgs/avatar.webp</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://blog.kouseki.cn/favicon.ico</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://www.skira.top/img/lemonsuka.webp</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://www.skira.top/img/skira.ico</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://www.yunyitang.me/img/Avatar.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://www.yunyitang.me/favicon/favicon.ico</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://wsrv.nl/?url=github.com%2Flin-snow.png%3Fsize%3D92</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://log.vaaat.com/favicon.ico</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://wsrv.nl/?url=github.com%2Fmaomao1996.png%3Fsize%3D92</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://wsrv.nl/?url=github.com%2Fmaomao1996.png%3Fsize%3D32&amp;amp;mask=circle</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://yl2209.github.io/img/favicon.ico</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://index.naokuo.top/favicon.ico</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://blog.moeworld.tech/wp-content/themes/kratos-pjax-master/static/images/photo.jpg</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://blog.moeworld.tech/wp-content/uploads/2024/08/cropped-favicon-32x32.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://bu.dusays.com/2023/12/23/65867c3357bb6.jpg</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://kegongteng.cn/favicon.ico</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://www.luochancy.com/wp-content/uploads/2023/12/1904634_Ehaif6np.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://www.luochancy.com/wp-content/uploads/2023/10/cropped-231026_head_image-32x32.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://weavatar.com/avatar/92c15d4a1d99a8ee04b986a14a5f7e009e574b3383fc575005947988ccf205e2</image:loc>
+        </image:image>
+        <image:image>
             <image:loc>https://blog.liushen.fun/info/avatar.ico</image:loc>
         </image:image>
         <image:image>
-            <image:loc>https://www.myxz.top/_ipx/_/assets/img/link/LiuShen.webp</image:loc>
+            <image:loc>https://www.langhai.net/assets/images/langhai-logo.png</image:loc>
         </image:image>
         <image:image>
-            <image:loc>https://www.qcqx.cn/head.webp</image:loc>
+            <image:loc>https://image.m-c.top/?/images/2024/01/13/Pqeh0v6VaK/ico.jpg</image:loc>
         </image:image>
         <image:image>
-            <image:loc>https://pub-noionion.oss-cn-hangzhou.aliyuncs.com/head.jpg</image:loc>
+            <image:loc>https://unavatar.webp.se/blog.awaae001.top?w</image:loc>
         </image:image>
         <image:image>
-            <image:loc>https://npm.elemecdn.com/anzhiyu-blog-static@1.0.4/img/avatar.jpg</image:loc>
+            <image:loc>https://cravatar.cn/avatar/57ff1222a81493a0e72782530e77b269?s=160</image:loc>
         </image:image>
         <image:image>
-            <image:loc>https://blog.bywind.xyz/img/avatar.png</image:loc>
+            <image:loc>https://chuishen.xyz/img/logo.png</image:loc>
         </image:image>
         <image:image>
-            <image:loc>https://images.boysec.cn/medias/avatar.jpg</image:loc>
+            <image:loc>https://q1.qlogo.cn/g?b=qq&amp;amp;nk=1463656527&amp;amp;s=4</image:loc>
         </image:image>
         <image:image>
-            <image:loc>https://imgse.koxiuqiu.cc/imgse/u/19/2025/02/20/67b737d854192.webp</image:loc>
+            <image:loc>https://www.iczrx.cn/favicon.ico</image:loc>
         </image:image>
         <image:image>
-            <image:loc>https://q1.qlogo.cn/g?b=qq&amp;amp;nk=990320751&amp;amp;s=5</image:loc>
+            <image:loc>https://img13.360buyimg.com/ddimg/jfs/t1/239095/17/9691/19853/664d82dfF34a0990c/c4198876146be2d4.jpg</image:loc>
         </image:image>
         <image:image>
-            <image:loc>https://www.myxz.top/_ipx/_/assets/img/link/Ariasaka.jpg</image:loc>
+            <image:loc>https://api-space.tnxg.top/avatar?s=qq</image:loc>
         </image:image>
         <image:image>
-            <image:loc>https://bcjyn0fc8o7wifyp.public.blob.vercel-storage.com/img/64959cf745a4d.png</image:loc>
+            <image:loc>https://tnxgmoe.com/favicon.png</image:loc>
         </image:image>
         <image:image>
-            <image:loc>https://image.mnchen.cn/2023/12/mnochen.jpg</image:loc>
+            <image:loc>https://blog.365sites.top/upload/avatar.png</image:loc>
         </image:image>
         <image:image>
-            <image:loc>https://www.myxz.top/_ipx/_/assets/img/link/ciraos.webp</image:loc>
+            <image:loc>https://wsrv.nl/?url=github.com%2FWinner365-China.png%3Fsize%3D32&amp;amp;mask=circle</image:loc>
         </image:image>
         <image:image>
-            <image:loc>https://bcjyn0fc8o7wifyp.public.blob.vercel-storage.com/img/67f92f6fcfb26.webp</image:loc>
+            <image:loc>https://wsrv.nl/?url=github.com%2FFloatSheep.png%3Fsize%3D92</image:loc>
         </image:image>
         <image:image>
-            <image:loc>https://fastly.jsdelivr.net/npm/xyx404blogphoto@1.2.23/avatar.webp</image:loc>
+            <image:loc>https://blog.hesiy.cn/favicon.ico</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://bu.dusays.com/2024/06/28/667e684e0adbe.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://blog.henrywhu.cn/favicon.ico</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://q1.qlogo.cn/g?b=qq&amp;amp;nk=1043865083&amp;amp;s=4</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://weavatar.com/avatar/67254b346498965226e5c91ebff66a69570b97f224d2d061e504b4eade1f00fa</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://ahzoo.cn/img/avatar.webp</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://blog.ahzoo.cn/favicon.ico</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://www.imaegoo.com/images/avatar.jpg</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://www.imaegoo.com/favicon.ico</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://media.duckxu.com/blogfiles/public/iduckxucom.jpg</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://kycloud3.koyoo.cn/2024080228778202408022342057562.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://oss-cdn.bsgun.cn/logo/avatar.256.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://unavatar.webp.se/blog.bsgun.cn?w</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://wsrv.nl/?url=github.com%2Fjunxu821.png%3Fsize%3D92</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://www.xu69.com/xu-resource/ico.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://dengqn.com/image/headimg.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://dengqn.com/favicon.ico</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://linexic.top/avatar.webp</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://linexic.top/logo.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://wsrv.nl/?url=github.com%2Ftinsir888.png%3Fsize%3D92</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://wsrv.nl/?url=github.com%2Ftinsir888.png%3Fsize%3D32&amp;amp;mask=circle</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://wsrv.nl/?url=github.com%2FQNquenan.png%3Fsize%3D92</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://tuchuang.voooe.cn/images/2024/01/29/logo_icon.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://wsrv.nl/?url=github.com%2Fnoxussj2.png%3Fsize%3D92</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://note.noxussj.top/logo.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://wsrv.nl/?url=github.com%2FRedish101.png%3Fsize%3D92</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://wsrv.nl/?url=github.com%2FRedish101.png%3Fsize%3D32&amp;amp;mask=circle</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://pinpe.top/head.jpg</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://blog.pinpe.top/favicon/logo.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://wsrv.nl/?url=github.com%2Fcodepzj.png%3Fsize%3D92</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://haohanxinghe.com/assets/images/avatar.jpg</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://cdn.yuuu.org/img/avatar.webp</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://cdn.yuuu.org/img/favicon-32x32.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://wsrv.nl/?url=github.com%2Fcatxian.png%3Fsize%3D92</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://wsrv.nl/?url=github.com%2Fcatxian.png%3Fsize%3D32&amp;amp;mask=circle</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://wsrv.nl/?url=github.com%2Ftianli0.png%3Fsize%3D92</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://wsrv.nl/?url=github.com%2Ftianli0.png%3Fsize%3D32&amp;amp;mask=circle</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://blog.hslzz.cn/img/avatar.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://blog.hslzz.cn/favicon.ico</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://wsrv.nl/?url=github.com%2Feverfu.png%3Fsize%3D92</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://www.efu.me/favicon.svg</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://weavatar.com/avatar/1dc444f85a6673099a47170588bbc6d7?s=96</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://cdn.motsuni.cn/1739176973_20250208101223856.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://www.adai.fun/img/adai.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://adai.fun/favicon.ico</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://wsrv.nl/?url=github.com%2Fciraos.png%3Fsize%3D92</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://mx.ciraos.top/api/v2/objects/icon/c6f3th4eebwoxnwcez.avif</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://q1.qlogo.cn/g?b=qq&amp;amp;nk=466660026&amp;amp;s=4</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://www.dao.js.cn/zb_users/upload/2024/09/202409191726720024363275.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://iflux.art/favicon.ico</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://wsrv.nl/?url=github.com%2FZL-Asica.png%3Fsize%3D92</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://wsrv.nl/?url=github.com%2FZL-Asica.png%3Fsize%3D32&amp;amp;mask=circle</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://static.031130.xyz/avatar.webp</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://zhul.in/favicon.ico</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://x.xinb.de/i/2024/09/19/040857.webp</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://blog.ykrazy.top/avatar.jpg</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://digitallife.my/wp-content/uploads/2025/06/cropped-1751133864-bloglogo.jpg</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://digitallife.my/favicon.ico</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://blog.navifox.net/favicon.ico</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://7.isyangs.cn/78/6795a3b5015e1-78.webp</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://img.trfox.top/assets/avatar.jpg</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://blog.trfox.top/favicon.ico</image:loc>
         </image:image>
         <image:image>
             <image:loc>https://std.thyuu.com/logo.svg</image:loc>
         </image:image>
         <image:image>
-            <image:loc>https://blog.myxz.top/img/avatar.avif</image:loc>
+            <image:loc>https://wsrv.nl/?url=github.com%2FInnei.png%3Fsize%3D92</image:loc>
         </image:image>
-    </url>
-    <url>
-        <loc>https://www.myxz.top/memos</loc>
-    </url>
-    <url>
-        <loc>https://www.myxz.top/moment</loc>
-    </url>
-    <url>
-        <loc>https://www.myxz.top/page</loc>
+        <image:image>
+            <image:loc>https://innei.in/innei.svg</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://wsrv.nl/?url=randwind.com/favicon.ico</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://myth.cx/img/avatar_hu_a008ef868a8cf25a.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://myth.cx/favicon.ico</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://blog.dejavu.moe/img/avatar_hu153f535f3685d84c2248f9e3bcb0c932_112544_288x288_fill_q75_h2_box_center_2.webp</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://blog.dejavu.moe/favicon.ico</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://ayu.land/favicon.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://ayu.land/bin/favicon.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://wsrv.nl/?url=github.com%2Fantfu.png%3Fsize%3D92</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://antfu.me/favicon.svg</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://wsrv.nl/?url=github.com%2Fxaoxuu.png%3Fsize%3D92</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://wsrv.nl/?url=github.com%2Fxaoxuu.png%3Fsize%3D32&amp;amp;mask=circle</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://wsrv.nl/?url=github.com%2Fimsyy.png%3Fsize%3D92</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://unavatar.webp.se/blog.imsyy.top</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://cdnv2.ruguoapp.com/FufBpXB3Ax66mh9vkBEjTujMVLmPv3.jpg?imageMogr2/auto-orient/heic-exif/1/format/jpeg/thumbnail/!300x300r/gravity/Center/crop/!300x300a0a0</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://wsrv.nl/?url=mmbiz.qpic.cn/mmbiz_png/ObdOUIBwLwlt7jrOzKib6gUM83iaY6d6qLF4fH7AtAyL8mnic0jPicnFLdjXnduL5Pkj8Viah8RJAZzPwOWlj8995Qw/0</image:loc>
+        </image:image>
         <image:image>
             <image:loc>https://blog.myxz.top/img/avatar.avif</image:loc>
-        </image:image>
-        <image:image>
-            <image:loc>https://sourceimage.s3.bitiful.net/img/default_cover_1.avif</image:loc>
-        </image:image>
-        <image:image>
-            <image:loc>https://sourceimage.s3.bitiful.net/img/default_cover_15.avif</image:loc>
-        </image:image>
-        <image:image>
-            <image:loc>https://sourceimage.s3.bitiful.net/img/default_cover_25.avif</image:loc>
-        </image:image>
-        <image:image>
-            <image:loc>https://sourceimage.s3.bitiful.net/img/default_cover_11.avif</image:loc>
-        </image:image>
-        <image:image>
-            <image:loc>https://sourceimage.s3.bitiful.net/img/default_cover_37.avif</image:loc>
-        </image:image>
-        <image:image>
-            <image:loc>https://sourceimage.s3.bitiful.net/img/default_cover_29.avif</image:loc>
-        </image:image>
-        <image:image>
-            <image:loc>https://sourceimage.s3.bitiful.net/img/default_cover_45.avif</image:loc>
-        </image:image>
-        <image:image>
-            <image:loc>https://sourceimage.s3.bitiful.net/img/default_cover_21.avif</image:loc>
-        </image:image>
-        <image:image>
-            <image:loc>https://sourceimage.s3.bitiful.net/img/default_cover_10.avif</image:loc>
         </image:image>
     </url>
     <url>
@@ -191,9 +593,6 @@
         <image:image>
             <image:loc>https://www.myxz.top/Scott Tolinski</image:loc>
         </image:image>
-    </url>
-    <url>
-        <loc>https://www.myxz.top/wiki</loc>
     </url>
     <url>
         <loc>https://www.myxz.top/2023/2023artitalk</loc>
@@ -283,4 +682,4 @@
         </image:image>
     </url>
 </urlset>
-<!-- XML Sitemap generated by @nuxtjs/sitemap v7.2.6 at 2025-08-15T07:56:47.949Z -->
+<!-- XML Sitemap generated by @nuxtjs/sitemap v7.4.3 at 2025-08-15T10:05:31.354Z -->

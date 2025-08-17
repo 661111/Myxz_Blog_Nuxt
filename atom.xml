@@ -3,7 +3,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <id>https://www.myxz.top/</id>
   <title>莫言小栈</title>
-  <updated>2025-08-16T08:50:51.656Z</updated>
+  <updated>2025-08-17T07:05:20.382Z</updated>
   <description>莫言的博客网站，分享技术和魔改。网站界面简洁美观，涵盖了魔改、教程等多个领域，为读者提供了卓越的阅读体验。</description>
   <author>
     <name>莫言</name>
@@ -18,6 +18,21 @@
   <logo>https://blog.myxz.top/img/avatar.avif</logo>
   <rights>© 2025 莫言</rights>
   <subtitle>生生不息，永无止息。</subtitle>
+  <entry>
+    <id>https://www.myxz.top/2025/site</id>
+    <title>我的博客平台变迁与未来计划</title>
+    <updated>2025-08-17T10:56:09.000Z</updated>
+    <author>
+      <name>莫言</name>
+    </author>
+    <content type="html">
+      <![CDATA[<img src="https://sourceimage.s3.bitiful.net/img/default_cover_50.avif" /> <p>2019年起，笔者先后用Gridea（生态差弃用）、Hexo（混乱期）、Wordpress（资源站问题）、重用Hexo（性能不足）、Nuxt（维护复杂）搭建博客；后续计划含旧站恢复改名、服务迁移、多服务器部署及动静态分离。从2019年到现在，我的博客平台换了好几茬：最初用Gridea，因主题少、部署麻烦弃用；接着Hexo用了两年多，混乱中过渡；2023年转Wordpress做资源站，却因加载慢等问题放弃；2025年初重拾Hexo，又因维护复杂换用Nuxt。接下来计划恢复旧站、迁移服务、部署多服务器并分离动静态。</p> <a class="view-full" href="https://www.myxz.top/2025/site" target="_blank">点击查看全文</a>]]>
+    </content>
+    <link href="https://www.myxz.top/2025/site"></link>
+    <summary>2019年起，笔者先后用Gridea（生态差弃用）、Hexo（混乱期）、Wordpress（资源站问题）、重用Hexo（性能不足）、Nuxt（维护复杂）搭建博客；后续计划含旧站恢复改名、服务迁移、多服务器部署及动静态分离。从2019年到现在，我的博客平台换了好几茬：最初用Gridea，因主题少、部署麻烦弃用；接着Hexo用了两年多，混乱中过渡；2023年转Wordpress做资源站，却因加载慢等问题放弃；2025年初重拾Hexo，又因维护复杂换用Nuxt。接下来计划恢复旧站、迁移服务、部署多服务器并分离动静态。</summary>
+    <category term="站历史"></category>
+    <published>2025-08-17T08:00:09.000Z</published>
+  </entry>
   <entry>
     <id>https://www.myxz.top/2025/archive-category-label</id>
     <title>给页面加上所属分类和标签以及美化</title>

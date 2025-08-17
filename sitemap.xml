@@ -6,10 +6,10 @@
             <image:loc>https://blog.myxz.top/img/avatar.avif</image:loc>
         </image:image>
         <image:image>
-            <image:loc>https://sourceimage.s3.bitiful.net/img/default_cover_1.avif</image:loc>
+            <image:loc>https://sourceimage.s3.bitiful.net/img/default_cover_15.avif</image:loc>
         </image:image>
         <image:image>
-            <image:loc>https://sourceimage.s3.bitiful.net/img/default_cover_15.avif</image:loc>
+            <image:loc>https://sourceimage.s3.bitiful.net/img/default_cover_1.avif</image:loc>
         </image:image>
         <image:image>
             <image:loc>https://sourceimage.s3.bitiful.net/img/default_cover_25.avif</image:loc>
@@ -80,6 +80,9 @@
     </url>
     <url>
         <loc>https://www.myxz.top/equipment</loc>
+        <image:image>
+            <image:loc>https://s11.ax1x.com/2023/06/07/pCiB3vD.jpg</image:loc>
+        </image:image>
     </url>
     <url>
         <loc>https://www.myxz.top/essays</loc>
@@ -604,16 +607,13 @@
         </image:image>
     </url>
     <url>
-        <loc>https://www.myxz.top/2024/about-this-site-page</loc>
+        <loc>https://www.myxz.top/2025/02/light-laugh-bottom-beautification-(remastered-icon-version)</loc>
         <image:image>
-            <image:loc>https://sourceimage.s3.bitiful.net/img/default_cover_11.avif</image:loc>
-        </image:image>
-        <image:image>
-            <image:loc>https://sourceimage.s3.bitiful.net/post%2Fimg%2F%E5%85%B3%E4%BA%8E%E9%A1%B5%E9%9D%A2%E7%BE%8E%E5%8C%96%2F1.avif</image:loc>
+            <image:loc>https://sourceimage.s3.bitiful.net/img/default_cover_15.avif</image:loc>
         </image:image>
     </url>
     <url>
-        <loc>https://www.myxz.top/2024/navigation-bar-(beautified-version)</loc>
+        <loc>https://www.myxz.top/2025/02/navigation-bar-(beautified-version)</loc>
         <image:image>
             <image:loc>https://sourceimage.s3.bitiful.net/img/default_cover_1.avif</image:loc>
         </image:image>
@@ -622,19 +622,16 @@
         </image:image>
     </url>
     <url>
-        <loc>https://www.myxz.top/2024/sidebar-qcqx</loc>
+        <loc>https://www.myxz.top/2025/03/about-this-site-page</loc>
         <image:image>
-            <image:loc>https://sourceimage.s3.bitiful.net/img/default_cover_29.avif</image:loc>
+            <image:loc>https://sourceimage.s3.bitiful.net/img/default_cover_11.avif</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://sourceimage.s3.bitiful.net/post%2Fimg%2F%E5%85%B3%E4%BA%8E%E9%A1%B5%E9%9D%A2%E7%BE%8E%E5%8C%96%2F1.avif</image:loc>
         </image:image>
     </url>
     <url>
-        <loc>https://www.myxz.top/2024/small-function-qcqx</loc>
-        <image:image>
-            <image:loc>https://sourceimage.s3.bitiful.net/img/default_cover_45.avif</image:loc>
-        </image:image>
-    </url>
-    <url>
-        <loc>https://www.myxz.top/2025/archive-category-label</loc>
+        <loc>https://www.myxz.top/2025/03/archive-category-label</loc>
         <image:image>
             <image:loc>https://sourceimage.s3.bitiful.net/img/default_cover_37.avif</image:loc>
         </image:image>
@@ -649,40 +646,46 @@
         </image:image>
     </url>
     <url>
-        <loc>https://www.myxz.top/2025/artice-sort</loc>
+        <loc>https://www.myxz.top/2025/03/artice-sort</loc>
         <image:image>
             <image:loc>https://sourceimage.s3.bitiful.net/img/default_cover_29.avif</image:loc>
         </image:image>
     </url>
     <url>
-        <loc>https://www.myxz.top/2025/backgroud-qcqx</loc>
+        <loc>https://www.myxz.top/2025/03/backgroud-qcqx</loc>
         <image:image>
             <image:loc>https://sourceimage.s3.bitiful.net/img/default_cover_21.avif</image:loc>
         </image:image>
     </url>
     <url>
-        <loc>https://www.myxz.top/2025/banner-random-post</loc>
+        <loc>https://www.myxz.top/2025/03/banner-random-post</loc>
         <image:image>
             <image:loc>https://sourceimage.s3.bitiful.net/img/default_cover_10.avif</image:loc>
         </image:image>
     </url>
     <url>
-        <loc>https://www.myxz.top/2025/light-laugh-bottom-beautification-(remastered-icon-version)</loc>
+        <loc>https://www.myxz.top/2025/03/sidebar-qcqx</loc>
         <image:image>
-            <image:loc>https://sourceimage.s3.bitiful.net/img/default_cover_15.avif</image:loc>
+            <image:loc>https://sourceimage.s3.bitiful.net/img/default_cover_29.avif</image:loc>
         </image:image>
     </url>
     <url>
-        <loc>https://www.myxz.top/2025/link-page-banner</loc>
+        <loc>https://www.myxz.top/2025/03/small-function-qcqx</loc>
         <image:image>
-            <image:loc>https://sourceimage.s3.bitiful.net/img/default_cover_25.avif</image:loc>
+            <image:loc>https://sourceimage.s3.bitiful.net/img/default_cover_45.avif</image:loc>
         </image:image>
     </url>
     <url>
-        <loc>https://www.myxz.top/2025/site</loc>
+        <loc>https://www.myxz.top/2025/08/blog-pintai-or-weilai</loc>
         <image:image>
             <image:loc>https://sourceimage.s3.bitiful.net/img/default_cover_50.avif</image:loc>
         </image:image>
     </url>
+    <url>
+        <loc>https://www.myxz.top/2025/08/link-page-banner</loc>
+        <image:image>
+            <image:loc>https://sourceimage.s3.bitiful.net/img/default_cover_25.avif</image:loc>
+        </image:image>
+    </url>
 </urlset>
-<!-- XML Sitemap generated by @nuxtjs/sitemap v7.4.3 at 2025-08-17T07:05:50.392Z -->
+<!-- XML Sitemap generated by @nuxtjs/sitemap v7.4.3 at 2025-08-17T08:48:40.918Z -->

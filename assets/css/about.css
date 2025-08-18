@@ -213,8 +213,7 @@
 
 /* 轮播skill */
 .author-content-item.skills {
-    display: flex
-;
+    display: flex;
     justify-content: center;
     align-items: flex-start;
     flex-direction: column;
@@ -311,6 +310,11 @@
 .author-content-item.skills .skill-name {
     font-weight: 700;
     line-height: 1;
+}
+
+.tags-group-icon-pair .tags-group-icon:nth-child(even) {
+    margin-top: 1rem;
+    transform: translate(-60px);
 }
 
 /* careers */

@@ -417,3 +417,24 @@
     color: var(--heo-white);
     width: 59%;
 }
+
+/* 动画组件 */
+@keyframes rowleft {
+    from {
+        transform: translateX(0)
+    }
+
+    to {
+        transform: translateX(-50%)
+    }
+}
+
+@keyframes rowup {
+    from {
+        transform: translateY(0)
+    }
+
+    to {
+        transform: translateY(-50%)
+    }
+}

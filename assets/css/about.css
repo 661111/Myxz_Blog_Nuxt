@@ -442,3 +442,18 @@
         transform: translateY(-50%)
     }
 }
+
+/* 移动端页面 */
+@media screen and (max-width: 768px) {
+    .author-content {
+        margin-top: 0;
+        flex-direction: column;
+    }
+    .author-content-item {
+        width: 100%;
+        padding: 1rem;
+    }
+    #about-page .author-tag-left, #about-page .author-tag-right {
+        display: none;
+    }
+}

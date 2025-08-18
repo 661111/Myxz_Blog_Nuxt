@@ -1,0 +1,1 @@
+import{C as r,c as n,e as o,K as s}from"./Bg-sbkdJ.js";const t={};function c(e,a){return o(),n("strong",null,[s(e.$slots,"default")])}const _=Object.assign(r(t,[["render",c]]),{__name:"ProseStrong"});export{_ as default};

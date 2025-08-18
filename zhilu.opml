@@ -3,7 +3,7 @@
   <head>
     <title>莫言小栈的友链订阅</title>
     <dateCreated>2020-07-19T00:00:00.000Z</dateCreated>
-    <dateModified>2025-08-18T09:26:23.287Z</dateModified>
+    <dateModified>2025-08-18T09:27:30.691Z</dateModified>
     <ownerName>莫言</ownerName>
     <ownerEmail>3227988255@qq.com</ownerEmail>
     <ownerId>https://www.myxz.top/</ownerId>
@@ -21,67 +21,7 @@
     <outline text="XAOXUU" type="rss" xmlUrl="https://xaoxuu.com/atom.xml" created="2024-10-26T00:00:00.000Z" description="风暴前夕" htmlUrl="https://xaoxuu.com/"></outline>
     <outline text="無名小栈" type="rss" xmlUrl="https://blog.imsyy.top/rss.xml" created="2024-10-26T00:00:00.000Z" description="分享技术与科技生活" htmlUrl="https://blog.imsyy.top/"></outline>
     <outline text="最小可读" type="rss" xmlUrl="https://mvread.blog/feed" created="2024-10-29T00:00:00.000Z" description="基本无害，可能有用" htmlUrl="https://mvread.blog/"></outline>
-    <outline text="古怪杂记本" type="rss" xmlUrl="https://gug.thisis.host/atom.xml" created="2024-01-29T00:00:00.000Z" description="一个什么都可能会写的博客" htmlUrl="https://gug.thisis.host/"></outline>
-    <outline text="isYangs" type="rss" xmlUrl="https://www.isyangs.cn/feed.xml" created="2024-01-29T00:00:00.000Z" description="一个前端Bug构造师的博客" htmlUrl="https://www.isyangs.cn/"></outline>
-    <outline text="BikariArchive" type="rss" xmlUrl="https://bikari.top/feed" created="2024-01-30T00:00:00.000Z" description="虚幻的幸福" htmlUrl="https://bikari.top/"></outline>
-    <outline text="Ariasakaの小窝" type="rss" xmlUrl="https://blog.yaria.top/feed" created="2024-07-12T00:00:00.000Z" description="人有悲欢离合 月有阴晴圆缺" htmlUrl="https://blog.yaria.top/"></outline>
-    <outline text="唤青映记" type="rss" xmlUrl="https://eees.blog/atom.xml" created="2024-12-09T00:00:00.000Z" description="我崇拜流浪、变化和幻想" htmlUrl="https://eees.blog/"></outline>
-    <outline text="半岛的小屋" type="rss" xmlUrl="https://www.bandao.ltd/atom.xml" created="2024-02-02T00:00:00.000Z" description="不知道写啥，那就不写了。哎嘿" htmlUrl="https://www.bandao.ltd/"></outline>
-    <outline text="StudyingLover&apos;s Blog" type="rss" xmlUrl="https://www.studyinglover.com/rss.xml" created="2024-02-03T00:00:00.000Z" description="要偷偷努力，下回惊艳所有人" htmlUrl="https://www.studyinglover.com/"></outline>
-    <outline text="Ph0m&apos;s space" type="rss" xmlUrl="https://blog.phom.space/atom.xml" created="2024-03-02T00:00:00.000Z" description="好好生活 慢慢相遇" htmlUrl="https://blog.phom.space/"></outline>
-    <outline text="future&apos;s blog" type="rss" xmlUrl="https://future.thisis.host/atom.xml" created="2024-03-10T00:00:00.000Z" description="Hang on to your dreams!" htmlUrl="https://future.thisis.host/"></outline>
-    <outline text="Shawn的笔记" type="rss" xmlUrl="https://shawn.thisis.host/atom.xml" created="2024-06-13T00:00:00.000Z" description="Where there is a will, there is a way." htmlUrl="https://shawn.thisis.host/"></outline>
-    <outline text="Kayle小站" type="rss" xmlUrl="https://www.kayle7.top/atom.xml" created="2024-06-27T00:00:00.000Z" description="正在学习嵌入式" htmlUrl="https://www.kayle7.top/"></outline>
-    <outline text="摆烂的桃的Blog" type="rss" xmlUrl="https://www.taolin.site/rss.xml" created="2024-07-16T00:00:00.000Z" description="回不去的何止时间" htmlUrl="https://www.taolin.site/"></outline>
-    <outline text="MagicBlog" type="rss" xmlUrl="https://magic.thisis.host/atom.xml" created="2024-07-22T00:00:00.000Z" description="我知我喜乐，纵情跋涉。" htmlUrl="https://magic.thisis.host/"></outline>
-    <outline text="fault`s blog" type="rss" xmlUrl="https://fault.thisis.host/atom.xml" created="2024-07-29T00:00:00.000Z" description="学习！学习！还是学习！当然也是要吃点好东西！" htmlUrl="https://fault.thisis.host/"></outline>
-    <outline text="The Blog of Monoceros406" type="rss" xmlUrl="https://monoceros406.github.io/atom.xml" created="2024-07-29T00:00:00.000Z" description="Reverse - 智邮普创工作室安全组/Nepnep联合战队" htmlUrl="https://monoceros406.github.io/"></outline>
-    <outline text="云间的小小世界" type="rss" xmlUrl="https://yunjianworld.fun/atom.xml" created="2024-11-14T00:00:00.000Z" description="顺着风的方向" htmlUrl="https://yunjianworld.fun/"></outline>
-    <outline text="Colsrch的小破站" type="rss" xmlUrl="https://colsrch.cn/atom.xml" created="2024-02-01T00:00:00.000Z" description="愿多年以后，我可以酌一杯清酒，烂醉如泥，梦中回到我们的曾经。" htmlUrl="https://colsrch.cn/"></outline>
-    <outline text="张洪Heo" type="rss" xmlUrl="https://blog.zhheo.com/atom.xml" created="2024-02-02T00:00:00.000Z" description="分享设计与科技生活" htmlUrl="https://blog.zhheo.com/"></outline>
-    <outline text="風雪城" type="rss" xmlUrl="https://blog.chyk.ink/atom.xml" created="2024-03-03T00:00:00.000Z" description="浩繁星空下的一场稚嫩的梦" htmlUrl="https://blog.chyk.ink/"></outline>
-    <outline text="Revincx的小破站" type="rss" xmlUrl="https://blog.revincx.icu/atom.xml" created="2024-02-05T00:00:00.000Z" htmlUrl="https://blog.revincx.icu/"></outline>
-    <outline text="小李同学 Coding" type="rss" xmlUrl="https://blog.xxfer.cn/rss.xml" created="2024-02-01T00:00:00.000Z" description="一支努力变强的小彩笔" htmlUrl="https://blog.xxfer.cn/"></outline>
-    <outline text="铭心石刻" type="rss" xmlUrl="https://blog.kouseki.cn/rss.xml" created="2024-03-01T00:00:00.000Z" description="愿岁并谢，与友长兮" htmlUrl="https://blog.kouseki.cn/"></outline>
-    <outline text="桜紺狸の部落阁" type="rss" xmlUrl="https://www.skira.top/feed.xml" created="2024-02-01T00:00:00.000Z" description="一个闲聊萌新动漫技术交流站" htmlUrl="https://www.skira.top/"></outline>
-    <outline text="YUNYI BLOG" type="rss" xmlUrl="https://www.yunyitang.me/atom.xml" created="2024-02-18T00:00:00.000Z" description="得闲饮茶~~~" htmlUrl="https://www.yunyitang.me/"></outline>
-    <outline text="L1nSn0w&apos;s Site" type="rss" xmlUrl="https://log.vaaat.com/index.xml" created="2024-02-14T00:00:00.000Z" description="无限进步.🎈" htmlUrl="https://log.vaaat.com/"></outline>
-    <outline text="Naokuo" type="rss" xmlUrl="https://index.naokuo.top/rss2.xml" created="2024-02-18T00:00:00.000Z" description="请给我来亿碗三鲜面" htmlUrl="https://index.naokuo.top/"></outline>
-    <outline text="晓空blog" type="rss" xmlUrl="https://blog.moeworld.tech/feed/" created="2024-02-25T00:00:00.000Z" description="探索更大的世界" htmlUrl="https://blog.moeworld.tech/"></outline>
-    <outline text="Kegongteng" type="rss" xmlUrl="https://kegongteng.cn/atom" created="2024-02-25T00:00:00.000Z" description="Blogger / Technophile / Student" htmlUrl="https://kegongteng.cn/"></outline>
-    <outline text="I&apos;m Luochancy" type="rss" xmlUrl="https://www.luochancy.com/feed" created="2024-03-01T00:00:00.000Z" description="这是个猫猫的博客喵～" htmlUrl="https://www.luochancy.com/"></outline>
-    <outline text="LiuShen&apos;s Blog" type="rss" xmlUrl="https://blog.liushen.fun/atom.xml" created="2024-06-02T00:00:00.000Z" description="柳影曳曳，清酒孤灯，扬笔撒墨，心境如霜" htmlUrl="https://blog.liushen.fun/"></outline>
-    <outline text="呓语梦轩" type="rss" xmlUrl="https://blog.awaae001.top/atom.xml" created="2024-06-05T00:00:00.000Z" description="用心享受生活" htmlUrl="https://blog.awaae001.top/"></outline>
-    <outline text="寂白沙洲冷" type="rss" xmlUrl="https://chuishen.xyz/atom.xml" created="2024-06-16T00:00:00.000Z" description="Et in Arcadia, ego." htmlUrl="https://chuishen.xyz/"></outline>
-    <outline text="晚夜" type="rss" xmlUrl="https://www.iczrx.cn/feed/" created="2024-07-11T00:00:00.000Z" description="做好量变的准备，促进事物的质变。" htmlUrl="https://www.iczrx.cn/"></outline>
-    <outline text="天翔TNXGの空间站" type="rss" xmlUrl="https://tnxgmoe.com/feed" created="2024-07-11T00:00:00.000Z" description="明日尚未到来，希望凝于心上" htmlUrl="https://tnxgmoe.com/"></outline>
-    <outline text="365云栈" type="rss" xmlUrl="https://blog.365sites.top/rss.xml" created="2024-07-14T00:00:00.000Z" description="初阅不明言外意，重温方觉字中情" htmlUrl="https://blog.365sites.top/"></outline>
-    <outline text="FloatSheep&apos;s Blog" type="rss" xmlUrl="https://blog.hesiy.cn/posts/index.xml" created="2024-07-24T00:00:00.000Z" description="On the other side of obstacles" htmlUrl="https://blog.hesiy.cn/"></outline>
-    <outline text="一站 - Henry的博客" type="rss" xmlUrl="https://blog.henrywhu.cn/atom.xml" created="2024-07-24T00:00:00.000Z" description="Student / Designer / Dreamchaser" htmlUrl="https://blog.henrywhu.cn/"></outline>
-    <outline text="希乐博客" type="rss" xmlUrl="https://blog.xlenco.top/atom.xml" created="2024-07-28T00:00:00.000Z" description="互联网中的静谧之地" htmlUrl="https://blog.xlenco.top/"></outline>
-    <outline text="Z次元" type="rss" xmlUrl="https://blog.ahzoo.cn/rss.xml" created="2024-08-02T00:00:00.000Z" description="探索代码的世界，追寻生活的诗篇" htmlUrl="https://blog.ahzoo.cn/"></outline>
-    <outline text="虹墨空间站" type="rss" xmlUrl="https://www.imaegoo.com/atom.xml" created="2024-08-19T00:00:00.000Z" description="虹墨空间站" htmlUrl="https://www.imaegoo.com/"></outline>
-    <outline text="DuckXu&apos;s Notebook" type="rss" xmlUrl="https://i.duckxu.com/rss.xml" created="2024-08-20T00:00:00.000Z" description="DuckXu&apos;s Internet home" htmlUrl="https://i.duckxu.com/"></outline>
-    <outline text="梦爱吃鱼" type="rss" xmlUrl="https://cdn.bsgun.cn/Hexo-static/img/favicon.ico" created="2024-08-20T00:00:00.000Z" description="但愿日子清静抬头遇见的满是柔情" htmlUrl="https://blog.bsgun.cn/"></outline>
-    <outline text="DengQN&apos;s Blog" type="rss" xmlUrl="https://dengqn.com/feed" created="2024-09-18T00:00:00.000Z" description="普通程序员" htmlUrl="https://dengqn.com/"></outline>
-    <outline text="LineXic" type="rss" xmlUrl="https://linexic.top/rss.xml" created="2024-10-02T00:00:00.000Z" description="念念不忘，必有回响" htmlUrl="https://linexic.top/"></outline>
-    <outline text="min hjemmeside" type="rss" xmlUrl="https://tinsir888.github.io/atom.xml" created="2024-10-18T00:00:00.000Z" description="Ηλύσια Πεδία" htmlUrl="https://tinsir888.github.io/"></outline>
-    <outline text="鹊楠の小窝" type="rss" xmlUrl="https://blog.quenan.cn/atom.xml" created="2024-10-22T00:00:00.000Z" description="世界那么大，我想去看看" htmlUrl="https://blog.quenan.cn/"></outline>
-    <outline text="Redish101 Blog" type="rss" xmlUrl="https://blog.redish101.top/feed" created="2024-10-27T00:00:00.000Z" description="学生，人，活的" htmlUrl="https://blog.redish101.top/"></outline>
-    <outline text="Pinpe的云端" type="rss" xmlUrl="https://blog.pinpe.top/feed/" created="2024-10-31T00:00:00.000Z" description="一个属于自己的云朵。" htmlUrl="https://pinpe.top/"></outline>
-    <outline text="浩瀚星河" type="rss" xmlUrl="https://haohanxinghe.com/atom.xml" created="2024-10-31T00:00:00.000Z" description="A Go Enthusiast" htmlUrl="https://haohanxinghe.com/"></outline>
-    <outline text="微霞" type="rss" xmlUrl="https://yuuu.org/atom.xml" created="2024-11-03T00:00:00.000Z" description="水风清，晚霞明" htmlUrl="https://yuuu.org/"></outline>
-    <outline text="一粒微尘" type="rss" xmlUrl="https://blog.667408.xyz/atom.xml" created="2024-11-07T00:00:00.000Z" description="撷光以望，纳星于瞳" htmlUrl="https://blog.667408.xyz/"></outline>
-    <outline text="Tianli" type="rss" xmlUrl="https://blog.tianli0.top/rss.xml" created="2024-12-04T00:00:00.000Z" description="自知之明是最可贵的知识！" htmlUrl="https://blog.tianli0.top/"></outline>
-    <outline text="阿呆的博客" type="rss" xmlUrl="https://adai.fun/atom.xml" created="2025-03-11T00:00:00.000Z" description="分享，学习有趣的知识" htmlUrl="https://adai.fun/"></outline>
-    <outline text="葱苓语畔" type="rss" xmlUrl="https://blog.ciraos.top/feed.xml" created="2025-03-28T00:00:00.000Z" description="Don&apos;t worry, be happy." htmlUrl="https://blog.ciraos.top/"></outline>
-    <outline text="南蛮子懋和" type="rss" xmlUrl="https://www.dao.js.cn/feed.php" created="2025-04-14T00:00:00.000Z" description="李懋和，俗名李栋梁。书法、国画爱好者，互联网安全与前端建设者。" htmlUrl="https://www.dao.js.cn/"></outline>
-    <outline text="ZLA 小站" type="rss" xmlUrl="https://zla.pub/feed.xml" created="2025-04-29T00:00:00.000Z" description="月亮不抱你，星星会落在你怀里✨🌙" htmlUrl="https://zla.pub/"></outline>
-    <outline text="竹林里有冰的博客" type="rss" xmlUrl="https://zhul.in/rss.xml" created="2025-05-03T00:00:00.000Z" description="仍然在划水的菜鸡" htmlUrl="https://zhul.in/"></outline>
-    <outline text="BiuXin" type="rss" xmlUrl="https://zhilu.biuxin.com/atom.xml" created="2025-05-09T00:00:00.000Z" description="人生的每一天，都在学习当中" htmlUrl="https://zhilu.biuxin.com/"></outline>
-    <outline text="存档点" type="rss" xmlUrl="https://blog.ykrazy.top/atom.xml" created="2025-05-20T00:00:00.000Z" description="随手存个档～" htmlUrl="https://blog.ykrazy.top/"></outline>
-    <outline text="大马数字生活-digital life my" type="rss" xmlUrl="https://digitallife.my/feed/" created="2025-06-29T00:00:00.000Z" description="本部落格是一个专门分享生活在马来西亚，有关数字生活的内容包含：生活方式 个人经历 使用体验 评测分析 数码产品 分享内容 海外消费 海外通讯等内容。" htmlUrl="https://digitallife.my/"></outline>
-    <outline text="月空人" type="rss" xmlUrl="https://whbbit.cn/atom.xml" created="2025-07-28T00:00:00.000Z" description="偶尔写些博客，发发牢骚" htmlUrl="https://whbbit.cn/"></outline>
-    <outline text="Teror的客栈" type="rss" xmlUrl="https://blog.trfox.top/atom.xml" created="2025-08-03T00:00:00.000Z" description="欢迎光临～" htmlUrl="https://blog.trfox.top/"></outline>
+    <outline text="清羽飞扬" type="rss" xmlUrl="https://blog.liushen.fun/atom.xml" created="2025-03-15T00:00:00.000Z" description="柳影曳曳，清酒孤灯，扬笔撒墨，心境如霜" htmlUrl="https://blog.liushen.fun/"></outline>
+    <outline text="Leonus" type="rss" xmlUrl="https://blog.leonus.cn/atom.xml" created="2025-04-19T00:00:00.000Z" description="进一寸有进一寸的欢喜。" htmlUrl="https://blog.leonus.cn/"></outline>
   </body>
 </opml>

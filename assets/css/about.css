@@ -92,7 +92,6 @@
     position: relative;
     padding: 1rem 2rem;
     overflow: hidden;
-    flex: 1;
 }
 
 @media screen and (min-width: 1300px) {
@@ -110,7 +109,6 @@
     background: linear-gradient(120deg, #5b27ff 0, #00d4ff 100%);
     background-size: 200%;
     min-height: 200px;
-    flex: 4;
 }
 
 #about-page .myInfoAndSayHello .title1 {

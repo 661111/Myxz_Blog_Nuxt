@@ -1,1 +1,0 @@
-import{C as s,c as r,e as n,K as o}from"./DudMyGJD.js";const t={};function c(e,a){return n(),r("p",null,[o(e.$slots,"default")])}const _=Object.assign(s(t,[["render",c]]),{__name:"ProseP"});export{_ as default};

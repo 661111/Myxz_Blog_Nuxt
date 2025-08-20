@@ -1,1 +1,0 @@
-import{C as s,c as r,e as t,K as n}from"./BJr-I846.js";const o={};function c(e,a){return t(),r("th",null,[n(e.$slots,"default")])}const _=Object.assign(s(o,[["render",c]]),{__name:"ProseTh"});export{_ as default};

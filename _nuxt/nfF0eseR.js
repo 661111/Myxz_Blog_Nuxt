@@ -1,0 +1,1 @@
+import{C as s,c as o,e as r,K as n}from"./BVAxzopp.js";const t={};function c(e,a){return r(),o("ol",null,[n(e.$slots,"default")])}const _=Object.assign(s(t,[["render",c]]),{__name:"ProseOl"});export{_ as default};

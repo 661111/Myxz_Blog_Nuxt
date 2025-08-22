@@ -1,0 +1,1 @@
+import{C as r,c as n,e as o,a9 as s}from"./EbSDaDOF.js";const t={};function a(e,c){return o(),n("strong",null,[s(e.$slots,"default")])}const _=Object.assign(r(t,[["render",a]]),{__name:"ProseStrong"});export{_ as default};

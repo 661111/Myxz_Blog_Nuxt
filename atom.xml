@@ -3,7 +3,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <id>https://www.myxz.top/</id>
   <title>莫言小栈</title>
-  <updated>2025-08-22T08:40:16.804Z</updated>
+  <updated>2025-08-22T09:01:47.191Z</updated>
   <description>莫言的博客网站，分享技术和魔改。网站界面简洁美观，涵盖了魔改、教程等多个领域，为读者提供了卓越的阅读体验。</description>
   <author>
     <name>莫言</name>
@@ -200,10 +200,10 @@
       <name>莫言</name>
     </author>
     <content type="html">
-      <![CDATA[<img src="https://sourceimage.s3.bitiful.net/img/default_cover_27.avif" /> <p>本篇文章讲述了添加模块代码并在博客的友情链接中添加模块，且使用css美化</p> <a class="view-full" href="https://www.myxz.top/2025/08/about-page" target="_blank">点击查看全文</a>]]>
+      <![CDATA[<img src="https://sourceimage.s3.bitiful.net/img/default_cover_27.avif" /> <p>近期将博客迁移至Nuxt框架时，重新搭建了「关于页面」。过程中添加了技能展示组件（skillinfo.vue），实现标签分组渲染；新建about.vue页面，整合个人信息、技能、偏好等多模块内容，并通过TS定义数据接口（about.ts/creativity.ts）。</p> <a class="view-full" href="https://www.myxz.top/2025/08/about-page" target="_blank">点击查看全文</a>]]>
     </content>
     <link href="https://www.myxz.top/2025/08/about-page"></link>
-    <summary>本篇文章讲述了添加模块代码并在博客的友情链接中添加模块，且使用css美化</summary>
+    <summary>近期将博客迁移至Nuxt框架时，重新搭建了「关于页面」。过程中添加了技能展示组件（skillinfo.vue），实现标签分组渲染；新建about.vue页面，整合个人信息、技能、偏好等多模块内容，并通过TS定义数据接口（about.ts/creativity.ts）。</summary>
     <category term="博客魔改"></category>
     <published>2025-08-22T10:00:00.000Z</published>
   </entry>

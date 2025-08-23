@@ -108,7 +108,7 @@
     color: var(--heo-white);
     background: linear-gradient(120deg, #9a79fa 0, #00d4ff 100%);
     background-size: 200%;
-    min-height: 200px;
+    min-height: 175px;
 }
 
 #about-page .myInfoAndSayHello .title1 {
@@ -216,7 +216,6 @@
     align-items: flex-start;
     flex-direction: column;
     width: 100%;
-    min-height: 450px;
 }
 
 .author-content-item.skills .skills-style-group {
@@ -252,9 +251,9 @@
 }
 
 .tags-group-icon {
-    width: 120px;
-    height: 120px;
-    border-radius: 30px;
+    width: 100px;
+    height: 100px;
+    border-radius: 20px;
     position: relative;
 }
 
@@ -378,10 +377,10 @@
 
 /* technology */
 .author-content-item.like-technology {
-    background: url(https://p.zhheo.com/1Z29e0210….png!cover) no-repeat;
+    /* background: url(https://p.zhheo.com/1Z29e0210….png!cover) no-repeat; */
     background-size: cover;
     min-height: 230px;
-    color: var(--heo-white);
+    /* color: var(--heo-white); */
 }
 
 .author-content-item .author-content-item-tips {
@@ -415,7 +414,7 @@
 
 /* game */
 .author-content-item.game {
-    background: url(https://p.zhheo.com/gkGHlM2499088….png!cover) no-repeat top;
+    background: url(https://bcjyn0fc8o7wifyp.public.blob.vercel-storage.com/img/1567427018126688.jpg) no-repeat top;
     background-size: cover;
     min-height: 300px;
     overflow: hidden;

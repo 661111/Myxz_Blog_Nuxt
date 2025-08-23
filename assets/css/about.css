@@ -106,7 +106,7 @@
     flex-direction: column;
     justify-content: center;
     color: var(--heo-white);
-    background: linear-gradient(120deg, #5b27ff 0, #00d4ff 100%);
+    background: linear-gradient(120deg, #9a79fa 0, #00d4ff 100%);
     background-size: 200%;
     min-height: 200px;
 }
@@ -359,12 +359,10 @@
     font-size: 36px;
     font-weight: 700;
     line-height: 1.1;
-    display: flex
-;
+    display: flex;
     align-items: flex-start;
     flex-direction: column;
     justify-content: center;
-    width: 39%;
 }
 
 .author-content-item .author-content-item-tips {
@@ -446,6 +444,19 @@
     }
 }
 
+@keyframes  floating {
+    0% {
+        transform: translate(0, -4px);
+    }
+
+    50% {
+        transform: translate(0, 4px);
+    }
+
+    100% {
+        transform: translate(0, -4px);
+    }
+}
 /* 移动端页面 */
 @media screen and (max-width: 768px) {
     .author-content {
@@ -461,9 +472,9 @@
     }
 }
 
-/* hover */
+/* hover
 @media (hover: hover) {
     .author-content-item.skills:hover .skills-style-group .skills-list {
         opacity: 1;
     }
-}
+} */

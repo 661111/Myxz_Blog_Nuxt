@@ -1,1 +1,0 @@
-import{C as s,c as r,e as n,a9 as o}from"./ChiuXHhs.js";const t={};function a(e,c){return n(),r("ul",null,[o(e.$slots,"default")])}const _=Object.assign(s(t,[["render",a]]),{__name:"ProseUl"});export{_ as default};

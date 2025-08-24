@@ -444,6 +444,24 @@
     margin-top: .5rem;
     vertical-align: middle;
 }
+
+/* 社交 */
+.author-content-item.social{
+    display: flex;
+    -webkit-box-orient: horizontal;
+    flex-direction: row;
+    -webkit-box-pack: start;
+    justify-content: flex-start;
+    margin-left: 20px;
+}
+.author-content-item.social a {
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    height: 80px;
+    width: 80px;
+    border-radius: 12px;
+}
 /* 动画组件 */
 @keyframes rowleft {
     from {
@@ -491,7 +509,12 @@
     #about-page .author-tag-left, #about-page .author-tag-right {
         display: none;
     }
+    .author-content-item.skills {
+        max-width: 100%!important;
+    }
 }
+
+
 
 /* hover
 @media (hover: hover) {

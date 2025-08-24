@@ -439,7 +439,11 @@
     font-size: 1.875rem;
     line-height: 2.25rem;
 }
-
+.author-content-item-content {
+    margin-bottom: 1rem;
+    margin-top: .5rem;
+    vertical-align: middle;
+}
 /* 动画组件 */
 @keyframes rowleft {
     from {

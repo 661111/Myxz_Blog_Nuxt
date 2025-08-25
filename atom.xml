@@ -3,7 +3,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <id>https://www.myxz.top/</id>
   <title>莫言小栈</title>
-  <updated>2025-08-25T08:08:27.032Z</updated>
+  <updated>2025-08-25T08:17:18.973Z</updated>
   <description>莫言的博客网站，分享技术和魔改。网站界面简洁美观，涵盖了魔改、教程等多个领域，为读者提供了卓越的阅读体验。</description>
   <author>
     <name>莫言</name>
@@ -14,8 +14,8 @@
   <link href="https://www.myxz.top/" rel="alternate"></link>
   <language>zh-CN</language>
   <generator uri="https://github.com/L33Z22L11/blog-v3" version="3.3.2">Zhilu Blog</generator>
-  <icon>https://www.myxz.top/avatar.avif</icon>
-  <logo>https://www.myxz.top/avatar.avif</logo>
+  <icon>https://www.myxz.top/assets/img/link/avatar.avif</icon>
+  <logo>https://www.myxz.top/assets/img/link/avatar.avif</logo>
   <rights>© 2025 莫言</rights>
   <subtitle>生生不息，永无止息。</subtitle>
   <entry>

@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <opml version="2.0">
   <head>
-    <title>莫言小栈的友链订阅</title>
+    <title>柒渊阁的友链订阅</title>
     <dateCreated>2020-07-19T00:00:00.000Z</dateCreated>
-    <dateModified>2025-08-25T08:57:19.827Z</dateModified>
-    <ownerName>莫言</ownerName>
+    <dateModified>2025-08-25T09:43:45.445Z</dateModified>
+    <ownerName>柒渊</ownerName>
     <ownerEmail>3227988255@qq.com</ownerEmail>
     <ownerId>https://www.myxz.top/</ownerId>
     <docs>https://opml.org/spec2.opml</docs>
   </head>
   <body>
-    <outline text="莫言小栈" type="rss" xmlUrl="https://www.myxz.top/atom.xml" created="2020-07-19T00:00:00.000Z" description="生生不息，永无止息。" htmlUrl="https://www.myxz.top/"></outline>
+    <outline text="柒渊阁" type="rss" xmlUrl="https://www.myxz.top/atom.xml" created="2020-07-19T00:00:00.000Z" description="柒上月日，无铭之阁" htmlUrl="https://www.myxz.top/"></outline>
     <outline text="风记星辰" type="rss" xmlUrl="https://www.thyuu.com/feed" created="2024-02-01T00:00:00.000Z" description="热爱你来过的每度温暖" htmlUrl="https://thyuu.com/"></outline>
     <outline text="静かな森" type="rss" xmlUrl="https://innei.in/feed" created="2024-02-13T00:00:00.000Z" description="致虚极，守静笃。" htmlUrl="https://innei.in/"></outline>
     <outline text="Randwind&apos;s Blog" type="rss" xmlUrl="https://randwind.com/feed.xml" created="2024-02-03T00:00:00.000Z" description="你可以期待太阳从东方升起，而风却随心所欲地从四面八方吹来。" htmlUrl="https://www.randwind.com/"></outline>

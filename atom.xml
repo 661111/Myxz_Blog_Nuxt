@@ -2,11 +2,11 @@
 <?xml-stylesheet type="text/xsl" href="/assets/atom.xsl"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
   <id>https://www.myxz.top/</id>
-  <title>莫言小栈</title>
-  <updated>2025-08-25T08:57:19.827Z</updated>
+  <title>柒渊阁</title>
+  <updated>2025-08-25T09:43:45.445Z</updated>
   <description>莫言的博客网站，分享技术和魔改。网站界面简洁美观，涵盖了魔改、教程等多个领域，为读者提供了卓越的阅读体验。</description>
   <author>
-    <name>莫言</name>
+    <name>柒渊</name>
     <email>3227988255@qq.com</email>
     <uri>https://www.myxz.top/</uri>
   </author>
@@ -16,14 +16,14 @@
   <generator uri="https://github.com/L33Z22L11/blog-v3" version="3.3.2">Zhilu Blog</generator>
   <icon>https://sourceimage.s3.bitiful.net/myxz.avif</icon>
   <logo>https://sourceimage.s3.bitiful.net/myxz.avif</logo>
-  <rights>© 2025 莫言</rights>
-  <subtitle>生生不息，永无止息。</subtitle>
+  <rights>© 2025 柒渊</rights>
+  <subtitle>柒上月日，无铭之阁</subtitle>
   <entry>
     <id>https://www.myxz.top/2025/08/blog-pintai-or-weilai</id>
     <title>我的博客平台变迁与未来计划</title>
     <updated>2025-08-17T10:56:09.000Z</updated>
     <author>
-      <name>莫言</name>
+      <name>柒渊</name>
     </author>
     <content type="html">
       <![CDATA[<img src="https://sourceimage.s3.bitiful.net/img/default_cover_50.avif" /> <p>2019年起，笔者先后用Gridea、Hexo、Wordpress、重用Hexo、Nuxt搭建博客；后续计划含旧站恢复改名、服务迁移、多服务器部署及动静态分离。</p> <a class="view-full" href="https://www.myxz.top/2025/08/blog-pintai-or-weilai" target="_blank">点击查看全文</a>]]>
@@ -38,7 +38,7 @@
     <title>给页面加上所属分类和标签以及美化</title>
     <updated>2025-03-24T10:56:09.000Z</updated>
     <author>
-      <name>莫言</name>
+      <name>柒渊</name>
     </author>
     <content type="html">
       <![CDATA[<img src="https://sourceimage.s3.bitiful.net/img/default_cover_37.avif" /> <p>这篇简述如何给自己博客中的归档、分类、标签页三个页面的文章卡片加上所属分类和标签，并说明了具体的实践环境，以最大限度的方式进行CSS美化。但也请注意要经常备份以免出现大量错误。</p> <a class="view-full" href="https://www.myxz.top/2025/03/archive-category-label" target="_blank">点击查看全文</a>]]>
@@ -53,7 +53,7 @@
     <title>美化文章卡片显示数字</title>
     <updated>2025-03-06T18:00:00.000Z</updated>
     <author>
-      <name>莫言</name>
+      <name>柒渊</name>
     </author>
     <content type="html">
       <![CDATA[<img src="https://sourceimage.s3.bitiful.net/img/default_cover_29.avif" /> <p>这篇文章讲述如何给自己博客中的归档、分类、标签页三个页面的文章卡片添加数字来进行编排，以及对添加的数字进行CSS美化，但也请注意要经常备份以免出现错误。</p> <a class="view-full" href="https://www.myxz.top/2025/03/artice-sort" target="_blank">点击查看全文</a>]]>
@@ -68,7 +68,7 @@
     <title>轻笑风格背景</title>
     <updated>2025-03-06T18:00:00.000Z</updated>
     <author>
-      <name>莫言</name>
+      <name>柒渊</name>
     </author>
     <content type="html">
       <![CDATA[<img src="https://sourceimage.s3.bitiful.net/img/default_cover_21.avif" /> <p>这篇文章讲述如何在页面中添加模块以及使用CSS添加颜色以及背景图片。</p> <a class="view-full" href="https://www.myxz.top/2025/03/backgroud-qcqx" target="_blank">点击查看全文</a>]]>
@@ -83,7 +83,7 @@
     <title>卡片美化</title>
     <updated>2025-03-06T18:00:00.000Z</updated>
     <author>
-      <name>莫言</name>
+      <name>柒渊</name>
     </author>
     <content type="html">
       <![CDATA[<img src="https://sourceimage.s3.bitiful.net/img/default_cover_29.avif" /> <p>这篇文章讲述了如何美化博客侧边栏，并调整各个卡片内容的样式表。</p> <a class="view-full" href="https://www.myxz.top/2025/03/sidebar-qcqx" target="_blank">点击查看全文</a>]]>
@@ -98,7 +98,7 @@
     <title>功能美化</title>
     <updated>2025-03-06T18:00:00.000Z</updated>
     <author>
-      <name>莫言</name>
+      <name>柒渊</name>
     </author>
     <content type="html">
       <![CDATA[<img src="https://sourceimage.s3.bitiful.net/img/default_cover_45.avif" /> <p>从零开始魔改butterfly</p> <a class="view-full" href="https://www.myxz.top/2025/03/small-function-qcqx" target="_blank">点击查看全文</a>]]>
@@ -113,7 +113,7 @@
     <title>Banner随机文章展示(轻笑同款)</title>
     <updated>2025-03-05T12:09:00.000Z</updated>
     <author>
-      <name>莫言</name>
+      <name>柒渊</name>
     </author>
     <content type="html">
       <![CDATA[<img src="https://sourceimage.s3.bitiful.net/img/default_cover_10.avif" /> <p>本文依照轻笑的部分内容，参考首页banner写法以及对首页banner添加鼠标滚动以及移动端滑动，通过CSS样式进行美化整个首页banner，此篇文章重点讲述了如何解决轻笑给的js内容在首页会出现不断加载的问题。</p> <a class="view-full" href="https://www.myxz.top/2025/03/banner-random-post" target="_blank">点击查看全文</a>]]>
@@ -127,7 +127,7 @@
     <id>https://www.myxz.top/2023/2023artitalk</id>
     <title>2023年artalk部署方式</title>
     <author>
-      <name>莫言</name>
+      <name>柒渊</name>
     </author>
     <content type="html">
       <![CDATA[<img src="https://sourceimage.s3.bitiful.net/img/default_cover_12.avif" /> <p>artalk部署方式：</p> <a class="view-full" href="https://www.myxz.top/2023/2023artitalk" target="_blank">点击查看全文</a>]]>
@@ -141,7 +141,7 @@
     <id>https://www.myxz.top/2023/2023bbtalk</id>
     <title>2023年bbtalk部署方式</title>
     <author>
-      <name>莫言</name>
+      <name>柒渊</name>
     </author>
     <content type="html">
       <![CDATA[<img src="https://sourceimage.s3.bitiful.net/img/default_cover_13.avif" /> <p>bbtalk部署方式：</p> <a class="view-full" href="https://www.myxz.top/2023/2023bbtalk" target="_blank">点击查看全文</a>]]>
@@ -155,7 +155,7 @@
     <id>https://www.myxz.top/2025/02/light-laugh-bottom-beautification-(remastered-icon-version)</id>
     <title>轻笑底部美化</title>
     <author>
-      <name>莫言</name>
+      <name>柒渊</name>
     </author>
     <content type="html">
       <![CDATA[<img src="https://sourceimage.s3.bitiful.net/img/default_cover_15.avif" /> <p>本篇文章讲述了如何在博客的底部模块进行魔改添加图标、来源图片、返回顶部以及建站时间，对建站时间进行js内联到模块中。</p> <a class="view-full" href="https://www.myxz.top/2025/02/light-laugh-bottom-beautification-(remastered-icon-version)" target="_blank">点击查看全文</a>]]>
@@ -169,7 +169,7 @@
     <id>https://www.myxz.top/2025/02/navigation-bar-(beautified-version)</id>
     <title>butterfly导航栏修改方案</title>
     <author>
-      <name>莫言</name>
+      <name>柒渊</name>
     </author>
     <content type="html">
       <![CDATA[<img src="https://sourceimage.s3.bitiful.net/img/default_cover_1.avif" /> <p>这篇文章讲述在博客中对导航栏进行修改，并添加多个产品页面地址，且采用安知鱼的导航栏CSS样式表。</p> <a class="view-full" href="https://www.myxz.top/2025/02/navigation-bar-(beautified-version)" target="_blank">点击查看全文</a>]]>
@@ -183,7 +183,7 @@
     <id>https://www.myxz.top/2025/03/about-this-site-page</id>
     <title>关于页面美化</title>
     <author>
-      <name>莫言</name>
+      <name>柒渊</name>
     </author>
     <content type="html">
       <![CDATA[<img src="https://sourceimage.s3.bitiful.net/img/default_cover_11.avif" /> <p>本文章以安知鱼的页面文件为模版进行大幅度修改，仿轻笑的关于页面的模块摆放以及调整CSS样式来进行细致魔改。</p> <a class="view-full" href="https://www.myxz.top/2025/03/about-this-site-page" target="_blank">点击查看全文</a>]]>
@@ -197,7 +197,7 @@
     <id>https://www.myxz.top/2025/08/about-page</id>
     <title>添加关于页面</title>
     <author>
-      <name>莫言</name>
+      <name>柒渊</name>
     </author>
     <content type="html">
       <![CDATA[<img src="https://sourceimage.s3.bitiful.net/img/default_cover_27.avif" /> <p>近期将博客迁移至Nuxt框架时，重新搭建了「关于页面」。过程中添加了技能展示组件（skillinfo.vue），实现标签分组渲染；新建about.vue页面，整合个人信息、技能、偏好等多模块内容，并通过TS定义数据接口（about.ts/creativity.ts）。</p> <a class="view-full" href="https://www.myxz.top/2025/08/about-page" target="_blank">点击查看全文</a>]]>
@@ -211,7 +211,7 @@
     <id>https://www.myxz.top/2025/08/link-page-banner</id>
     <title>在友链页面添加滚动头像banner</title>
     <author>
-      <name>莫言</name>
+      <name>柒渊</name>
     </author>
     <content type="html">
       <![CDATA[<img src="https://sourceimage.s3.bitiful.net/img/default_cover_25.avif" /> <p>本篇文章讲述了添加模块代码并在博客的友情链接中添加模块，且使用css美化</p> <a class="view-full" href="https://www.myxz.top/2025/08/link-page-banner" target="_blank">点击查看全文</a>]]>

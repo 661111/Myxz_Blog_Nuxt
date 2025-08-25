@@ -452,15 +452,16 @@
     flex-direction: row;
     -webkit-box-pack: start;
     justify-content: flex-start;
-    margin-left: 20px;
+    max-width: 39%;
 }
 .author-content-item.social a {
     display: flex;
     -webkit-box-align: center;
     align-items: center;
-    height: 80px;
-    width: 80px;
+    height: 60px;
+    width: 60px;
     border-radius: 12px;
+    background: rgb(153, 169, 191);
 }
 /* 动画组件 */
 @keyframes rowleft {
@@ -510,6 +511,9 @@
         display: none;
     }
     .author-content-item.skills {
+        max-width: 100%!important;
+    }
+    .author-content-item.social{
         max-width: 100%!important;
     }
 }

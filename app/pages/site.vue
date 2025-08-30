@@ -19,8 +19,8 @@ const activeTab = ref(0); // 默认激活第一个标签页
             <button v-for="(tab, index) in siteLinkItems" :key="tab.name" @click="activeTab = index" :class="{ 'active': activeTab === index }">
                 {{ tab.name }}
             </button>
-            <span class="count-text" v-for="(count, index) in siteLinkItems" :key="index">
-                {{ count.name[activeTab] }}{{ count?.itemnumber[activeTab] ?? 0 }}个站点
+            <span class="count-text" v-for="(count, index) in siteLinkItems[activeTab]" :key="index">
+                {{ count.name }}{{ count?.itemnumber ?? 0 }}个站点
             </span>
         </div>
 

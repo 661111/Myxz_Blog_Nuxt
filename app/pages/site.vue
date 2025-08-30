@@ -20,7 +20,7 @@ const activeTab = ref(0); // 默认激活第一个标签页
                 {{ tab.name }}
             </button>
             <span class="count-text" v-for="(count, index) in siteLinkItems" :key="index">
-                {{ count.name[activeTab] }}{{ count?.itemnumber ?? 0 }}部游戏
+                {{ count.name[activeTab] }}{{ count?.itemnumber[activeTab] ?? 0 }}个站点
             </span>
         </div>
 

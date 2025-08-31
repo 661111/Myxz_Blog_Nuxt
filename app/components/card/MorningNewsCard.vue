@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { MorningNewsItem } from '../../types/MorningNews.ts'
+import { MorningNewsItem } from '../../types/MorningNews'
 
 const props = defineProps<{
     MorningNewsCollectionItem: MorningNewsItem

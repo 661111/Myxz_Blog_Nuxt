@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { indexOf } from 'echarts/types/src/export/api/util.js';
 import type { MorningNewsItem } from '../../types/MorningNews'
 
 const props = defineProps<{
@@ -21,7 +20,7 @@ function handleClick() {
         </div>
         <div class="body">
             <p v-for="(news, index) in MorningNewsCollectionItem.data" :key="index">
-            {{ news.news }}
+                {{ news.news }}
             </p>
         </div>
     </div>

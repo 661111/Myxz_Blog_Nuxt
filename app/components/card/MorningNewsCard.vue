@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { MorningNewsItem } from '../../types/MorningNews'
+import type { MorningNewsItem } from '../../types/MorningNews'
 
 const props = defineProps<{
     MorningNewsCollectionItem: MorningNewsItem
@@ -14,12 +14,12 @@ function handleClick() {
 <template>
     <div class="MorningNewsContent" @click="handleClick">
         <div class="head">
-            <h2 v-for="(item, index) in props.MorningNewsCollectionItem.data" :key="index">
+            <h2 v-for="(item, index) in MorningNewsCollectionItem.data" :key="index">
                 {{ item.date }}
             </h2>
         </div>
         <div class="body">
-            {{ MorningNewsItem.data.news }}
+            {{ MorningNewsCollectionItem.data.news }}
         </div>
     </div>
 </template>

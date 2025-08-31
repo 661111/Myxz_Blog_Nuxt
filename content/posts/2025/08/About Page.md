@@ -1,6 +1,6 @@
 ---
 title: 添加关于页面
-description: 近期将博客迁移至Nuxt框架时，重新搭建了「关于页面」。过程中添加了技能展示组件（skillinfo.vue），实现标签分组渲染；新建about.vue页面，整合个人信息、技能、偏好等多模块内容，并通过TS定义数据接口（about.ts/creativity.ts）。
+description: 近期将博客迁移至Nuxt框架时，重新搭建了「关于页面」。过程中添加了技能展示组件（skillinfo.vue），实现标签分组渲染；新建about.vue页面，整合个人信息、技能、偏好等多模块内容，并通过ts定义数据接口（about.ts/creativity.ts）。
 date: 2025-08-22 10:00
 update: 2025-08-22 20:49
 image: https://sourceimage.s3.bitiful.net/img/default_cover_27.avif
@@ -755,8 +755,8 @@ import Maxim from '../components/about/maxim.vue'
 import MyInfoAndSayHello from '../components/about/myInfoAndSayHello.vue'
 import Single from '../components/about/single.vue'
 
-const layoutStore = useLayoutStore()
-layoutStore.setAside(['blog-stats', 'blog-tech', 'blog-log'])
+const layoutstore = useLayoutstore()
+layoutstore.setAside(['blog-stats', 'blog-tech', 'blog-log'])
 
 // 动态加载外部 JS 脚本
   const loadScript = (url: string, callback?: () => void) => {
@@ -1073,7 +1073,7 @@ layoutStore.setAside(['blog-stats', 'blog-tech', 'blog-log'])
 
 ## 添加ts数据
 
-::tab{:tabs='["页面TS数据", "组件TS数据"]'}
+::tab{:tabs='["页面ts数据", "组件ts数据"]'}
 #tab1
 ::alert{type="warning"}
 #title
@@ -1083,7 +1083,7 @@ layoutStore.setAside(['blog-stats', 'blog-tech', 'blog-log'])
 ::
 
 在[BlogRoot:]/app/ 中添加 about.ts：
-```TS [about.ts] warp
+```ts [about.ts] warp
 export interface aboutConnect {
     author: author[]; //头像数据
     large: string; //标题数据
@@ -1248,7 +1248,7 @@ export const aboutPage: aboutConnect[] = [
 #tab2
 在[BlogRoot:]/app/ 中添加 creativity.ts：
 
-```TS [creativity.ts] warp
+```ts [creativity.ts] warp
 // 定义外层分类的类型接口
 export interface CreativityData {
   class_name: string;       // 分类名称

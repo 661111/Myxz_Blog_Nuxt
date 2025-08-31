@@ -10,16 +10,16 @@ recommend: true
 ---
 
 ## 前言
-由于本人之前在Hexo博客中有着许多的魔改内容，正巧迁移出来做成魔改教程，并且这篇文章适用于Vue
+由于本人之前在Hexo博客中有着许多的魔改内容，正巧迁移出来做成魔改教程，并且这篇文章适用于vue
 
-## 添加Vue模块
+## 添加vue模块
 
 ::alert{type="warning"}
 #title
 注意事项
 #default
 1. 请在vue中查找修改代码
-``` Vue
+``` vue
 const maxShowPairs = 8;
 if (path.startsWith('')) return `${domain}${path}`;
 flink: '/assets/images/error-flink.png'
@@ -28,7 +28,7 @@ flink: '/assets/images/error-flink.png'
 
 在 [Blogroot:]/app/components 中 添加 **FlinkTop.vue**：
 
-``` Vue [FlinkTop.vue] wrap
+``` vue [FlinkTop.vue] wrap
 <!-- components/FlinkTop.vue -->
 <script lang="ts" setup>
 import { ref, computed, onMounted } from 'vue';
@@ -199,9 +199,9 @@ const processedLinks = computed(() => {
 </template>
 ```
 
-## 修改Vue页面
+## 修改vue页面
 在 [Blogroot:]/app/pages/link.vue中添加以下代码：
-``` Vue [link.vue] wrap
+``` vue [link.vue] wrap
     <header class="link-reminder">
         <div class="content">
             <p><Icon name="ph:newspaper-clipping-bold" /> 我会通过订阅源阅读友链文章。</p>

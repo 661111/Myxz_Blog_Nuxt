@@ -20,9 +20,13 @@ caption: 关于页面展示
 ---
 ::
 
-## 添加Vue模块
-在 [BlogRoot:]/app/components/ 中添加 skillinfo.vue：
-``` VUE [skillinfo.vue] wrap
+## 添加vue模块
+
+::tab{:tabs='["skillinfo.vue", "aboutsitetips.vue", "author.vue", "game.vue", "maxim.vue", "myInfoAndSayHello.vue", "single.vue", "social.vue", "technology.vue"]'}
+
+#tab1
+在 [BlogRoot:]/app/components/about 中添加 skillinfo.vue：
+``` vue [skillinfo.vue] wrap
 <script setup lang="ts">
 import { computed } from 'vue';
 // 导入外部数据
@@ -125,7 +129,608 @@ const skillTagGroups = computed(() => {
 </template>
 ```
 
-## 添加Vue页面
+#tab2
+在 [BlogRoot:]/app/components/about 中添加 aboutsitetips.vue：
+``` vue [aboutsitetips.vue] warp
+<script setup lang="ts">
+import { about } from '../../about'
+</script>
+
+<template>
+    <div class="aboutsiteTips author-content-item" v-for="(myinfo, index) in about" :key="index">
+        <div v-for="(info, index) in myinfo.myinfo" :key="index">
+            <div v-for="card in info.card" :key="card.tips">
+                <div class="author-content-item-tips">
+                    {{ card.tips }}
+                </div>
+                <h2>
+                    {{ card.conect1 }}
+                    <br />
+                    {{ card.conect2 }}
+                    <span class="inline-word">
+                        {{ card.inlineword }}
+                    </span>
+                    <div class="mask" v-for="mask in card.mask" :key="mask.firstTips">
+                        <span class="first-tips">
+                            {{ mask.firstTips }}
+                        </span>
+                        <span>
+                            {{ mask.span }}
+                        </span>
+                        <span data-up="data-up">
+                            {{ mask.up }}
+                        </span>
+                        <span data-show="data-show">
+                            {{ mask.show }}
+                        </span>
+                    </div>
+                </h2>
+            </div>
+        </div>
+    </div>
+</template>
+
+<style lang="css" scoped>
+/* aboutsiteTips */
+.author-content-item.aboutsiteTips {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    flex: 3;
+}
+
+.author-content-item .author-content-item-tips {
+    opacity: .8;
+    font-size: .6rem;
+    margin-bottom: .5rem;
+}
+
+.aboutsiteTips h2 {
+    margin-right: auto;
+    font-size: 36px;
+    font-family: Helvetica;
+    line-height: 1.06;
+    letter-spacing: -.02em;
+    color: var(--heo-fontcolor);
+    margin-top: 0;
+}
+
+.aboutsiteTips .mask {
+    height: 36px;
+    position: relative;
+    overflow: hidden;
+    margin-top: 4px;
+}
+
+.aboutsiteTips .mask span {
+    display: block;
+    box-sizing: border-box;
+    position: absolute;
+    top: 36px;
+    padding-bottom: var(--offset);
+    background-size: 100% 100%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-repeat: no-repeat
+}
+
+.aboutsiteTips .mask span[data-show] {
+    transform: translateY(-100%);
+    transition: .5s transform ease-in-out
+}
+
+.aboutsiteTips .mask span[data-up] {
+    transform: translateY(-200%);
+    transition:.5s transform ease-in-out;
+}
+
+.aboutsiteTips .mask span:nth-child(1) {
+    background-image: linear-gradient(45deg,#0ecffe 50%,#07a6f1)
+}
+
+.aboutsiteTips .mask span:nth-child(2) {
+    background-image: linear-gradient(45deg,#18e198 50%,#0ec15d)
+}
+
+.aboutsiteTips .mask span:nth-child(3) {
+    background-image: linear-gradient(45deg,#8a7cfb 50%,#633e9c)
+}
+
+.aboutsiteTips .mask span:nth-child(4) {
+    background-image: linear-gradient(45deg,#fa7671 50%,#f45f7f)
+}
+</style>
+```
+
+#tab3
+在 [BlogRoot:]/app/components/about 中添加 author.vue：
+``` vue [author.vue] warp
+<script setup lang="ts">
+import { about } from '../../about'
+
+const appConfig = useAppConfig()
+</script>
+
+<template>
+    <div class="author-main" v-for="(aboutItem, aboutIndex) in about" :key="aboutIndex">
+        <div id="author-main" v-for="(author, authorIndex) in aboutItem.author":key="authorIndex">
+            <div class="author-tag-left" v-for="left in author.left" :key="left.tag1">
+                <span class="author-tag">{{ left.tag1 }}</span>
+                <span class="author-tag">{{ left.tag2 }}</span>
+                <span class="author-tag">{{ left.tag3 }}</span>
+                <span class="author-tag">{{ left.tag4 }}</span>
+            </div>
+            <NuxtImg :src="appConfig.header.avatarFrame" class="avatarFrame" alt="头像框占位"/>
+            <div class="author-box" style="z-index:0">
+                <div class="author-img">
+                    <img class="no-lightbox" :src="author.logo" style="width: 180px;">
+                </div>
+            </div>
+            <div class="author-tag-right" v-for="right in author.right" :key="right.tag1">
+                <span class="author-tag">{{ right.tag1 }}</span>
+                <span class="author-tag">{{ right.tag2 }}</span>
+                <span class="author-tag">{{ right.tag3 }}</span>
+                <span class="author-tag">{{ right.tag4 }}</span>
+            </div>
+        </div>
+    </div>
+</template>
+
+<style lang="css" scoped>
+.avatarFrame {
+    position: absolute;
+    top: -18px;
+    transform: scale(1.3);
+    width: 180px;
+    z-index: 1;
+}
+/* author */
+#author-main {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: box;
+    display: flex;
+    -webkit-box-align: center;
+    -moz-box-align: center;
+    -o-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -moz-box-pack: center;
+    -o-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    margin: 0 0 16px 0;
+    user-select: none;
+}
+.author-box {
+    position: relative;
+    width: 180px;
+    height: 180px;
+    background: rgba(253, 253, 253, .8);
+    border-radius: 50%;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.author-box span {
+    position: absolute;
+    inset: 5px;
+    border-radius: 50%;
+    background: rgba(253, 253, 253, .8);
+    z-index: 1;
+}
+
+.author-info {
+    display: flex;
+    align-items: center;
+    margin: 0 0 16px 0;
+}
+
+.author-tag-left {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    margin-right: 18px;
+}
+
+.author-tag-left .author-tag:first-child, .author-tag-left .author-tag:last-child {
+    margin-right: -16px;
+}
+.author-tag-right {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-left: 18px;
+}
+.author-tag:nth-child(1) {
+    animation-delay: 0s;
+}
+.author-tag:nth-child(2) {
+    animation-delay: .6s;
+}
+.author-tag:nth-child(3) {
+    animation-delay: 1.2s;
+}
+.author-tag:nth-child(4) {
+    animation-delay: 1.8s;
+}
+.author-tag {
+    transform: translate(0, -4px);
+    padding: 1px 8px;
+    background: var(--heo-card-bg);
+    border: var(--style-border-always);
+    border-radius: 40px;
+    margin-top: 6px;
+    font-size: 14px;
+    font-weight: 700;
+    box-shadow: var(--heo-shadow-lightblack);
+    animation: 6s ease-in-out 0s infinite normal none running floating;
+}
+.author-img {
+    margin: 0 30px;
+    border-radius: 50%;
+    width: 180px;
+    height: 180px;
+    position: relative;
+    background: var(--heo-secondbg);
+    user-select: none;
+    transition: .3s;
+}
+.author-img #lottie_avatar {
+    border-radius: 200px;
+    overflow: hidden;
+    width: 180px;
+    height: 180px;
+}
+</style>
+```
+
+#tab4
+在 [BlogRoot:]/app/components/about 中添加 game.vue：
+``` vue [game.vue] warp
+<script setup lang="ts">
+import { about } from '../../about'
+</script>
+
+<template>
+    <div class="author-content-item game" v-for="(gameItem, index) in about" :key="index" style="width: 49%;">
+        <div v-for="game in gameItem.game" :key="game.tip">
+            <div class="card-content">
+                <div class="author-content-item-tips">
+                    {{ game.tip }}
+                </div>
+                <span class="author-content-item-title">
+                    {{ game.title }}
+                </span>
+                <div class="content-bottom">
+                    <!-- <div class="icon-group">
+                        <div class="loading-bar" role="presentation" aria-hidden="true">
+                            <img class="no-lightbox" :src="game.image" alt="Loading..." longdesc="https://ys.mihoyo.com/main/" />
+                        </div>
+                    </div> -->
+                    <div class="tips game-yuanshen-uid">
+                        {{ game.uid }}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</template>
+
+<style lang="css" scoped>
+/* game */
+.author-content-item.game {
+    background: url(https://bcjyn0fc8o7wifyp.public.blob.vercel-storage.com/img/1567427018126688.jpg) no-repeat top;
+    background-size: cover;
+    min-height: 300px;
+    overflow: hidden;
+    color: var(--heo-white);
+    width: 59%;
+}
+</style>
+```
+
+#tab5
+在 [BlogRoot:]/app/components/about 中添加 maxim.vue：
+``` vue [maxim.vue] warp
+<script setup lang="ts">
+import { about } from '../../about'
+</script>
+
+<template>
+    <div class="author-content-item maxim" v-for="(maximItem, index) in about" :key="index">
+        <div v-for="maxim in maximItem.maxim" :key="maxim.tip">
+            <div class="author-content-item-tips">
+                {{ maxim.tip }}
+            </div>
+            <span class="maxim-title">
+                <span style="opacity:.6;margin-bottom:8px">
+                    {{ maxim.title1 }}
+                </span>
+                <span>
+                    {{ maxim.title2 }}
+                </span>
+            </span>
+        </div>
+    </div>
+</template>
+
+<style lang="css" scoped>
+/* maxim */
+.author-content-item.maxim {
+    font-size: 36px;
+    font-weight: 700;
+    line-height: 1.1;
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.author-content-item .author-content-item-tips {
+    opacity: .8;
+    font-size: .6rem;
+    margin-bottom: .5rem;
+}
+
+.author-content-item.maxim .maxim-title {
+    display: flex;
+    flex-direction: column;
+}
+</style>
+```
+
+#tab6
+在 [BlogRoot:]/app/components/about 中添加 myInfoAndSayHello.vue：
+``` vue [myInfoAndSayHello.vue] wrap
+<script setup lang="ts">
+import { about } from '../../about'
+</script>
+
+<template>
+    <div class="author-content-item myInfoAndSayHello" v-for="(myinfo, index) in about" :key="index" style="text-align: center; width: 100%">
+        <div v-for="info in myinfo.myinfo" :key="info.title1">
+            <div class="title1">
+                {{ info.title1 }}
+            </div>
+            <div class="title2">
+                {{ info.title2 }}
+                <span class="inline-word">
+                    {{ info.inlineword1 }}
+                </span>
+            </div>
+            <div class="title1">
+                {{ info.title3 }}
+                <span class="inline-word">
+                    {{ info.inlineword2 }}
+                </span>
+            </div>
+        </div>
+    </div>
+</template>
+
+<style lang="css" scoped>
+/* myInfoAndSayHello */
+#about-page .myInfoAndSayHello {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: var(--heo-white);
+    background: linear-gradient(120deg, #9a79fa 0, #00d4ff 100%);
+    background-size: 200%;
+    min-height: 175px;
+}
+
+#about-page .myInfoAndSayHello .title1 {
+    opacity: .8;
+    line-height: 1.3;
+}
+
+#about-page .myInfoAndSayHello .title2 {
+    font-size: 36px;
+    font-weight: 700;
+    line-height: 1.1;
+    margin: .5rem 0;
+}
+
+.inline-word {
+    word-break: keep-all;
+    white-space: nowrap;
+}
+
+#about-page .myInfoAndSayHello .title1 {
+    opacity: .8;
+    line-height: 1.3;
+}
+
+.inline-word {
+    word-break: keep-all;
+    white-space: nowrap;
+}
+</style>
+```
+
+#tab7
+在 [BlogRoot:]/app/components/about 中添加 ：
+``` vue [single.vue] wrap
+<script setup lang="ts">
+import { about } from '../../about'
+const { data: singlePost } = await useAsyncData('/about', () => queryCollection('content').path('/about').first())
+</script>
+
+<template>
+    <div class="create-site-post author-content-item single" v-for="(singleItem, index) in about" :key="index" style="width: 100%">
+        <div v-for="single in singleItem.single" :key="single.tip">
+            <div class="author-content-item-tips">
+                {{ single.tip }}
+            </div>
+            <div class="author-content-item-title">
+                {{ single.title }}
+            </div>
+            <p class="author-content-item-content">
+                {{ single.content }}
+            </p>
+            <div class="lishi">
+                {{ single.lishi }}
+            </div>
+            <div class="singlePost">
+                <ContentRenderer
+                v-if="singlePost"
+                :value="singlePost"
+                class="article"
+                />
+                <p v-else class="text-center">
+                    可于 about.md 配置补充说明。
+                </p>
+            </div>
+        </div>
+    </div>
+</template>
+
+<style lang="css" scoped>
+/* single */
+.author-content-item.single {
+    width: 100%;
+}
+.author-content-item .author-content-item-tips {
+    opacity: .8;
+    font-size: 12px;
+    margin-bottom: .5rem;
+}
+.author-content-item-title {
+    font-size: 1.875rem;
+    line-height: 2.25rem;
+}
+.lishi {
+    font-size: 1.875rem;
+    line-height: 2.25rem;
+}
+.author-content-item-content {
+    margin-bottom: 1rem;
+    margin-top: .5rem;
+    vertical-align: middle;
+}   
+</style>
+```
+
+#tab8
+在 [BlogRoot:]/app/components/about 中添加 ：
+``` vue [social.vue] wrap
+<script setup lang="ts">
+import { about } from '../../about'
+</script>
+
+<template>
+    <div class="author-content-item social" style="width: 38%;">
+        <div v-for="(page, index) in about" :key="index">
+            <div v-for="social in page.social" :key="social.herf" style="margin-bottom: 1rem;">
+                <a :herf="social.herf">
+                    <span :class="social.class" aria-hidden="true" style="width: 25px; height: 25px; margin: 0 auto;"></span>
+                </a>
+            </div>
+        </div>
+    </div>
+</template>
+
+<style lang="css" scoped>
+/* 社交 */
+.author-content-item.social{
+    display: flex;
+    -webkit-box-orient: horizontal;
+    flex-direction: row;
+    -webkit-box-pack: start;
+    justify-content: flex-start;
+    max-width: 39%;
+}
+.author-content-item.social a {
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    height: 60px;
+    width: 60px;
+    border-radius: 12px;
+    background: rgb(153, 169, 191);
+}
+</style>
+```
+
+#tab9
+在 [BlogRoot:]/app/components/about 中添加 ：
+``` vue [technology.vue] wrap
+<script setup lang="ts">
+import { about } from '../../about'
+</script>
+
+<template>
+    <div class="author-content-item like-technology" v-for="(technologyItem, index) in about" :key="index" style="width: 49.9%;">
+        <div v-for="technology in technologyItem.technology" :key="technology.tip">
+            <div class="card-content">
+                <div class="author-content-item-tips">
+                    {{ technology.tip }}
+                </div>
+                <span class="author-content-item-title">
+                    {{ technology.title }}
+                </span>
+                <div class="content-bottom">
+                    <div class="tips">
+                        {{ technology.bottomTip }}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</template>
+
+<style lang="css" scoped>
+/* technology */
+.author-content-item.like-technology {
+    background: url(https://sourceimage.s3.bitiful.net/img/default_cover_25.avif) no-repeat;
+    background-size: cover;
+    min-height: 230px;
+    /* color: var(--heo-white); */
+}
+
+.author-content-item .author-content-item-tips {
+    opacity: .8;
+    font-size: .6rem;
+    margin-bottom: .5rem;
+}
+
+.author-content-item .card-content .author-content-item-title {
+    margin-bottom: .5rem;
+}
+.author-content-item .author-content-item-title {
+    font-size: 36px;
+    font-weight: 700;
+    line-height: 1;
+}
+
+.author-content-item .content-bottom {
+    margin-top: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    min-height: 40px;
+}
+
+.author-content-item .content-bottom .tips {
+    max-width: calc(100% - 6rem);
+    line-height: 1.2;
+}
+</style>
+```
+
+::
+## 添加vue页面
 在 [BlogRoot:]/app/pages 中添加 about.vue
 
 ::alert{type="warning"}
@@ -138,12 +743,21 @@ const skillTagGroups = computed(() => {
 [JS内容](https://github.com/661111/Myxz_Blog_Nuxt/blob/master/public/assets/js/about.js)
 ::
 
-``` VUE [about.vue] wrap
+``` vue [about.vue] wrap
 <script setup lang="ts">
-import { aboutPage } from '~/about'
+import Skillinfo from '../components/about/skillinfo.vue'
+import Social from '../components/about/social.vue'
+import Technology from '../components/about/technology.vue'
+import Author from '../components/about/author.vue'
+import Game from '../components/about/game.vue'
+import Aboutsitetips from '../components/about/aboutsitetips.vue'
+import Maxim from '../components/about/maxim.vue'
+import MyInfoAndSayHello from '../components/about/myInfoAndSayHello.vue'
+import Single from '../components/about/single.vue'
 
 const layoutStore = useLayoutStore()
-layoutStore.setAside(['blog-stats', 'connectivity', 'latest-comments', 'blog-log'])
+layoutStore.setAside(['blog-stats', 'blog-tech', 'blog-log'])
+
 // 动态加载外部 JS 脚本
   const loadScript = (url: string, callback?: () => void) => {
     return new Promise<void>((resolve, reject) => {
@@ -188,194 +802,32 @@ layoutStore.setAside(['blog-stats', 'connectivity', 'latest-comments', 'blog-log
 </script>
 
 <template>
-    <link href="/assets/css/about.css" rel="stylesheet"></link>
-    <div id="about-page" v-for="about in aboutPage" :key="about.author" style="margin-top: 1rem;margin-left: 1rem;margin-right: 1rem;">
-        <div class="author-main" v-for="author in about.author" :key="author.left">
-            <div class="author-tag-left" v-for="left in author.left" :key="left.tag1">
-                <span class="author-tag">{{ left.tag1 }}</span>
-                <span class="author-tag">{{ left.tag2 }}</span>
-                <span class="author-tag">{{ left.tag3 }}</span>
-                <span class="author-tag">{{ left.tag4 }}</span>
-            </div>
-            <div class="author-box" style="z-index:0">
-                <span></span>
-                <div class="author-img">
-                    <img class="no-lightbox" :src="author.logo" style="width: 100%;">
-                </div>
-            </div>
-            <div class="author-tag-right" v-for="right in author.right" :key="right.tag1">
-                <span class="author-tag">{{ right.tag1 }}</span>
-                <span class="author-tag">{{ right.tag2 }}</span>
-                <span class="author-tag">{{ right.tag3 }}</span>
-                <span class="author-tag">{{ right.tag4 }}</span>
-            </div>
-        </div>
-        <p class="p center logo large">{{ about.large }}</p>
-        <div class="author-page-content">
-            <div class="author-content" v-for="info in about.myinfo" :key="info.title1">
-                <div class="author-content-item myInfoAndSayHello" style="width: 45%;">
-                    <div class="title1">
-                        {{ info.title1 }}
-                    </div>
-                    <div class="title2">
-                        {{ info.title2 }}
-                        <span class="inline-word">
-                            {{ info.inlineword1 }}
-                        </span>
-                    </div>
-                    <div class="title1">
-                        {{ info.title3 }}
-                        <span class="inline-word">
-                            {{ info.inlineword2 }}
-                        </span>
-                    </div>
-                </div>
-                <div class="aboutsiteTips author-content-item" v-for="card in info.card" :key="card.tips" style="width: 35%;">
-                    <div class="author-content-item-tips">
-                        {{ card.tips }}
-                    </div>
-                    <h2>
-                        {{ card.conect1 }}
-                        <br />
-                        {{ card.conect2 }}
-                        <span class="inline-word">
-                            {{ card.inlineword }}
-                        </span>
-                        <div class="mask" v-for="mask in card.mask" :key="mask.firstTips">
-                            <span class="first-tips">
-                                {{ mask.firstTips }}
-                            </span>
-                            <span>
-                                {{ mask.span }}
-                            </span>
-                            <span data-up="data-up">
-                                {{ mask.up }}
-                            </span>
-                            <span data-show="data-show">
-                                {{ mask.show }}
-                            </span>
-                        </div>
-                    </h2>
-                </div>
-                <div class="author-content-item maxim" v-for="maxim in about.maxim" :key="maxim.tip" style="width: 30%;">
-                    <div class="author-content-item-tips">
-                        {{ maxim.tip }}
-                    </div>
-                    <span class="maxim-title">
-                        <span style="opacity:.6;margin-bottom:8px">
-                            {{ maxim.title1 }}
-                        </span>
-                        <span>
-                            {{ maxim.title2 }}
-                        </span>
-                    </span>
-                </div>
-            </div>
-            <div class="author-content">
-                <!-- <div class="author-content-item skills" v-for="creativity in creativityData" :key="creativity.class_name">
-                    <div class="card-content">
-                        <div class="author-content-item-tips">
-                            技能
-                        </div>
-                        <span class="author-content-item-title">
-                            {{ creativity.class_name }}
-                        </span>
-                        <div class="skills-style-group">
-                            <div class="tags-group-all">
-                                <div class="tags-group-wrapper">
-                                    <div class="tags-group-icon-pair"v-for="group in creativity.creativity_list" :key="group.name">
-                                        <div class="tags-group-icon" :style="{ background:group.color, }">
-                                            <img :title="group.name" class="entered exited" :src="group.icon">
-                                        </div>
-                                        <div class="tags-group-icon" :style="{ background:group.color, }">
-                                            <img :title="group.name" class="entered exited" :src="group.icon">
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="skills-list">
-                                <div class="skill-info" v-for="group in creativity.creativity_list" :key="group.name">
-                                    <div class="skill-icon" :style="{ background:color, }">
-                                    <img :title="group.name" class="entered loading" :src="group.icon" data-ll-status="loading">
-                                    </div>
-                                    <div class="skill-name"> 
-                                    <span>
-                                        {{ group.name }}
-                                    </span>
-                                    </div>
-                                </div>
-                                <div class="etc">...</div>
-                            </div>
-                        </div>
-                    </div>
-                </div> -->
-                <skillinfo />
-                <!-- <div class="author-content-item careers">
-                    <div class="card-content">
-                        <div class="author-content-item-tips">生涯</div><span class="author-content-item-title">无限进步</span>
-                        <div class="careers-group">
-                            <div class="careers-item">
-                                <div class="circle" style="background: #357ef5"></div>
-                                <div class="name">DLPU,产品设计专业</div>
-                            </div>
-                            <div class="careers-item">
-                                <div class="circle" style="background: #eb372a"></div>
-                                <div class="name">ITSO,UI/产品经理</div>
-                            </div>
-                        </div><img class="author-content-img entered loading" alt="生涯" src="https://p.zhheo.com/jSNB8A24190681748947001875.png!cover" data-ll-status="loading">
-                    </div>
-                </div> -->
-            </div>
-            <!-- <div class="hello-about">
-                <div class="cursor" style="translate:none;rotate:none;scale:none;transform:translate(721px,180px)"></div>
-                <div class="shapes">
-                    <div class="shape shape-1" style="translate:none;rotate:none;scale:none;transform:translate(721px,180px)"></div>
-                    <div class="shape shape-2" style="translate:none;rotate:none;scale:none;transform:translate(721px,180px)"></div>
-                    <div class="shape shape-3" style="translate:none;rotate:none;scale:none;transform:translate(721px,180px)"></div>
-                </div>
-                <div class="content">
-                    <h1>{{ about.hello }}</h1>
-                </div>
-            </div> -->
-            <div class="author-content">
-                <div class="author-content-item like-technology" v-for="technology in about.technology" :key="technology.tip" style="width: 50%;">
-                    <div class="card-content">
-                        <div class="author-content-item-tips">
-                            {{ technology.tip }}
-                        </div>
-                        <span class="author-content-item-title">
-                            {{ technology.title }}
-                        </span>
-                        <div class="content-bottom">
-                            <div class="tips">
-                                {{ technology.bottomTip }}
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="author-content-item game" v-for="game in about.game"  style="width: 49%;">
-                    <div class="card-content">
-                        <div class="author-content-item-tips">
-                            {{ game.tip }}
-                        </div>
-                        <span class="author-content-item-title">
-                            {{ game.title }}
-                        </span>
-                        <div class="content-bottom">
-                            <!-- <div class="icon-group">
-                                <div class="loading-bar" role="presentation" aria-hidden="true">
-                                    <img class="no-lightbox" :src="game.image" alt="Loading..." longdesc="https://ys.mihoyo.com/main/" />
-                                </div>
-                            </div> -->
-                            <div class="tips game-yuanshen-uid">
-                                {{ game.uid }}
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+  <link href="/assets/css/about.css" rel="stylesheet"></link>
+  <div id="about-page" style="margin-top: 1rem;margin-left: 1rem;margin-right: 1rem;">
+    <Author />
+    <div class="author-page-content">
+      <div class="author-content">
+        <MyInfoAndSayHello />
+      </div>
+      <div class="author-content">
+        <Aboutsitetips />
+        <Maxim />
+      </div>
+      <div class="author-content">
+        <!-- 来自于主流HEO主题的衍生版本 -->
+        <Skillinfo />
+        <!-- 来自于柳神的关于页面版本 -->
+        <Social />
+      </div>
+      <div class="author-content">
+        <Technology />
+        <Game />
+      </div>
+      <div class="author-content">
+        <Single />
+      </div>
     </div>
+  </div>
 </template>
 
 <style lang="css" scoped>
@@ -531,6 +983,91 @@ layoutStore.setAside(['blog-stats', 'connectivity', 'latest-comments', 'blog-log
     text-stroke: 2px #3fdaee;
     -webkit-text-stroke: 1px #3fdaee;
   }
+/* 7.面板样式 */
+.author-page-content {
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+}
+
+.author-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 100%;
+    gap: .5rem;
+}
+
+.author-content-item {
+    width: 49%;
+    border-radius: 12px;
+    background: var(--heo-card-bg);
+    border: var(--style-border-always);
+    box-shadow: var(--heo-shadow-border);
+    position: relative;
+    padding: 1rem 2rem;
+    overflow: hidden;
+}
+
+@media screen and (min-width: 1300px) {
+    .author-content-item {
+        animation: slide-in .6s 0s backwards;
+    }
+}
+/* 8.动画组件 */
+@keyframes rowleft {
+    from {
+        transform: translateX(0)
+    }
+
+    to {
+        transform: translateX(-50%)
+    }
+}
+
+@keyframes rowup {
+    from {
+        transform: translateY(0)
+    }
+
+    to {
+        transform: translateY(-50%)
+    }
+}
+
+@keyframes  floating {
+    0% {
+        transform: translate(0, -4px);
+    }
+
+    50% {
+        transform: translate(0, 4px);
+    }
+
+    100% {
+        transform: translate(0, -4px);
+    }
+}
+/* 9.移动端页面 */
+@media screen and (max-width: 768px) {
+    .author-content {
+        margin-top: 0;
+        flex-direction: column;
+    }
+    .author-content-item {
+        width: 100% !important;
+        padding: 1rem;
+    }
+    #about-page .author-tag-left, #about-page .author-tag-right {
+        display: none;
+    }
+    .author-content-item.skills {
+        max-width: 100%!important;
+    }
+    .author-content-item.social{
+        max-width: 100%!important;
+    }
+}
 </style>
 ```
 
@@ -733,7 +1270,7 @@ export const creativityData: CreativityData[] = [
     subtitle: '技能',
     creativity_list: [
       {
-        name: "Vue",
+        name: "vue",
         color: "#b8f0ae",
         icon: "https://cdn.sxiaohe.top/img/banners/vue.webp"
       },

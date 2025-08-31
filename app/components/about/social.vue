@@ -5,9 +5,9 @@ import { about } from '../../about'
 <template>
     <div class="author-content-item social" style="width: 38%;">
         <div v-for="(page, index) in about" :key="index">
-            <div v-for="social in page.social" :key="social.herf">
+            <div v-for="social in page.social" :key="social.herf" style="margin-bottom: 1rem;">
                 <a :herf="social.herf">
-                    <span :class="social.class" aria-hidden="true" style="width: 32px; height: 32px; margin: 0 auto;"></span>
+                    <span :class="social.class" aria-hidden="true" style="width: 25px; height: 25px; margin: 0 auto;"></span>
                 </a>
             </div>
         </div>

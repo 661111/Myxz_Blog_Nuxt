@@ -14,7 +14,7 @@ layoutStore.setAside(['blog-stats', 'blog-tech', 'blog-log'])
                 {{ i.class_desc }}
             </div>
             <div class="equipment" v-for="item in i.List" :key="item.name">
-                <div class="icat-equipment-box" style="width: calc(35% - 12px)!important;">
+                <div class="icat-equipment-box" style="width: calc(35% - 12px)">
                     <img :src="item.image">
                     <div class="icat-equipment-content">
                         <div class="icat-equipment-name">
@@ -131,7 +131,6 @@ layoutStore.setAside(['blog-stats', 'blog-tech', 'blog-log'])
     box-shadow: 0 8px 16px -4px var(--icat-black-op);
   }
   /* 好物页基础样式 */
-  
   @media screen and (max-width: 900px) {
     #icat-equipment .equipment {
       gap: 10px;
@@ -145,7 +144,7 @@ layoutStore.setAside(['blog-stats', 'blog-tech', 'blog-log'])
       gap: 8px;
     }
     #icat-equipment .equipment > .icat-equipment-box {
-      width: 100%;
+      width: 100%!important;
     }
     #icat-equipment .equipment .icat-equipment-box img {
       height: 220px;

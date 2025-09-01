@@ -13,10 +13,12 @@ const appConfig = useAppConfig()
                 <span class="author-tag">{{ left.tag3 }}</span>
                 <span class="author-tag">{{ left.tag4 }}</span>
             </div>
-            <NuxtImg :src="appConfig.header.avatarFrame" class="avatarFrame" alt="头像框占位"/>
-            <div class="author-box" style="z-index:0">
-                <div class="author-img">
-                    <img class="no-lightbox" :src="author.logo" style="width: 180px;">
+            <div class="mainports" style="margin: 0 20px;">
+                <NuxtImg :src="appConfig.header.avatarFrame" class="avatarFrame" alt="头像框占位"/>
+                <div class="author-box" style="z-index:0">
+                    <div class="author-img">
+                        <img class="no-lightbox" :src="author.logo" style="width: 180px;">
+                    </div>
                 </div>
             </div>
             <div class="author-tag-right" v-for="right in author.right" :key="right.tag1">
@@ -32,7 +34,7 @@ const appConfig = useAppConfig()
 <style lang="css" scoped>
 .avatarFrame {
     position: absolute;
-    top: -18px;
+    top: 3px;
     transform: scale(1.3);
     width: 180px;
     z-index: 1;
@@ -89,7 +91,6 @@ const appConfig = useAppConfig()
     display: flex;
     flex-direction: column;
     align-items: flex-end;
-    margin-right: 18px;
 }
 
 .author-tag-left .author-tag:first-child, .author-tag-left .author-tag:last-child {
@@ -99,7 +100,6 @@ const appConfig = useAppConfig()
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    margin-left: 18px;
 }
 .author-tag:nth-child(1) {
     animation-delay: 0s;

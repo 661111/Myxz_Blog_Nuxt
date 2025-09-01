@@ -84,7 +84,7 @@ export default defineAppConfig({
 		showTitle: true,
 		subtitle: blogConfig.subtitle,
 		emojiTail: ['📄', '🦌', '🙌', '🐟', '🏖️'],
-		avatarFrame: 'https://sourceimage.s3.bitiful.net/avatarFrame/%20144.avif',
+		avatarFrame: 'https://sourceimage.s3.bitiful.net/avatarFrame/ 143.avif',
 	},
 
 	/** 左侧栏导航 */

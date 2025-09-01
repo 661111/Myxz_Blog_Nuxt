@@ -13,7 +13,7 @@ recommend: true
 ## 效果展示
 ::pic
 ---
-src: /assets/img/post/2025/08/about_page.jpg
+src: https://www.myxz.top/assets/img/post/2025/08/about_page.jpg
 # mirror: # 是否借助第三方图片加载服务，见源代码
 caption: 关于页面展示
 # zoom: false # 是否开启灯箱缩放，默认开启

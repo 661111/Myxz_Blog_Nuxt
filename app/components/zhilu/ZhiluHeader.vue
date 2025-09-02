@@ -66,7 +66,7 @@ const appConfig = useAppConfig()
 }
 
 .avatarFrame {
-	top: 3px;
+	top: -3px;
     transform: scale(1.3);
     position: absolute;
 	width: 3em;

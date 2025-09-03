@@ -1,6 +1,8 @@
 <script setup lang="ts">
 import { sort } from 'radash'
 
+import skillinfo from '../components/about/skillinfo.vue'
+
 const appConfig = useAppConfig()
 useSeoMeta({
 	description: appConfig.description,
@@ -35,6 +37,8 @@ const listRecommended = computed(() => sort(
 	<!-- 若不包裹，display: none 在 JS 加载后才有足够优先级 -->
 	<ZhiluHeader to="/" />
 </div>
+
+<skillinfo />
 
 <PostSlide v-if="listRecommended.length && page === 1 && !category" :list="listRecommended" />
 

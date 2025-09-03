@@ -11,7 +11,7 @@ import { ref, onMounted } from 'vue';
 </script>
 
 <template>
-<div class="news-page">
+<!-- <div class="news-page">
     <div class="page-header">
         <div class="header-content">
             <h1 class="page-title">
@@ -31,7 +31,7 @@ import { ref, onMounted } from 'vue';
             <img :src="" :alt="" loading="lazy">
         </div>
     </div>
-</div>
+</div> -->
 </template>
 
 <style lang="css" scoped>

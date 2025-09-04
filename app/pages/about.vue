@@ -56,7 +56,6 @@ layoutStore.setAside(['blog-stats', 'blog-tech', 'blog-log'])
 </script>
 
 <template>
-  <link href="/assets/css/about.css" rel="stylesheet"></link>
   <div id="about-page" style="margin-top: 1rem;margin-left: 1rem;margin-right: 1rem;">
     <Author />
     <div class="author-page-content">

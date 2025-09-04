@@ -1,29 +1,18 @@
 <script lang="ts" setup>
 import { ref, onMounted } from 'vue';
-import { siteLinkItems } from '../sitelink'
-
-const layoutStore = useLayoutStore()
-layoutStore.setAside(['blog-stats', 'blog-tech', 'blog-log'])
-
+import { siteLinkItems } from '../../sitelink'
 const activeTab = ref(0); // 默认激活第一个标签页
 </script>
 
 <template>
-<div class="sitelinkPage">
-    <div class="feed-label">
-        <h2> 站点详情 </h2>
-    </div>
-
+<ZWidget card title="站点详情">
+<div class="BlogSiteGroup">
     <div class="tabs-container">
         <div class="tabs">
             <button v-for="(tab, index) in siteLinkItems" :key="tab.name" @click="activeTab = index" :class="{ 'active': activeTab === index }">
                 {{ tab.name }}
             </button>
         </div>
-        <span class="count-text" v-for="(count, index) in siteLinkItems[activeTab]" :key="index">
-            {{ count.name }}{{ count?.itemnumber ?? 0 }}个站点
-        </span>
-
         <div class="sitelink-list">
             <div class="sitelink-item" v-for="(site, index) in siteLinkItems[activeTab].Item" :key="index">
                 <img width="150" height="150" alt="Syntax" class="cover" :src="site.image">
@@ -62,11 +51,12 @@ const activeTab = ref(0); // 默认激活第一个标签页
         </div>
     </div>
 </div>
+</ZWidget>
 </template>
 
 <style lang="css" scoped>
 /* 页面宽度 */
-.sitelinkPage {
+.BlogSiteGroup {
     margin-left: 1rem;
     margin-right: 1rem;
 }

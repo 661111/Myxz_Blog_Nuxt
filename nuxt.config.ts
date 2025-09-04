@@ -22,7 +22,6 @@ export default defineNuxtConfig({
                 { rel: 'stylesheet', href: 'https://static.vercel.sxiaohe.top/fonts/anzhiyu/anzhiyufonts.css', media: 'none', onload: 'this.media="all"'  },
                 { rel: 'stylesheet', href: '/assets/css/color.css', media: 'none', onload: 'this.media="all"'  },
 				{ rel: 'stylesheet', href: '/assets/css/comment.css', media: 'none', onload: 'this.media="all"'  },
-				{ rel: 'stylesheet', href: '/assets/css/about.css', media:'none', onload: 'this.media=all'},
 			],
 			templateParams: {
 				separator: '|',

@@ -5,53 +5,54 @@ const activeTab = ref(0); // 默认激活第一个标签页
 </script>
 
 <template>
-<ZWidget card title="站点详情">
-<div class="BlogSiteGroup">
-    <div class="tabs-container">
-        <div class="tabs">
-            <button v-for="(tab, index) in siteLinkItems" :key="tab.name" @click="activeTab = index" :class="{ 'active': activeTab === index }">
-                {{ tab.name }}
-            </button>
-        </div>
-        <div class="sitelink-list">
-            <div class="sitelink-item" v-for="(site, index) in siteLinkItems[activeTab].Item" :key="index">
-                <img width="150" height="150" alt="Syntax" class="cover" :src="site.image">
-                <main>
-                    <header class="header">
-                        <div class="title">
-                            <a :href="site.link" rel="noopener noreferrer" target="_blank">
-                                {{ site.name }}
-                            </a>
-                            <span class="iconify i-ph:link-duotone" aria-hidden="true" style="font-size: 0.8em;"></span>
-                        </div>
-                    </header>
-                    <section>
-                        <div class="badges" v-for="service in site.service" :key="service.name">
-                            <a :href="service.link" rel="noopener noreferrer" target="_blank" class="badge badge-img">
-                                <img :alt="service.name" class="badge-icon" :src="service.image">
-                                <span class="badge-text">
-                                    {{ service.name }}
-                                </span>
-                            </a>
-                        </div>
-                        <p class="description">
-                            {{ site.desc }}
-                        </p>
-                    </section>
-                    <footer>
-                        <h5 class="rss">
-                            <span class="iconify i-ph:rss-fill" aria-hidden="true"></span>
-                            <a :href="site.link" rel="noopener noreferrer" target="_blank">
-                                {{ site.link }}
-                            </a>
-                        </h5>
-                    </footer>
-                </main>
+    <h3 class="widget-title">
+        站点
+    </h3>
+    <div class="BlogSiteGroup">
+        <div class="tabs-container">
+            <div class="tabs">
+                <button v-for="(tab, index) in siteLinkItems" :key="tab.name" @click="activeTab = index" :class="{ 'active': activeTab === index }">
+                    {{ tab.name }}
+                </button>
+            </div>
+            <div class="sitelink-list">
+                <div class="sitelink-item" v-for="(site, index) in siteLinkItems[activeTab].Item" :key="index">
+                    <img width="150" height="150" alt="Syntax" class="cover" :src="site.image">
+                    <main>
+                        <header class="header">
+                            <div class="title">
+                                <a :href="site.link" rel="noopener noreferrer" target="_blank">
+                                    {{ site.name }}
+                                </a>
+                                <span class="iconify i-ph:link-duotone" aria-hidden="true" style="font-size: 0.8em;"></span>
+                            </div>
+                        </header>
+                        <section>
+                            <div class="badges" v-for="service in site.service" :key="service.name">
+                                <a :href="service.link" rel="noopener noreferrer" target="_blank" class="badge badge-img">
+                                    <img :alt="service.name" class="badge-icon" :src="service.image">
+                                    <span class="badge-text">
+                                        {{ service.name }}
+                                    </span>
+                                </a>
+                            </div>
+                            <p class="description">
+                                {{ site.desc }}
+                            </p>
+                        </section>
+                        <footer>
+                            <h5 class="rss">
+                                <span class="iconify i-ph:rss-fill" aria-hidden="true"></span>
+                                <a :href="site.link" rel="noopener noreferrer" target="_blank">
+                                    {{ site.link }}
+                                </a>
+                            </h5>
+                        </footer>
+                    </main>
+                </div>
             </div>
         </div>
     </div>
-</div>
-</ZWidget>
 </template>
 
 <style lang="css" scoped>

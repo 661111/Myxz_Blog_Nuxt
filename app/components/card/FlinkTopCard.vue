@@ -223,7 +223,7 @@ const allPairs = computed(() => {
   </div> -->
 </template>
 
-<style lang="css" scoped>
+<style lang="scss" scoped>
 /* 友链顶部轮播美化 */
 .banners-title-small {
   font-size: 12px;
@@ -237,10 +237,6 @@ const allPairs = computed(() => {
   line-height: 1;
   font-weight: 700;
   margin-bottom: 8px;
-}
-#flink-banners .banner-button-group .banner-button i {
-  margin-right: 8px!important;
-  font-size: 1rem;
 }
 #flink-banners {
   display: -webkit-box;
@@ -277,8 +273,30 @@ const allPairs = computed(() => {
   -o-animation: slide-in .6s .2s backwards;
   -ms-animation: slide-in .6s .2s backwards;
   animation: slide-in .6s .2s backwards;
-}
-#flink-banners .banner-top-box {
+  .banner-button-group {
+    position: absolute;
+    right: 2rem;
+    top: 2.5rem;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: box;
+    display: flex;
+    .banner-button {
+      color: var(--anzhiyu-card-bg);
+      i {
+        margin-right: 8px!important;
+        font-size: 1rem;
+        margin-right: 8px;
+        font-size: 1rem;
+      }
+      &.secondary {
+        color: var(--anzhiyu-fontcolor);
+      }
+    }
+  }
+  .banner-top-box {
     display: -webkit-box;
     display: -moz-box;
     display: -webkit-flex;
@@ -297,130 +315,40 @@ const allPairs = computed(() => {
     -ms-flex-pack: justify;
     -webkit-justify-content: space-between;
     justify-content: space-between;
+  }
+  #skills-tags-group-all {
+    .tags-group-wrapper {
+      -webkit-animation: rowup 120s linear infinite;
+      -moz-animation: rowup 120s linear infinite;
+      -o-animation: rowup 120s linear infinite;
+      -ms-animation: rowup 120s linear infinite;
+      animation: rowup 120s linear infinite;
+      -webkit-animation: rowup 120s linear infinite;
+      -moz-animation: rowup 120s linear infinite;
+      -o-animation: rowup 120s linear infinite;
+      -ms-animation: rowup 120s linear infinite;
+      animation: rowup 120s linear infinite;
+    }
+    .tags-group-icon {
+      border-radius: 50%;
+      border-radius: 50%;
+      img {
+        min-width: 100%;
+        min-height: 100%;
+        border-radius: 50%;
+        object-fit: cover;
+      }
+    }
+    .img-alt {
+      display: none;
+    }
+  }
 }
-#flink-banners .banner-button-group {
-    position: absolute;
-    right: 2rem;
-    top: 2.5rem;
-    display: -webkit-box;
-    display: -moz-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: box;
-    display: flex;
-}
-#flink-banners .banner-button-group .banner-button.secondary {
+#article-container {
+  a {
     color: var(--anzhiyu-fontcolor);
-}
-
-#flink-banners .banner-button-group .banner-button {
-    color: var(--anzhiyu-card-bg);
-}
-#article-container a {
-    color: var(--anzhiyu-fontcolor);
-}
-.banner-button.secondary {
-    background: var(--anzhiyu-secondbg);
-    border: var(--style-border-always);
-    color: var(--anzhiyu-lighttext);
-    margin-right: 1rem;
-    -webkit-box-shadow: var(--anzhiyu-shadow-border);
-    box-shadow: var(--anzhiyu-shadow-border);
-}
-.banner-button {
-    padding: 8px 12px;
-    background: var(--anzhiyu-fontcolor);
-    border-radius: 12px;
-    color: var(--anzhiyu-card-bg);
-    display: -webkit-box;
-    display: -moz-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: box;
-    display: flex;
-    -webkit-box-align: center;
-    -moz-box-align: center;
-    -o-box-align: center;
-    -ms-flex-align: center;
-    -webkit-align-items: center;
-    align-items: center;
-    z-index: 1;
-    -webkit-transition: .3s;
-    -moz-transition: .3s;
-    -o-transition: .3s;
-    -ms-transition: .3s;
-    transition: .3s;
-    cursor: pointer;
-    -webkit-box-shadow: var(--anzhiyu-shadow-black);
-    box-shadow: var(--anzhiyu-shadow-black);
-}
-#flink-banners .banner-button-group .banner-button i {
-    margin-right: 8px;
-    font-size: 1rem;
-}
-#skills-tags-group-all {
-    display: flex;
-    transform: rotate(0);
-    transition: .3s;
-}
-#flink-banners #skills-tags-group-all .tags-group-wrapper {
-    -webkit-animation: rowup 120s linear infinite;
-    -moz-animation: rowup 120s linear infinite;
-    -o-animation: rowup 120s linear infinite;
-    -ms-animation: rowup 120s linear infinite;
-    animation: rowup 120s linear infinite;
-}
-#skills-tags-group-all .tags-group-wrapper {
-    margin-top: 40px;
-    display: flex;
-    flex-wrap: nowrap;
-    animation: rowup 60s linear infinite;
-}
-#flink-banners #skills-tags-group-all .tags-group-wrapper {
-    -webkit-animation: rowup 120s linear infinite;
-    -moz-animation: rowup 120s linear infinite;
-    -o-animation: rowup 120s linear infinite;
-    -ms-animation: rowup 120s linear infinite;
-    animation: rowup 120s linear infinite;
-}
-#skills-tags-group-all .tags-group-wrapper {
-    margin-top: 40px;
-    display: flex;
-    flex-wrap: nowrap;
-    animation: rowup 60s linear infinite;
-}
-#flink-banners #skills-tags-group-all .tags-group-icon {
-    border-radius: 50%;
-}
-#skills-tags-group-all .tags-group-icon {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #fff;
-    font-size: 66px;
-    font-weight: 700;
-    box-shadow: var(--anzhiyu-shadow-blackdeep);
-    width: 120px;
-    height: 120px;
-    border-radius: 30px;
-}
-#flink-banners #skills-tags-group-all .tags-group-icon img {
-    min-width: 100%;
-    min-height: 100%;
-    border-radius: 50%;
-    object-fit: cover;
-}
-
-[data-theme=dark] #skills-tags-group-all .tags-group-icon img {
-    filter: none;
-}
-#skills-tags-group-all .tags-group-icon img {
-    min-width: 100%;
-    min-height: 100%;
-    border-radius: 50%;
-    object-fit: cover;
-}
-#article-container img {
+  }
+  img {
     display: block;
     margin: 0 auto 20px;
     max-width: 100%;
@@ -430,27 +358,58 @@ const allPairs = computed(() => {
     -ms-transition: .3s;
     transition: .3s;
     border-radius: 8px;
+  }
 }
-#flink-banners #skills-tags-group-all .img-alt {
-    display: none;
+.banner-button {
+  padding: 8px 12px;
+  background: var(--anzhiyu-fontcolor);
+  border-radius: 12px;
+  color: var(--anzhiyu-card-bg);
+  display: -webkit-box;
+  display: -moz-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: box;
+  display: flex;
+  -webkit-box-align: center;
+  -moz-box-align: center;
+  -o-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+  z-index: 1;
+  -webkit-transition: .3s;
+  -moz-transition: .3s;
+  -o-transition: .3s;
+  -ms-transition: .3s;
+  transition: .3s;
+  cursor: pointer;
+  -webkit-box-shadow: var(--anzhiyu-shadow-black);
+  box-shadow: var(--anzhiyu-shadow-black);
+  &.secondary {
+    background: var(--anzhiyu-secondbg);
+    border: var(--style-border-always);
+    color: var(--anzhiyu-lighttext);
+    margin-right: 1rem;
+    -webkit-box-shadow: var(--anzhiyu-shadow-border);
+    box-shadow: var(--anzhiyu-shadow-border);
+  }
 }
-.img-alt {
-    font-size: 12px;
-    margin: 0;
-    margin-top: 8px;
-    color: var(--anzhiyu-secondtext);
-}
-.is-center {
-    text-align: center;
-}
-#flink-banners #skills-tags-group-all .tags-group-icon {
-    border-radius: 50%;
-}
-#skills-tags-group-all .tags-group-icon-pair .tags-group-icon:nth-child(even) {
-    margin-top: 1rem;
-    transform: translate(-60px);
-}
-#skills-tags-group-all .tags-group-icon {
+#skills-tags-group-all {
+  display: flex;
+  transform: rotate(0);
+  transition: .3s;
+  .tags-group-wrapper {
+    margin-top: 40px;
+    display: flex;
+    flex-wrap: nowrap;
+    animation: rowup 60s linear infinite;
+    margin-top: 40px;
+    display: flex;
+    flex-wrap: nowrap;
+    animation: rowup 60s linear infinite;
+  }
+  .tags-group-icon {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -461,9 +420,52 @@ const allPairs = computed(() => {
     width: 120px;
     height: 120px;
     border-radius: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 66px;
+    font-weight: 700;
+    box-shadow: var(--anzhiyu-shadow-blackdeep);
+    width: 120px;
+    height: 120px;
+    border-radius: 30px;
+    img {
+      min-width: 100%;
+      min-height: 100%;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+  }
+  .tags-group-icon-pair {
+    .tags-group-icon {
+      &:nth-child(even) {
+        margin-top: 1rem;
+        transform: translate(-60px);
+      }
+    }
+  }
 }
-
-
+[data-theme=dark] {
+  #skills-tags-group-all {
+    .tags-group-icon {
+      img {
+        filter: none;
+      }
+    }
+  }
+}
+.img-alt {
+  font-size: 12px;
+  margin: 0;
+  margin-top: 8px;
+  color: var(--anzhiyu-secondtext);
+}
+.is-center {
+  text-align: center;
+}
+</style>
+<style lang="css" scoped>
 /* 动画效果 */
 @keyframes rowup {
   0% {

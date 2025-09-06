@@ -20,9 +20,10 @@ import { about } from '../../about'
     </div>
 </template>
 
-<style lang="css" scoped>
+<style lang="scss" scoped>
 /* maxim */
-.author-content-item.maxim {
+.author-content-item {
+  &.maxim {
     font-size: 36px;
     font-weight: 700;
     line-height: 1.1;
@@ -30,16 +31,15 @@ import { about } from '../../about'
     align-items: flex-start;
     flex-direction: column;
     justify-content: center;
-}
-
-.author-content-item .author-content-item-tips {
+    .maxim-title {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+  .author-content-item-tips {
     opacity: .8;
     font-size: .6rem;
     margin-bottom: .5rem;
-}
-
-.author-content-item.maxim .maxim-title {
-    display: flex;
-    flex-direction: column;
+  }
 }
 </style>

@@ -22,41 +22,41 @@ import { about } from '../../about'
     </div>
 </template>
 
-<style lang="css" scoped>
+<style lang="scss" scoped>
 /* technology */
-.author-content-item.like-technology {
+.author-content-item {
+  &.like-technology {
     background: url(https://sourceimage.s3.bitiful.net/img/default_cover_25.avif) no-repeat;
     background-size: cover;
     min-height: 230px;
-    /* color: var(--heo-white); */
-}
-
-.author-content-item .author-content-item-tips {
+  }
+  .author-content-item-tips {
     opacity: .8;
     font-size: .6rem;
     margin-bottom: .5rem;
-}
-
-.author-content-item .card-content .author-content-item-title {
-    margin-bottom: .5rem;
-}
-.author-content-item .author-content-item-title {
+  }
+  .card-content {
+    .author-content-item-title {
+      margin-bottom: .5rem;
+    }
+  }
+  .author-content-item-title {
     font-size: 36px;
     font-weight: 700;
     line-height: 1;
-}
-
-.author-content-item .content-bottom {
+  }
+  .content-bottom {
     margin-top: auto;
     display: flex;
     align-items: center;
     justify-content: space-between;
     position: relative;
     min-height: 40px;
+    .tips {
+      max-width: calc(100% - 6rem);
+      line-height: 1.2;
+    }
+  }
 }
 
-.author-content-item .content-bottom .tips {
-    max-width: calc(100% - 6rem);
-    line-height: 1.2;
-}
 </style>

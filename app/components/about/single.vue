@@ -32,27 +32,29 @@ const { data: singlePost } = await useAsyncData('/about', () => queryCollection(
     </div>
 </template>
 
-<style lang="css" scoped>
+<style lang="scss" scoped>
 /* single */
-.author-content-item.single {
+.author-content-item {
+  &.single {
     width: 100%;
-}
-.author-content-item .author-content-item-tips {
+  }
+  .author-content-item-tips {
     opacity: .8;
     font-size: 12px;
     margin-bottom: .5rem;
+  }
 }
 .author-content-item-title {
-    font-size: 1.875rem;
-    line-height: 2.25rem;
+  font-size: 1.875rem;
+  line-height: 2.25rem;
 }
 .lishi {
-    font-size: 1.875rem;
-    line-height: 2.25rem;
+  font-size: 1.875rem;
+  line-height: 2.25rem;
 }
 .author-content-item-content {
-    margin-bottom: 1rem;
-    margin-top: .5rem;
-    vertical-align: middle;
-}   
+  margin-bottom: 1rem;
+  margin-top: .5rem;
+  vertical-align: middle;
+}
 </style>

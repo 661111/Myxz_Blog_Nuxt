@@ -24,9 +24,10 @@ import { about } from '../../about'
     </div>
 </template>
 
-<style lang="css" scoped>
+<style lang="scss" scoped>
 /* myInfoAndSayHello */
-#about-page .myInfoAndSayHello {
+#about-page {
+  .myInfoAndSayHello {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -34,32 +35,24 @@ import { about } from '../../about'
     background: linear-gradient(120deg, #9a79fa 0, #00d4ff 100%);
     background-size: 200%;
     min-height: 175px;
+    .title1 {
+      opacity: .8;
+      line-height: 1.3;
+      opacity: .8;
+      line-height: 1.3;
+    }
+    .title2 {
+      font-size: 36px;
+      font-weight: 700;
+      line-height: 1.1;
+      margin: .5rem 0;
+    }
+  }
 }
-
-#about-page .myInfoAndSayHello .title1 {
-    opacity: .8;
-    line-height: 1.3;
-}
-
-#about-page .myInfoAndSayHello .title2 {
-    font-size: 36px;
-    font-weight: 700;
-    line-height: 1.1;
-    margin: .5rem 0;
-}
-
 .inline-word {
-    word-break: keep-all;
-    white-space: nowrap;
-}
-
-#about-page .myInfoAndSayHello .title1 {
-    opacity: .8;
-    line-height: 1.3;
-}
-
-.inline-word {
-    word-break: keep-all;
-    white-space: nowrap;
+  word-break: keep-all;
+  white-space: nowrap;
+  word-break: keep-all;
+  white-space: nowrap;
 }
 </style>

@@ -99,114 +99,102 @@ const skillTagGroups = computed(() => {
     </div>
 </template>
 
-<style lang="css" scoped>
+<style lang="scss" scoped>
 /* 轮播skill */
-.author-content-item.skills {
+.author-content-item {
+  &.skills {
     display: flex;
     justify-content: center;
     align-items: flex-start;
     flex-direction: column;
     width: 100%;
+    .skills-style-group {
+      position: relative;
+    }
+    .tags-group-all {
+      display: flex;
+      transform: rotate(0);
+      transition: .3s;
+    }
+    .tags-group-wrapper {
+      margin-top: 40px;
+      display: flex;
+      flex-wrap: nowrap;
+      animation: rowleft 60s linear infinite;
+    }
+    .skills-list {
+      display: flex;
+      opacity: 0;
+      transition: .3s;
+      position: absolute;
+      width: 50%;
+      top: 0;
+      left: 0;
+      flex-wrap: wrap;
+      flex-direction: row;
+      margin-top: 10px;
+      max-height: 310px;
+      overflow: hidden;
+    }
+    .skill-info {
+      display: flex;
+      align-items: center;
+      margin-right: 10px;
+      margin-top: 10px;
+      background: var(--heo-background);
+      border-radius: 40px;
+      padding: 8px 12px 8px 8px;
+      border: var(--style-border);
+      box-shadow: var(--heo-shadow-border);
+    }
+    .skill-icon {
+      width: 32px;
+      height: 32px;
+      border-radius: 32px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-right: 8px;
+      user-select: none;
+      img {
+        width: 18px;
+        height: 18px;
+      }
+    }
+    .skill-name {
+      font-weight: 700;
+      line-height: 1;
+    }
+    .etc {
+      margin-right: 10px;
+      margin-top: 14px;
+    }
+  }
 }
-
-.author-content-item.skills .skills-style-group {
-    position: relative;
-}
-
-.author-content-item.skills .tags-group-all {
-    display: flex;
-    transform: rotate(0);
-    transition: .3s;
-}
-
-.author-content-item.skills .tags-group-wrapper {
-    margin-top: 40px;
-    display: flex;
-    flex-wrap: nowrap;
-    animation: rowleft 60s linear infinite;
-}
-
 .tags-group-icon-pair {
-    margin-left: 1rem;
-    user-select: none;
+  margin-left: 1rem;
+  user-select: none;
+  .tags-group-icon {
+    &:nth-child(even) {
+      margin-top: 1rem;
+      transform: translate(-60px);
+    }
+  }
 }
-
 .tags-group-icon {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #fff;
-    font-size: 66px;
-    font-weight: 700;
-    box-shadow: var(--heo-shadow-blackdeep);
-}
-
-.tags-group-icon {
-    width: 80px;
-    height: 80px;
-    border-radius: 20px;
-    position: relative;
-}
-
-.tags-group-icon img {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 66px;
+  font-weight: 700;
+  box-shadow: var(--heo-shadow-blackdeep);
+  width: 80px;
+  height: 80px;
+  border-radius: 20px;
+  position: relative;
+  img {
     width: 60%;
-}
-
-.author-content-item.skills .skills-list {
-    display: flex;
-    opacity: 0;
-    transition: .3s;
-    position: absolute;
-    width: 50%;
-    top: 0;
-    left: 0;
-    flex-wrap: wrap;
-    flex-direction: row;
-    margin-top: 10px;
-    max-height: 310px;
-    overflow: hidden;
-}
-
-.author-content-item.skills .skill-info {
-    display: flex;
-    align-items: center;
-    margin-right: 10px;
-    margin-top: 10px;
-    background: var(--heo-background);
-    border-radius: 40px;
-    padding: 8px 12px 8px 8px;
-    border: var(--style-border);
-    box-shadow: var(--heo-shadow-border);
-}
-
-.author-content-item.skills .skill-icon {
-    width: 32px;
-    height: 32px;
-    border-radius: 32px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-right: 8px;
-    user-select: none;
-}
-
-.author-content-item.skills .skill-icon img {
-    width: 18px;
-    height: 18px;
-}
-
-.author-content-item.skills .skill-name {
-    font-weight: 700;
-    line-height: 1;
-}
-
-.tags-group-icon-pair .tags-group-icon:nth-child(even) {
-    margin-top: 1rem;
-    transform: translate(-60px);
-}
-
-.author-content-item.skills .etc {
-    margin-right: 10px;
-    margin-top: 14px;
+  }
 }
 </style>

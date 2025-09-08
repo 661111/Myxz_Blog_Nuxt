@@ -6,7 +6,6 @@ import {
 	LazyWidgetEmpty,
 	LazyWidgetGithubCard,
 	LazyWidgetToc,
-	LazyWidgetBlogSite,
 } from '#components'
 import { pascal } from 'radash'
 
@@ -19,7 +18,6 @@ const rawWidgets = {
 	LazyWidgetEmpty,
 	LazyWidgetGithubCard,
 	LazyWidgetToc,
-	LazyWidgetBlogSite,
 }
 
 type RawWidgetName = keyof typeof rawWidgets

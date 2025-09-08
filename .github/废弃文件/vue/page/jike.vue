@@ -137,17 +137,15 @@ onMounted(() => {
 </template>
 <style>
 .essay_page_banner {
-    background-position: 50%;
-    background-size: cover;
-    border-radius: 8px;
-    margin: 1rem;
-    max-height: 320px;
-    min-height: 256px;
-    overflow: hidden;
-    position: relative
-}
-
-.essay_page_banner .essay_banner_content {
+  background-position: 50%;
+  background-size: cover;
+  border-radius: 8px;
+  margin: 1rem;
+  max-height: 320px;
+  min-height: 256px;
+  overflow: hidden;
+  position: relative;
+  .essay_banner_content {
     color: #eee;
     display: flex;
     flex-direction: column;
@@ -158,19 +156,16 @@ onMounted(() => {
     justify-content: space-between;
     padding: 1rem;
     position: absolute;
-    text-shadow: 0 4px 5px rgba(0,0,0,.5)
-}
-
-.essay_page_banner .essay_banner_content h1 {
-    font-size: 2rem
-}
-
-.essay_page_banner .essay_banner_content p {
-    font-size: 1rem;
-    opacity: .9
-}
-
-.essay_page_banner .essay_banner_extra {
+    text-shadow: 0 4px 5px rgba(0,0,0,.5);
+    h1 {
+      font-size: 2rem;
+    }
+    p {
+      font-size: 1rem;
+      opacity: .9;
+    }
+  }
+  .essay_banner_extra {
     align-items: flex-end;
     display: flex;
     top: 0;
@@ -179,10 +174,9 @@ onMounted(() => {
     left: 0;
     justify-content: flex-end;
     margin: 1rem;
-    position: absolute
-}
-
-.essay_page_banner .banner-btn {
+    position: absolute;
+  }
+  .banner-btn {
     align-items: center;
     -webkit-backdrop-filter: blur(5px);
     backdrop-filter: blur(5px);
@@ -194,34 +188,30 @@ onMounted(() => {
     gap: .1rem;
     opacity: .8;
     padding: .5rem .8rem;
-    transition: all .3s
+    transition: all .3s;
+    &:hover {
+      background: #0003;
+    }
+    .icon {
+      font-size: 1.2rem;
+    }
+  }
 }
-
-.essay_page_banner .banner-btn:hover {
-    background: #0003
-}
-
-.essay_page_banner .banner-btn .icon {
-    font-size: 1.2rem
-}
-
 .essay_friend_stats {
-    align-items: flex-end;
-    color: #eee;
-    display: flex;
-    flex-direction: column;
-    font-family: var(--font-monospace);
-    font-size: .7rem;
-    gap: .1rem;
-    opacity: .7;
-    text-shadow: 0 4px 5px rgba(0,0,0,.5)
-}
-
-.essay_friend_stats .essay_update_time {
-    opacity: 1
-}
-
-.essay_friend_stats .essay_powered_by {
-    opacity: .8
+  align-items: flex-end;
+  color: #eee;
+  display: flex;
+  flex-direction: column;
+  font-family: var(--font-monospace);
+  font-size: .7rem;
+  gap: .1rem;
+  opacity: .7;
+  text-shadow: 0 4px 5px rgba(0,0,0,.5);
+  .essay_update_time {
+    opacity: 1;
+  }
+  .essay_powered_by {
+    opacity: .8;
+  }
 }
 </style>

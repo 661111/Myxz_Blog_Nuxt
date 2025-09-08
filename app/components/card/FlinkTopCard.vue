@@ -174,16 +174,6 @@ const allPairs = computed(() => {
           <div class="banners-title-small">{{ info.title }}</div>
           <div class="banners-title-big">{{ info.description }}</div>
         </div>
-        <!-- <div class="banner-button-group">
-          <a class="banner-button secondary no-text-decoration" onclick="friendChainRandomTransmission()">
-            <i class="anzhiyufont anzhiyu-icon-paper-plane1" style="margin-right: 8px;"></i>
-            <span class="banner-button-text">{{ info.buttonTextOne }}</span>
-          </a>
-          <a class="banner-button no-text-decoration" onclick="anzhiyu.addFriendLink()">
-            <i class="anzhiyufont anzhiyu-icon-arrow-circle-right"></i>
-            <span class="banner-button-text">{{ info.buttonTextTwo }}</span>
-          </a>
-        </div> -->
       </div>
 
       <!-- 技能标签组区域（修正后） -->
@@ -205,22 +195,6 @@ const allPairs = computed(() => {
       </div>
     </div>
   </div>
-  <!-- <div class="flink_random" v-for="(friendRandomPostInfo, friendRandomPostInfoIndex) in friendRandomPostInfo" :key="friendRandomPostInfoIndex">
-    <div class="flink_random_head">
-      <div class="flink_random_head_left" v-for="headLeftInfo in friendRandomPostInfo" :key="headLeftInfo">
-        <h2>{{ headLeftInfo.headLeftTitle }}</h2>
-        <a class="fetchRandomPost" :href="{{ headLeftInfo.href }}" data-pjax-state="external" style="opacity: 0.2; transition-duration: 0.3s; transform: rotate(0deg);">
-          <i class="anzhiyufont anzhiyu-icon-arrow-rotate-right"></i>
-        </a>
-      </div>
-      <div class="flink_random_head_right">
-        <a class="random-post-all no-text-decoration" href="/link/" data-pjax-state=""> {{  }} </a>
-      </div>
-    </div>
-    <div class="flink_random_connet">
-      
-    </div>
-  </div> -->
 </template>
 
 <style lang="scss" scoped>

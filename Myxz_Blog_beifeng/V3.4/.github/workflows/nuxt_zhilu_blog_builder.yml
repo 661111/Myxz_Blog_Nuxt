@@ -1,0 +1,55 @@
+# workflow name
+name: 纸鹿Nuxt博客构建表
+
+# master branch on push, auto run
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [22.13.0]
+    steps:
+      # check it to your workflow can access it
+      # from: https://github.com/actions/checkout
+      - name: 1. 检查master分支
+        uses: actions/checkout@master
+
+      # from: https://github.com/actions/setup-node
+      - name: 2. 设置Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+
+      - name: 3. 安装插件
+        if: steps.cache-dependencies.outputs.cache-hit != 'true'
+        run: |
+          npm install -g pnpm@10.13.1
+          pnpm install
+
+      - name: 4. 开始构建
+        run: |
+          pnpm generate
+
+      # - name: 5. 推送到vercel分支
+      #   uses: peaceiris/actions-gh-pages@v3
+      #   with:
+      #     github_token: ${{ secrets.GITHUB_TOKEN }}
+      #     publish_branch: Nuxt
+      #     publish_dir: .output/public
+      #     user_name: 'github-actions[bot]'
+      #     user_email: 'github-actions[bot]@users.noreply.github.com'
+      #     full_commit_message: ${{ github.event.head_commit.message }}
+
+      - name: 6. 推送到仓库
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          token: ${{ secrets.nuxttoken }}
+          repository-name: 661111/Myxz_Blog_Nuxt_builder
+          branch: main
+          folder: .output/public
+          commit-message: "${{ github.event.head_commit.message }} Updated By Github Actions"

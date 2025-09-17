@@ -20,11 +20,11 @@ const categoryIcon = computed(() => getCategoryIcon(categoryLabel.value))
 			{{ title }}
 		</h2>
 
-		<p v-if="description" class="article-descrption">
+		<p v-if="description" class="article-description">
 			{{ description }}
 		</p>
 
-		<div class="article-info" data-allow-mismatch>
+		<div class="article-info">
 			<time
 				v-if="showAllDate || !useUpdated"
 				:datetime="getIsoDatetime(date)"
@@ -102,7 +102,7 @@ const categoryIcon = computed(() => getCategoryIcon(categoryLabel.value))
 	color: var(--c-text);
 }
 
-.article-descrption {
+.article-description {
 	font-size: 0.9em;
 	color: var(--c-text-2);
 }
@@ -111,15 +111,20 @@ const categoryIcon = computed(() => getCategoryIcon(categoryLabel.value))
 	color: var(--cg-color);
 }
 
+// CSR 前空 category 产生 double gap，同时需避免误伤 iconify
+span:not([class]):empty {
+	display: none;
+}
+
 .article-cover {
 	position: absolute;
 	opacity: 0.8;
 	top: 0;
-	right: 0;
+	inset-inline-end: 0;
 	width: min(320px, 50%);
 	height: 100%;
 	margin: 0;
-	mask-image: linear-gradient(to right, transparent, #FFF 50%);
+	mask-image: linear-gradient(to var(--end), transparent, #FFF 50%);
 	transition: all 0.2s;
 	object-fit: cover;
 

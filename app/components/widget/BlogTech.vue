@@ -6,18 +6,16 @@ import pnpmWorkspace from '~~/pnpm-workspace.yaml'
 const appConfig = useAppConfig()
 const { public: { arch, ci, nodeVersion, platform } } = useRuntimeConfig()
 
-// FIXME 客户端动态渲染 Nuxt Icon 会水合不匹配
 const ciPlatform = computed(() => {
-	// const iconName = ciIcons[ci]
-	// if (!iconName)
-	// 	return ''
+	const iconName = ciIcons[ci]
+	if (!iconName)
+		return ''
 
-	// const iconNode = iconName.startsWith('http')
-	// 	? h('img', { src: iconName, alt: '' })
-	// 	: h(Icon, { name: iconName })
+	const iconNode = iconName.startsWith('http')
+		? h('img', { src: iconName, alt: '' })
+		: h(Icon, { name: iconName })
 
-	// return [iconNode, ` ${ci.split(' ')[0]}`]
-	return ci
+	return h('span', {}, [iconNode, ` ${ci.split(' ')[0]}`])
 })
 
 const packages = Object.assign({}, ...Object.values(pnpmWorkspace.catalogs as any)) as Record<string, string>
@@ -25,7 +23,7 @@ const [pm, pmVersion] = packageManager.split('@') as [string, string]
 
 const service = computed(() => ([
 	...ci ? [{ label: '构建平台', value: ciPlatform }] : [],
-	{ label: '图片存储', value: () => [h('img', { src: 'https://console.bitiful.com/favicon.ico', alt: '' }), '缤纷云'] },
+	{ label: '图片存储', value: () => [h('img', { src: 'https://7.isyangs.cn/1/6553112f89de6-1.png', alt: '' }), ' 去图图床'] },
 	{ label: '软件协议', value: 'MIT' },
 	{ label: '文章许可', value: appConfig.copyright.abbr },
 	{ label: '规范域名', value: getDomain(appConfig.url) },

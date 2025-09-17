@@ -5,7 +5,7 @@ useSeoMeta({
 	description: `${appConfig.title}的文章预览。`,
 })
 const layoutStore = useLayoutStore()
-layoutStore.setAside(['blog-stats', 'blog-tech', 'blog-log'])
+layoutStore.setAside(['blog-log'])
 
 const { data: listRaw } = useArticleIndex('previews/%')
 const { listSorted, isAscending, sortOrder } = useArticleSort(listRaw)
@@ -16,7 +16,7 @@ const { category, categories, listCategorized } = useCategory(listSorted)
 <div class="preview">
 	<div class="preview-header">
 		<h1>
-			<ZRawLink class="mobile-only" to="/">
+			<ZRawLink class="mobile-only" to="/" title="返回首页">
 				<Icon name="ph:caret-left-bold" />
 			</ZRawLink>预览
 		</h1>

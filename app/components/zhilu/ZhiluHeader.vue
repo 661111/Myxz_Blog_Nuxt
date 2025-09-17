@@ -8,30 +8,23 @@ const appConfig = useAppConfig()
 		<span
 			v-for="(emoji, emojiIndex) in appConfig.header.emojiTail"
 			:key="emojiIndex"
-			class="splitted-char"
+			class="split-char"
 			:style="{ '--delay': `${emojiIndex * .6 - 3}s` }"
 			v-text="emoji"
 		/>
 	</div>
-	<div class="Avatar frame">
-		<NuxtImg
-			:src="appConfig.header.avatarFrame"
-			class="avatarFrame"
-			alt="头像框占位"
-		/>
-		<NuxtImg
-			:src="appConfig.header.logo"
-			class="zhilu-logo"
-			:class="{ circle: appConfig.header.showTitle }"
-			:alt="appConfig.title"
-		/>
-	</div>
+	<NuxtImg
+		:src="appConfig.header.logo"
+		class="zhilu-logo"
+		:class="{ circle: appConfig.header.showTitle }"
+		:alt="appConfig.title"
+	/>
 	<div v-if="appConfig.header.showTitle" class="zhilu-text">
 		<div class="header-title">
 			<span
 				v-for="(char, charIndex) in appConfig.title"
 				:key="charIndex"
-				class="splitted-char"
+				class="split-char"
 				:style="{ '--delay': `${(charIndex + 1) * .1}s` }"
 				v-text="char"
 			/>
@@ -65,21 +58,18 @@ const appConfig = useAppConfig()
 	}
 }
 
-.avatarFrame {
-	top: -3px;
-    transform: scale(1.3);
-    position: absolute;
-	width: 3em;
-	z-index: 1;
+@font-face {
+	font-family: AlimamaFangYuanTi;
+	src: url("/fonts/AlimamaFangYuanTi.woff2");
 }
 
 .header-title {
-	font-family: "Yozai Medium", "Noto Sans SC", sans-serif;
+	font-family: AlimamaFangYuanTi, "Noto Sans SC", sans-serif;
 	font-size: 1.5em;
 	font-synthesis: none;
 	font-variation-settings: "wght" 600, "BEVL" 100;
 
-	> .splitted-char {
+	> .split-char {
 		animation: 3.14s infinite alternate vf-weight, 2.72s infinite alternate vf-bevel;
 		animation-delay: var(--delay);
 		animation-play-state: paused;
@@ -116,7 +106,7 @@ const appConfig = useAppConfig()
 	pointer-events: none;
 	z-index: -2;
 
-	> .splitted-char {
+	> .split-char {
 		animation: 5s infinite alternate emoji-floating;
 		animation-delay: var(--delay);
 		animation-play-state: paused;
@@ -128,7 +118,7 @@ const appConfig = useAppConfig()
 		opacity: 0.5;
 	}
 
-	.splitted-char {
+	.split-char {
 		animation-play-state: running;
 	}
 }

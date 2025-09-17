@@ -1,4 +1,4 @@
-import type { BundledLanguage, CodeToHastOptions, HighlighterCore } from 'shiki'
+import type { BundledLanguage, CodeToHastOptions, HighlighterCore, RegexEngine } from 'shiki'
 import { transformerColorizedBrackets } from '@shikijs/colorized-brackets'
 import { transformerMetaHighlight, transformerMetaWordHighlight, transformerNotationDiff, transformerNotationErrorLevel, transformerNotationFocus, transformerNotationHighlight, transformerNotationWordHighlight, transformerRenderWhitespace } from '@shikijs/transformers'
 
@@ -62,17 +62,24 @@ export const useShikiStore = defineStore('shiki', () => {
 			import('shiki/themes/one-dark-pro.mjs'),
 		])
 
-		return createHighlighterCore({
-			themes: [
-				catppuccinLatte,
-				oneDarkPro,
-			],
-			engine: createJavaScriptRegexEngine(),
-		})
+		// 测试是否支持正则 Modifier: `(?ims-ims:...)`
+		let engine: RegexEngine
+		try {
+			// eslint-disable-next-line prefer-regex-literals, regexp/strict
+			void new RegExp('(?i: )')
+			engine = createJavaScriptRegexEngine()
+		}
+		catch {
+			const { createOnigurumaEngine } = await import('shiki/engine-oniguruma.mjs')
+			engine = await createOnigurumaEngine(import('https://esm.sh/shiki/wasm' as any))
+		}
+
+		return createHighlighterCore({ themes: [catppuccinLatte, oneDarkPro], engine })
 	}
 
 	async function loadLang(...langs: string[]) {
-		const { bundledLanguages } = await import('shiki/langs')
+		// @ts-expect-error CDN 动态引入的包无类型
+		const { bundledLanguages } = await import('https://esm.sh/shiki/langs') as typeof import('shiki/langs')
 		const loadedLangs = shiki.getLoadedLanguages()
 
 		await Promise.all(langs

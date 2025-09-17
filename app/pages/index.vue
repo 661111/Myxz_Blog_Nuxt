@@ -1,8 +1,6 @@
 <script setup lang="ts">
 import { sort } from 'radash'
 
-// import skillinfo from '../components/about/skillinfo.vue'
-
 const appConfig = useAppConfig()
 useSeoMeta({
 	description: appConfig.description,
@@ -10,7 +8,7 @@ useSeoMeta({
 })
 
 const layoutStore = useLayoutStore()
-layoutStore.setAside(['blog-stats', 'blog-tech', 'blog-log'])
+layoutStore.setAside(['blog-stats', 'blog-tech', 'comm-group'])
 
 // BUG 若其他页面和 index.vue 共用同一数据源，其 payload 会被置空
 // 此处数据源不采用默认参数，以防归档页面刷新空白
@@ -37,8 +35,6 @@ const listRecommended = computed(() => sort(
 	<!-- 若不包裹，display: none 在 JS 加载后才有足够优先级 -->
 	<ZhiluHeader to="/" />
 </div>
-
-<!-- <skillinfo /> -->
 
 <PostSlide v-if="listRecommended.length && page === 1 && !category" :list="listRecommended" />
 

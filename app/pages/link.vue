@@ -5,15 +5,18 @@ import FlinkTopCard from '../components/card/FlinkTopCard.vue'
 
 const appConfig = useAppConfig()
 const layoutStore = useLayoutStore()
+layoutStore.setAside(['blog-stats', 'blog-tech', 'blog-log'])
 
-const { data: postLink } = await useAsyncData('/link', () => queryCollection('content').path('/link').first())
+const { data: postLink } = await useAsyncData(
+	'/link',
+	() => queryCollection('content').path('/link').first(),
+)
+
 useSeoMeta({
 	title: '友链',
 	ogType: 'profile',
 	description: `${appConfig.title}的友链页面，收集了添加他为友链的网站和他订阅的网站列表。`,
 })
-
-layoutStore.setAside(['blog-stats', 'blog-tech', 'blog-log'])
 
 const copyFields = {
 	博主: myFeed.author,
@@ -25,6 +28,10 @@ const copyFields = {
 </script>
 
 <template>
+<div class="mobile-only">
+	<ZhiluHeader to="/" suffix="友链" />
+</div>
+
 <FlinkTopCard />
 
 <FeedGroup :feeds />

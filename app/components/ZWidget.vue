@@ -10,16 +10,16 @@ defineProps<{
 
 <template>
 <section class="widget" :class="{ dim }">
-	<header class="widget-title text-creative">
+	<hgroup class="widget-title text-creative">
 		<slot name="title">
 			{{ title }}
 		</slot>
-	</header>
+	</hgroup>
 
-	<main class="widget-body" :class="{ 'widget-card': card, 'with-bg': bgImg }">
+	<div class="widget-body" :class="{ 'widget-card': card, 'with-bg': bgImg }">
 		<NuxtImg v-if="bgImg" class="bg-img" :class="{ 'bg-right': bgRight }" :src="bgImg" alt="" />
 		<slot />
-	</main>
+	</div>
 </section>
 </template>
 
@@ -27,25 +27,8 @@ defineProps<{
 .widget {
 	font-size: 0.9em;
 
-	& + .widget {
+	.widget + & {
 		margin-top: 1rem;
-	}
-
-	> .widget-title {
-		display: flex;
-		align-items: center;
-		justify-content: space-between;
-		gap: 0.5rem;
-		margin: 0.5rem;
-		color: var(--c-text-2);
-
-		a {
-			transition: color 0.2s;
-		}
-
-		> [onclick]:hover, > [href]:hover {
-			color: var(--c-primary);
-		}
 	}
 
 	&.dim {
@@ -56,8 +39,27 @@ defineProps<{
 			opacity: 1;
 		}
 	}
+}
 
-	> .widget-body {
+.widget-title {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 0.5rem;
+	margin: 0.5rem;
+	color: var(--c-text-2);
+
+	a {
+		transition: color 0.2s;
+	}
+
+	> [onclick]:hover, > [href]:hover {
+		color: var(--c-primary);
+	}
+}
+
+.widget-body {
+	&.with-bg {
 		position: relative;
 		overflow: hidden;
 		overflow: clip;
@@ -74,14 +76,14 @@ defineProps<{
 			z-index: -1;
 
 			&.bg-right {
-				left: 50%;
+				inset-inline-start: 50%;
 				width: 50%;
-				mask-image: linear-gradient(to right, transparent, #FFF 50%);
+				mask-image: linear-gradient(to var(--end), transparent, #FFF 50%);
 			}
 		}
 	}
 
-	> .widget-card {
+	&.widget-card {
 		padding: 0.5rem 0.8rem;
 		border-radius: 0.8rem;
 		background-color: var(--c-bg-2);

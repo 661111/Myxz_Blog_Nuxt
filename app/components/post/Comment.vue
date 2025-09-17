@@ -2,16 +2,10 @@
 const appConfig = useAppConfig()
 
 onMounted(() => {
-	// @ts-expect-error windows上有twikoo实例
-	window.Artalk?.init?.({
-		// envId: appConfig.twikoo?.envId,
-		// // twikoo 会把挂载后的元素变为 #twikoo
-		// el: '#twikoo',
-        el: '#layoutHelper-comments',
-        pageKey: '',
-        pageTitle: '',
-        server: appConfig.artalk?.server,
-        site: appConfig.artalk?.sitename,
+	window.twikoo?.init({
+		envId: appConfig.twikoo?.envId,
+		// twikoo 会把挂载后的元素变为 #twikoo
+		el: '#twikoo',
 	})
 })
 </script>
@@ -21,7 +15,7 @@ onMounted(() => {
 	<h3 class="text-creative">
 		评论区
 	</h3>
-	<div id="layoutHelper-comments" style="margin: 2em 0;">
+	<div id="twikoo">
 		<p>评论加载中...</p>
 	</div>
 </section>
@@ -31,31 +25,99 @@ onMounted(() => {
 .z-comment {
 	margin: 3rem 1rem;
 
-	h3 {
+	> h3 {
 		margin-top: 3rem;
 		font-size: 1.25rem;
 	}
 }
 
-// 颜色样式表（勿删）
-@mixin dark-theme {
-	--qiyuan-card-background: #000;
-	--qiyuan-editor: var(--qiyuan-card-background);
-	--qiyuan-warp: var(--qiyuan-card-background);
-	--qiyuan-preview: var(--qiyuan-card-background);
-	--qiyuan-bottom: var(--qiyuan-card-background);
-}
+:deep(#twikoo) {
+	margin: 2em 0;
 
-:root,.light {
-	--qiyuan-card-background: #fff;
-	--qiyuan-editor: var(--qiyuan-card-background);
-	--qiyuan-warp: var(--qiyuan-card-background);
-	--qiyuan-preview: var(--qiyuan-card-background);
-	--qiyuan-bottom: var(--qiyuan-card-background);
-}
+	.tk-admin-container {
+		position: fixed;
+		z-index: 1;
+	}
 
-.dark {
-	@include dark-theme;
-	color-scheme: dark;
+	.tk-input {
+		font-family: var(--font-monospace);
+	}
+
+	.tk-time {
+		color: var(--c-text-3);
+	}
+
+	.tk-main {
+		margin-top: -0.1rem;
+	}
+
+	.tk-content {
+		margin-top: 0.1rem;
+
+		img {
+			border-radius: 0.5em;
+		}
+	}
+
+	.tk-comments-title, .tk-nick > strong {
+		font-family: var(--font-creative);
+	}
+
+	pre {
+		border-radius: 0.5rem;
+		font-size: 0.8125rem;
+	}
+
+	p {
+		margin: 0.2em 0;
+	}
+
+	menu, ol, ul {
+		margin: 0.5em 0;
+		padding-inline-start: 1.5em;
+		list-style: revert;
+
+		> li {
+			margin: 0.2em 0;
+
+			&::marker {
+				font-size: 0.8em;
+				color: var(--c-primary);
+			}
+		}
+	}
+
+	blockquote {
+		margin: 0.5em 0;
+		padding: 0.2em 0.5em;
+		border-inline-start: 4px solid var(--c-border);
+		border-radius: 4px;
+		background-color: var(--c-bg-2);
+		font-size: 0.9rem;
+
+		> .z-codeblock {
+			margin: 0 -0.8rem;
+		}
+	}
+
+	.tk-owo-emotion {
+		width: auto;
+		height: 1.4em;
+		vertical-align: text-bottom;
+	}
+
+	.tk-extras, .tk-footer {
+		font-size: 0.7rem;
+		color: var(--c-text-3);
+	}
+
+	.tk-replies:not(.tk-replies-expand) {
+		mask-image: linear-gradient(#FFF 50%, transparent);
+	}
+
+	.tk-expand {
+		border-radius: 0.5rem;
+		transition: background-color 0.1s;
+	}
 }
 </style>

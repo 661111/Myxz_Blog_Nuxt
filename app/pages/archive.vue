@@ -6,10 +6,10 @@ useSeoMeta({
 	title: '归档',
 	description: `${appConfig.title}的所有文章归档。`,
 })
-const birthYear = appConfig.stats.birthYear
+const birthYear = appConfig.component.stats.birthYear
 
 const layoutStore = useLayoutStore()
-layoutStore.setAside(['blog-stats', 'blog-tech', 'blog-log'])
+layoutStore.setAside(['blog-stats', 'blog-log'])
 
 const { data: listRaw } = await useArticleIndex()
 const { listSorted, isAscending, sortOrder } = useArticleSort(listRaw)
@@ -47,7 +47,7 @@ const yearlyWordCount = computed(() => {
 		:key="year"
 		class="archive-group"
 	>
-		<div class="archive-title text-creative">
+		<div class="archive-title">
 			<h2 class="archive-year">
 				{{ year }}
 			</h2>
@@ -113,16 +113,14 @@ const yearlyWordCount = computed(() => {
 	> .archive-year, .archive-age {
 		margin-bottom: -0.3em;
 		mask-image: linear-gradient(#FFF 50%, transparent);
-		font-size: 3em;
-		font-weight: 800;
-		line-height: 1;
+		font: 800 3em / 1 var(--font-stroke-free);
 		z-index: -1;
 		-webkit-text-stroke: 1px var(--c-text-3);
 	}
 
 	> .archive-age {
 		position: absolute;
-		right: 0;
+		inset-inline-end: 0;
 		transition: opacity 0.2s;
 
 		> .age-label {

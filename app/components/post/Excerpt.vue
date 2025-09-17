@@ -8,12 +8,12 @@ const appConfig = useAppConfig()
 const excerpt = ref(props.excerpt)
 const caret = ref('')
 
-if (appConfig.content.excerpt?.animation !== false) {
+if (appConfig.component.excerpt?.animation !== false) {
 	// onBeforeMount(() => {
 	excerpt.value = ''
 	// })
 	onMounted(async () => {
-		caret.value = appConfig.content.excerpt?.caret ?? '_'
+		caret.value = appConfig.component.excerpt?.caret ?? '_'
 		for (const char of props.excerpt) {
 			excerpt.value += char
 			await delay(50)
@@ -50,7 +50,7 @@ if (import.meta.dev) {
 	// animation: fadein 3s;
 
 	.iconify {
-		margin-right: 0.3em;
+		margin-inline-end: 0.3em;
 	}
 
 	&:hover {

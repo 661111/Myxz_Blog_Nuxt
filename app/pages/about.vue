@@ -83,7 +83,3 @@ layoutStore.setAside(['blog-stats', 'blog-tech', 'blog-log'])
     </div>
   </div>
 </template>
-
-<style lang="css" scoped>
-
-</style>

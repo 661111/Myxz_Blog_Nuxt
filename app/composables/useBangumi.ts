@@ -1,7 +1,7 @@
-import type { BangumiApiResponse } from '../types/bangumi'
+import type { BilibiliBangumiResponse } from '../types/BilibiliBangumi'
 
-export type ContentType = 'anime' | 'game'
 export type CollectionType = keyof typeof TYPE_ID_MAP
+export type ContentTypes = keyof typeof ContentType
 
 export const ITEMS_PER_PAGE = 20
 
@@ -11,20 +11,25 @@ const TYPE_ID_MAP = {
 	do: 3,
 } as const
 
+const ContentType = {
+	bangumi: 1,
+	tv: 2,
+} as const
+
 export default function useBangumiCollection(
-	contentType: ContentType = 'anime',
+	contentType: Ref<ContentTypes> = ref('bangumi'),
 	collectionType: Ref<CollectionType> = ref('wish'),
 	page: Ref<number> = ref(1),
 ) {
-	const username = 'shenley'
+	const BilibiliUserId = '3546572553980802'
 
-	const subjectType = computed(() => (contentType === 'anime' ? 2 : 4))
-	const typeId = computed(() => TYPE_ID_MAP[toValue(collectionType)])
+	const statusId = computed(() => TYPE_ID_MAP[toValue(collectionType)])
+	const typeId = computed(() => ContentTypes[toValue(contentType)])
 	const offset = computed(() => (page.value - 1) * ITEMS_PER_PAGE)
 
-	const { data, status, error } = useFetch<BangumiApiResponse>(
+	const { data } = useFetch<BilibiliBangumiResponse>(
 		() => {
-			return `https://api.bgm.tv/v0/users/${username}/collections?subject_type=${subjectType.value}&type=${typeId.value}&limit=${ITEMS_PER_PAGE}&offset=${offset.value}`
+			return `https://api.bilibili.com/x/space/bangumi/follow/list?vmid=${BilibiliUserId}&type=${typeId.value}&follow_status=${statusId.value}`
 		},
 		{
 			key: () =>
@@ -38,8 +43,6 @@ export default function useBangumiCollection(
 
 	return {
 		data,
-		status,
-		error,
 		totalPages,
 	}
 }

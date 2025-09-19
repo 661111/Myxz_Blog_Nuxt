@@ -12,6 +12,7 @@ layoutStore.setAside(['blog-stats', 'blog-log'])
 
 const page = ref(1)
 const collectionType = ref<CollectionType>('wish')
+const contentType = ref<ContentType> ref('bangumi')
 const { data, error, status, totalPages } = useBangumi(contentType, collectionType, page)
 
 const games = computed(() => data.value?.data || [])
@@ -20,6 +21,11 @@ const orderMap = {
 	wish: '想看',
 	do: '在看',
 	collect: '看过',
+}
+
+const ContentType = {
+	bangumi: 1,
+	tv: 2,
 }
 
 watch(collectionType, () => {

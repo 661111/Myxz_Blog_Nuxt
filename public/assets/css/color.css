@@ -317,3 +317,156 @@
 .atk-content {
     color: var(--c-text)!important;
 }
+
+/* 风纪星辰样式表 */
+:root {
+	/* 颜色 */
+	--thyuu--main-color: var(--custom-main-hue, 0deg) var(--custom-main-sat, 70%) var(--custom-main-lig, 70%);
+	--thyuu--subs-color: var(--custom-subs-hue, 20deg) var(--custom-subs-sat, 70%) var(--custom-subs-lig, 70%);
+	--thyuu--color-font: 0deg 0% 20%;
+	--thyuu--alpha-font: 100%;
+	--thyuu--color-font-head: hsl(var(--thyuu--color-font) / var(--thyuu--alpha-font));
+	--thyuu--color-font-fill: hsl(0deg 0% 100% / .9);
+	--thyuu--color-scroll: hsl(var(--thyuu--main-color) / 30%);
+	--thyuu--color-back-font: hsl(var(--thyuu--color-font) / 5%);
+	--thyuu--color-back-have: hsl(0deg 0% 98%);
+	--thyuu--color-back-white: hsl(0deg 0% 100%);
+	--thyuu--color-back-none: transparent;
+	
+	/* 字体 */
+	--thyuu--font-weight-normal: 400;
+	--thyuu--font-weight-title: 600;
+	--thyuu--font-family-normal: var(--custom-fonts, none), 'Misans VF', 'PingFang SC', 'Noto Sans SC', sans-serif, thyuu-iconfont;
+	--thyuu--font-family-slogn: var(--custom-slogn, none), '快看世界体', var(--thyuu--font-family-normal);
+	--thyuu--font-family-coder: var(--custom-coder, none), 'Monaco', 'Consolas', var(--thyuu--font-family-normal);
+	--thyuu--font-family-title: var(--thyuu--font-family-normal);
+	
+	/* 尺寸 */
+	--thyuu--size-normal: var(--custom-font-size, 16px);
+	--thyuu--size-medium: .875rem;
+	--thyuu--size-small: .75rem;
+	--thyuu--size-title: 1rem;
+	--thyuu--size-edgetb: var(--thyuu--height-head);
+	--thyuu--size-edgelr: 3rem;
+	--thyuu--size-area: 3rem;
+	--thyuu--size-divs: 1.5rem;
+	--thyuu--size-span: 1rem;
+	--thyuu--size-icon: 1.25rem;
+	--thyuu--size-radius: var(--custom-radius, var(--thyuu--size-normal));
+	--thyuu--size-card-normal: 22.5rem;
+	--thyuu--size-card-small: 13.5rem;
+	--thyuu--size-screen-medium: 1152px;
+	--thyuu--size-content: var(--custom-content-size, 62.5rem);
+	--thyuu--size-scroll: 12px;
+	--thyuu--size-cover-top: max(10em, 30vh);
+	
+	/* 区块 */
+	--thyuu--height-head: 4rem;
+	--thyuu--sticky-head: var(--thyuu--height-head);
+	--thyuu--height-cover: max(var(--thyuu--size-card-normal), 80vh);
+	--thyuu--align-cover: var(--custom-cover-align,center);
+	--thyuu--mask-scroll-y: linear-gradient(#0000, #000 var(--thyuu--size-divs), #000 calc(100% - var(--thyuu--size-divs)), #0000);
+	--thyuu--mask-scroll-x: linear-gradient(90deg,#0000, #000 var(--thyuu--size-divs), #000 calc(100% - var(--thyuu--size-divs)), #0000);
+	--thyuu--border: thin solid hsl(var(--thyuu--color-font) / 5%);
+	--thyuu--shadow-text: 0 .04rem .2rem rgb(0 0 0 / 30%);
+	--thyuu--shadow-normal: 0 .2rem 1rem 0 hsl(0deg 0% 15% / 10%);
+	--thyuu--shadow-white: 0 .2rem 1rem 0 hsl(0deg 0% 15% / 4%);
+	--thyuu--shadow-color: var(--thyuu--shadow-normal), 0 2rem 2rem -2rem hsl(var(--thyuu--main-color) / 30%);
+
+	--animation-on:cubic-bezier(.6, .1, 0, 1);
+	--animation-in:cubic-bezier(.6, .2, .25, 1);
+	--animation: opacity .5s var(--animation-in) backwards, transform 1s var(--animation-in) backwards, filter .7s var(--animation-in);
+
+	/* wp重置 */
+	--wp--preset--font-size--small: .75em;
+	--wp--preset--font-size--medium: 1.75em;
+	--wp--preset--font-size--large: 2em;
+	--wp--preset--font-size--x-large: 3em;
+}
+@media (max-width: 1152px) {
+    :root {
+        --thyuu--size-edgelr:1.5rem;
+    }
+}
+@media (max-width: 641px) {
+    :root {
+        --thyuu--sticky-head:1rem;
+        --thyuu--size-scroll:0rem;
+    }
+}
+@view-transition {
+    navigation: auto;
+}
+
+/* 夜间模式 */
+:root, .dark {
+    --thyuu--color-font:var(--custom-main-hue, 214deg) 5% 80%;
+    --thyuu--color-back-have:hsl(var(--custom-main-hue, 214deg) 5% 5%);
+    --thyuu--color-back-white:hsl(var(--custom-main-hue, 214deg) 5% 10%);
+    --thyuu--color-back-shift:hsl(var(--custom-main-hue, 214deg) 5% 20% / 50%);
+    --thyuu--color-font-fill:var(--thyuu--color-back-have);
+}
+:root body.nav-fixed {
+    --thyuu--height-head:3rem;
+}
+
+/* 附加属性 */
+:root :where(body.dark-page),
+:root:has(body.dark-page) {
+    --logo-color:0deg 0% 100%;
+    --thyuu--color-font:0deg 0% 100%;
+    --thyuu--alpha-font:75%;
+    --thyuu--color-back-font:hsl(0deg 0% 60% / .05);
+    --thyuu--color-back-have:hsl(0deg 0% 0%);
+    --thyuu--color-back-white:hsl(0deg 0% 60% / .1);
+    --thyuu--color-back-shift:hsl(0deg 0% 60% / .1);
+    --thyuu--color-back-text:none;
+    --thyuu--color-font-fill:var(--thyuu--color-back-have);
+    --thyuu--color-font-head:hsl(0deg 0% 100% / .9);
+    --thyuu--shadow-shift:var(--thyuu--shadow-white);
+}
+:root body.single:not(.nav-fixed, .single-format-image, .single-format-gallery) header {
+    --thyuu--color-font-head: hsl(0deg 0% 100% / .9);
+    --thyuu--color-font-fill: hsl(0deg 0% 0% / .7);
+    --logo-color: var(--thyuu--color-font-head);
+}
+
+[class*="thyuu-icon-"]::before {
+	font-family: thyuu-iconfont;
+	font-style: normal;
+    font-weight: normal;
+}
+
+/* 通用动画 */
+@keyframes rotate{
+	from{transform: rotate(0deg)}
+	to{transform: rotate(1turn)}
+}
+@keyframes opacity {
+	0% {opacity: var(--opci, 0);}
+	100% {opacity: var(--opci-in, 1);}
+}
+@keyframes transform {
+	0% {transform: var(--trfm, translateY(1rem)); transform-origin: var(--trfm-or, top); }
+	100% {transform: var(--trfm-in, none);}
+}
+@keyframes filter {
+	0% {filter: var(--filter, none);}
+	100% {filter: var(--filter-in, none);}
+}
+@keyframes nothumb {
+	100% {background-position: 50%, 200%, 200%;}
+}
+@keyframes end {
+	0% {opacity: 1;}
+	100% {opacity: 0;}
+}
+@keyframes onheight {
+	0% {height: 0;}
+}
+@keyframes onwidth {
+	0% {width: 0;}
+}
+@keyframes userbg {
+	0% {height: 0;scale: 2;}
+}

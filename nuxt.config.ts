@@ -26,10 +26,10 @@ export default defineNuxtConfig({
 				// }
 			}
 		},
-		// 如果需要在生产环境或服务端渲染时也进行代理，可以使用 routeRules（Nuxt 3.2+）
-		routeRules: {
-			'/bililbilil': { proxy: 'https://api.bilibili.com/' }
-		},
+	},
+	// 如果需要在生产环境或服务端渲染时也进行代理，可以使用 routeRules（Nuxt 3.2+）
+	routeRules: {
+		'/api/bililbilil': { proxy: 'https://api.bilibili.com/' }
 	},
 	app: {
 		head: {

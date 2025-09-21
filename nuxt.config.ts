@@ -38,7 +38,9 @@ export default defineNuxtConfig({
 				// 此处为元数据的生成器标识，不建议修改
 				{ 'name': 'generator', 'content': packageJson.name, 'data-github-repo': packageJson.homepage, 'data-version': packageJson.version },
 				{ name: 'mobile-web-app-capable', content: 'yes' },
-				{ name: "referrer", content:"no-referrer" }
+				{ name:'Origin', content:'https://www.bilibili.com' },
+				{ name: 'Referer', content:'https://www.bilibili.com' },
+				{ name:'User-Agent', content:'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36'}
 			],
 			link: [
 				{ rel: 'icon', href: blogConfig.favicon },

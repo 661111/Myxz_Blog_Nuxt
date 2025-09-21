@@ -1,0 +1,2073 @@
+{
+  "code": 0,
+  "message": "0",
+  "ttl": 1,
+  "data": {
+    "list": [
+      {
+        "season_id": 42176,
+        "media_id": 28338623,
+        "season_type": 1,
+        "season_type_name": "番剧",
+        "title": "莉可丽丝",
+        "cover": "http://i0.hdslb.com/bfs/bangumi/image/53e6a08505b5a889feb14d2f5ee8a7f22b961847.png",
+        "total_count": 13,
+        "is_finish": 1,
+        "is_started": 1,
+        "is_play": 1,
+        "badge": "独家",
+        "badge_type": 1,
+        "rights": {
+          "allow_review": 1,
+          "allow_preview": 1,
+          "is_selection": 1,
+          "selection_style": 1,
+          "demand_end_time": {
+
+          },
+          "is_rcmd": 1
+        },
+        "stat": {
+          "follow": 2646940,
+          "view": 80621159,
+          "danmaku": 333785,
+          "reply": 53452,
+          "coin": 463272,
+          "series_follow": 2646900,
+          "series_view": 80621159,
+          "likes": 1686139,
+          "favorite": 182690
+        },
+        "new_ep": {
+          "id": 691488,
+          "index_show": "全13话",
+          "cover": "http://i0.hdslb.com/bfs/archive/27620fd88f7ee715a9b778a51f9d50532f9db5f8.png",
+          "title": "13",
+          "long_title": "铳动彼岸花",
+          "pub_time": "2022-11-19 21:30:01",
+          "duration": 1449000
+        },
+        "rating": {
+          "score": 9.2,
+          "count": 25786
+        },
+        "square_cover": "http://i0.hdslb.com/bfs/bangumi/image/6ea75b548fc1ccaf1b6a4e3611410d7931850cd8.png",
+        "season_status": 13,
+        "season_title": "TV",
+        "badge_ep": "",
+        "media_attr": 196608,
+        "season_attr": 1536,
+        "evaluate": "安宁的日常——背后却暗藏秘密\n将犯罪防患于未然的秘密组织——“DA（Direct Attack）”\n隶属于DA的少女特工——“莉可丽丝”\n\n理所当然的日常，都要归功于她们。\n\n咖啡厅“莉可莉可” 作为...",
+        "areas": [
+          {
+            "id": 2,
+            "name": "日本"
+          }
+        ],
+        "subtitle": "虚假的咖啡厅日常",
+        "first_ep": 674245,
+        "can_watch": 1,
+        "series": {
+          "series_id": 6172,
+          "title": "莉可丽丝",
+          "season_count": 1,
+          "new_season_id": 42176,
+          "series_ord": 1
+        },
+        "publish": {
+          "pub_time": "2022-09-03 21:30:00",
+          "pub_time_show": "2022年09月03日21:30",
+          "release_date": "2022-07-02",
+          "release_date_show": "2022年7月2日"
+        },
+        "mode": 2,
+        "section": [
+          {
+            "section_id": 81539,
+            "season_id": 42176,
+            "limit_group": 328,
+            "watch_platform": 31,
+            "copyright": "dujia",
+            "ban_area_show": 1,
+            "episode_ids": [0]
+          },
+          {
+            "section_id": 82354,
+            "season_id": 42176,
+            "limit_group": 328,
+            "watch_platform": 31,
+            "type": 1,
+            "copyright": "dujia",
+            "title": "PV",
+            "ban_area_show": 1,
+            "episode_ids": [0]
+          },
+          {
+            "section_id": 188877,
+            "season_id": 42176,
+            "limit_group": 328,
+            "watch_platform": 31,
+            "type": 2,
+            "copyright": "dujia",
+            "title": "小动画",
+            "ban_area_show": 1,
+            "episode_ids": [0]
+          },
+          {
+            "section_id": 86012,
+            "season_id": 42176,
+            "limit_group": 328,
+            "watch_platform": 31,
+            "type": 8,
+            "copyright": "dujia",
+            "title": "精彩看点",
+            "ban_area_show": 1,
+            "attr": 4,
+            "episode_ids": [0]
+          }
+        ],
+        "url": "https://www.bilibili.com/bangumi/play/ss42176",
+        "badge_info": {
+          "text": "独家",
+          "bg_color": "#00C0FF",
+          "bg_color_night": "#0B91BE",
+          "img": "http://i0.hdslb.com/bfs/bangumi/image/e31027bd41fb1cec4cbd1477f09799d0749bdf88.png",
+          "multi_img": {
+            "color": "http://i0.hdslb.com/bfs/bangumi/image/e31027bd41fb1cec4cbd1477f09799d0749bdf88.png",
+            "medium_remind": "https://i0.hdslb.com/bfs/bangumi/image/f8812eb31c22db41fb4608353b83a3fc49d2da3c.png"
+          }
+        },
+        "renewal_time": "迷你动画 每周三 20:00更新",
+        "first_ep_info": {
+          "id": 674245,
+          "cover": "http://i0.hdslb.com/bfs/archive/55bb88e646f2eb2140476aa1dd3ef8298585bdf0.png",
+          "title": "1",
+          "long_title": "慢慢来",
+          "pub_time": "2022-09-03 21:30:01",
+          "duration": 1430000
+        },
+        "formal_ep_count": 13,
+        "short_url": "https://b23.tv/ss42176",
+        "badge_infos": {
+          "content_attr": {
+            "text": "独家",
+            "bg_color": "#00C0FF",
+            "bg_color_night": "#0B91BE",
+            "img": "http://i0.hdslb.com/bfs/bangumi/image/e31027bd41fb1cec4cbd1477f09799d0749bdf88.png",
+            "multi_img": {
+              "color": "http://i0.hdslb.com/bfs/bangumi/image/e31027bd41fb1cec4cbd1477f09799d0749bdf88.png",
+              "medium_remind": "https://i0.hdslb.com/bfs/bangumi/image/f8812eb31c22db41fb4608353b83a3fc49d2da3c.png"
+            }
+          },
+          "vip_or_pay": {
+            "text": "会员专享",
+            "bg_color": "#FB7299",
+            "bg_color_night": "#D44E7D",
+            "img": "http://i0.hdslb.com/bfs/vip/7a099c1d698eeb9036a4f1c4716c25d3cc1fb3ec.png",
+            "multi_img": {
+              "color": "http://i0.hdslb.com/bfs/vip/7a099c1d698eeb9036a4f1c4716c25d3cc1fb3ec.png",
+              "medium_remind": "https://i0.hdslb.com/bfs/bangumi/image/620a40f8e7004eb881916846e760981b7509d22f.png"
+            }
+          }
+        },
+        "season_version": "tv",
+        "horizontal_cover_16_9": "http://i0.hdslb.com/bfs/bangumi/image/a3943a539be217bb566be235d73989b23a5a21ea.png",
+        "horizontal_cover_16_10": "http://i0.hdslb.com/bfs/bangumi/image/eb5f9108a4312804ed7ecdd62fe8b87bd4f1a386.png",
+        "subtitle_14": "我的白毛前辈是个隐藏大佬",
+        "viewable_crowd_type": 18,
+        "producers": [
+          {
+            "mid": 928123,
+            "type": 3,
+            "is_contribute": 1,
+            "title": "播出"
+          }
+        ],
+        "summary": "安宁的日常——背后却暗藏秘密\n将犯罪防患于未然的秘密组织——“DA（Direct Attack）”\n隶属于DA的少女特工——“莉可丽丝”\n\n理所当然的日常，都要归功于她们。\n\n咖啡厅“莉可莉可” 作为DA支部，员工有号称史上最强莉可丽丝的精英·锦木千束、优秀却暗藏隐情的莉可丽丝·井上泷奈。\n\n这里供应的不光是咖啡和甜品，还有照顾孩子、代为购物、教外国人日语等服务，全都不像是“莉可丽丝”会做的事。\n\n自由随性又乐天的和平主义者·千束和效率至上的泷奈，反差巨大的两人组成搭档，开始了忙忙碌碌的每一天。\n",
+        "styles": [
+          "日常",
+          "战斗",
+          "原创"
+        ],
+        "config_attrs": {
+          "cc_on_lock": {
+            "type_url": "type.googleapis.com/google.protobuf.BoolValue"
+          },
+          "highlight_ineffective_hd": {
+            "type_url": "type.googleapis.com/google.protobuf.BoolValue"
+          },
+          "highlight_ineffective_ott": {
+            "type_url": "type.googleapis.com/google.protobuf.BoolValue"
+          },
+          "highlight_ineffective_pink": {
+            "type_url": "type.googleapis.com/google.protobuf.BoolValue"
+          }
+        },
+        "follow_status": 2,
+        "is_new": 0,
+        "progress": "看到第1话 0:06",
+        "both_follow": true
+      },
+      {
+        "season_id": 44865,
+        "media_id": 20140807,
+        "season_type": 1,
+        "season_type_name": "番剧",
+        "title": "Ｄｒ．ＳＴＯＮＥ 石纪元 (第三季)",
+        "cover": "https://i0.hdslb.com/bfs/bangumi/image/1d72fab14c829f45bef5878c767bcca153018d3b.png",
+        "total_count": 22,
+        "is_finish": 1,
+        "is_started": 1,
+        "is_play": 1,
+        "badge": "大会员",
+        "badge_type": 0,
+        "rights": {
+          "allow_review": 1,
+          "allow_preview": 1,
+          "is_selection": 1,
+          "selection_style": 1,
+          "demand_end_time": {
+
+          },
+          "is_rcmd": 1
+        },
+        "stat": {
+          "follow": 4531216,
+          "view": 93258510,
+          "danmaku": 274612,
+          "reply": 31971,
+          "coin": 265695,
+          "series_follow": 5188058,
+          "series_view": 450179729,
+          "likes": 812639,
+          "favorite": 48282
+        },
+        "new_ep": {
+          "id": 783841,
+          "index_show": "全22话",
+          "cover": "http://i0.hdslb.com/bfs/archive/3beb48ebcda1b8e3d124365bc2ba2d88fea5ff2c.jpg",
+          "title": "22",
+          "long_title": "跨越新世界",
+          "pub_time": "2023-12-21 22:30:02",
+          "duration": 1441000
+        },
+        "rating": {
+          "score": 9.8,
+          "count": 5410
+        },
+        "square_cover": "https://i0.hdslb.com/bfs/bangumi/image/535e31cc6bb3d8aa213202a96616d0d83efceb2c.png",
+        "season_status": 13,
+        "season_title": "第三季",
+        "badge_ep": "",
+        "media_attr": 196608,
+        "season_attr": 1536,
+        "evaluate": "自全人类被神秘现象瞬间石化之后，已过去了几千年——\n千空，一个有着超越常人的头脑，彻头彻尾的科学少年醒来了。\n面对着文明已经灭绝的石之世界，千空决心以科学的力量重建地球，他找来了同伴，建立起了“科学王...",
+        "areas": [
+          {
+            "id": 2,
+            "name": "日本"
+          }
+        ],
+        "subtitle": "属于理科生的浪漫",
+        "first_ep": 743050,
+        "can_watch": 1,
+        "series": {
+          "series_id": 4444,
+          "title": "Dr.STONE",
+          "season_count": 6,
+          "new_season_id": 80512,
+          "series_ord": 5
+        },
+        "publish": {
+          "pub_time": "2023-04-06 22:30:00",
+          "pub_time_show": "2023年04月06日22:30",
+          "release_date": "2023-04-06",
+          "release_date_show": "2023年4月6日"
+        },
+        "mode": 2,
+        "section": [
+          {
+            "section_id": 93716,
+            "season_id": 44865,
+            "limit_group": 328,
+            "watch_platform": 31,
+            "copyright": "bilibili",
+            "ban_area_show": 1,
+            "episode_ids": [0]
+          },
+          {
+            "section_id": 93790,
+            "season_id": 44865,
+            "limit_group": 328,
+            "watch_platform": 31,
+            "type": 1,
+            "copyright": "bilibili",
+            "title": "PV",
+            "ban_area_show": 1,
+            "episode_ids": [0]
+          },
+          {
+            "section_id": 97017,
+            "season_id": 44865,
+            "limit_group": 328,
+            "watch_platform": 31,
+            "type": 8,
+            "copyright": "bilibili",
+            "title": "精彩看点",
+            "ban_area_show": 1,
+            "attr": 4,
+            "episode_ids": [0]
+          }
+        ],
+        "url": "https://www.bilibili.com/bangumi/play/ss44865",
+        "badge_info": {
+          "text": "大会员",
+          "bg_color": "#FB7299",
+          "bg_color_night": "#D44E7D",
+          "img": "http://i0.hdslb.com/bfs/vip/7a099c1d698eeb9036a4f1c4716c25d3cc1fb3ec.png",
+          "multi_img": {
+            "color": "http://i0.hdslb.com/bfs/vip/7a099c1d698eeb9036a4f1c4716c25d3cc1fb3ec.png",
+            "medium_remind": "https://i0.hdslb.com/bfs/bangumi/image/620a40f8e7004eb881916846e760981b7509d22f.png"
+          }
+        },
+        "renewal_time": "每周四 22:30更新",
+        "first_ep_info": {
+          "id": 743050,
+          "cover": "http://i0.hdslb.com/bfs/archive/f9530a2f3979d8f6a342bd782db839f00b02b6be.jpg",
+          "title": "1",
+          "long_title": "新世界地图",
+          "pub_time": "2023-04-06 22:30:01",
+          "duration": 1439979
+        },
+        "formal_ep_count": 22,
+        "short_url": "https://b23.tv/ss44865",
+        "badge_infos": {
+          "vip_or_pay": {
+            "text": "会员专享",
+            "bg_color": "#FB7299",
+            "bg_color_night": "#D44E7D",
+            "img": "http://i0.hdslb.com/bfs/vip/7a099c1d698eeb9036a4f1c4716c25d3cc1fb3ec.png",
+            "multi_img": {
+              "color": "http://i0.hdslb.com/bfs/vip/7a099c1d698eeb9036a4f1c4716c25d3cc1fb3ec.png",
+              "medium_remind": "https://i0.hdslb.com/bfs/bangumi/image/620a40f8e7004eb881916846e760981b7509d22f.png"
+            }
+          }
+        },
+        "season_version": "tv",
+        "horizontal_cover_16_9": "https://i0.hdslb.com/bfs/bangumi/image/27c0e7e06c8cb2dc02df754b8a63b69793ce8f27.png",
+        "horizontal_cover_16_10": "https://i0.hdslb.com/bfs/bangumi/image/90d0ba2946e3699df30c743223041f89419e4cae.png",
+        "subtitle_14": "与千空开启石之世界航海新纪元",
+        "viewable_crowd_type": 18,
+        "producers": [
+          {
+            "mid": 928123,
+            "type": 3,
+            "is_contribute": 1,
+            "title": "播出"
+          }
+        ],
+        "summary": "自全人类被神秘现象瞬间石化之后，已过去了几千年——\n千空，一个有着超越常人的头脑，彻头彻尾的科学少年醒来了。\n面对着文明已经灭绝的石之世界，千空决心以科学的力量重建地球，他找来了同伴，建立起了“科学王国”。\n但是，他们碰上了由灵长类最强高中生狮子王司统领的“武力帝国”。\n司为了净化人类，决心以强大的武力，阻止科学的发展。\n经过科学与武力的大战，千空等人的科学王国取得优势，两国最终和解。\n司因为背叛而陷入了冷冻睡眠状态，而千空为了复活全人类，决心率领科学王国前往石化光线的产生地——地球另一头的新世界。\n迈向全世界，解开石化之谜！\n石世界的大航海时代终于拉开了序幕！",
+        "styles": [
+          "热血",
+          "科幻",
+          "漫画改",
+          "励志",
+          "冒险"
+        ],
+        "config_attrs": {
+          "cc_on_lock": {
+            "type_url": "type.googleapis.com/google.protobuf.BoolValue"
+          },
+          "highlight_ineffective_hd": {
+            "type_url": "type.googleapis.com/google.protobuf.BoolValue"
+          },
+          "highlight_ineffective_ott": {
+            "type_url": "type.googleapis.com/google.protobuf.BoolValue"
+          },
+          "highlight_ineffective_pink": {
+            "type_url": "type.googleapis.com/google.protobuf.BoolValue"
+          }
+        },
+        "follow_status": 2,
+        "is_new": 0,
+        "progress": "看到第21话 0:32",
+        "both_follow": true
+      },
+      {
+        "season_id": 80512,
+        "media_id": 24449643,
+        "season_type": 1,
+        "season_type_name": "番剧",
+        "title": "Ｄｒ．ＳＴＯＮＥ 石纪元 (第四季)",
+        "cover": "https://i0.hdslb.com/bfs/bangumi/image/834bdb5d36c401179b9e91fdc1de520a6664c2a7.png",
+        "total_count": 24,
+        "is_finish": 0,
+        "is_started": 1,
+        "is_play": 1,
+        "badge": "大会员",
+        "badge_type": 0,
+        "rights": {
+          "allow_review": 1,
+          "allow_preview": 1,
+          "is_selection": 1,
+          "selection_style": 1,
+          "demand_end_time": {
+
+          },
+          "is_rcmd": 1
+        },
+        "stat": {
+          "follow": 4929363,
+          "view": 59647636,
+          "danmaku": 202278,
+          "reply": 39733,
+          "coin": 171758,
+          "series_follow": 5188058,
+          "series_view": 450179729,
+          "likes": 535584,
+          "favorite": 66161
+        },
+        "new_ep": {
+          "id": 2123344,
+          "index_show": "更新至第23话",
+          "cover": "http://i0.hdslb.com/bfs/archive/faaaf2a590731657a352d6a97edecfc940307112.jpg",
+          "title": "23",
+          "long_title": "孤身一人的科学家",
+          "pub_time": "2025-09-18 22:00:01",
+          "duration": 1441000
+        },
+        "rating": {
+          "score": 9.9,
+          "count": 3944
+        },
+        "square_cover": "https://i0.hdslb.com/bfs/bangumi/image/3fe5bc55c61f87575dda28b122edb70332ecdcf4.png",
+        "season_status": 13,
+        "season_title": "第四季",
+        "badge_ep": "",
+        "media_attr": 196608,
+        "season_attr": 1536,
+        "evaluate": "从石器时代到现代文明，\n疾驰过200万年的科学史！\n前所未有的冒险传记，于此开幕！\n\n在宝岛的激战结束后，千空等人平安回到了科学王国。\n他们用得到的石化装置，成功复活了陷入冷冻睡眠的司。\n司成为了科学...",
+        "areas": [
+          {
+            "id": 2,
+            "name": "日本"
+          }
+        ],
+        "subtitle": "穿越百夜，仰望千空",
+        "first_ep": 1404783,
+        "can_watch": 1,
+        "release_date_show": " 2025-07-10",
+        "series": {
+          "series_id": 4444,
+          "title": "Dr.STONE",
+          "season_count": 6,
+          "new_season_id": 80512,
+          "series_ord": 6
+        },
+        "publish": {
+          "pub_time": "2025-01-23 22:00:00",
+          "pub_time_show": "01月23日22:00",
+          "release_date": "2025-01-09",
+          "release_date_show": " 2025-07-10"
+        },
+        "mode": 2,
+        "section": [
+          {
+            "section_id": 136422,
+            "season_id": 80512,
+            "limit_group": 328,
+            "watch_platform": 31,
+            "copyright": "bilibili",
+            "ban_area_show": 1,
+            "episode_ids": [0]
+          },
+          {
+            "section_id": 136688,
+            "season_id": 80512,
+            "limit_group": 328,
+            "watch_platform": 31,
+            "type": 1,
+            "copyright": "bilibili",
+            "title": "PV",
+            "ban_area_show": 1,
+            "episode_ids": [0]
+          },
+          {
+            "section_id": 136689,
+            "season_id": 80512,
+            "limit_group": 316,
+            "watch_platform": 31,
+            "type": 2,
+            "copyright": "ugc",
+            "title": "其他",
+            "ban_area_show": 1,
+            "episode_ids": [0]
+          },
+          {
+            "section_id": 177641,
+            "season_id": 80512,
+            "limit_group": 328,
+            "watch_platform": 15,
+            "type": 8,
+            "copyright": "bilibili",
+            "title": "精彩看点",
+            "ban_area_show": 1,
+            "attr": 4,
+            "episode_ids": [0]
+          }
+        ],
+        "url": "https://www.bilibili.com/bangumi/play/ss80512",
+        "badge_info": {
+          "text": "大会员",
+          "bg_color": "#FB7299",
+          "bg_color_night": "#D44E7D",
+          "img": "http://i0.hdslb.com/bfs/vip/7a099c1d698eeb9036a4f1c4716c25d3cc1fb3ec.png",
+          "multi_img": {
+            "color": "http://i0.hdslb.com/bfs/vip/7a099c1d698eeb9036a4f1c4716c25d3cc1fb3ec.png",
+            "medium_remind": "https://i0.hdslb.com/bfs/bangumi/image/620a40f8e7004eb881916846e760981b7509d22f.png"
+          }
+        },
+        "renewal_time": "每周四 22:00更新",
+        "first_ep_info": {
+          "id": 1404783,
+          "cover": "http://i0.hdslb.com/bfs/archive/ba36c397ede8ba668cc726c34e0aaf5c0195958c.jpg",
+          "title": "1",
+          "long_title": "龙水对阵千空",
+          "pub_time": "2025-01-23 22:00:02",
+          "duration": 1441000
+        },
+        "formal_ep_count": 23,
+        "short_url": "https://b23.tv/ss80512",
+        "badge_infos": {
+          "vip_or_pay": {
+            "text": "会员抢先",
+            "bg_color": "#FB7299",
+            "bg_color_night": "#D44E7D",
+            "img": "http://i0.hdslb.com/bfs/vip/7a099c1d698eeb9036a4f1c4716c25d3cc1fb3ec.png",
+            "multi_img": {
+              "color": "http://i0.hdslb.com/bfs/vip/7a099c1d698eeb9036a4f1c4716c25d3cc1fb3ec.png",
+              "medium_remind": "https://i0.hdslb.com/bfs/bangumi/image/620a40f8e7004eb881916846e760981b7509d22f.png"
+            }
+          }
+        },
+        "season_version": "tv",
+        "horizontal_cover_16_9": "https://i0.hdslb.com/bfs/bangumi/image/c1491f62cf950e1090717f2a6cce2a1935f3f021.png",
+        "horizontal_cover_16_10": "https://i0.hdslb.com/bfs/bangumi/image/aa9f5e2525df94bc21f780d18b118ea9afc34f25.png",
+        "subtitle_14": "前所未有的冒险传记开幕！",
+        "viewable_crowd_type": 18,
+        "producers": [
+          {
+            "mid": 928123,
+            "type": 3,
+            "is_contribute": 1,
+            "title": "播出"
+          }
+        ],
+        "summary": "从石器时代到现代文明，\n疾驰过200万年的科学史！\n前所未有的冒险传记，于此开幕！\n\n在宝岛的激战结束后，千空等人平安回到了科学王国。\n他们用得到的石化装置，成功复活了陷入冷冻睡眠的司。\n司成为了科学王国的同伴！\n而在确定将人类石化的幕后黑手“怀曼”就在月球的千空等人，准备奔向月球！在这个石纪元，提出了从零制造宇宙飞船的宏伟工程。\n为了从全世界收集飞船的材料，千空等人迅速乘上珀耳修斯号驶向大海。\n要制造复活液，他们需要大量的玉米，于是第一个目的地就被设为了美洲大陆。\n而在结束了考验勇气、团结以及科学力量的大航海后，等待着的，是能动摇他们的威胁。\n千空等人的冒险，终于开始迈向世界，甚至迈向太空。\n为了拯救人类的未来，千空和同伴们一起，全力开拓科学的道路。",
+        "styles": [
+          "漫画改",
+          "热血",
+          "战斗",
+          "科幻",
+          "冒险"
+        ],
+        "config_attrs": {
+          "cc_on_lock": {
+            "type_url": "type.googleapis.com/google.protobuf.BoolValue"
+          },
+          "drm_supported": {
+            "type_url": "type.googleapis.com/google.protobuf.BoolValue"
+          },
+          "highlight_ineffective_hd": {
+            "type_url": "type.googleapis.com/google.protobuf.BoolValue"
+          },
+          "highlight_ineffective_ott": {
+            "type_url": "type.googleapis.com/google.protobuf.BoolValue"
+          },
+          "highlight_ineffective_pink": {
+            "type_url": "type.googleapis.com/google.protobuf.BoolValue"
+          }
+        },
+        "follow_status": 2,
+        "is_new": 0,
+        "progress": "看到第1话 0:01",
+        "both_follow": true
+      },
+      {
+        "season_id": 42073,
+        "media_id": 28338429,
+        "season_type": 4,
+        "season_type_name": "国创",
+        "title": "小魔美食大百科",
+        "cover": "http://i0.hdslb.com/bfs/bangumi/image/27a5c6dcbc7f2afe0c35ce754a85a1e53cc65f27.png",
+        "total_count": 200,
+        "is_finish": 0,
+        "is_started": 1,
+        "is_play": 1,
+        "badge": "",
+        "badge_type": 0,
+        "rights": {
+          "allow_review": 1,
+          "is_selection": 1,
+          "selection_style": 1,
+          "demand_end_time": {
+
+          }
+        },
+        "stat": {
+          "follow": 1119262,
+          "view": 3892378468,
+          "danmaku": 934694,
+          "reply": 454590,
+          "coin": 1013408,
+          "series_follow": 1119280,
+          "series_view": 3892378468,
+          "likes": 57553261,
+          "favorite": 4556215
+        },
+        "new_ep": {
+          "id": 2096695,
+          "index_show": "更新至第504话",
+          "cover": "http://i0.hdslb.com/bfs/archive/e05a471fe57fe5d933412a66efcb920a5b232e89.jpg",
+          "title": "504",
+          "long_title": "一层肉一层油，三文鱼为啥要长那么肥啊？",
+          "pub_time": "2025-08-27 18:00:00",
+          "duration": 69000
+        },
+        "rating": {
+          "score": 9.3,
+          "count": 1403
+        },
+        "square_cover": "http://i0.hdslb.com/bfs/bangumi/image/a3502f6827c795d9aa3b1a954a95dce70e711158.png",
+        "season_status": 2,
+        "season_title": "第一季",
+        "badge_ep": "",
+        "media_attr": 196608,
+        "season_attr": 0,
+        "evaluate": "食物很重要，可我们和食物之间，却存在着巨大的“信息差”。\n水果烂了一小块，切掉之后还能吃吗？小龙虾哪里不能吃，哪里能吃？……你知道答案吗？\n不知道也没关系，《小魔美食大百科》都会解答，让你吃得放心，胖...",
+        "areas": [
+          {
+            "id": 1,
+            "name": "中国大陆"
+          }
+        ],
+        "subtitle": "你的粮食科普大师",
+        "first_ep": 543143,
+        "can_watch": 1,
+        "series": {
+          "series_id": 6141,
+          "title": "小魔美食大百科",
+          "season_count": 1,
+          "new_season_id": 42073,
+          "series_ord": 1
+        },
+        "publish": {
+          "pub_time": "2022-07-01 18:00:00",
+          "pub_time_show": "2022年07月01日18:00",
+          "release_date": "2022-07-01",
+          "release_date_show": "2022年7月1日"
+        },
+        "mode": 2,
+        "section": [
+          {
+            "section_id": 79638,
+            "season_id": 42073,
+            "limit_group": 316,
+            "watch_platform": 31,
+            "copyright": "bilibili",
+            "ban_area_show": 1,
+            "episode_ids": [0]
+          },
+          {
+            "section_id": 102445,
+            "season_id": 42073,
+            "limit_group": 316,
+            "watch_platform": 31,
+            "type": 1,
+            "copyright": "bilibili",
+            "title": "精彩二创&花絮",
+            "ban_area_show": 1,
+            "episode_ids": [0]
+          }
+        ],
+        "url": "https://www.bilibili.com/bangumi/play/ss42073",
+        "badge_info": {
+          "bg_color": "#FB7299",
+          "bg_color_night": "#D44E7D",
+          "multi_img": {
+            "color": "",
+            "medium_remind": ""
+          }
+        },
+        "first_ep_info": {
+          "id": 543143,
+          "cover": "http://i0.hdslb.com/bfs/archive/8d67233dc003c5f894a41f398480313c034ee8a5.png",
+          "title": "1",
+          "long_title": "小龙虾哪里不能吃？哪里能吃？你真的知道吗？",
+          "pub_time": "2022-07-01 18:00:00",
+          "duration": 67000
+        },
+        "formal_ep_count": 504,
+        "short_url": "https://b23.tv/ss42073",
+        "season_version": "tv",
+        "horizontal_cover_16_9": "http://i0.hdslb.com/bfs/bangumi/image/29d1904811f790812c815e50d3350d7d98adca00.png",
+        "horizontal_cover_16_10": "http://i0.hdslb.com/bfs/bangumi/image/508d8f57cf9e1cb1a5a5f37342325b8c6a2fb7fb.png",
+        "subtitle_14": "小魔让你吃得放心，胖得明白！",
+        "viewable_crowd_type": 8,
+        "producers": [
+          {
+            "mid": 87190721,
+            "type": 2,
+            "is_contribute": 1,
+            "title": "制作"
+          }
+        ],
+        "summary": "食物很重要，可我们和食物之间，却存在着巨大的“信息差”。\n水果烂了一小块，切掉之后还能吃吗？小龙虾哪里不能吃，哪里能吃？……你知道答案吗？\n不知道也没关系，《小魔美食大百科》都会解答，让你吃得放心，胖得明白！\n我是小魔，你的粮食科普大师。",
+        "config_attrs": {
+          "highlight_ineffective_hd": {
+            "type_url": "type.googleapis.com/google.protobuf.BoolValue"
+          },
+          "highlight_ineffective_ott": {
+            "type_url": "type.googleapis.com/google.protobuf.BoolValue"
+          },
+          "highlight_ineffective_pink": {
+            "type_url": "type.googleapis.com/google.protobuf.BoolValue"
+          }
+        },
+        "follow_status": 2,
+        "is_new": 0,
+        "progress": "看到第500话 0:35",
+        "both_follow": true
+      },
+      {
+        "season_id": 46585,
+        "media_id": 21123554,
+        "season_type": 4,
+        "season_type_name": "国创",
+        "title": "灵笼 第二季",
+        "cover": "https://i0.hdslb.com/bfs/bangumi/image/08bf0c1e24e454de51b58d1e26c0a9aecbe9b0c1.png",
+        "total_count": 12,
+        "is_finish": 1,
+        "is_started": 1,
+        "is_play": 1,
+        "badge": "出品",
+        "badge_type": 1,
+        "rights": {
+          "allow_review": 1,
+          "allow_preview": 1,
+          "is_selection": 1,
+          "selection_style": 1,
+          "demand_end_time": {
+
+          },
+          "is_rcmd": 1
+        },
+        "stat": {
+          "follow": 10713147,
+          "view": 346448320,
+          "danmaku": 2842368,
+          "reply": 324887,
+          "coin": 4621148,
+          "series_follow": 11367322,
+          "series_view": 1098687057,
+          "likes": 4842025,
+          "favorite": 862262
+        },
+        "new_ep": {
+          "id": 1633654,
+          "index_show": "全12话",
+          "cover": "https://i0.hdslb.com/bfs/bangumi/image/5df64c3d305358b564b30de96822729310d417bf.png",
+          "title": "12",
+          "long_title": "棋盘之上",
+          "pub_time": "2025-08-01 11:00:00",
+          "duration": 3029791
+        },
+        "rating": {
+          "score": 9.8,
+          "count": 31273
+        },
+        "square_cover": "https://i0.hdslb.com/bfs/bangumi/image/99b4071049f51d5ea889aca93a3d060186006aa2.png",
+        "season_status": 13,
+        "season_title": "第二季",
+        "badge_ep": "",
+        "media_attr": 196608,
+        "season_attr": 11784,
+        "evaluate": "数百年前，欲望催生了几乎灭绝人类的玛娜生态。人类瞬间沦为猎物，文明毁灭殆尽，末日中猜忌和恐惧拉开了人与人之间的距离。灾难当前，人们逐渐意识到：情感——这个被灯塔视为禁忌的存在，如今成为突破一切障碍、构...",
+        "areas": [
+          {
+            "id": 1,
+            "name": "中国大陆"
+          }
+        ],
+        "subtitle": "幸存者能否重夺未来",
+        "first_ep": 1633643,
+        "can_watch": 1,
+        "series": {
+          "series_id": 3921,
+          "title": "灵笼:INCARNATION",
+          "season_count": 2,
+          "new_season_id": 46585,
+          "series_ord": 2
+        },
+        "publish": {
+          "pub_time": "2025-05-23 11:00:00",
+          "pub_time_show": "05月23日11:00",
+          "release_date": "2025-05-23",
+          "release_date_show": "2025年5月23日"
+        },
+        "mode": 2,
+        "section": [
+          {
+            "section_id": 99098,
+            "season_id": 46585,
+            "limit_group": 316,
+            "watch_platform": 31,
+            "copyright": "dujia",
+            "ban_area_show": 1,
+            "episode_ids": [0]
+          },
+          {
+            "section_id": 99099,
+            "season_id": 46585,
+            "limit_group": 316,
+            "watch_platform": 31,
+            "type": 1,
+            "copyright": "dujia",
+            "title": "PV花絮",
+            "ban_area_show": 1,
+            "episode_ids": [0]
+          },
+          {
+            "section_id": 196407,
+            "season_id": 46585,
+            "limit_group": 316,
+            "watch_platform": 31,
+            "type": 2,
+            "copyright": "dujia",
+            "title": "高能速看",
+            "ban_area_show": 1,
+            "episode_ids": [0]
+          },
+          {
+            "section_id": 99190,
+            "season_id": 46585,
+            "limit_group": 316,
+            "watch_platform": 31,
+            "type": 3,
+            "copyright": "ugc",
+            "title": "动态漫画",
+            "ban_area_show": 1,
+            "episode_ids": [0]
+          },
+          {
+            "section_id": 199395,
+            "season_id": 46585,
+            "limit_group": 316,
+            "watch_platform": 31,
+            "type": 5,
+            "copyright": "ugc",
+            "title": "UP主看灵笼",
+            "ban_area_show": 1,
+            "episode_ids": [0]
+          }
+        ],
+        "url": "https://www.bilibili.com/bangumi/play/ss46585",
+        "badge_info": {
+          "text": "出品",
+          "bg_color": "#00C0FF",
+          "bg_color_night": "#0B91BE",
+          "img": "http://i0.hdslb.com/bfs/bangumi/image/403e4e8492f9c275490bf11fcf0f0ca68bbe0bbf.png",
+          "multi_img": {
+            "color": "http://i0.hdslb.com/bfs/bangumi/image/403e4e8492f9c275490bf11fcf0f0ca68bbe0bbf.png",
+            "medium_remind": "https://i0.hdslb.com/bfs/bangumi/image/ba4ec32a4b128372121a7a47ed17b028c27e9280.png"
+          }
+        },
+        "renewal_time": "每周五 11:00更新",
+        "first_ep_info": {
+          "id": 1633643,
+          "cover": "https://i0.hdslb.com/bfs/bangumi/image/e8b82ecc0fbd7c69a1e0a84a0f74c1da7bc85cfd.png",
+          "title": "1",
+          "long_title": "末世桃源",
+          "pub_time": "2025-05-23 11:00:00",
+          "duration": 2458000
+        },
+        "formal_ep_count": 12,
+        "short_url": "https://b23.tv/ss46585",
+        "badge_infos": {
+          "content_attr": {
+            "text": "出品",
+            "bg_color": "#00C0FF",
+            "bg_color_night": "#0B91BE",
+            "img": "http://i0.hdslb.com/bfs/bangumi/image/403e4e8492f9c275490bf11fcf0f0ca68bbe0bbf.png",
+            "multi_img": {
+              "color": "http://i0.hdslb.com/bfs/bangumi/image/403e4e8492f9c275490bf11fcf0f0ca68bbe0bbf.png",
+              "medium_remind": "https://i0.hdslb.com/bfs/bangumi/image/ba4ec32a4b128372121a7a47ed17b028c27e9280.png"
+            }
+          },
+          "vip_or_pay": {
+            "text": "会员专享",
+            "bg_color": "#FB7299",
+            "bg_color_night": "#D44E7D",
+            "img": "http://i0.hdslb.com/bfs/vip/7a099c1d698eeb9036a4f1c4716c25d3cc1fb3ec.png",
+            "multi_img": {
+              "color": "http://i0.hdslb.com/bfs/vip/7a099c1d698eeb9036a4f1c4716c25d3cc1fb3ec.png",
+              "medium_remind": "https://i0.hdslb.com/bfs/bangumi/image/620a40f8e7004eb881916846e760981b7509d22f.png"
+            }
+          }
+        },
+        "season_version": "tv",
+        "horizontal_cover_16_9": "https://i0.hdslb.com/bfs/bangumi/image/612438ed78c541f995a0b660c3bce1658441a984.png",
+        "horizontal_cover_16_10": "https://i0.hdslb.com/bfs/bangumi/image/c20136e74b8f531f5cfa60eaa811b00e2f6bf130.png",
+        "subtitle_14": "应该用什么方式对抗末日？",
+        "viewable_crowd_type": 18,
+        "producers": [
+          {
+            "mid": 98627270,
+            "type": 1,
+            "title": "出品"
+          },
+          {
+            "mid": 3494361474009190,
+            "type": 1,
+            "is_contribute": 1,
+            "title": "出品"
+          }
+        ],
+        "summary": "数百年前，欲望催生了几乎灭绝人类的玛娜生态。人类瞬间沦为猎物，文明毁灭殆尽，末日中猜忌和恐惧拉开了人与人之间的距离。灾难当前，人们逐渐意识到：情感——这个被灯塔视为禁忌的存在，如今成为突破一切障碍、构建命运共同体的最强纽带。已被逼至绝境的幸存者们能否重夺未来？",
+        "styles": [
+          "原创",
+          "热血",
+          "奇幻",
+          "战斗",
+          "科幻"
+        ],
+        "config_attrs": {
+          "cc_on_lock": {
+            "type_url": "type.googleapis.com/google.protobuf.BoolValue"
+          },
+          "highlight_ineffective_hd": {
+            "type_url": "type.googleapis.com/google.protobuf.BoolValue"
+          },
+          "highlight_ineffective_ott": {
+            "type_url": "type.googleapis.com/google.protobuf.BoolValue"
+          },
+          "highlight_ineffective_pink": {
+            "type_url": "type.googleapis.com/google.protobuf.BoolValue"
+          }
+        },
+        "follow_status": 2,
+        "is_new": 0,
+        "progress": "看到新春特辑 0:01",
+        "both_follow": true
+      },
+      {
+        "season_id": 48315,
+        "media_id": 22580805,
+        "season_type": 4,
+        "season_type_name": "国创",
+        "title": "伍六七之记忆碎片",
+        "cover": "https://i0.hdslb.com/bfs/bangumi/image/4ca65598089129eb1cb5916f97dbb2c5f032ae88.png",
+        "total_count": 10,
+        "is_finish": 1,
+        "is_started": 1,
+        "is_play": 1,
+        "badge": "大会员",
+        "badge_type": 0,
+        "rights": {
+          "allow_review": 1,
+          "allow_preview": 1,
+          "is_selection": 1,
+          "selection_style": 1,
+          "demand_end_time": {
+
+          },
+          "is_rcmd": 1
+        },
+        "stat": {
+          "follow": 14065097,
+          "view": 333758337,
+          "danmaku": 4100972,
+          "reply": 135721,
+          "coin": 2984710,
+          "series_follow": 14604495,
+          "series_view": 2357114739,
+          "likes": 5477348,
+          "favorite": 887301
+        },
+        "new_ep": {
+          "id": 836534,
+          "index_show": "全10话",
+          "cover": "http://i0.hdslb.com/bfs/archive/4609bc334b248a1413fa784b53d6c5dd7ae38f8b.png",
+          "title": "10",
+          "long_title": "黑石山之战",
+          "pub_time": "2024-11-20 12:00:01",
+          "duration": 1262000
+        },
+        "rating": {
+          "score": 7.7,
+          "count": 54320
+        },
+        "square_cover": "https://i0.hdslb.com/bfs/bangumi/image/efef651eea8563efc9ff328c93ec8f152f70597e.png",
+        "season_status": 13,
+        "season_title": "第五季",
+        "badge_ep": "",
+        "media_attr": 196608,
+        "season_attr": 1536,
+        "evaluate": "为了找回珍视的伙伴，伍六七重回玄武国，面对那些被遗忘的记忆碎片。尘封的真相带来痛苦与愤怒，但现在的他不再是孤身一人。拥有力量，究竟是为了什么？这一次，伍六七要为自己的人生做出新的选择…...",
+        "areas": [
+          {
+            "id": 1,
+            "name": "中国大陆"
+          }
+        ],
+        "subtitle": "伍六七身世之谜揭开",
+        "first_ep": 836525,
+        "can_watch": 1,
+        "series": {
+          "series_id": 5956,
+          "title": "伍六七",
+          "season_count": 5,
+          "new_season_id": 48315,
+          "series_ord": 5
+        },
+        "publish": {
+          "pub_time": "2024-10-02 12:00:00",
+          "pub_time_show": "2024年10月02日12:00",
+          "release_date": "2024-10-02",
+          "release_date_show": "2024年10月2日"
+        },
+        "mode": 2,
+        "section": [
+          {
+            "section_id": 102670,
+            "season_id": 48315,
+            "limit_group": 317,
+            "watch_platform": 31,
+            "copyright": "bilibili",
+            "ban_area_show": 1,
+            "episode_ids": [0]
+          },
+          {
+            "section_id": 103651,
+            "season_id": 48315,
+            "limit_group": 316,
+            "watch_platform": 31,
+            "type": 1,
+            "copyright": "ugc",
+            "title": "预告花絮",
+            "ban_area_show": 1,
+            "episode_ids": [0]
+          },
+          {
+            "section_id": 103935,
+            "season_id": 48315,
+            "limit_group": 316,
+            "watch_platform": 27,
+            "type": 5,
+            "copyright": "ugc",
+            "title": "精彩二创",
+            "ban_area_show": 1,
+            "episode_ids": [0]
+          }
+        ],
+        "url": "https://www.bilibili.com/bangumi/play/ss48315",
+        "badge_info": {
+          "text": "大会员",
+          "bg_color": "#FB7299",
+          "bg_color_night": "#D44E7D",
+          "img": "http://i0.hdslb.com/bfs/vip/7a099c1d698eeb9036a4f1c4716c25d3cc1fb3ec.png",
+          "multi_img": {
+            "color": "http://i0.hdslb.com/bfs/vip/7a099c1d698eeb9036a4f1c4716c25d3cc1fb3ec.png",
+            "medium_remind": "https://i0.hdslb.com/bfs/bangumi/image/620a40f8e7004eb881916846e760981b7509d22f.png"
+          }
+        },
+        "renewal_time": "每周三 12:00更新",
+        "first_ep_info": {
+          "id": 836525,
+          "cover": "http://i0.hdslb.com/bfs/archive/17be809652661738c8e3599c6f86cdfb955f4e7a.jpg",
+          "title": "1",
+          "long_title": "阿七的特别任务",
+          "pub_time": "2024-10-02 12:00:01",
+          "duration": 1093000
+        },
+        "formal_ep_count": 10,
+        "short_url": "https://b23.tv/ss48315",
+        "badge_infos": {
+          "vip_or_pay": {
+            "text": "会员专享",
+            "bg_color": "#FB7299",
+            "bg_color_night": "#D44E7D",
+            "img": "http://i0.hdslb.com/bfs/vip/7a099c1d698eeb9036a4f1c4716c25d3cc1fb3ec.png",
+            "multi_img": {
+              "color": "http://i0.hdslb.com/bfs/vip/7a099c1d698eeb9036a4f1c4716c25d3cc1fb3ec.png",
+              "medium_remind": "https://i0.hdslb.com/bfs/bangumi/image/620a40f8e7004eb881916846e760981b7509d22f.png"
+            }
+          }
+        },
+        "season_version": "tv",
+        "horizontal_cover_16_9": "https://i0.hdslb.com/bfs/bangumi/image/2655dc3f7a19920a3011975bd8e0eec7e6a37e56.png",
+        "horizontal_cover_16_10": "https://i0.hdslb.com/bfs/bangumi/image/b1d070fce0157d2e20bf19ac8e4139b67eae1484.png",
+        "subtitle_14": "第“五”季，如“七”而至！",
+        "viewable_crowd_type": 18,
+        "producers": [
+          {
+            "mid": 98627270,
+            "type": 3,
+            "is_contribute": 1,
+            "title": "播出"
+          }
+        ],
+        "summary": "为了找回珍视的伙伴，伍六七重回玄武国，面对那些被遗忘的记忆碎片。尘封的真相带来痛苦与愤怒，但现在的他不再是孤身一人。拥有力量，究竟是为了什么？这一次，伍六七要为自己的人生做出新的选择…",
+        "config_attrs": {
+          "cc_on_lock": {
+            "type_url": "type.googleapis.com/google.protobuf.BoolValue"
+          },
+          "highlight_ineffective_hd": {
+            "type_url": "type.googleapis.com/google.protobuf.BoolValue"
+          },
+          "highlight_ineffective_ott": {
+            "type_url": "type.googleapis.com/google.protobuf.BoolValue"
+          },
+          "highlight_ineffective_pink": {
+            "type_url": "type.googleapis.com/google.protobuf.BoolValue"
+          }
+        },
+        "follow_status": 2,
+        "is_new": 0,
+        "progress": "",
+        "both_follow": true
+      },
+      {
+        "season_id": 34412,
+        "media_id": 28229881,
+        "season_type": 1,
+        "season_type_name": "番剧",
+        "title": "魔女之旅",
+        "cover": "http://i0.hdslb.com/bfs/bangumi/image/09533e0b510630235326a818adabb6c64c1abce2.png",
+        "total_count": 12,
+        "is_finish": 1,
+        "is_started": 1,
+        "is_play": 1,
+        "badge": "大会员",
+        "badge_type": 0,
+        "rights": {
+          "allow_review": 1,
+          "allow_preview": 1,
+          "is_selection": 1,
+          "selection_style": 1,
+          "demand_end_time": {
+
+          },
+          "is_rcmd": 1
+        },
+        "stat": {
+          "follow": 4768656,
+          "view": 138364059,
+          "danmaku": 1416951,
+          "reply": 119982,
+          "coin": 1236841,
+          "series_follow": 4768624,
+          "series_view": 138364059,
+          "likes": 3387971,
+          "favorite": 293331
+        },
+        "new_ep": {
+          "id": 341219,
+          "index_show": "全12话",
+          "cover": "http://i0.hdslb.com/bfs/archive/7c4ff0e9cececfc11c4fa82bac6e0fcc919cf9fe.jpg",
+          "title": "12",
+          "long_title": "灰之魔女各种平凡的故事",
+          "pub_time": "2020-12-18 21:30:00",
+          "duration": 1441000
+        },
+        "rating": {
+          "score": 9.7,
+          "count": 97906
+        },
+        "square_cover": "http://i0.hdslb.com/bfs/bangumi/image/549cf235a02de6ab4b4baeb8f3c1a412b7923556.png",
+        "season_status": 13,
+        "season_title": "TV",
+        "badge_ep": "",
+        "media_attr": 196608,
+        "season_attr": 2560,
+        "evaluate": "某个地方有一位旅人，她的名字是伊蕾娜。\n是一位年纪轻轻就成了魔法使中最上位「魔女」的天才。\n因为向往着幼时读过的旅行故事，随意地进行着漫长的旅行。\n在这个广阔的世界里自由地漫步，接触着形形色色有趣的人...",
+        "areas": [
+          {
+            "id": 2,
+            "name": "日本"
+          }
+        ],
+        "subtitle": "天才魔女异国奇遇记",
+        "first_ep": 341208,
+        "can_watch": 1,
+        "series": {
+          "series_id": 5114,
+          "title": "魔女之旅",
+          "season_count": 1,
+          "new_season_id": 34412,
+          "series_ord": 1
+        },
+        "publish": {
+          "pub_time": "2020-10-02 21:30:00",
+          "pub_time_show": "2020年10月02日21:30",
+          "release_date": "2020-10-02",
+          "release_date_show": "2020年10月2日"
+        },
+        "mode": 2,
+        "section": [
+          {
+            "section_id": 49914,
+            "season_id": 34412,
+            "limit_group": 328,
+            "watch_platform": 31,
+            "copyright": "bilibili",
+            "ban_area_show": 1,
+            "episode_ids": [0]
+          },
+          {
+            "section_id": 50112,
+            "season_id": 34412,
+            "limit_group": 328,
+            "watch_platform": 31,
+            "type": 2,
+            "copyright": "bilibili",
+            "title": "PV",
+            "ban_area_show": 1,
+            "episode_ids": [0]
+          },
+          {
+            "section_id": 50113,
+            "season_id": 34412,
+            "limit_group": 316,
+            "watch_platform": 31,
+            "type": 2,
+            "copyright": "ugc",
+            "title": "其他",
+            "ban_area_show": 1,
+            "episode_ids": [0]
+          },
+          {
+            "section_id": 67922,
+            "season_id": 34412,
+            "limit_group": 328,
+            "watch_platform": 31,
+            "type": 8,
+            "copyright": "bilibili",
+            "title": "精彩看点",
+            "ban_area_show": 1,
+            "attr": 4,
+            "episode_ids": [0]
+          }
+        ],
+        "url": "https://www.bilibili.com/bangumi/play/ss34412",
+        "badge_info": {
+          "text": "大会员",
+          "bg_color": "#FB7299",
+          "bg_color_night": "#D44E7D",
+          "img": "http://i0.hdslb.com/bfs/vip/7a099c1d698eeb9036a4f1c4716c25d3cc1fb3ec.png",
+          "multi_img": {
+            "color": "http://i0.hdslb.com/bfs/vip/7a099c1d698eeb9036a4f1c4716c25d3cc1fb3ec.png",
+            "medium_remind": "https://i0.hdslb.com/bfs/bangumi/image/620a40f8e7004eb881916846e760981b7509d22f.png"
+          }
+        },
+        "renewal_time": "每周五 21:30更新",
+        "first_ep_info": {
+          "id": 341208,
+          "cover": "http://i0.hdslb.com/bfs/archive/34a44b83a9c657a9d096d85771334f545e32dd17.jpg",
+          "title": "1",
+          "long_title": "见习魔女伊蕾娜",
+          "pub_time": "2020-10-02 21:30:01",
+          "duration": 1441000
+        },
+        "formal_ep_count": 12,
+        "short_url": "https://b23.tv/ss34412",
+        "badge_infos": {
+          "vip_or_pay": {
+            "text": "会员专享",
+            "bg_color": "#FB7299",
+            "bg_color_night": "#D44E7D",
+            "img": "http://i0.hdslb.com/bfs/vip/7a099c1d698eeb9036a4f1c4716c25d3cc1fb3ec.png",
+            "multi_img": {
+              "color": "http://i0.hdslb.com/bfs/vip/7a099c1d698eeb9036a4f1c4716c25d3cc1fb3ec.png",
+              "medium_remind": "https://i0.hdslb.com/bfs/bangumi/image/620a40f8e7004eb881916846e760981b7509d22f.png"
+            }
+          }
+        },
+        "season_version": "tv",
+        "subtitle_14": "天才魔女伊蕾娜的异国奇遇记",
+        "viewable_crowd_type": 18,
+        "producers": [
+          {
+            "mid": 928123,
+            "type": 3,
+            "is_contribute": 1,
+            "title": "播出"
+          }
+        ],
+        "summary": "某个地方有一位旅人，她的名字是伊蕾娜。\n是一位年纪轻轻就成了魔法使中最上位「魔女」的天才。\n因为向往着幼时读过的旅行故事，随意地进行着漫长的旅行。\n在这个广阔的世界里自由地漫步，接触着形形色色有趣的人，体味着人们美好的日常生活，她作为一名旅人，不带有任何目的地接触着各种国家的各色人群。\n还有同样数量的——\n\n「不必理会我。我只是一介旅人罢了。接下来还得继续前往下一个地方呢。」\n由魔女伊蕾娜所连接的，关于相遇和离别的故事……。",
+        "styles": [
+          "奇幻",
+          "小说改",
+          "魔法",
+          "架空"
+        ],
+        "follow_status": 2,
+        "is_new": 0,
+        "progress": "看到第1话 16:30",
+        "both_follow": true
+      },
+      {
+        "season_id": 48011,
+        "media_id": 22053031,
+        "season_type": 1,
+        "season_type_name": "番剧",
+        "title": "不时用俄语小声说真心话的邻桌艾莉同学",
+        "cover": "https://i0.hdslb.com/bfs/bangumi/image/96f9aeb74c9646c318f25bba798462061bd800d7.png",
+        "total_count": 12,
+        "is_finish": 1,
+        "is_started": 1,
+        "is_play": 1,
+        "badge": "独家",
+        "badge_type": 1,
+        "rights": {
+          "allow_review": 1,
+          "allow_preview": 1,
+          "is_selection": 1,
+          "selection_style": 1,
+          "demand_end_time": {
+
+          },
+          "is_rcmd": 1
+        },
+        "stat": {
+          "follow": 2303470,
+          "view": 151993248,
+          "danmaku": 879277,
+          "reply": 68224,
+          "coin": 582838,
+          "series_follow": 2303453,
+          "series_view": 151993248,
+          "likes": 2371403,
+          "favorite": 452217
+        },
+        "new_ep": {
+          "id": 836000,
+          "index_show": "全12话",
+          "cover": "http://i0.hdslb.com/bfs/archive/17f82e01fb421d8f5c79ad1cd2353ad35a0af917.jpg",
+          "title": "12",
+          "long_title": "向前看",
+          "pub_time": "2024-10-02 22:30:00",
+          "duration": 1516000
+        },
+        "rating": {
+          "score": 7.8,
+          "count": 13774
+        },
+        "square_cover": "https://i0.hdslb.com/bfs/bangumi/image/f14ba8699afe34ec1d8b0ed722b5ddbdf82befe5.png",
+        "season_status": 13,
+        "season_title": "TV",
+        "badge_ep": "",
+        "media_attr": 196608,
+        "season_attr": 1024,
+        "evaluate": "坐在久世政近邻桌的艾莉同学，看政近的目光总是很冷淡。\n然而她又时不时地用俄语向他表露心意……\n而这些话语从未被政近错过。\n原来，政近其实有着母语级别的俄语听力！！\n\n艾莉同学对此一无所知，时不时地说着...",
+        "areas": [
+          {
+            "id": 2,
+            "name": "日本"
+          }
+        ],
+        "subtitle": "俄语传情真真切切",
+        "first_ep": 827835,
+        "can_watch": 1,
+        "series": {
+          "series_id": 7209,
+          "title": "不时用俄语小声说真心话的邻桌艾莉同学",
+          "season_count": 1,
+          "new_season_id": 48011,
+          "series_ord": 1
+        },
+        "publish": {
+          "pub_time": "2024-07-03 22:30:00",
+          "pub_time_show": "2024年07月03日22:30",
+          "release_date": "2024-07-03",
+          "release_date_show": "2024年7月3日"
+        },
+        "mode": 2,
+        "section": [
+          {
+            "section_id": 102012,
+            "season_id": 48011,
+            "limit_group": 328,
+            "watch_platform": 31,
+            "copyright": "dujia",
+            "ban_area_show": 1,
+            "episode_ids": [0]
+          },
+          {
+            "section_id": 103067,
+            "season_id": 48011,
+            "limit_group": 328,
+            "watch_platform": 31,
+            "type": 2,
+            "copyright": "dujia",
+            "title": "无字OPED",
+            "ban_area_show": 1,
+            "episode_ids": [0]
+          },
+          {
+            "section_id": 102199,
+            "season_id": 48011,
+            "limit_group": 328,
+            "watch_platform": 31,
+            "type": 2,
+            "copyright": "dujia",
+            "title": "PV&声优问候",
+            "ban_area_show": 1,
+            "attr": 1,
+            "episode_ids": [0]
+          },
+          {
+            "section_id": 103066,
+            "season_id": 48011,
+            "limit_group": 328,
+            "watch_platform": 31,
+            "type": 1,
+            "copyright": "dujia",
+            "title": "预告",
+            "ban_area_show": 1,
+            "episode_ids": [0]
+          },
+          {
+            "section_id": 102597,
+            "season_id": 48011,
+            "limit_group": 316,
+            "watch_platform": 30,
+            "type": 5,
+            "copyright": "ugc",
+            "title": "不时用艾莉整活的UP主同学",
+            "ban_area_show": 1,
+            "episode_ids": [0]
+          },
+          {
+            "section_id": 103068,
+            "season_id": 48011,
+            "limit_group": 328,
+            "watch_platform": 15,
+            "type": 8,
+            "copyright": "dujia",
+            "title": "精彩看点",
+            "ban_area_show": 1,
+            "attr": 4,
+            "episode_ids": [0]
+          }
+        ],
+        "url": "https://www.bilibili.com/bangumi/play/ss48011",
+        "badge_info": {
+          "text": "独家",
+          "bg_color": "#00C0FF",
+          "bg_color_night": "#0B91BE",
+          "img": "http://i0.hdslb.com/bfs/bangumi/image/e31027bd41fb1cec4cbd1477f09799d0749bdf88.png",
+          "multi_img": {
+            "color": "http://i0.hdslb.com/bfs/bangumi/image/e31027bd41fb1cec4cbd1477f09799d0749bdf88.png",
+            "medium_remind": "https://i0.hdslb.com/bfs/bangumi/image/f8812eb31c22db41fb4608353b83a3fc49d2da3c.png"
+          }
+        },
+        "renewal_time": "每周三 22:30更新",
+        "first_ep_info": {
+          "id": 827835,
+          "cover": "http://i0.hdslb.com/bfs/archive/bb78834d0e49315b308642072ad3b2c0eeddc727.jpg",
+          "title": "1",
+          "long_title": "用俄语说真心话的艾莉同学",
+          "pub_time": "2024-07-03 22:30:01",
+          "duration": 1397771
+        },
+        "formal_ep_count": 12,
+        "short_url": "https://b23.tv/ss48011",
+        "badge_infos": {
+          "content_attr": {
+            "text": "独家",
+            "bg_color": "#00C0FF",
+            "bg_color_night": "#0B91BE",
+            "img": "http://i0.hdslb.com/bfs/bangumi/image/e31027bd41fb1cec4cbd1477f09799d0749bdf88.png",
+            "multi_img": {
+              "color": "http://i0.hdslb.com/bfs/bangumi/image/e31027bd41fb1cec4cbd1477f09799d0749bdf88.png",
+              "medium_remind": "https://i0.hdslb.com/bfs/bangumi/image/f8812eb31c22db41fb4608353b83a3fc49d2da3c.png"
+            }
+          },
+          "vip_or_pay": {
+            "text": "会员专享",
+            "bg_color": "#FB7299",
+            "bg_color_night": "#D44E7D",
+            "img": "http://i0.hdslb.com/bfs/vip/7a099c1d698eeb9036a4f1c4716c25d3cc1fb3ec.png",
+            "multi_img": {
+              "color": "http://i0.hdslb.com/bfs/vip/7a099c1d698eeb9036a4f1c4716c25d3cc1fb3ec.png",
+              "medium_remind": "https://i0.hdslb.com/bfs/bangumi/image/620a40f8e7004eb881916846e760981b7509d22f.png"
+            }
+          }
+        },
+        "season_version": "tv",
+        "horizontal_cover_16_9": "https://i0.hdslb.com/bfs/bangumi/image/be4aad1e81278893d2ac59433b9a23c3b725b837.png",
+        "horizontal_cover_16_10": "https://i0.hdslb.com/bfs/bangumi/image/aa87c14bdec6153ca829018c9b082dd1a4b8c62a.png",
+        "subtitle_14": "如何委婉告知邻桌自己懂外语",
+        "viewable_crowd_type": 18,
+        "producers": [
+          {
+            "mid": 928123,
+            "type": 3,
+            "is_contribute": 1,
+            "title": "播出"
+          }
+        ],
+        "summary": "坐在久世政近邻桌的艾莉同学，看政近的目光总是很冷淡。\n然而她又时不时地用俄语向他表露心意……\n而这些话语从未被政近错过。\n原来，政近其实有着母语级别的俄语听力！！\n\n艾莉同学对此一无所知，时不时地说着真心话。\n政近明明能听懂她的心意，却要装作听不懂。\n令人止不住嘴角上扬的恋爱故事究竟会如何发展？！",
+        "styles": [
+          "日常",
+          "搞笑",
+          "校园",
+          "恋爱",
+          "小说改"
+        ],
+        "config_attrs": {
+          "cc_on_lock": {
+            "type_url": "type.googleapis.com/google.protobuf.BoolValue"
+          },
+          "highlight_ineffective_hd": {
+            "type_url": "type.googleapis.com/google.protobuf.BoolValue"
+          },
+          "highlight_ineffective_ott": {
+            "type_url": "type.googleapis.com/google.protobuf.BoolValue"
+          },
+          "highlight_ineffective_pink": {
+            "type_url": "type.googleapis.com/google.protobuf.BoolValue"
+          }
+        },
+        "follow_status": 2,
+        "is_new": 0,
+        "progress": "看到第11话 0:01",
+        "both_follow": true
+      },
+      {
+        "season_id": 48032,
+        "media_id": 21827779,
+        "season_type": 1,
+        "season_type_name": "番剧",
+        "title": "魔法少女与邪恶曾经敌对。",
+        "cover": "https://i0.hdslb.com/bfs/bangumi/image/dcd2c69e23da1c1c79e1fc5de8d6670e0cbbefa9.png",
+        "total_count": 12,
+        "is_finish": 1,
+        "is_started": 1,
+        "is_play": 1,
+        "badge": "独家",
+        "badge_type": 1,
+        "rights": {
+          "allow_review": 1,
+          "allow_preview": 1,
+          "is_selection": 1,
+          "selection_style": 1,
+          "demand_end_time": {
+
+          },
+          "is_rcmd": 1
+        },
+        "stat": {
+          "follow": 684355,
+          "view": 23078237,
+          "danmaku": 75020,
+          "reply": 10967,
+          "coin": 88491,
+          "series_follow": 684327,
+          "series_view": 23078237,
+          "likes": 266168,
+          "favorite": 50367
+        },
+        "new_ep": {
+          "id": 834366,
+          "index_show": "全12话",
+          "cover": "http://i0.hdslb.com/bfs/archive/b67e802c5017bf6ed57ce244584f8a97bb066f87.png",
+          "title": "12",
+          "long_title": "B面/M面",
+          "pub_time": "2024-09-24 22:45:00",
+          "duration": 751000
+        },
+        "rating": {
+          "score": 9.8,
+          "count": 9367
+        },
+        "square_cover": "https://i0.hdslb.com/bfs/bangumi/image/5b5622a9411c3e1439db3508f6b3f52b6dbc66e0.png",
+        "season_status": 13,
+        "season_title": "TV",
+        "badge_ep": "",
+        "media_attr": 196608,
+        "season_attr": 1536,
+        "evaluate": "邪恶组织――侵略一切，毁灭一切。 \n这个残忍而狡猾的组织，其智囊正是王的心腹，邪恶参谋。 \n面对地面遭受侵略的危机，奋起迎战的是不幸的魔法少女・白夜。 \n与她对峙的邪恶参谋・米拉竟对她一见钟情…… \n...",
+        "areas": [
+          {
+            "id": 2,
+            "name": "日本"
+          }
+        ],
+        "subtitle": "写作宿敌，读作妻子",
+        "first_ep": 830142,
+        "can_watch": 1,
+        "release_date_show": "2024-07-16",
+        "series": {
+          "series_id": 7206,
+          "title": "魔法少女与邪恶曾经敌对。",
+          "season_count": 1,
+          "new_season_id": 48032,
+          "series_ord": 1
+        },
+        "publish": {
+          "pub_time": "2024-07-16 00:00:01",
+          "pub_time_show": "2024年7月16日",
+          "release_date": "2024-07-09",
+          "release_date_show": "2024-07-16"
+        },
+        "mode": 2,
+        "section": [
+          {
+            "section_id": 102106,
+            "season_id": 48032,
+            "limit_group": 328,
+            "watch_platform": 31,
+            "copyright": "dujia",
+            "ban_area_show": 1,
+            "episode_ids": [0]
+          },
+          {
+            "section_id": 102156,
+            "season_id": 48032,
+            "limit_group": 328,
+            "watch_platform": 31,
+            "type": 2,
+            "copyright": "dujia",
+            "title": "PV",
+            "ban_area_show": 1,
+            "episode_ids": [0]
+          }
+        ],
+        "url": "https://www.bilibili.com/bangumi/play/ss48032",
+        "badge_info": {
+          "text": "独家",
+          "bg_color": "#00C0FF",
+          "bg_color_night": "#0B91BE",
+          "img": "http://i0.hdslb.com/bfs/bangumi/image/e31027bd41fb1cec4cbd1477f09799d0749bdf88.png",
+          "multi_img": {
+            "color": "http://i0.hdslb.com/bfs/bangumi/image/e31027bd41fb1cec4cbd1477f09799d0749bdf88.png",
+            "medium_remind": "https://i0.hdslb.com/bfs/bangumi/image/f8812eb31c22db41fb4608353b83a3fc49d2da3c.png"
+          }
+        },
+        "renewal_time": "每周二 22:45更新",
+        "first_ep_info": {
+          "id": 830142,
+          "cover": "http://i0.hdslb.com/bfs/archive/d49d88c09bfac0eca7be57f6498dd9805336be27.png",
+          "title": "1",
+          "long_title": "相爱（不）相杀",
+          "pub_time": "2024-07-16 22:45:00",
+          "duration": 746000
+        },
+        "formal_ep_count": 12,
+        "short_url": "https://b23.tv/ss48032",
+        "badge_infos": {
+          "content_attr": {
+            "text": "独家",
+            "bg_color": "#00C0FF",
+            "bg_color_night": "#0B91BE",
+            "img": "http://i0.hdslb.com/bfs/bangumi/image/e31027bd41fb1cec4cbd1477f09799d0749bdf88.png",
+            "multi_img": {
+              "color": "http://i0.hdslb.com/bfs/bangumi/image/e31027bd41fb1cec4cbd1477f09799d0749bdf88.png",
+              "medium_remind": "https://i0.hdslb.com/bfs/bangumi/image/f8812eb31c22db41fb4608353b83a3fc49d2da3c.png"
+            }
+          },
+          "vip_or_pay": {
+            "text": "会员抢先",
+            "bg_color": "#FB7299",
+            "bg_color_night": "#D44E7D",
+            "img": "http://i0.hdslb.com/bfs/vip/7a099c1d698eeb9036a4f1c4716c25d3cc1fb3ec.png",
+            "multi_img": {
+              "color": "http://i0.hdslb.com/bfs/vip/7a099c1d698eeb9036a4f1c4716c25d3cc1fb3ec.png",
+              "medium_remind": "https://i0.hdslb.com/bfs/bangumi/image/620a40f8e7004eb881916846e760981b7509d22f.png"
+            }
+          }
+        },
+        "season_version": "tv",
+        "horizontal_cover_16_9": "https://i0.hdslb.com/bfs/bangumi/image/2643f18de92f8b573e8898cfb8ea278a96b92ebe.png",
+        "horizontal_cover_16_10": "https://i0.hdslb.com/bfs/bangumi/image/37b72dc5e7694ebf338fe2f755edc2461c0af8a3.png",
+        "subtitle_14": "魔法少女与恶之参谋的恋爱日常",
+        "viewable_crowd_type": 18,
+        "producers": [
+          {
+            "mid": 928123,
+            "type": 3,
+            "is_contribute": 1,
+            "title": "播出"
+          }
+        ],
+        "summary": "邪恶组织――侵略一切，毁灭一切。 \n这个残忍而狡猾的组织，其智囊正是王的心腹，邪恶参谋。 \n面对地面遭受侵略的危机，奋起迎战的是不幸的魔法少女・白夜。 \n与她对峙的邪恶参谋・米拉竟对她一见钟情…… \n魔法少女与邪恶为敌，已然成为过去。 \n相爱（不）相杀的二人，究竟未来会如何――？",
+        "styles": [
+          "奇幻",
+          "恋爱",
+          "漫画改"
+        ],
+        "config_attrs": {
+          "cc_on_lock": {
+            "type_url": "type.googleapis.com/google.protobuf.BoolValue"
+          },
+          "highlight_ineffective_hd": {
+            "type_url": "type.googleapis.com/google.protobuf.BoolValue"
+          },
+          "highlight_ineffective_ott": {
+            "type_url": "type.googleapis.com/google.protobuf.BoolValue"
+          },
+          "highlight_ineffective_pink": {
+            "type_url": "type.googleapis.com/google.protobuf.BoolValue"
+          }
+        },
+        "follow_status": 2,
+        "is_new": 0,
+        "progress": "",
+        "both_follow": true
+      },
+      {
+        "season_id": 27993,
+        "media_id": 28221387,
+        "season_type": 1,
+        "season_type_name": "番剧",
+        "title": "Ｄｒ．ＳＴＯＮＥ 石纪元",
+        "cover": "http://i0.hdslb.com/bfs/bangumi/image/ae05a72b11d7f409bbff9475afb13dfca081ffd1.jpg",
+        "total_count": 24,
+        "is_finish": 1,
+        "is_started": 1,
+        "is_play": 1,
+        "badge": "大会员",
+        "badge_type": 0,
+        "rights": {
+          "allow_review": 1,
+          "allow_preview": 1,
+          "is_selection": 1,
+          "selection_style": 1,
+          "demand_end_time": {
+
+          },
+          "is_rcmd": 1
+        },
+        "stat": {
+          "follow": 3792550,
+          "view": 194078679,
+          "danmaku": 1512884,
+          "reply": 124929,
+          "coin": 646394,
+          "series_follow": 5188058,
+          "series_view": 450179729,
+          "likes": 1097980,
+          "favorite": 57487
+        },
+        "new_ep": {
+          "id": 276796,
+          "index_show": "全24话",
+          "cover": "http://i0.hdslb.com/bfs/archive/b9cade0637c6aba5ecbacd7c59e303e0366016c9.jpg",
+          "title": "24",
+          "long_title": "将声音无限传递到远方",
+          "pub_time": "2019-12-13 22:30:00",
+          "duration": 1441000
+        },
+        "rating": {
+          "score": 9.7,
+          "count": 77881
+        },
+        "square_cover": "http://i0.hdslb.com/bfs/bangumi/53fa7e66ae6449d8ed06898afe6af49ac5ca4329.jpg",
+        "season_status": 13,
+        "season_title": "第一季",
+        "badge_ep": "",
+        "media_attr": 196608,
+        "season_attr": 2560,
+        "evaluate": "全人类因神秘现象瞬间被石化后，过了数千年——。\n拥有超人头脑的科学少年千空苏醒了。\n\n面对文明灭绝的石之世界，\n千空决心用科学的力量夺回这个世界。\n让体力过人的青梅竹马·大木大树苏醒，\n要从零开始创造...",
+        "areas": [
+          {
+            "id": 2,
+            "name": "日本"
+          }
+        ],
+        "subtitle": "从零开始创造文明",
+        "first_ep": 276773,
+        "can_watch": 1,
+        "series": {
+          "series_id": 4444,
+          "title": "Dr.STONE",
+          "season_count": 6,
+          "new_season_id": 80512,
+          "series_ord": 1
+        },
+        "publish": {
+          "pub_time": "2019-07-05 22:30:00",
+          "pub_time_show": "2019年07月05日22:30",
+          "release_date": "2019-07-05",
+          "release_date_show": "2019年7月5日"
+        },
+        "mode": 2,
+        "section": [
+          {
+            "section_id": 37621,
+            "season_id": 27993,
+            "limit_group": 328,
+            "watch_platform": 31,
+            "copyright": "bilibili",
+            "ban_area_show": 1,
+            "episode_ids": [0]
+          },
+          {
+            "section_id": 37721,
+            "season_id": 27993,
+            "limit_group": 328,
+            "watch_platform": 31,
+            "type": 1,
+            "copyright": "bilibili",
+            "title": "预告",
+            "ban_area_show": 1,
+            "episode_ids": [0]
+          },
+          {
+            "section_id": 58107,
+            "season_id": 27993,
+            "limit_group": 328,
+            "watch_platform": 31,
+            "type": 2,
+            "copyright": "bilibili",
+            "title": "衍生节目",
+            "ban_area_show": 1,
+            "episode_ids": [0]
+          },
+          {
+            "section_id": 67381,
+            "season_id": 27993,
+            "limit_group": 328,
+            "watch_platform": 31,
+            "type": 8,
+            "copyright": "bilibili",
+            "title": "精彩看点",
+            "ban_area_show": 1,
+            "attr": 4,
+            "episode_ids": [0]
+          }
+        ],
+        "url": "https://www.bilibili.com/bangumi/play/ss27993",
+        "badge_info": {
+          "text": "大会员",
+          "bg_color": "#FB7299",
+          "bg_color_night": "#D44E7D",
+          "img": "http://i0.hdslb.com/bfs/vip/7a099c1d698eeb9036a4f1c4716c25d3cc1fb3ec.png",
+          "multi_img": {
+            "color": "http://i0.hdslb.com/bfs/vip/7a099c1d698eeb9036a4f1c4716c25d3cc1fb3ec.png",
+            "medium_remind": "https://i0.hdslb.com/bfs/bangumi/image/620a40f8e7004eb881916846e760981b7509d22f.png"
+          }
+        },
+        "renewal_time": "每周五 22:30更新",
+        "first_ep_info": {
+          "id": 276773,
+          "cover": "http://i0.hdslb.com/bfs/archive/af58132f8edc7ea4f037aea69324eca73041bee2.jpg",
+          "title": "1",
+          "long_title": "石之世界",
+          "pub_time": "2019-07-05 22:30:00",
+          "duration": 1431000
+        },
+        "formal_ep_count": 24,
+        "short_url": "https://b23.tv/ss27993",
+        "badge_infos": {
+          "vip_or_pay": {
+            "text": "会员专享",
+            "bg_color": "#FB7299",
+            "bg_color_night": "#D44E7D",
+            "img": "http://i0.hdslb.com/bfs/vip/7a099c1d698eeb9036a4f1c4716c25d3cc1fb3ec.png",
+            "multi_img": {
+              "color": "http://i0.hdslb.com/bfs/vip/7a099c1d698eeb9036a4f1c4716c25d3cc1fb3ec.png",
+              "medium_remind": "https://i0.hdslb.com/bfs/bangumi/image/620a40f8e7004eb881916846e760981b7509d22f.png"
+            }
+          }
+        },
+        "season_version": "tv",
+        "subtitle_14": "妈妈再也不用担心我的数理化了",
+        "viewable_crowd_type": 18,
+        "summary": "全人类因神秘现象瞬间被石化后，过了数千年——。\n拥有超人头脑的科学少年千空苏醒了。\n\n面对文明灭绝的石之世界，\n千空决心用科学的力量夺回这个世界。\n让体力过人的青梅竹马·大木大树苏醒，\n要从零开始创造文明——\n\n从石器时代到现代文明，追上200万年的科学史！\n前所未闻的创世冒险故事，就此展开！",
+        "styles": [
+          "热血",
+          "科幻",
+          "漫画改",
+          "励志",
+          "冒险"
+        ],
+        "follow_status": 2,
+        "is_new": 0,
+        "progress": "看到第1话 2:46",
+        "both_follow": true
+      },
+      {
+        "season_id": 42093,
+        "media_id": 28338468,
+        "season_type": 1,
+        "season_type_name": "番剧",
+        "title": "Ｄｒ．ＳＴＯＮＥ 石纪元 特别篇：龙水",
+        "cover": "http://i0.hdslb.com/bfs/bangumi/image/e7926dc69ec863ef0b36b46a18e3bbf0d04f26d7.png",
+        "total_count": 2,
+        "is_finish": 1,
+        "is_started": 1,
+        "is_play": 1,
+        "badge": "大会员",
+        "badge_type": 0,
+        "rights": {
+          "allow_review": 1,
+          "allow_preview": 1,
+          "is_selection": 1,
+          "selection_style": 1,
+          "demand_end_time": {
+
+          },
+          "is_rcmd": 1
+        },
+        "stat": {
+          "follow": 4142673,
+          "view": 10403898,
+          "danmaku": 34855,
+          "reply": 3394,
+          "coin": 31878,
+          "series_follow": 5188058,
+          "series_view": 450179729,
+          "likes": 91088,
+          "favorite": 6687
+        },
+        "new_ep": {
+          "id": 683342,
+          "index_show": "全2话",
+          "cover": "http://i0.hdslb.com/bfs/archive/0cdb9ecfaf1edbc9a9ee319e1e7d37b3509a2bc2.png",
+          "title": "2",
+          "pub_time": "2022-10-03 18:00:01",
+          "duration": 1746000
+        },
+        "rating": {
+          "score": 9.8,
+          "count": 3619
+        },
+        "square_cover": "http://i0.hdslb.com/bfs/bangumi/image/c0efbce47b11d9634dd41f1b15da0943e64f94be.png",
+        "season_status": 13,
+        "season_title": "特别篇(第三季前传)",
+        "badge_ep": "",
+        "media_attr": 196608,
+        "season_attr": 1536,
+        "evaluate": "从石器时代到现代文明，\n登上200万年的科学史！\n前所未有的技艺冒险故事，在此开幕！\n所有人类因神秘现象瞬间石化后已过了数千年——\n拥有过人头脑的，天才科学少年千空醒来了。\n面对文明已经毁灭的石之世界...",
+        "areas": [
+          {
+            "id": 2,
+            "name": "日本"
+          }
+        ],
+        "subtitle": "从零开始创造文明",
+        "first_ep": 683341,
+        "can_watch": 1,
+        "series": {
+          "series_id": 4444,
+          "title": "Dr.STONE",
+          "season_count": 6,
+          "new_season_id": 80512,
+          "series_ord": 4
+        },
+        "publish": {
+          "pub_time": "2022-10-03 18:00:00",
+          "pub_time_show": "2022年10月03日18:00",
+          "release_date": "2022-07-10",
+          "release_date_show": "2022年7月10日"
+        },
+        "mode": 2,
+        "section": [
+          {
+            "section_id": 79674,
+            "season_id": 42093,
+            "limit_group": 328,
+            "watch_platform": 31,
+            "copyright": "bilibili",
+            "ban_area_show": 1,
+            "episode_ids": [0]
+          },
+          {
+            "section_id": 86799,
+            "season_id": 42093,
+            "limit_group": 328,
+            "watch_platform": 31,
+            "type": 1,
+            "copyright": "bilibili",
+            "title": "PV",
+            "ban_area_show": 1,
+            "episode_ids": [0]
+          }
+        ],
+        "url": "https://www.bilibili.com/bangumi/play/ss42093",
+        "badge_info": {
+          "text": "大会员",
+          "bg_color": "#FB7299",
+          "bg_color_night": "#D44E7D",
+          "img": "http://i0.hdslb.com/bfs/vip/7a099c1d698eeb9036a4f1c4716c25d3cc1fb3ec.png",
+          "multi_img": {
+            "color": "http://i0.hdslb.com/bfs/vip/7a099c1d698eeb9036a4f1c4716c25d3cc1fb3ec.png",
+            "medium_remind": "https://i0.hdslb.com/bfs/bangumi/image/620a40f8e7004eb881916846e760981b7509d22f.png"
+          }
+        },
+        "first_ep_info": {
+          "id": 683341,
+          "cover": "http://i0.hdslb.com/bfs/archive/37545eec00a02e7a3c9418031c43ea36b5861f3d.png",
+          "title": "1",
+          "pub_time": "2022-10-03 18:00:01",
+          "duration": 1638000
+        },
+        "formal_ep_count": 2,
+        "short_url": "https://b23.tv/ss42093",
+        "badge_infos": {
+          "vip_or_pay": {
+            "text": "会员专享",
+            "bg_color": "#FB7299",
+            "bg_color_night": "#D44E7D",
+            "img": "http://i0.hdslb.com/bfs/vip/7a099c1d698eeb9036a4f1c4716c25d3cc1fb3ec.png",
+            "multi_img": {
+              "color": "http://i0.hdslb.com/bfs/vip/7a099c1d698eeb9036a4f1c4716c25d3cc1fb3ec.png",
+              "medium_remind": "https://i0.hdslb.com/bfs/bangumi/image/620a40f8e7004eb881916846e760981b7509d22f.png"
+            }
+          }
+        },
+        "season_version": "tv",
+        "subtitle_14": "妈妈再也不用担心我的数理化了",
+        "viewable_crowd_type": 18,
+        "producers": [
+          {
+            "mid": 928123,
+            "type": 3,
+            "is_contribute": 1,
+            "title": "播出"
+          }
+        ],
+        "summary": "从石器时代到现代文明，\n登上200万年的科学史！\n前所未有的技艺冒险故事，在此开幕！\n所有人类因神秘现象瞬间石化后已过了数千年——\n拥有过人头脑的，天才科学少年千空醒来了。\n面对文明已经毁灭的石之世界，\n千空决定，用科学的力量将世界恢复原状。\n他要集结新的同伴，建立起“科学王国”。\n但是，灵长类最强的高中生狮子王司率领著“武力帝国”拦住了他。\n司以净化人类为目标，想要靠强大的武力阻止科学发展。\n科学与武力间爆发了激烈的战斗，最终千空率领的科学王国取得了优势。\n由于同伴谋反，司陷入了人工冬眠状态。\n接著，为了复活全人类，\n科学王国要前往石化光线的发源地——地球的对面，新世界！\n冲入世界揭开石化之谜！\n石之世界大航海时代终于要开幕了——",
+        "styles": [
+          "热血",
+          "搞笑",
+          "科幻",
+          "战斗",
+          "漫画改",
+          "冒险"
+        ],
+        "config_attrs": {
+          "highlight_ineffective_hd": {
+            "type_url": "type.googleapis.com/google.protobuf.BoolValue"
+          },
+          "highlight_ineffective_ott": {
+            "type_url": "type.googleapis.com/google.protobuf.BoolValue"
+          },
+          "highlight_ineffective_pink": {
+            "type_url": "type.googleapis.com/google.protobuf.BoolValue"
+          }
+        },
+        "follow_status": 2,
+        "is_new": 0,
+        "progress": "看到第1话 0:01",
+        "both_follow": true
+      }
+    ],
+    "pn": 1,
+    "ps": 24,
+    "total": 11
+  }
+}

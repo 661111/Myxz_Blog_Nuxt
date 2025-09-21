@@ -66,6 +66,7 @@ export interface FavoriteItem {
 
 // 追番列表响应接口
 export interface BangumiFollowResponse {
+    [x: string]: any;
     has_next: number;
     code: number;
     message: string;
@@ -75,6 +76,7 @@ export interface BangumiFollowResponse {
 
 // 追剧列表响应接口
 export interface CinemaFollowResponse {
+    [x: string]: any;
     has_next: number;
     code: number;
     message: string;

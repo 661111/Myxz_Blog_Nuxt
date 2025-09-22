@@ -152,18 +152,16 @@ const refresh = () => {
       <div v-if="activeTab === 'bangumi'" class="banguimList">
         <div v-for="item in bangumiList" :key="item.season_id" class="banguimItem">
           <img :src="item.cover" :alt="item.title" class="banguimImage" />
-          <div class="info">
-            <div class="title">
-              <a :href="item.url" target="_blank">
-                {{ item.title }}
-              </a>
-            </div>
-            <span class="dateSignpost">{{ item.publish.release_date }}</span>
-            <span class="score" v-if="item.rating">
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M12 20.1l5.82 3.682c1.066.675 2.37-.322 2.09-1.584l-1.543-6.926 5.146-4.667c.94-.85.435-2.465-.799-2.567l-6.773-.602L13.29.89a1.38 1.38 0 0 0-2.581 0l-2.65 6.53-6.774.602C.052 8.126-.453 9.74.486 10.59l5.147 4.666-1.542 6.926c-.28 1.262 1.023 2.26 2.09 1.585L12 20.099z"></path></svg>
-              {{ item.rating.score }}
-            </span>
+          <div class="title">
+            <a :href="item.url" target="_blank">
+              {{ item.title }}
+            </a>
           </div>
+          <span class="dateSignpost">{{ item.publish.release_date }}</span>
+          <span class="score" v-if="item.rating">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M12 20.1l5.82 3.682c1.066.675 2.37-.322 2.09-1.584l-1.543-6.926 5.146-4.667c.94-.85.435-2.465-.799-2.567l-6.773-.602L13.29.89a1.38 1.38 0 0 0-2.581 0l-2.65 6.53-6.774.602C.052 8.126-.453 9.74.486 10.59l5.147 4.666-1.542 6.926c-.28 1.262 1.023 2.26 2.09 1.585L12 20.099z"></path></svg>
+            {{ item.rating.score }}
+          </span>
         </div>
         <div v-if="bangumiList.length === 0" class="empty">
           <p>暂无追番数据</p>
@@ -174,18 +172,16 @@ const refresh = () => {
       <div v-if="activeTab === 'cinema'" class="banguimList">
         <div v-for="item in cinemaList" :key="item.season_id" class="banguimItem">
           <img :src="item.cover" :alt="item.title" class="banguimImage" />
-          <div class="info">
-            <div class="title">
-              <a :href="item.url" target="_blank">
-                {{ item.title }}
-              </a>
-            </div>
-            <span class="dateSignpost">{{ item.publish.release_date }}</span>
-            <span class="score" v-if="item.rating">
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M12 20.1l5.82 3.682c1.066.675 2.37-.322 2.09-1.584l-1.543-6.926 5.146-4.667c.94-.85.435-2.465-.799-2.567l-6.773-.602L13.29.89a1.38 1.38 0 0 0-2.581 0l-2.65 6.53-6.774.602C.052 8.126-.453 9.74.486 10.59l5.147 4.666-1.542 6.926c-.28 1.262 1.023 2.26 2.09 1.585L12 20.099z"></path></svg>
-              {{ item.rating.score }}
-            </span>
+          <div class="title">
+            <a :href="item.url" target="_blank">
+              {{ item.title }}
+            </a>
           </div>
+          <span class="dateSignpost">{{ item.publish.release_date }}</span>
+          <span class="score" v-if="item.rating">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M12 20.1l5.82 3.682c1.066.675 2.37-.322 2.09-1.584l-1.543-6.926 5.146-4.667c.94-.85.435-2.465-.799-2.567l-6.773-.602L13.29.89a1.38 1.38 0 0 0-2.581 0l-2.65 6.53-6.774.602C.052 8.126-.453 9.74.486 10.59l5.147 4.666-1.542 6.926c-.28 1.262 1.023 2.26 2.09 1.585L12 20.099z"></path></svg>
+            {{ item.rating.score }}
+          </span>
         </div>
         <div v-if="cinemaList.length === 0" class="empty">
           <p>暂无追剧数据</p>

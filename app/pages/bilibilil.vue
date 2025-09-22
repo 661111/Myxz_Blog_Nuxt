@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { ref, onMounted } from 'vue'
-import type { BangumiFollowResponse, CinemaFollowResponse, UserInfo } from '../types/Bangumi'
+import type { BangumiFollowResponse, CinemaFollowResponse, UserInfo } from '../types/bililbilil'
 import { useCookie } from '@vueuse/core'
 
 // 状态管理

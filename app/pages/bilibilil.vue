@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { ref, onMounted } from 'vue'
 import type { BangumiFollowResponse, CinemaFollowResponse, UserInfo } from '../types/bililbilil'
-import { useCookie } from '@vueuse/core'
+// import { useCookie } from '@vueuse/core'
 
 // 状态管理
 const activeTab = ref<'bangumi' | 'cinema'>('bangumi')
@@ -14,17 +14,17 @@ const bangumiList = ref<any[]>([])
 const cinemaList = ref<any[]>([])
 const userInfo = ref<UserInfo | null>(null)
 
-// 获取认证信息（增强校验）
-const getCredentials = (): { [key: string]: string } => {
-  const sessdata = useCookie('SESSDATA')?.value || ''
-  const biliJct = useCookie('bili_jct')?.value || ''
-  const buvid3 = useCookie('BUVID3')?.value || ''
+// // 获取认证信息（增强校验）
+// const getCredentials = (): { [key: string]: string } => {
+//   const sessdata = useCookie('SESSDATA')?.value || ''
+//   const biliJct = useCookie('bili_jct')?.value || ''
+//   const buvid3 = useCookie('BUVID3')?.value || ''
 
-  if (!sessdata || !biliJct || !buvid3) {
-    throw new Error('请先登录B站')
-  }
-  return { sessdata, biliJct, buvid3 }
-}
+//   if (!sessdata || !biliJct || !buvid3) {
+//     throw new Error('请先登录B站')
+//   }
+//   return { sessdata, biliJct, buvid3 }
+// }
 
 // 通用请求封装（带重试机制）
 const fetchData = async <T>(
@@ -34,10 +34,10 @@ const fetchData = async <T>(
 ): Promise<T> => {
   try {
     const { data } = await useFetch(url, {
-      headers: {
-        'Cookie': `SESSDATA=${getCredentials().sessdata}; buvid3=${getCredentials().buvid3}`,
-        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36'
-      },
+      // headers: {
+      //   'Cookie': `SESSDATA=${getCredentials().sessdata}; buvid3=${getCredentials().buvid3}`,
+      //   'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36'
+      // },
       responseType: 'json',
       timeout: 10000
     })
@@ -64,7 +64,7 @@ const fetchBangumiList = async () => {
       'https://proxy.uzhix.top/blbl/bangumi',
       'bangumi'
     )
-    bangumiList.value = data.data.list
+    bangumiList.value = data.list
   } catch (err) {
     console.error('[bangumi] 加载失败:', err)
     throw err

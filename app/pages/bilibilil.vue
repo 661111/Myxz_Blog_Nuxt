@@ -64,7 +64,7 @@ const fetchBangumiList = async () => {
       '/api/bililbilil/bangumi.json',
       'bangumi'
     )
-    bangumiList.value = data.list
+    bangumiList.value = data.data.list
   } catch (err) {
     console.error('[bangumi] 加载失败:', err)
     throw err

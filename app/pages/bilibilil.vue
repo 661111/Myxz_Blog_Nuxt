@@ -35,13 +35,6 @@ const fetchData = async <T extends BangumiFollowResponse | CinemaFollowResponse>
       timeout: 10000 // 10秒超时
     });
 
-    // 3. 打印原始响应（调试核心！）
-    console.log(`[${type}] API原始响应:`, data.value);
-
-    // 4. 严格校验响应有效性
-    if (!data.value) throw new Error('API返回空响应体');
-    if (typeof data.value !== 'object') throw new Error('API响应不是JSON对象');
-
     return data.value as T;
   } catch (err) {
     console.error(`[${type}] 请求失败:`, err instanceof Error ? err.stack : err);

@@ -7,30 +7,6 @@ import redirectList from './redirects.json'
 
 // 此处配置无需修改
 export default defineNuxtConfig({
-	// nitro: {
-	// 	devProxy: {
-	// 		'/api/bililbilil': {
-	// 			target: 'https://api.bilibili.com', // B站API基础地址
-	// 			changeOrigin: true, // 改变Origin头
-	// 			prependPath: true,   // 在路径前添加代理前缀（如果需要）
-	// 			// 以下是一些针对403等问题的额外配置
-	// 			headers: {
-	// 			// 添加或覆盖请求头，防止403 Forbidden
-	// 			'Origin': 'https://www.bilibili.com',
-	// 			'Referer': 'https://www.bilibili.com',
-	// 			'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36'
-	// 			},
-	// 			// 如果需要，可以移除Origin头（某些服务器可能不接受来自白名单外的Origin）
-	// 			// onProxyReq: (proxyReq) => {
-	// 			//   proxyReq.removeHeader('origin');
-	// 			// }
-	// 		}
-	// 	},
-	// },
-	// // 如果需要在生产环境或服务端渲染时也进行代理，可以使用 routeRules（Nuxt 3.2+）
-	// routeRules: {
-	// 	'/api/bililbilil': { proxy: 'https://api.bilibili.com/' }
-	// },
 	app: {
 		head: {
 			meta: [

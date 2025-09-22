@@ -58,58 +58,6 @@ const bannerInfo = ref([
 const friendsData = ref<LinkGroup[]>([]);
 const isLoading = ref(true);
 
-// 异步加载数据（若 friendsInfo 是同步数据，直接赋值即可）
-onMounted(() => {
-  // 模拟异步加载（实际根据项目调整）
-  setTimeout(() => {
-    friendsData.value = friendsInfo as LinkGroup[]; // 假设 friendsInfo 符合 LinkGroup 结构
-    isLoading.value = false;
-  }, 500);
-
-  // 动态加载外部 JS 脚本
-  const loadScript = (url: string, callback?: () => void) => {
-    return new Promise<void>((resolve, reject) => {
-      // 检查是否已加载
-      if (document.querySelector(`script[src="${url}"]`)) {
-        console.log('JS脚本已加载');
-        resolve();
-        return;
-      }
-
-      // 创建 script 标签
-      const script = document.createElement('script');
-      script.src = url;
-      script.type = 'text/javascript';
-      script.async = true; // 异步加载（不阻塞页面渲染）
-
-      // 加载成功回调
-      script.onload = () => {
-        console.log('脚本加载完成');
-        callback?.();
-        resolve();
-      };
-
-      // 加载失败回调
-      script.onerror = (err) => {
-        console.error('脚本加载失败', err);
-        reject(err);
-      };
-
-      // 添加到 DOM（推荐添加到 head 或 body 末尾）
-      document.head.appendChild(script);
-    });
-  };
-
-  // 使用示例：加载百度统计脚本
-  loadScript('https://www.myxz.top/assets/js/FlinkTop.js')
-    .then(() => {
-      console.log('友链顶部重要JS加载完毕');
-    })
-    .catch((err) => {
-      console.error('友链顶部重要JS加载完毕', err);
-    });
-});
-
 // /​**​
 //  * 处理头像 URL（移除感叹号）
 //  */

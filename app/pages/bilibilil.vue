@@ -2,7 +2,6 @@
 // 导入类型定义
 import type { BangumiFollowResponse, CinemaFollowResponse, UserInfo } from '../types/bililbilil';
 import { ref, onMounted } from 'vue';
-import Cookies from 'js-cookie'
 
 // 状态管理
 const activeTab = ref<'bangumi' | 'cinema'>('bangumi')
@@ -14,12 +13,12 @@ const bangumiList = ref<BangumiFollowResponse['data']['list'][]>([])
 const cinemaList = ref<CinemaFollowResponse['data']['list'][]>([])
 const userInfo = ref<UserInfo | null>(null)
 
-// 获取认证信息（增强版）
-const getCredentials = (): { [key: string]: string } => ({
-  sessdata: Cookies.get('SESSDATA') || '',
-  biliJct: Cookies.get('bili_jct') || '',
-  buvid3: Cookies.get('BUVID3') || ''
-})
+// // 获取认证信息（增强版）
+// const getCredentials = (): { [key: string]: string } => ({
+//   sessdata: Cookies.get('SESSDATA') || '',
+//   biliJct: Cookies.get('bili_jct') || '',
+//   buvid3: Cookies.get('BUVID3') || ''
+// })
 
 // 修改后的fetchData函数（关键修复点）
 const fetchData = async <T extends BangumiFollowResponse | CinemaFollowResponse>(
@@ -29,14 +28,9 @@ const fetchData = async <T extends BangumiFollowResponse | CinemaFollowResponse>
   try {
     // 1. 打印请求URL与Cookie（调试）
     console.log(`[${type}] 请求URL:`, url);
-    console.log(`[${type}] 请求Cookie:`, getCredentials());
 
     // 2. 发送请求（添加必要Headers与超时）
     const { data } = await useFetch(url, {
-      headers: {
-        'Cookie': `SESSDATA=${getCredentials().sessdata}; buvid3=${getCredentials().buvid3}`,
-        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36' // 模拟浏览器UA，避免被API拒绝
-      },
       responseType: 'json',
       timeout: 10000 // 10秒超时
     });
@@ -47,13 +41,6 @@ const fetchData = async <T extends BangumiFollowResponse | CinemaFollowResponse>
     // 4. 严格校验响应有效性
     if (!data.value) throw new Error('API返回空响应体');
     if (typeof data.value !== 'object') throw new Error('API响应不是JSON对象');
-
-    // 5. 校验业务状态码（code=0表示成功）
-    const code = data.value.code ?? data.value?.ret ?? -1;
-    if (code !== 0) {
-      const msg = data.value.message || data.value.msg || `错误码：${code}`;
-      throw new Error(`API业务错误: ${msg}`);
-    }
 
     return data.value as T;
   } catch (err) {

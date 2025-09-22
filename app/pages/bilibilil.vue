@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import { ref, onMounted } from 'vue'
-import type { BangumiFollowResponse, CinemaFollowResponse, UserInfo } from '../types/bililbilil'
-// import { useCookie } from '@vueuse/core'
+import type { BangumiFollowResponse, CinemaFollowResponse} from '../types/bililbilil'
 
 // 状态管理
 const activeTab = ref<'bangumi' | 'cinema'>('bangumi')
@@ -12,19 +11,6 @@ const hasError = ref(false) // 新增错误标记
 // 数据存储
 const bangumiList = ref<any[]>([])
 const cinemaList = ref<any[]>([])
-const userInfo = ref<UserInfo | null>(null)
-
-// // 获取认证信息（增强校验）
-// const getCredentials = (): { [key: string]: string } => {
-//   const sessdata = useCookie('SESSDATA')?.value || ''
-//   const biliJct = useCookie('bili_jct')?.value || ''
-//   const buvid3 = useCookie('BUVID3')?.value || ''
-
-//   if (!sessdata || !biliJct || !buvid3) {
-//     throw new Error('请先登录B站')
-//   }
-//   return { sessdata, biliJct, buvid3 }
-// }
 
 // 通用请求封装（带重试机制）
 const fetchData = async <T>(

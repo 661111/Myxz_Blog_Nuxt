@@ -346,7 +346,6 @@ const refresh = () => {
     padding: 3px 5px;
     font-size: 12px;
     display: flex;
-    width: 58%;
     margin-bottom: 2px;
     font-weight: 900;
 }

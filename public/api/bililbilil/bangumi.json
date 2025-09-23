@@ -5,6 +5,691 @@
   "data": {
     "list": [
       {
+        "season_id": 425,
+        "media_id": 425,
+        "season_type": 1,
+        "season_type_name": "番剧",
+        "title": "某科学的超电磁炮",
+        "cover": "http://i0.hdslb.com/bfs/bangumi/image/aad797f1f0212aba5578a1ed1c992ef1b9ff7c4b.jpg",
+        "total_count": 24,
+        "is_finish": 1,
+        "is_started": 1,
+        "is_play": 1,
+        "badge": "限时免费",
+        "badge_type": 3,
+        "rights": {
+          "allow_review": 1,
+          "allow_bp_rank": 1,
+          "is_selection": 1,
+          "selection_style": 1,
+          "demand_end_time": {
+
+          },
+          "is_rcmd": 1
+        },
+        "stat": {
+          "follow": 6541625,
+          "view": 233947219,
+          "danmaku": 13478000,
+          "reply": 304900,
+          "coin": 1739286,
+          "series_follow": 9050133,
+          "series_view": 633522492,
+          "likes": 1896322,
+          "favorite": 222885
+        },
+        "new_ep": {
+          "id": 84363,
+          "index_show": "全24话",
+          "cover": "http://i0.hdslb.com/bfs/bangumi/1fc3bbd446c1100b6f4eeb818262d26c0c26251b.jpg",
+          "title": "24",
+          "long_title": "亲爱的朋友",
+          "pub_time": "2016-02-24 11:35:00",
+          "duration": 1511000
+        },
+        "rating": {
+          "score": 9.7,
+          "count": 60938
+        },
+        "square_cover": "http://i0.hdslb.com/bfs/bangumi/bad9a9fca2515f0030d3ec38bde76c7f169ca888.jpg",
+        "season_status": 13,
+        "season_title": "第一季",
+        "badge_ep": "",
+        "media_attr": 196608,
+        "season_attr": 2561,
+        "evaluate": "故事发生在面积占据东京都的三分之一，居住着230万名人口且其中八成人口是学生的巨大都市“学园都市”。学园都市的所有学生均会接受超能力开发，借由药物、催眠术与通电刺激等方式取得超能力。能力者以范围和威力...",
+        "areas": [
+          {
+            "id": 2,
+            "name": "日本"
+          }
+        ],
+        "subtitle": "镇站之番",
+        "first_ep": 84340,
+        "can_watch": 1,
+        "series": {
+          "series_id": 254,
+          "title": "某科学的超电磁炮",
+          "season_count": 3,
+          "new_season_id": 29325,
+          "series_ord": 1
+        },
+        "publish": {
+          "pub_time": "2009-10-02 00:00:00",
+          "pub_time_show": "2009年10月02日00:00",
+          "release_date": "2009-10-02",
+          "release_date_show": "2009年10月2日"
+        },
+        "mode": 2,
+        "section": [
+          {
+            "section_id": 17354,
+            "season_id": 425,
+            "limit_group": 328,
+            "watch_platform": 31,
+            "copyright": "dujia",
+            "ban_area_show": 1,
+            "episode_ids": [0]
+          },
+          {
+            "section_id": 43437,
+            "season_id": 425,
+            "limit_group": 316,
+            "watch_platform": 31,
+            "type": 4,
+            "copyright": "ugc",
+            "ban_area_show": 1,
+            "episode_ids": [0]
+          },
+          {
+            "section_id": 83266,
+            "season_id": 425,
+            "limit_group": 328,
+            "watch_platform": 31,
+            "type": 8,
+            "copyright": "dujia",
+            "title": "精彩看点",
+            "ban_area_show": 1,
+            "attr": 4,
+            "episode_ids": [0]
+          }
+        ],
+        "url": "https://www.bilibili.com/bangumi/play/ss425",
+        "badge_info": {
+          "text": "限时免费",
+          "bg_color": "#FF7F24",
+          "bg_color_night": "#D66011",
+          "img": "https://i0.hdslb.com/bfs/bangumi/image/c264551547b8d7bf55d047002c27635bc180821e.png",
+          "multi_img": {
+            "color": "https://i0.hdslb.com/bfs/bangumi/image/c264551547b8d7bf55d047002c27635bc180821e.png",
+            "medium_remind": "https://i0.hdslb.com/bfs/bangumi/image/609b1a1f23dce03fe5d0d54363dd2e4db7a4d8ca.png"
+          }
+        },
+        "renewal_time": "每周日更新",
+        "first_ep_info": {
+          "id": 84340,
+          "cover": "http://i0.hdslb.com/bfs/bangumi/bf7fc439d82e7d8ccfa827236963c72b94c6b7ed.jpg",
+          "title": "1",
+          "long_title": "电击使 Electro Master",
+          "pub_time": "2016-02-24 11:35:00",
+          "duration": 1496000
+        },
+        "formal_ep_count": 24,
+        "short_url": "https://b23.tv/ss425",
+        "season_version": "tv",
+        "subtitle_14": "镇站之番！没看过你就out啦",
+        "viewable_crowd_type": 18,
+        "summary": "故事发生在面积占据东京都的三分之一，居住着230万名人口且其中八成人口是学生的巨大都市“学园都市”。学园都市的所有学生均会接受超能力开发，借由药物、催眠术与通电刺激等方式取得超能力。能力者以范围和威力分为LV0至LV5。\n主角御坂美琴是学园都市中仅七位LV5（超能力者）的其中一人，排行第三。她是拥有操纵电击能力的“电击使”，站在电击能力的顶峰，因而被称为“超电磁炮”。\n本作不但通过美琴的视角来描绘学园都市的平常而不平凡的日常生活，也叙述了学园都市秘密进行非人道性质的实验，从而使大家对于本作及本篇《魔法禁书目录》的背景（世界观）的认识也慢慢变得清楚。",
+        "styles": [
+          "奇幻",
+          "校园",
+          "战斗",
+          "漫画改"
+        ],
+        "follow_status": 2,
+        "is_new": 0,
+        "progress": "",
+        "both_follow": true
+      },
+      {
+        "season_id": 45263,
+        "media_id": 20261822,
+        "season_type": 1,
+        "season_type_name": "番剧",
+        "title": "成龙历险记 中文配音",
+        "cover": "https://i0.hdslb.com/bfs/bangumi/image/22afe34a7ee7b28aa45ea1bc0d5c326836c5e8b7.png",
+        "total_count": 95,
+        "is_finish": 1,
+        "is_started": 1,
+        "is_play": 1,
+        "badge": "独家",
+        "badge_type": 1,
+        "rights": {
+          "allow_review": 1,
+          "allow_preview": 1,
+          "is_selection": 1,
+          "selection_style": 1,
+          "demand_end_time": {
+
+          },
+          "is_rcmd": 1
+        },
+        "stat": {
+          "follow": 980061,
+          "view": 217345594,
+          "danmaku": 351478,
+          "reply": 42176,
+          "coin": 168859,
+          "series_follow": 1147451,
+          "series_view": 264360788,
+          "likes": 3936218,
+          "favorite": 217193
+        },
+        "new_ep": {
+          "id": 750897,
+          "index_show": "全95话",
+          "cover": "http://i0.hdslb.com/bfs/archive/2274ae67f61388625f6ed0d0a43cad7faa2e9787.png",
+          "title": "95",
+          "long_title": "智斗小龙（二）",
+          "pub_time": "2023-06-01 10:00:19",
+          "duration": 1260000
+        },
+        "rating": {
+          "score": 8.8,
+          "count": 3802
+        },
+        "square_cover": "https://i0.hdslb.com/bfs/bangumi/image/fe52c4de9e163450c420544966e25a3bc9e0b30e.png",
+        "season_status": 13,
+        "season_title": "TV(中配)",
+        "badge_ep": "",
+        "media_attr": 196608,
+        "season_attr": 1536,
+        "evaluate": "剧情讲述了成龙一家有趣的历险故事，成龙和小玉在世界各地探索各种神秘悬疑的谜团，生活和经历中充满着许多奇幻色彩，其中有关武功和魔法，包含了亲情和友情，以及中国文化的元素。成龙的职业是一位考古专家，但事实...",
+        "areas": [
+          {
+            "id": 3,
+            "name": "美国"
+          },
+          {
+            "id": 6,
+            "name": "中国香港"
+          }
+        ],
+        "subtitle": "成龙一家的历险故事",
+        "first_ep": 750803,
+        "can_watch": 1,
+        "series": {
+          "series_id": 6613,
+          "title": "成龙历险记",
+          "season_count": 2,
+          "new_season_id": 45263,
+          "series_ord": 2
+        },
+        "publish": {
+          "pub_time": "2023-06-01 10:00:00",
+          "pub_time_show": "2023年06月01日10:00",
+          "release_date": "2000-09-09",
+          "release_date_show": "2000年9月9日"
+        },
+        "mode": 2,
+        "section": [
+          {
+            "section_id": 95927,
+            "season_id": 45263,
+            "limit_group": 328,
+            "watch_platform": 31,
+            "copyright": "dujia",
+            "ban_area_show": 1,
+            "episode_ids": [0]
+          },
+          {
+            "section_id": 96155,
+            "season_id": 45263,
+            "limit_group": 328,
+            "watch_platform": 31,
+            "type": 1,
+            "copyright": "dujia",
+            "title": "花絮",
+            "ban_area_show": 1,
+            "episode_ids": [0]
+          },
+          {
+            "section_id": 96218,
+            "season_id": 45263,
+            "limit_group": 316,
+            "watch_platform": 27,
+            "type": 5,
+            "copyright": "ugc",
+            "title": "“成”倍奉还",
+            "ban_area_show": 1,
+            "episode_ids": [0]
+          }
+        ],
+        "url": "https://www.bilibili.com/bangumi/play/ss45263",
+        "badge_info": {
+          "text": "独家",
+          "bg_color": "#00C0FF",
+          "bg_color_night": "#0B91BE",
+          "img": "http://i0.hdslb.com/bfs/bangumi/image/e31027bd41fb1cec4cbd1477f09799d0749bdf88.png",
+          "multi_img": {
+            "color": "http://i0.hdslb.com/bfs/bangumi/image/e31027bd41fb1cec4cbd1477f09799d0749bdf88.png",
+            "medium_remind": "https://i0.hdslb.com/bfs/bangumi/image/f8812eb31c22db41fb4608353b83a3fc49d2da3c.png"
+          }
+        },
+        "first_ep_info": {
+          "id": 750803,
+          "cover": "http://i0.hdslb.com/bfs/archive/f3f80bd546e3d30682369fced82e1949c545b4ab.png",
+          "title": "1",
+          "long_title": "黑手帮",
+          "pub_time": "2023-06-01 10:00:10",
+          "duration": 1267000
+        },
+        "formal_ep_count": 95,
+        "short_url": "https://b23.tv/ss45263",
+        "badge_infos": {
+          "content_attr": {
+            "text": "独家",
+            "bg_color": "#00C0FF",
+            "bg_color_night": "#0B91BE",
+            "img": "http://i0.hdslb.com/bfs/bangumi/image/e31027bd41fb1cec4cbd1477f09799d0749bdf88.png",
+            "multi_img": {
+              "color": "http://i0.hdslb.com/bfs/bangumi/image/e31027bd41fb1cec4cbd1477f09799d0749bdf88.png",
+              "medium_remind": "https://i0.hdslb.com/bfs/bangumi/image/f8812eb31c22db41fb4608353b83a3fc49d2da3c.png"
+            }
+          },
+          "vip_or_pay": {
+            "text": "会员专享",
+            "bg_color": "#FB7299",
+            "bg_color_night": "#D44E7D",
+            "img": "http://i0.hdslb.com/bfs/vip/7a099c1d698eeb9036a4f1c4716c25d3cc1fb3ec.png",
+            "multi_img": {
+              "color": "http://i0.hdslb.com/bfs/vip/7a099c1d698eeb9036a4f1c4716c25d3cc1fb3ec.png",
+              "medium_remind": "https://i0.hdslb.com/bfs/bangumi/image/620a40f8e7004eb881916846e760981b7509d22f.png"
+            }
+          }
+        },
+        "season_version": "tv",
+        "horizontal_cover_16_9": "https://i0.hdslb.com/bfs/bangumi/image/f531b6bba62fe84fddf8caa58467361c4393482c.png",
+        "horizontal_cover_16_10": "https://i0.hdslb.com/bfs/bangumi/image/8fa3c5c35096d74cd918d9fb40f9389612e5ae8b.png",
+        "subtitle_14": "跟随阿福的脚步，乌鸦坐飞机",
+        "viewable_crowd_type": 18,
+        "producers": [
+          {
+            "mid": 928123,
+            "type": 3,
+            "is_contribute": 1,
+            "title": "播出"
+          }
+        ],
+        "summary": "剧情讲述了成龙一家有趣的历险故事，成龙和小玉在世界各地探索各种神秘悬疑的谜团，生活和经历中充满着许多奇幻色彩，其中有关武功和魔法，包含了亲情和友情，以及中国文化的元素。成龙的职业是一位考古专家，但事实上他还协助13区警察组织的布莱克警长工作。在寻找十二个符咒的过程中，成龙发现了神奇符咒的秘密。这是一部和成龙的电影风格如出一辙，同样混合着成龙特有的幽默、历险和爱心的动画片。",
+        "styles": [
+          "热血",
+          "少儿",
+          "战斗",
+          "智斗",
+          "社团",
+          "原创"
+        ],
+        "config_attrs": {
+          "highlight_ineffective_hd": {
+            "type_url": "type.googleapis.com/google.protobuf.BoolValue"
+          },
+          "highlight_ineffective_ott": {
+            "type_url": "type.googleapis.com/google.protobuf.BoolValue"
+          },
+          "highlight_ineffective_pink": {
+            "type_url": "type.googleapis.com/google.protobuf.BoolValue"
+          }
+        },
+        "follow_status": 2,
+        "is_new": 0,
+        "progress": "",
+        "both_follow": true
+      },
+      {
+        "season_id": 102173,
+        "media_id": 26641346,
+        "season_type": 1,
+        "season_type_name": "番剧",
+        "title": "薰香花朵凛然绽放",
+        "cover": "https://i0.hdslb.com/bfs/bangumi/image/433fceda3574bb232ab7091cf9aacc049678e96a.png",
+        "total_count": 13,
+        "is_finish": 0,
+        "is_started": 1,
+        "is_play": 1,
+        "badge": "独家",
+        "badge_type": 1,
+        "rights": {
+          "allow_review": 1,
+          "allow_preview": 1,
+          "is_selection": 1,
+          "selection_style": 1,
+          "demand_end_time": {
+
+          },
+          "is_rcmd": 1
+        },
+        "stat": {
+          "follow": 1184141,
+          "view": 22924931,
+          "danmaku": 118115,
+          "reply": 15402,
+          "coin": 114396,
+          "series_follow": 1184119,
+          "series_view": 22924931,
+          "likes": 315739,
+          "favorite": 110853
+        },
+        "new_ep": {
+          "id": 2156845,
+          "index_show": "更新至第8话",
+          "cover": "http://i0.hdslb.com/bfs/archive/ac0d8836538e2c72d9c3b63fa757e8bb300ddeb7.png",
+          "title": "8",
+          "long_title": "情感的真意",
+          "pub_time": "2025-09-17 20:00:01",
+          "duration": 1445000
+        },
+        "rating": {
+          "score": 9.5,
+          "count": 2010
+        },
+        "square_cover": "https://i0.hdslb.com/bfs/bangumi/image/4228481d53f5b44275b4e12a94661cf2bac3476b.png",
+        "season_status": 13,
+        "season_title": "TV",
+        "badge_ep": "",
+        "media_attr": 196608,
+        "season_attr": 1024,
+        "evaluate": "窗帘的另一头，是和我永远没有交集的世界——\n\n差生云集的底层男校千鸟高中，一直被历史悠久的贵族女校桔梗女校所鄙视。尽管两校的校舍相邻，但桔梗女校从来都是将窗帘拉得严严实实，不让千鸟高中的人看到人影。在...",
+        "areas": [
+          {
+            "id": 2,
+            "name": "日本"
+          }
+        ],
+        "subtitle": "邻校冤家的甜蜜信号",
+        "first_ep": 2009785,
+        "can_watch": 1,
+        "series": {
+          "series_id": 7606,
+          "title": "薰香花朵凛然绽放",
+          "season_count": 1,
+          "new_season_id": 102173,
+          "series_ord": 1
+        },
+        "publish": {
+          "pub_time": "2025-08-06 20:00:00",
+          "pub_time_show": "08月06日20:00",
+          "release_date": "2025-07-05",
+          "release_date_show": "2025年7月5日"
+        },
+        "mode": 2,
+        "section": [
+          {
+            "section_id": 202526,
+            "season_id": 102173,
+            "limit_group": 328,
+            "watch_platform": 31,
+            "copyright": "dujia",
+            "ban_area_show": 1,
+            "episode_ids": [0]
+          },
+          {
+            "section_id": 202751,
+            "season_id": 102173,
+            "limit_group": 328,
+            "watch_platform": 31,
+            "type": 1,
+            "copyright": "dujia",
+            "title": "PV",
+            "ban_area_show": 1,
+            "episode_ids": [0]
+          },
+          {
+            "section_id": 217148,
+            "season_id": 102173,
+            "limit_group": 328,
+            "watch_platform": 31,
+            "type": 8,
+            "copyright": "dujia",
+            "title": "精彩看点",
+            "ban_area_show": 1,
+            "attr": 4,
+            "episode_ids": [0]
+          }
+        ],
+        "url": "https://www.bilibili.com/bangumi/play/ss102173",
+        "badge_info": {
+          "text": "独家",
+          "bg_color": "#00C0FF",
+          "bg_color_night": "#0B91BE",
+          "img": "http://i0.hdslb.com/bfs/bangumi/image/e31027bd41fb1cec4cbd1477f09799d0749bdf88.png",
+          "multi_img": {
+            "color": "http://i0.hdslb.com/bfs/bangumi/image/e31027bd41fb1cec4cbd1477f09799d0749bdf88.png",
+            "medium_remind": "https://i0.hdslb.com/bfs/bangumi/image/f8812eb31c22db41fb4608353b83a3fc49d2da3c.png"
+          }
+        },
+        "renewal_time": "每周三20:00播出",
+        "first_ep_info": {
+          "id": 2009785,
+          "cover": "http://i0.hdslb.com/bfs/archive/13109c7f15f6a531c4fc86ab1b9b46f97994ea5c.png",
+          "title": "1",
+          "long_title": "凛太郎和薰子",
+          "pub_time": "2025-08-06 20:00:00",
+          "duration": 1444943
+        },
+        "formal_ep_count": 8,
+        "short_url": "https://b23.tv/ss102173",
+        "badge_infos": {
+          "content_attr": {
+            "text": "独家",
+            "bg_color": "#00C0FF",
+            "bg_color_night": "#0B91BE",
+            "img": "http://i0.hdslb.com/bfs/bangumi/image/e31027bd41fb1cec4cbd1477f09799d0749bdf88.png",
+            "multi_img": {
+              "color": "http://i0.hdslb.com/bfs/bangumi/image/e31027bd41fb1cec4cbd1477f09799d0749bdf88.png",
+              "medium_remind": "https://i0.hdslb.com/bfs/bangumi/image/f8812eb31c22db41fb4608353b83a3fc49d2da3c.png"
+            }
+          },
+          "vip_or_pay": {
+            "text": "会员抢先",
+            "bg_color": "#FB7299",
+            "bg_color_night": "#D44E7D",
+            "img": "http://i0.hdslb.com/bfs/vip/7a099c1d698eeb9036a4f1c4716c25d3cc1fb3ec.png",
+            "multi_img": {
+              "color": "http://i0.hdslb.com/bfs/vip/7a099c1d698eeb9036a4f1c4716c25d3cc1fb3ec.png",
+              "medium_remind": "https://i0.hdslb.com/bfs/bangumi/image/620a40f8e7004eb881916846e760981b7509d22f.png"
+            }
+          }
+        },
+        "season_version": "tv",
+        "horizontal_cover_16_9": "https://i0.hdslb.com/bfs/bangumi/image/a93d569ff53bb0b809c9bca1ff893892bc2b7d51.png",
+        "horizontal_cover_16_10": "https://i0.hdslb.com/bfs/bangumi/image/273b6996ab5a9f760758df6691f50ef2d67f2f5e.png",
+        "subtitle_14": "笨蛋凶脸暖男x甜品系萌妹",
+        "viewable_crowd_type": 18,
+        "producers": [
+          {
+            "mid": 928123,
+            "type": 3,
+            "is_contribute": 1,
+            "title": "播出"
+          }
+        ],
+        "summary": "窗帘的另一头，是和我永远没有交集的世界——\n\n差生云集的底层男校千鸟高中，一直被历史悠久的贵族女校桔梗女校所鄙视。尽管两校的校舍相邻，但桔梗女校从来都是将窗帘拉得严严实实，不让千鸟高中的人看到人影。在千鸟上学的䌷凛太郎，因为长相问题，经常被人误以为是一个可怕的人不敢接近，因此也习惯了和他人保持距离。而在某一天，在给家里的蛋糕店帮忙时，一个名叫薰子的顾客对他说：“我从来不觉得凛太郎很可怕啊？”\n薰子对凛太郎没有半点偏见，和她一起度过的时光既让凛太郎感到困惑，也感到惬意。但他很快就发现，薰子是桔梗女校的学生……",
+        "styles": [
+          "漫画改",
+          "日常",
+          "校园",
+          "恋爱"
+        ],
+        "config_attrs": {
+          "cc_on_lock": {
+            "type_url": "type.googleapis.com/google.protobuf.BoolValue"
+          },
+          "drm_supported": {
+            "type_url": "type.googleapis.com/google.protobuf.BoolValue"
+          },
+          "highlight_ineffective_hd": {
+            "type_url": "type.googleapis.com/google.protobuf.BoolValue"
+          },
+          "highlight_ineffective_ott": {
+            "type_url": "type.googleapis.com/google.protobuf.BoolValue"
+          },
+          "highlight_ineffective_pink": {
+            "type_url": "type.googleapis.com/google.protobuf.BoolValue"
+          }
+        },
+        "follow_status": 2,
+        "is_new": 0,
+        "progress": "",
+        "both_follow": true
+      },
+      {
+        "season_id": 42073,
+        "media_id": 28338429,
+        "season_type": 4,
+        "season_type_name": "国创",
+        "title": "小魔美食大百科",
+        "cover": "http://i0.hdslb.com/bfs/bangumi/image/27a5c6dcbc7f2afe0c35ce754a85a1e53cc65f27.png",
+        "total_count": 200,
+        "is_finish": 0,
+        "is_started": 1,
+        "is_play": 1,
+        "badge": "",
+        "badge_type": 0,
+        "rights": {
+          "allow_review": 1,
+          "is_selection": 1,
+          "selection_style": 1,
+          "demand_end_time": {
+
+          }
+        },
+        "stat": {
+          "follow": 1119633,
+          "view": 3895779352,
+          "danmaku": 936630,
+          "reply": 454842,
+          "coin": 1014107,
+          "series_follow": 1119650,
+          "series_view": 3895779352,
+          "likes": 57587230,
+          "favorite": 4559668
+        },
+        "new_ep": {
+          "id": 2178219,
+          "index_show": "更新至第505话",
+          "cover": "http://i0.hdslb.com/bfs/archive/d6f57384df34dca9e5ed5e2349f77bc7886301dd.jpg",
+          "title": "505",
+          "long_title": "你敢信，你吃的日本鳗鱼，可能是国产的！",
+          "pub_time": "2025-09-22 18:00:01",
+          "duration": 74000
+        },
+        "rating": {
+          "score": 9.3,
+          "count": 1405
+        },
+        "square_cover": "http://i0.hdslb.com/bfs/bangumi/image/a3502f6827c795d9aa3b1a954a95dce70e711158.png",
+        "season_status": 2,
+        "season_title": "第一季",
+        "badge_ep": "",
+        "media_attr": 196608,
+        "season_attr": 0,
+        "evaluate": "食物很重要，可我们和食物之间，却存在着巨大的“信息差”。\n水果烂了一小块，切掉之后还能吃吗？小龙虾哪里不能吃，哪里能吃？……你知道答案吗？\n不知道也没关系，《小魔美食大百科》都会解答，让你吃得放心，胖...",
+        "areas": [
+          {
+            "id": 1,
+            "name": "中国大陆"
+          }
+        ],
+        "subtitle": "你的粮食科普大师",
+        "first_ep": 543143,
+        "can_watch": 1,
+        "series": {
+          "series_id": 6141,
+          "title": "小魔美食大百科",
+          "season_count": 1,
+          "new_season_id": 42073,
+          "series_ord": 1
+        },
+        "publish": {
+          "pub_time": "2022-07-01 18:00:00",
+          "pub_time_show": "2022年07月01日18:00",
+          "release_date": "2022-07-01",
+          "release_date_show": "2022年7月1日"
+        },
+        "mode": 2,
+        "section": [
+          {
+            "section_id": 79638,
+            "season_id": 42073,
+            "limit_group": 316,
+            "watch_platform": 31,
+            "copyright": "bilibili",
+            "ban_area_show": 1,
+            "episode_ids": [0]
+          },
+          {
+            "section_id": 102445,
+            "season_id": 42073,
+            "limit_group": 316,
+            "watch_platform": 31,
+            "type": 1,
+            "copyright": "bilibili",
+            "title": "精彩二创&花絮",
+            "ban_area_show": 1,
+            "episode_ids": [0]
+          }
+        ],
+        "url": "https://www.bilibili.com/bangumi/play/ss42073",
+        "badge_info": {
+          "bg_color": "#FB7299",
+          "bg_color_night": "#D44E7D",
+          "multi_img": {
+            "color": "",
+            "medium_remind": ""
+          }
+        },
+        "first_ep_info": {
+          "id": 543143,
+          "cover": "http://i0.hdslb.com/bfs/archive/8d67233dc003c5f894a41f398480313c034ee8a5.png",
+          "title": "1",
+          "long_title": "小龙虾哪里不能吃？哪里能吃？你真的知道吗？",
+          "pub_time": "2022-07-01 18:00:00",
+          "duration": 67000
+        },
+        "formal_ep_count": 505,
+        "short_url": "https://b23.tv/ss42073",
+        "season_version": "tv",
+        "horizontal_cover_16_9": "http://i0.hdslb.com/bfs/bangumi/image/29d1904811f790812c815e50d3350d7d98adca00.png",
+        "horizontal_cover_16_10": "http://i0.hdslb.com/bfs/bangumi/image/508d8f57cf9e1cb1a5a5f37342325b8c6a2fb7fb.png",
+        "subtitle_14": "小魔让你吃得放心，胖得明白！",
+        "viewable_crowd_type": 8,
+        "producers": [
+          {
+            "mid": 87190721,
+            "type": 2,
+            "is_contribute": 1,
+            "title": "制作"
+          }
+        ],
+        "summary": "食物很重要，可我们和食物之间，却存在着巨大的“信息差”。\n水果烂了一小块，切掉之后还能吃吗？小龙虾哪里不能吃，哪里能吃？……你知道答案吗？\n不知道也没关系，《小魔美食大百科》都会解答，让你吃得放心，胖得明白！\n我是小魔，你的粮食科普大师。",
+        "config_attrs": {
+          "highlight_ineffective_hd": {
+            "type_url": "type.googleapis.com/google.protobuf.BoolValue"
+          },
+          "highlight_ineffective_ott": {
+            "type_url": "type.googleapis.com/google.protobuf.BoolValue"
+          },
+          "highlight_ineffective_pink": {
+            "type_url": "type.googleapis.com/google.protobuf.BoolValue"
+          }
+        },
+        "follow_status": 2,
+        "is_new": 0,
+        "progress": "看到第475话 0:03",
+        "both_follow": true
+      },
+      {
         "season_id": 42176,
         "media_id": 28338623,
         "season_type": 1,
@@ -28,15 +713,15 @@
           "is_rcmd": 1
         },
         "stat": {
-          "follow": 2646940,
-          "view": 80621159,
-          "danmaku": 333785,
-          "reply": 53452,
-          "coin": 463272,
-          "series_follow": 2646900,
-          "series_view": 80621159,
-          "likes": 1686139,
-          "favorite": 182690
+          "follow": 2647225,
+          "view": 80641018,
+          "danmaku": 333832,
+          "reply": 53475,
+          "coin": 463369,
+          "series_follow": 2647185,
+          "series_view": 80641018,
+          "likes": 1688266,
+          "favorite": 182926
         },
         "new_ep": {
           "id": 691488,
@@ -49,7 +734,7 @@
         },
         "rating": {
           "score": 9.2,
-          "count": 25786
+          "count": 25789
         },
         "square_cover": "http://i0.hdslb.com/bfs/bangumi/image/6ea75b548fc1ccaf1b6a4e3611410d7931850cd8.png",
         "season_status": 13,
@@ -205,7 +890,7 @@
         },
         "follow_status": 2,
         "is_new": 0,
-        "progress": "看到第1话 0:06",
+        "progress": "看到第1话 0:09",
         "both_follow": true
       },
       {
@@ -232,15 +917,15 @@
           "is_rcmd": 1
         },
         "stat": {
-          "follow": 4531216,
-          "view": 93258510,
-          "danmaku": 274612,
-          "reply": 31971,
-          "coin": 265695,
-          "series_follow": 5188058,
-          "series_view": 450179729,
-          "likes": 812639,
-          "favorite": 48282
+          "follow": 4532024,
+          "view": 93415472,
+          "danmaku": 274889,
+          "reply": 31984,
+          "coin": 265962,
+          "series_follow": 5192716,
+          "series_view": 451176187,
+          "likes": 813371,
+          "favorite": 48332
         },
         "new_ep": {
           "id": 783841,
@@ -253,7 +938,7 @@
         },
         "rating": {
           "score": 9.8,
-          "count": 5410
+          "count": 5412
         },
         "square_cover": "https://i0.hdslb.com/bfs/bangumi/image/535e31cc6bb3d8aa213202a96616d0d83efceb2c.png",
         "season_status": 13,
@@ -417,15 +1102,15 @@
           "is_rcmd": 1
         },
         "stat": {
-          "follow": 4929363,
-          "view": 59647636,
-          "danmaku": 202278,
-          "reply": 39733,
-          "coin": 171758,
-          "series_follow": 5188058,
-          "series_view": 450179729,
-          "likes": 535584,
-          "favorite": 66161
+          "follow": 4931942,
+          "view": 60202068,
+          "danmaku": 203370,
+          "reply": 39964,
+          "coin": 173673,
+          "series_follow": 5192716,
+          "series_view": 451176187,
+          "likes": 539831,
+          "favorite": 66834
         },
         "new_ep": {
           "id": 2123344,
@@ -438,7 +1123,7 @@
         },
         "rating": {
           "score": 9.9,
-          "count": 3944
+          "count": 3990
         },
         "square_cover": "https://i0.hdslb.com/bfs/bangumi/image/3fe5bc55c61f87575dda28b122edb70332ecdcf4.png",
         "season_status": 13,
@@ -594,152 +1279,6 @@
         "both_follow": true
       },
       {
-        "season_id": 42073,
-        "media_id": 28338429,
-        "season_type": 4,
-        "season_type_name": "国创",
-        "title": "小魔美食大百科",
-        "cover": "http://i0.hdslb.com/bfs/bangumi/image/27a5c6dcbc7f2afe0c35ce754a85a1e53cc65f27.png",
-        "total_count": 200,
-        "is_finish": 0,
-        "is_started": 1,
-        "is_play": 1,
-        "badge": "",
-        "badge_type": 0,
-        "rights": {
-          "allow_review": 1,
-          "is_selection": 1,
-          "selection_style": 1,
-          "demand_end_time": {
-
-          }
-        },
-        "stat": {
-          "follow": 1119262,
-          "view": 3892378468,
-          "danmaku": 934694,
-          "reply": 454590,
-          "coin": 1013408,
-          "series_follow": 1119280,
-          "series_view": 3892378468,
-          "likes": 57553261,
-          "favorite": 4556215
-        },
-        "new_ep": {
-          "id": 2096695,
-          "index_show": "更新至第504话",
-          "cover": "http://i0.hdslb.com/bfs/archive/e05a471fe57fe5d933412a66efcb920a5b232e89.jpg",
-          "title": "504",
-          "long_title": "一层肉一层油，三文鱼为啥要长那么肥啊？",
-          "pub_time": "2025-08-27 18:00:00",
-          "duration": 69000
-        },
-        "rating": {
-          "score": 9.3,
-          "count": 1403
-        },
-        "square_cover": "http://i0.hdslb.com/bfs/bangumi/image/a3502f6827c795d9aa3b1a954a95dce70e711158.png",
-        "season_status": 2,
-        "season_title": "第一季",
-        "badge_ep": "",
-        "media_attr": 196608,
-        "season_attr": 0,
-        "evaluate": "食物很重要，可我们和食物之间，却存在着巨大的“信息差”。\n水果烂了一小块，切掉之后还能吃吗？小龙虾哪里不能吃，哪里能吃？……你知道答案吗？\n不知道也没关系，《小魔美食大百科》都会解答，让你吃得放心，胖...",
-        "areas": [
-          {
-            "id": 1,
-            "name": "中国大陆"
-          }
-        ],
-        "subtitle": "你的粮食科普大师",
-        "first_ep": 543143,
-        "can_watch": 1,
-        "series": {
-          "series_id": 6141,
-          "title": "小魔美食大百科",
-          "season_count": 1,
-          "new_season_id": 42073,
-          "series_ord": 1
-        },
-        "publish": {
-          "pub_time": "2022-07-01 18:00:00",
-          "pub_time_show": "2022年07月01日18:00",
-          "release_date": "2022-07-01",
-          "release_date_show": "2022年7月1日"
-        },
-        "mode": 2,
-        "section": [
-          {
-            "section_id": 79638,
-            "season_id": 42073,
-            "limit_group": 316,
-            "watch_platform": 31,
-            "copyright": "bilibili",
-            "ban_area_show": 1,
-            "episode_ids": [0]
-          },
-          {
-            "section_id": 102445,
-            "season_id": 42073,
-            "limit_group": 316,
-            "watch_platform": 31,
-            "type": 1,
-            "copyright": "bilibili",
-            "title": "精彩二创&花絮",
-            "ban_area_show": 1,
-            "episode_ids": [0]
-          }
-        ],
-        "url": "https://www.bilibili.com/bangumi/play/ss42073",
-        "badge_info": {
-          "bg_color": "#FB7299",
-          "bg_color_night": "#D44E7D",
-          "multi_img": {
-            "color": "",
-            "medium_remind": ""
-          }
-        },
-        "first_ep_info": {
-          "id": 543143,
-          "cover": "http://i0.hdslb.com/bfs/archive/8d67233dc003c5f894a41f398480313c034ee8a5.png",
-          "title": "1",
-          "long_title": "小龙虾哪里不能吃？哪里能吃？你真的知道吗？",
-          "pub_time": "2022-07-01 18:00:00",
-          "duration": 67000
-        },
-        "formal_ep_count": 504,
-        "short_url": "https://b23.tv/ss42073",
-        "season_version": "tv",
-        "horizontal_cover_16_9": "http://i0.hdslb.com/bfs/bangumi/image/29d1904811f790812c815e50d3350d7d98adca00.png",
-        "horizontal_cover_16_10": "http://i0.hdslb.com/bfs/bangumi/image/508d8f57cf9e1cb1a5a5f37342325b8c6a2fb7fb.png",
-        "subtitle_14": "小魔让你吃得放心，胖得明白！",
-        "viewable_crowd_type": 8,
-        "producers": [
-          {
-            "mid": 87190721,
-            "type": 2,
-            "is_contribute": 1,
-            "title": "制作"
-          }
-        ],
-        "summary": "食物很重要，可我们和食物之间，却存在着巨大的“信息差”。\n水果烂了一小块，切掉之后还能吃吗？小龙虾哪里不能吃，哪里能吃？……你知道答案吗？\n不知道也没关系，《小魔美食大百科》都会解答，让你吃得放心，胖得明白！\n我是小魔，你的粮食科普大师。",
-        "config_attrs": {
-          "highlight_ineffective_hd": {
-            "type_url": "type.googleapis.com/google.protobuf.BoolValue"
-          },
-          "highlight_ineffective_ott": {
-            "type_url": "type.googleapis.com/google.protobuf.BoolValue"
-          },
-          "highlight_ineffective_pink": {
-            "type_url": "type.googleapis.com/google.protobuf.BoolValue"
-          }
-        },
-        "follow_status": 2,
-        "is_new": 0,
-        "progress": "看到第500话 0:35",
-        "both_follow": true
-      },
-      {
         "season_id": 46585,
         "media_id": 21123554,
         "season_type": 4,
@@ -763,15 +1302,15 @@
           "is_rcmd": 1
         },
         "stat": {
-          "follow": 10713147,
-          "view": 346448320,
-          "danmaku": 2842368,
-          "reply": 324887,
-          "coin": 4621148,
-          "series_follow": 11367322,
-          "series_view": 1098687057,
-          "likes": 4842025,
-          "favorite": 862262
+          "follow": 10715104,
+          "view": 346855545,
+          "danmaku": 2846446,
+          "reply": 324940,
+          "coin": 4624698,
+          "series_follow": 11370443,
+          "series_view": 1099354704,
+          "likes": 4845490,
+          "favorite": 862772
         },
         "new_ep": {
           "id": 1633654,
@@ -784,7 +1323,7 @@
         },
         "rating": {
           "score": 9.8,
-          "count": 31273
+          "count": 31289
         },
         "square_cover": "https://i0.hdslb.com/bfs/bangumi/image/99b4071049f51d5ea889aca93a3d060186006aa2.png",
         "season_status": 13,
@@ -984,15 +1523,15 @@
           "is_rcmd": 1
         },
         "stat": {
-          "follow": 14065097,
-          "view": 333758337,
-          "danmaku": 4100972,
-          "reply": 135721,
-          "coin": 2984710,
-          "series_follow": 14604495,
-          "series_view": 2357114739,
-          "likes": 5477348,
-          "favorite": 887301
+          "follow": 14064418,
+          "view": 333900837,
+          "danmaku": 4102014,
+          "reply": 135726,
+          "coin": 2985126,
+          "series_follow": 14604555,
+          "series_view": 2357450295,
+          "likes": 5479225,
+          "favorite": 887338
         },
         "new_ep": {
           "id": 836534,
@@ -1005,7 +1544,7 @@
         },
         "rating": {
           "score": 7.7,
-          "count": 54320
+          "count": 54321
         },
         "square_cover": "https://i0.hdslb.com/bfs/bangumi/image/efef651eea8563efc9ff328c93ec8f152f70597e.png",
         "season_status": 13,
@@ -1161,15 +1700,15 @@
           "is_rcmd": 1
         },
         "stat": {
-          "follow": 4768656,
-          "view": 138364059,
-          "danmaku": 1416951,
-          "reply": 119982,
-          "coin": 1236841,
-          "series_follow": 4768624,
-          "series_view": 138364059,
-          "likes": 3387971,
-          "favorite": 293331
+          "follow": 4769240,
+          "view": 138397361,
+          "danmaku": 1417077,
+          "reply": 120007,
+          "coin": 1237032,
+          "series_follow": 4769208,
+          "series_view": 138397361,
+          "likes": 3388550,
+          "favorite": 293455
         },
         "new_ep": {
           "id": 341219,
@@ -1182,7 +1721,7 @@
         },
         "rating": {
           "score": 9.7,
-          "count": 97906
+          "count": 97909
         },
         "square_cover": "http://i0.hdslb.com/bfs/bangumi/image/549cf235a02de6ab4b4baeb8f3c1a412b7923556.png",
         "season_status": 13,
@@ -1340,15 +1879,15 @@
           "is_rcmd": 1
         },
         "stat": {
-          "follow": 2303470,
-          "view": 151993248,
-          "danmaku": 879277,
-          "reply": 68224,
-          "coin": 582838,
-          "series_follow": 2303453,
-          "series_view": 151993248,
-          "likes": 2371403,
-          "favorite": 452217
+          "follow": 2303932,
+          "view": 152037043,
+          "danmaku": 879414,
+          "reply": 68238,
+          "coin": 582983,
+          "series_follow": 2303915,
+          "series_view": 152037043,
+          "likes": 2372886,
+          "favorite": 452464
         },
         "new_ep": {
           "id": 836000,
@@ -1361,7 +1900,7 @@
         },
         "rating": {
           "score": 7.8,
-          "count": 13774
+          "count": 13778
         },
         "square_cover": "https://i0.hdslb.com/bfs/bangumi/image/f14ba8699afe34ec1d8b0ed722b5ddbdf82befe5.png",
         "season_status": 13,
@@ -1569,15 +2108,15 @@
           "is_rcmd": 1
         },
         "stat": {
-          "follow": 684355,
-          "view": 23078237,
-          "danmaku": 75020,
-          "reply": 10967,
-          "coin": 88491,
-          "series_follow": 684327,
-          "series_view": 23078237,
-          "likes": 266168,
-          "favorite": 50367
+          "follow": 685075,
+          "view": 23092854,
+          "danmaku": 75043,
+          "reply": 10988,
+          "coin": 88565,
+          "series_follow": 685047,
+          "series_view": 23092854,
+          "likes": 266329,
+          "favorite": 50479
         },
         "new_ep": {
           "id": 834366,
@@ -1590,7 +2129,7 @@
         },
         "rating": {
           "score": 9.8,
-          "count": 9367
+          "count": 9370
         },
         "square_cover": "https://i0.hdslb.com/bfs/bangumi/image/5b5622a9411c3e1439db3508f6b3f52b6dbc66e0.png",
         "season_status": 13,
@@ -1751,15 +2290,15 @@
           "is_rcmd": 1
         },
         "stat": {
-          "follow": 3792550,
-          "view": 194078679,
-          "danmaku": 1512884,
-          "reply": 124929,
-          "coin": 646394,
-          "series_follow": 5188058,
-          "series_view": 450179729,
-          "likes": 1097980,
-          "favorite": 57487
+          "follow": 3794779,
+          "view": 194258258,
+          "danmaku": 1513223,
+          "reply": 124938,
+          "coin": 646663,
+          "series_follow": 5192716,
+          "series_view": 451176187,
+          "likes": 1098871,
+          "favorite": 57643
         },
         "new_ep": {
           "id": 276796,
@@ -1772,7 +2311,7 @@
         },
         "rating": {
           "score": 9.7,
-          "count": 77881
+          "count": 77891
         },
         "square_cover": "http://i0.hdslb.com/bfs/bangumi/53fa7e66ae6449d8ed06898afe6af49ac5ca4329.jpg",
         "season_status": 13,
@@ -1923,15 +2462,15 @@
           "is_rcmd": 1
         },
         "stat": {
-          "follow": 4142673,
-          "view": 10403898,
-          "danmaku": 34855,
-          "reply": 3394,
-          "coin": 31878,
-          "series_follow": 5188058,
-          "series_view": 450179729,
-          "likes": 91088,
-          "favorite": 6687
+          "follow": 4142945,
+          "view": 10423734,
+          "danmaku": 34888,
+          "reply": 3398,
+          "coin": 31922,
+          "series_follow": 5192716,
+          "series_view": 451176187,
+          "likes": 91175,
+          "favorite": 6691
         },
         "new_ep": {
           "id": 683342,
@@ -1943,7 +2482,7 @@
         },
         "rating": {
           "score": 9.8,
-          "count": 3619
+          "count": 3620
         },
         "square_cover": "http://i0.hdslb.com/bfs/bangumi/image/c0efbce47b11d9634dd41f1b15da0943e64f94be.png",
         "season_status": 13,
@@ -2068,6 +2607,6 @@
     ],
     "pn": 1,
     "ps": 24,
-    "total": 11
+    "total": 14
   }
 }

@@ -150,7 +150,8 @@ const refresh = () => {
           </span>
         </div>
         <div v-if="bangumiList.length === 0" class="empty">
-          <p>暂无追番数据</p>
+          <span class="iconify i-ph:warning-circle-bold icon error-icon"></span>
+          <p>暂无追番数据: bangumiList Not data</p>
         </div>
       </div>
 
@@ -170,7 +171,8 @@ const refresh = () => {
           </span>
         </div>
         <div v-if="cinemaList.length === 0" class="empty">
-          <p>暂无追剧数据</p>
+          <span class="iconify i-ph:warning-circle-bold icon error-icon"></span>
+          <p>暂无追番数据: cinemaList Not data</p>
         </div>
       </div>
     </div>
@@ -219,6 +221,24 @@ const refresh = () => {
   border: none;
   border-radius: 4px;
   cursor: pointer;
+}
+/* 无数据样式表 */
+.empty {
+    /* margin: 0 auto; */
+    align-items: center;
+    /* background: var(--c-bg); */
+    /* border: 1px solid var(--c-border); */
+    border-radius: 16px;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    padding: 4rem 2rem;
+    text-align: center;
+}
+.empty .error-icon {
+    color: var(--c-text-secondary);
+    font-size: 1.1rem;
+    margin: 0 0 1rem;
 }
 /* 全局样式表 */
 :root {

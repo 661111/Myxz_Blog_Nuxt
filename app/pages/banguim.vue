@@ -102,6 +102,22 @@ const refresh = () => {
   }
   loadData()
 }
+
+// 版权信息
+export interface copyRightInfo {
+  name: string
+  herf: string
+}
+export const copyRight: copyRightInfo[] = [
+  {
+    name: '风纪星辰',
+    herf: 'https://www.thyuu.com/',
+  }
+  {
+    name: '哔哩哔哩',
+    herf: 'https://www.bilibili.com/'
+  }
+]
 </script>
 
 <template>
@@ -176,6 +192,14 @@ const refresh = () => {
           <span class="iconify i-ph:warning-circle-bold icon error-icon"></span>
           <p>暂无追番数据: cinemaList Not data</p>
         </div>
+      </div>
+    </div>
+    <div class="banguimCopyright">
+      <div class="copyright">
+        Rendered by 
+        <a :herf="copyRight.herf">
+          {{ copyRight.name }}
+        </a>
       </div>
     </div>
   </div>

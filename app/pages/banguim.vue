@@ -2,6 +2,9 @@
 import { ref, onMounted } from 'vue'
 import type { BangumiFollowResponse, CinemaFollowResponse} from '../types/bililbilil'
 
+const layoutStore = useLayoutStore()
+layoutStore.setAside(['blog-stats', 'blog-tech', 'blog-log'])
+
 // 状态管理
 const activeTab = ref<'bangumi' | 'cinema'>('bangumi')
 const pending = ref(false)
@@ -61,7 +64,7 @@ const fetchBangumiList = async () => {
 const fetchCinemaList = async () => {
   try {
     const data = await fetchData<CinemaFollowResponse>(
-      '/api/bililbilil/bangumi.json', // 修复空URL问题
+      '/api/bililbilil/cinemaList.json', // 修复空URL问题
       'cinema'
     )
     cinemaList.value = data.data.list

@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { ref, onMounted } from 'vue'
 import type { BangumiFollowResponse, CinemaFollowResponse} from '../types/bililbilil'
+import { copyRight } from '~/info'
 
 const layoutStore = useLayoutStore()
 layoutStore.setAside(['blog-stats', 'blog-tech', 'blog-log'])
@@ -102,22 +103,6 @@ const refresh = () => {
   }
   loadData()
 }
-
-// 版权信息
-export interface copyRightInfo {
-  name: string
-  herf: string
-}
-export const copyRight: copyRightInfo[] = [
-  {
-    name: '风纪星辰',
-    herf: 'https://www.thyuu.com/',
-  },
-  {
-    name: '哔哩哔哩',
-    herf: 'https://www.bilibili.com/'
-  }
-]
 </script>
 
 <template>

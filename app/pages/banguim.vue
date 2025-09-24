@@ -289,7 +289,7 @@ const refresh = () => {
     margin-right: 20px;
     color: var(--db--text-color);
 }
-.NavItem.current, .NavItem:hover {
+.NavItem.JiEun.active, .NavItem:hover {
     border-color: inherit;
 }
 .type {

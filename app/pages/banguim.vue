@@ -112,7 +112,7 @@ export const copyRight: copyRightInfo[] = [
   {
     name: '风纪星辰',
     herf: 'https://www.thyuu.com/',
-  }
+  },
   {
     name: '哔哩哔哩',
     herf: 'https://www.bilibili.com/'

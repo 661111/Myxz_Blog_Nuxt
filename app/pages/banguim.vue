@@ -182,7 +182,7 @@ const refresh = () => {
     <div class="banguimCopyright">
       <div class="copyright" v-for="crdata in copyRight" :key="crdata.name">
         Rendered by 
-        <a :herf="crdata.herf">
+        <a :href="crdata.href" target="_blank">
           {{ crdata.name }}
         </a>
       </div>

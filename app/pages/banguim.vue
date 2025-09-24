@@ -419,7 +419,7 @@ const refresh = () => {
 .title a {
     color: hsl(var(--thyuu--main-color));
 }
-/* 版权 */
+/* 版权样式 */
 .banguimCopyright {
     font-size: 12px;
     text-align: right;

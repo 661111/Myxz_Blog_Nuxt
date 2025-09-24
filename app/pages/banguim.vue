@@ -180,10 +180,10 @@ const refresh = () => {
       </div>
     </div>
     <div class="banguimCopyright">
-      <div class="copyright">
+      <div class="copyright" v-for="crdata in copyRight" :key="crdata.name">
         Rendered by 
-        <a :herf="copyRight.herf">
-          {{ copyRight.name }}
+        <a :herf="crdata.herf">
+          {{ crdata.name }}
         </a>
       </div>
     </div>
@@ -418,5 +418,24 @@ const refresh = () => {
 }
 .title a {
     color: hsl(var(--thyuu--main-color));
+}
+/* 版权 */
+.banguimCopyright {
+    font-size: 12px;
+    text-align: right;
+    margin-top: 20px;
+    color: var(--db--text-color-light);
+}
+.banguimCopyright.copyright a {
+    color: hsl(var(--thyuu--main-color));
+}
+.banguimCopyright.copyright a::before {
+    content: "\e667";
+    display: inline-block;
+    text-indent: 0;
+    margin: 0 .25em 0 0;
+    rotate: 45deg;
+    scale: .75;
+    transition: rotate .5s;
 }
 </style>

@@ -351,12 +351,19 @@ const refresh = () => {
     inset: 0;
 }
 /* 日期以及评分信息样式 */
-.banguimContainer .banguimCard .dateSignpost, .banguimContainer .banguimCard .score {
-    color: #ffffffb3;
-    background: #ffffff1c;
+.banguimContainer .banguimCard .dateSignpost {
+    color: #ffffffb3!important;
+    background: #ffffff1c!important;
     -webkit-backdrop-filter: saturate(1.8) blur(20px);
     backdrop-filter: saturate(1.8) blur(20px);
-    font-size: var(--thyuu--size-small);
+    font-size: var(--thyuu--size-small)!important;
+}
+.banguimContainer .banguimCard .score {
+    color: #ffffffb3!important;
+    background: #ffffff1c!important;
+    -webkit-backdrop-filter: saturate(1.8) blur(20px);
+    backdrop-filter: saturate(1.8) blur(20px);
+    font-size: var(--thyuu--size-small)!important;
 }
 .banguimContainer .banguimCard .dateSignpost, .banguimContainer .banguimCard .score {
     position: relative;

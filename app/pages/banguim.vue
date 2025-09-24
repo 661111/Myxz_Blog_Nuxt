@@ -365,6 +365,10 @@ const refresh = () => {
     backdrop-filter: saturate(1.8) blur(20px);
     font-size: var(--thyuu--size-small)!important;
 }
+.score svg {
+    fill: #f5c518;
+    margin-right: 5px;
+}
 .banguimContainer .banguimCard .dateSignpost, .banguimContainer .banguimCard .score {
     position: relative;
     padding: .5em 1em;
@@ -433,10 +437,10 @@ const refresh = () => {
     margin-top: 20px;
     color: var(--db--text-color-light);
 }
-.banguimCopyright.copyright a {
+.banguimCopyright .copyright a {
     color: hsl(var(--thyuu--main-color));
 }
-.banguimCopyright.copyright a::before {
+.banguimCopyright .copyright a::before {
     content: "\e667";
     display: inline-block;
     text-indent: 0;

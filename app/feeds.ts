@@ -176,7 +176,7 @@ export default [
 				sitenick: '',
 				title: 'xyx404',
 				desc: '在努力和摆烂中选择了努力摆烂AWA',
-				link: 'https://blog.xyx404.us.kg/',
+				link: 'https://xyx404.github.io',
 				feed: '',
 				icon: 'https://fastly.jsdelivr.net/npm/xyx404blogphoto@1.2.23/avatar.webp',
 				avatar: 'https://fastly.jsdelivr.net/npm/xyx404blogphoto@1.2.23/avatar.webp',

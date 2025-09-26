@@ -13,6 +13,7 @@ export interface FavoriteItem {
     season_type: number;
     title: string;
     cover: string;
+    season_type_name: string;
     total_count: number;
     evaluate: string;
     new_ep: {

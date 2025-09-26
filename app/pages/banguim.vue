@@ -8,10 +8,15 @@ layoutStore.setAside(['blog-stats', 'blog-tech', 'blog-log'])
 
 // 状态管理
 const activeTab = ref<'bangumi' | 'cinema'>('bangumi')
+const activeMenu = ref<menu>(wish)
 const pending = ref(false)
 const error = ref<string | null>(null)
 const hasError = ref(false) // 新增错误标记
-
+const menu = {
+  wish: '想看',
+  do: '在看',
+  collect: '看过',
+}
 // 数据存储
 const bangumiList = ref<any[]>([])
 const cinemaList = ref<any[]>([])
@@ -123,7 +128,17 @@ const refresh = () => {
         追剧
       </button>
     </div>
-
+    <div class="banguimType">
+      <div :class="['typeItem', {active: activeMenu === '在看'}]" @click="activeMenu = '在看'">
+        在看
+      </div>
+      <div :class="['typeItem', {active: activeMenu === '想看'}]" @click="activeMenu = '想看'">
+        想看
+      </div>
+      <div :class="['typeItem', {active: activeMenu === '看过'}]" @click="activeMenu = '看过'">
+        看过
+      </div>
+    </div>
     <!-- 加载/错误状态 -->
     <div v-if="pending" class="loading">
       <div class="loading-ripple"></div>
@@ -191,6 +206,13 @@ const refresh = () => {
 </template>
 
 <style lang="css"scoped>
+/* 页面样式 */
+.banguimContainer {
+    margin-top: 2rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
+
 /* 加载样式 */
 .loading {
     display: flex;

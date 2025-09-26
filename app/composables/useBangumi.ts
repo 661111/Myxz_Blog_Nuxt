@@ -1,63 +1,46 @@
-// services/bangumi.ts
-import type { CollectionItem, CollectionsResponse } from "~/types/banguim";
+import type { BangumiFollowResponse, CinemaFollowResponse } from '~/types/bililbilil'
 
-const API_BASE = "https://api.bgm.tv/v0";
+export type ContentType = 'anime' | 'game' | 'real' | 'book' | 'music'
+export type CollectionType = keyof typeof TYPE_ID_MAP
 
-export const getCollections = async (
-  username: string,
-  type: "anime" | "book" | "music" | "game" | "real",
-  page: number = 1
-): Promise<CollectionsResponse> => {
-  try {
-    const response = await fetch(
-      `${API_BASE}/users/${encodeURIComponent(
-        username
-      )}/collections?subject_type=${type}&type=subject&limit=20&offset=${
-        (page - 1) * 20
-      }`
-    );
+export const ITEMS_PER_PAGE = 20
 
-    if (!response.ok) {
-      throw new Error("Network response was not ok");
-    }
+const TYPE_ID_MAP = {
+	wish: 1,
+	collect: 2,
+	do: 3,
+} as const
 
-    const data = await response.json();
+export default function useBangumiCollection(
+	contentType: ContentType = 'anime',
+	collectionType: Ref<CollectionType> = ref('wish'),
+	page: Ref<number> = ref(1),
+) {
+	const username = 'kemiao'
 
-    return {
-      data: data.list.map((item: any) => ({
-        id: item.id,
-        subject: {
-          id: item.subject.id,
-          type: item.subject.type,
-          name: item.subject.name,
-          name_cn: item.subject.name_cn,
-          summary: item.subject.summary || "",
-          images: {
-            common: item.subject.images?.common || "",
-            large: item.subject.images?.large || "",
-            grid: item.subject.images?.grid || "",
-            small: item.subject.images?.small || ""
-          }
-        },
-        status: {
-          status: item.status,
-          rating: item.rating.overall,
-          comment: item.comment || "",
-          private: item.private,
-          updated_at: item.updated_at
-        }
-      })),
-      total: data.total,
-      limit: data.limit,
-      offset: data.offset
-    };
-  } catch (error) {
-    console.error(`API Error: ${error}`);
-    return {
-      data: [],
-      total: 0,
-      limit: 0,
-      offset: 0
-    };
-  }
-};
+	const subjectType = computed(() => contentType === 'anime' ? 2 : contentType === 'game' ? 4 : contentType === 'book' ? 1 : contentType === 'real' ? 6 : 6)
+	const typeId = computed(() => TYPE_ID_MAP[toValue(collectionType)])
+	const offset = computed(() => (page.value - 1) * ITEMS_PER_PAGE)
+
+	const { data, status, error } = useFetch<BangumiFollowResponse | CinemaFollowResponse>(
+		() => {
+			return `https://api.bgm.tv/v0/users/${username}/collections?subject_type=${subjectType.value}&type=${typeId.value}&limit=${ITEMS_PER_PAGE}&offset=${offset.value}`
+      return `/api/bililbilil/${username}/`
+		},
+		{
+			key: () =>
+				`bangumi-${contentType}-${collectionType.value}-page-${page.value}`,
+		},
+	)
+
+	const totalPages = computed(() =>
+		data.value ? Math.ceil(data.value.total / ITEMS_PER_PAGE) : 0,
+	)
+
+	return {
+		data,
+		status,
+		error,
+		totalPages,
+	}
+}

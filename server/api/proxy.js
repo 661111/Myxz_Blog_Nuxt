@@ -1,68 +1,41 @@
-// pages/api/proxy.js
-import { URLSearchParams } from 'url';
-
 export default async function handler(req, res) {
-  // 设置CORS头
+  // 设置 CORS 头
   res.setHeader('Access-Control-Allow-Origin', '*');
-  res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS');
-  res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization');
-
-  // 处理预检请求
-  if (req.method === 'OPTIONS') {
-    return res.status(204).end();
-  }
+  res.setHeader('Content-Type', 'application/json');
 
   try {
-    // 获取请求参数
-    const params = new URLSearchParams(req.url.split('?')[1]);
-    const path = params.get('path');
-    const vmid = '3546572553980802';
-    const bangumiType = '1';
-    const cinemaType = '2';
-
-    // 验证必填参数
-    if (!path && !seasonId && !mediaId) {
-      return res.status(400).json({ error: 'Missing required parameters' });
-    }
-
-    // 构建目标URL
-    let targetUrl = 'https://api.bilibili.com';
-
-    if (seasonId) {
-      targetUrl += `/x/space/bangumi/follow/list?vmid=${vmid}&type=${bangumiType}&pn=1&follow_status=0&limit=1`;
-    } else if (mediaId) {
-      targetUrl += `/x/space/bangumi/follow/list?vmid=${vmid}&type=${cinemaType}&pn=1&follow_status=0&limit=1`;
-    } else {
-      targetUrl += path.startsWith('/') ? path : `/${path}`;
-    }
-
-    // 添加请求头（可根据需要调整）
-    const headers = {
-      'User-Agent': 'Mozilla/5.0 (compatible; Vercel-Proxy/1.0)',
-      'Referer': 'https://www.bilibili.com',
-      ...req.headers
-    };
-
-    // 转发请求
-    const response = await fetch(targetUrl, {
+    // 解析请求路径和参数
+    const { searchParams } = new URL(req.url, `http://${req.headers.host}`);
+    const path = req.query['*'] || '';
+    
+    // 构造 B 站 API URL
+    const biliUrl = `https://api.bilibili.com${path}?${searchParams.toString()}`;
+    
+    // 转发请求到 B 站 API
+    const response = await fetch(biliUrl, {
       method: req.method,
-      headers,
-      body: req.method === 'POST' ? req.body : undefined,
-      cache: 'no-store'
+      headers: {
+        ...req.headers,
+        'Host': 'api.bilibili.com',
+        'Referer': 'https://www.bilibili.com/',
+        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36'
+      },
+      body: req.method !== 'GET' ? req.body : undefined
     });
 
-    // 处理响应
-    const contentType = response.headers.get('content-type');
-    const data = await response.text();
-
-    if (contentType.includes('application/json')) {
-      return res.status(response.status).json(JSON.parse(data));
-    } else {
-      return res.status(response.status).send(data);
+    if (!response.ok) {
+      throw new Error(`Bilibili API error: ${response.status}`);
     }
 
+    // 返回 B 站 API 响应
+    const data = await response.json();
+    res.status(200).json(data);
+    
   } catch (error) {
-    console.error('Proxy Error:', error);
-    return res.status(500).json({ error: 'Proxy request failed' });
+    console.error('Proxy error:', error);
+    res.status(500).json({ 
+      code: -412,
+      message: '代理请求失败: ' + error.message 
+    });
   }
 }

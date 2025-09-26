@@ -1,7 +1,7 @@
 {
   "rewrites": [
     {
-      "source": "/api/bilibili/(.*)",
+      "source": "/api/bilibili",
       "destination": "https://api.bilibili.com/x/space/",
       "headers": {
         "Access-Control-Allow-Origin": "*",

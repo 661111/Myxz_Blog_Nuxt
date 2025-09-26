@@ -2,14 +2,14 @@
     "rewrites": [
         {
             "source": "/api/bilibili",
-            "destination": "https://api.bilibili.com/"
-            // "headers": {
-            //     "Access-Control-Allow-Origin": "*",
-            //     "Access-Control-Allow-Methods": "GET, POST, OPTIONS",
-            //     "Access-Control-Allow-Headers": "Content-Type, Authorization",
-            //     "Referer": "https://www.bilibili.com/",
-            //     "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36"
-            // }
+            "destination": "https://api.bilibili.com/",
+            "headers": {
+                "Access-Control-Allow-Origin": "*",
+                "Access-Control-Allow-Methods": "GET, POST, OPTIONS",
+                "Access-Control-Allow-Headers": "Content-Type, Authorization",
+                "Referer": "https://www.bilibili.com/",
+                "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36"
+            }
         }
     ]
 }

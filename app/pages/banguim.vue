@@ -56,7 +56,7 @@ const fetchData = async <T>(
 const fetchBangumiList = async () => {
   try {
     const data = await fetchData<BangumiFollowResponse>(
-      '/api/bililbilil/bangumi.json',
+      '/api/bilibili/bangumi/follow/list?vmid=3546572553980802&type=1&pn=1&follow_status=0&limit=1',
       'bangumi'
     )
     bangumiList.value = data.data.list
@@ -70,7 +70,7 @@ const fetchBangumiList = async () => {
 const fetchCinemaList = async () => {
   try {
     const data = await fetchData<CinemaFollowResponse>(
-      '/api/bililbilil/cinemaList.json', // 修复空URL问题
+      '/api/bilibili/bangumi/follow/list?vmid=3546572553980802&type=2&pn=1&follow_status=0&limit=1', // 修复空URL问题
       'cinema'
     )
     cinemaList.value = data.data.list

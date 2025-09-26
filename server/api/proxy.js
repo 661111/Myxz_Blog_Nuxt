@@ -1,6 +1,6 @@
 const { createProxyMiddleware } = require('http-proxy-middleware');
 module.exports = (req, res) => {
-   let target = 'https://api.bilibili.com/';
+   let target = 'https://api.bilibili.com/x/space/';
    createProxyMiddleware({
        target,
        changeOrigin: true,

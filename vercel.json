@@ -6,8 +6,7 @@
             "headers": {
                 "Access-Control-Allow-Origin": "*",
                 "Access-Control-Allow-Methods": "GET, POST, OPTIONS",
-                "Access-Control-Allow-Headers": "Content-Type, Authorization",
-                "Referer": "https://www.bilibili.com/"
+                "Access-Control-Allow-Headers": "Content-Type, Authorization"
             }
         }
     ]

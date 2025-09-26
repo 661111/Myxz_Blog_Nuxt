@@ -3,14 +3,6 @@
         {
             "source": "/api/bilibili",
             "destination": "https://api.bilibili.com/"
-        },
-        {    
-            "headers": {
-                "Access-Control-Allow-Origin": "*",
-                "Access-Control-Allow-Methods": "GET, POST, OPTIONS",
-                "Access-Control-Allow-Headers": "Content-Type, Authorization",
-                "Referer": "https://www.bilibili.com/"
-            }
         }
     ]
 }

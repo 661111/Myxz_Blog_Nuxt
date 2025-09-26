@@ -25,7 +25,6 @@ export default function useBangumiCollection(
 	const { data, status, error } = useFetch<BangumiFollowResponse | CinemaFollowResponse>(
 		() => {
 			return `https://api.bgm.tv/v0/users/${username}/collections?subject_type=${subjectType.value}&type=${typeId.value}&limit=${ITEMS_PER_PAGE}&offset=${offset.value}`
-      return `/api/bililbilil/${username}/`
 		},
 		{
 			key: () =>

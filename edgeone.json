@@ -1,10 +1,10 @@
 {
-  "rewrites": [
-    {
-      "source": "/api/bilibili/(.*)",
-      "destination": "https://api.bilibili.com/"
-    }
-  ],
+  // "rewrites": [
+  //   {
+  //     "source": "/api/bilibili/(.*)",
+  //     "destination": "https://api.bilibili.com/"
+  //   }
+  // ],
   "headers": [
     {
       "headers": [

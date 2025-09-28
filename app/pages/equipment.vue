@@ -2,6 +2,16 @@
 import { equipment } from '~/equipment'
 const layoutStore = useLayoutStore()
 layoutStore.setAside(['blog-stats', 'blog-tech', 'blog-log'])
+
+function goComment(content: string) {
+    const textContent = content.replace(/<[^>]+>/g, '')
+    const textarea = document.querySelector('.atk-textarea-wrap .atk-textarea') as HTMLTextAreaElement
+    if (textarea) {
+        textarea.value = `> ${textContent}\n\n`
+        textarea.focus()
+        textarea.scrollIntoView({ behavior: 'smooth', block: 'center' })
+    }
+}
 </script>
 
 <template>
@@ -35,6 +45,7 @@ layoutStore.setAside(['blog-stats', 'blog-tech', 'blog-log'])
                 </div>
             </div>
         </div>
+    <PostComment key="/equipment" />
     </div>
 </template>
 

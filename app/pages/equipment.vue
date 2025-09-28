@@ -45,8 +45,8 @@ function goComment(content: string) {
                 </div>
             </div>
         </div>
-    <PostComment key="/equipment" />
     </div>
+    <PostComment key="/equipment" />
 </template>
 
 <style scoped>

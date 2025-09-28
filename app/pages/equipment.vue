@@ -37,8 +37,11 @@ function goComment(content: string) {
                             {{ item.opinion }}
                         </div>
                         <div class="icat-equipment-box-more">
-                            <a :herf="item.details_flink" title="跳转到{{ item.name }}的产品详情">
+                            <a :href="item.details_flink" title="跳转到{{ item.infoname }}的产品详情">
                                 {{ i.infoname }}
+                            </a>
+                            <a class="bber-reply" @click="goComment(item.opinion) ">
+                              <i class="iconify i-ph:chats-bold icon"></i>
                             </a>
                         </div>
                     </div>

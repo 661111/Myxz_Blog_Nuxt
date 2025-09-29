@@ -21,7 +21,7 @@ onMounted(() => {
 	<h3 class="text-creative">
 		评论区
 	</h3>
-	<div id="layoutHelper-comments" style="margin: 2em 0;">
+	<div class="artalk" style="margin: 2em 0;">
 		<p>评论加载中...</p>
 	</div>
 </section>

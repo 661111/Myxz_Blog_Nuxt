@@ -93,8 +93,9 @@ export interface single {
 
 // 社交数据
 export interface social {
-    herf: string;
+    href: string;
     class: string;
+    name: string;
 }
 
 export const about: aboutConnect[] = [
@@ -138,8 +139,8 @@ export const about: aboutConnect[] = [
         }],
         hello: "Main Dis My Blogs",
         social: [
-            { herf: "https://github.com/661111", class: "i-ph:github-logo-bold" },
-            { herf: "", class:"i-ph:tiktok-logo-bold" }
+            { href: "https://github.com/661111", class: "i-ph:github-logo-bold", name: "Github" },
+            { href: "", class:"i-ph:tiktok-logo-bold", name: "TikTok" }
         ],
         maxim: [{
             tip: "座右铭",

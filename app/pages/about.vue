@@ -10,7 +10,7 @@ import MyInfoAndSayHello from '../components/about/myInfoAndSayHello.vue'
 import Single from '../components/about/single.vue'
 
 const layoutStore = useLayoutStore()
-layoutStore.setAside(['blog-stats', 'blog-tech', 'blog-log'])
+layoutStore.setAside(['blog-stats', 'blog-tech', 'blog-site-info', 'blog-log'])
 
 // 动态加载外部 JS 脚本
   const loadScript = (url: string, callback?: () => void) => {

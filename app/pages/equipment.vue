@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 import { equipment } from '~/equipment'
 const layoutStore = useLayoutStore()
-layoutStore.setAside(['blog-stats', 'blog-tech', 'blog-log'])
+layoutStore.setAside(['blog-stats', 'blog-tech', 'blog-site-info', 'blog-log'])
 
 function goComment(content: string) {
     const textContent = content.replace(/<[^>]+>/g, '')

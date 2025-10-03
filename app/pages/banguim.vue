@@ -4,7 +4,7 @@ import type { BangumiFollowResponse, CinemaFollowResponse} from '../types/bililb
 import { copyRight } from '~/info'
 
 const layoutStore = useLayoutStore()
-layoutStore.setAside(['blog-stats', 'blog-tech', 'blog-log'])
+layoutStore.setAside(['blog-stats', 'blog-tech', 'blog-site-info', 'blog-log'])
 
 // 状态管理
 const activeTab = ref<'bangumi' | 'cinema'>('bangumi')
@@ -310,9 +310,6 @@ const refresh = () => {
     text-transform: capitalize;
     margin-right: 20px;
     color: var(--db--text-color);
-}
-.NavItem.JiEun.active, .NavItem:hover {
-    border-color: inherit;
 }
 .type {
     position: fixed;

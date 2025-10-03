@@ -1,3 +1,7 @@
+export interface siteInfo {
+    title: string
+}
+
 export interface siteTabs {
     name: string
     itemnumber: string
@@ -17,6 +21,12 @@ export interface service {
     image: string
     link: string
 }
+
+export const siteLinkWidgetInfo: siteInfo[] = [
+    {
+        title: '站点信息',
+    }
+]
 
 export const siteLinkItems: siteTabs[] = [
     {
@@ -74,7 +84,7 @@ export const siteLinkItems: siteTabs[] = [
                 service: [
                     { 
                         name: 'EdgeOne', 
-                        image: '', 
+                        image: '/assets/img/link/service/edgeone.jpg', 
                         link: "" 
                     }
                 ],

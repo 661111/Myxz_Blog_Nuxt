@@ -60,7 +60,7 @@ const activeTab = ref(0); // 默认激活第一个标签页
   .sitelink-list {
     gap: 1rem;
     display: grid;
-    margin-top: 20px;
+    margin-top: 0.5rem;
   }
   .sitelink-item {
     display: flex;

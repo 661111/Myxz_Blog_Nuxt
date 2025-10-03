@@ -73,4 +73,7 @@ const activeTab = ref(0); // 默认激活第一个标签页
   .sitelink-item img{
     border-radius: .8em;
   }
+  .badges {
+    margin-bottom: 1.5rem;
+  }
 </style>

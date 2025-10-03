@@ -72,6 +72,7 @@ const blogConfig = {
 		// // Twikoo 评论系统
 		// { src: 'https://lib.baomitu.com/twikoo/1.6.44/twikoo.min.js', defer: true },
 		{ src: '/assets/js/artalk.js', defer: true },
+		{ src: '/assets/js/sco.js' }
 	],
 
 	/** 自己部署的 Twikoo 服务 */

@@ -54,7 +54,7 @@ const activeTab = ref(0); // 默认激活第一个标签页
   </ZWidget>
 </template>
 
-<style src="../../assets/css/widget/tab.css"></style>
+<style src="../../assets/css/widget/tab.css" scoped></style>
 <style src="../../assets/css/widget/badge.css"></style>
 <style lang="css" scoped>
   .sitelink-list {

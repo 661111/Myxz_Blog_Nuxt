@@ -23,7 +23,7 @@ interface LinkGroup {
 const router = useRouter()
 
 // 从环境变量获取域名（需配置 .env 文件）
-const domain = 'https://www.myxz.top'
+const domain = 'https://www.myxz.top/'
 
 // /​**
 //  * 动态生成 URL（修复 your-domain.com 循环问题）

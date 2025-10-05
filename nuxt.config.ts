@@ -14,9 +14,6 @@ export default defineNuxtConfig({
 				// 此处为元数据的生成器标识，不建议修改
 				{ 'name': 'generator', 'content': packageJson.name, 'data-github-repo': packageJson.homepage, 'data-version': packageJson.version },
 				{ name: 'mobile-web-app-capable', content: 'yes' },
-				{ name:'Origin', content:'https://www.bilibili.com' },
-				{ name: 'Referer', content:'https://www.bilibili.com' },
-				{ name:'User-Agent', content:'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36'}
 			],
 			link: [
 				{ rel: 'icon', href: blogConfig.favicon },
@@ -88,9 +85,6 @@ export default defineNuxtConfig({
 			platform: process.platform,
 			arch: process.arch,
 			ci: process.env.TENCENTCLOUD_RUNENV === 'SCF' ? 'EdgeOne' : ci.name || '',
-			// doubanApiBase: process.env.DOUBAN_API_BASE || 'https://api.douban.com/v2',
-			// doubanApiKey: process.env.DOUBAN_API_KEY || '',
-			// doubanUserId: process.env.DOUBAN_USER_ID || ''
 		},
 	},
 
@@ -115,6 +109,7 @@ export default defineNuxtConfig({
 
 	// @keep-sorted
 	modules: [
+		'@dxup/nuxt',
 		'@nuxt/content',
 		'@nuxt/icon',
 		'@nuxt/image',
@@ -122,6 +117,7 @@ export default defineNuxtConfig({
 		'@nuxtjs/seo',
 		'@pinia/nuxt',
 		'@vueuse/nuxt',
+		'nuxt-llms',
 		'unplugin-yaml/nuxt',
 	],
 
@@ -138,17 +134,19 @@ export default defineNuxtConfig({
 				// @keep-sorted
 				remarkPlugins: {
 					'remark-math': {},
+					'remark-music': {},
 					'remark-reading-time': {},
 				},
+				// @keep-sorted
 				rehypePlugins: {
 					'rehype-katex': {},
 				},
 				toc: { depth: 4, searchDepth: 4 },
 			},
 		},
-		experimental: { 
-			nativeSqlite: true 
-		}
+		experimental: {
+			sqliteConnector: 'native',
+		},
 	},
 
 	hooks: {
@@ -193,6 +191,12 @@ ${packageJson.homepage}
 			'no-non-ascii-chars',
 			'no-uppercase-chars',
 		],
+	},
+
+	llms: {
+		domain: blogConfig.url,
+		title: blogConfig.title,
+		description: blogConfig.description,
 	},
 
 	robots: {

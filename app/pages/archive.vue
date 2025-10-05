@@ -9,7 +9,7 @@ useSeoMeta({
 const birthYear = appConfig.component.stats.birthYear
 
 const layoutStore = useLayoutStore()
-layoutStore.setAside(['blog-stats', 'blog-tech', 'blog-site-info', 'blog-log'])
+layoutStore.setAside(['blog-stats', 'blog-log'])
 
 const { data: listRaw } = await useArticleIndex()
 const { listSorted, isAscending, sortOrder } = useArticleSort(listRaw)
@@ -63,24 +63,23 @@ const yearlyWordCount = computed(() => {
 			</div>
 		</div>
 
-		<menu class="archive-list">
-			<TransitionGroup appear name="float-in">
-				<ZArchive
-					v-for="article, index in yearGroup"
-					:key="article.path"
-					v-bind="article"
-					:to="article.path"
-					:use-updated="sortOrder === 'updated'"
-					:style="{ '--delay': `${index * 0.03}s` }"
-				/>
-			</TransitionGroup>
-		</menu>
+		<TransitionGroup tag="menu" class="archive-list" name="float-in">
+			<ZArchive
+				v-for="article, index in yearGroup"
+				:key="article.path"
+				v-bind="article"
+				:to="article.path"
+				:use-updated="sortOrder === 'updated'"
+				:style="{ '--delay': `${index * 0.03}s` }"
+			/>
+		</TransitionGroup>
 	</section>
 </div>
 </template>
 
 <style lang="scss" scoped>
 .archive {
+	min-height: 70vh;
 	margin: 1rem;
 	mask-image: linear-gradient(#FFF 50%, #FFF5);
 }
@@ -91,8 +90,6 @@ const yearlyWordCount = computed(() => {
 
 .archive-title {
 	display: flex;
-
-	// align-items: center;
 	justify-content: space-between;
 	gap: 1em;
 	position: sticky;

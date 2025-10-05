@@ -100,6 +100,7 @@ onMounted(() => {
 	margin: 1rem auto;
 	padding: 0.5rem;
 	line-height: 1.4;
+	transition: transform 0.2s;
 	animation: float-in 0.2s var(--delay) backwards;
 
 	&:hover {
@@ -168,6 +169,7 @@ onMounted(() => {
 
 	.site-info {
 		flex: 1;
+		margin-inline-end: 0.5em;
 
 		.domain {
 			font-size: 0.9em;

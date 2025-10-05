@@ -8,7 +8,7 @@ useSeoMeta({
 })
 
 const layoutStore = useLayoutStore()
-layoutStore.setAside(['blog-stats', 'blog-tech', 'blog-site-info', 'blog-log'])
+layoutStore.setAside(['blog-stats', 'blog-tech', 'comm-group'])
 
 // BUG 若其他页面和 index.vue 共用同一数据源，其 payload 会被置空
 // 此处数据源不采用默认参数，以防归档页面刷新空白
@@ -67,7 +67,7 @@ const listRecommended = computed(() => sort(
 		/>
 	</TransitionGroup>
 
-	<ZPagination v-model="page" :total-pages />
+	<ZPagination v-model="page" class="pagination" sticky :total-pages="totalPages" />
 </div>
 </template>
 

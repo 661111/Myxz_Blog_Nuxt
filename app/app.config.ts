@@ -44,10 +44,10 @@ export default defineAppConfig({
 		/** 侧边栏底部图标导航 */
 		iconNav: [
 			{ icon: 'ph:house-bold', text: '个人主页', url: blogConfig.author.homepage },
-            // { icon: 'ri:qq-line', text: '交流群: 169994096', url: 'https://jq.qq.com/?_wv=1027&k=lQfNSeEd' },
-            { icon: 'ph:github-logo-bold', text: 'GitHub: 661111', url: 'https://github.com/661111' },
-            { icon: 'ph:rss-simple-bold', text: 'Atom订阅', url: '/atom.xml' },
-            { icon: 'ph:subway-bold', text: '开往', url: 'https://www.travellings.cn/go-by-clouds.html' },
+			// { icon: 'ri:qq-line', text: '交流群: 169994096', url: 'https://jq.qq.com/?_wv=1027&k=lQfNSeEd' },
+			{ icon: 'ph:github-logo-bold', text: 'GitHub: L33Z22L11', url: 'https://github.com/L33Z22L11' },
+			{ icon: 'ph:rss-simple-bold', text: 'Atom订阅', url: '/atom.xml' },
+			{ icon: 'ph:subway-bold', text: '开往', url: 'https://www.travellings.cn/go-by-clouds.html' },
 		] satisfies NavItem[],
 		/** 页脚站点地图 */
 		nav: [
@@ -56,24 +56,23 @@ export default defineAppConfig({
 				items: [
 					{ icon: 'ph:rss-simple-bold', text: 'Atom订阅', url: '/atom.xml' },
 					{ icon: 'ph:subway-bold', text: '开往', url: 'https://www.travellings.cn/' },
-					// { icon: 'ph:flying-saucer-bold', text: '异次元旅行', url: 'https://travel.moe/go.html?travel=on' },
 				],
 			},
 			{
 				title: '社交',
 				items: [
-					{ icon: 'ph:github-logo-bold', text: 'Github', url: 'https://github.com/661111' },
+					{ icon: 'ph:github-logo-bold', text: 'L33Z22L11', url: 'https://github.com/L33Z22L11' },
 					// { icon: 'ri:qq-line', text: '群: 169994096', url: 'https://jq.qq.com/?_wv=1027&k=lQfNSeEd' },
-					{ icon: 'ph:envelope-simple-bold', text: '本站邮箱', url: `mailto:${blogConfig.author.email}` },
+					{ icon: 'ph:envelope-simple-bold', text: blogConfig.author.email, url: `mailto:${blogConfig.author.email}` },
 				],
 			},
 			{
 				title: '信息',
 				items: [
-					{ icon: 'simple-icons:nuxtdotjs', text: '本站源主题', url: 'https://github.com/L33Z22L11/blog-v3' },
+					{ icon: 'simple-icons:nuxtdotjs', text: `主题: Clarity ${version}`, url: 'https://github.com/L33Z22L11/blog-v3' },
 					// { icon: 'ph:swatches-bold', text: '主题和组件文档', url: '/theme' },
 					{ icon: 'ph:certificate-bold', text: '萌备20251949号', url: 'https://icp.gov.moe/?keyword=20251949' },
-				],
+				]
 			},
 		] satisfies Nav,
 	},

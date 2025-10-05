@@ -1,0 +1,914 @@
+{
+  "code": 0,
+  "message": "0",
+  "ttl": 1,
+  "data": {
+    "list": [
+      {
+        "season_id": 33622,
+        "media_id": 28229051,
+        "season_type": 5,
+        "season_type_name": "电视剧",
+        "title": "西游记",
+        "cover": "http://i0.hdslb.com/bfs/bangumi/image/f9b7d89acb62d2ed385381ebcf5ac80b65fadd73.jpg",
+        "total_count": 25,
+        "is_finish": 1,
+        "is_started": 1,
+        "is_play": 1,
+        "badge": "大会员",
+        "badge_type": 0,
+        "rights": {
+          "allow_review": 1,
+          "allow_preview": 1,
+          "is_selection": 1,
+          "selection_style": 1,
+          "demand_end_time": {
+
+          },
+          "is_rcmd": 1
+        },
+        "stat": {
+          "follow": 1734719,
+          "view": 322179800,
+          "danmaku": 4164571,
+          "reply": 199697,
+          "coin": 647932,
+          "series_follow": 5942238,
+          "series_view": 1688012344,
+          "likes": 2181074,
+          "favorite": 331026
+        },
+        "new_ep": {
+          "id": 327134,
+          "index_show": "全25集",
+          "cover": "http://i0.hdslb.com/bfs/bangumi/35527b15d47d5fea0e67adba35cadae4230dedee.jpg",
+          "title": "25",
+          "long_title": "波生极乐天",
+          "pub_time": "2020-06-12 12:00:00",
+          "duration": 3378000
+        },
+        "rating": {
+          "score": 9.9,
+          "count": 42176
+        },
+        "square_cover": "http://i0.hdslb.com/bfs/bangumi/image/7488996b70ce3218ba906d650a75fab4fcdea819.jpg",
+        "season_status": 13,
+        "season_title": "西游记",
+        "badge_ep": "",
+        "media_attr": 196608,
+        "season_attr": 1052160,
+        "evaluate": "东胜神州的傲来国花果山的一块巨石孕育出了一只灵明石猴（六小龄童 饰），石猴后来拜须菩提为师后习得了七十二变，具有了通天本领，于是占山为王，自称齐天大圣。玉帝派太白金星下凡招安大圣上了天庭，后来大圣因为...",
+        "areas": [
+          {
+            "id": 1,
+            "name": "中国大陆"
+          }
+        ],
+        "subtitle": "俺老孙来也！",
+        "first_ep": 327107,
+        "can_watch": 1,
+        "series": {
+          "series_id": 5001,
+          "title": "央视版四大名著",
+          "season_count": 5,
+          "new_season_id": 33625,
+          "series_ord": 1
+        },
+        "publish": {
+          "pub_time": "2020-06-12 12:00:00",
+          "pub_time_show": "2020年06月12日12:00",
+          "release_date": "1986-02-01",
+          "release_date_show": "1986年2月1日"
+        },
+        "mode": 2,
+        "section": [
+          {
+            "section_id": 48080,
+            "season_id": 33622,
+            "limit_group": 316,
+            "watch_platform": 31,
+            "copyright": "bilibili",
+            "ban_area_show": 1,
+            "episode_ids": [0]
+          },
+          {
+            "section_id": 48244,
+            "season_id": 33622,
+            "limit_group": 316,
+            "watch_platform": 31,
+            "type": 2,
+            "copyright": "ugc",
+            "title": "相关推荐",
+            "ban_area_show": 1,
+            "episode_ids": [0]
+          },
+          {
+            "section_id": 103346,
+            "season_id": 33622,
+            "limit_group": 316,
+            "watch_platform": 31,
+            "type": 2,
+            "copyright": "bilibili",
+            "title": "重温原著再打游戏体验更佳",
+            "ban_area_show": 1,
+            "episode_ids": [0]
+          },
+          {
+            "section_id": 66784,
+            "season_id": 33622,
+            "limit_group": 316,
+            "watch_platform": 31,
+            "type": 8,
+            "copyright": "bilibili",
+            "title": "精彩看点",
+            "ban_area_show": 1,
+            "episode_ids": [0]
+          }
+        ],
+        "url": "https://www.bilibili.com/bangumi/play/ss33622",
+        "badge_info": {
+          "text": "大会员",
+          "bg_color": "#FB7299",
+          "bg_color_night": "#D44E7D",
+          "img": "http://i0.hdslb.com/bfs/vip/7a099c1d698eeb9036a4f1c4716c25d3cc1fb3ec.png",
+          "multi_img": {
+            "color": "http://i0.hdslb.com/bfs/vip/7a099c1d698eeb9036a4f1c4716c25d3cc1fb3ec.png",
+            "medium_remind": "https://i0.hdslb.com/bfs/bangumi/image/620a40f8e7004eb881916846e760981b7509d22f.png"
+          }
+        },
+        "first_ep_info": {
+          "id": 327107,
+          "cover": "http://i0.hdslb.com/bfs/bangumi/d9d8f7b6f0a9da020d2bc9dd4f044de16b0fe1c4.jpg",
+          "title": "1",
+          "long_title": "猴王初问世",
+          "pub_time": "2020-06-12 12:00:00",
+          "duration": 2668000
+        },
+        "formal_ep_count": 25,
+        "short_url": "https://b23.tv/ss33622",
+        "badge_infos": {
+          "vip_or_pay": {
+            "text": "会员专享",
+            "bg_color": "#FB7299",
+            "bg_color_night": "#D44E7D",
+            "img": "http://i0.hdslb.com/bfs/vip/7a099c1d698eeb9036a4f1c4716c25d3cc1fb3ec.png",
+            "multi_img": {
+              "color": "http://i0.hdslb.com/bfs/vip/7a099c1d698eeb9036a4f1c4716c25d3cc1fb3ec.png",
+              "medium_remind": "https://i0.hdslb.com/bfs/bangumi/image/620a40f8e7004eb881916846e760981b7509d22f.png"
+            }
+          }
+        },
+        "horizontal_cover_16_9": "http://i0.hdslb.com/bfs/bangumi/image/25f78352e561a6f446eccc391552dcf93f90c8ad.png",
+        "horizontal_cover_16_10": "http://i0.hdslb.com/bfs/bangumi/image/a2648b374e9f6b7494246101aad587ac6470a826.png",
+        "subtitle_14": "爷青回！大家的童年回来了",
+        "subtitle_25": "“大师兄，不好了！师傅叒被妖怪抓走了！”",
+        "viewable_crowd_type": 18,
+        "producers": [
+          {
+            "mid": 4856007,
+            "type": 3,
+            "is_contribute": 1,
+            "title": "播出"
+          }
+        ],
+        "summary": "东胜神州的傲来国花果山的一块巨石孕育出了一只灵明石猴（六小龄童 饰），石猴后来拜须菩提为师后习得了七十二变，具有了通天本领，于是占山为王，自称齐天大圣。玉帝派太白金星下凡招安大圣上了天庭，后来大圣因为嫌玉帝赐封的官职太低，大闹天宫，被太上老君困于炼丹炉内四十九天后，大圣踢翻炼丹炉，炼成了金睛火眼。如来佛祖见局势不可收拾，于是将大圣镇压于五指山下。一晃眼五百年过去了，唐僧被观世音菩萨选为西去取经普渡众生的人，大圣受观音指引，拜唐僧为师，师徒踏上了取经的路途。",
+        "styles": [
+          "奇幻",
+          "古装",
+          "剧情"
+        ],
+        "follow_status": 2,
+        "is_new": 0,
+        "progress": "看到第1集 6:02",
+        "both_follow": true
+      },
+      {
+        "season_id": 33623,
+        "media_id": 28229052,
+        "season_type": 5,
+        "season_type_name": "电视剧",
+        "title": "西游记续集",
+        "cover": "http://i0.hdslb.com/bfs/bangumi/image/2a4782407b25733fbef641595214aa004247ae19.jpg",
+        "total_count": 16,
+        "is_finish": 1,
+        "is_started": 1,
+        "is_play": 1,
+        "badge": "大会员",
+        "badge_type": 0,
+        "rights": {
+          "allow_review": 1,
+          "is_selection": 1,
+          "selection_style": 1,
+          "demand_end_time": {
+
+          },
+          "is_rcmd": 1
+        },
+        "stat": {
+          "follow": 742223,
+          "view": 169355329,
+          "danmaku": 1552538,
+          "reply": 67923,
+          "coin": 193523,
+          "series_follow": 5942238,
+          "series_view": 1688012344,
+          "likes": 916089,
+          "favorite": 133229
+        },
+        "new_ep": {
+          "id": 327365,
+          "index_show": "全16集",
+          "cover": "http://i0.hdslb.com/bfs/bangumi/29ffc46984e1f3c54604d2f52be05331d962109d.jpg",
+          "title": "16",
+          "long_title": "观灯金平府",
+          "pub_time": "2020-06-12 12:00:00",
+          "duration": 2798000
+        },
+        "rating": {
+          "score": 9.8,
+          "count": 12736
+        },
+        "square_cover": "http://i0.hdslb.com/bfs/bangumi/image/869866d497cd6bef9d736e6aeceed423d21a0076.jpg",
+        "season_status": 13,
+        "season_title": "西游记续集",
+        "badge_ep": "",
+        "media_attr": 196608,
+        "season_attr": 1052160,
+        "evaluate": "经过九九八十一难，唐僧（徐少华 饰）师徒四人终于到达灵山，求取真经。修得正果，师徒一行驾云回到都城长安，见到唐王李世民（张志明 饰），并向其讲述了取经的经过。话说这一路真可谓艰难险阻，困难重重。通天河...",
+        "areas": [
+          {
+            "id": 1,
+            "name": "中国大陆"
+          }
+        ],
+        "subtitle": "师傅被妖怪抓走啦！",
+        "first_ep": 327339,
+        "can_watch": 1,
+        "series": {
+          "series_id": 5001,
+          "title": "央视版四大名著",
+          "season_count": 5,
+          "new_season_id": 33625,
+          "series_ord": 2
+        },
+        "publish": {
+          "pub_time": "2020-06-12 12:00:00",
+          "pub_time_show": "2020年06月12日12:00",
+          "release_date": "2000-02-08",
+          "release_date_show": "2000年2月8日"
+        },
+        "mode": 2,
+        "section": [
+          {
+            "section_id": 48081,
+            "season_id": 33623,
+            "limit_group": 316,
+            "watch_platform": 31,
+            "copyright": "bilibili",
+            "ban_area_show": 1,
+            "episode_ids": [0]
+          },
+          {
+            "section_id": 48245,
+            "season_id": 33623,
+            "limit_group": 316,
+            "watch_platform": 31,
+            "type": 2,
+            "copyright": "ugc",
+            "title": "相关视频",
+            "ban_area_show": 1,
+            "episode_ids": [0]
+          },
+          {
+            "section_id": 103363,
+            "season_id": 33623,
+            "limit_group": 316,
+            "watch_platform": 31,
+            "type": 3,
+            "copyright": "ugc",
+            "title": "重温原著再打游戏体验更佳",
+            "ban_area_show": 1,
+            "episode_ids": [0]
+          },
+          {
+            "section_id": 68568,
+            "season_id": 33623,
+            "limit_group": 316,
+            "watch_platform": 31,
+            "type": 8,
+            "copyright": "bilibili",
+            "title": "精彩看点",
+            "ban_area_show": 1,
+            "episode_ids": [0]
+          }
+        ],
+        "url": "https://www.bilibili.com/bangumi/play/ss33623",
+        "badge_info": {
+          "text": "大会员",
+          "bg_color": "#FB7299",
+          "bg_color_night": "#D44E7D",
+          "img": "http://i0.hdslb.com/bfs/vip/7a099c1d698eeb9036a4f1c4716c25d3cc1fb3ec.png",
+          "multi_img": {
+            "color": "http://i0.hdslb.com/bfs/vip/7a099c1d698eeb9036a4f1c4716c25d3cc1fb3ec.png",
+            "medium_remind": "https://i0.hdslb.com/bfs/bangumi/image/620a40f8e7004eb881916846e760981b7509d22f.png"
+          }
+        },
+        "first_ep_info": {
+          "id": 327339,
+          "cover": "http://i0.hdslb.com/bfs/bangumi/35b749110406be08e9e30a840c36b2083d9f375c.jpg",
+          "title": "1",
+          "long_title": "险渡通天河",
+          "pub_time": "2020-06-12 12:00:00",
+          "duration": 2800000
+        },
+        "formal_ep_count": 16,
+        "short_url": "https://b23.tv/ss33623",
+        "badge_infos": {
+          "vip_or_pay": {
+            "text": "会员专享",
+            "bg_color": "#FB7299",
+            "bg_color_night": "#D44E7D",
+            "img": "http://i0.hdslb.com/bfs/vip/7a099c1d698eeb9036a4f1c4716c25d3cc1fb3ec.png",
+            "multi_img": {
+              "color": "http://i0.hdslb.com/bfs/vip/7a099c1d698eeb9036a4f1c4716c25d3cc1fb3ec.png",
+              "medium_remind": "https://i0.hdslb.com/bfs/bangumi/image/620a40f8e7004eb881916846e760981b7509d22f.png"
+            }
+          }
+        },
+        "horizontal_cover_16_9": "http://i0.hdslb.com/bfs/bangumi/image/4fba15a38df4c72cda41121c1f7c2f8e97ad02f5.png",
+        "horizontal_cover_16_10": "http://i0.hdslb.com/bfs/bangumi/image/6d9729c4dd77b0403aefcdc2db6a9b275a49d55e.png",
+        "subtitle_14": "大师兄，师傅被妖怪抓走啦！",
+        "subtitle_25": "不好啦！大师兄，师傅被妖怪抓走啦！",
+        "viewable_crowd_type": 18,
+        "producers": [
+          {
+            "mid": 4856007,
+            "type": 3,
+            "is_contribute": 1,
+            "title": "播出"
+          }
+        ],
+        "summary": "经过九九八十一难，唐僧（徐少华 饰）师徒四人终于到达灵山，求取真经。修得正果，师徒一行驾云回到都城长安，见到唐王李世民（张志明 饰），并向其讲述了取经的经过。话说这一路真可谓艰难险阻，困难重重。通天河有灵感大王阻断行程，伤害性命；狮驼岭又有来自灵山的三神兽为妖作怪；期间更有师徒心生嫌隙，导致六耳猕猴趁虚而入，上演真假美猴王的好戏；更有金平府犀牛怪假冒佛祖，欺世盗名，引来天兵天将除妖。这万里艰辛，一言难尽……\n本片根据中国古典四大名著之一的《西游记》改编，当年囿于经费等原因，老版《西游记》并未全部拍完，《西游记续集》补全了缺失的部分。",
+        "styles": [
+          "奇幻",
+          "古装",
+          "剧情"
+        ],
+        "config_attrs": {
+          "cc_on_lock": {
+            "type_url": "type.googleapis.com/google.protobuf.BoolValue"
+          },
+          "highlight_ineffective_hd": {
+            "type_url": "type.googleapis.com/google.protobuf.BoolValue"
+          },
+          "highlight_ineffective_ott": {
+            "type_url": "type.googleapis.com/google.protobuf.BoolValue"
+          },
+          "highlight_ineffective_pink": {
+            "type_url": "type.googleapis.com/google.protobuf.BoolValue"
+          }
+        },
+        "follow_status": 2,
+        "is_new": 0,
+        "progress": "",
+        "both_follow": true
+      },
+      {
+        "season_id": 33624,
+        "media_id": 28229053,
+        "season_type": 5,
+        "season_type_name": "电视剧",
+        "title": "红楼梦",
+        "cover": "http://i0.hdslb.com/bfs/bangumi/image/7e52b373f9522884d4c878c042d46dd532774057.jpg",
+        "total_count": 36,
+        "is_finish": 1,
+        "is_started": 1,
+        "is_play": 1,
+        "badge": "大会员",
+        "badge_type": 0,
+        "rights": {
+          "allow_review": 1,
+          "allow_preview": 1,
+          "is_selection": 1,
+          "selection_style": 1,
+          "demand_end_time": {
+
+          },
+          "is_rcmd": 1
+        },
+        "stat": {
+          "follow": 2371808,
+          "view": 258023336,
+          "danmaku": 3101513,
+          "reply": 111548,
+          "coin": 714304,
+          "series_follow": 5942238,
+          "series_view": 1688012344,
+          "likes": 2024017,
+          "favorite": 401832
+        },
+        "new_ep": {
+          "id": 327891,
+          "index_show": "全36集",
+          "cover": "http://i0.hdslb.com/bfs/bangumi/4b557c759c8814e97fe003ed8c2926a5f3aa7c4e.jpg",
+          "title": "36",
+          "long_title": "白茫茫厚地高天",
+          "pub_time": "2020-06-12 12:00:00",
+          "duration": 2458000
+        },
+        "rating": {
+          "score": 9.9,
+          "count": 40068
+        },
+        "square_cover": "http://i0.hdslb.com/bfs/bangumi/image/36cf0fafc559362f5538fac8935914fbeb903d7e.jpg",
+        "season_status": 13,
+        "season_title": "红楼梦",
+        "badge_ep": "",
+        "media_attr": 196608,
+        "season_attr": 1052160,
+        "evaluate": "青埂峰下女娲补天剩下的顽石在一僧一道的指引下下尘世去经历一番那富贵温柔乡了。一天，与甄士隐深交的贫困书生贾雨村向他借盘缠上京赴考，断定此子日后必定飞黄腾达的甄士隐慷慨解囊，于是雨村上京赴考了。不料甄士...",
+        "areas": [
+          {
+            "id": 1,
+            "name": "中国大陆"
+          }
+        ],
+        "subtitle": "这个妹妹我见过",
+        "first_ep": 327843,
+        "can_watch": 1,
+        "series": {
+          "series_id": 5001,
+          "title": "央视版四大名著",
+          "season_count": 5,
+          "new_season_id": 33625,
+          "series_ord": 3
+        },
+        "publish": {
+          "pub_time": "2020-06-12 12:00:00",
+          "pub_time_show": "2020年06月12日12:00",
+          "release_date": "1987-04-30",
+          "release_date_show": "1987年4月30日"
+        },
+        "mode": 2,
+        "section": [
+          {
+            "section_id": 48082,
+            "season_id": 33624,
+            "limit_group": 316,
+            "watch_platform": 31,
+            "copyright": "bilibili",
+            "ban_area_show": 1,
+            "episode_ids": [0]
+          },
+          {
+            "section_id": 48246,
+            "season_id": 33624,
+            "limit_group": 316,
+            "watch_platform": 31,
+            "type": 2,
+            "copyright": "ugc",
+            "title": "相关视频",
+            "ban_area_show": 1,
+            "episode_ids": [0]
+          },
+          {
+            "section_id": 68519,
+            "season_id": 33624,
+            "limit_group": 316,
+            "watch_platform": 31,
+            "type": 8,
+            "copyright": "bilibili",
+            "title": "精彩看点",
+            "ban_area_show": 1,
+            "episode_ids": [0]
+          },
+          {
+            "section_id": 124006,
+            "season_id": 33624,
+            "limit_group": 316,
+            "watch_platform": 31,
+            "type": 2,
+            "copyright": "bilibili",
+            "title": "精彩看点",
+            "ban_area_show": 1,
+            "episode_ids": [0]
+          }
+        ],
+        "url": "https://www.bilibili.com/bangumi/play/ss33624",
+        "badge_info": {
+          "text": "大会员",
+          "bg_color": "#FB7299",
+          "bg_color_night": "#D44E7D",
+          "img": "http://i0.hdslb.com/bfs/vip/7a099c1d698eeb9036a4f1c4716c25d3cc1fb3ec.png",
+          "multi_img": {
+            "color": "http://i0.hdslb.com/bfs/vip/7a099c1d698eeb9036a4f1c4716c25d3cc1fb3ec.png",
+            "medium_remind": "https://i0.hdslb.com/bfs/bangumi/image/620a40f8e7004eb881916846e760981b7509d22f.png"
+          }
+        },
+        "first_ep_info": {
+          "id": 327843,
+          "cover": "http://i0.hdslb.com/bfs/bangumi/831c5e0d8574c6c1e6519c46b770d8f9afb0a379.jpg",
+          "title": "1",
+          "long_title": "林黛玉别父进京都",
+          "pub_time": "2020-06-12 12:00:00",
+          "duration": 2790000
+        },
+        "formal_ep_count": 36,
+        "short_url": "https://b23.tv/ss33624",
+        "badge_infos": {
+          "vip_or_pay": {
+            "text": "会员专享",
+            "bg_color": "#FB7299",
+            "bg_color_night": "#D44E7D",
+            "img": "http://i0.hdslb.com/bfs/vip/7a099c1d698eeb9036a4f1c4716c25d3cc1fb3ec.png",
+            "multi_img": {
+              "color": "http://i0.hdslb.com/bfs/vip/7a099c1d698eeb9036a4f1c4716c25d3cc1fb3ec.png",
+              "medium_remind": "https://i0.hdslb.com/bfs/bangumi/image/620a40f8e7004eb881916846e760981b7509d22f.png"
+            }
+          }
+        },
+        "horizontal_cover_16_9": "http://i0.hdslb.com/bfs/bangumi/image/d567b1fd151fc5874cdfd0f598178f1d05621b1a.png",
+        "horizontal_cover_16_10": "http://i0.hdslb.com/bfs/bangumi/image/90cea8fbfc2b0b796943e6d5f68b452aa14223f3.png",
+        "subtitle_14": "四大家族的兴盛与衰败",
+        "subtitle_25": "红绡香断了她的梦，谁为她卷起那闺帘?",
+        "viewable_crowd_type": 18,
+        "producers": [
+          {
+            "mid": 4856007,
+            "type": 3,
+            "is_contribute": 1,
+            "title": "播出"
+          }
+        ],
+        "summary": "青埂峰下女娲补天剩下的顽石在一僧一道的指引下下尘世去经历一番那富贵温柔乡了。一天，与甄士隐深交的贫困书生贾雨村向他借盘缠上京赴考，断定此子日后必定飞黄腾达的甄士隐慷慨解囊，于是雨村上京赴考了。不料甄士隐的爱女甄英莲却遭拐子拐了去，随后甄家在一场火灾后败落。贾雨村不负众望果然中了进士，随后当州官时遇到了被薛蟠强买的英莲，为了自己的利益，不得罪四大家族，雨村胡乱判了案。\n林黛玉（陈晓旭 饰）母亲早逝，自幼多病，父亲林如海托上京的贾雨村将她带到外祖母家。贾母见了黛玉后喜不自胜，从此黛玉就在贾家安顿了下来。这日王夫人的姐妹薛姨妈一家也到了京城，从此贾宝玉（欧阳奋强 饰）、林黛玉和薛宝钗（张莉 饰）和袭人等一众少年少女一同见证了四大家族的兴盛衰败……",
+        "styles": [
+          "古装",
+          "剧情"
+        ],
+        "follow_status": 2,
+        "is_new": 0,
+        "progress": "看到第1集 0:01",
+        "both_follow": true
+      },
+      {
+        "season_id": 33625,
+        "media_id": 28229054,
+        "season_type": 5,
+        "season_type_name": "电视剧",
+        "title": "水浒传",
+        "cover": "http://i0.hdslb.com/bfs/bangumi/image/78241bf67ee92b92ca4e8d1b8006b939f602aad6.jpg",
+        "total_count": 43,
+        "is_finish": 1,
+        "is_started": 1,
+        "is_play": 1,
+        "badge": "大会员",
+        "badge_type": 0,
+        "rights": {
+          "allow_review": 1,
+          "allow_preview": 1,
+          "is_selection": 1,
+          "selection_style": 1,
+          "demand_end_time": {
+
+          },
+          "is_rcmd": 1
+        },
+        "stat": {
+          "follow": 879506,
+          "view": 194853446,
+          "danmaku": 3357158,
+          "reply": 95788,
+          "coin": 287724,
+          "series_follow": 5942238,
+          "series_view": 1688012344,
+          "likes": 1437141,
+          "favorite": 166637
+        },
+        "new_ep": {
+          "id": 327335,
+          "index_show": "全43集",
+          "cover": "http://i0.hdslb.com/bfs/bangumi/9161309968eb471c8db04d9d1d8061c0aa3014b3.jpg",
+          "title": "43",
+          "long_title": "宋江之死",
+          "pub_time": "2020-06-12 12:00:00",
+          "duration": 2809000
+        },
+        "rating": {
+          "score": 9,
+          "count": 14401
+        },
+        "square_cover": "http://i0.hdslb.com/bfs/bangumi/image/8554ae1360c2a72924f2491a65d002300deca978.jpg",
+        "season_status": 13,
+        "season_title": "水浒传",
+        "badge_ep": "",
+        "media_attr": 196608,
+        "season_attr": 1052160,
+        "evaluate": "北宋仁宗年间，某年京师瘟疫盛行，军民伤损甚多。天子钦点洪太尉前往江西信州龙虎山，宣请张天师驱邪除祟。洪太尉寻天师不见，却因固执走了上清宫中镇压的一百单八个魔头。\n转眼数十年过去，正是哲宗在位之时。破落...",
+        "areas": [
+          {
+            "id": 1,
+            "name": "中国大陆"
+          }
+        ],
+        "subtitle": "大郎，该吃药了",
+        "first_ep": 327285,
+        "can_watch": 1,
+        "series": {
+          "series_id": 5001,
+          "title": "央视版四大名著",
+          "season_count": 5,
+          "new_season_id": 33625,
+          "series_ord": 5
+        },
+        "publish": {
+          "pub_time": "2020-06-12 12:00:00",
+          "pub_time_show": "2020年06月12日12:00",
+          "release_date": "1998-01-03",
+          "release_date_show": "1998年1月3日"
+        },
+        "mode": 2,
+        "section": [
+          {
+            "section_id": 48083,
+            "season_id": 33625,
+            "limit_group": 316,
+            "watch_platform": 31,
+            "copyright": "bilibili",
+            "ban_area_show": 1,
+            "episode_ids": [0]
+          },
+          {
+            "section_id": 48247,
+            "season_id": 33625,
+            "limit_group": 316,
+            "watch_platform": 31,
+            "type": 2,
+            "copyright": "ugc",
+            "title": "相关视频",
+            "ban_area_show": 1,
+            "episode_ids": [0]
+          },
+          {
+            "section_id": 68390,
+            "season_id": 33625,
+            "limit_group": 316,
+            "watch_platform": 31,
+            "type": 8,
+            "copyright": "bilibili",
+            "title": "精彩看点",
+            "ban_area_show": 1,
+            "episode_ids": [0]
+          },
+          {
+            "section_id": 103631,
+            "season_id": 33625,
+            "limit_group": 316,
+            "watch_platform": 31,
+            "type": 2,
+            "copyright": "ugc",
+            "title": "精彩看点",
+            "ban_area_show": 1,
+            "episode_ids": [0]
+          }
+        ],
+        "url": "https://www.bilibili.com/bangumi/play/ss33625",
+        "badge_info": {
+          "text": "大会员",
+          "bg_color": "#FB7299",
+          "bg_color_night": "#D44E7D",
+          "img": "http://i0.hdslb.com/bfs/vip/7a099c1d698eeb9036a4f1c4716c25d3cc1fb3ec.png",
+          "multi_img": {
+            "color": "http://i0.hdslb.com/bfs/vip/7a099c1d698eeb9036a4f1c4716c25d3cc1fb3ec.png",
+            "medium_remind": "https://i0.hdslb.com/bfs/bangumi/image/620a40f8e7004eb881916846e760981b7509d22f.png"
+          }
+        },
+        "first_ep_info": {
+          "id": 327285,
+          "cover": "http://i0.hdslb.com/bfs/bangumi/7430c53e05a00cb6eb0b76e33aa8940a584a7a46.jpg",
+          "title": "1",
+          "long_title": "高俅发迹",
+          "pub_time": "2020-06-12 12:00:00",
+          "duration": 2826000
+        },
+        "formal_ep_count": 43,
+        "short_url": "https://b23.tv/ss33625",
+        "badge_infos": {
+          "vip_or_pay": {
+            "text": "会员专享",
+            "bg_color": "#FB7299",
+            "bg_color_night": "#D44E7D",
+            "img": "http://i0.hdslb.com/bfs/vip/7a099c1d698eeb9036a4f1c4716c25d3cc1fb3ec.png",
+            "multi_img": {
+              "color": "http://i0.hdslb.com/bfs/vip/7a099c1d698eeb9036a4f1c4716c25d3cc1fb3ec.png",
+              "medium_remind": "https://i0.hdslb.com/bfs/bangumi/image/620a40f8e7004eb881916846e760981b7509d22f.png"
+            }
+          }
+        },
+        "horizontal_cover_16_9": "http://i0.hdslb.com/bfs/bangumi/image/5ac6b8130ca9169d7eaa746487e87b3e9df13e50.png",
+        "horizontal_cover_16_10": "http://i0.hdslb.com/bfs/bangumi/image/7736d589f80707750273bc25d03cb2fd7e290a17.png",
+        "subtitle_14": "108条好汉聚义梁山泊",
+        "subtitle_25": "爷青回系列，108条好汉聚义梁山泊",
+        "viewable_crowd_type": 18,
+        "producers": [
+          {
+            "mid": 4856007,
+            "type": 3,
+            "is_contribute": 1,
+            "title": "播出"
+          }
+        ],
+        "summary": "北宋仁宗年间，某年京师瘟疫盛行，军民伤损甚多。天子钦点洪太尉前往江西信州龙虎山，宣请张天师驱邪除祟。洪太尉寻天师不见，却因固执走了上清宫中镇压的一百单八个魔头。\n转眼数十年过去，正是哲宗在位之时。破落户高俅（魏宗万 饰）凭借一身的奇技淫巧深得端王欢心，随即平步青云。待端王继位为徽宗，高俅更到了不可一世的地步。君臣二人一心玩乐，荒废朝纲，致使举国上下怨声载道，强梁四起。以及时雨宋江（李雪健 饰）为首的一八零八位好汉相继登上梁山，一众好汉闹江州、三打祝家庄、战青州……搅得大宋江山沸沸扬扬……\n本片根据中国古典四大名著之一《水浒传》改编。",
+        "styles": [
+          "古装",
+          "剧情",
+          "历史"
+        ],
+        "follow_status": 2,
+        "is_new": 0,
+        "progress": "看到第1集 39:10",
+        "both_follow": true
+      },
+      {
+        "season_id": 33626,
+        "media_id": 28229055,
+        "season_type": 5,
+        "season_type_name": "电视剧",
+        "title": "三国演义",
+        "cover": "http://i0.hdslb.com/bfs/bangumi/image/1d2eb8d863e3d0aa9d6557ae5b32764159953d8b.jpg",
+        "total_count": 84,
+        "is_finish": 1,
+        "is_started": 1,
+        "is_play": 1,
+        "badge": "大会员",
+        "badge_type": 0,
+        "rights": {
+          "allow_review": 1,
+          "allow_preview": 1,
+          "is_selection": 1,
+          "selection_style": 1,
+          "demand_end_time": {
+
+          },
+          "is_rcmd": 1
+        },
+        "stat": {
+          "follow": 2639343,
+          "view": 743600483,
+          "danmaku": 10012461,
+          "reply": 368157,
+          "coin": 1935903,
+          "series_follow": 5942238,
+          "series_view": 1688012344,
+          "likes": 5508013,
+          "favorite": 609372
+        },
+        "new_ep": {
+          "id": 327783,
+          "index_show": "全84集",
+          "cover": "http://i0.hdslb.com/bfs/bangumi/75c77eaf82beea86bb52d8fd930d4df0d96cd014.jpg",
+          "title": "84",
+          "long_title": "三分归晋",
+          "pub_time": "2020-06-12 12:00:00",
+          "duration": 2450000
+        },
+        "rating": {
+          "score": 9.9,
+          "count": 67059
+        },
+        "square_cover": "http://i0.hdslb.com/bfs/bangumi/image/c63ffc86928e9ad122555a8b62c379c3358c182c.jpg",
+        "season_status": 13,
+        "season_title": "三国演义",
+        "badge_ep": "",
+        "media_attr": 196608,
+        "season_attr": 1052160,
+        "evaluate": "东汉末年，山河动荡，刘汉王朝气数将尽。内有十常侍颠倒黑白，祸乱朝纲。外有张氏兄弟高呼“苍天已死，黄巾当立”的口号，掀起浩大的农民起义。一时间狼烟四起，刘家朝廷宛如大厦将倾，岌岌可危。\n正所谓乱世出英雄...",
+        "areas": [
+          {
+            "id": 1,
+            "name": "中国大陆"
+          }
+        ],
+        "subtitle": "正所谓乱世出英雄",
+        "first_ep": 327584,
+        "can_watch": 1,
+        "series": {
+          "series_id": 5001,
+          "title": "央视版四大名著",
+          "season_count": 5,
+          "new_season_id": 33625,
+          "series_ord": 4
+        },
+        "publish": {
+          "pub_time": "2020-06-12 12:00:00",
+          "pub_time_show": "2020年06月12日12:00",
+          "release_date": "1994-10-23",
+          "release_date_show": "1994年10月23日"
+        },
+        "mode": 2,
+        "section": [
+          {
+            "section_id": 48084,
+            "season_id": 33626,
+            "limit_group": 316,
+            "watch_platform": 31,
+            "copyright": "bilibili",
+            "ban_area_show": 1,
+            "episode_ids": [0]
+          },
+          {
+            "section_id": 48226,
+            "season_id": 33626,
+            "limit_group": 316,
+            "watch_platform": 31,
+            "type": 2,
+            "copyright": "ugc",
+            "title": "相关视频",
+            "ban_area_show": 1,
+            "episode_ids": [0]
+          },
+          {
+            "section_id": 66801,
+            "season_id": 33626,
+            "limit_group": 316,
+            "watch_platform": 31,
+            "type": 8,
+            "copyright": "bilibili",
+            "title": "精彩看点",
+            "ban_area_show": 1,
+            "episode_ids": [0]
+          },
+          {
+            "section_id": 103632,
+            "season_id": 33626,
+            "limit_group": 316,
+            "watch_platform": 31,
+            "type": 2,
+            "copyright": "ugc",
+            "title": "精彩看点",
+            "ban_area_show": 1,
+            "episode_ids": [0]
+          }
+        ],
+        "url": "https://www.bilibili.com/bangumi/play/ss33626",
+        "badge_info": {
+          "text": "大会员",
+          "bg_color": "#FB7299",
+          "bg_color_night": "#D44E7D",
+          "img": "http://i0.hdslb.com/bfs/vip/7a099c1d698eeb9036a4f1c4716c25d3cc1fb3ec.png",
+          "multi_img": {
+            "color": "http://i0.hdslb.com/bfs/vip/7a099c1d698eeb9036a4f1c4716c25d3cc1fb3ec.png",
+            "medium_remind": "https://i0.hdslb.com/bfs/bangumi/image/620a40f8e7004eb881916846e760981b7509d22f.png"
+          }
+        },
+        "first_ep_info": {
+          "id": 327584,
+          "cover": "http://i0.hdslb.com/bfs/bangumi/e9ef1b1caedd5194378411c8c53b9766434cca65.jpg",
+          "title": "1",
+          "long_title": "桃园三结义",
+          "pub_time": "2020-06-12 12:00:00",
+          "duration": 2784000
+        },
+        "formal_ep_count": 84,
+        "short_url": "https://b23.tv/ss33626",
+        "badge_infos": {
+          "vip_or_pay": {
+            "text": "会员专享",
+            "bg_color": "#FB7299",
+            "bg_color_night": "#D44E7D",
+            "img": "http://i0.hdslb.com/bfs/vip/7a099c1d698eeb9036a4f1c4716c25d3cc1fb3ec.png",
+            "multi_img": {
+              "color": "http://i0.hdslb.com/bfs/vip/7a099c1d698eeb9036a4f1c4716c25d3cc1fb3ec.png",
+              "medium_remind": "https://i0.hdslb.com/bfs/bangumi/image/620a40f8e7004eb881916846e760981b7509d22f.png"
+            }
+          }
+        },
+        "horizontal_cover_16_9": "http://i0.hdslb.com/bfs/bangumi/image/c428a9ed9110151af03eddeccc13b80be94cdba4.png",
+        "horizontal_cover_16_10": "http://i0.hdslb.com/bfs/bangumi/image/128ace126acd57d68982fbadee2e18f7ff26e0a6.png",
+        "subtitle_14": "从群雄逐鹿到赤壁之战",
+        "subtitle_25": "东汉末年到西晋初年将近一个世纪中的风云变幻",
+        "viewable_crowd_type": 18,
+        "producers": [
+          {
+            "mid": 4856007,
+            "type": 3,
+            "is_contribute": 1,
+            "title": "播出"
+          }
+        ],
+        "summary": "东汉末年，山河动荡，刘汉王朝气数将尽。内有十常侍颠倒黑白，祸乱朝纲。外有张氏兄弟高呼“苍天已死，黄巾当立”的口号，掀起浩大的农民起义。一时间狼烟四起，刘家朝廷宛如大厦将倾，岌岌可危。\n正所谓乱世出英雄，曹操（鲍国安 饰）、公孙瓒、袁术、袁绍、吕布（张光北 饰）、刘备、孙策、关羽、张飞、诸葛亮（唐国强 饰）等各路豪杰不断涌现，从群雄逐鹿到赤壁之战，从魏蜀吴三国鼎立到三分归一统，波澜壮阔的三国时代的大幕缓缓拉开……\n本片根据中国古典名著《三国演义》改编。",
+        "styles": [
+          "战争",
+          "剧情",
+          "历史"
+        ],
+        "follow_status": 2,
+        "is_new": 0,
+        "progress": "看到第1集 0:08",
+        "both_follow": true
+      }
+    ],
+    "pn": 1,
+    "ps": 24,
+    "total": 5
+  }
+}

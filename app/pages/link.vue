@@ -1,10 +1,11 @@
 <script setup lang="ts">
 import { myFeed } from '~~/blog.config'
 import feeds from '~/feeds'
+import FlinkTopCard from '../components/card/FlinkTopCard.vue'
 
 const appConfig = useAppConfig()
 const layoutStore = useLayoutStore()
-layoutStore.setAside([])
+layoutStore.setAside(['blog-stats', 'blog-tech', 'blog-site-info', 'blog-log'])
 
 const { data: postLink } = await useAsyncData(
 	'/link',
@@ -30,6 +31,8 @@ const copyFields = {
 <div class="mobile-only">
 	<ZhiluHeader to="/" suffix="友链" />
 </div>
+
+<FlinkTopCard />
 
 <FeedGroup :feeds />
 

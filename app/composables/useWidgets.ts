@@ -1,4 +1,5 @@
 import {
+	LazyWidgetBlogSiteInfo,
 	LazyWidgetBlogLog,
 	LazyWidgetBlogStats,
 	LazyWidgetBlogTech,
@@ -18,6 +19,7 @@ const rawWidgets = {
 	LazyWidgetEmpty,
 	LazyWidgetGithubCard,
 	LazyWidgetToc,
+	LazyWidgetBlogSiteInfo,
 }
 
 type RawWidgetName = keyof typeof rawWidgets

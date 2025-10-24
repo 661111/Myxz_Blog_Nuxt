@@ -119,6 +119,7 @@ export default defineNuxtConfig({
 		'@vueuse/nuxt',
 		'nuxt-llms',
 		'unplugin-yaml/nuxt',
+		'@nuxtjs/axios',
 	],
 
 	colorMode: {
@@ -209,4 +210,13 @@ ${packageJson.homepage}
 		url: blogConfig.url,
 		defaultLocale: blogConfig.language,
 	},
+
+	axios: {
+		baseURL: 'https://api.bilibili.com', // 哔哩哔哩 API 基础地址（可选）
+		timeout: 5000, // 请求超时时间（根据需求调整）
+  	},
+
+  	router: {
+    	middleware: ['retryBiliApi'], // 全局应用中间件（或仅在特定路由使用）
+  	},
 })

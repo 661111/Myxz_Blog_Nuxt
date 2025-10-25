@@ -218,7 +218,7 @@ ${packageJson.homepage}
   	proxy: {
     	'/api/blbl': {
       		target: 'https://api.bilibili.com',
-      		pathRewrite: { '^/api/bilibili': '' }
+      		pathRewrite: { '^/api/blbl': '' }
     	}
   	}	
 })

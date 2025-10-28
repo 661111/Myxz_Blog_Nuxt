@@ -119,7 +119,6 @@ export default defineNuxtConfig({
 		'@vueuse/nuxt',
 		'nuxt-llms',
 		'unplugin-yaml/nuxt',
-		'@nuxtjs/axios',
 	],
 
 	colorMode: {
@@ -210,15 +209,4 @@ ${packageJson.homepage}
 		url: blogConfig.url,
 		defaultLocale: blogConfig.language,
 	},
-
-	axios: {
-    	proxy: true
-  	},
-
-  	proxy: {
-    	'/api/blbl': {
-      		target: 'https://api.bilibili.com',
-      		pathRewrite: { '^/api/blbl': '' }
-    	}
-  	}	
 })

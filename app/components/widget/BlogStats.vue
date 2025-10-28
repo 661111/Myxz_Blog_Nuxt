@@ -1,40 +1,32 @@
 <script setup lang="ts">
-import { toZonedTime } from 'date-fns-tz'
+import { NuxtTime } from '#components'
 
 const appConfig = useAppConfig()
 const runtimeConfig = useRuntimeConfig()
-// 将服务器时区转换为博客指定时区
-const buildTime = toZonedTime(runtimeConfig.public.buildTime, appConfig.timezone)
 
-const lastUpdateTime = ref('(获取中)')
-const totalWords = ref(appConfig.component.stats.wordCount)
-const yearlyTip = ref('')
+const { data: stats } = useFetch('/api/stats')
 
-const blogStats = computed(() => [{
+const yearlyTip = computed(() => {
+	if (!stats.value)
+		return ''
+	return Object.entries(stats.value.annual).reverse().map(([year, item]) =>
+		`${year}年：${item.posts}篇，${formatNumber(item.words)}字`,
+	).join('\n')
+})
+
+const blogStats = [{
 	label: '运营时长',
 	value: timeElapse(appConfig.timeEstablished),
 	tip: `博客于${appConfig.timeEstablished}上线`,
 }, {
 	label: '上次更新',
-	value: lastUpdateTime,
-	tip: `构建于${getLocaleDatetime(buildTime)}`,
+	value: () => h(NuxtTime, { datetime: runtimeConfig.public.buildTime, relative: true }),
+	tip: computed(() => `构建于${getLocaleDatetime(runtimeConfig.public.buildTime)}`),
 }, {
 	label: '总字数',
-	value: totalWords,
+	value: computed(() => stats.value ? formatNumber(stats.value.total.words) : ''),
 	tip: yearlyTip,
-}])
-
-onMounted(async () => {
-	lastUpdateTime.value = timeElapse(buildTime)
-
-	const stats = await $fetch('/api/stats').catch(() => { })
-	if (!stats)
-		return
-	totalWords.value = formatNumber(stats.total.words)
-	yearlyTip.value = Object.entries(stats.annual).reverse().map(([year, item]) =>
-		`${year}年：${item.posts}篇，${formatNumber(item.words)}字`,
-	).join('\n')
-})
+}]
 </script>
 
 <template>

@@ -1,9 +1,7 @@
-
-
 //视频接口
 //----------------------------------
 // 顶层响应接口
-interface VideoApiResponse {
+export interface VideoApiResponse {
   code: number;
   message: string;
   ttl: number;
@@ -11,7 +9,7 @@ interface VideoApiResponse {
 }
 
 // 数据主体接口
-interface DataResponse {
+export interface DataResponse {
   list: ListResponse;
   page: PageResponse;
   episodic_button: EpisodicButton;
@@ -21,21 +19,21 @@ interface DataResponse {
 }
 
 // 列表分类接口
-interface ListResponse {
+export interface ListResponse {
   slist: never[]; // 空数组保持原类型
   tlist: { [key: string]: TListEntry };
   vlist: VideoItem[];
 }
 
 // 分类条目接口
-interface TListEntry {
+export interface TListEntry {
   tid: number;
   count: number;
   name: string;
 }
 
 // 视频条目接口
-interface VideoItem {
+export interface VideoItem {
   comment: number;
   typeid: number;
   play: number;

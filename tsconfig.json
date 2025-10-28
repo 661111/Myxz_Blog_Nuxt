@@ -13,5 +13,8 @@
       "path": "./.nuxt/tsconfig.node.json"
     }
   ],
-  "files": []
+  "files": [],
+  "paths": {
+    "css/*": ["./public/assets/css/*"], // ~/* 映射到 ./assets/*
+  },
 }

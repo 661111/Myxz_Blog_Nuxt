@@ -1,0 +1,176 @@
+.static {
+    position: static
+}
+
+.fixed {
+    position: fixed
+}
+
+.\!absolute {
+    position: absolute!important
+}
+
+.absolute {
+    position: absolute
+}
+
+.relative {
+    position: relative
+}
+
+.sticky {
+    position: sticky
+}
+
+/* 位置 */
+.-bottom-16 {
+    bottom: -4rem
+}
+
+.-left-1 {
+    left: -.25rem
+}
+
+.-left-2 {
+    left: -.5rem
+}
+
+.-right-20 {
+    right: -5rem
+}
+
+.-right-4 {
+    right: -1rem
+}
+
+.-top-1 {
+    top: -.25rem
+}
+
+.bottom-0 {
+    bottom: 0
+}
+
+.bottom-1\/2 {
+    bottom: 50%
+}
+
+.bottom-16 {
+    bottom: 4rem
+}
+
+.bottom-2 {
+    bottom: .5rem
+}
+
+.bottom-24 {
+    bottom: 6rem
+}
+
+.bottom-4 {
+    bottom: 1rem
+}
+
+.bottom-music {
+    bottom: var(--music-bar-bottom)
+}
+
+.left-0 {
+    left: 0
+}
+
+.left-2\/4 {
+    left: 50%
+}
+
+.left-3 {
+    left: .75rem
+}
+
+.left-4 {
+    left: 1rem
+}
+
+.left-7 {
+    left: 1.75rem
+}
+
+.left-\[25\%\] {
+    left: 25%
+}
+
+.left-\[30\%\] {
+    left: 30%
+}
+
+.left-hideSidebar {
+    left: var(--hide-side-bar-width)
+}
+
+.left-sidebar {
+    left: var(--side-bar-width)
+}
+
+.right-0 {
+    right: 0
+}
+
+.right-1 {
+    right: .25rem
+}
+
+.right-2 {
+    right: .5rem
+}
+
+.right-4 {
+    right: 1rem
+}
+
+.right-toolbar {
+    right: var(--tool-bar-width)
+}
+
+.top-0 {
+    top: 0
+}
+
+.top-1\/2 {
+    top: 50%
+}
+
+.top-16 {
+    top: 4rem
+}
+
+.top-2 {
+    top: .5rem
+}
+
+.top-2\/4 {
+    top: 50%
+}
+
+.top-4 {
+    top: 1rem
+}
+
+.top-44 {
+    top: 11rem
+}
+
+.top-6 {
+    top: 1.5rem
+}
+
+.top-96 {
+    top: 24rem
+}
+
+.top-\[-1px\] {
+    top: -1px
+}
+
+.top-header {
+    top: var(--header-bar-height)
+}

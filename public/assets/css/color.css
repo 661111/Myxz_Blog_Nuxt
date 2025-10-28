@@ -481,3 +481,154 @@
 @keyframes userbg {
 	0% {height: 0;scale: 2;}
 }
+
+/* yriu */
+@media (orientation: portrait) {
+    :root {
+        --header-bar-height:3.75rem;
+        --footer-bar-height: 5.5rem;
+        --centered-width: 100%;
+        --side-bar-width: 0rem;
+        --hide-side-bar-width: 0rem;
+        --tool-bar-width: 0rem;
+        --drawer-width: 16rem;
+        --music-bar-height: 3rem;
+        --music-bar-width: 100vw;
+        --hide-music-bar-width: 100vw;
+        --hide-music-bar-height: 100vw;
+        --music-bar-bottom: calc(var(--footer-bar-height) - var(--music-bar-height)/2);
+        --pt-main: var(--header-bar-height)
+    }
+}
+
+@media (orientation: landscape) {
+    :root {
+        --header-bar-height:5.5rem;
+        --footer-bar-height: 0rem;
+        --side-bar-width: 12rem;
+        --hide-side-bar-width: 3.5rem;
+        --tool-bar-width: 0rem;
+        --drawer-width: 18rem;
+        --music-bar-width: calc(var(--side-bar-width) - 1rem);
+        --music-bar-height: var(--music-bar-width);
+        --hide-music-bar-width: calc(var(--hide-side-bar-width) - 1rem);
+        --hide-music-bar-height: var(--hide-music-bar-width);
+        --music-bar-bottom: .5rem;
+        --pt-main: calc(var(--header-bar-height) - 2rem)
+    }
+}
+
+@media (min-width: 1200px) and (orientation:landscape) {
+    :root {
+        --tool-bar-width:16rem;
+        --centered-width: 70rem
+    }
+}
+
+:root {
+    --border-radius-3xs: .25rem;
+    --border-radius-2xs: .375rem;
+    --border-radius-xs: .5rem;
+    --border-radius-sm: .625rem;
+    --border-radius-base: .75rem;
+    --border-radius-md: 1rem;
+    --border-radius-lg: 1.25rem;
+    --border-radius-xl: 1.5rem;
+    --border-radius-2xl: 1.75rem;
+    --border-radius-3xl: 2rem;
+    --border-radius-full: 9999px;
+    --shadow-sm: 0 1px 2px 0 rgba(44,45,48,.05);
+    --shadow-base: 0 8px 16px -4px rgba(44,45,48,.047);
+    --shadow-md: 0 4px 6px -1px rgba(44,45,48,.1),0 2px 4px -1px rgba(44,45,48,.06);
+    --shadow-lg: 0px 2px 4px -2px hsla(0,0%,9%,.06),0px 4px 8px -2px hsla(0,0%,9%,.1);
+    --shadow-xl: 0 20px 25px -5px rgba(44,45,48,.1),0 10px 10px -5px rgba(44,45,48,.04);
+    --shadow-2xl: 0 25px 70px -12px rgba(44,45,48,.15);
+    --border-color: rgba(171,192,221,.3)
+}
+
+.dark {
+    --border-color: rgba(49,60,77,.3)
+}
+
+:root {
+    --theme-color: #425aef;
+    --theme-color-rgb: 66,90,239;
+    --theme-color-50: #e8ebfd;
+    --theme-color-100: #c8d0fa;
+    --theme-color-200: #a9b5f7;
+    --theme-color-300: #899af4;
+    --theme-color-400: #6a7ff1;
+    --theme-color-500: #425aef;
+    --theme-color-600: #3448bf;
+    --theme-color-700: #27368f;
+    --theme-color-800: #1a245f;
+    --theme-color-900: #0d122f;
+    --theme-color-950: #060918
+}
+
+:root,body {
+    --theme-color-switch: var(--theme-color-500)
+}
+
+.dark,.dark body {
+    --theme-color-switch: var(--theme-color-300)
+}
+
+:root {
+    --gray-50: #f8fafc;
+    --gray-100: #f1f5f9;
+    --gray-150: #edf2f7;
+    --gray-200: #e2e8f0;
+    --gray-250: #d9e2e8;
+    --gray-300: #c9d1d9;
+    --gray-350: #b9c2cd;
+    --gray-400: #94a3b8;
+    --gray-450: #7f8fa6;
+    --gray-500: #64748b;
+    --gray-550: #4f5e70;
+    --gray-600: #475569;
+    --gray-650: #3e4958;
+    --gray-700: #334155;
+    --gray-750: #273344;
+    --gray-800: #222d3f;
+    --gray-850: #101c2e;
+    --gray-900: #0a1225;
+    --gray-950: #060d1d;
+    --gray-1000: #000
+}
+
+.light,:root {
+    --bg-background: var(--gray-150);
+    --bg-level-b1: var(--gray-200);
+    --bg-level-1: var(--gray-100);
+    --bg-level-2: var(--gray-50);
+    --bg-level-3: var(--gray-50);
+    --bg-level-4: #fff;
+    --bg-level-5: #fff;
+    --bg-card: hsla(0,0%,100%,.6);
+    --text-1: var(--gray-900);
+    --text-2: var(--gray-800);
+    --text-3: var(--gray-700);
+    --text-4: var(--gray-400);
+    --text-5: var(--gray-200);
+    --bg-mask: rgba(221,225,233,.5);
+    --bg-head-bar: hsla(240,9%,98%,.7)
+}
+
+.dark {
+    --bg-background: var(--gray-950);
+    --bg-level-b1: var(--gray-1000);
+    --bg-level-1: var(--gray-900);
+    --bg-level-2: var(--gray-850);
+    --bg-level-3: var(--gray-800);
+    --bg-level-4: var(--gray-750);
+    --bg-level-5: var(--gray-700);
+    --bg-card: rgba(24,37,58,.5);
+    --text-1: var(--gray-300);
+    --text-2: var(--gray-400);
+    --text-3: var(--gray-500);
+    --text-4: var(--gray-600);
+    --text-5: var(--gray-800);
+    --bg-mask: rgba(1,8,24,.5);
+    --bg-head-bar: rgba(14,29,47,.7)
+}

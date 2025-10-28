@@ -21,6 +21,7 @@ const basicConfig = {
 	favicon: 'https://sourceimage.s3.bitiful.net/myxz.avif',
 	language: 'zh-CN',
 	timeEstablished: '2020-07-19',
+	timeStart: '2020',
     timezone: 'Asia/Shanghai',
     url: 'https://www.myxz.top/',
 	defaultCategory: '未分类',

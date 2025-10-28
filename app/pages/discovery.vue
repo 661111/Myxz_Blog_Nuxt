@@ -19,6 +19,7 @@ const discoveryIcon : discoveryIconItem[] = [{
 }]
 
 import music from '../components/discovery/music/main.vue'
+import video from '~/components/discovery/video/main.vue'
 </script>
 
 <template lang="pug">
@@ -47,6 +48,7 @@ import music from '../components/discovery/music/main.vue'
       .discovery-list(v-if="discoveryTabs === 'music'")
         music
       .discovery-list(v-if="discoveryTabs === 'video'")
+        video
 </template>
 
 <style lang="css" scoped>

@@ -79,6 +79,32 @@ function playSong(index: number) {
   }
 }
 
+function playOrPause(index: number) {
+  if (currentSongIndex.value === index && isPlaying.value) {
+    // 当前歌曲正在播放，点击后暂停
+    audioPlayer.value?.pause();
+    isPlaying.value = false;
+    if (progressTimer.value) {
+      clearInterval(progressTimer.value);
+      progressTimer.value = null;
+    }
+  } else {
+    // 播放新歌曲或继续播放当前歌曲
+    if (currentSongIndex.value !== index) {
+      // 切换新歌曲
+      playSong(index);
+    } else {
+      // 继续播放当前歌曲
+      audioPlayer.value?.play().then(() => {
+        isPlaying.value = true;
+        progressTimer.value = window.setInterval(updateProgress, 1000);
+      }).catch(err => {
+        console.error('继续播放失败:', err);
+      });
+    }
+  }
+}
+
 function togglePlay() {
   if (!audioPlayer.value) return;
   
@@ -151,36 +177,37 @@ watch(musicList, () => {
 </script>
 
 <template lang="pug">
-  .music-main
-    .music-list(class="p-6 portrait:p-5 portrait:lg:p-6 landscape:p-8 sfc-main-section")
-      div
-        .music-container
-          table.w-full
-            thead
-              tr.head(class="")
-                <th class="py-4 pl-4 text-start">封面</th>
-                <th class="py-4 pl-4 text-start">封面</th>
-                <th class="py-4 text-start">名称</th>
-                <th class="py-4 pr-4 text-end">操作</th>
-            tbody.portrait
-              tr.info(class="" v-for="(list, index) in musicList" :key="index")
-                td.td-long.td-sort
-                  .songLogo.py-4.pl-4
+.music-main
+  .music-list(class="p-6 portrait:p-5 portrait:lg:p-6 landscape:p-8 sfc-main-section")
+    div
+      .music-container
+        table.w-full
+          thead
+            tr.head(class="")
+              <th class="py-4 pl-4 text-start">封面</th>
+              <th class="py-4 pl-4 text-start">封面</th>
+              <th class="py-4 text-start">名称</th>
+              <th class="py-4 pr-4 text-end">操作</th>
+          tbody.portrait
+            tr.info(class="" v-for="(list, index) in musicList" :key="index")
+              td.td-long.td-sort
+                .songLogo.py-4.pl-4
+                  .h-full
                     .h-full
-                      .h-full
-                        img.h-16.w-16(:src="list.cover")
-                td.songName.py-4.pl-4
-                  .center.space-x
-                    .flex-1
-                      .text-1 {{ list.name }}
-                td.songArtist.py-4 {{ list.artist }}
-                td.songEnd.py-4.pr-4.text-end
-                  .flex.items-center.space-x-4.justify-end(style="justify-content: flex-end;")
-                    button(@click="togglePlay" class="animation ZyButton-default medium min-h-4 min-w-4 p-0 m-0 flex items-center justify-center relative !p-2 !rounded-full portrait:!bg-transparent portrait:!text-text-1 portrait:!border-none portrait:after:hidden")
-                      span.flex.items-center.flex-1.justify-center
-                        .ZyIcon.relative.inline-flex.items-center.justify-center(style="--size: 1rem; width: 1rem; height: 1rem !important;")
-                          figure(class="icon-default flex items-center justify-center" style="--icon-color: inherit;")
-                            span(class="iconfly ph:play-duotone")
+                      img.h-16.w-16(:src="list.cover")
+              td.songName.py-4.pl-4
+                .center.space-x
+                  .flex-1
+                    .text-1 {{ list.name }}
+              td.songArtist.py-4 {{ list.artist }}
+              td.songEnd.py-4.pr-4.text-end
+                .flex.items-center.space-x-4.justify-end(style="justify-content: flex-end;")
+                  button(@click="playOrPause(index)" class="animation ZyButton-default medium min-h-4 min-w-4 p-0 m-0 flex items-center justify-center relative !p-2 !rounded-full portrait:!bg-transparent portrait:!text-text-1 portrait:!border-none portrait:after:hidden")
+                    span.flex.items-center.flex-1.justify-center
+                      .ZyIcon.relative.inline-flex.items-center.justify-center(style="--size: 1rem; width: 1rem; height: 1rem !important;")
+                        figure(class="icon-default flex items-center justify-center" style="--icon-color: inherit;")
+                          span(v-if="currentSongIndex === index && isPlaying" class="iconfly ph:pause-duotone")
+                          span(v-else="currentSongIndex.value !== index" class="iconfly ph:play-duotone")
 </template>
 
 <style lang="css" scoped>

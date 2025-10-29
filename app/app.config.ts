@@ -100,7 +100,7 @@ export default defineAppConfig({
                 { icon: 'ph:lightning-bold', text:'闲言碎语', url:'/essays' },
 				{ icon:'i-mingcute:bilibili-line', text: '番剧历史', url: '/banguim' },
 				{ icon: 'ph:star-of-david-bold', text:'优良精装', url:'/equipment'},
-				{ icon: '', text:'', url:'/discovery'},
+				{ icon: 'ph:aperture-bold', text:'探索发现', url:'/discovery'},
 				{ icon: 'ph:apple-podcasts-logo-bold', text:'关于自己', url:'/about' },
 			],
 		},
@@ -128,4 +128,9 @@ export default defineAppConfig({
 			tip: '深色模式',
 		},
 	},
+
+	other: {
+		Themes_Info: "Clarity",
+		Themes_Version: `${version}`
+	}
 })

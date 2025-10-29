@@ -3,7 +3,7 @@ import type { FeedEntry } from './app/types/feed'
 export { zhCN as dateLocale } from 'date-fns/locale/zh-CN'
 
 const basicConfig = {
-	title: '柒渊阁',
+	title: '歆鸢阁',
     subtitle: '柒上月日，无铭之阁',
 	// 长 description 利好于 SEO
 	description: '柒渊阁的博客网站，分享技术和魔改。网站界面简洁美观，涵盖了魔改、教程等多个领域，为读者提供了卓越的阅读体验。',

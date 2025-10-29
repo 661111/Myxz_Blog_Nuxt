@@ -28,6 +28,8 @@ const listRecommended = computed(() => sort(
 	post => post.recommend || 0,
 	true,
 ))
+
+import home_top from '~/components/card/home/top.vue'
 </script>
 
 <template>

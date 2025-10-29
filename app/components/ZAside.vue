@@ -1,6 +1,4 @@
 <script setup lang="ts">
-import Players from './mini/players.vue';
-
 const layoutStore = useLayoutStore()
 const { widgets } = useWidgets(() => layoutStore.asideWidgets)
 </script>

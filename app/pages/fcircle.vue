@@ -1,5 +1,70 @@
+<template lang="pug">
+//- 预加载关键CSS资源
+link(rel="preload" href="/assets/css/moments.css" as="style" onload="this.onload=null;this.rel='stylesheet'")
+noscript
+  link(rel="stylesheet" href="/assets/css/moments.css")
+
+.page-banner(style="background-image: url(/assets/img/page_backgroud/moment.webp)")
+  .banner-content
+    h1 博友圈
+    p 发现更多有趣的博主
+  .banner-extra
+    .friend-stats
+      .update-time Updated at {{ stats.last_updated_time ? formatDate(stats.last_updated_time) : '2025-07-17' }}
+      .powered-by Powered by FriendCircleLite
+
+.page-fcircle
+  .article-list
+    //- 随机文章区域
+    .random-article(v-if="randomArticle")
+      .random-container-title 随机钓鱼
+      a.article-item(href="#" @click.prevent="openRandomArticle")
+        .article-container.gradient-card
+          .article-author {{ randomArticle.author }}
+          .article-title {{ randomArticle.title }}
+          .article-date {{ formatDate(randomArticle.created) }}
+      button.refresh-btn.gradient-card(@click="displayRandomArticle")
+        span(class="iconify i-ph:link-bold" aria-hidden="true")
+
+    //- 文章列表区域
+    .articles-list
+      .article-item(
+        v-for="(article, index) in displayedArticles"
+        :key="`article-${index}`"
+        :class="{'new-item': index >= displayedArticles.length - UserConfig.page_turning_number}"
+      )
+        .article-image(@click="showAuthorArticles(article.author, article.avatar, article.link)")
+          img(
+            :src="avatarOrDefault(article.avatar)"
+            :alt="`${article.author}的头像`"
+            loading="lazy"
+            @error="handleAvatarError"
+          )
+        .article-container.gradient-card
+          .article-author {{ article.author }}
+          .article-title(@click="openArticle(article.link)") {{ article.title }}
+          .article-date {{ formatDate(article.created) }}
+
+    //- 加载更多按钮
+    .load-more-container
+      button.load-more.gradient-card(
+        v-show="hasMoreArticles"
+        @click="loadMoreArticles"
+      ) 再来亿点
+
+    //- 作者模态框
+    modal-component(
+      v-if="showModal"
+      :author="currentAuthor"
+      :avatar="currentAuthorAvatar"
+      :origin="authorOrigin"
+      :articles="authorArticles"
+      @close="hideModal"
+    )
+</template>
+
 <script setup>
-import { ref, reactive, onMounted, onUnmounted } from 'vue'
+import { ref, reactive, onMounted, onUnmounted, nextTick } from 'vue'
 
 const appConfig = useAppConfig()
 const layoutStore = useLayoutStore()
@@ -12,12 +77,12 @@ useSeoMeta({
   description: `${appConfig.title}的友链朋友圈页面。`,
 })
 
-// 配置选项 - 使用常量避免响应式开销
-const UserConfig = {
-  private_api_url: 'https://moments.myxz.top/',
+// 配置选项
+const UserConfig = reactive({
+  private_api_url: 'https://moments.myxz.top/', 
   page_turning_number: 20,
   error_img: "https://fastly.jsdelivr.net/gh/willow-god/Friend-Circle-Lite@latest/static/favicon.ico"
-}
+})
 
 // 状态管理
 const allArticles = ref([])
@@ -37,14 +102,18 @@ const currentAuthorAvatar = ref('')
 const authorOrigin = ref('')
 const authorArticles = ref([])
 
-// 防抖加载
-let isLoading = false
+// 缓存键
+const CACHE_KEYS = {
+  DATA: 'friend-circle-lite-cache',
+  TIME: 'friend-circle-lite-cache-time',
+  STATS: 'friend-circle-lite-stats'
+}
 
 // 页面挂载时初始化
 onMounted(() => {
   initializeFC()
-  // 预加载关键图片
-  preloadCriticalImages()
+  // 预加载关键资源
+  preloadCriticalResources()
 })
 
 // 清理事件监听
@@ -52,99 +121,123 @@ onUnmounted(() => {
   window.removeEventListener('click', globalClickHandler)
 })
 
-// 预加载关键图片
-const preloadCriticalImages = () => {
+// 预加载关键资源
+const preloadCriticalResources = () => {
   if (process.client) {
-    const preloadImage = new Image()
-    preloadImage.src = UserConfig.error_img
+    // 预加载错误图片
+    const errorImg = new Image()
+    errorImg.src = UserConfig.error_img
+    
+    // 预加载模态框可能用到的头像
+    const preloadImages = displayedArticles.value
+      .slice(0, 5) // 只预加载前5个
+      .map(article => {
+        const img = new Image()
+        img.src = avatarOrDefault(article.avatar)
+        return img
+      })
   }
 }
 
 // 友链圈初始化
-const initializeFC = () => {
-  loadMoreArticles()
+const initializeFC = async () => {
+  await loadMoreArticles()
 }
 
 // 加载更多文章
 const loadMoreArticles = async () => {
-  if (isLoading) return
-  isLoading = true
-  
-  const cacheKey = 'friend-circle-lite-cache'
-  const cacheTimeKey = 'friend-circle-lite-cache-time'
   const now = Date.now()
   
   try {
     // 检查缓存
-    if (process.client && localStorage) {
-      const cacheTime = localStorage.getItem(cacheTimeKey)
+    if (process.client) {
+      const cacheTime = localStorage.getItem(CACHE_KEYS.TIME)
       if (cacheTime && (now - parseInt(cacheTime) < 10 * 60 * 1000)) {
-        const cachedData = JSON.parse(localStorage.getItem(cacheKey))
-        if (cachedData) {
-          processArticles(cachedData)
-          isLoading = false
+        const cachedData = localStorage.getItem(CACHE_KEYS.DATA)
+        const cachedStats = localStorage.getItem(CACHE_KEYS.STATS)
+        
+        if (cachedData && cachedStats) {
+          processArticles(JSON.parse(cachedData), JSON.parse(cachedStats))
           return
         }
       }
     }
     
     // 从API获取数据
-    const response = await fetch(`${UserConfig.private_api_url}all.json`)
+    const controller = new AbortController()
+    const timeoutId = setTimeout(() => controller.abort(), 10000) // 10秒超时
+    
+    const response = await fetch(`${UserConfig.private_api_url}all.json`, {
+      signal: controller.signal
+    })
+    
+    clearTimeout(timeoutId)
     const data = await response.json()
     
     // 更新缓存
-    if (process.client && localStorage) {
-      localStorage.setItem(cacheKey, JSON.stringify(data))
-      localStorage.setItem(cacheTimeKey, now.toString())
+    if (process.client) {
+      localStorage.setItem(CACHE_KEYS.DATA, JSON.stringify(data.article_data))
+      localStorage.setItem(CACHE_KEYS.STATS, JSON.stringify(data.statistical_data))
+      localStorage.setItem(CACHE_KEYS.TIME, now.toString())
     }
     
-    processArticles(data)
+    processArticles(data.article_data, data.statistical_data)
   } catch (error) {
     console.error('加载文章失败:', error)
-  } finally {
-    isLoading = false
+    // 尝试使用缓存数据
+    if (process.client) {
+      const cachedData = localStorage.getItem(CACHE_KEYS.DATA)
+      const cachedStats = localStorage.getItem(CACHE_KEYS.STATS)
+      if (cachedData && cachedStats) {
+        processArticles(JSON.parse(cachedData), JSON.parse(cachedStats))
+      }
+    }
   }
 }
 
 // 处理文章数据
-const processArticles = (data) => {
-  // 使用Object.assign避免重复的响应式更新
-  Object.assign(stats, data.statistical_data)
+const processArticles = (articleData, statisticalData) => {
+  // 更新统计数据
+  if (statisticalData) {
+    Object.assign(stats, statisticalData)
+  }
   
-  // 合并新旧文章
-  const newArticles = data.article_data
-  const mergedArticles = [...allArticles.value, ...newArticles]
-  allArticles.value = mergedArticles
+  // 合并新旧文章（去重）
+  const newArticles = articleData || []
+  const existingIds = new Set(allArticles.value.map(a => a.link))
+  const uniqueNewArticles = newArticles.filter(article => !existingIds.has(article.link))
   
-  // 计算要显示的新文章
-  const endIndex = start.value + UserConfig.page_turning_number
-  const newDisplayed = mergedArticles.slice(start.value, endIndex)
+  allArticles.value = [...allArticles.value, ...uniqueNewArticles]
+  
+  // 更新显示的列表
+  const newDisplayed = allArticles.value.slice(
+    start.value, 
+    start.value + UserConfig.page_turning_number
+  )
+  
   displayedArticles.value = [...displayedArticles.value, ...newDisplayed]
   
-  start.value = endIndex
-  hasMoreArticles.value = start.value < mergedArticles.length
+  // 更新起始位置
+  start.value += UserConfig.page_turning_number
   
-  // 延迟显示随机文章，避免阻塞主线程
-  if (!randomArticle.value) {
-    requestAnimationFrame(() => {
-      displayRandomArticle()
-    })
+  // 检查是否有更多文章
+  hasMoreArticles.value = start.value < allArticles.value.length
+  
+  // 显示随机文章
+  if (!randomArticle.value && allArticles.value.length > 0) {
+    displayRandomArticle()
   }
 }
 
-// 格式化日期 - 使用记忆化优化重复计算
-const formatDate = (() => {
-  const cache = new Map()
-  return (dateString) => {
-    if (!dateString) return ''
-    if (cache.has(dateString)) {
-      return cache.get(dateString)
-    }
-    const result = dateString.substring(0, 10)
-    cache.set(dateString, result)
-    return result
+// 格式化日期
+const formatDate = (dateString) => {
+  if (!dateString) return ''
+  try {
+    return new Date(dateString).toISOString().substring(0, 10)
+  } catch {
+    return dateString.substring(0, 10)
   }
-})()
+}
 
 // 显示随机文章
 const displayRandomArticle = () => {
@@ -161,6 +254,7 @@ const avatarOrDefault = (avatar) => {
 
 const handleAvatarError = (event) => {
   event.target.src = UserConfig.error_img
+  event.target.onerror = null // 防止循环错误
 }
 
 // 打开文章链接
@@ -179,17 +273,19 @@ const openRandomArticle = () => {
 const showAuthorArticles = (author, avatar, link) => {
   currentAuthor.value = author
   currentAuthorAvatar.value = avatar
-  authorOrigin.value = new URL(link).origin
+  try {
+    authorOrigin.value = new URL(link).origin
+  } catch {
+    authorOrigin.value = link
+  }
+  
   authorArticles.value = allArticles.value
     .filter(article => article.author === author)
     .slice(0, 4)
   
   showModal.value = true
   document.body.classList.add('overflow-hidden')
-  // 使用setTimeout确保事件监听在下一轮事件循环中添加
-  setTimeout(() => {
-    window.addEventListener('click', globalClickHandler)
-  }, 0)
+  window.addEventListener('click', globalClickHandler)
 }
 
 // 全局点击事件处理
@@ -205,176 +301,142 @@ const hideModal = () => {
   document.body.classList.remove('overflow-hidden')
   window.removeEventListener('click', globalClickHandler)
 }
-</script>
 
-<template>
-  <div class="page-banner" :style="{ backgroundImage: 'url(/assets/img/page_backgroud/moment.webp)' }">
-    <div class="banner-content">
-      <h1>博友圈</h1>
-      <p>发现更多有趣的博主</p>
-    </div>
-    <div class="banner-extra">
-      <div class="friend-stats">
-        <div class="update-time">Updated at {{ stats.last_updated_time ? formatDate(stats.last_updated_time) : '2025-07-17' }}</div>
-        <div class="powered-by">Powered by FriendCircleLite</div>
-      </div>
-    </div>
-  </div>
-  
-  <div class="page-fcircle">
-    <div class="article-list">
-      <!-- 随机文章区域 -->
-      <div v-if="randomArticle" class="random-article">
-        <div class="random-container-title">随机钓鱼</div>
-        <a href="#" @click.prevent="openRandomArticle" class="article-item" :aria-label="`阅读${randomArticle.author}的文章：${randomArticle.title}`">
-          <div class="article-container gradient-card">
-            <div class="article-author">{{ randomArticle.author }}</div>
-            <div class="article-title">{{ randomArticle.title }}</div>
-            <div class="article-date">{{ randomArticle.created }}</div>
-          </div>
+// 模态框组件
+const ModalComponent = {
+  props: ['author', 'avatar', 'origin', 'articles'],
+  emits: ['close'],
+  setup(props, { emit }) {
+    const handleAvatarError = (event) => {
+      event.target.src = UserConfig.error_img
+    }
+    
+    const formatDate = (dateString) => {
+      return dateString ? dateString.substring(0, 10) : ''
+    }
+    
+    return {
+      handleAvatarError,
+      formatDate,
+      UserConfig
+    }
+  },
+  template: `
+    <div id="modal" class="modal modal-open" @click.self="$emit('close')">
+      <div class="modal-content">
+        <img 
+          id="modal-author-avatar" 
+          :src="avatar || UserConfig.error_img" 
+          @error="handleAvatarError" 
+        />
+        <a id="modal-author-name-link" :href="origin" target="_blank" rel="noopener noreferrer">
+          {{ author }}
         </a>
-        <button class="refresh-btn gradient-card" @click="displayRandomArticle" aria-label="刷新随机文章">
-          <span class="iconify i-ph:link-bold" aria-hidden="true"></span>
-        </button>
-      </div>
-
-      <!-- 文章列表区域 -->
-      <div class="articles-list">
-        <article v-for="(article, index) in displayedArticles" :key="`${article.author}-${article.title}-${index}`" class="article-item">
-          <div class="article-image" @click="showAuthorArticles(article.author, article.avatar, article.link)" role="button" tabindex="0" @keypress.enter="showAuthorArticles(article.author, article.avatar, article.link)" :aria-label="`查看${article.author}的更多文章`">
-            <img 
-              :src="avatarOrDefault(article.avatar)" 
-              :alt="`${article.author}的头像`"
-              loading="lazy"
-              @error="handleAvatarError" 
-            />
-          </div>
-          <div class="article-container gradient-card">
-            <div class="article-author">{{ article.author }}</div>
-            <div class="article-title" @click="openArticle(article.link)" role="button" tabindex="0" @keypress.enter="openArticle(article.link)">
+        
+        <div id="modal-articles-container">
+          <div 
+            v-for="(article, index) in articles" 
+            :key="index" 
+            class="modal-article"
+          >
+            <a 
+              class="modal-article-title" 
+              :href="article.link" 
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               {{ article.title }}
-            </div>
-            <div class="article-date">{{ formatDate(article.created) }}</div>
-          </div>
-        </article>
-      </div>
-
-      <div class="load-more-container">
-        <button 
-          v-show="hasMoreArticles" 
-          class="load-more gradient-card" 
-          @click="loadMoreArticles"
-          :disabled="isLoading"
-        >
-          {{ isLoading ? '加载中...' : '再来亿点' }}
-        </button>
-      </div>
-
-      <!-- 作者模态框 -->
-      <Teleport to="body">
-        <div 
-          v-if="showModal" 
-          id="modal" 
-          class="modal" 
-          :class="{'modal-open': showModal}"
-          @click.self="hideModal"
-          role="dialog"
-          aria-labelledby="modal-author-name"
-        >
-          <div class="modal-content">
-            <img 
-              id="modal-author-avatar" 
-              :src="avatarOrDefault(currentAuthorAvatar)" 
-              :alt="`${currentAuthor}的头像`"
-              loading="lazy"
-              @error="handleAvatarError" 
-            />
-            <a id="modal-author-name-link" :href="authorOrigin" target="_blank" rel="noopener noreferrer" :aria-label="`访问${currentAuthor}的网站`">
-              <span id="modal-author-name">{{ currentAuthor }}</span>
             </a>
-            
-            <div id="modal-articles-container">
-              <article 
-                v-for="(article, index) in authorArticles" 
-                :key="index" 
-                class="modal-article"
-              >
-                <a 
-                  class="modal-article-title" 
-                  :href="article.link" 
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  :aria-label="`阅读文章：${article.title}`"
-                >
-                  {{ article.title }}
-                </a>
-                <div class="modal-article-date">📅{{ formatDate(article.created) }}</div>
-              </article>
-            </div>
-            
-            <img 
-              id="modal-bg" 
-              :src="avatarOrDefault(currentAuthorAvatar)" 
-              alt="" 
-              role="presentation"
-              loading="lazy"
-              @error="handleAvatarError" 
-            />
+            <div class="modal-article-date">📅{{ formatDate(article.created) }}</div>
           </div>
         </div>
-      </Teleport>
+        
+        <img 
+          id="modal-bg" 
+          :src="avatar || UserConfig.error_img" 
+          @error="handleAvatarError" 
+        />
+      </div>
     </div>
-  </div>
-</template>
-
-<style>
-/* 关键CSS内联，其余异步加载 */
-.page-fcircle-critical {
-  /* 关键渲染路径样式 */
-  .page-banner {
-    background-position: 50%;
-    background-size: cover;
-    border-radius: 8px;
-    margin: 1rem;
-    max-height: 320px;
-    min-height: 256px;
-    overflow: hidden;
-    position: relative;
-  }
-  
-  .article-list {
-    display: flex;
-    flex-direction: column;
-    gap: .5rem;
-  }
-  
-  .gradient-card {
-    border-radius: 8px;
-    box-shadow: 0 0 0 1px var(--c-bg-soft);
-    transition: all .2s ease;
-  }
+  `
 }
+</script>
 
-/* 使用CSS变量提高性能 */
-:root {
-  --card-radius: 8px;
-  --card-shadow: 0 0 0 1px var(--c-bg-soft);
-  --transition-fast: 0.2s ease;
-}
-</style>
-
+<!-- SCSS 版本 -->
 <style lang="scss" scoped>
-/* 使用will-change提示浏览器优化 */
+// 变量定义
+$banner-height: 320px;
+$banner-min-height: 256px;
+$avatar-size: 2rem;
+$container-height: 2.5rem;
+$modal-max-width: 500px;
+$modal-max-height: 80vh;
+
+// 混入
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin gradient-card {
+  border-radius: 8px;
+  box-shadow: 0 0 0 1px var(--c-bg-soft);
+  transition: all 0.2s ease;
+  
+  &:hover {
+    box-shadow: 0 0 0 1px var(--c-bg-soft), 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+}
+
+@mixin text-ellipsis {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+// 动画定义
+@keyframes float-in {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+@keyframes slideIn {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+// 顶部banner样式
 .page-banner {
   background-position: 50%;
   background-size: cover;
-  border-radius: var(--card-radius);
+  border-radius: 8px;
   margin: 1rem;
-  max-height: 320px;
-  min-height: 256px;
+  max-height: $banner-height;
+  min-height: $banner-min-height;
   overflow: hidden;
   position: relative;
-  will-change: transform;
   
   .banner-content {
     color: #eee;
@@ -387,7 +449,7 @@ const hideModal = () => {
     left: 0;
     justify-content: space-between;
     padding: 1rem;
-    text-shadow: 0 4px 5px rgba(0,0,0,.5);
+    text-shadow: 0 4px 5px rgba(0, 0, 0, 0.5);
     
     h1 {
       font-size: 2rem;
@@ -396,46 +458,55 @@ const hideModal = () => {
     
     p {
       font-size: 1rem;
-      opacity: .9;
+      opacity: 0.9;
       margin: 0;
     }
   }
   
   .banner-extra {
-    display: flex;
+    @include flex-center;
     align-items: flex-end;
-    justify-content: flex-end;
     position: absolute;
     top: 0;
     right: 0;
     bottom: 0;
     left: 0;
+    justify-content: flex-end;
     margin: 1rem;
   }
 }
 
+// 友链朋友圈样式
 .page-fcircle {
-  animation: float-in .2s backwards;
+  animation: float-in 0.2s backwards;
   margin: 1rem;
-  contain: layout style paint;
 }
 
 .friend-stats {
   display: flex;
   flex-direction: column;
   align-items: flex-end;
-  gap: .1rem;
   color: #eee;
   font-family: var(--font-monospace);
-  font-size: .7rem;
-  opacity: .7;
-  text-shadow: 0 4px 5px rgba(0,0,0,.5);
+  font-size: 0.7rem;
+  gap: 0.1rem;
+  opacity: 0.7;
+  text-shadow: 0 4px 5px rgba(0, 0, 0, 0.5);
+  
+  .update-time {
+    opacity: 1;
+  }
+  
+  .powered-by {
+    opacity: 0.8;
+  }
 }
 
 .article-list {
   .random-article {
     display: flex;
     align-items: center;
+    flex-direction: row;
     gap: 10px;
     justify-content: space-between;
     margin: 1rem 0;
@@ -448,36 +519,27 @@ const hideModal = () => {
     .article-item {
       flex: 1;
       min-width: 0;
-      text-decoration: none;
       
       .article-container {
         min-width: 0;
         
         .article-title {
-          overflow: hidden;
-          text-overflow: ellipsis;
-          white-space: nowrap;
+          @include text-ellipsis;
         }
       }
     }
     
     .refresh-btn {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 2.5rem;
-      height: 2.5rem;
+      @include flex-center;
+      @include gradient-card;
       flex-shrink: 0;
-      border-radius: var(--card-radius);
-      box-shadow: var(--card-shadow);
-      color: var(--c-text-2);
+      width: $container-height;
+      height: $container-height;
       cursor: pointer;
-      transition: all var(--transition-fast);
-      border: none;
-      background: transparent;
+      color: var(--c-text-2);
       
       &:hover {
-        transform: scale(1.05);
+        color: var(--c-text);
       }
     }
   }
@@ -485,7 +547,7 @@ const hideModal = () => {
   .articles-list {
     display: flex;
     flex-direction: column;
-    gap: .5rem;
+    gap: 0.5rem;
   }
 }
 
@@ -495,39 +557,42 @@ const hideModal = () => {
   gap: 10px;
   width: 100%;
   
+  &.new-item {
+    animation: float-in 0.2s var(--delay) backwards;
+  }
+  
   .article-image {
     flex-shrink: 0;
-    width: 2rem;
-    height: 2rem;
+    width: $avatar-size;
+    height: $avatar-size;
     border-radius: 50%;
-    box-shadow: var(--card-shadow);
     overflow: hidden;
+    box-shadow: 0 0 0 1px var(--c-bg-soft);
     cursor: pointer;
     
     img {
       width: 100%;
       height: 100%;
       object-fit: cover;
-      opacity: .8;
-      transition: all var(--transition-fast);
-    }
-    
-    &:hover img {
-      opacity: 1;
-      transform: scale(1.1);
+      opacity: 0.8;
+      transition: all 0.2s;
+      
+      &:hover {
+        opacity: 1;
+        transform: scale(1.05);
+      }
     }
   }
   
   .article-container {
+    @include gradient-card;
     display: flex;
     align-items: center;
     gap: 5px;
-    height: 2.5rem;
+    height: $container-height;
     padding: 10px;
     width: 100%;
     overflow: hidden;
-    border-radius: var(--card-radius);
-    box-shadow: var(--card-shadow);
     
     &:hover {
       .article-title {
@@ -537,25 +602,23 @@ const hideModal = () => {
     
     .article-author {
       color: var(--c-text-3);
-      font-size: .85rem;
+      font-size: 0.85rem;
       flex-shrink: 0;
     }
     
     .article-title {
-      flex: 1;
       color: var(--c-text-2);
-      font-size: .9375rem;
-      overflow: hidden;
-      text-overflow: ellipsis;
-      white-space: nowrap;
-      transition: color var(--transition-fast);
+      flex: 1;
+      font-size: 0.9375rem;
+      @include text-ellipsis;
+      transition: color 0.2s;
       cursor: pointer;
     }
     
     .article-date {
       color: var(--c-text-3);
       font-family: var(--font-monospace);
-      font-size: .75rem;
+      font-size: 0.75rem;
       flex-shrink: 0;
     }
   }
@@ -565,60 +628,55 @@ const hideModal = () => {
   display: flex;
   justify-content: center;
   margin: 1rem 0;
-}
-
-.load-more {
-  background-color: var(--ld-bg-card);
-  border-radius: var(--card-radius);
-  box-shadow: .1em .2em .5rem var(--ld-shadow);
-  display: block;
-  font-size: .875rem;
-  height: 42px;
-  padding: .75rem;
-  width: 200px;
-  border: none;
-  cursor: pointer;
-  transition: all var(--transition-fast);
   
-  &:hover:not(:disabled) {
-    color: var(--c-text);
-    transform: translateY(-1px);
-  }
-  
-  &:disabled {
-    opacity: 0.6;
-    cursor: not-allowed;
+  .load-more {
+    @include gradient-card;
+    background-color: var(--ld-bg-card);
+    border-radius: 8px;
+    box-shadow: 0.1em 0.2em 0.5rem var(--ld-shadow);
+    font-size: 0.875rem;
+    height: 42px;
+    padding: 0.75rem;
+    width: 200px;
+    cursor: pointer;
+    
+    &:hover {
+      color: var(--c-text);
+    }
   }
 }
 
+// 模态框样式
 .modal {
+  @include flex-center;
   position: fixed;
   top: 0;
   right: 0;
   bottom: 0;
   left: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 100;
   backdrop-filter: blur(20px);
+  z-index: 100;
+  
+  &.modal-open {
+    display: flex;
+  }
   
   .modal-content {
-    position: relative;
-    width: 90%;
-    max-width: 500px;
-    max-height: 80vh;
+    background-color: var(--c-bg-a50);
+    border-radius: 12px;
+    box-shadow: 0 0 0 1px var(--c-bg-soft);
+    max-height: $modal-max-height;
+    max-width: $modal-max-width;
     overflow-y: auto;
     padding: 1.25rem;
-    border-radius: 12px;
-    background-color: var(--c-bg-a50);
-    box-shadow: 0 0 0 1px var(--c-bg-soft);
+    position: relative;
+    width: 90%;
     
     #modal-author-avatar {
       border-radius: 50%;
-      width: 50px;
       height: 50px;
       object-fit: cover;
+      width: 50px;
       display: block;
       margin: 0 auto 1rem;
     }
@@ -627,30 +685,41 @@ const hideModal = () => {
       display: block;
       text-align: center;
       font-size: 1.2rem;
-      margin-bottom: 1rem;
+      margin-bottom: 1.5rem;
+      color: var(--c-text);
       text-decoration: none;
-      color: inherit;
+      
+      &:hover {
+        text-decoration: underline;
+      }
     }
     
-    .modal-article {
-      margin-bottom: 1rem;
-      
-      .modal-article-title {
-        display: block;
-        text-decoration: none;
-        color: inherit;
-        margin-bottom: 0.3rem;
-        line-height: 1.4;
+    #modal-articles-container {
+      .modal-article {
+        padding: 0.75rem 0;
+        border-bottom: 1px solid var(--c-bg-soft);
         
-        &:hover {
-          color: var(--c-text);
+        &:last-child {
+          border-bottom: none;
         }
-      }
-      
-      .modal-article-date {
-        font-family: var(--font-monospace);
-        font-size: .875rem;
-        color: var(--c-text-3);
+        
+        .modal-article-title {
+          color: var(--c-text-2);
+          text-decoration: none;
+          display: block;
+          margin-bottom: 0.25rem;
+          line-height: 1.4;
+          
+          &:hover {
+            color: var(--c-text);
+          }
+        }
+        
+        .modal-article-date {
+          color: var(--c-text-3);
+          font-family: var(--font-monospace);
+          font-size: 0.875rem;
+        }
       }
     }
     
@@ -662,26 +731,14 @@ const hideModal = () => {
       height: 128px;
       border-radius: 50%;
       filter: blur(5px);
-      opacity: .6;
+      opacity: 0.6;
       pointer-events: none;
-      z-index: -1;
+      z-index: 1;
     }
   }
 }
 
-/* 动画优化 */
-@keyframes float-in {
-  0% {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* 媒体查询优化 */
+// 响应式设计
 @media (max-width: 768px) {
   .random-article .random-container-title {
     display: none;
@@ -690,7 +747,6 @@ const hideModal = () => {
   .article-item .article-container {
     flex-wrap: wrap;
     height: auto;
-    min-height: 2.5rem;
     
     .article-author {
       flex-grow: 1;
@@ -700,37 +756,51 @@ const hideModal = () => {
       flex-basis: 100%;
       order: 3;
       white-space: normal;
-      line-height: 1.4;
     }
   }
   
-  .page-banner {
-    margin: 0.5rem;
-    min-height: 200px;
-    
-    .banner-content {
-      padding: 0.5rem;
-      
-      h1 {
-        font-size: 1.5rem;
-      }
-    }
-  }
-}
-
-/* 减少重绘和回流 */
-.gradient-card {
-  transform: translateZ(0);
-  backface-visibility: hidden;
-  perspective: 1000;
-}
-
-/* 打印样式优化 */
-@media print {
-  .modal,
-  .random-article,
-  .load-more-container {
-    display: none !important;
+  .modal .modal-content {
+    width: 95%;
+    padding: 1rem;
   }
 }
 </style>
+
+<!-- 可选：LESS 版本 -->
+<!--
+<style lang="less" scoped>
+// 变量定义
+@banner-height: 320px;
+@banner-min-height: 256px;
+@avatar-size: 2rem;
+@container-height: 2.5rem;
+@modal-max-width: 500px;
+@modal-max-height: 80vh;
+
+// 混入
+.flex-center() {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.gradient-card() {
+  border-radius: 8px;
+  box-shadow: 0 0 0 1px var(--c-bg-soft);
+  transition: all 0.2s ease;
+  
+  &:hover {
+    box-shadow: 0 0 0 1px var(--c-bg-soft), 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+}
+
+.text-ellipsis() {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+// 其余样式与SCSS版本类似，只是语法不同
+// 由于篇幅限制，这里只展示结构，实际使用时需要完整转换
+</style>
+-->

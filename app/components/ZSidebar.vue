@@ -1,6 +1,4 @@
 <script setup lang="ts">
-import Players from './mini/players.vue'
-
 const appConfig = useAppConfig()
 const layoutStore = useLayoutStore()
 const searchStore = useSearchStore()

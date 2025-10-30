@@ -19,7 +19,7 @@ const discoveryIcon : discoveryIconItem[] = [{
 }]
 
 import music from '../components/discovery/music/main.vue'
-import video from '~/components/discovery/video/main.vue'
+import video from '../components/discovery/video/main.vue'
 </script>
 
 <template lang="pug">

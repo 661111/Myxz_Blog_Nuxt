@@ -129,6 +129,15 @@ export default defineAppConfig({
 		},
 	},
 
+	commentThemes: {
+		dark: {
+			class: 'atk-dark-mode'
+		},
+		light: {
+			class: ''
+		}
+	},
+
 	other: {
 		Themes_Info: "Clarity",
 		Themes_Version: `${version}`

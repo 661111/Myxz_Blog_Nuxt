@@ -193,44 +193,14 @@ onUnmounted(() => {
 </script>
 
 <template>
-<section class="z-comment">
-	<h3 class="text-creative">
-		<div class="comment-tip">评论</div>
-  </h3>
-  <div class="commentCard">
-    <div id="artalk">
-      <p class="loading-box">
-        <Icon name="line-md:loading-twotone-loop" class="loadig-img" />评论加载中...
-      </p>
-    </div>
-  </div>
-</section>
+  <div id="artalk">
+		<p class="loading-box">
+			<Icon name="line-md:loading-twotone-loop" class="loadig-img" />评论加载中...
+		</p>
+	</div>
 </template>
 
 <style lang="scss" scoped>
-.z-comment {
-  margin: 3rem 0.5rem;
-
-  > h3 {
-    margin-top: 3rem;
-    margin-left: 0.2rem;
-    font-size: 1.25rem;
-  }
-}
-.text-creative {
-  display: flex;
-  
-  > .comment-tip{
-    font-size: 1.45rem;
-    margin-right: 0.8rem;
-    margin-bottom: 1rem;
-  }
-  > .comment-nav {
-    font-size: 1.45rem;
-    margin-right: 0.8rem;
-    margin-bottom: 1rem;
-  }
-}
 .comment-tip{
   font-size: 1.45rem;
   margin-right: 0.8rem;

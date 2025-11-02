@@ -15,6 +15,8 @@ export default defineEventHandler(async (event) => {
 		annual: <Record<number, StatsEntry>>{},
 		categories: <CategoryEntry[]>[],
 		tags: <string[]>[],
+		totalCategories: 0,
+		totalTags: 0,
 	}
 
 	const existedPath = new Map()
@@ -80,6 +82,28 @@ export default defineEventHandler(async (event) => {
 				if (!stats.tags.includes(tag))
 					stats.tags.push(tag)
 			})
+		// 新增：计算分类总数（包括所有层级）
+		const countTotalCategories = (categories: CategoryEntry[]): number => {
+			let count = categories.length;
+			for (const category of categories) {
+				if (category.children) {
+					count += countTotalCategories(category.children);
+				}
+			}
+			return count;
+		};
+		// 新增：计算标签总数（包括所有层级）
+		const countTotalTags = (tags: string[]): number => {
+			let count = tags.length;
+			for (const tags of categories) {
+				if (tags.children) {
+					count += countTotalCategories(tags.children);
+				}
+			}
+			return count;
+		};
+		stats.totalTags = countTotalTags(stats.tags);
+		stats.totalCategories = countTotalCategories(stats.categories);
 	}
 
 	return stats

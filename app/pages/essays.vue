@@ -6,7 +6,7 @@ const appConfig = useAppConfig()
 const layoutStore = useLayoutStore()
 
 // 设置侧边栏组件
-layoutStore.setAside(['blog-stats', 'blog-tech', 'blog-site-info', 'blog-log'])
+layoutStore.setAside(['blog-account', 'blog-stats', 'blog-tech', 'blog-site-info', 'blog-log'])
 
 // SEO 配置
 useSeoMeta({
@@ -17,7 +17,7 @@ useSeoMeta({
 
 // API 配置常量
 const API_CONFIG = {
-    MEMO_API: 'https://essay.myxz.top/api/memo/list',
+    MEMO_API: 'https://bb.myxz.top/api/memo/list',
     PAGE_SIZE: 30,
 }
 

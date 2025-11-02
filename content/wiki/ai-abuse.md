@@ -3,9 +3,10 @@ title: AI 正在污染内容生态领域
 description: AI 滥用
 date: 2025-06-10 21:52:43
 updated: 2025-06-10 21:52:43
-type: story
+type: tech
 categories: [杂谈]
 tags: [思考, AI]
+icon: https://sourceimage.s3.bitiful.net/myxz.avif
 ---
 
 ## 滥觞

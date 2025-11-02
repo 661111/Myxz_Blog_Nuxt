@@ -22,7 +22,10 @@ const appConfig = useAppConfig()
         )
         .title {{ appConfig.title }}
     .themes
-      .Themesinfo 采用 {{appConfig.other.Themes_Info}} 主题
+      .Themesinfo 
+        p 采用 
+        a(href="https://github.com/L33Z22L11/blog-v3") {{appConfig.other.Themes_Info}}
+        p 主题
 </template>
 
 <style lang="scss" scoped>
@@ -78,6 +81,11 @@ const appConfig = useAppConfig()
     .themes {
       font-size: 0.85em;
       color: var(--c-text-secondary);
+
+      .Themesinfo {
+        display: flex;
+        gap: 0.5rem;
+      }
     }
   }
 }

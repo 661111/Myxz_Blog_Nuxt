@@ -28,7 +28,7 @@ import { equipment } from '../equipment'
 import { useLayoutStore } from '~/stores/layout'
 
 const layoutStore = useLayoutStore()
-layoutStore.setAside(['blog-stats', 'blog-tech', 'blog-site-info', 'blog-log', 'blog-account'])
+layoutStore.setAside(['blog-account', 'blog-stats', 'blog-tech', 'blog-site-info', 'blog-log'])
 
 function goComment(content: string) {
   const textContent = content.replace(/<[^>]+>/g, '')

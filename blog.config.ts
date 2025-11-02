@@ -83,7 +83,7 @@ const blogConfig = {
 	},
 
 	artalk: {
-		server: 'http://172.98.23.127:8080/',
+		server: 'https://artalk.myxz.top/',
 		sitename: '歆鸢阁',
 	}
 }

@@ -2,6 +2,7 @@ const defaultState = {
 	sidebar: false,
 	aside: false,
 	search: false,
+	myDialog: false,
 }
 
 type LayoutSection = keyof typeof defaultState

@@ -39,6 +39,11 @@ const { word } = storeToRefs(searchStore)
 		</template>
 	</nav>
 	<footer class="sidebar-footer">
+		<div class="customizer-toggle">
+			<button @click="layoutStore.toggle('myDialog')">
+				<Icon name="ph:magnifying-glass-bold" />
+			</button>
+		</div>
 		<ThemeToggle />
 		<ZIconNavList :list="appConfig.footer.iconNav" />
 	</footer>
@@ -165,5 +170,27 @@ const { word } = storeToRefs(searchStore)
 	font-size: 0.8em;
 	text-align: center;
 	color: var(--c-text-2);
+	.customizer-toggle {
+		background-color: var(--c-bg-2);
+		border: 1px solid var(--c-border);
+		border-radius: 1rem;
+		display: flex;
+		gap: 3px;
+		justify-content: center;
+		margin: 0 auto;
+		padding: 2px;
+		width: -moz-fit-content;
+		width: fit-content;
+		
+		button {
+			background-color: transparent;
+			border: none;
+			border-radius: 1rem;
+			color: var(--c-text-2);
+			cursor: pointer;
+			padding: 4px 1rem;
+			transition: all .1s;
+		}
+	}
 }
 </style>

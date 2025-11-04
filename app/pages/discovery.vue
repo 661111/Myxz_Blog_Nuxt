@@ -18,8 +18,8 @@ const discoveryIcon : discoveryIconItem[] = [{
   ]
 }]
 
-import music from '../components/discovery/music/main.vue'
-import video from '../components/discovery/video/main.vue'
+import Mainmusic from '../components/discovery/music/main.vue'
+import Mainvideo from '../components/discovery/video/main.vue'
 </script>
 
 <template lang="pug">
@@ -29,26 +29,22 @@ import video from '../components/discovery/video/main.vue'
         .discovery-full
           nav.discovery-tabs(class="loading_title_animation")
             ul.tabs-full
-              button.text-lg.px-6(:class="['NavItem Page', {active: discoveryTabs === 'music'}]")
-                //- span(v-for="(item, index) in discoveryIconItem" )
-                //-   span(v-for="icon in discoveryIconItem.iconfly")
-                //-     span.iconify(v-for="icon.name === 'music'" :class="")
-                p.button_text 音乐
-              button.text-lg.px-6(:class="['NavItem Page', {active: discoveryTabs === 'video'}]")
-                p.button_text 视频
-    //- .loading(v-if)
-    //-   .loading-ripple
+              //- 循环渲染音乐/视频按钮
+              button.text-lg.px-6(
+                v-for="(tab, index) in discoveryIcon[0].iconfly" 
+                :key="index"
+                :class="{ active: discoveryTabs === tab.name }"
+                @click="discoveryTabs = tab.name"
+              )
+                p.button_text {{ tab.name === 'music' ? '音乐' : '视频' }}
 
-    //- .error(v-else-if)
-    //-   h3 加载失败
-    //-   p 请重新加载
-    //-   button 立即刷新
-
+    //- 内容卡片：根据 tabs 切换组件
     .discovery-card
-      .discovery-list(v-if="discoveryTabs === 'music'")
-        music
+      .discovery-list(v-if="discoveryTabs === 'music'") 
+        Mainmusic
       .discovery-list(v-if="discoveryTabs === 'video'")
-        video
+        Mainvideo
+        
 </template>
 
 <style lang="css" scoped>

@@ -255,10 +255,17 @@ function searchLocation(location: string) {
     const searchUrl = `https://www.google.com/maps/search/${encodeURIComponent(location)}`
     window.open(searchUrl, '_blank')
 }
+
+// // 生成卡片
+// const talkcard = [{
+//     icon: 'ph:game-controller-bold stat-icon',
+//     name: '总发布数量'
+//     text: talks.
+// }]
 </script>
 
 <template>
-    <PageBanner
+    <!-- <PageBanner
         title="瞬间"
         subtitle="记录生活点滴，一些想法"
         image="https://lib.bsgun.cn/Hexo-static/img/essay-bg.avif"
@@ -272,9 +279,25 @@ function searchLocation(location: string) {
                 </a>
             </div>
         </template>
-    </PageBanner>
+    </PageBanner> -->
+
     <div class="page-essay">
         <div class="talk-container">
+            <div class="profile" v-for="(item, index) in talks" :key="index">
+                <div class="header">
+                    <img class="avatar" :src="item.user.avatarUrl" :alt="item.user.nickname">
+                    <div class="info">
+                        <div class="row">
+                            <h2 class="username"> {{ item.user.nickname }} </h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="overview">
+                <div class="stat-card" v-for="(item, index) in talks" :key="index">
+
+                </div>
+            </div>
             <Transition name="fade" mode="out-in">
                 <div v-if="loading" class="loading-container">
                     <div class="loading-spinner" />
@@ -507,7 +530,67 @@ function searchLocation(location: string) {
 .page-essay {
     margin: 1rem;
     animation: float-in 0.2s backwards;
+    .talk-container {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5em;
+    }
+    .profile {
+        background: var(--ld-bg-card);
+        border: 1px solid var(--c-border);
+        border-radius: 0.8em;
+        padding: 1em;
+        transition: border-color 0.3s;
 
+        .header {
+            align-items: flex-start;
+            display: flex;
+            gap: 1em;
+            .avatar {
+                flex-shrink: 0;
+                height: 100px;
+                object-fit: cover;
+                width: 100px;
+                border: 2px solid var(--c-primary);
+                border-radius: 50%;
+                img:before {
+                    background-color: var(--c-border);
+                    color: var(--c-bg-soft);
+                    content: attr(alt);
+                    display: grid;
+                    font: 700 1.5rem / 1.2 var(--font-serif);
+                    inset: 0;
+                    overflow: visible;
+                    padding: .5em;
+                    place-content: center;
+                    position: absolute;
+                    text-align: center;
+                    text-shadow: none;
+                    word-break: normal;
+                }
+            }
+            .info {
+                min-width: 0px;
+                flex: 1 1 0%;
+
+                .row {
+                    align-items: center;
+                    display: flex;
+                    flex-wrap: wrap;
+                    margin-bottom: 0.5em;
+                    gap: 0.75em;
+
+                    .username {
+                        color: var(--c-text);
+                        font-size: 1.25em;
+                        font-weight: 600;
+                        word-break: break-word;
+                        margin: 0px;
+                    }
+                }
+            }
+        }
+    }
     .talk-item {
         border-radius: 8px;
         padding: 1rem;

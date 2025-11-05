@@ -22,17 +22,50 @@ const API_CONFIG = {
     PAGE_SIZE: 30,
 }
 
-// 用户状态管理
-const userProfileState = useState('userProfile', () => ({
-    user: null as any,
-    loading: true,
-    error: false,
-}))
+// ---------- 新增：用户信息状态管理 ----------
+interface UserProfile {
+  username: string;
+  nickname: string;
+  avatarUrl: string;
+  slogan: string;
+}
+const userState = ref({
+  loading: true,
+  error: false,
+  data: null as UserProfile | null,
+});
+
+// 新增：请求用户信息的函数
+async function fetchUserProfile() {
+  try {
+    userState.value.loading = true;
+    userState.value.error = false;
+
+    const response = await fetch(API_CONFIG.USER_API, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({}), // 按需补充请求体参数
+    });
+
+    if (!response.ok) throw new Error(`HTTP错误：${response.status}`);
+
+    const data = await response.json();
+    if (data.code === 0 && data.data) {
+      userState.value.data = data.data as UserProfile;
+    }
+  } catch (err) {
+    console.error('获取用户信息失败：', err);
+    userState.value.error = true;
+  } finally {
+    userState.value.loading = false;
+  }
+}
+// ---------- 新增结束 ----------
 
 // 计算属性 - 用户信息
-const user = computed(() => userProfileState.value.user)
-const userLoading = computed(() => userProfileState.value.loading)
-const userError = computed(() => userProfileState.value.error)
+const user = computed(() => userState.value.data)
+const userLoading = computed(() => userState.value.loading)
+const userError = computed(() => userState.value.error)
 
 // 加载外部脚本
 onMounted(() => {
@@ -53,6 +86,9 @@ onMounted(() => {
     .catch(err => console.error('脚本加载失败:', err))
   loadScript('https://jsd.myxz.top/npm/meting@2/dist/Meting.min.js')
     .catch(err => console.error('脚本加载失败:', err))
+
+  fetchTalks();
+  fetchUserProfile();
 })
 
 interface TalkItem {
@@ -115,9 +151,9 @@ const talks = computed(() => talksState.value.talks)
 const loading = computed(() => talksState.value.loading)
 const error = computed(() => talksState.value.error)
 // 合并加载状态（控制过渡动画）
-const combinedLoading = computed(() => talksState.value.loading || userProfileState.value.loading);
+const combinedLoading = computed(() => talksState.value.loading || userState.value.loading);
 const progress = ref(0); // 加载进度条
-const combinedError = computed(() => userProfileState.value.error || talksState.value.error);
+const combinedError = computed(() => userState.value.error || talksState.value.error);
 function formatTime(time: string) {
     const d = new Date(time)
     const ls = [d.getFullYear(), d.getMonth() + 1, d.getDate(), d.getHours(), d.getMinutes()]
@@ -242,33 +278,6 @@ async function fetchTalks() {
   }
 }
 
-// 获取用户信息（新增逻辑）
-async function fetchUserProfile() {
-  try {
-    userProfileState.value.loading = true;
-    userProfileState.value.error = false;
-    const response = await fetch(API_CONFIG.USER_API, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({}), // 按需添加请求体参数
-    });
-    if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
-    const data = await response.json();
-    userProfileState.value.user = data; // 存储用户信息
-  } catch (err) {
-    console.error('Error fetching user info:', err);
-    userProfileState.value.error = true;
-  } finally {
-    userProfileState.value.loading = false;
-    if (!userProfileState.value.error) progress.value = 100; // 用户信息加载完成，进度 50%
-  }
-}
-
-onMounted(() => {
-    fetchTalks()
-    fetchUserProfile() // 同时获取用户信息
-})
-
 function goComment(content: string) {
     const textContent = content.replace(/<[^>]+>/g, '')
     const textarea = document.querySelector('.atk-textarea-wrap .atk-textarea') as HTMLTextAreaElement
@@ -311,10 +320,10 @@ function searchLocation(location: string) {
         <div class="talk-container">
             <Transition name="fade" mode="out-in">
                 <!-- 加载中状态 -->
-                <div v-if="combinedLoading" class="loading-container">
-                    <div class="steam-loading-header">加载 Steam 数据中...</div>
+                <div v-if="combinedLoading" class="steam-loading-container">
+                    <div class="steam-loading-header">加载数据中...</div>
                     <div class="steam-progress-bar">
-                        <div class="steam-progress" :style="{ width: progress + '%' }"></div>
+                        <div class="steam-progress" :style="{ width: `${Math.min((userState.loading ? 0.5 : 0) + (talksState.loading ? 0.5 : 0), 1) * 100}%` }"></div>
                     </div>
                     <p class="steam-loading-subtext">正在获取用户信息、游戏库和成就数据...</p>
                 </div>
@@ -324,22 +333,22 @@ function searchLocation(location: string) {
                 </div>
                 <div v-else class="talk-main">
                     <!-- 用户资料区域 -->
-                    <div class="profile" v-if="user || userLoading">
+                    <div class="profile">
                         <div class="header">
                             <img 
                                 class="avatar" 
-                                :src="user?.avatarUrl" 
-                                :alt="user?.nickname"
+                                :src="userState.data?.avatarUrl" 
+                                :alt="userState.data?.nickname"
                             >
                             <div class="info">
                                 <div class="row">
                                     <h2 class="username">
-                                        {{ user?.nickname || user?.username || '加载中...' }}
+                                        {{ userState.data?.nickname || userState.data?.username || '加载中...' }}
                                         <Icon name="material-symbols:verified" class="verified" v-if="user" />
                                     </h2>
                                 </div>
                                 <div class="row" v-if="user">
-                                    <span class="bio">{{ user.bio || '这个人很懒，什么都没留下' }}</span>
+                                    <span class="bio">{{ userState.data?.slogan || '这个人很懒，什么都没留下' }}</span>
                                 </div>
                             </div>
                         </div>
@@ -589,40 +598,6 @@ function searchLocation(location: string) {
         }
     }
 }
-/* Steam 风格加载页 */
-.steam-loading-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 400px;
-  color: #333;
-  gap: 16px;
-
-  .steam-loading-header {
-    font-size: 1.2rem;
-    font-weight: bold;
-  }
-
-  .steam-progress-bar {
-    width: 80%;
-    height: 10px;
-    background-color: #f0f0f0;
-    border-radius: 5px;
-    overflow: hidden;
-  }
-
-  .steam-progress {
-    height: 100%;
-    background-color: #ff4081;
-    transition: width 0.3s ease;
-  }
-
-  .steam-loading-subtext {
-    font-size: 0.9rem;
-    color: #666;
-  }
-}
 .page-essay {
     margin: 1rem;
     animation: float-in 0.2s backwards;
@@ -632,8 +607,41 @@ function searchLocation(location: string) {
             flex-direction: column;
             gap: 1.5em;
         }
+        /* Steam 风格加载页 */
+        .steam-loading-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 400px;
+            color: #333;
+            gap: 16px;
+
+            .steam-loading-header {
+                font-size: 1.2rem;
+                font-weight: bold;
+            }
+
+            .steam-progress-bar {
+                width: 80%;
+                height: 5px;
+                background-color: #f0f0f0;
+                border-radius: 5px;
+                overflow: hidden;
+
+                .steam-progress {
+                    height: 100%;
+                    background-color:  var(--c-primary);
+                    transition: width 0.3s ease;
+                }
+            }
+
+            .steam-loading-subtext {
+                font-size: 0.9rem;
+                color: #666;
+            }
+        }
     }
-    
 
     .profile {
         background: var(--ld-bg-card);

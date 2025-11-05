@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref, onMounted } from 'vue';
+import { ref, onMounted, computed } from 'vue';
 
 // 全局配置
 const appConfig = useAppConfig()
@@ -18,8 +18,21 @@ useSeoMeta({
 // API 配置常量
 const API_CONFIG = {
     MEMO_API: 'https://bb.myxz.top/api/memo/list',
+    USER_API: 'https://bb.myxz.top/api/user/profile',
     PAGE_SIZE: 30,
 }
+
+// 用户状态管理
+const userProfileState = useState('userProfile', () => ({
+    user: null as any,
+    loading: true,
+    error: false,
+}))
+
+// 计算属性 - 用户信息
+const user = computed(() => userProfileState.value.user)
+const userLoading = computed(() => userProfileState.value.loading)
+const userError = computed(() => userProfileState.value.error)
 
 // 加载外部脚本
 onMounted(() => {
@@ -101,7 +114,10 @@ const talksState = useState('essayTalks', () => ({
 const talks = computed(() => talksState.value.talks)
 const loading = computed(() => talksState.value.loading)
 const error = computed(() => talksState.value.error)
-
+// 合并加载状态（控制过渡动画）
+const combinedLoading = computed(() => talksState.value.loading || userProfileState.value.loading);
+const progress = ref(0); // 加载进度条
+const combinedError = computed(() => userProfileState.value.error || talksState.value.error);
 function formatTime(time: string) {
     const d = new Date(time)
     const ls = [d.getFullYear(), d.getMonth() + 1, d.getDate(), d.getHours(), d.getMinutes()]
@@ -181,60 +197,77 @@ function formatContent(item: any) {
     }
 }
 
+// 获取动态列表（原有逻辑）
 async function fetchTalks() {
-    // 如果距离上次获取时间小于30分钟，则使用缓存
-    const now = Date.now()
-    if (now - talksState.value.lastFetchTime < 30 * 60 * 1000) {
-        return
+  // 如果距离上次获取时间小于30分钟，则使用缓存
+  const now = Date.now()
+  if (now - talksState.value.lastFetchTime < 30 * 60 * 1000) {
+    return
+  }
+  try {
+    talksState.value.loading = true;
+    talksState.value.error = false;
+    const response = await fetch(API_CONFIG.MEMO_API, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ size: API_CONFIG.PAGE_SIZE }),
+    });
+    if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
+    const data = await response.json();
+    if (data.code === 0 && data.data?.list) {
+      const formattedTalks = data.data.list.map((item: any) => ({
+        content: formatContent(item),
+        user: {
+          username: item.user.username,
+          nickname: item.user.nickname,
+          avatarUrl: item.user.avatarUrl,
+        },
+        date: formatTime(item.createdAt),
+        location: item.location || '',
+        tags: item.tags
+          ? (typeof item.tags === 'string'
+              ? item.tags.split(',').filter((tag: string) => tag.trim())
+              : item.tags)
+          : ['无标签'],
+      }));
+      talksState.value.talks = formattedTalks;
+      talksState.value.lastFetchTime = Date.now();
     }
-
-    try {
-        talksState.value.loading = true
-        talksState.value.error = false
-
-        const response = await fetch(API_CONFIG.MEMO_API, {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ size: API_CONFIG.PAGE_SIZE }),
-        })
-
-        if (!response.ok) {
-            throw new Error(`HTTP error! status: ${response.status}`)
-        }
-
-        const data = await response.json()
-
-        if (data.code === 0 && data.data?.list) {
-            const formattedTalks = data.data.list.map((item: any) => ({
-                content: formatContent(item),
-                user: {
-                    username: item.user.username,
-                    nickname: item.user.nickname,
-                    avatarUrl: item.user.avatarUrl,
-                },
-                date: formatTime(item.createdAt),
-                location: item.location || '',
-                tags: item.tags
-                    ? (typeof item.tags === 'string'
-                            ? item.tags.split(',').filter((tag: string) => tag.trim())
-                            : item.tags)
-                    : ['无标签'],
-            }))
-
-            talksState.value.talks = formattedTalks
-            talksState.value.lastFetchTime = now
-        }
-    }
-    catch (err) {
-        console.error('Error fetching talks:', err)
-        talksState.value.error = true
-    }
-    finally {
-        talksState.value.loading = false
-    }
+  } catch (err) {
+    console.error('Error fetching talks:', err);
+    talksState.value.error = true;
+  } finally {
+    talksState.value.loading = false;
+    if (!talksState.value.error) progress.value = 100; // 动态列表加载完成，进度 100%
+  }
 }
 
-onMounted(fetchTalks)
+// 获取用户信息（新增逻辑）
+async function fetchUserProfile() {
+  try {
+    userProfileState.value.loading = true;
+    userProfileState.value.error = false;
+    const response = await fetch(API_CONFIG.USER_API, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({}), // 按需添加请求体参数
+    });
+    if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
+    const data = await response.json();
+    userProfileState.value.user = data; // 存储用户信息
+  } catch (err) {
+    console.error('Error fetching user info:', err);
+    userProfileState.value.error = true;
+  } finally {
+    userProfileState.value.loading = false;
+    if (!userProfileState.value.error) progress.value = 100; // 用户信息加载完成，进度 50%
+  }
+}
+
+onMounted(() => {
+    fetchTalks()
+    fetchUserProfile() // 同时获取用户信息
+})
 
 function goComment(content: string) {
     const textContent = content.replace(/<[^>]+>/g, '')
@@ -255,13 +288,6 @@ function searchLocation(location: string) {
     const searchUrl = `https://www.google.com/maps/search/${encodeURIComponent(location)}`
     window.open(searchUrl, '_blank')
 }
-
-// // 生成卡片
-// const talkcard = [{
-//     icon: 'ph:game-controller-bold stat-icon',
-//     name: '总发布数量'
-//     text: talks.
-// }]
 </script>
 
 <template>
@@ -283,213 +309,250 @@ function searchLocation(location: string) {
 
     <div class="page-essay">
         <div class="talk-container">
-            <div class="profile" v-for="(item, index) in talks" :key="index">
-                <div class="header">
-                    <img class="avatar" :src="item.user.avatarUrl" :alt="item.user.nickname">
-                    <div class="info">
-                        <div class="row">
-                            <h2 class="username"> {{ item.user.nickname }} </h2>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="overview">
-                <div class="stat-card" v-for="(item, index) in talks" :key="index">
-
-                </div>
-            </div>
             <Transition name="fade" mode="out-in">
-                <div v-if="loading" class="loading-container">
-                    <div class="loading-spinner" />
-                    <p>加载中...</p>
+                <!-- 加载中状态 -->
+                <div v-if="combinedLoading" class="loading-container">
+                    <div class="steam-loading-header">加载 Steam 数据中...</div>
+                    <div class="steam-progress-bar">
+                        <div class="steam-progress" :style="{ width: progress + '%' }"></div>
+                    </div>
+                    <p class="steam-loading-subtext">正在获取用户信息、游戏库和成就数据...</p>
                 </div>
-                <div v-else-if="error" class="error-container">
+                <div v-else-if="combinedError" class="error-container">
                     <Icon name="line-md:alert" class="error-icon" />
                     <p>加载失败，请刷新页面重试</p>
                 </div>
-                <div v-else class="talks-list">
-                    <div
-                        v-for="(item, index) in talks"
-                        :key="index"
-                        class="talk-item"
-                        :style="{ '--delay': `${index * 0.1}s` }"
-                    >
-                        <div class="talk-meta">
-                            <img
-                                class="avatar"
-                                :src="item.user.avatarUrl"
-                                :alt="item.user.nickname"
+                <div v-else class="talk-main">
+                    <!-- 用户资料区域 -->
+                    <div class="profile" v-if="user || userLoading">
+                        <div class="header">
+                            <img 
+                                class="avatar" 
+                                :src="user?.avatarUrl" 
+                                :alt="user?.nickname"
                             >
                             <div class="info">
-                                <div class="talk-nick">
-                                    {{ item.user.nickname }}
-                                    <Icon name="material-symbols:verified" class="verified" />
+                                <div class="row">
+                                    <h2 class="username">
+                                        {{ user?.nickname || user?.username || '加载中...' }}
+                                        <Icon name="material-symbols:verified" class="verified" v-if="user" />
+                                    </h2>
                                 </div>
-                                <div class="talk-date">{{ item.date }}</div>
+                                <div class="row" v-if="user">
+                                    <span class="bio">{{ user.bio || '这个人很懒，什么都没留下' }}</span>
+                                </div>
                             </div>
                         </div>
-                        <div class="talk-content">
-                            <div class="talk_content_text" v-html="item.content.text"></div>
-                            
-                            <div v-if="item.content.music">
-                                <link src="https://jsd.myxz.top/npm/aplayer/dist/APlayer.min.css" rel="stylesheet">
-                                <meting-js 
-                                    v-if="item.music.type === 'tencent'"
-                                    :server="item.content.music.server"
-                                    :id="item.content.music.id"
-                                    :api="item.content.music.api" 
-                                ></meting-js>
+                    </div>
+                    <!-- 统计卡片区域 -->
+                    <div class="overview">
+                        <div class="stat-card">
+                            <Icon name="material-symbols:post-add" class="stat-icon" />
+                            <div class="stat-info">
+                                <div class="stat-label">碎碎念</div>
+                                <div class="stat-value">{{ talks.length }}</div>
                             </div>
-
-                            <div v-if="item.content.images.length" class="zone_imgbox">
-                                <figure
-                                    v-for="(img, imgIndex) in item.content.images"
-                                    :key="imgIndex"
-                                    class="img-item"
+                        </div>
+                        <div class="stat-card">
+                            <Icon name="material-symbols:image" class="stat-icon" />
+                            <div class="stat-info">
+                                <div class="stat-label">图片</div>
+                                <div class="stat-value">{{ talks.reduce((acc, talk) => acc + talk.content.images.length, 0) }}</div>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <Icon name="material-symbols:music-note" class="stat-icon" />
+                            <div class="stat-info">
+                                <div class="stat-label">音乐</div>
+                                <div class="stat-value">{{ talks.filter(t => t.content.music).length }}</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="talks-list">
+                        <div
+                            v-for="(item, index) in talks"
+                            :key="index"
+                            class="talk-item"
+                            :style="{ '--delay': `${index * 0.1}s` }"
+                        >
+                            <div class="talk-meta">
+                                <img
+                                    class="avatar"
+                                    :src="item.user.avatarUrl"
+                                    :alt="item.user.nickname"
                                 >
-                                    <Pic
-                                        :src="img"
-                                        zoom
-                                        class="talk-img"
-                                        loading="lazy"
-                                        :fetchpriority="imgIndex === 0 ? 'high' : 'low'"
+                                <div class="info">
+                                    <div class="talk-nick">
+                                        {{ item.user.nickname }}
+                                        <Icon name="material-symbols:verified" class="verified" />
+                                    </div>
+                                    <div class="talk-date">{{ item.date }}</div>
+                                </div>
+                            </div>
+                            <div class="talk-content">
+                                <div class="talk_content_text" v-html="item.content.text"></div>
+                                
+                                <div v-if="item.content.music">
+                                    <link src="https://jsd.myxz.top/npm/aplayer/dist/APlayer.min.css" rel="stylesheet">
+                                    <meting-js 
+                                        v-if="item.music.type === 'tencent'"
+                                        :server="item.content.music.server"
+                                        :id="item.content.music.id"
+                                        :api="item.content.music.api" 
+                                    ></meting-js>
+                                </div>
+
+                                <div v-if="item.content.images.length" class="zone_imgbox">
+                                    <figure
+                                        v-for="(img, imgIndex) in item.content.images"
+                                        :key="imgIndex"
+                                        class="img-item"
+                                    >
+                                        <Pic
+                                            :src="img"
+                                            zoom
+                                            class="talk-img"
+                                            loading="lazy"
+                                            :fetchpriority="imgIndex === 0 ? 'high' : 'low'"
+                                        />
+                                    </figure>
+                                </div>
+
+                                <div v-if="item.content.video" class="video-container">
+                                    <iframe
+                                        v-if="item.content.video.type === 'bilibili'"
+                                        :src="`//player.bilibili.com/player.html?bvid=${item.content.video.id}&autoplay=0`"
+                                        scrolling="no"
+                                        frameborder="no"
+                                        allowfullscreen="true"
                                     />
-                                </figure>
-                            </div>
+                                    <iframe
+                                        v-else-if="item.content.video.type === 'youtube'"
+                                        :src="`https://www.youtube.com/embed/${item.content.video.id}`"
+                                        frameborder="0"
+                                        allowfullscreen
+                                    />
+                                    <video
+                                        v-else-if="item.content.video.type === 'online'"
+                                        :src="item.content.video.url"
+                                        controls
+                                        class="online-video"
+                                    />
+                                </div>
 
-                            <div v-if="item.content.video" class="video-container">
-                                <iframe
-                                    v-if="item.content.video.type === 'bilibili'"
-                                    :src="`//player.bilibili.com/player.html?bvid=${item.content.video.id}&autoplay=0`"
-                                    scrolling="no"
-                                    frameborder="no"
-                                    allowfullscreen="true"
-                                />
-                                <iframe
-                                    v-else-if="item.content.video.type === 'youtube'"
-                                    :src="`https://www.youtube.com/embed/${item.content.video.id}`"
-                                    frameborder="0"
-                                    allowfullscreen
-                                />
-                                <video
-                                    v-else-if="item.content.video.type === 'online'"
-                                    :src="item.content.video.url"
-                                    controls
-                                    class="online-video"
-                                />
-                            </div>
-
-                            <a
-                                v-if="item.content.doubanMovie"
-                                class="douban-card gradient-card"
-                                :href="item.content.doubanMovie.url"
-                                target="_blank"
-                            >
-                                <div
-                                    class="douban-card-bgimg"
-                                    :style="{ backgroundImage: `url('${item.content.doubanMovie.image}')` }"
-                                />
-                                <div class="douban-card-left">
+                                <a
+                                    v-if="item.content.doubanMovie"
+                                    class="douban-card gradient-card"
+                                    :href="item.content.doubanMovie.url"
+                                    target="_blank"
+                                >
                                     <div
-                                        class="douban-card-img"
+                                        class="douban-card-bgimg"
                                         :style="{ backgroundImage: `url('${item.content.doubanMovie.image}')` }"
                                     />
-                                </div>
-                                <div class="douban-card-right">
-                                    <div class="douban-card-item">
-                                        <span>电影名: </span>
-                                        <strong>{{ item.content.doubanMovie.title }}</strong>
+                                    <div class="douban-card-left">
+                                        <div
+                                            class="douban-card-img"
+                                            :style="{ backgroundImage: `url('${item.content.doubanMovie.image}')` }"
+                                        />
                                     </div>
-                                    <div class="douban-card-item">
-                                        <span>导演: </span>
-                                        {{ item.content.doubanMovie.director }}
-                                    </div>
-                                    <div class="douban-card-item">
-                                        <span>评分: </span>
-                                        {{ item.content.doubanMovie.rating }}
-                                    </div>
-                                    <div class="douban-card-item">
-                                        <span>时长: </span>
-                                        {{ item.content.doubanMovie.runtime }}
-                                    </div>
-                                </div>
-                            </a>
-
-                            <a
-                                v-if="item.content.doubanBook"
-                                class="douban-card gradient-card"
-                                :href="item.content.doubanBook.url"
-                                target="_blank"
-                            >
-                                <div
-                                    class="douban-card-bgimg"
-                                    :style="{ backgroundImage: `url('${item.content.doubanBook.image}')` }"
-                                />
-                                <div class="douban-card-left">
-                                    <div
-                                        class="douban-card-img"
-                                        :style="{ backgroundImage: `url('${item.content.doubanBook.image}')` }"
-                                    />
-                                </div>
-                                <div class="douban-card-right">
-                                    <div class="douban-card-item">
-                                        <span>书名: </span>
-                                        <strong>{{ item.content.doubanBook.title }}</strong>
-                                    </div>
-                                    <div class="douban-card-item">
-                                        <span>作者: </span>
-                                        {{ item.content.doubanBook.author }}
-                                    </div>
-                                    <div class="douban-card-item">
-                                        <span>出版年份: </span>
-                                        {{ item.content.doubanBook.pubDate }}
-                                    </div>
-                                    <div class="douban-card-item">
-                                        <span>评分: </span>
-                                        {{ item.content.doubanBook.rating }}
-                                    </div>
-                                </div>
-                            </a>
-
-                            <div v-if="item.content.externalLink" class="external-link gradient-card">
-                                <a :href="item.content.externalLink.url" target="_blank" rel="nofollow">
-                                    <div class="link-left">
-                                        <img :src="item.content.externalLink.favicon" :alt="item.content.externalLink.title">
-                                    </div>
-                                    <div class="link-right">
-                                        <div class="link-title">
-                                            {{ item.content.externalLink.title }}
+                                    <div class="douban-card-right">
+                                        <div class="douban-card-item">
+                                            <span>电影名: </span>
+                                            <strong>{{ item.content.doubanMovie.title }}</strong>
                                         </div>
-                                        <Icon name="material-symbols:chevron-right" class="icon" />
+                                        <div class="douban-card-item">
+                                            <span>导演: </span>
+                                            {{ item.content.doubanMovie.director }}
+                                        </div>
+                                        <div class="douban-card-item">
+                                            <span>评分: </span>
+                                            {{ item.content.doubanMovie.rating }}
+                                        </div>
+                                        <div class="douban-card-item">
+                                            <span>时长: </span>
+                                            {{ item.content.doubanMovie.runtime }}
+                                        </div>
                                     </div>
                                 </a>
-                            </div>
-                        </div>
-                        <div class="talk-bottom">
-                            <div class="talk-tags">
-                                <span class="tag">
-                                    🏷️{{ Array.isArray(item.tags) ? item.tags.join(', ') : item.tags }}
-                                </span>
-                                <span
-                                    v-if="item.location"
-                                    class="location"
-                                    v-tip="`搜索: ${item.location}`"
-                                    @click="searchLocation(item.location)"
+
+                                <a
+                                    v-if="item.content.doubanBook"
+                                    class="douban-card gradient-card"
+                                    :href="item.content.doubanBook.url"
+                                    target="_blank"
                                 >
-                                    <Icon name="ph:map-pin-bold" class="location-icon" />
-                                    {{ item.location }}
-                                </span>
+                                    <div
+                                        class="douban-card-bgimg"
+                                        :style="{ backgroundImage: `url('${item.content.doubanBook.image}')` }"
+                                    />
+                                    <div class="douban-card-left">
+                                        <div
+                                            class="douban-card-img"
+                                            :style="{ backgroundImage: `url('${item.content.doubanBook.image}')` }"
+                                        />
+                                    </div>
+                                    <div class="douban-card-right">
+                                        <div class="douban-card-item">
+                                            <span>书名: </span>
+                                            <strong>{{ item.content.doubanBook.title }}</strong>
+                                        </div>
+                                        <div class="douban-card-item">
+                                            <span>作者: </span>
+                                            {{ item.content.doubanBook.author }}
+                                        </div>
+                                        <div class="douban-card-item">
+                                            <span>出版年份: </span>
+                                            {{ item.content.doubanBook.pubDate }}
+                                        </div>
+                                        <div class="douban-card-item">
+                                            <span>评分: </span>
+                                            {{ item.content.doubanBook.rating }}
+                                        </div>
+                                    </div>
+                                </a>
+
+                                <div v-if="item.content.externalLink" class="external-link gradient-card">
+                                    <a :href="item.content.externalLink.url" target="_blank" rel="nofollow">
+                                        <div class="link-left">
+                                            <img :src="item.content.externalLink.favicon" :alt="item.content.externalLink.title">
+                                        </div>
+                                        <div class="link-right">
+                                            <div class="link-title">
+                                                {{ item.content.externalLink.title }}
+                                            </div>
+                                            <Icon name="material-symbols:chevron-right" class="icon" />
+                                        </div>
+                                    </a>
+                                </div>
                             </div>
-                            <button class="comment-btn" @click="goComment(item.content.text) " v-tip="`评论`">
-                                <Icon name="ph:chats-bold" class="icon" />
-                            </button>
+                            <div class="talk-bottom">
+                                <div class="talk-tags">
+                                    <span class="tag">
+                                        🏷️{{ Array.isArray(item.tags) ? item.tags.join(', ') : item.tags }}
+                                    </span>
+                                    <span
+                                        v-if="item.location"
+                                        class="location"
+                                        v-tip="`搜索: ${item.location}`"
+                                        @click="searchLocation(item.location)"
+                                    >
+                                        <Icon name="ph:map-pin-bold" class="location-icon" />
+                                        {{ item.location }}
+                                    </span>
+                                </div>
+                                <button class="comment-btn" @click="goComment(item.content.text) " v-tip="`评论`">
+                                    <Icon name="ph:chats-bold" class="icon" />
+                                </button>
+                            </div>
                         </div>
-                    </div>
-                    <!-- 底部提示 -->
-                    <div class="talks-footer">
-                        <p>仅显示最近 30 条记录</p>
+                        <!-- 底部提示 -->
+                        <div class="talks-footer">
+                            <p>仅显示最近 30 条记录</p>
+                        </div>
                     </div>
                 </div>
+                
             </Transition>
         </div>
     </div>
@@ -526,15 +589,52 @@ function searchLocation(location: string) {
         }
     }
 }
+/* Steam 风格加载页 */
+.steam-loading-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 400px;
+  color: #333;
+  gap: 16px;
 
+  .steam-loading-header {
+    font-size: 1.2rem;
+    font-weight: bold;
+  }
+
+  .steam-progress-bar {
+    width: 80%;
+    height: 10px;
+    background-color: #f0f0f0;
+    border-radius: 5px;
+    overflow: hidden;
+  }
+
+  .steam-progress {
+    height: 100%;
+    background-color: #ff4081;
+    transition: width 0.3s ease;
+  }
+
+  .steam-loading-subtext {
+    font-size: 0.9rem;
+    color: #666;
+  }
+}
 .page-essay {
     margin: 1rem;
     animation: float-in 0.2s backwards;
     .talk-container {
-        display: flex;
-        flex-direction: column;
-        gap: 1.5em;
+        .talk-main {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5em;
+        }
     }
+    
+
     .profile {
         background: var(--ld-bg-card);
         border: 1px solid var(--c-border);
@@ -587,6 +687,41 @@ function searchLocation(location: string) {
                         word-break: break-word;
                         margin: 0px;
                     }
+                }
+            }
+        }
+    }
+    // 统计卡片区域
+    .overview {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 1rem;
+        
+        .stat-card {
+            background: var(--ld-bg-card);
+            border: 1px solid var(--c-border);
+            border-radius: 0.8em;
+            padding: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            transition: border-color 0.3s;
+            
+            .stat-icon {
+                font-size: 1.8rem;
+                color: var(--c-primary);
+            }
+            
+            .stat-info {
+                .stat-label {
+                    font-size: 0.9rem;
+                    color: var(--c-text-2);
+                }
+                
+                .stat-value {
+                    font-size: 1.4rem;
+                    font-weight: bold;
+                    color: var(--c-text);
                 }
             }
         }

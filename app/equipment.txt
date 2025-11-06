@@ -1,0 +1,34 @@
+export interface item {
+  name: string
+  categroy: '硬件' | '外设' | '其他'
+  desc: string
+  info: info[]
+  tag: string[]
+  image: string
+  date: string
+  src: string
+}
+export interface info {
+  cpu: string;
+  memory: string;
+  gpu: string;
+  ssd: string;
+}
+
+export const equipment: item[] = [
+  {
+    name: "iPhone XR",
+    image: "https://s11.ax1x.com/2023/06/07/pCiB3vD.jpg",
+    src: "https://www.myxz.top",
+    categroy: '硬件',
+    desc: "",
+    info: [{
+      cpu: "",
+      memory: "",
+      gpu: "",
+      ssd: ""
+    }],
+    tag: [],
+    date: ""
+  }
+]

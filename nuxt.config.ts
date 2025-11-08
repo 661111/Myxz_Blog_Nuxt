@@ -28,7 +28,7 @@ export default defineNuxtConfig({
 				// // 小米字体 "MiSans"
 				// { rel: 'stylesheet', href: 'https://cdn-font.hyperos.mi.com/font/css?family=MiSans:100,200,300,400,450,500,600,650,700,900:Chinese_Simplify,Latin&display=swap', media: 'print', onload: 'this.media="all"' },
 				{ rel: 'preconnect', href: 'https://sourceimage.s3.bitiful.net' },
-                { rel: 'stylesheet', href: 'https://sourceimage.s3.bitiful.net/font/Yozai-Medium/result.css', media: 'none', onload: 'this.media="all"' },
+                { rel: 'stylesheet', href: 'https://sourceimage.s3.bitiful.net/font/zihuncuizhukaishu_trial/result.css', media: 'none', onload: 'this.media="all"' },
                 // { rel: 'stylesheet', href: 'https://static.vercel.sxiaohe.top/fonts/anzhiyu/anzhiyufonts.css', media: 'none', onload: 'this.media="all"'  },
                 { rel: 'stylesheet', href: '/assets/css/color.css', media: 'none', onload: 'this.media="all"'  },
 				{ rel: 'stylesheet', href: 'https://artalk.fis.ink/dist/Artalk.css', media: 'none', onload: 'this.media="all"'  },

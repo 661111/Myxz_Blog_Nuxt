@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 import { ref, computed } from 'vue'
-import { equipment } from '../equipment'
+import equipment from '~/equipment'
 import { useLayoutStore } from '~/stores/layout'
 
 const layoutStore = useLayoutStore()
@@ -11,9 +11,8 @@ const activeCategory = ref('硬件')
 
 // 计算属性过滤设备
 const filteredEquipment = computed(() => 
-  equipment.filter(item => item.categroy === activeCategory.value)
+  equipment.filter(item => item.categroy === activeCategory.value),
 )
-
 function handleTabClick(category: string) {
   activeCategory.value = category
 }
@@ -26,29 +25,31 @@ function goComment(content: string) {
     textarea.scrollIntoView({ behavior: 'smooth', block: 'center' })
   }
 }
-
-
 </script>
 
 <template>
   <div id="icat-equipment">
     <div class="equipment-category">
       <!-- 顶部导航栏 -->
-      <nav class="category-tabs">
-        <button 
-          v-for="category in ['硬件', '外设', '其他']" 
-          :key="category"
-          :class="{ active: activeCategory === category }"
-          @click="handleTabClick(category)"
-        >
-          {{ category }}
-        </button>
-      </nav>
+      <div class="categories-tabs">
+        <div class="tabs-container">
+          <div 
+            v-for="category in ['硬件', '外设']" 
+            :key="category"
+            class="category-tab"
+            :class="{ active: activeCategory === category }"
+            @click="handleTabClick(category)"
+            style="--tab-color: var(--c-primary)"
+          >
+            {{ category }}
+          </div>
+        </div>
+      </div>
 
       <!-- 设备展示区 -->
       <div class="equipment-list">
         <div class="equipment-item">
-          <div v-for="(item, index) in filteredEquipment" :key="item.name + index" class="equipment-card" :style="{ '--bg-color': item.categroy_color }">
+          <div v-for="(item, index) in filteredEquipment" :key="item.name + index" class="equipment-card">
             <div class="equipment-image">
               <img
                 :src="item.image"
@@ -61,7 +62,7 @@ function goComment(content: string) {
                 <h3 class="card-name">
                   {{ item.name }}
                 </h3>
-                <div class="card-category" style="--category-color: #3af;">
+                <div class="card-category" style="--category-color: var(--c-primary)">
                   {{ item.categroy }}
                 </div>
               </div>
@@ -121,7 +122,45 @@ function goComment(content: string) {
   .equipment-category {
     margin: 1rem;
     padding-top: 1rem;
-    
+
+    .categories-tabs {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 2rem;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+
+      .tabs-container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: .5rem;
+        justify-content: center;
+        padding: .5rem;
+        
+        .category-tab {
+          align-items: center;
+          background: transparent;
+          border: 2px solid var(--c-border);
+          border-radius: .6rem;
+          color: var(--c-text-2);
+          cursor: pointer;
+          display: flex;
+          font-size: .95rem;
+          gap: .5rem;
+          padding: .6rem 1.2rem;
+          transition: all .3s ease;
+          white-space: nowrap;
+        }
+        .active {
+          background: color-mix(in srgb, var(--tab-color) 10%, transparent);
+          font-weight: 600;
+        }
+        .active, :hover {
+          border-color: var(--tab-color);
+          color: var(--tab-color);
+        }
+      }
+    }
     .category-title {
       margin: 20px 7px 0;
       font-size: 1.5rem;
@@ -156,18 +195,36 @@ function goComment(content: string) {
           }
           
           .equipment-image {
+            align-items: center;
+            display: flex;
+            height: 240px;
+            justify-content: center;
+            position: relative;
+            width: 100%;
+            background: rgb(255, 255, 255);
             overflow: hidden;
             
             img {
+              height: 100%;
+              object-fit: contain;
               width: 100%;
-              height: 200px;
-              object-fit: cover;
-              animation: fadeIn 1s;
-              transition: transform 0.4s ease-in-out;
-              cursor: pointer;
+              padding: 0.8rem;
+              transition: transform 0.3s;
               
-              &:hover {
-                transform: scale(1.03);
+              &::before {
+                background-color: var(--c-border);
+                color: var(--c-bg-soft);
+                content: attr(alt);
+                display: grid;
+                position: absolute;
+                text-align: center;
+                text-shadow: none;
+                word-break: normal;
+                font: 700 1.5rem / 1.2 var(--font-serif);
+                inset: 0px;
+                overflow: visible;
+                padding: 0.5em;
+                place-content: center;
               }
             }
           }
@@ -176,7 +233,7 @@ function goComment(content: string) {
             padding: 16px;
             flex: 1;
             flex-direction: column;
-            gap: .6rem;
+            gap: .8rem;
             min-width: 0;
             padding: 1rem;
             display: flex;

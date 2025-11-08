@@ -54,7 +54,7 @@ const iconNav= [
       <div class="card-info-data site-data is-center">
         <ZDlGroup :items="blogStats" size="small" />
       </div>
-      <a class="cardInfoButton" v-for="accountInfo in blogAccountInfo" target="_blank" :herf="accountInfo.herf" :key="accountInfo.title">
+      <a class="cardInfoButton" v-for="accountInfo in blogAccountInfo" target="_blank" :href="accountInfo.herf" :key="accountInfo.title">
         {{ accountInfo.title }}
       </a>
       <div class="cardInfoSocialIcons is-center">

@@ -4,7 +4,7 @@ import { ref, reactive, onMounted, onUnmounted } from 'vue'
 const appConfig = useAppConfig()
 const layoutStore = useLayoutStore()
 
-layoutStore.setAside(['blog-account', 'blog-stats', 'blog-tech', 'blog-site-info', 'blog-log'])
+layoutStore.setAside(['blog-account', 'blog-stats', 'blog-tech', 'blog-site-info', 'blog-archive', 'blog-log'])
 
 useSeoMeta({
     title: '友链朋友圈',

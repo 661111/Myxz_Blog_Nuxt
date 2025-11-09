@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import MainCard from '../card/console/main.vue';
+
 const props = defineProps<{
   show?: boolean
   duration?: number
@@ -19,15 +21,12 @@ function handleClose() {
 
   <Transition name="float-in">
     <div v-if="show" class="popover-panel">
-      <div class="panel-header">
-        <h2>标题</h2>
-        <button class="close-btn" aria-label="关闭" @click="handleClose">
-          <Icon name="ph:x-bold" />
-        </button>
-      </div>
+      <button class="close-btn" aria-label="关闭" @click="handleClose">
+        <Icon name="ph:x-bold" />
+      </button>
 
       <div class="panel-content">
-        <!-- 你的内容放这里 -->
+        <MainCard />
       </div>
     </div>
   </Transition>
@@ -47,46 +46,36 @@ function handleClose() {
   }
 }
 .popover-panel {
-  --float-distance: 20vh;
+  display: flex;
   position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 95%;
-  max-width: 700px;
-  max-height: 80vh;
-  max-height: 80dvh;
-  border: 1px solid var(--c-primary);
-  border-radius: 1em;
-  box-shadow: 0 0.25em 0.5em var(--ld-shadow);
-  background-color: var(--ld-bg-card);
-  padding: 1.2em;
-  overflow-y: auto;
-  transition: all var(--delay, 200);
-  z-index: 1000;
-  .panel-header {
-    margin-bottom: 1em;
+  width: 100vw;
+  height: 100dvh;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  justify-content: center;
+  transition: .3s ease-out;
+  flex-direction: column;
+  pointer-events: none;
+  -webkit-user-select: none;
+  .close-btn {
+    width: 100%;
+    height: 60px;
+    position: absolute;
+    top: 0;
+    left: 94%;
+    transform: translateX(-50%);
+    font-size: 35px;
+    color: var(--heo-fontcolor);
+    transition: .3s;
     display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    h2 {
-      margin: 0;
-      font-size: 1.2em;
-      font-weight: 600;
-      color: var(--c-text);
-    }
-    .close-btn {
-      padding: 0.4em;
-      border: none;
-      border-radius: 0.5em;
-      background-color: transparent;
-      color: var(--c-text-2);
-      cursor: pointer;
-      transition: all 0.1s;
-      &:hover {
-        background-color: var(--c-bg-soft);
-        color: var(--c-text-1);
-      }
+    align-items: center;
+    justify-content: center;
+    max-width: 1400px;
+    z-index: 1;
+    &:hover {
+      background-color: var(--c-bg-soft);
+      color: var(--c-text-1);
     }
   }
   .panel-content {

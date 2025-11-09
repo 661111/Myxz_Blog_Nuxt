@@ -6,7 +6,7 @@ const appConfig = useAppConfig()
 const layoutStore = useLayoutStore()
 
 // 设置侧边栏组件
-layoutStore.setAside(['blog-account', 'blog-stats', 'blog-tech', 'blog-site-info', 'blog-log'])
+layoutStore.setAside(['blog-account', 'blog-stats', 'blog-tech', 'blog-site-info', 'blog-archive', 'blog-log'])
 
 // SEO 配置
 useSeoMeta({
@@ -393,7 +393,7 @@ function searchLocation(location: string) {
                                 <div class="info">
                                     <div class="talk-nick">
                                         {{ item.user.nickname }}
-                                        <Icon name="material-symbols:verified" class="verified" />
+                                        <Icon name="material-symbols:verified verified" class="verified" />
                                     </div>
                                     <div class="talk-date">{{ item.date }}</div>
                                 </div>

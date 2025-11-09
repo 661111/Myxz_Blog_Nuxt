@@ -2,8 +2,8 @@
 const appConfig = useAppConfig()
 const layoutStore = useLayoutStore()
 const searchStore = useSearchStore()
-
 const { word } = storeToRefs(searchStore)
+const myDialogStore = useMyDialogStore()
 </script>
 
 <template>
@@ -40,7 +40,7 @@ const { word } = storeToRefs(searchStore)
 	</nav>
 	<footer class="sidebar-footer">
 		<div class="customizer-toggle">
-			<button @click="layoutStore.toggle('myDialog')">
+			<button @click="myDialogStore.open()">
 				<Icon name="ph:magnifying-glass-bold" />
 			</button>
 		</div>

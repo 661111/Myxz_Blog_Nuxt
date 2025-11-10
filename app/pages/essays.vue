@@ -1,5 +1,9 @@
 <script setup lang="ts">
 import { ref, onMounted, computed } from 'vue';
+import dayjs from 'dayjs';
+import relativeTime from 'dayjs/plugin/relativeTime';
+import 'dayjs/locale/zh-cn';
+dayjs.extend(relativeTime)
 
 // 全局配置
 const appConfig = useAppConfig()
@@ -21,7 +25,7 @@ const API_CONFIG = {
     USER_API: 'https://bb.myxz.top/api/user/profile',
     PAGE_SIZE: 30,
 }
-
+const data_item = computed(() => talksState.value.talks)
 // ---------- 新增：用户信息状态管理 ----------
 interface UserProfile {
   username: string;
@@ -34,7 +38,6 @@ const userState = ref({
   error: false,
   data: null as UserProfile | null,
 });
-
 // 新增：请求用户信息的函数
 async function fetchUserProfile() {
   try {
@@ -145,7 +148,6 @@ const talksState = useState('essayTalks', () => ({
     error: false,
     lastFetchTime: 0,
 }))
-
 // 计算属性
 const talks = computed(() => talksState.value.talks)
 const loading = computed(() => talksState.value.loading)
@@ -297,6 +299,8 @@ function searchLocation(location: string) {
     const searchUrl = `https://www.google.com/maps/search/${encodeURIComponent(location)}`
     window.open(searchUrl, '_blank')
 }
+
+const yearlyTip = computed(() => talks)
 </script>
 
 <template>
@@ -350,6 +354,7 @@ function searchLocation(location: string) {
                                 <div class="row" v-if="user">
                                     <span class="bio">{{ userState.data?.slogan || '这个人很懒，什么都没留下' }}</span>
                                 </div>
+                                <span class="bio" v-for="item in talksState.talks.slice(-999, 1)">更新时间：{{ dayjs(item.date).locale('zh-cn').fromNow().replaceAll(/\s+/g,'') }}</span>
                             </div>
                         </div>
                     </div>
@@ -366,7 +371,7 @@ function searchLocation(location: string) {
                             <Icon name="material-symbols:image" class="stat-icon" />
                             <div class="stat-info">
                                 <div class="stat-label">图片</div>
-                                <div class="stat-value">{{ talks.reduce((acc, talk) => acc + talk.content.images.length, 0) }}</div>
+                                <div class="stat-value"></div>
                             </div>
                         </div>
                         <div class="stat-card">
@@ -395,7 +400,7 @@ function searchLocation(location: string) {
                                         {{ item.user.nickname }}
                                         <Icon name="material-symbols:verified verified" class="verified" />
                                     </div>
-                                    <div class="talk-date">{{ item.date }}</div>
+                                    <div class="talk-date">{{dayjs(item.date).locale('zh-cn').fromNow().replaceAll(/\s+/g,'') }}</div>
                                 </div>
                             </div>
                             <div class="talk-content">

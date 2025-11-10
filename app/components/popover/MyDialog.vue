@@ -26,7 +26,6 @@ function handleClose() {
       </button>
 
       <div class="panel-content">
-        <MainCard />
       </div>
     </div>
   </Transition>

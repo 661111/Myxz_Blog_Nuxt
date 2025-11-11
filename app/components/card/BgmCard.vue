@@ -13,7 +13,7 @@ function handleClick() {
 </script>
 
 <template>
-<div class="banguimItem" >
+<div class="banguimItem" @click="handleClick">
 	<img
 		v-if="bangumiCollectionItem.subject.images?.common"
 		:src="bangumiCollectionItem.subject.images.common"
@@ -21,31 +21,14 @@ function handleClick() {
 		class="banguimImage"
 	>
 	<div class="title">
-		<a :herf="`https://bgm.tv/subject/${props.bangumiCollectionItem.subject_id}`">
-			{{ bangumiCollectionItem.subject.name_cn || bangumiCollectionItem.subject.name }}
-		</a>
+		{{ bangumiCollectionItem.subject.name_cn || bangumiCollectionItem.subject.name }}
 	</div>
 	<span class="dateSignpost">{{ getPostDate(bangumiCollectionItem.updated_at) }}</span>
-	<span class="score">
-		<svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor">
-			<path d="M12 20.1l5.82 3.682c1.066.675 2.37-.322 2.09-1.584l-1.543-6.926 5.146-4.667c.94-.85.435-2.465-.799-2.567l-6.773-.602L13.29.89a1.38 1.38 0 0 0-2.581 0l-2.65 6.53-6.774.602C.052 8.126-.453 9.74.486 10.59l5.147 4.666-1.542 6.926c-.28 1.262 1.023 2.26 2.09 1.585L12 20.099z"></path>
-		</svg>
-	  	{{ bangumiCollectionItem.subject.score || '暂无' }}
-	</span>
+	<span class="score">评分: {{ bangumiCollectionItem.subject.score || '暂无' }}</span>
 </div>
 </template>
 
 <style scoped lang="scss">
-// 变量定义
-$main-color: var(--db-main-color);
-$hover-color: var(--db-hover-color);
-$text-color: var(--db--text-color);
-$text-color-light: var(--db--text-color-light);
-$border-radius: var(--thyuu--size-radius);
-$card-normal-size: var(--thyuu--size-card-normal);
-$small-size: var(--thyuu--size-small);
-$animation: opacity .5s var(--animation-in) backwards, transform 1s var(--animation-in) backwards, filter .7s var(--animation-in);
-// 卡片样式表
       .banguimItem {
         display: flex;
         flex-wrap: wrap;

@@ -25,7 +25,6 @@ const API_CONFIG = {
     USER_API: 'https://bb.myxz.top/api/user/profile',
     PAGE_SIZE: 30,
 }
-const data_item = computed(() => talksState.value.talks)
 // ---------- 新增：用户信息状态管理 ----------
 interface UserProfile {
   username: string;
@@ -363,24 +362,24 @@ const yearlyTip = computed(() => talks)
                         <div class="stat-card">
                             <Icon name="material-symbols:post-add" class="stat-icon" />
                             <div class="stat-info">
-                                <div class="stat-label">碎碎念</div>
+                                <div class="stat-label">总发布</div>
                                 <div class="stat-value">{{ talks.length }}</div>
                             </div>
                         </div>
                         <div class="stat-card">
                             <Icon name="material-symbols:image" class="stat-icon" />
                             <div class="stat-info">
-                                <div class="stat-label">图片</div>
-                                <div class="stat-value"></div>
+                                <div class="stat-label">总标签</div>
+                                <div class="stat-value" v-for="item in talksState.talks.slice(-999, 1)">{{ item.tags.length }}</div>
                             </div>
                         </div>
-                        <div class="stat-card">
+                        <!-- <div class="stat-card">
                             <Icon name="material-symbols:music-note" class="stat-icon" />
                             <div class="stat-info">
-                                <div class="stat-label">音乐</div>
+                                <div class="stat-label"></div>
                                 <div class="stat-value">{{ talks.filter(t => t.content.music).length }}</div>
                             </div>
-                        </div>
+                        </div> -->
                     </div>
                     <div class="talks-list">
                         <div

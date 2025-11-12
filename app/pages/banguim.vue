@@ -4,10 +4,25 @@ import Pagination from '~/components/partial/Pagination.vue'
 import bgmCard from '~/components/Bangumi/bgmCard.vue'
 import useBangumi from '../composables/useBangumi'
 
+const banguimCard = [{
+  name: '克喵Kemeow',
+  link: 'https://blog-v3.kemeow.top/',
+  type: '页面基础',
+}, {
+  name: '风纪星辰',
+  link: 'https://www.thyuu.com/douban/',
+  type: '页面样式'
+}]
+
+useSeoMeta({
+	title: '追更历史',
+})
+
 const route = useRoute()
 const contentType = ref<ContentType>('anime')
 
 const layoutStore = useLayoutStore()
+const appConfig = useAppConfig()
 layoutStore.setAside(['blog-stats', 'blog-log'])
 
 const page = ref(1)
@@ -57,13 +72,7 @@ watch(contentType, (newVal) => {
   <div class="banguimContainer">
     <!-- 分类切换导航 -->
     <div class="banguimNav">
-      <ZButton 
-        v-for="(label, key) in subjectMap" 
-        :key="key" 
-        :text="label"
-        class="NavItem JiEun"
-        :primary="contentType === key" 
-        @click="contentType = key as ContentType"/>
+      <div class="NavItem JiEun" v-for="(label, key) in subjectMap" :class="{active:contentType === key}" @click="contentType = key as ContentType">{{ key }}</div>
     </div>
 
     <!-- 状态切换导航 -->
@@ -116,6 +125,16 @@ watch(contentType, (newVal) => {
         :total-pages="totalPages"
       />
     </Transition>
+
+    <div name="fade" class="banguimCopyright">
+      <div class="card_info" v-for="item in banguimCard" :key="item.link">
+        基于
+        <a class="copyright" :href="item.link">
+          {{ item.name }}
+        </a>
+        的{{ item.type }}
+      </div>
+    </div>
 
     <PostComment :key="route.path" />
   </div>
@@ -241,18 +260,8 @@ $animation: opacity .5s var(--animation-in) backwards, transform 1s var(--animat
     margin-top: 20px;
     color: $text-color-light;
     
-    .copyright a {
+    .copyright {
       color: hsl(var(--thyuu--main-color));
-      
-      &::before {
-        content: "\e667";
-        display: inline-block;
-        text-indent: 0;
-        margin: 0 .25em 0 0;
-        rotate: 45deg;
-        scale: .75;
-        transition: rotate .5s;
-      }
     }
   }
 }

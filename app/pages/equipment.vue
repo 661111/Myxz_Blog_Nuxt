@@ -6,6 +6,10 @@ import { useLayoutStore } from '~/stores/layout'
 const layoutStore = useLayoutStore()
 layoutStore.setAside(['blog-account', 'blog-stats', 'blog-tech', 'blog-site-info', 'blog-archive', 'blog-log'])
 
+useSeoMeta({
+	title: '我的装备',
+})
+
 // 新增状态管理
 const activeCategory = ref('硬件')
 

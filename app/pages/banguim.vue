@@ -1,67 +1,124 @@
 <script setup lang="ts">
 import type { CollectionType, ContentType } from '../composables/useBangumi'
-import * as from '../composables/useBangumi'
 import Pagination from '~/components/partial/Pagination.vue'
-
+import bgmCard from '~/components/Bangumi/bgmCard.vue'
 import useBangumi from '../composables/useBangumi'
 
 const route = useRoute()
-const contentType = 'anime'
+const contentType = ref<ContentType>('anime')
 
 const layoutStore = useLayoutStore()
 layoutStore.setAside(['blog-stats', 'blog-log'])
 
 const page = ref(1)
 const collectionType = ref<CollectionType>('wish')
-const { data, error, totalPages } = useBangumi(contentType, collectionType, page)
+
+// 关键修改：移除 isFetching，改用 status 计算 isLoading
+const { data, error, totalPages, refresh, status } = useBangumi(
+  contentType,
+  collectionType,
+  page
+)
+
+// 用 computed 生成加载状态（假设 status 为 'pending' 时表示加载中）
+const isLoading = computed(() => status.value === 'pending')
 
 const games = computed(() => data.value?.data || [])
 
-const orderMap = {
-	wish: '想看',
-	do: '在看',
-	collect: '看过',
+const subjectMap = {
+  book: '书籍',
+  anime: '追番',
+  game: '游戏',
 }
 
-watch(collectionType, () => {
-	page.value = 1
+const orderMap = {
+  wish: '想看',
+  do: '在看',
+  collect: '看过',
+}
+
+// 监听contentType和collectionType的联合变化
+watch(
+  () => [contentType.value, collectionType.value],
+  () => {
+    page.value = 1
+    refresh()
+  },
+  { immediate: true }
+)
+
+// 切换contentType时重置collectionType
+watch(contentType, (newVal) => {
+  collectionType.value = 'wish'
 })
 </script>
 
 <template>
-<div class="banguimContainer">
-  <div class="banguimNav">
-    <ZButton 
-      v-for="(label, key) in orderMap" 
-      :key="key" 
-      :text="label" 
-      :primary="collectionType === key" 
-      @click="collectionType = key as CollectionType"/>
-  </div>
-
-  <div v-if="error" class="error">
-    {{ error.message }}
-  </div>
-  
-  <!-- 修改4: 移除冗余循环，只显示当前分类内容 -->
-  <div class="banguimCard">
-    <div class="banguimList">
-      <bgmCard
-        v-for="game in games"
-        :key="game.subject_id"
-        :bangumi-collection-item="game"
-      />
+  <div class="banguimContainer">
+    <!-- 分类切换导航 -->
+    <div class="banguimNav">
+      <ZButton 
+        v-for="(label, key) in subjectMap" 
+        :key="key" 
+        :text="label"
+        class="NavItem JiEun"
+        :primary="contentType === key" 
+        @click="contentType = key as ContentType"/>
     </div>
-  </div>
 
-  <Pagination
-    v-if="totalPages > 1"
-    v-model="page"
-    :total-pages="totalPages"
-  />
-  
-  <PostComment :key="route.path" />
-</div>
+    <!-- 状态切换导航 -->
+    <div class="banguimNav">
+      <ZButton 
+        v-for="(label, key) in orderMap" 
+        :key="key" 
+        :text="label"
+        class="NavItem JiEun"
+        :primary="collectionType === key" 
+        @click="collectionType = key as CollectionType"/>
+    </div>
+
+    <!-- 错误提示 -->
+    <Transition name="fade">
+      <div v-if="error && !isLoading" class="error">
+        {{ error.message }}
+      </div>
+    </Transition>
+
+    <!-- <Transition name="fade">
+      <div v-if="isLoading" class="loading">
+        <div class="loading-ripple">
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+      </div>
+    </Transition> -->
+
+    <!-- 数据列表 - 优化为单个Transition -->
+    <Transition name="list" tag="div">
+      <div class="banguimCard">
+        <div class="banguimList" :key="contentType">
+          <bgmCard
+            v-for="game in games"
+            :key="`${game.subject_id}-${contentType}`"
+            :bangumi-collection-item="game"
+          />
+        </div>
+      </div>
+      
+    </Transition>
+
+    <!-- 分页 -->
+    <Transition name="fade">
+      <Pagination
+        v-if="totalPages > 1 && !isLoading"
+        v-model="page"
+        :total-pages="totalPages"
+      />
+    </Transition>
+
+    <PostComment :key="route.path" />
+  </div>
 </template>
 
 <style lang="scss" scoped>

@@ -21,7 +21,7 @@ function handleClick() {
 		class="banguimImage"
 	>
 	<div class="title">
-		<a :herf="`https://bgm.tv/subject/${props.bangumiCollectionItem.subject_id}`">
+		<a :href="`https://bgm.tv/subject/${props.bangumiCollectionItem.subject_id}`">
 			{{ bangumiCollectionItem.subject.name_cn || bangumiCollectionItem.subject.name }}
 		</a>
 	</div>

@@ -53,6 +53,7 @@ export const ITEMS_PER_PAGE = 20
 const TYPE_SUBJECT_MAP = {
 	book: 1,
 	anime: 2,
+	music: 3,
 	game: 4,
 } as const
 

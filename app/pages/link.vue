@@ -5,7 +5,7 @@ import FlinkTopCard from '../components/card/FlinkTopCard.vue'
 
 const appConfig = useAppConfig()
 const layoutStore = useLayoutStore()
-layoutStore.setAside(['blog-account', 'blog-stats', 'blog-tech', 'blog-site-info', 'blog-archive', 'blog-log'])
+layoutStore.setAside(['blog-stats', 'blog-tech', 'blog-site-info', 'blog-archive', 'blog-log'])
 
 const { data: postLink } = await useAsyncData(
 	'/link',

@@ -44,6 +44,7 @@ const subjectMap = {
   book: '书籍',
   anime: '追番',
   game: '游戏',
+  music: '音乐',
 }
 
 const orderMap = {
@@ -77,13 +78,9 @@ watch(contentType, (newVal) => {
 
     <!-- 状态切换导航 -->
     <div class="banguimNav">
-      <ZButton 
-        v-for="(label, key) in orderMap" 
-        :key="key" 
-        :text="label"
-        class="NavItem JiEun"
-        :primary="collectionType === key" 
-        @click="collectionType = key as CollectionType"/>
+      <buttom class="typeItem" v-for="(label, key) in orderMap" :key="key" @click="collectionType = key as CollectionType" :class="{active: collectionType === key}">
+        {{ label }}
+      </buttom>
     </div>
 
     <!-- 错误提示 -->
@@ -234,6 +231,26 @@ $animation: opacity .5s var(--animation-in) backwards, transform 1s var(--animat
       
       &.active {
         border-color: $main-color;
+      }
+    }
+    .typeItem { 
+      margin-right: 10px;
+      cursor: pointer;
+      font-size: 12px;
+      font-weight: 700;
+      border: 1px solid var(--db-border-color);
+      border-radius: 999rem;
+      border-radius: 999rem;
+      padding: 7px 25px;
+      color: var(--db--text-color-light);
+      // add
+      background: hsl(214deg 100% 50% / 50%);
+      -webkit-backdrop-filter: saturate(1.8) blur(20px);
+      backdrop-filter: saturate(1.8) blur(20px);
+      &.active {
+        color: var(--db-hover-color);
+        border-color: var(--db-hover-color);
+        cursor: not-allowed;
       }
     }
   }

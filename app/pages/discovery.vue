@@ -1,6 +1,6 @@
 <script setup lang="ts">
 const layoutStore = useLayoutStore()
-layoutStore.setAside(['blog-account', 'blog-stats', 'blog-tech', 'blog-site-info', 'blog-archive', 'blog-log'])
+layoutStore.setAside(['blog-stats', 'blog-tech', 'blog-site-info', 'blog-archive', 'blog-log'])
 // 状态管理
 const discoveryTabs = ref<'music' | 'video'>('music')
 

@@ -31,6 +31,40 @@ const blogStats = [{
 
 <template>
 <ZWidget card title="博客统计">
+	<div class="avatar">
+        <div class="avatar-img">
+          	<img :src="appConfig.favicon">
+        </div>
+		<div class="author-info">
+			<div class="author-info__name">
+				{{ appConfig.title }}
+			</div>
+			<div class="author-info__description">
+				{{ appConfig.subtitle }}
+			</div>
+		</div>
+    </div>
 	<ZDlGroup :items="blogStats" size="small" />
 </ZWidget>
 </template>
+<style lang="scss">
+.top {
+	display: flex;
+	gap: 5px;
+	margin-bottom: 5px;
+
+	.avatar-img {
+		width: 60px;
+		height: 60px;
+
+		img {
+			width: 100%;
+			height: 100%;
+			-o-object-fit: cover;
+			object-fit: cover;
+			border-radius: 10px;
+			transition: filter 375ms ease-in 0.2s, transform 0.3s;
+		}
+	}
+}
+</style>

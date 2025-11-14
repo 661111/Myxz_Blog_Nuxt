@@ -9,7 +9,7 @@ useSeoMeta({
 const birthYear = appConfig.component.stats.birthYear
 
 const layoutStore = useLayoutStore()
-layoutStore.setAside(['blog-account', 'blog-stats', 'blog-tech', 'blog-site-info', 'blog-archive', 'blog-log'])
+layoutStore.setAside(['blog-stats', 'blog-tech', 'blog-site-info', 'blog-archive', 'blog-log'])
 
 const { data: listRaw } = await useArticleIndex()
 const { listSorted, isAscending, sortOrder } = useArticleSort(listRaw)

@@ -60,7 +60,7 @@ $status_backgroud: var(--status_backgroud);
 
 .avatar {
 	display: flex;
-	gap: 5px;
+	gap: 10px;
 	margin-bottom: 5px;
 
 	.avatar-img {

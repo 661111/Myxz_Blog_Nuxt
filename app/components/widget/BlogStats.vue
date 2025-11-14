@@ -48,7 +48,7 @@ const blogStats = [{
 </ZWidget>
 </template>
 <style lang="scss">
-.top {
+.avatar {
 	display: flex;
 	gap: 5px;
 	margin-bottom: 5px;

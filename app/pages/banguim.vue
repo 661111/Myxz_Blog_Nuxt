@@ -141,7 +141,7 @@ watch(contentType, (newVal) => {
 // 变量定义
 $main-color: var(--db-main-color);
 $hover-color: var(--db-hover-color);
-$text-color: var(--db--text-color);
+$text-color: var(--db--text-color-light);
 $text-color-light: var(--db--text-color-light);
 $border-radius: var(--thyuu--size-radius);
 $card-normal-size: var(--thyuu--size-card-normal);

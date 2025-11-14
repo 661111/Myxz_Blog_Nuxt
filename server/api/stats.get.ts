@@ -1,3 +1,6 @@
+const appConfig = useAppConfig()
+const runtimeConfig = useRuntimeConfig()
+
 interface StatsEntry {
 	posts: number
 	words: number

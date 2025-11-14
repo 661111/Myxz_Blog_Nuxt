@@ -1,6 +1,11 @@
 <script setup lang="ts">
 import { NuxtTime } from '#components'
 
+import dayjs from 'dayjs';
+import relativeTime from 'dayjs/plugin/relativeTime';
+import 'dayjs/locale/zh-cn';
+dayjs.extend(relativeTime)
+
 const appConfig = useAppConfig()
 const runtimeConfig = useRuntimeConfig()
 
@@ -42,20 +47,25 @@ const blogStats = [{
 			<div class="author-info__description">
 				{{ appConfig.subtitle }}
 			</div>
+			<div class="status"> 
+				在{{ dayjs(runtimeConfig.public.buildTime).locale('zh-cn').fromNow().replaceAll(/\s+/g,'') }}
+			</div>
 		</div>
     </div>
 	<ZDlGroup :items="blogStats" size="small" />
 </ZWidget>
 </template>
 <style lang="scss">
+$status_backgroud: var(--status_backgroud);
+
 .avatar {
 	display: flex;
 	gap: 5px;
 	margin-bottom: 5px;
 
 	.avatar-img {
-		width: 60px;
-		height: 60px;
+		width: 70px;
+    	height: 70px;
 
 		img {
 			width: 100%;
@@ -64,6 +74,20 @@ const blogStats = [{
 			object-fit: cover;
 			border-radius: 10px;
 			transition: filter 375ms ease-in 0.2s, transform 0.3s;
+		}
+	}
+	.author-info {
+		.author-info__name {
+			font-size: 1.1em;
+			color: var(--c-text);
+			font-weight: 550;
+		}
+		.status {
+			background: $status_backgroud;
+			--status_backgroud: rgba(60, 120, 60, .7);
+			text-align: center;
+			border-radius: 0.4rem;
+			margin-top: 7.7px;
 		}
 	}
 }

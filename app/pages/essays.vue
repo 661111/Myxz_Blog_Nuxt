@@ -649,10 +649,15 @@ const yearlyTip = computed(() => talks)
 
     .profile {
         background: var(--ld-bg-card);
-        border: 1px solid var(--c-border);
-        border-radius: 0.8em;
-        padding: 1em;
+        border-radius: 8px;
+        padding: 1rem;
+        box-shadow: 0 0 0 1px var(--c-bg-soft);
+        margin-bottom: 1rem;
+        display: flex;
+        gap: 0.5rem;
+        animation: float-in 0.3s backwards;
         transition: border-color 0.3s;
+        
 
         .header {
             align-items: flex-start;
@@ -711,13 +716,15 @@ const yearlyTip = computed(() => talks)
         
         .stat-card {
             background: var(--ld-bg-card);
-            border: 1px solid var(--c-border);
-            border-radius: 0.8em;
+            border-radius: 8px;
             padding: 1rem;
+            box-shadow: 0 0 0 1px var(--c-bg-soft);
+            margin-bottom: 1rem;
             display: flex;
-            align-items: center;
-            gap: 1rem;
+            gap: 0.5rem;
+            animation: float-in 0.3s backwards;
             transition: border-color 0.3s;
+            align-items: center;
             
             .stat-icon {
                 font-size: 1.8rem;

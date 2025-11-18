@@ -182,12 +182,6 @@ watch(musicList, () => {
     div
       .music-container
         table.w-full
-          thead
-            tr.head(class="")
-              <th class="py-4 pl-4 text-start">封面</th>
-              <th class="py-4 pl-4 text-start">封面</th>
-              <th class="py-4 text-start">名称</th>
-              <th class="py-4 pr-4 text-end">操作</th>
           tbody.portrait
             tr.info(class="" v-for="(list, index) in musicList" :key="index")
               td.td-long.td-sort

@@ -55,12 +55,11 @@ withDefaults(defineProps<{
 	> dl {
 		display: grid;
 		grid-template-columns: 1fr 2fr;
-		gap: 8%;
+		// gap: 8%;
 		padding: 0.2em 0;
 
 		>dt {
 			font-size: inherit;
-			text-align: end;
 		}
 	}
 }

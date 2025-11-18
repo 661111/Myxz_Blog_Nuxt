@@ -37,6 +37,7 @@
     "@vueuse/nuxt": "catalog:util",
     "@vueuse/router": "catalog:util",
     "abcjs": "catalog:content",
+    "aplayer": "^1.10.1",
     "ci-info": "catalog:framework",
     "date-fns": "catalog:util",
     "dayjs": "^1.11.19",
@@ -53,7 +54,8 @@
     "vue": "catalog:framework",
     "vue-router": "catalog:framework",
     "vue-tippy": "catalog:ui",
-    "vue-virtual-scroller": "catalog:ui"
+    "vue-virtual-scroller": "catalog:ui",
+    "vue3-aplayer": "^1.7.3"
   },
   "devDependencies": {
     "@antfu/eslint-config": "catalog:quality",

@@ -1,74 +1,42 @@
 <script setup lang="ts">
-import Post_archive_card_list from './post_archive_card_list.vue';
-import Post_Category_card_list from './post_category_card_list.vue';
+import Tab from '~/components/content/Tab.vue'  //分页管理
+import CustomThemes from './custom.vue' // 主题控制
+import TogglesButtom from './togglesButtom.vue'  // 控制中心
+import MusicMain from './musicMain.vue'  // 音乐界面
+import About_info from './about_info.vue'  // 关于界面
 </script>
 
 <template>
-  <div class="group">
-    <div class="console-card-group-left">
-
-    </div>
-    <div class="console-card-group-right">
-      <div class="tags">
-        <Post_Category_card_list />
-      </div>
-      <div class="history">
-        <Post_archive_card_list />
-      </div>
-    </div>
+  <div class="has-border">
+    <Tab :tabs="['全局', '功能', '音乐', '关于']">  <!-- 分页标头 -->
+      <template v-slot:tab1>  <!-- 内容识别（与分页标头绑定） -->
+        <div class="customizer-section">  <!-- 分页子元素（默认） -->
+          <CustomThemes />  <!-- 与主题控制绑定示例 -->
+        </div>
+      </template>
+      <template v-slot:tab2>
+        <div class="customizer-section">
+          <TogglesButtom />
+        </div>
+      </template>
+      <template v-slot:tab3>
+        <div class="customizer-section">
+          <MusicMain />
+        </div>
+      </template>
+      <template v-slot:tab4>
+        <div class="customizer-section">
+          <About_info />
+        </div>
+      </template>
+    </Tab>
   </div>
 </template>
-
 <style lang="scss" scoped>
-.group {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  transform: translateY(20px);
-  transition: .3s;
-  max-width: 1400px;
-  gap: .5rem;
-  max-height: calc(100dvh - 180px);
-  max-width: calc(100% - 64px);
-  height: 800px;
-
-  .console-card-group-left {
-    width: 40%;
-    height: 100%;
-    max-width: 550px;
-  }
-
-  .console-card-group-right {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    height: 100%;
-    width: 60%;
-    overflow: hidden;
-    max-width: 900px;
-
-    .tags {
-      background: var(--heo-maskbg);
-      border-radius: 12px;
-      overflow: hidden;
-      border: var(--style-border);
-      box-shadow: var(--heo-shadow-border);
-      padding: 32px 36px 36px 36px;
-      display: flex;
-      flex-direction: column;
-      gap: 24px;
-      height: calc(100% - 139px); //额外CSS
-    }
-
-    .history {
-      margin-top: 8px;
-      padding: 0;
-      background: 0 0;
-      box-shadow: none;
-      border: none;
-      overflow: hidden;
-      border-radius: 0;
-    }
-  }
+.has-border {
+  background-color: var(--ld-bg-card);
+  border: 1px solid var(--c-border);
+  border-radius: .8em;
+  padding: 1.2em;
 }
 </style>

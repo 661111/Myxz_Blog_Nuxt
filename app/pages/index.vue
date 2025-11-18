@@ -36,7 +36,7 @@ const listRecommended = computed(() => sort(
 	<ZhiluHeader to="/" />
 </div>
 
-<PostSlide v-if="listRecommended.length && page === 1 && !category" :list="listRecommended" />
+<PostSlide v-if="listRecommended.length && page === 1 && !category" :list="listRecommended"/>
 
 <div class="post-list">
 	<div class="toolbar">

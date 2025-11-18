@@ -21,11 +21,17 @@ function handleClose() {
 
   <Transition name="float-in">
     <div v-if="show" class="popover-panel">
-      <button class="close-btn" aria-label="关闭" @click="handleClose">
-        <Icon name="ph:x-bold" />
-      </button>
+      <div class="panel-header">
+        <h2>
+          控制台
+        </h2>
+        <button class="close-btn" aria-label="关闭" @click="handleClose">
+          <Icon name="ph:x-bold" />
+        </button>
+      </div>
 
       <div class="panel-content">
+        <MainCard />
       </div>
     </div>
   </Transition>
@@ -51,9 +57,9 @@ function handleClose() {
   left: 50%;
   transform: translate(-50%, -50%);
   width: 95%;
-  max-width: 700px;
-  max-height: 80vh;
-  max-height: 80dvh;
+  max-height: 85vh;
+  max-height: 85dvh;
+  max-width: 500px;
   border: 1px solid var(--c-primary);
   border-radius: 1em;
   box-shadow: 0 0.25em 0.5em var(--ld-shadow);

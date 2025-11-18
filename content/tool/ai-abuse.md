@@ -126,3 +126,14 @@ link: https://mp.weixin.qq.com/s/5fKFmC53MiMaWow4drr0sA
 AI 爆发带来效率的飞跃，也引发内容生态的种种乱象。回到2022年底我和AI对话的那个夜晚，我还在畅想未来——但在技术曲折推进的进程中，我们也要务实，对虚假内容、版权争议、算法偏见、数据污染，乃至人对技术的过度依赖交出答卷。
 
 [^1]: DeepSeek爆火之后，网络出现了很多针对DeepSeek在电商、自媒体、教育、编程等领域应用的培训课程，内容包括本地部署、提示语等，有些为免费，有些则须支付几十到上千元不等的费用。培训的质量参差不齐，用户褒贬不一，很多所谓培训被指在“贩卖焦虑”、“割韭菜”，之前ChatGPT大火时也有这种现象出现，引起了业内人士的警惕。
+
+
+::tab-card-xyg
+---
+title: '九尾胡列娜'
+icon: 'https://gameapp-1252317822.file.myqcloud.com/img/4085e4347d0cdb88d860a56244232005.png'
+Character_image: 'https://gameapp-1252317822.file.myqcloud.com/img/a11a88498e1406540dca6ce074b6bef2.png'
+Manufacturer_logo: 'https://gameapp-1252317822.file.myqcloud.com/img/a11a88498e1406540dca6ce074b6bef2.png'
+desc: '胡列娜施展仪式，提高自身攻击力，对血量最低的敌方释放多枚心火， 敌方魂师死亡时，胡列娜提高最大生命值，且提高全队能量。 觉醒效果： 敌方已损失的生命值越多，追击越多枚心火造成伤害。'
+---
+::

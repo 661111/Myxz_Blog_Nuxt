@@ -41,7 +41,7 @@ const myDialogStore = useMyDialogStore()
 	<footer class="sidebar-footer">
 		<div class="customizer-toggle">
 			<button @click="myDialogStore.open()">
-				<Icon name="ph:magnifying-glass-bold" />
+				<Icon name="ph:swatches-bold" />
 			</button>
 		</div>
 		<ThemeToggle />

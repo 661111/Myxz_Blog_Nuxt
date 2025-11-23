@@ -34,7 +34,7 @@ export const siteLinkItems: siteTabs[] = [
         itemnumber: '3',
         Item: [
             {
-                name: 'EdgeOne镜像',
+                name: '博客镜像',
                 image: 'https://sourceimage.s3.bitiful.net/myxz.avif',
                 link: 'https://blog-v3.edgeone.mirrors.myxz.top',
                 desc: "",
@@ -42,33 +42,19 @@ export const siteLinkItems: siteTabs[] = [
                     { 
                         name: 'EdgeOne', 
                         image: '/assets/img/link/service/edgeone.jpg', 
-                        link: "https://edgeone.ai/"
-                    }
-                ],
-            },{
-                name: "Vercel镜像",
-                image: "https://sourceimage.s3.bitiful.net/myxz.avif",
-                link: "https://blog-v3.vercel.mirrors.myxz.top",
-                desc: "",
-                service: [
+                        link: "https://blog-v3.edgeone.mirrors.myxz.top"
+                    },
                     {
                         name: "Vercel",
                         image: "/assets/img/link/service/vercel.jpg",
-                        link: "https://vercel.com"
-                    }
-                ]
-            },{
-                name: "Netlify镜像",
-                image: "https://sourceimage.s3.bitiful.net/myxz.avif",
-                link: "https://blog-v3.netifly.mirrors.myxz.top",
-                desc: "",
-                service: [
+                        link: "https://blog-v3.vercel.mirrors.myxz.top"
+                    },
                     {
                         name: "Netlify",
                         image: "/assets/img/link/service/netlify.jpg",
-                        link: "https://Netlify.com"
+                        link: "https://blog-v3.netifly.mirrors.myxz.top"
                     }
-                ]
+                ],
             },
         ]
     },

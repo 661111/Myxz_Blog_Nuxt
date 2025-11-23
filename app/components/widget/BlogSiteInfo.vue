@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { ref, onMounted } from 'vue';
 import { siteLinkItems, siteLinkWidgetInfo } from '../../sitelink'
+import { server } from 'typescript';
 const activeTab = ref(0); // 默认激活第一个标签页
 </script>
 
@@ -15,28 +16,19 @@ const activeTab = ref(0); // 默认激活第一个标签页
         </div>
         <div class="sitelink-list">
           <div class="sitelink-item" v-for="(site, index) in siteLinkItems[activeTab].Item" :key="index">
-            <img width="80" height="80" :alt="site.name" class="cover" :src="site.image">
+            <!-- <img width="80" height="80" :alt="site.name" class="cover" :src="site.image"> -->
             <main>
               <header class="header">
                 <div class="title">
-                  <a :href="site.link" rel="noopener noreferrer" target="_blank">
-                    {{ site.name }}
-                  </a>
-                  <span class="iconify i-ph:link-duotone" aria-hidden="true" style="font-size: 0.8em;"></span>
+                  {{ site.name }}
                 </div>
               </header>
               <section>
                 <div class="badges" v-for="service in site.service" :key="service.name">
-                  <a :href="service.link" rel="noopener noreferrer" target="_blank" class="badge badge-img">
-                    <img :alt="service.name" class="badge-icon" :src="service.image">
-                    <span class="badge-text">
-                      {{ service.name }}
-                    </span>
-                  </a>
+                  <Badge :img="service.image" :link="service.link" :name="service.name" style="margin-bottom: -3rem;">
+                    {{ service.name }}
+                  </Badge>
                 </div>
-                <p class="description">
-                  {{ site.desc }}
-                </p>
               </section>
               <!-- <footer>
                 <h5 class="rss">
@@ -73,7 +65,9 @@ const activeTab = ref(0); // 默认激活第一个标签页
   .sitelink-item img{
     border-radius: .8em;
   }
-  .badges {
-    margin-bottom: 1.5rem;
+  .sitelink-item section {
+    display: flex;
+    margin-top: 10px;
+    flex-wrap: wrap;
   }
 </style>

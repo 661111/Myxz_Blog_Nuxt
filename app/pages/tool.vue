@@ -7,7 +7,7 @@ useSeoMeta({
 const layoutStore = useLayoutStore()
 layoutStore.setAside(['blog-log'])
 
-const { data: listRaw } = useArticleIndex('tool/%')
+const { data: listRaw } = useArticleIndex('toolHelper/%')
 const { listSorted, isAscending, sortOrder } = useArticleSort(listRaw)
 const { category, categories, listCategorized } = useCategory(listSorted)
 

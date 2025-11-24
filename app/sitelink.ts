@@ -24,7 +24,7 @@ export interface service {
 
 export const siteLinkWidgetInfo: siteInfo[] = [
     {
-        title: '站点信息',
+        title: '站点线路',
     }
 ]
 
@@ -37,7 +37,7 @@ export const siteLinkItems: siteTabs[] = [
                 name: '博客镜像',
                 image: 'https://sourceimage.s3.bitiful.net/myxz.avif',
                 link: 'https://blog-v3.edgeone.mirrors.myxz.top',
-                desc: "",
+                desc: "可以通过不同线路去访问",
                 service: [
                     { 
                         name: 'EdgeOne', 

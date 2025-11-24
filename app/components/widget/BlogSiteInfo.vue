@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import { ref, onMounted } from 'vue';
 import { siteLinkItems, siteLinkWidgetInfo } from '../../sitelink'
-import { server } from 'typescript';
 const activeTab = ref(0); // 默认激活第一个标签页
 </script>
 
@@ -21,6 +20,9 @@ const activeTab = ref(0); // 默认激活第一个标签页
               <header class="header">
                 <div class="title">
                   {{ site.name }}
+                </div>
+                <div class="desc">
+                  {{ site.desc }}
                 </div>
               </header>
               <section>
@@ -48,26 +50,39 @@ const activeTab = ref(0); // 默认激活第一个标签页
 
 <style src="../../assets/css/widget/tab.css" scoped></style>
 <style src="../../assets/css/widget/badge.css"></style>
-<style lang="css" scoped>
-  .sitelink-list {
-    gap: 1rem;
-    display: grid;
-    margin-top: 0.5rem;
-  }
+<style lang="scss" scoped>
+.sitelink-list {
+  gap: 1rem;
+  display: grid;
+  margin-top: 0.5rem;
   .sitelink-item {
     display: flex;
     gap: 1rem;
+
+    main{
+      align-items: center;
+      display: grid;
+
+      .header {
+        display: flex;
+        gap: 5px;
+        justify-content: space-between;
+        align-items: center;
+
+        .title {
+          font-weight: 700;
+        }
+        .desc {
+          font-weight: 500;
+          font-size: 10px;
+        }
+      }
+      section {
+        display: flex;
+        margin-top: 5px;
+        flex-wrap: wrap;
+      }
+    }
   }
-  .sitelink-item main{
-    align-items: center;
-    display: grid;
-  }
-  .sitelink-item img{
-    border-radius: .8em;
-  }
-  .sitelink-item section {
-    display: flex;
-    margin-top: 10px;
-    flex-wrap: wrap;
-  }
+}
 </style>

@@ -22,7 +22,8 @@
     "lint:fix": "eslint --fix && stylelint '**/*.{vue,scss}' --fix",
     "new": "tsx scripts/new-blog.ts",
     "check:feed": "tsx scripts/framework/get-feed.ts",
-    "check:feed/all": "tsx scripts/framework/check-all-feeds.ts"
+    "check:feed/all": "tsx scripts/framework/check-all-feeds.ts",
+    "generate:static":"NITRO_PRESET=static nuxt generate"
   },
   "dependencies": {
     "@nuxt/content": "catalog:content",

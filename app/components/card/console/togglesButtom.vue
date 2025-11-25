@@ -26,8 +26,7 @@ const toggle: ToggleItem[] = [
     click: '.z-comment', 
     desc: '控制全站评论区的显示/隐藏', 
     VisibilityAction: 'Toggle'
-  },
-  // 可扩展更多控制项...
+  }
 ];
 
 // ------------------------------
@@ -93,23 +92,6 @@ const handleActionClick = (item: ToggleItem): void => {
 };
 </script>
 <template>
-  <section class="z-slide" v-show="elementVisibility['z-slide']">
-    <h2>精选(推荐)文章</h2>
-    <p>这里是首页的精选文章列表...</p>
-    <ul>
-      <li>文章1：Vue 3 响应式原理</li>
-      <li>文章2：TypeScript 最佳实践</li>
-      <li>文章3：前端工程化入门</li>
-    </ul>
-  </section>
-
-  <!-- 评论区（类名 z-comment） -->
-  <section class="z-comment" v-show="elementVisibility['z-comment']">
-    <h2>文章评论区</h2>
-    <p>用户评论内容...</p>
-    <div class="comment">评论1：这篇文章很有用！</div>
-    <div class="comment">评论2：期待更多细节...</div>
-  </section>
   <div class="feature-toggles">
     <label class="toggle-switch" v-for="(toggle, index) in toggle" :key="index">
       <input type="checkbox" @click="handleActionClick(toggle)" :class="['control-btn', toggle.VisibilityAction.toLowerCase()]">

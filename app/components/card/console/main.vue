@@ -21,7 +21,7 @@ import About_info from './about_info.vue'  // 关于界面
       </template>
       <template v-slot:tab3>
         <div class="customizer-section">
-          <MusicMain />
+          <!-- <MusicMain /> -->
         </div>
       </template>
       <template v-slot:tab4>

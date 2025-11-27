@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 import { ref, computed } from 'vue'
-import equipment from '~/equipment'
+import {equipment} from '~/equipment'
 import { useLayoutStore } from '~/stores/layout'
 
 const layoutStore = useLayoutStore()
@@ -29,6 +29,8 @@ function goComment(content: string) {
     textarea.scrollIntoView({ behavior: 'smooth', block: 'center' })
   }
 }
+
+const categorytest = filteredEquipment.value
 </script>
 
 <template>
@@ -38,14 +40,21 @@ function goComment(content: string) {
       <div class="categories-tabs">
         <div class="tabs-container">
           <div 
-            v-for="category in ['硬件', '外设']" 
+            v-for="category in ['硬件','外设']" 
             :key="category"
             class="category-tab"
             :class="{ active: activeCategory === category }"
             @click="handleTabClick(category)"
-            style="--tab-color: var(--c-primary)"
+            :style="{'--tab-color': category === '硬件' ? '#3af' : category === '外设' ? '#3ba': '' }"
           >
-            {{ category }}
+            <div v-if="category === '硬件'">
+              <icon name="ph:laptop-bold" />
+              {{ category }}
+            </div>
+            <div v-if="category === '外设'" style="--category-color: ">
+              <icon name="ph:package-bold" />
+              {{ category }}
+            </div>
           </div>
         </div>
       </div>
@@ -66,7 +75,10 @@ function goComment(content: string) {
                 <h3 class="card-name">
                   {{ item.name }}
                 </h3>
-                <div class="card-category" style="--category-color: var(--c-primary)">
+                <div class="card-category" v-if="item.categroy === '硬件'" style="--category-color: #3af">
+                  {{ item.categroy }}
+                </div>
+                <div class="card-category" v-if="item.categroy === '外设'" style="--category-color: #3ba">
                   {{ item.categroy }}
                 </div>
               </div>
@@ -84,7 +96,7 @@ function goComment(content: string) {
                 </div>
               </div>
               <div class="card-tags">
-                <span class="tag" v-for="([key, value]) in Object.entries(item.tag ?? {})" :key="key">
+                <span class="tag" v-for="([key, value]) in Object.entries(item.tag ?? {})" :key="key" style="----category-color: #3af">
                   {{ value }}
                 </span>
               </div>

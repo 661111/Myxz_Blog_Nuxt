@@ -5,7 +5,7 @@ export type manufacturers = {
   graphics_card_info: 'AMD' | 'NVIDA'
   ssd_info: 'SSD' | 'NVME SSD'
 }
-export default [
+export const equipment: item[] = [
   {
     name: "天选4",
     image: "/assets/img/equipment/tianxuan.svg",

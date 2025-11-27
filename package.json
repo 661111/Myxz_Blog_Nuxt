@@ -23,9 +23,10 @@
     "new": "tsx scripts/new-blog.ts",
     "check:feed": "tsx scripts/framework/get-feed.ts",
     "check:feed/all": "tsx scripts/framework/check-all-feeds.ts",
-    "generate:static":"NITRO_PRESET=static nuxt generate"
+    "generate:static": "NITRO_PRESET=static nuxt generate"
   },
   "dependencies": {
+    "@meting/core": "^1.6.0",
     "@nuxt/content": "catalog:content",
     "@nuxt/icon": "catalog:ui",
     "@nuxt/image": "catalog:ui",
@@ -39,12 +40,14 @@
     "@vueuse/router": "catalog:util",
     "abcjs": "catalog:content",
     "aplayer": "^1.10.1",
+    "axios": "^1.13.2",
     "ci-info": "catalog:framework",
     "date-fns": "catalog:util",
     "dayjs": "^1.11.19",
     "embla-carousel-autoplay": "catalog:ui",
     "embla-carousel-vue": "catalog:ui",
     "embla-carousel-wheel-gestures": "catalog:ui",
+    "meting": "^2.0.2",
     "minisearch": "catalog:util",
     "nuxt": "catalog:framework",
     "parse-domain": "catalog:util",
@@ -56,7 +59,8 @@
     "vue-router": "catalog:framework",
     "vue-tippy": "catalog:ui",
     "vue-virtual-scroller": "catalog:ui",
-    "vue3-aplayer": "^1.7.3"
+    "vue3-aplayer": "^1.7.3",
+    "vuex": "^4.1.0"
   },
   "devDependencies": {
     "@antfu/eslint-config": "catalog:quality",
@@ -64,6 +68,7 @@
     "@dxup/nuxt": "catalog:framework",
     "@iconify/json": "catalog:ui",
     "@prettier/plugin-pug": "^3.4.2",
+    "@xizeyoupan/meting": "^2.0.7",
     "@zinkawaii/stylelint-config": "catalog:quality",
     "cspell": "catalog:quality",
     "eslint": "catalog:quality",
@@ -85,7 +90,7 @@
     "stylelint": "catalog:quality",
     "stylus": "^0.64.0",
     "tsx": "catalog:framework",
-    "typescript": "catalog:framework",
+    "typescript": "^5.9.3",
     "unplugin-yaml": "catalog:framework"
   }
 }

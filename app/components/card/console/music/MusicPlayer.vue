@@ -1,231 +1,205 @@
-// components/Player.vue
-<script setup lang="ts">
-import { ref, watch, onMounted } from 'vue';
-import type { MusicItem } from '~/types/music';
-import LyricDisplay from './lrc.vue';
+<script lang="ts" setup>
+import { ref, onMounted, onBeforeUnmount } from 'vue'
+import Meting from '@xizeyoupan/meting'
 
-const props = defineProps<{
-  playlist: MusicItem[];
-  initialIndex?: number;
-}>();
+// 播放器实例引用
+const player = ref<any>(null)
+const playerContainer = ref<HTMLElement | null>(null)
 
-const currentSong = ref(props.playlist[props.initialIndex || 0]);
-const audioRef = ref<HTMLAudioElement>();
-const isPlaying = ref(false);
-const currentTime = ref(0);
-const duration = ref(0);
-const progressBar = ref(0);
-const lyrics = ref<string[]>([]);
-const currentLine = ref(0);
+// 播放状态
+const isPlaying = ref(false)
+const currentSong = ref('')
 
-// 音频控制
-const play = () => {
-  if (audioRef.value) {
-    audioRef.value.play().then(() => {
-      isPlaying.value = true;
-    });
-  }
-};
-
-const pause = () => {
-  audioRef.value?.pause();
-  isPlaying.value = false;
-};
-
-const togglePlay = () => {
-  if (isPlaying.value) {
-    pause();
-  } else {
-    play();
-  }
-};
-
-// 时间更新
-watch(() => audioRef.value?.currentTime, (newTime) => {
-  currentTime.value = newTime;
-  progressBar.value = (newTime / duration.value) * 100;
-});
-
-// 歌曲切换
-const selectSong = (index: number) => {
-  currentSong.value = props.playlist[index];
-  loadSong();
-};
-
-// 加载歌曲
-const loadSong = async () => {
-  if (!audioRef.value) return;
-  
-  // 重置状态
-  audioRef.value.pause();
-  currentTime.value = 0;
-  progressBar.value = 0;
-  isPlaying.value = false;
-  
-  // 加载音频
-  audioRef.value.src = currentSong.value.url;
-  await audioRef.value.load();
-  
-  // 获取歌词
-  const lrcResponse = await fetch(currentSong.value.lrc);
-  const lrcText = await lrcResponse.text();
-  lyrics.value = parseLyrics(lrcText);
-  
-  // 设置时长
-  duration.value = audioRef.value.duration;
-  play();
-};
-
-// 解析歌词
-function parseLyrics(text: string) {
-  const lines = text.split('\n');
-  return lines.map(line => {
-    const match = line.match(/\[(\d{2}):(\d{2})\.(\d{2,3})\](.*)/);
-    if (match) {
-      const time = (+match[1] * 60 + +match[2]) * 1000 + (+match[3].slice(0, 2)) * 10;
-      return { time, text: match[4] };
-    }
-    return null;
-  }).filter(Boolean);
+// 第三方歌曲配置 (示例数据)
+const songConfig = {
+  server: 'netease', // 音乐平台 (qq/netease/xiami/etc)
+  type: 'playlist',  // 类型: song/playlist/album/artist/search
+  id: '156399885',   // 歌曲/歌单ID
+  // 其他可选配置:
+  // order: 'random', // 播放顺序
+  // volume: 0.7,     // 初始音量
 }
 
-// 进度条拖拽
-const handleProgressClick = (e: MouseEvent) => {
-  const rect = audioRef.value?.getBoundingClientRect();
-  const x = e.clientX - rect.left;
-  const percent = x / rect.width;
-  currentTime.value = percent * duration.value;
-  audioRef.value.currentTime = percent * duration.value;
-};
+// 初始化播放器
+const initPlayer = () => {
+  if (!playerContainer.value) return
 
+  player.value = new Meting({
+    ...songConfig,
+    container: playerContainer.value,
+    autoplay: false,
+    mini: false,
+    fixed: false,
+    audio: {
+      theme: '#ff2d55',
+    },
+    // 歌词显示设置
+    lyrics: {
+      show: true,
+      color: '#ff2d55',
+      size: 16,
+    }
+  })
+
+  // 监听播放器事件
+  player.value.on('canplay', () => {
+    isPlaying.value = true
+    currentSong.value = player.value.currentSong.name
+  })
+
+  player.value.on('pause', () => {
+    isPlaying.value = false
+  })
+
+  player.value.on('play', () => {
+    isPlaying.value = true
+  })
+
+  player.value.on('ended', () => {
+    playNext()
+  })
+}
+
+// 播放控制方法
+const playPrev = () => player.value?.prev()
+const playNext = () => player.value?.next()
+const togglePlay = () => player.value?.toggle()
+
+// 组件挂载时初始化
 onMounted(() => {
-  loadSong();
-});
-</script>
+  // 确保 DOM 已渲染
+  setTimeout(initPlayer, 100)
+})
 
+// 清理播放器实例
+onBeforeUnmount(() => {
+  player.value?.destroy()
+})
+</script>
 <template>
-  <div class="player-container">
-    <!-- 导航栏 -->
-    <div class="navbar">
-      <div class="logo">APLAYER</div>
-      <ul class="nav-tabs">
-        <li :class="{ active: $route.name === 'index' }">首页</li>
-        <li :class="{ active: $route.name === 'playlist' }">歌单</li>
-      </ul>
+  <div class="PlayerInfo">
+    <div class="cover">
+      <NuxtImg src="https://sourceimage.s3.bitiful.net/myxz.avif" class="image"/>
+    </div>
+    <div class="details">
+      <div class="title">
+        cscs
+      </div>
+      <div class="artlist">
+        cscs
+      </div>
+    </div>
+  </div>
+  <div class="controls">
+    <div class="cardLeft">
+      <button class="control-btn lyric-btn" >
+        <Icon name="mdi:text" />
+      </button>
+      <button class="control-btn playlist-btn">
+        <Icon name="mdi:playlist-music" />
+      </button>
     </div>
 
-    <!-- 主内容区 -->
-    <div class="main-content">
-      <!-- 歌曲列表 -->
-      <div class="song-list">
-        <div v-for="(song, index) in playlist" :key="song.name" 
-             @click="selectSong(index)" 
-             :class="{ active: song === currentSong }">
-          
-          <div class="info">
-            <h3>{{ song.name }}</h3>
-            <p>{{ song.artist }}</p>
-          </div>
-        </div>
-      </div>
+    <div class="cardCenter">
+      <button class="control-btn" title="上一首" @click="playPrev">
+        <Icon name="mdi:skip-previous" aria-hidden="true"/>
+      </button>
+      <button class="play-btn" title="播放" @click="togglePlay">
+        <Icon name="mdi:play" aria-hidden="true"/>
+      </button>
+      <button class="control-btn" title="下一首" @click="playNext">
+        <Icon name="mdi:skip-next" aria-hidden="true"/>
+      </button>
+      <button class="control-btn repeat-btn" title="循环模式: 关闭">
+        <Icon name="mdi:repeat-off" aria-hidden="true"/>
+      </button>
+    </div>
 
-      <!-- 控制面板 -->
-      <div class="control-panel">
-        <button @click="togglePlay">
-          <span v-if="isPlaying">⏸️</span>
-          <span v-else>▶️</span>
-        </button>
-        
-        <div class="progress-bar" @click="handleProgressClick">
-          <div class="progress" :style="{ width: `${progressBar}%` }"></div>
-        </div>
-        
-        <div class="time-display">
-          {{ formatTime(currentTime) }} / {{ formatTime(duration) }}
-        </div>
-      </div>
-
-      <!-- 歌词显示 -->
-      <LyricDisplay :lyrics="lyrics" :current-line="currentLine" />
+    <div class="cardRight">
+    
     </div>
   </div>
 </template>
 
-<style lang="scss">
-.player-container {
-  max-width: 800px;
-  margin: 0 auto;
-  background: #fff;
-  border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-}
-
-.navbar {
+<style lang="scss" scoped>
+.PlayerInfo {
+  align-items: flex-start;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1rem;
-  background: #f8f9fa;
-  
-  .nav-tabs {
-    list-style: none;
-    display: flex;
-    
-    li {
-      padding: 0.5rem 1rem;
-      cursor: pointer;
-      
-      &.active {
-        color: #d9363e;
-        border-bottom: 2px solid #d9363e;
-      }
-    }
-  }
-}
-
-.main-content {
-  display: grid;
-  grid-template-columns: 250px 1fr;
-  gap: 2rem;
-  padding: 2rem;
-}
-
-.song-list {
+  gap: 0.6rem;
   .cover {
-    width: 100px;
-    height: 100px;
-    object-fit: cover;
-    border-radius: 4px;
-  }
-  
-  .info {
-    margin-left: 1rem;
-  }
-}
+    flex-shrink: 0;
+    height: 40px;
+    width: 40px;
+    background: var(--c-bg);
+    border: 1px solid var(--c-border);
+    border-radius: 0.4rem;
+    overflow: hidden;
+    transition: border-color 0.2s;
 
-.control-panel {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  margin-top: 2rem;
-  
-  .progress-bar {
-    flex: 1;
-    height: 4px;
-    background: #eee;
-    border-radius: 2px;
-    cursor: pointer;
-    
-    .progress {
+    .image {
+      display: block;
       height: 100%;
-      background: #d9363e;
-      border-radius: 2px;
+      object-fit: cover;
+      width: 100%;
+      transition: transform 0.2s;
+    }
+  }
+  .details {
+    display: block;
+    height: 100%;
+    object-fit: cover;
+    width: 100%;
+    transition: transform 0.2s;
+
+    .title {
+      color: var(--c-text-1);
+      font-size: 0.9rem;
+      font-weight: 600;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      white-space: nowrap;
+    }
+    .artlist {
+      color: var(--c-text-2);
+      font-size: 0.8rem;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      white-space: nowrap;
     }
   }
 }
-
-.time-display {
-  font-size: 0.8rem;
-  color: #666;
+.controls {
+  align-items: center;
+  display: flex;
+  gap: .3rem;
+  justify-content: space-between;
+  width: 100%;
+  .cardLeft {
+    flex: 0 0 auto;
+  }
+  .cardCenter {
+    flex: 1;
+    justify-content: center;
+  }
+  .cardRight {
+    flex: 0 0 auto;
+  }
+  .cardLeft, .cardCenter, .cardRight {
+    align-items: center;
+    display: flex;
+    gap: .3rem;
+  }
+}
+.control-btn, .play-btn {
+  align-items: center;
+  background: transparent;
+  border: none;
+  border-radius: .4rem;
+  color: var(--c-text-2);
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  transition: all .2s ease;
+  padding: .3rem
 }
 </style>

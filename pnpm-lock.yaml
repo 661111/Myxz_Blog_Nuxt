@@ -242,6 +242,9 @@ importers:
       dayjs:
         specifier: ^1.11.19
         version: 1.11.19
+      dogxi-meting:
+        specifier: ^1.0.0
+        version: 1.0.0
       embla-carousel-autoplay:
         specifier: catalog:ui
         version: 8.6.0(embla-carousel@8.6.0)
@@ -3459,6 +3462,9 @@ packages:
 
   doctypes@1.1.0:
     resolution: {integrity: sha512-LLBi6pEqS6Do3EKQ3J0NqHWV5hhb78Pi8vvESYwyOy2c31ZEZVdtitdzsQsKb7878PEERhzUk0ftqGhG6Mz+pQ==}
+
+  dogxi-meting@1.0.0:
+    resolution: {integrity: sha512-/R3hIV1VNG/RWwr0pnuqwOHUT9+cGbhaZlEcVm113e7K81NA0t3JaljAjVpTB8zb3MFJ36C6c2U+f2kflYh8Ww==}
 
   dom-serializer@2.0.0:
     resolution: {integrity: sha512-wIkAryiqt/nV5EQKqQpo3SToSOV9J0DnbJqwK7Wv/Trc92zIAYZ4FlMu+JPFW1DfGFt81ZTCGgDEabffXeLyJg==}
@@ -10404,6 +10410,8 @@ snapshots:
       path-type: 4.0.0
 
   doctypes@1.1.0: {}
+
+  dogxi-meting@1.0.0: {}
 
   dom-serializer@2.0.0:
     dependencies:

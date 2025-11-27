@@ -44,6 +44,7 @@
     "ci-info": "catalog:framework",
     "date-fns": "catalog:util",
     "dayjs": "^1.11.19",
+    "dogxi-meting": "^1.0.0",
     "embla-carousel-autoplay": "catalog:ui",
     "embla-carousel-vue": "catalog:ui",
     "embla-carousel-wheel-gestures": "catalog:ui",

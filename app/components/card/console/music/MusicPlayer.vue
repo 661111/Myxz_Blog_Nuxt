@@ -1,79 +1,71 @@
 <script lang="ts" setup>
-import { ref, onMounted, onBeforeUnmount } from 'vue'
-import Meting from '@xizeyoupan/meting'
-
 // 播放器实例引用
-const player = ref<any>(null)
-const playerContainer = ref<HTMLElement | null>(null)
-
-// 播放状态
+const aplayer = ref<any>(null)
+// Meting 实例引用
+const meting = ref<any>(null)
+// 当前播放状态
 const isPlaying = ref(false)
-const currentSong = ref('')
 
-// 第三方歌曲配置 (示例数据)
-const songConfig = {
-  server: 'netease', // 音乐平台 (qq/netease/xiami/etc)
-  type: 'playlist',  // 类型: song/playlist/album/artist/search
-  id: '156399885',   // 歌曲/歌单ID
-  // 其他可选配置:
-  // order: 'random', // 播放顺序
-  // volume: 0.7,     // 初始音量
-}
+// 初始化 Meting 和 Aplayer
+const initPlayer = async () => {
+  // 动态加载 MetingJS 库
+  await loadScript('https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js')
+  
+  // 创建 Meting 实例（使用第三方配置）
+  meting.value = new (window as any).Meting({
+    api: 'https://api.imjad.cn/cloudmusic.md', // 第三方 API 配置
+    node: 'https://netease-cloud-music-api.vercel.app', // 音乐节点
+    proxy: false, // 是否启用代理
+  })
 
-// 初始化播放器
-const initPlayer = () => {
-  if (!playerContainer.value) return
-
-  player.value = new Meting({
-    ...songConfig,
-    container: playerContainer.value,
+  // 获取歌曲数据（使用 Meting 的第三方配置）
+  const songData = await meting.value.song('185916') // 示例歌曲 ID
+  
+  // 初始化 Aplayer
+  aplayer.value = new (window as any).APlayer({
+    container: document.getElementById('aplayer')!,
+    fixed: true,
     autoplay: false,
-    mini: false,
-    fixed: false,
-    audio: {
-      theme: '#ff2d55',
-    },
-    // 歌词显示设置
-    lyrics: {
-      show: true,
-      color: '#ff2d55',
-      size: 16,
-    }
+    audio: [{
+      name: songData.name,
+      artist: songData.ar.map((a: any) => a.name).join('/'),
+      url: songData.url,
+      pic: songData.al.picUrl,
+      lrc: '[00:00.00]歌词示例\n[00:01.00]请替换为真实歌词'
+    }]
   })
 
-  // 监听播放器事件
-  player.value.on('canplay', () => {
-    isPlaying.value = true
-    currentSong.value = player.value.currentSong.name
-  })
-
-  player.value.on('pause', () => {
-    isPlaying.value = false
-  })
-
-  player.value.on('play', () => {
-    isPlaying.value = true
-  })
-
-  player.value.on('ended', () => {
-    playNext()
-  })
+  // 监听播放状态变化
+  aplayer.value.on('play', () => isPlaying.value = true)
+  aplayer.value.on('pause', () => isPlaying.value = false)
 }
 
-// 播放控制方法
-const playPrev = () => player.value?.prev()
-const playNext = () => player.value?.next()
-const togglePlay = () => player.value?.toggle()
+// 动态加载脚本
+const loadScript = (src: string): Promise<void> => {
+  return new Promise((resolve, reject) => {
+    const script = document.createElement('script')
+    script.src = src
+    script.onload = () => resolve()
+    script.onerror = reject
+    document.head.appendChild(script)
+  })
+}
 
 // 组件挂载时初始化
-onMounted(() => {
-  // 确保 DOM 已渲染
-  setTimeout(initPlayer, 100)
+onMounted(async () => {
+  try {
+    await initPlayer()
+  } catch (error) {
+    console.error('播放器初始化失败:', error)
+  }
 })
 
-// 清理播放器实例
+// 组件卸载前清理
 onBeforeUnmount(() => {
-  player.value?.destroy()
+  if (aplayer.value) {
+    aplayer.value.destroy()
+    aplayer.value = null
+  }
 })
 </script>
 <template>

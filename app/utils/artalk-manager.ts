@@ -96,7 +96,7 @@ class ArtalkManager {
 
 		return new Promise<void>((resolve, reject) => {
 			const script = document.createElement('script')
-			script.src = 'https://your-cdn.com/Artalk.js' // 换成你自己的地址
+			script.src = 'https://cdnjs.cloudflare.com/ajax/libs/artalk/2.9.1/Artalk.min.js' // 换成你自己的地址
 			script.async = true
 			script.onload = () => resolve()
 			script.onerror = () => reject(new Error('Artalk 脚本加载失败'))

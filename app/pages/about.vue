@@ -73,10 +73,10 @@ layoutStore.setAside(['blog-stats', 'blog-tech', 'blog-site-info', 'blog-archive
         <!-- 来自于柳神的关于页面版本 -->
         <Social />
       </div>
-      <div class="author-content">
+      <!-- <div class="author-content">
         <Technology />
         <Game />
-      </div>
+      </div> -->
       <div class="author-content">
         <Single />
       </div>

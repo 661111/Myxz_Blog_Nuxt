@@ -94,10 +94,9 @@ export default defineAppConfig({
 			items: [
 				{ icon: 'ph:files-bold', text: '丹青妙笔', url: '/'},
                 { icon: 'ph:archive-bold', text: '经卷藏珍', url: '/archive'},
-				{ icon: '', text: '功能', url:'', menuShow: 'Expand'},
                 { icon: 'ph:link-bold', text: '竹林旧友', url: '/link'},
                 { icon: 'ph:fish-bold', text: '塘文集锦', url: '/fcircle' },
-                { icon: 'ph:chats-bold', text:'​纸笺寄语', url:'/comments' },
+                // { icon: 'ph:chats-bold', text:'​纸笺寄语', url:'/comments' },
                 { icon: 'ph:lightning-bold', text:'闲言碎语', url:'/essays' },
 				{ icon:'i-mingcute:bilibili-line', text: '追更历史', url: '/banguim' },
 				{ icon: 'ph:star-of-david-bold', text:'优良精装', url:'/equipment'},

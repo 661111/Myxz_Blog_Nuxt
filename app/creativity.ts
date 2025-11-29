@@ -21,57 +21,57 @@ export const creativityData: CreativityData[] = [
       {
         name: "Vue",
         color: "#b8f0ae",
-        icon: "https://cdn.sxiaohe.top/img/banners/vue.webp"
+        icon: "/banners/vue.webp"
       },
       {
         name: "Java",
         color: "#fff",
-        icon: "https://cdn.sxiaohe.top/img/banners/Java.webp"
+        icon: "/banners/Java.webp"
       },
       {
         name: "Docker",
         color: "#57b6e6",
-        icon: "https://cdn.sxiaohe.top/img/banners/docker.webp"
+        icon: "/banners/docker.webp"
       },
       {
         name: "Webpack",
         color: "#2e3a41",
-        icon: "https://cdn.sxiaohe.top/img/banners/webpack.webp"
+        icon: "/banners/webpack.webp"
       },
       {
         name: "Photoshop",
         color: "#4082c3",
-        icon: "https://cdn.sxiaohe.top/img/banners/PS.webp"
+        icon: "/banners/PS.webp"
       },
       {
         name: "Swift",
         color: "#eb6840",
-        icon: "https://cdn.sxiaohe.top/img/banners/swift.webp"
+        icon: "/banners/swift.webp"
       },
       {
         name: "Python",
         color: "#fff",
-        icon: "https://cdn.sxiaohe.top/img/banners/python.webp"
+        icon: "/banners/python.webp"
       },
       {
         name: "Node",
         color: "#333",
-        icon: "https://cdn.sxiaohe.top/img/banners/node-logo.svg"
+        icon: "/banners/node-logo.svg"
       },
       {
         name: "Git",
         color: "#df5b40",
-        icon: "https://cdn.sxiaohe.top/img/banners/git.webp"
+        icon: "/banners/git.webp"
       },
       {
         name: "Css",
         color: "#2c51db",
-        icon: "https://cdn.sxiaohe.top/img/banners/css.webp"
+        icon: "/banners/css.webp"
       },
       {
         name: "Js",
         color: "#f7cb4f",
-        icon: "https://cdn.sxiaohe.top/img/banners/js.webp"
+        icon: "/banners/js.webp"
       }
     ],
   },

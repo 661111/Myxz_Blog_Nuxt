@@ -23,11 +23,26 @@ export const equipment: item[] = [
     tag: ['轻薄本', 'AMD'],
     date: "2023-09-01",
     money: 2344,
-  },  {
+  }, {
     name: "iPhone XR",
     image: "https://s11.ax1x.com/2023/06/07/pCiB3vD.jpg",
     src: "https://www.myxz.top",
     categroy: '外设',
+    desc: "测试测试",
+    info: {
+      芯片: "Ryzen™ 5 7640HS",
+      内存: "Ryzen™ 5 7640HS",
+      显卡: "Ryzen™ 5 7640HS",
+      存储: "Ryzen™ 5 7640HS",
+    },
+    tag: ['轻薄本', 'AMD'],
+    date: "2023-09-01",
+    money: 2344,
+  }, {
+    name: "iPhone XR",
+    image: "https://s11.ax1x.com/2023/06/07/pCiB3vD.jpg",
+    src: "https://www.myxz.top",
+    categroy: '硬件',
     desc: "测试测试",
     info: {
       芯片: "Ryzen™ 5 7640HS",

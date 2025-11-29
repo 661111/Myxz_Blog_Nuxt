@@ -86,7 +86,7 @@
 .author-content-item {
     width: 49%;
     border-radius: 12px;
-    background: var(--heo-card-bg);
+    background: var(--c-bg-2);
     border: var(--style-border-always);
     box-shadow: var(--heo-shadow-border);
     position: relative;

@@ -624,12 +624,13 @@ const yearlyTip = computed(() => talks)
             .steam-loading-header {
                 font-size: 1.2rem;
                 font-weight: bold;
+                color: var(--c-text);
             }
 
             .steam-progress-bar {
                 width: 80%;
                 height: 5px;
-                background-color: #f0f0f0;
+                background-color: var(--c-text);
                 border-radius: 5px;
                 overflow: hidden;
 

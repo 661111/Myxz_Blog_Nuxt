@@ -70,8 +70,8 @@ layoutStore.setAside(['blog-stats', 'blog-tech', 'blog-site-info', 'blog-archive
       <div class="author-content">
         <!-- 来自于主流HEO主题的衍生版本 -->
         <Skillinfo />
-        <!-- 来自于柳神的关于页面版本 -->
-        <Social />
+        <!-- 来自于柳神的关于页面版本
+        <Social /> -->
       </div>
       <!-- <div class="author-content">
         <Technology />

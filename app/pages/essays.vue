@@ -609,7 +609,6 @@ const yearlyTip = computed(() => talks)
         .talk-main {
             display: flex;
             flex-direction: column;
-            gap: 1.5em;
         }
         /* Steam 风格加载页 */
         .steam-loading-container {

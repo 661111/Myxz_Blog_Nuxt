@@ -56,7 +56,6 @@ const getCategoryCount = computed(() => (category: string) => {
           </div>
         </div>
       </div>
-
       <!-- 设备展示区 -->
       <div class="equipment-list">
         <div v-for="(item, index) in filteredEquipment" :key="item.name + index" class="equipment-card">

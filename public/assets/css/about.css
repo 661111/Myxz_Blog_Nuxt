@@ -84,7 +84,6 @@
 }
 
 .author-content-item {
-    width: 49%;
     border-radius: 12px;
     background: var(--c-bg-2);
     border: var(--style-border-always);

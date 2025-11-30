@@ -32,7 +32,7 @@ import { about } from '../../about'
     flex-direction: column;
     justify-content: center;
     color: var(--heo-white);
-    background: linear-gradient(120deg, #9a79fa 0, #00d4ff 100%);
+    background: linear-gradient(120deg, #5b27ff 0, #00d4ff 100%);
     background-size: 200%;
     min-height: 175px;
     .title1 {

@@ -2,7 +2,7 @@ import type { Nav, NavItem } from '~/types/nav'
 import blogConfig from '~~/blog.config'
 import { version } from '~~/package.json'
 
-// 图标查询：https://yesicon.app/ph
+// 图标查询：https://yesicon.app/ph?s=bold
 // 图标插件：https://marketplace.visualstudio.com/items?itemName=antfu.iconify
 
 // @keep-sorted
@@ -21,6 +21,12 @@ export default defineAppConfig({
 			triggerRows: 32,
 			/** 代码块折叠后的行数 */
 			collapsedRows: 16,
+			/** 启用代码块缩进导航会关闭空格渲染 */
+			enableIndentGuide: true,
+			/** 代码块缩进导航(Indent Guige)竖线匹配空格数 */
+			indent: 4,
+			/** tab渲染宽度 */
+			tabSize: 3,
 		},
 
 		/** 文章开头摘要 */
@@ -31,7 +37,7 @@ export default defineAppConfig({
 
 		stats: {
 			/** 归档页面每年标题对应的年龄 */
-			birthYear: 2008,
+			birthYear: 2003,
 			/** blog-stats widget 的预置文本 */
 			wordCount: '约10万',
 		},
@@ -87,6 +93,14 @@ export default defineAppConfig({
 		avatarFrame: 'https://sourceimage.s3.bitiful.net/avatarFrame/ 143.avif',
 	},
 
+	/** 友链页面 */
+	link: {
+		/** 无订阅源展示静音图标 */
+		remindNoFeed: true,
+		/** 友链分组内随机排序 */
+		randomInGroup: true,
+	},
+
 	/** 左侧栏导航 */
 	nav: [
 		{
@@ -109,7 +123,7 @@ export default defineAppConfig({
 	pagination: {
 		perPage: 10,
 		/** 默认排序方式，需要是 this.article.order 中的键名 */
-		sortOrder: 'date' as const,
+		sortOrder: 'date' as keyof typeof blogConfig.article.order,
 		/** 允许（普通/预览/归档）文章列表正序，开启后排序方式左侧图标可切换顺序 */
 		allowAscending: false,
 	},
@@ -128,18 +142,4 @@ export default defineAppConfig({
 			tip: '深色模式',
 		},
 	},
-
-	commentThemes: {
-		dark: {
-			class: 'atk-dark-mode'
-		},
-		light: {
-			class: ''
-		}
-	},
-
-	other: {
-		Themes_Info: "Clarity",
-		Themes_Version: `${version}`
-	}
 })

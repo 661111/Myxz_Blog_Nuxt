@@ -13,12 +13,5 @@
       "path": "./.nuxt/tsconfig.node.json"
     }
   ],
-  "files": [],
-  "paths": {
-    "css/*": ["./public/assets/css/*"], // ~/* 映射到 ./assets/*
-  },
-  "compilerOptions": {
-    "lib": ["ESNext", "DOM"], // 必须包含 "DOM"
-    // 其他配置...
-  }
+  "files": []
 }

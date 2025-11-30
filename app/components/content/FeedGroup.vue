@@ -1,10 +1,9 @@
 <script setup lang="ts">
 import type { FeedEntry, FeedGroup } from '~/types/feed'
+import { shuffle } from 'radash'
 
-defineProps<{
-	label?: string
-	feeds: FeedGroup[]
-}>()
+const props = defineProps<FeedGroup & { shuffle?: boolean }>()
+const entries = ref(props.entries)
 
 // 友链浮现随机延迟
 function getCardDelay(feed: FeedEntry) {
@@ -14,23 +13,31 @@ function getCardDelay(feed: FeedEntry) {
 	}
 	return (hash % 1000) / 1000
 }
+
+function shuffleEntries() {
+	if (props.shuffle)
+		entries.value = shuffle(entries.value)
+}
+
+onMounted(() => shuffleEntries())
+
+if (import.meta.dev) {
+	watch(() => props.entries, (newEntries) => {
+		entries.value = newEntries
+	})
+}
 </script>
 
 <template>
-<h2 v-if="label" class="feed-label text-creative">
-	{{ label }}
-</h2>
-
-<section v-for="group in feeds" :key="group.name" class="feed-group">
+<section class="feed-group">
 	<h3 class="feed-title">
-		{{ group.name }}
+		<button role="button" title="点击随机排序" @click="shuffleEntries" v-text="name" />
 	</h3>
-	<p class="feed-desc">
-		{{ group.desc }}
-	</p>
-	<TransitionGroup tag="menu" class="feed-list" appear name="float-in">
+	<p class="feed-desc" v-text="desc" />
+
+	<TransitionGroup tag="menu" class="feed-list" name="float-in">
 		<li
-			v-for="entry in group.entries"
+			v-for="entry in entries"
 			:key="entry.link"
 			:style="`--delay: ${getCardDelay(entry)}s;`"
 		>
@@ -41,12 +48,7 @@ function getCardDelay(feed: FeedEntry) {
 </template>
 
 <style lang="scss" scoped>
-.feed-label {
-	margin: 2rem 1rem -1rem;
-}
-
 .feed-group {
-	// position: relative;
 	container-type: inline-size;
 	margin: 2rem 1rem;
 }
@@ -57,11 +59,13 @@ function getCardDelay(feed: FeedEntry) {
 	top: 0;
 	margin-bottom: -0.3em;
 	mask-image: linear-gradient(#FFF 50%, transparent);
-	font: 800 5em / 1 var(--font-stroke-free);
+	font-family: var(--font-stroke-free);
+	font-size: 5em;
+	font-weight: 800;
+	line-height: 1;
 	text-align: center;
 	color: transparent;
 	transition: color 0.2s;
-	z-index: -1;
 	-webkit-text-stroke: 1px var(--c-text-3);
 
 	&::selection, :hover > & {

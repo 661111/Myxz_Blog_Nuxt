@@ -7,7 +7,7 @@ useSeoMeta({
 const layoutStore = useLayoutStore()
 layoutStore.setAside(['blog-log'])
 
-const { data: listRaw } = useArticleIndex('previews/%')
+const { data: listRaw } = await useAsyncData('index_previews', () => useArticleIndexOptions('previews/%'), { default: () => [] })
 const { listSorted, isAscending, sortOrder } = useArticleSort(listRaw)
 const { category, categories, listCategorized } = useCategory(listSorted)
 </script>
@@ -16,11 +16,11 @@ const { category, categories, listCategorized } = useCategory(listSorted)
 <div class="preview">
 	<div class="preview-header">
 		<h1>
-			<ZRawLink class="mobile-only" to="/" title="返回首页">
+			<UtilLink class="mobile-only" to="/" title="返回首页">
 				<Icon name="ph:caret-left-bold" />
-			</ZRawLink>预览
+			</UtilLink>预览
 		</h1>
-		<ZOrderToggle
+		<PostOrderToggle
 			v-model:is-ascending="isAscending"
 			v-model:sort-order="sortOrder"
 			v-model:category="category"
@@ -29,8 +29,8 @@ const { category, categories, listCategorized } = useCategory(listSorted)
 	</div>
 	<p>勇敢的人探索世界。这里是一些还未发布的文章。</p>
 
-	<menu>
-		<ZArticle
+	<menu class="proper-height">
+		<PostArticle
 			v-for="article in listCategorized"
 			:key="article.path"
 			v-bind="article"

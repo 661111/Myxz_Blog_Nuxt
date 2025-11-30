@@ -1,5 +1,4 @@
 import {
-	LazyWidgetBlogSiteInfo,
 	LazyWidgetBlogLog,
 	LazyWidgetBlogStats,
 	LazyWidgetBlogTech,
@@ -7,8 +6,6 @@ import {
 	LazyWidgetEmpty,
 	LazyWidgetGithubCard,
 	LazyWidgetToc,
-	LazyWidgetBlogAccount,
-	LazyWidgetBlogArchive,
 } from '#components'
 import { pascal } from 'radash'
 
@@ -21,9 +18,6 @@ const rawWidgets = {
 	LazyWidgetEmpty,
 	LazyWidgetGithubCard,
 	LazyWidgetToc,
-	LazyWidgetBlogSiteInfo,
-	LazyWidgetBlogAccount,
-	LazyWidgetBlogArchive,
 }
 
 type RawWidgetName = keyof typeof rawWidgets
@@ -38,10 +32,11 @@ type RemovePrefix<S extends string, Prefix extends string> = S extends `${Prefix
 export type WidgetName = RemovePrefix<KebabCase<RawWidgetName>, '-lazy-widget-'>
 
 export default function useWidgets(widgetList: MaybeRefOrGetter<WidgetName[]>) {
-	const widgets = computed(() => (toValue(widgetList) || []).map(widget => ({
+	const widgets = computed(() => toValue(widgetList).map(widget => ({
 		name: widget,
 		comp: rawWidgets[`LazyWidget${pascal(widget)}` as RawWidgetName],
 	})))
+
 	return {
 		widgets,
 	}

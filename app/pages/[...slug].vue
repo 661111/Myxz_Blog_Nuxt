@@ -5,16 +5,21 @@ const layoutStore = useLayoutStore()
 layoutStore.setAside(['toc'])
 
 const { data: post } = await useAsyncData(
-	() => route.path,
+	route.path,
 	() => queryCollection('content').path(route.path).first(),
 )
 
 const contentStore = useContentStore()
 const { toc, meta } = storeToRefs(contentStore)
-toc.value = post.value?.body.toc
-meta.value = post.value?.meta
 
 const excerpt = computed(() => post.value?.description || '')
+
+function setTocAndMeta() {
+	toc.value = post.value?.body.toc
+	meta.value = post.value?.meta
+}
+
+setTocAndMeta()
 
 if (post.value) {
 	useSeoMeta({
@@ -26,11 +31,14 @@ if (post.value) {
 	layoutStore.setAside(post.value.meta?.aside as WidgetName[] | undefined)
 }
 else {
-	// // BUG: 部分文章在 Vercel 上以 404 状态码呈现，在 Linux SSG 模式下展示异常
-	// const event = useRequestEvent()
-	// event && setResponseStatus(event, 404)
+	const event = useRequestEvent()
+	event && setResponseStatus(event, 404)
 	route.meta.title = '404'
 	layoutStore.setAside(['blog-log'])
+}
+
+if (import.meta.dev) {
+	watchEffect(() => setTocAndMeta())
 }
 </script>
 

@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import type { CollectionType, ContentType } from '../composables/useBangumi'
+import type { BangumiCollectionItem } from '~/types/bangumi'
 import Pagination from '~/components/partial/Pagination.vue'
 import bgmCard from '~/components/Bangumi/bgmCard.vue'
 import useBangumi from '../composables/useBangumi'
@@ -113,12 +114,15 @@ const orderMap = {
         v-show="isDataReady"
         :key="contentType"
       >
-        <div class="banguimList">
+        <div class="banguimList" v-if="games.length > 0">
           <bgmCard
             v-for="game in games"
             :key="`${game.subject_id}-${contentType}`"
             :bangumi-collection-item="game"
           />
+        </div>
+        <div class="banguimEmpty" v-else-if="games.length === 0">
+          <Icon name="ri:folder-open-line" class="error-icon"/>
         </div>
       </div>
     </Transition>
@@ -215,21 +219,6 @@ $animation: opacity .5s var(--animation-in) backwards, transform 1s var(--animat
     }
   }
   
-  // 无数据样式
-  .empty {
-    align-items: center;
-    display: flex;
-    flex-direction: column;
-    padding: 4rem 2rem;
-    text-align: center;
-    
-    .error-icon {
-      color: var(--c-text-secondary);
-      font-size: 1.1rem;
-      margin: 0 0 1rem;
-    }
-  }
-  
   // 导航样式
   .banguimNav {
     padding: 0px 0 20px;
@@ -285,6 +274,21 @@ $animation: opacity .5s var(--animation-in) backwards, transform 1s var(--animat
       overflow: hidden;
       animation: $animation;
       transition: .1s;
+    }
+    // 无数据样式
+    .banguimEmpty {
+      background-repeat: no-repeat;
+      height: 300px;
+      width: 100%;
+      font-size: 4rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      
+      .error-icon {
+        color: var(--c-text-secondary);
+        display: flex;
+      }
     }
   }
   

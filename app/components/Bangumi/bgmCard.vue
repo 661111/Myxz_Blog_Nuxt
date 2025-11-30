@@ -10,6 +10,27 @@ function handleClick() {
 	const url = `https://bgm.tv/subject/${props.bangumiCollectionItem.subject_id}`
 	window.open(url, '_blank')
 }
+
+// 计算满星数量：score 除以 2 后向下取整
+const fullStars = Math.floor(props.bangumiCollectionItem.subject.score / 2);
+
+const rating = Math.floor(props.bangumiCollectionItem.subject.score); // 动态评分
+
+const starClass = computed(() => (index: number) => {
+  // 将评分值乘以2，实现半星精度（例如3.5 * 2=7，表示3个全星+1个半星）
+  const total = rating / 2;
+  const integerPart = Math.floor(total); // 总星数的整数部分（包含半星换算）
+  const hasHalf = total % 1 !== 0; // 是否存在半星
+
+  // 根据索引判断星星状态
+  if (index < integerPart) {
+    return 'ri:star-fill';     // 全星
+  } else if (index === integerPart && hasHalf) {
+    return 'ri:star-half-line'; // 半星（仅在有余数时显示）
+  } else {
+    return 'ri:star-line';     // 空星
+  }
+});
 </script>
 
 <template>
@@ -21,7 +42,10 @@ function handleClick() {
       <section class="bgmInfoMainSection">
         <div class="title">
           <h3 class="fontColor">
-            {{ bangumiCollectionItem.subject.name }}
+            {{ bangumiCollectionItem.subject.name_cn }}
+            <sup>
+              {{ bangumiCollectionItem.subject.name }}
+            </sup>
           </h3>
         </div>
         <p class="desc">
@@ -29,26 +53,39 @@ function handleClick() {
         </p>
       </section>
       <section class="bgmInfoSection">
+        <div class="infoStars">
+          <div class="ratingStarsIcon">
+            <Icon class="star-icon star-filled" v-for="(_ , index) in 5"  :key="index" :name="starClass(index)" />
+          </div>
+          <div class="ratingStarsNumber">
+            {{ bangumiCollectionItem.subject.score }}
+          </div>
+        </div>
         <div class="infoTagList">
-          <span class="infoTag" v-for="tags in bangumiCollectionItem.subject.tags">{{ tags.name }}</span>
+          <span class="infoTag" v-for="tags in bangumiCollectionItem.subject.tags">
+            {{ tags.name }}
+            <sup> {{ tags.count }} </sup>
+          </span>
         </div>
         <div class="infoCombinedList">
           <div class="infoCombinedCard">
             <div class="label">
-              话题：
+              话数:
             </div>
             <div class="value">
               {{ bangumiCollectionItem.subject.eps }}
             </div>
           </div>
           <div class="infoDate">
+            <Icon name="ph:calendar-dots-bold" />
             {{ getPostDate(bangumiCollectionItem.updated_at) }}
           </div>
         </div>
         <div class="footer">
           <div class="source-badge">
             <div class="source-name">
-              bgm
+              <Icon name="ri:bilibili-line" class="source-icon" />
+              Bangumi
             </div>
           </div>
           <button class="view-button" @click="handleClick()">
@@ -133,6 +170,12 @@ function handleClick() {
             line-height: 1.3;
             word-break: break-word;
             margin: 0px;
+            sup {
+              opacity: 0.6;
+              font-size: 75%;
+              line-height: 0;
+              vertical-align: baseline;
+            }
           }
         }
 
@@ -151,6 +194,67 @@ function handleClick() {
         font-size: 0.875em;
         gap: 0.5em;
 
+        .infoStars {
+          align-items: center;
+          background: linear-gradient(135deg, color-mix(in srgb, #ffc107 8%, transparent), color-mix(in srgb, #ffc107 3%, transparent));
+          border: 1px solid color-mix(in srgb, #ffc107 20%, transparent);
+          border-radius: .5em;
+          display: flex;
+          gap: .5em;
+          margin-bottom: .5em;
+          padding: .25em .5em;
+          position: relative;
+          ::before {
+            background: linear-gradient(135deg, color-mix(in srgb, #ffc107 15%, transparent), transparent);
+            border-radius: .5em;
+            content: "";
+            inset: 0;
+            opacity: 0;
+            position: absolute;
+            transition: opacity .2s ease;
+          }
+
+          .ratingStarsIcon {
+            display: flex;
+            gap: 2px;
+
+            .star-icon.star-filled {
+              animation: star-pulse-9e9bd9dc 2s ease-in-out infinite;
+              color: #ffc107;
+            }
+            .star-icon {
+              filter: drop-shadow(0 1px 2px rgba(255, 193, 7, .3));
+              font-size: 1.1em;
+              height: 1em;
+              transition: all .2s ease;
+              width: 1em;
+            }
+          }
+
+          .ratingStarsNumber {
+            background: linear-gradient(135deg, var(--c-text), color-mix(in srgb, #ffc107 30%, var(--c-text)));
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: var(--c-text);
+            font-size: .875em;
+            font-weight: 700;
+            -webkit-text-fill-color: transparent;
+            margin-left: .25em;
+            position: relative;
+            text-shadow: 0 1px 2px rgba(0, 0, 0, .1);
+
+            ::after {
+              background: linear-gradient(90deg, #ffc107, transparent);
+              bottom: -2px;
+              content: "";
+              height: 1px;
+              left: 0;
+              opacity: .6;
+              position: absolute;
+              right: 0;
+            }
+          }
+        }
         .infoTagList {
           display: flex;
           flex-wrap: wrap;
@@ -166,6 +270,15 @@ function handleClick() {
             border-radius: 0.25em;
             padding: 0.25em 0.5em;
             white-space: nowrap;
+
+            sup {
+              opacity: 0.6;
+              top: -0.5em;
+              font-size: 75%;
+              line-height: 0;
+              position: relative;
+              vertical-align: baseline;
+            }
           }
         }
 

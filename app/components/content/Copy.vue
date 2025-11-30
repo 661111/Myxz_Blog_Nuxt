@@ -29,24 +29,24 @@ function undo() {
 	showUndo.value = false
 }
 
-function prevenLineBreak(event: InputEvent) {
+function beforeInput(event: InputEvent) {
 	const { data, inputType } = event
 	if (data?.includes('\n') || inputType === 'insertLineBreak') {
 		event.preventDefault()
 	}
 }
 
-function checkUndoable(event: InputEvent) {
+function onInput(event: InputEvent) {
 	showUndo.value = props.code !== (event.target as Element).textContent
 }
 
 onMounted(async () => {
 	const shiki = await shikiStore.load()
-	await shikiStore.loadLang(language.value)
 
+	await shikiStore.loadLang(language.value)
 	createPlainShiki(shiki).mount(
 		codeInput.value!,
-		shikiStore.getOptions(language.value),
+		shikiStore.getOptions(language.value) as MountPlainShikiOptions,
 	)
 })
 </script>
@@ -60,8 +60,8 @@ onMounted(async () => {
 		contenteditable="plaintext-only"
 		class="code scrollcheck-x"
 		spellcheck="false"
-		@beforeinput="prevenLineBreak"
-		@input="checkUndoable"
+		@beforeinput="beforeInput($event as InputEvent)"
+		@input="onInput($event as InputEvent)"
 		v-text="code"
 	/>
 

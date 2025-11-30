@@ -1,5 +1,5 @@
 import type { ContentCollectionItem } from '@nuxt/content'
-import { toDate } from 'date-fns-tz'
+import { formatISO } from 'date-fns'
 import { XMLBuilder } from 'fast-xml-parser'
 import blogConfig from '~~/blog.config'
 import { version } from '~~/package.json'
@@ -15,7 +15,7 @@ const builder = new XMLBuilder({
 })
 
 function formatIsoDate(date?: string) {
-	return date ? toDate(date, { timeZone: blogConfig.timezone }).toISOString() : undefined
+	return date ? formatISO(new Date(date)) : undefined
 }
 
 function getUrl(path: string | undefined) {
@@ -24,7 +24,7 @@ function getUrl(path: string | undefined) {
 
 function renderContent(post: ContentCollectionItem) {
 	return [
-		post.image && `<img src="${post.image}" alt="${post.title}" />`,
+		post.image && `<img src="${post.image}" />`,
 		post.description && `<p>${post.description}</p>`,
 		`<a class="view-full" href="${getUrl(post.path)}" target="_blank">点击查看全文</a>`,
 	].join(' ')
@@ -37,7 +37,6 @@ export default defineEventHandler(async (event) => {
 		.limit(blogConfig.feed.limit)
 		.all()
 
-	// @ts-expect-error posts 暂无类型
 	const entries = posts.map(post => ({
 		id: getUrl(post.path),
 		title: post.title ?? '',
@@ -50,7 +49,7 @@ export default defineEventHandler(async (event) => {
 		link: { $href: getUrl(post.path) },
 		summary: post.description,
 		category: { $term: post.categories?.[0] },
-		published: formatIsoDate(post.published ?? post.date),
+		published: formatIsoDate(post.published) ?? formatIsoDate(post.date),
 	}))
 
 	const feed = {

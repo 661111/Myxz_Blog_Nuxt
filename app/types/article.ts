@@ -21,6 +21,7 @@ export default interface ArticleProps extends Partial<{
 	image: string
 	recommend: number
 	references: { title?: string, link?: string }[]
+	video: string
 
 	meta: {
 		coverRevert?: boolean

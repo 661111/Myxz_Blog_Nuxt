@@ -16,20 +16,20 @@ withDefaults(defineProps<{
 </script>
 
 <template>
-<dl class="dl-group" :class="size">
-	<div v-for="{ label, value, tip } in items" :key="label">
+<section class="dl-group" :class="size">
+	<dl v-for="{ label, value, tip } in items" :key="label" :title="toValue(tip)">
 		<dt>{{ label }}</dt>
-		<dd :title="toValue(tip)">
+		<dd>
 			<!-- 支持 string, Ref<String>, VNode, () => VNode -->
 			<component :is="() => toValue(value)" />
 		</dd>
-	</div>
-</dl>
+	</dl>
+</section>
 </template>
 
 <style lang="scss" scoped>
 .dl-group {
-	> div {
+	> dl {
 		padding: 0.2em 0;
 
 		> dt {
@@ -45,24 +45,21 @@ withDefaults(defineProps<{
 	gap: 0.5em 1em;
 	text-align: center;
 
-	> div {
+	> dl {
 		flex: 1;
 		white-space: nowrap;
 	}
 }
 
 .dl-group.medium {
-	display: grid;
-	grid-template-columns: auto auto;
-	gap: 0.4em 8%;
-	padding: 0.2em 0;
+	> dl {
+		display: grid;
+		grid-template-columns: 1fr 2fr;
+		// gap: 8%;
+		padding: 0.2em 0;
 
-	> div {
-		display: contents;
-
-		> dt {
+		>dt {
 			font-size: inherit;
-			text-align: end;
 		}
 	}
 }

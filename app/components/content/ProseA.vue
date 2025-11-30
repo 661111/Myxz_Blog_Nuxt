@@ -12,10 +12,10 @@ const tip = computed(() => ({
 </script>
 
 <template>
-<UtilLink v-tip="tip" class="z-link" :to="href">
+<ZRawLink v-tip="tip" class="z-link" :to="href">
 	<Icon v-if="icon" class="domain-icon" :name="icon" />
 	<slot />
-</UtilLink>
+</ZRawLink>
 </template>
 
 <style lang="scss" scoped>

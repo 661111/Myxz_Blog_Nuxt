@@ -2,32 +2,28 @@ import type ArticleProps from '~/types/article'
 import type { ArticleOrderType } from '~/types/article'
 import { alphabetical } from 'radash'
 
-/**
- * 生成文章查询参数，完全包装 useAsyncData 会使 SSR 行为异常，缓存 key 需要暴露
- * @see https://nuxt.com/docs/4.x/api/composables/use-async-data#usage
- * @see https://github.com/nuxt/nuxt/issues/14736
- * @todo 支持分页/分类筛选
- */
-export function useArticleIndexOptions(path = 'posts/%') {
-	return queryCollection('content')
-		.where('stem', 'LIKE', path)
-		.select('categories', 'date', 'description', 'image', 'path', 'readingTime', 'recommend', 'title', 'type', 'updated')
-		.all()
+// TODO 支持分页/分类筛选
+export function useArticleIndex(path = 'posts/%') {
+	return useAsyncData(
+		`index_${path}`,
+		() => queryCollection('content')
+			.where('stem', 'LIKE', path)
+			.select('categories', 'date', 'description', 'image', 'path', 'readingTime', 'recommend', 'title', 'type', 'updated')
+			.all(),
+		{ default: () => [] }, // 不返回 undefined
+	)
 }
 
 interface UseCategoryOptions {
-	bindQuery?: string
+	bindQuery?: string | false
 }
 
 export function useCategory(list: MaybeRefOrGetter<ArticleProps[]>, options?: UseCategoryOptions) {
-	const { bindQuery } = options || {}
-
+	const { bindQuery } = options ?? {}
 	const category = bindQuery
-		? useRouteQuery(bindQuery, undefined)
+		? useRouteQuery(bindQuery, undefined, { transform: (value?: string) => value, mode: 'push' })
 		: ref<string | undefined>()
-
 	const categories = computed(() => [...new Set(toValue(list).map(item => item.categories?.[0]))])
-
 	const listCategorized = computed(
 		() => toValue(list).filter(
 			item => !category.value || item.categories?.[0] === category.value,
@@ -41,41 +37,15 @@ export function useCategory(list: MaybeRefOrGetter<ArticleProps[]>, options?: Us
 	}
 }
 
-interface UseArticleSortOptions {
-	bindDirectionQuery?: string
-	bindOrderQuery?: string
-	initialAscend?: boolean
-	initialOrder?: ArticleOrderType
-}
-
-export function useArticleSort(list: MaybeRefOrGetter<ArticleProps[]>, options?: UseArticleSortOptions) {
+export function useArticleSort(list: MaybeRefOrGetter<ArticleProps[]>) {
 	const appConfig = useAppConfig()
-	const {
-		bindDirectionQuery,
-		bindOrderQuery,
-		initialAscend = false,
-		initialOrder = appConfig.pagination.sortOrder || 'date',
-	} = options || {}
-
-	const sortOrder = bindOrderQuery
-		? useRouteQuery(bindOrderQuery, initialOrder)
-		: ref<ArticleOrderType>(initialOrder)
-
-	const booleanQueryTransformer = {
-		get: (val: string) => val === 'true',
-		set: (val: boolean) => val.toString(),
-	}
-
-	const isAscending = bindDirectionQuery
-		? useRouteQuery(bindDirectionQuery, initialAscend.toString(), { transform: booleanQueryTransformer })
-		: ref<boolean>(initialAscend)
-
+	const sortOrder = ref<ArticleOrderType>(appConfig.pagination.sortOrder || 'date')
+	const isAscending = ref<boolean>()
 	const listSorted = computed(() => alphabetical(
 		toValue(list),
 		item => item[sortOrder.value] || '',
 		isAscending.value ? 'asc' : 'desc',
 	))
-
 	return {
 		sortOrder,
 		isAscending,
@@ -88,11 +58,13 @@ export function getCategoryIcon(category?: string) {
 	return appConfig.article.categories[category!]?.icon ?? 'ph:folder-bold'
 }
 
-interface GetPostTypeClassNameOptions {
-	prefix?: string
-}
+export function getPostTypeClassName(type?: string, options = {
+	prefix: 'text',
+}) {
+	if (!type)
+		type = 'tech'
 
-export function getPostTypeClassName(type = 'tech', options?: GetPostTypeClassNameOptions) {
-	const { prefix = 'text' } = options || {}
+	const { prefix } = options
+
 	return `${prefix}-${type}`
 }

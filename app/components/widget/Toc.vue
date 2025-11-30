@@ -15,7 +15,7 @@ function hasActiveChild(entry: TocLink, activeId: string | null): boolean {
 </script>
 
 <template>
-<BlogWidget>
+<ZWidget>
 	<template #title>
 		<span class="title">文章目录</span>
 		<!-- use <a> for anchor -->
@@ -46,13 +46,13 @@ function hasActiveChild(entry: TocLink, activeId: string | null): boolean {
 		</ol>
 	</DefineTemplate>
 
-	<UtilHydrateSafe>
+	<ClientOnly>
 		<ReuseTemplate v-if="toc?.links.length" :toc-item="toc.links" />
 		<p v-else class="no-toc">
 			暂无目录信息
 		</p>
-	</UtilHydrateSafe>
-</BlogWidget>
+	</ClientOnly>
+</ZWidget>
 </template>
 
 <style lang="scss" scoped>

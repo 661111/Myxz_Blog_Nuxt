@@ -9,7 +9,7 @@ defineProps<{
 </script>
 
 <template>
-<UtilLink :to="link" class="link-card card" :title="joinWith([title, description, link])">
+<ZRawLink :to="link" class="link-card card" :title="joinWith([title, description, link])">
 	<div class="link-card-info">
 		<div class="link-card-title">
 			{{ title }}
@@ -19,9 +19,9 @@ defineProps<{
 		</div>
 	</div>
 	<slot name="icon" class="link-card-icon-slot">
-		<UtilImg v-if="icon" class="link-card-icon" :src="icon" :mirror />
+		<ZRawImg v-if="icon" class="link-card-icon" :src="icon" :mirror />
 	</slot>
-</UtilLink>
+</ZRawLink>
 </template>
 
 <style lang="scss" scoped>

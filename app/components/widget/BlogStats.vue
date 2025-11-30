@@ -1,5 +1,10 @@
 <script setup lang="ts">
-import { UtilDate } from '#components'
+import { NuxtTime } from '#components'
+
+import dayjs from 'dayjs';
+import relativeTime from 'dayjs/plugin/relativeTime';
+import 'dayjs/locale/zh-cn';
+dayjs.extend(relativeTime)
 
 const appConfig = useAppConfig()
 const runtimeConfig = useRuntimeConfig()
@@ -20,26 +25,17 @@ const blogStats = [{
 	tip: `博客于${appConfig.timeEstablished}上线`,
 }, {
 	label: '上次更新',
-	value: () => h(UtilDate, {
-		date: runtimeConfig.public.buildTime,
-		relative: true,
-		tipPrefix: '构建于',
-	}),
+	value: () => h(NuxtTime, { datetime: runtimeConfig.public.buildTime, relative: true }),
+	tip: computed(() => `构建于${getLocaleDatetime(runtimeConfig.public.buildTime)}`),
 }, {
 	label: '总字数',
 	value: computed(() => stats.value ? formatNumber(stats.value.total.words) : ''),
 	tip: yearlyTip,
 }]
-
-// 需要用到的代码
-import dayjs from 'dayjs';
-import relativeTime from 'dayjs/plugin/relativeTime';
-import 'dayjs/locale/zh-cn';
-dayjs.extend(relativeTime)
 </script>
 
 <template>
-<BlogWidget card title="博客统计">
+<ZWidget card title="博客统计">
 	<div class="avatar">
     <div class="avatar-img">
       <img :src="appConfig.favicon">
@@ -57,9 +53,8 @@ dayjs.extend(relativeTime)
 		</div>
   </div>
 	<ZDlGroup :items="blogStats" size="small" />
-</BlogWidget>
+</ZWidget>
 </template>
-
 <style lang="scss">
 $status_backgroud: var(--status_backgroud);
 

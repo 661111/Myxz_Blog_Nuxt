@@ -2,13 +2,12 @@ const defaultState = {
 	sidebar: false,
 	aside: false,
 	search: false,
+	myDialog: false,
 }
 
 type LayoutSection = keyof typeof defaultState
 
 export const useLayoutStore = defineStore('layout', () => {
-	const router = useRouter()
-
 	const open = ref({ ...defaultState })
 	const isAnyOpen = computed(() => Object.values(open.value).some(Boolean))
 	const translate = ref<Record<string, string>>({})
@@ -37,10 +36,6 @@ export const useLayoutStore = defineStore('layout', () => {
 	}
 
 	const isOpen = (key: LayoutSection) => open.value[key]
-
-	router.beforeEach(() => {
-		closeAll()
-	})
 
 	return {
 		open,

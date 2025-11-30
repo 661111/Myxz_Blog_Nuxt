@@ -3,15 +3,12 @@
 	--end: right;
 	--transform-start-far: translateX(-100%);
 	--transform-end-far: translateX(100%);
-	--delay: 0.2s;
-	--z-index-popover: 100;
 
-	overflow-wrap: break-word;
 	background-color: var(--c-bg-1);
-	font-family: sans-serif;
+	font: 1rem / 1.4 sans-serif;
 	font-family: var(--font-basic);
 	font-synthesis: style;
-	line-height: 1.4;
+	word-wrap: break-word;
 	text-autospace: normal;
 	text-size-adjust: none;
 	color: var(--c-text-1);
@@ -89,7 +86,7 @@ button, input, textarea {
 	vertical-align: sub;
 }
 
-.rtl-flip:dir(rtl) {
+.iconify.rtl-flip:dir(rtl) {
 	transform: scaleX(-1);
 }
 
@@ -104,8 +101,10 @@ button, input, textarea {
 
 // 图片加载失败 fallback
 img {
-	contain: layout; // 限制溢出
 	display: inline-block;
+	overflow: hidden;    // Chrome 90- 😡
+	overflow: clip;      // 🔥🦊😡
+	transform: scale(1); // position: fixed 的定位祖先
 
 	&::before {
 		position: absolute;
@@ -155,11 +154,6 @@ img {
 			font-style: var(--shiki-dark-font-style);
 			color: var(--shiki-dark) !important; /* stylelint-disable-line declaration-no-important */
 		}
-	}
-
-	> .indent {
-		display: inline-block;
-		background-image: linear-gradient(to right, var(--c-border) 0.1em, transparent 0.1em);
 	}
 
 	> .space::before,

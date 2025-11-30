@@ -1,5 +1,5 @@
 <template>
-<BlogWidget
+<ZWidget
 	card
 	dim
 	title="博客/技术社区"
@@ -13,7 +13,7 @@
 	<Tip copy :icon="false" :tip-options="{ placement: 'left' }">
 		<Icon name="ri:qq-fill" />169994096
 	</Tip>
-</BlogWidget>
+</ZWidget>
 </template>
 
 <style lang="scss" scoped>
@@ -28,7 +28,7 @@
 	color: transparent;
 	transition: background-position 0.2s;
 
-	.blog-widget:hover & {
+	.widget:hover & {
 		background-position: 0 0;
 	}
 }

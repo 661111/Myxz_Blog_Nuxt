@@ -1,17 +1,15 @@
 <script setup lang="ts">
 import type { CSSProperties } from 'vue'
 import type { FeedEntry } from '~/types/feed'
+import { ZRawLink } from '#components'
 
-const props = defineProps<FeedEntry>()
-
-const appConfig = useAppConfig()
-const route = useRoute()
-const isInspect = computed(() => import.meta.dev && route.query.inspect !== undefined)
+const props = defineProps<FeedEntry & { inspect?: boolean }>()
 
 const title = computed(() => props.title ?? props.sitenick ?? props.author)
 const domainTip = computed(() => getDomainType(getMainDomain(props.link, true)))
 const domainIcon = computed(() => getDomainIcon(props.link))
 
+const inspect = ref(false)
 function getInspectStyle(src: string): CSSProperties {
 	src = getMainDomain(src)
 	let color = 'red'
@@ -30,29 +28,33 @@ function getInspectStyle(src: string): CSSProperties {
 		boxSizing: 'content-box',
 	}
 }
+
+onMounted(() => {
+	inspect.value = import.meta.env.DEV && location.search.includes('inspect')
+})
 </script>
 
 <template>
 <Tooltip :delay="200" interactive hide-on-click="toggle">
-	<UtilLink
+	<ZRawLink
 		class="feed-card gradient-card"
 		:to="error ? undefined : link"
 		:data-error="error"
 	>
 		<div class="avatar">
-			<ClientOnly v-if="isInspect">
-				<span style="position: absolute; left: 100%; white-space: nowrap;" v-text="title" />
+			<ClientOnly v-if="inspect">
 				<NuxtImg :src="icon" :title="icon" :style="getInspectStyle(icon)" />
 				<NuxtImg :src="avatar" :title="avatar" :style="getInspectStyle(avatar)" />
 			</ClientOnly>
 
 			<NuxtImg v-else :src="avatar" :alt="author" loading="lazy" :title="feed ? undefined : '无订阅源'" />
-			<Icon v-if="appConfig.link.remindNoFeed && !feed" class="no-feed" name="ph:bell-simple-slash-bold" />
+			<Icon v-if="!feed" class="no-feed" name="ph:bell-simple-slash-bold" />
 		</div>
 
 		<span>{{ author }}</span>
 		<span class="title">{{ sitenick }}</span>
-	</UtilLink>
+		<span v-if="inspect" style="position: absolute; top: 0;">{{ title }}</span>
+	</ZRawLink>
 
 	<template #content>
 		<div class="site-content">
@@ -145,8 +147,6 @@ function getInspectStyle(src: string): CSSProperties {
 // https://vue-tippy.netlify.app/props#appendto
 // Tooltip 位于组件根部时，interactive tippy 会插入到父组件
 :deep() ~ [data-tippy-root] > .tippy-box {
-	overflow: hidden;
-	overflow: clip;
 	padding: 0;
 
 	&[data-placement="top"] > .tippy-svg-arrow {
@@ -184,7 +184,9 @@ function getInspectStyle(src: string): CSSProperties {
 
 .desc-content {
 	position: relative;
+	overflow: hidden;
 	padding: 0.5em 1em;
+	border-radius: 0 0 0.5em 0.5em;
 	background-color: var(--c-bg-1);
 
 	p + p {

@@ -1,58 +1,18 @@
 <script setup lang="ts">
-import { toDate } from 'date-fns-tz'
-
-const props = defineProps<{
-	datetime?: string
-	rotate?: boolean
-}>()
-
-const emojiStatic = ['🕛', '🕧', '🕐', '🕜', '🕑', '🕝', '🕒', '🕞', '🕓', '🕟', '🕔', '🕠', '🕕', '🕡', '🕖', '🕢', '🕗', '🕣', '🕘', '🕤', '🕙', '🕥', '🕚', '🕦']
-const emojiRotate = ['🕛', '🕐', '🕑', '🕒', '🕓', '🕔', '🕕', '🕖', '🕗', '🕘', '🕙', '🕚']
+const emojiClock = ['🕛', '🕧', '🕐', '🕜', '🕑', '🕝', '🕒', '🕞', '🕓', '🕟', '🕔', '🕠', '🕕', '🕡', '🕖', '🕢', '🕗', '🕣', '🕘', '🕤', '🕙', '🕥', '🕚', '🕦']
 
 const now = ref(new Date())
 
-const appConfig = useAppConfig()
-const datetime = computed(() => props.datetime
-	? toDate(props.datetime, { timeZone: appConfig.timezone })
-	: now.value)
-
-const status = computed(() => {
-	const hour = datetime.value.getHours()
-	const minute = datetime.value.getMinutes()
-
-	if (!props.rotate) {
-		const clockIndex = hour * 2 + Math.round(minute / 30) % emojiStatic.length
-		return { emoji: emojiStatic[clockIndex] }
-	}
-
-	const minuteAt = Math.round(minute / 5)
-	const emojiIndex = (hour % 12 - minuteAt + emojiRotate.length) % emojiRotate.length
-	return { rotate: minuteAt * 30, emoji: emojiRotate[emojiIndex] }
-})
-
-const { pause, resume } = useIntervalFn(() => {
+useIntervalFn(() => {
 	now.value = new Date()
-}, 30000)
+}, 60000)
 
-watchImmediate(
-	() => props.datetime,
-	// 定时器只能在客户端运行，否则 nuxt generate 不能自动退出
-	val => val ? pause() : import.meta.client && resume(),
-)
+const clockEmoji = computed(() => {
+	const clockIndex = now.value.getHours() * 2 + Math.round(now.value.getMinutes() / 30)
+	return emojiClock[clockIndex % emojiClock.length]
+})
 </script>
 
 <template>
-<span
-	class="emoji-clock"
-	:class="{ rotate }"
-	:style="{ '--deg': rotate ? `${status.rotate}deg` : undefined }"
-	v-text="status.emoji"
-/>
+<span class="emoji-clock">{{ clockEmoji }}</span>
 </template>
-
-<style lang="scss" scoped>
-.emoji-clock.rotate {
-	display: inline-block;
-	transform: rotate(var(--deg, 0deg));
-}
-</style>

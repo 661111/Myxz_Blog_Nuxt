@@ -31,21 +31,23 @@ const { copy, copied } = useCopy(shareText)
 		</div>
 
 		<div v-if="!meta?.hideInfo" class="post-info">
-			<UtilDate
+			<time
 				v-if="date"
-				v-tip
-				tip-prefix="创建于"
-				:date="date"
-				icon="ph:calendar-dots-bold"
-			/>
+				v-tip="`创建于 ${getLocaleDatetime(props.date)}`"
+				:datetime="getIsoDatetime(date)"
+			>
+				<Icon name="ph:calendar-dots-bold" />
+				{{ getPostDate(props.date) }}
+			</time>
 
-			<UtilDate
-				v-if="updated && isTimeDiffSignificant(date, updated, .999)"
-				v-tip
-				tip-prefix="修改于"
-				:date="updated"
-				icon="ph:calendar-plus-bold"
-			/>
+			<time
+				v-if="isTimeDiffSignificant(date, updated, .999)"
+				v-tip="`修改于 ${getLocaleDatetime(props.updated)}`"
+				:datetime="getIsoDatetime(updated)"
+			>
+				<Icon name="ph:calendar-plus-bold" />
+				{{ getPostDate(props.updated) }}
+			</time>
 
 			<span v-if="categoryLabel">
 				<Icon :name="categoryIcon" />
@@ -81,8 +83,7 @@ const { copy, copied } = useCopy(shareText)
 		border-radius: 0;
 	}
 
-	&:hover .operations,
-	&:focus-within .operations {
+	&:hover .operations {
 		opacity: 1;
 	}
 
@@ -116,13 +117,8 @@ const { copy, copied } = useCopy(shareText)
 			text-shadow: 0 0 2px #FFF, 0 1px 0.5em #FFF;
 			color: #333;
 
-			.post-info {
-				filter: drop-shadow(0 1px 2px #FFF);
-			}
-
 			.post-title {
 				background-image: linear-gradient(transparent, #FFF3, #FFF5);
-				text-shadow: 0 1px 1px #FFF3, 0 1px 2px #FFF3;
 			}
 		}
 	}

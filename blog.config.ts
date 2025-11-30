@@ -1,5 +1,7 @@
 import type { FeedEntry } from './app/types/feed'
 
+export { zhCN as dateLocale } from 'date-fns/locale/zh-CN'
+
 const basicConfig = {
 	title: '歆鸢阁',
     subtitle: '柒上月日，无铭之阁',
@@ -16,11 +18,12 @@ const basicConfig = {
 		name: '署名-非商业性使用-相同方式共享 4.0 国际',
 		url: 'https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh-hans',
 	},
-	favicon: 'https://www.zhilu.site/api/icon.png',
+	favicon: 'https://sourceimage.s3.bitiful.net/myxz.avif',
 	language: 'zh-CN',
-	timeEstablished: '2019-07-19',
-	timezone: 'Asia/Shanghai',
-	url: 'https://blog.zhilu.site/',
+	timeEstablished: '2020-07-19',
+	timeStart: '2020',
+    timezone: 'Asia/Shanghai',
+    url: 'https://www.myxz.top/',
 	defaultCategory: '未分类',
 }
 
@@ -39,11 +42,6 @@ const blogConfig = {
 			分享: { icon:'ph:desktop-tower-bold', color: '#3ab' },
 		},
 		defaultCategoryIcon: 'ph:folder-bold',
-		/** 文章版式，首个为默认版式 */
-		types: {
-			tech: {},
-			story: {},
-		},
 		/** 分类排序方式，键为排序字段，值为显示名称 */
 		order: {
 			date: '创建日期',
@@ -68,7 +66,7 @@ const blogConfig = {
 
 	/** 向 <head> 中添加脚本 */
 	scripts: [
-		// // 自己部署的 Umami 统计服务
+		// 自己部署的 Umami 统计服务
 		// { 'src': 'https://zhi.zhilu.cyou/zhi.js', 'data-website-id': 'a1997c81-a42b-46f6-8d1d-8fbd67a8ef41', 'defer': true },
 		// // 自己网站的 Cloudflare Insights 统计服务
 		// { 'src': 'https://static.cloudflareinsights.com/beacon.min.js', 'data-cf-beacon': '{"token": "97a4fe32ed8240ac8284e9bffaf03962"}', 'defer': true },
@@ -83,7 +81,7 @@ const blogConfig = {
 		envId: 'https://twikoo.zhilu.cyou/',
 		preload: 'https://twikoo.zhilu.cyou/',
 	},
-	/** 自己部署的 Artalk 服务 */
+
 	artalk: {
 		server: 'https://artalk.myxz.top/',
 		sitename: '歆鸢阁',

@@ -1,21 +1,21 @@
 <template>
 <NuxtLoadingIndicator />
-<NuxtRouteAnnouncer :style="{ position: 'absolute' }" />
-<BlogSkipToContent />
-<BlogSidebar />
+<SkipToContent />
+<ZSidebar />
 <div id="content">
 	<main id="main-content">
 		<NuxtPage />
-		<BlogFooter />
+		<ZFooter />
 	</main>
-	<BlogAside />
+	<ZAside />
 </div>
-<BlogPanel />
-<BlogPopover />
+<ZPanel />
+<ZPopover />
 </template>
 
 <!-- eslint-disable-next-line vue/enforce-style-attribute -->
 <style lang="scss">
+// Nuxt 根元素 id
 #z-root {
 	display: flex;
 	justify-content: center;
@@ -23,7 +23,8 @@
 	min-width: 0;
 }
 
-#blog-sidebar, #blog-aside {
+// 合并处理 #z-sidebar, #z-aside
+aside {
 	flex-shrink: 0;
 	position: sticky;
 	top: 0;
@@ -47,7 +48,7 @@
 	min-width: 0; // 解决父级 flexbox 设置 justify-content: center 时溢出左侧消失的问题
 
 	// 此处不建议给内容设置 padding
-	> #main-content {
+	> main {
 		flex-grow: 1; // 使较小宽度的内容占满
 
 		// overflow: hidden; // 会使一部分元素吸顶失效

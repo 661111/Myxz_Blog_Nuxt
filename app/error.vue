@@ -1,9 +1,9 @@
 <script setup lang="ts">
 import type { NuxtError } from '#app'
 
-const props = defineProps<{
-	error: NuxtError & { url?: string }
-}>()
+const props = defineProps({
+	error: Object as () => NuxtError,
+})
 
 const layoutStore = useLayoutStore()
 layoutStore.setAside(['blog-log'])
@@ -19,8 +19,8 @@ const handleError = () => clearError({ redirect: '/' })
 
 <template>
 <NuxtLoadingIndicator />
-<BlogSkipToContent />
-<BlogSidebar />
+<SkipToContent />
+<ZSidebar />
 <div id="content">
 	<main>
 		<div class="app-error">
@@ -34,11 +34,11 @@ const handleError = () => clearError({ redirect: '/' })
 				</ZButton>
 			</ZError>
 		</div>
-		<BlogFooter />
+		<ZFooter />
 	</main>
-	<BlogAside v-if="!$route.meta.hideAside" />
+	<ZAside v-if="!$route.meta.hideAside" />
 </div>
-<BlogPanel />
+<ZPanel />
 </template>
 
 <style lang="scss" scoped>

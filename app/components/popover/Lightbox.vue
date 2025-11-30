@@ -142,65 +142,75 @@ function onLeave(el: Element, done: () => void) {
 }
 
 useEventListener('keydown', (e) => {
-	if (props.show && e.key === 'Escape') {
-		e.preventDefault()
+	if (e.key === 'Escape')
 		emit('close')
-	}
 })
 </script>
 
 <template>
-<BlogMask
-	:show
-	blur
-	@click="emit('close')"
-/>
-
-<Transition @enter="onEnter" @leave="onLeave">
-	<NuxtImg
-		v-if="show"
-		ref="lightbox"
-		class="image"
-		:alt="el.alt"
-		:width="el.width"
-		:height="el.height"
-		:src="el.src"
-		draggable="false"
-		@wheel.prevent="onWheel"
-	/>
-</Transition>
-
-<Transition>
-	<div v-if="show" class="tooltip">
-		<span v-if="caption" class="caption">{{ caption }}</span>
-		<button
-			class="close"
-			aria-label="关闭灯箱"
+<div class="z-lightbox">
+	<Transition>
+		<div
+			v-if="show"
+			id="z-lightbox-bgmask"
 			@click="emit('close')"
-		>
-			<Icon name="ph:x-bold" />
-		</button>
-	</div>
-</Transition>
+		/>
+	</Transition>
+	<Transition @enter="onEnter" @leave="onLeave">
+		<NuxtImg
+			v-if="show"
+			ref="lightbox"
+			class="image"
+			:alt="el.alt"
+			:width="el.width"
+			:height="el.height"
+			:src="el.src"
+			draggable="false"
+			@wheel.prevent="onWheel"
+		/>
+	</Transition>
+	<Transition>
+		<div v-if="show" class="tooltip">
+			<span v-if="caption" class="caption">{{ caption }}</span>
+			<button
+				class="close"
+				aria-label="关闭灯箱"
+				@click="emit('close')"
+			>
+				<Icon name="ph:x-bold" />
+			</button>
+		</div>
+	</Transition>
+</div>
 </template>
 
 <style lang="scss" scoped>
 .z-lightbox {
 	position: fixed;
 	touch-action: none;
-	z-index: var(--z-index-popover);
+}
+
+#z-lightbox-bgmask {
+	position: fixed;
+	inset: 0;
+	background-color: #0007;
+	transition: all var(--delay, 0.2s);
+
+	&.v-enter-from,
+	&.v-leave-to {
+		opacity: 0;
+	}
 }
 
 .image {
 	position: fixed;
 	cursor: move;
 	object-fit: cover;
-	z-index: var(--z-index-popover);
 
 	&.v-enter-active,
 	&.v-leave-active {
 		border-radius: 0.5rem;
-		transition: all var(--delay);
+		transition: all var(--delay, 0.2s);
 	}
 }
 
@@ -210,6 +220,7 @@ useEventListener('keydown', (e) => {
 	position: fixed;
 	bottom: clamp(2rem, 10vh, 5rem);
 	width: fit-content;
+	min-height: 2em;
 	max-width: min(40rem, 80%);
 	margin-inline: auto;
 	border: 1px solid #0003;
@@ -218,9 +229,8 @@ useEventListener('keydown', (e) => {
 	background-color: #0007;
 	backdrop-filter: blur(1rem) saturate(2);
 	color: white;
-	transition: all var(--delay);
+	transition: all var(--delay, 0.2s);
 	inset-inline: 0;
-	z-index: var(--z-index-popover);
 
 	&.v-enter-from,
 	&.v-leave-to {
@@ -235,7 +245,7 @@ useEventListener('keydown', (e) => {
 
 	.close {
 		align-self: stretch;
-		padding: 0.5em;
+		padding-inline: 0.5em;
 		cursor: pointer;
 	}
 }

@@ -1,5 +1,4 @@
 import { fromUrl, parseDomain, ParseResultType } from 'parse-domain'
-import { isPathFile } from 'site-config-stack/urls'
 
 const domainTip: Record<string, string> = {
 	'github.io': 'GitHub Pages 域名',
@@ -9,6 +8,9 @@ const domainTip: Record<string, string> = {
 	'vercel.app': 'Vercel 域名',
 	'zabaur.app': 'Zebaur 域名',
 }
+
+// @keep-sorted
+const noRouterExtensions = ['.css', '.csv', '.gif', '.ico', '.jpg', '.js', '.json', '.opml', '.png', '.svg', '.txt', '.xml', '.xsl']
 
 export function getDomain(url: string) {
 	const domain = fromUrl(url)
@@ -37,6 +39,7 @@ export function getGhUsername(url?: string) {
 
 export function isExtLink(url?: string) {
 	return url
-		? url.includes(':') || !!isPathFile(url)
+		? url.includes(':')
+		|| noRouterExtensions.some(ext => url.endsWith(ext))
 		: false
 }

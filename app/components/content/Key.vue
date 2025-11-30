@@ -56,9 +56,9 @@ const symbolMap = {
 function normalizeCodeDisplay(code: string) {
 	if (!code)
 		return ''
-	if (useSymbol.value && code in symbolMap)
+	if (useSymbol.value && symbolMap[code as keyof typeof symbolMap])
 		return symbolMap[code as keyof typeof symbolMap]
-	if (code in displayMap)
+	if (displayMap[code as keyof typeof displayMap])
 		return displayMap[code as keyof typeof displayMap]
 	return code
 }
@@ -151,11 +151,11 @@ useEventListener('blur', () => {
 </script>
 
 <template>
-<UtilHydrateSafe>
+<ClientOnly>
 	<kbd :class="{ active }" @click.stop="emit('press')">
 		<slot>{{ codeDisplay }}</slot>
 	</kbd>
-</UtilHydrateSafe>
+</ClientOnly>
 </template>
 
 <style lang="scss" scoped>

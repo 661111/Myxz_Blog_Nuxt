@@ -1,0 +1,73 @@
+.float-in-leave-active {
+    position: revert
+}
+
+.center {
+    margin-inline:auto;max-width: 100%
+}
+
+.center,.tabs {
+    width: -moz-fit-content;
+    width: fit-content
+}
+
+.tabs {
+    display: flex;
+    flex-wrap: wrap;
+    font-size: .9em;
+    gap: .5em;
+    justify-content: center;
+    line-height: 1.4;
+    margin: 0 auto
+}
+
+.tabs,button {
+    position: relative
+}
+
+button {
+    border-radius: .4em;
+    color: var(--c-text-2);
+    margin-bottom: .5em;
+    padding: .3em .5em;
+    transition: all .2s
+}
+
+button:hover {
+    background-color: var(--c-bg-soft);
+    color: var(--c-text)
+}
+
+button:after,button:before {
+    border-radius: 1em;
+    bottom: -.5em;
+    display: block;
+    height: 2px;
+    left: .8em;
+    pointer-events: none;
+    position: absolute;
+    right: .8em
+}
+
+button:after {
+    background-color: var(--c-border);
+    content: "";
+    left: -.8em;
+    right: -.8em
+}
+
+button.active {
+    background-color: var(--ld-bg-card);
+    box-shadow: 0 1px .5em var(--ld-shadow);
+    color: var(--c-text)
+}
+
+button.active:before {
+    background-color: var(--c-primary);
+    content: "";
+    z-index: 1
+}
+
+.tab-content {
+    padding: .5em 0
+}

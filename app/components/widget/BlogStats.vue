@@ -61,6 +61,8 @@ dayjs.extend(relativeTime)
 </template>
 
 <style lang="scss">
+$status_backgroud: var(--status_backgroud);
+
 .avatar {
 	display: flex;
 	gap: 10px;

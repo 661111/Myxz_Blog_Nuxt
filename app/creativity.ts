@@ -29,11 +29,6 @@ export const creativityData: CreativityData[] = [
         icon: "/banners/Java.webp"
       },
       {
-        name: "Docker",
-        color: "#57b6e6",
-        icon: "/banners/docker.webp"
-      },
-      {
         name: "Webpack",
         color: "#2e3a41",
         icon: "/banners/webpack.webp"

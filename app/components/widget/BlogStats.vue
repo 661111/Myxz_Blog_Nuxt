@@ -60,7 +60,7 @@ dayjs.extend(relativeTime)
 </BlogWidget>
 </template>
 
-<style lang="scss" scoped>
+<style lang="scss">
 .avatar {
 	display: flex;
 	gap: 10px;

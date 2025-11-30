@@ -43,6 +43,7 @@
     "nuxt": "catalog:framework",
     "parse-domain": "catalog:util",
     "plain-shiki": "catalog:content",
+    "pug": "^3.0.3",
     "radash": "catalog:util",
     "shiki": "catalog:content",
     "vue": "catalog:framework",

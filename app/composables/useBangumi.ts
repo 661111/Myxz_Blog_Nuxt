@@ -61,6 +61,8 @@ const TYPE_ID_MAP = {
 	wish: 1,
 	collect: 2,
 	do: 3,
+	on_hold: 4,
+	dropped: 5,
 } as const
 
 export default function useBangumiCollection(

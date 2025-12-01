@@ -14,23 +14,37 @@ function handleClick() {
 // 计算满星数量：score 除以 2 后向下取整
 const fullStars = Math.floor(props.bangumiCollectionItem.subject.score / 2);
 
-const rating = Math.floor(props.bangumiCollectionItem.subject.score); // 动态评分
+const score = Math.floor(props.bangumiCollectionItem.subject.score); // 动态评分(全局评分)
+const rate = Math.floor(props.bangumiCollectionItem.rate); // 动态评分(全局评分)
 
-const starClass = computed(() => (index: number) => {
+const scoreClass = computed(() => (index: number) => {
   // 将评分值乘以2，实现半星精度（例如3.5 * 2=7，表示3个全星+1个半星）
-  const total = rating / 2;
-  const integerPart = Math.floor(total); // 总星数的整数部分（包含半星换算）
-  const hasHalf = total % 1 !== 0; // 是否存在半星
+  const scoreTotal = score / 2;
+  const integerPartScore = Math.floor(scoreTotal); // 总星数的整数部分（包含半星换算）
+  const hasHalfScore = scoreTotal % 1 !== 0; // 是否存在半星
 
   // 根据索引判断星星状态
-  if (index < integerPart) {
+  if (index < integerPartScore) {
     return 'ri:star-fill';     // 全星
-  } else if (index === integerPart && hasHalf) {
+  } else if (index === integerPartScore && hasHalfScore) {
     return 'ri:star-half-line'; // 半星（仅在有余数时显示）
   } else {
     return 'ri:star-line';     // 空星
   }
 });
+
+const rateClass = computed(() => (rate: number) => {
+  const rateTotal = rate /2;
+  const integerPartRate = Math.floor(rateTotal); // 总星数的整数部分（包含半星换算）
+  const hasHalfRate = rateTotal % 1 !== 0; // 是否存在半星
+  if (rate < integerPartRate) {
+    return 'ri:star-fill';     // 全星
+  } else if (rate === integerPartRate && hasHalfRate) {
+    return 'ri:star-half-line'; // 半星（仅在有余数时显示）
+  } else {
+    return 'ri:star-line';     // 空星
+  }
+})
 </script>
 
 <template>
@@ -55,7 +69,7 @@ const starClass = computed(() => (index: number) => {
       <section class="bgmInfoSection">
         <div class="infoStars">
           <div class="ratingStarsIcon">
-            <Icon class="star-icon star-filled" v-for="(_ , index) in 5"  :key="index" :name="starClass(index)" />
+            <Icon class="star-icon star-filled" v-for="(_ , index) in 5"  :key="index" :name="scoreClass(index)" />
           </div>
           <div class="ratingStarsNumber">
             {{ bangumiCollectionItem.subject.score }}

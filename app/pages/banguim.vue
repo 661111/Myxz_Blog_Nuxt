@@ -67,6 +67,8 @@ const orderMap = {
   wish: '想看',
   do: '在看',
   collect: '看过',
+  on_hold: '搁置',
+  dropped: '抛弃',
 }
 </script>
 

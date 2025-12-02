@@ -9,7 +9,7 @@ tags: [Nuxt, 魔改, 美化]
 recommend: true
 ---
 
-# 前言
+## 前言
 鸽了这么久的时间，至于为什么鸽了这么久的原因有很多：写小说、默默对站点进行添加新的功能（没有写文）、玩游戏等等，当然这次的文章也是非常高级的。
 本教程参考了以下页面的东西
 ::link-card
@@ -18,7 +18,6 @@ icon: https://cravatar.com/avatar/1012bf78fb01d5b964c3a9a0f515911a?s=160
 title: Mikuの鬆
 description: 采用该卡片的元素样式
 link: "https://blog.sotkg.com/previews/example#%E8%87%AA%E5%8A%A8%E5%8A%A0%E8%BD%BD%E6%A8%A1%E5%BC%8F-%E7%95%AA%E5%89%A7%E5%8D%A1%E7%89%87"
-# mirror: # 是否借助第三方图片加载服务，见源代码
 ---
 ::
 
@@ -28,7 +27,6 @@ icon: https://weavatar.com/avatar/6085f2ddd3c17e493dafdaeccbf2713e3f679298246f35
 title: 风纪星辰
 description: 采用该卡片的元素样式（v0版本的卡片，现已抛弃）与tab样式
 link: "https://www.thyuu.com/douban/"
-# mirror: # 是否借助第三方图片加载服务，见源代码
 ---
 ::
 
@@ -1330,7 +1328,7 @@ caption: 卡片1.0版本展示（已不再使用）
 
 ::pic
 ---
-src: /img/post/2025/12/banguimPageAddCover/version2.png
+src: /img/post/2025/12/banguimPageAddCover/version1.png
 # mirror: # 是否借助第三方图片加载服务，见源代码
 caption: 卡片2.0版本展示（已不再使用）
 # zoom: false # 是否开启灯箱缩放，默认开启

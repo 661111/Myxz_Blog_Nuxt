@@ -1319,7 +1319,7 @@ export interface Tag {
 
 ::pic
 ---
-src: /img/post/2025/12/banguimPageAddCover/version1.0.png
+src: /img/post/2025/12/banguimPageAddCover/version1.png
 # mirror: # 是否借助第三方图片加载服务，见源代码
 caption: 卡片1.0版本展示（已不再使用）
 # zoom: false # 是否开启灯箱缩放，默认开启
@@ -1330,7 +1330,7 @@ caption: 卡片1.0版本展示（已不再使用）
 
 ::pic
 ---
-src: /img/post/2025/12/banguimPageAddCover/version2.0.png
+src: /img/post/2025/12/banguimPageAddCover/version2.png
 # mirror: # 是否借助第三方图片加载服务，见源代码
 caption: 卡片2.0版本展示（已不再使用）
 # zoom: false # 是否开启灯箱缩放，默认开启

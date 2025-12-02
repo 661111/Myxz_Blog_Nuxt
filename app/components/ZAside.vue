@@ -2,7 +2,6 @@
 const layoutStore = useLayoutStore()
 const { widgets } = useWidgets(() => layoutStore.asideWidgets)
 </script>
-
 <template>
 <Transition>
 	<div v-if="layoutStore.isOpen('aside')" id="z-aside-bgmask" @click="layoutStore.toggle('aside')" />

@@ -1330,7 +1330,7 @@ caption: 卡片1.0版本展示（已不再使用）
 ---
 src: https://sourceimage.s3.bitiful.net/post/img/banguimPageAddCover/banguimPageAddCover/version1.png
 # mirror: # 是否借助第三方图片加载服务，见源代码
-caption: 卡片2.0版本展示（已不再使用）
+caption: 卡片2.0版本展示
 # zoom: false # 是否开启灯箱缩放，默认开启
 ---
 ::

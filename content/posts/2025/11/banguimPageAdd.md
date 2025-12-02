@@ -3,7 +3,7 @@ title: 添加追更历史
 description: 本篇文章主要简述了如何给Nuxt框架添加追更历史
 date: 2025-12-01 10:00
 update: 2025-12-01 20:49
-image: /assets/img/post/2025/12/banguimPageAddCover.webp
+image: https://www.myxz.top/assets/img/post/2025/12/banguimPageAddCover.webp
 categories: [博客魔改]
 tags: [Nuxt, 魔改, 美化]
 recommend: true

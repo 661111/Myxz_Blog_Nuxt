@@ -19,7 +19,7 @@
     "new": "tsx scripts/new-blog.ts",
     "check:feed": "tsx scripts/framework/get-feed.ts",
     "check:feed/all": "tsx scripts/framework/check-all-feeds.ts",
-    "generate:static":"NITRO_PRESET = static nuxt generate"
+    "generate:static":"NITRO_PRESET=static nuxt generate"
   },
   "dependencies": {
     "@nuxt/content": "catalog:content",

@@ -45,6 +45,15 @@ const rateClass = computed(() => (rate: number) => {
     return 'ri:star-line';     // 空星
   }
 })
+
+function goComment(content: string) {
+  const textarea = document.querySelector('.atk-textarea') as HTMLTextAreaElement
+  if (textarea) {
+    textarea.value = `> ${content.replace(/<[^>]+>/g, '')}\n\n`
+    textarea.focus()
+    textarea.scrollIntoView({ behavior: 'smooth', block: 'center' })
+  }
+}
 </script>
 
 <template>
@@ -94,17 +103,21 @@ const rateClass = computed(() => (rate: number) => {
             <Icon name="ph:calendar-dots-bold" />
             {{ getPostDate(bangumiCollectionItem.updated_at) }}
           </div>
-        </div>
-        <div class="footer">
           <div class="source-badge">
             <div class="source-name">
               <Icon name="ri:bilibili-line" class="source-icon" />
               Bangumi
             </div>
           </div>
+        </div>
+        <div class="footer">
           <button class="view-button" @click="handleClick()">
             <span>查看详情</span>
             <Icon name="ri:arrow-right-line" class="buttonIcon" />
+          </button>
+          <button class="view-button" type="button" @click="goComment(bangumiCollectionItem.subject.short_summary)" aria-label="快速评论">
+            <icon name="ph:chats-bold" />
+            <span>点击评论</span>
           </button>
         </div>
       </section>
@@ -336,6 +349,14 @@ const rateClass = computed(() => (rate: number) => {
             display: flex;
             gap: 0.25em;
           }
+          .source-badge {
+            align-items: center;
+            color: var(--c-text-2);
+            display: flex;
+            font-size: 0.875em;
+            font-weight: 500;
+            gap: 0.25em;
+          }
         }
       }
       .footer {
@@ -355,15 +376,6 @@ const rateClass = computed(() => (rate: number) => {
         }
         @media (max-width: 768px) {
           gap: .75rem
-        }
-
-        .source-badge {
-            align-items: center;
-            color: var(--c-text-2);
-            display: flex;
-            font-size: 0.875em;
-            font-weight: 500;
-            gap: 0.25em;
         }
         .view-button {
           align-items: center;

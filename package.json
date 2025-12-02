@@ -78,10 +78,5 @@
     "tsx": "catalog:framework",
     "typescript": "catalog:framework",
     "unplugin-yaml": "catalog:framework"
-  },
-  "pnpm": {
-    "overrides": {
-      "ipx": "^3.1.1"
-    }
   }
 }

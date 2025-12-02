@@ -14,7 +14,7 @@ recommend: true
 本教程参考了以下页面的东西
 ::link-card
 ---
-icon: https://cravatar.com/avatar/1012bf78fb01d5b964c3a9a0f515911a?s=160    
+icon: https://cravatar.com/avatar/1012bf78fb01d5b964c3a9a0f515911a?s=160
 title: Mikuの鬆
 description: 采用该卡片的元素样式
 link: "https://blog.sotkg.com/previews/example#%E8%87%AA%E5%8A%A8%E5%8A%A0%E8%BD%BD%E6%A8%A1%E5%BC%8F-%E7%95%AA%E5%89%A7%E5%8D%A1%E7%89%87"

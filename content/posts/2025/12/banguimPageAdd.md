@@ -1,6 +1,6 @@
 ---
 title: 添加追更历史
-description: 本篇文章主要简述了如何给Nuxt框架添加追更历史
+description: 该文章详细介绍了基于Vue3+TypeScript开发的豆瓣追更记录系统，采用组件化架构实现两栏筛选菜单、动态加载动画和卡片式作品展示，通过Pinia状态管理+Vite构建工具实现数据流管理，集成防抖加载、虚拟滚动等性能优化方案。
 date: 2025-12-01 10:00
 update: 2025-12-01 20:49
 image: https://sourceimage.s3.bitiful.net/post/img/banguimPageAddCover/banguimPageAddCover.webp
@@ -35,10 +35,10 @@ link: "https://www.thyuu.com/douban/"
 - 使用全新加载方式（即风纪星辰豆瓣记录的loading加载）
 
 ## 目录结构
-- /app/page/banguim.vue：追更页面中的主界面渲染模块，传递useBangumi.ts的模块请求数据（模块来源于喵落阁，经过本人重新二开）
-- /app/components/Bangumi/bgmCard.vue：追更页面的卡片主渲染模块（样式来自Mikuの鬆，模块来源于喵落阁，本模块经过本人重新二开）
-- /app/composables/useBangumi.ts：追更页面中的api请求模块，具有subject_type与type两种请求方式（模块来源于喵落阁，经过本人重新二开）
-- /app/types/bangumi：追更页面全局数据类型，本身作为数据加载以及页面引用（模块来源于喵落阁）
+- `/app/page/banguim.vue`：追更页面中的主界面渲染模块，传递useBangumi.ts的模块请求数据（模块来源于喵落阁，经过本人重新二开）
+- `/app/components/Bangumi/bgmCard.vue`：追更页面的卡片主渲染模块（样式来自Mikuの鬆，模块来源于喵落阁，本模块经过本人重新二开）
+- `/app/composables/useBangumi.ts`：追更页面中的api请求模块，具有`subject_type`与`type`两种请求方式（模块来源于喵落阁，经过本人重新二开）
+- `/app/types/bangumi`：追更页面全局数据类型，本身作为数据加载以及页面引用（模块来源于喵落阁）
 
 ## 核心代码
 

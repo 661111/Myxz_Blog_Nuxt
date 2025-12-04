@@ -21,22 +21,22 @@ export const creativityData: CreativityData[] = [
       {
         name: "Vue",
         color: "#b8f0ae",
-        icon: "/banners/vue.webp"
+        icon: "https://www.myxz.top/banners/vue.webp"
       },
       {
         name: "Java",
         color: "#fff",
-        icon: "/banners/Java.webp"
+        icon: "https://www.myxz.top/banners/Java.webp"
       },
       {
         name: "Webpack",
         color: "#2e3a41",
-        icon: "/banners/webpack.webp"
+        icon: "https://www.myxz.top/banners/webpack.webp"
       },
       {
         name: "Photoshop",
         color: "#4082c3",
-        icon: "/banners/PS.webp"
+        icon: "https://www.myxz.top/banners/PS.webp"
       },
       {
         name: "Swift",
@@ -46,27 +46,27 @@ export const creativityData: CreativityData[] = [
       {
         name: "Python",
         color: "#fff",
-        icon: "/banners/python.webp"
+        icon: "https://www.myxz.top/banners/python.webp"
       },
       {
         name: "Node",
         color: "#333",
-        icon: "/banners/node-logo.svg"
+        icon: "https://www.myxz.top/banners/node-logo.svg"
       },
       {
         name: "Git",
         color: "#df5b40",
-        icon: "/banners/git.webp"
+        icon: "https://www.myxz.top/banners/git.webp"
       },
       {
         name: "Css",
         color: "#2c51db",
-        icon: "/banners/css.webp"
+        icon: "https://www.myxz.top/banners/css.webp"
       },
       {
         name: "Js",
         color: "#f7cb4f",
-        icon: "/banners/js.webp"
+        icon: "https://www.myxz.top/banners/js.webp"
       }
     ],
   },

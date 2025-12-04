@@ -41,7 +41,7 @@ export const creativityData: CreativityData[] = [
       {
         name: "Swift",
         color: "#eb6840",
-        icon: "/banners/swift.webp"
+        icon: "https://www.myxz.top/banners/swift.webp"
       },
       {
         name: "Python",

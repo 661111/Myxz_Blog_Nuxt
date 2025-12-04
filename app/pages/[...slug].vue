@@ -38,6 +38,7 @@ else {
 <template v-if="post">
 	<PostHeader v-bind="post" />
 	<PostExcerpt v-if="excerpt" :excerpt />
+	<!-- <PostSummary postUrl="/yyyy/mm" :post-selector="`.` + getPostTypeClassName(post?.type, { prefix: 'md' })" /> -->
 	<!-- 使用 float-in 动画会导致搜索跳转不准确 -->
 	<ContentRenderer
 		class="article"

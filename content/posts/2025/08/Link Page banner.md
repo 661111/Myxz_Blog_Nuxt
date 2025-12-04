@@ -13,7 +13,6 @@ recommend: true
 由于本人之前在Hexo博客中有着许多的魔改内容，正巧迁移出来做成魔改教程，并且这篇文章适用于vue
 
 ## 添加vue模块
-
 ::alert{type="warning"}
 #title
 注意事项
@@ -28,7 +27,7 @@ flink: '/assets/images/error-flink.png'
 
 在 [Blogroot:]/app/components 中 添加 **FlinkTop.vue**：
 
-``` vue [FlinkTop.vue] wrap
+``` vue [FlinkTop.vue] lang="vue"
 <!-- components/FlinkTop.vue -->
 <script lang="ts" setup>
 import { ref, computed, onMounted } from 'vue';
@@ -201,7 +200,7 @@ const processedLinks = computed(() => {
 
 ## 修改vue页面
 在 [Blogroot:]/app/pages/link.vue中添加以下代码：
-``` vue [link.vue] wrap
+``` vue [link.vue] lang="vue"
     <header class="link-reminder">
         <div class="content">
             <p><Icon name="ph:newspaper-clipping-bold" /> 我会通过订阅源阅读友链文章。</p>
@@ -236,8 +235,7 @@ const processedLinks = computed(() => {
 
 ## 添加CSS内容
 添加以下css样式表内容
-
-``` CSS flinktop.css
+``` css [flinktop.css] lang="css"
 /* 颜色 */
 :root {
     --anzhiyu-theme-op: #4259ef23;

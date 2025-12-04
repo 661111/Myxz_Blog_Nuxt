@@ -73,7 +73,7 @@ const blogConfig = {
 		// // Twikoo 评论系统
 		// { src: 'https://lib.baomitu.com/twikoo/1.6.44/twikoo.min.js', defer: true },
 		{ src: 'https://artalk.myxz.top/ist/Artalk.js', defer: true },
-		{ src: '/assets/js/sco.js' }
+		{ src: '/assets/js/sco.js' },
 	],
 
 	/** 自己部署的 Twikoo 服务 */
@@ -85,7 +85,15 @@ const blogConfig = {
 	artalk: {
 		server: 'https://artalk.myxz.top/',
 		sitename: '歆鸢阁',
-	}
+	},
+
+	PostSummary: {
+		tianliGPT_postSelector: 'article.article.md-tech',
+		tianliGPT_Title: '智能摘选',
+		tianliGPT_injectDom: '.md-tech-ai',
+		tianliGPT_theme: 'menghuan',
+		tianliGPT_key: 'S-PCTSDLSQQECB3WYB',
+	},
 }
 
 /** 用于生成 OPML 和友链页面配置 */

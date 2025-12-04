@@ -15,7 +15,7 @@ recommend: true
 # 添加Vue页面
 在 [BlogRoot:]/app/pages中添加vue文件（这里没有太大要求，只要自己找得到即可）：
 
-``` vue [site.vue] warp
+``` vue [site.vue] lang="vue"
 <script lang="ts" setup>
 import { ref, onMounted } from 'vue';
 import { siteLinkItems } from '../sitelink'
@@ -317,7 +317,7 @@ button.active:before {
 
 # 添加Ts文件
 在[BlogRoot:]/app/中添加 sitelink.ts ：
-``` ts [sitelink.ts]
+``` ts [sitelink.ts] lang="ts"
 export interface siteTabs {
     name: string
     itemnumber: string

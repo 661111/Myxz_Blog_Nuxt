@@ -20,6 +20,15 @@ export function getLocaleDatetime(date?: string | Date) {
 
 	return format(date, 'yyyy年M月d日 E HH:mm:ss', { locale: dateLocale })
 }
+export function getLocalePostDatetime(date?: string | Date) {
+	if (!date)
+		return ''
+
+	if (typeof date === 'string')
+		date = new Date(date)
+
+	return format(date, 'yyyy年M月d日')
+}
 export function getPostDate(date?: string | Date) {
 	if (!date)
 		return ''

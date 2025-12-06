@@ -8,7 +8,7 @@ const basicConfig = {
 	// 长 description 利好于 SEO
 	description: '柒渊阁的博客网站，分享技术和魔改。网站界面简洁美观，涵盖了魔改、教程等多个领域，为读者提供了卓越的阅读体验。',
 	author: {
-		name: '柒渊',
+		name: '歆天之鸢',
         avatar: 'https://sourceimage.s3.bitiful.net/myxz.avif',
         email: '3227988255@qq.com',
         homepage: 'https://www.myxz.top/',
@@ -23,7 +23,7 @@ const basicConfig = {
 	timeEstablished: '2020-07-19',
 	timeStart: '2020',
     timezone: 'Asia/Shanghai',
-    url: 'https://www.myxz.top/',
+    url: 'https://www.myxz.top',
 	defaultCategory: '未分类',
 }
 

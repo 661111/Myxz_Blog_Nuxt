@@ -85,7 +85,7 @@ export default function useBangumiCollection(
 				`bangumi-${contentType}-${collectionType.value}-page-${page.value}`,
 		},
 	)
-
+	
 	const totalPages = computed(() =>
 		data.value ? Math.ceil(data.value.total / ITEMS_PER_PAGE) : 0,
 	)

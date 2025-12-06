@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import useBangumiCollection from '~/composables/useBangumi';
 import type { BangumiCollectionItem } from '~/types/bangumi'
 import { getPostDate } from '~/utils/time'
 
@@ -54,6 +55,28 @@ function goComment(content: string) {
     textarea.scrollIntoView({ behavior: 'smooth', block: 'center' })
   }
 }
+// 主显示条件：仅当 subject_id 为 1 或 2 时显示
+const shouldShowTodo = computed(() => 
+  [1, 2].includes(props.bangumiCollectionItem.subject_id)
+)
+
+const epStart = props.bangumiCollectionItem.ep_status
+const epStop = props.bangumiCollectionItem.subject.eps
+// 计算进度百分比
+const progress = computed(() => {
+  return epStop === 0 ? 0 : (epStart / epStop) * 100
+})
+
+// 动态生成提示消息
+const progressMessage = computed(() => {
+  if (progress.value >= 100) return "恭喜你快追完了!"
+  if (progress.value > 75) return "恭喜你快追完了，如若看完请移交到追完列表中。"
+  if (progress.value > 50) return "恭喜你追到一半，可以一鼓作气追完哦！"
+  if (progress.value > 40) return "恭喜你快追到一半，需要继续加油！"
+  if (progress.value > 10) return "你在干什么吃呢！还不快点赶上进度。"
+  if (progress.value >= 0) return "请开始追更"
+  return "请添加观看记录" // 默认提示（可选）
+})
 </script>
 
 <template>
@@ -65,15 +88,27 @@ function goComment(content: string) {
       <section class="bgmInfoMainSection">
         <div class="title">
           <h3 class="fontColor">
-            {{ bangumiCollectionItem.subject.name_cn }}
-            <sup>
+            {{ bangumiCollectionItem.subject.name_cn.slice(0, 16) }}
+            <!-- 关闭上标内容 -->
+            <!-- <sup>
               {{ bangumiCollectionItem.subject.name }}
-            </sup>
+            </sup> -->
           </h3>
         </div>
         <p class="desc">
           {{ bangumiCollectionItem.subject.short_summary }}
         </p>
+        <div class="bgmStatusInfo" v-if="shouldShowTodo">
+          观看进度:
+          {{ epStart }}
+          <div class="loading" style="height: 3px;">
+            <div class="allSkill" :style="`width: ${(epStart / epStop) * 100}%`"></div>
+          </div>
+          {{ epStop }}
+        </div>
+        <div class="todo" v-if="shouldShowTodo">
+          <div v-if="progressMessage">{{ progressMessage }}</div>
+        </div>
       </section>
       <section class="bgmInfoSection">
         <div class="infoStars">
@@ -91,14 +126,14 @@ function goComment(content: string) {
           </span>
         </div>
         <div class="infoCombinedList">
-          <div class="infoCombinedCard">
+          <!-- <div class="infoCombinedCard">
             <div class="label">
               话数:
             </div>
             <div class="value">
               {{ bangumiCollectionItem.subject.eps }}
             </div>
-          </div>
+          </div> -->
           <div class="infoDate">
             <Icon name="ph:calendar-dots-bold" />
             {{ getPostDate(bangumiCollectionItem.updated_at) }}
@@ -208,10 +243,43 @@ function goComment(content: string) {
 
         .desc {
           display: -webkit-box;
-          -webkit-line-clamp: 5;
+          -webkit-line-clamp: 4;
           line-height: 1.5;
           -webkit-box-orient: vertical;
           overflow: hidden;
+        }
+        .bgmStatusInfo {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          gap: .5em;
+          font-size: 0.875rem;
+
+          .loading {
+            background: var(--c-bg-2);
+            border-radius: 2px;
+            cursor: pointer;
+            flex: 1;
+            min-width: 0;
+            overflow: visible;
+            position: relative;
+            transition: background-color .15s ease;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            user-select: none;
+            .allSkill {
+              background: var(--c-primary);
+              border-radius: 2px;
+              height: 100%;
+              position: relative;
+              transition: width .1s linear;
+            }
+          }
+        }
+        .todo {
+          padding: 0.5em 0.5em;
+          background-color: var(--c-bg-2);
+          border-radius: 0.5rem;
         }
       }
 
@@ -291,7 +359,7 @@ function goComment(content: string) {
           .infoTag {
             color: var(--c-primary);
             display: inline-block;
-            font-size: 0.75em;
+            font-size: 0.78em;
             font-weight: 500;
             background: color-mix(in srgb, var(--c-primary) 15%, transparent);
             border-radius: 0.25em;
@@ -368,39 +436,18 @@ function goComment(content: string) {
         padding-top: 0.5em;
         border-top: 1px solid var(--c-border);
         gap: 1em;
-        @media (max-width: 480px) {
-          align-items: stretch;
-          flex-direction: column;
-          gap: .5em;
-          padding-top: .25em;
-        }
-        @media (max-width: 768px) {
-          gap: .75rem
-        }
         .view-button {
-          align-items: center;
-          cursor: pointer;
+          font-size: 0.75rem;
+          background: var(--icat-gray-op);
+          color: var(--icat-fontcolor);
+          padding: 6px 12px;
+          border-radius: 6px;
+          letter-spacing: 0.5px;
+          text-decoration: none;
+          transition: all 0.3s ease;
           display: flex;
-          font-size: 0.875em;
-          font-weight: 500;
-          background: var(--c-border);
-          border-width: initial;
-          border-style: none;
-          border-color: initial;
-          border-image: initial;
-          border-radius: 0.25em;
           gap: 0.25em;
-          padding: 0.25em 0.5em;
-          transition: 0.2s;
-          @media (max-width: 480px) {
-            font-size: .75em;
-            min-height: 36px;
-            padding: .25em;
-          }
-          @media (max-width: 768px) {
-            justify-content: center;
-            width: 100%;
-          }
+          align-items: center;
         }
       }
     }

@@ -37,6 +37,29 @@ export function useCategory(list: MaybeRefOrGetter<ArticleProps[]>, options?: Us
 	}
 }
 
+interface UseTagOptions {
+	bindQuery?: string | false
+}
+
+export function useTag(list: MaybeRefOrGetter<ArticleProps[]>, options?: UseTagOptions) {
+	const { bindQuery } = options ?? {}
+	const tag = bindQuery
+		? useRouteQuery(bindQuery, undefined, { transform: (value?: string) => value, mode: 'push' })
+		: ref<string | undefined>()
+	const tags = computed(() => [...new Set(toValue(list).map(item => item.tags?.[0]))])
+	const listTagzed = computed(
+		() => toValue(list).filter(
+			item => !tag.value || item.tags?.[0] === tag.value,
+		),
+	)
+
+	return {
+		tag,
+		tags,
+		listTagzed,
+	}
+}
+
 export function useArticleSort(list: MaybeRefOrGetter<ArticleProps[]>) {
 	const appConfig = useAppConfig()
 	const sortOrder = ref<ArticleOrderType>(appConfig.pagination.sortOrder || 'date')

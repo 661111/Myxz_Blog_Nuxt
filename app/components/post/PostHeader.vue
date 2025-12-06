@@ -88,13 +88,13 @@ const { copy, copied } = useCopy(shareText)
 	}
 
 	&.has-cover {
-		position: relative;
-		overflow: hidden;
-		overflow: clip;
-		min-height: 256px;
-		max-height: 320px;
-		color: white;
-		transition: font-size 0.2s;
+		aspect-ratio: 16 / 9;
+    color: #fff;
+    min-height: 200px;
+    overflow: hidden;
+    overflow: clip;
+    position: relative;
+    transition: font-size .2s;
 
 		&:hover {
 			font-size: 0.8em;

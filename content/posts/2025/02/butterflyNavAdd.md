@@ -2,6 +2,7 @@
 title: butterfly导航栏修改方案
 description: 这篇文章讲述在博客中对导航栏进行修改，并添加多个产品页面地址，且采用安知鱼的导航栏CSS样式表。
 date: 2025-02-05 9:00
+updated: 2025-03-05 10:00
 image: https://sourceimage.s3.bitiful.net/img/default_cover_1.avif
 categories: [博客魔改]
 top_img: false

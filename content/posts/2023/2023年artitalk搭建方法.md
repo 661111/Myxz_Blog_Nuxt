@@ -1,7 +1,7 @@
 ---
 title: 2023年artalk部署方式
 date: 2023-01-26 20:05
-update: 2024-10-26 8:00
+updated: 2024-10-26 8:00
 categories: [搭建]
 top_img: false
 tags: [artalk, butterfly]

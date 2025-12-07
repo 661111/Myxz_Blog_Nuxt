@@ -2,7 +2,7 @@
 title: 添加追更历史
 description: 该文章详细介绍了基于Vue3+TypeScript开发的豆瓣追更记录系统，采用组件化架构实现两栏筛选菜单、动态加载动画和卡片式作品展示，通过Pinia状态管理+Vite构建工具实现数据流管理，集成防抖加载、虚拟滚动等性能优化方案。
 date: 2025-12-01 10:00
-update: 2025-12-01 20:49
+updated: 2025-12-01 20:49
 image: https://sourceimage.s3.bitiful.net/post/img/banguimPageAddCover/banguimPageAddCover.webp
 categories: [博客魔改]
 tags: [Nuxt, 魔改, 美化]
@@ -74,7 +74,7 @@ function handleClick() {
 			{{ bangumiCollectionItem.subject.name_cn || bangumiCollectionItem.subject.name }}
 		</a>
 	</div>
-	<span class="dateSignpost">{{ getPostDate(bangumiCollectionItem.updated_at) }}</span>
+	<span class="dateSignpost">{{ getPostDate(bangumiCollectionItem.updatedd_at) }}</span>
 	<span class="score">
 		<svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor">
 			<path d="M12 20.1l5.82 3.682c1.066.675 2.37-.322 2.09-1.584l-1.543-6.926 5.146-4.667c.94-.85.435-2.465-.799-2.567l-6.773-.602L13.29.89a1.38 1.38 0 0 0-2.581 0l-2.65 6.53-6.774.602C.052 8.126-.453 9.74.486 10.59l5.147 4.666-1.542 6.926c-.28 1.262 1.023 2.26 2.09 1.585L12 20.099z"></path>
@@ -344,7 +344,7 @@ const orderMap = {
         v-if="totalPages > 1 && isDataReady"
         v-model="page"
         :total-pages="totalPages"
-        @update:model-value="debouncedRefresh"
+        @updated:model-value="debouncedRefresh"
       />
     </Transition>
 
@@ -594,7 +594,7 @@ function handleClick() {
 			{{ bangumiCollectionItem.subject.name_cn || bangumiCollectionItem.subject.name }}
 		</a>
 	</div>
-	<span class="dateSignpost">{{ getPostDate(bangumiCollectionItem.updated_at) }}</span>
+	<span class="dateSignpost">{{ getPostDate(bangumiCollectionItem.updatedd_at) }}</span>
 	<span class="score">
 		<svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor">
 			<path d="M12 20.1l5.82 3.682c1.066.675 2.37-.322 2.09-1.584l-1.543-6.926 5.146-4.667c.94-.85.435-2.465-.799-2.567l-6.773-.602L13.29.89a1.38 1.38 0 0 0-2.581 0l-2.65 6.53-6.774.602C.052 8.126-.453 9.74.486 10.59l5.147 4.666-1.542 6.926c-.28 1.262 1.023 2.26 2.09 1.585L12 20.099z"></path>
@@ -811,7 +811,7 @@ const rateClass = computed(() => (rate: number) => {
           </div>
           <div class="infoDate">
             <Icon name="ph:calendar-dots-bold" />
-            {{ getPostDate(bangumiCollectionItem.updated_at) }}
+            {{ getPostDate(bangumiCollectionItem.updatedd_at) }}
           </div>
         </div>
         <div class="footer">
@@ -1268,7 +1268,7 @@ export interface BangumiApiResponse {
 
 // 单个收藏项
 export interface BangumiCollectionItem {
-	updated_at: string // ISO 8601 格式时间
+	updatedd_at: string // ISO 8601 格式时间
 	comment: string | null
 	tags: Tag[]
 	subject: Subject

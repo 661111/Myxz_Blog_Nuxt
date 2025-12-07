@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import type ArticleProps from '~/types/article'
+import { sort } from 'radash'
 
 defineOptions({ inheritAttrs: false })
 const props = defineProps<ArticleProps>()
@@ -19,7 +20,7 @@ const { copy, copied } = useCopy(shareText)
 <template>
 <!-- 💩夸克浏览器，桌面端只有IE不支持 :has() 了 -->
 <div class="post-header" :class="{ 'has-cover': image, 'text-revert': meta?.coverRevert }">
-	<NuxtImg v-if="image" class="post-cover" :src="image" :alt="title" />
+	<!-- <NuxtImg v-if="image" class="post-cover" :src="image" :alt="title" />
 	<div class="post-nav">
 		<div class="operations">
 			<ZButton
@@ -63,11 +64,168 @@ const { copy, copied } = useCopy(shareText)
 
 	<h1 class="post-title" :class="getPostTypeClassName(type)">
 		{{ title }}
-	</h1>
+	</h1> -->
+	<div class="cover-wrapper">
+		<NuxtImg v-if="image" class="post-cover" :src="image" :alt="title"/>
+	</div>
+	<div class="cover-nav">
+		<div class="post-info">
+			<span class="date">
+				<Icon name="ph:calendar-dots-bold" />
+				<time :datetime="getIsoDatetime(date)">
+					{{ getPostDate(props.date) }}
+				</time>
+			</span>
+			<span class="categroy" v-if="categoryLabel">
+				<Icon :name="categoryIcon" />
+				{{ categoryLabel }}
+			</span>
+			<span class="wordsCount">
+				<Icon name="ph:paragraph-bold" />
+				{{ formatNumber(readingTime?.words) }} 字
+			</span>
+			<span class="update">
+				<Icon name="ph:calendar-plus-bold" />
+				<time time :datetime="getIsoDatetime(updated)" >
+					{{ getPostDate(props.updated) }}
+				</time>
+			</span>
+			<span class="tagItem">
+				<Icon name="ph:tag-bold" />
+				<span class="tag" v-for="([key, value]) in Object.entries(tags ?? {})" :key="key">
+					{{ value }}
+				</span>
+			</span>
+		</div>
+		<div class="post-title" :class="getPostTypeClassName(type)">
+			{{ title }}
+		</div>
+	</div>
 </div>
 </template>
 
 <style lang="scss" scoped>
+.post-header.has-cover {
+	background-color: var(--c-bg-2);
+  background-color: transparent;
+  border-radius: 1rem 1rem 0 0;
+  flex-direction: column;
+  gap: 0;
+  margin: .5rem;
+	.cover-wrapper {
+    border-radius: 1rem 1rem 0 0;
+    height: 360px;
+    overflow: hidden;
+    overflow: clip;
+    position: relative;
+		.post-cover {
+			height: 100%;
+			-o-object-fit: cover;
+			object-fit: cover;
+			width: 100%;
+		}
+	}
+	.cover-nav {
+    -webkit-backdrop-filter: none;
+    backdrop-filter: none;
+    background: transparent;
+    border-radius: 0;
+    display: flex;
+    flex-direction: column;
+    gap: .3rem;
+    padding: 1.6rem 1.2rem;
+		.post-info {
+			align-items: center;
+			color: var(--c-text-soft);
+			display: flex;
+			flex-wrap: wrap;
+			gap: .6em 1.2em;
+			-moz-column-gap: clamp(1em, 3%, 1.5em);
+			column-gap: clamp(1em, 3%, 1.5em);
+			font-size: .85rem;
+			line-height: 1.5;
+			margin: 0;
+			order: -1;
+			padding: 0;
+			span {
+				align-items: center;
+				display: flex;
+				gap: .3em;
+			}
+			.tagItem {
+				align-items: center;
+				display: flex;
+				flex-wrap: wrap;
+				gap: .3em .6em;
+				.tag {
+					background-color: var(--c-bg-soft);
+					border-radius: .4em;
+					color: var(--c-text-soft);
+					font-size: .9em;
+					padding: .25em .6em;
+					transition: all .2s;
+					&:hover {
+						background-color: var(--c-primary-soft);
+						color: var(--c-primary);
+					}
+				}
+			}
+		}
+		.post-title {
+			-webkit-backdrop-filter: none;
+			backdrop-filter: none;
+			background: none;
+			border: none;
+			box-shadow: none;
+			color: var(--c-text);
+			font-size: 1.6rem;
+			font-weight: 600;
+			line-height: 1.4;
+			margin: 0;
+			padding: 0;
+		}
+	}
+}
+
+.post-header {
+  border-radius: 1rem;
+  color: var(--c-text);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin: .5rem;
+	.cover-wrapper {
+    overflow: hidden;
+    overflow: clip;
+    position: relative;
+	}
+	.cover-nav {
+    display: flex;
+    flex-direction: column;
+    gap: .3rem;
+    opacity: .9;
+    padding: 1.6rem 1.2rem;
+    position: relative;
+		.post-info {
+			align-items: center;
+			color: var(--c-text-soft);
+			display: flex;
+			flex-wrap: wrap;
+			gap: .6em 1.2em;
+			-moz-column-gap: clamp(1em, 3%, 1.5em);
+			column-gap: clamp(1em, 3%, 1.5em);
+			font-size: .85rem;
+			line-height: 1.5;
+			margin: 0;
+			order: -1;
+			padding: 0;
+		}
+	}
+}
+</style>
+
+<!-- 隐藏起来的样式 -->
+<!-- <style lang="scss" scoped>
 .post-header {
 	display: flex;
 	flex-direction: column;
@@ -166,4 +324,4 @@ const { copy, copied } = useCopy(shareText)
 		column-gap: clamp(1em, 3%, 1.5em);
 	}
 }
-</style>
+</style> -->

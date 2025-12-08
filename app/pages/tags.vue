@@ -1,22 +1,20 @@
 <script setup lang="ts">
-import type ArticleProps from '~/types/article'
 import { sort } from 'radash'
-import { computed } from 'vue'
-
-const appConfig = useAppConfig()
-useSeoMeta({
-	title: '标签',
-	description: `${appConfig.title}的所有文章标签。`,
-})
+import type ArticleProps from '~/types/article'
 
 const layoutStore = useLayoutStore()
-layoutStore.setAside(['blog-stats', 'blog-tech', 'blog-log'])
+layoutStore.setAside(['blog-stats', 'blog-tech', 'blog-log', 'comm-group'])
 
-const { data: listRaw } = await useAsyncData<ArticleProps[]>('tags-articles', () =>
-	useArticleIndex().then(data => data.data.value))
+const appConfig = useAppConfig()
+const title = '标签'
+const description = `${appConfig.title}的所有文章标签。`
+useSeoMeta({ title, description })
+
+// const { data: listRaw } = await useAsyncData('index_posts', () => useArticleIndex(), { default: () => [] })
+const { data: listRaw } = await useAsyncData<ArticleProps[]>('index_posts', () => useArticleIndex().then(data => data.data.value))
 
 const articlesByTag = computed(() => {
-	const result: Record<string, ArticleProps[]> = {}
+	const result: Record<string, any[]> = {}
 	const articles = sort(listRaw.value || [], a => new Date(a.date || 0).getTime(), true)
 	for (const article of articles) {
 		if (article.tags) {
@@ -41,40 +39,39 @@ const sortedTags = computed(() => {
 </script>
 
 <template>
-  <div class="tag proper-height">
-    <section
-      v-for="tag in sortedTags"
-      :key="tag"
-      class="tag-group"
-    >
-      <div class="tag-title text-creative">
-        <h2 class="tag-name">
-          {{ tag }}
-        </h2>
-        <div class="tag-info">
-          <span>{{ articlesByTag[tag]?.length }}篇</span>
-        </div>
-      </div>
+<div class="tags">
+	<section
+		v-for="tag in sortedTags"
+		:key="tag"
+		class="tag-group"
+	>
+		<div class="tag-title text-creative">
+			<h2 class="tag-name">
+				{{ tag }}
+			</h2>
+			<div class="tag-info">
+				<span>{{ articlesByTag[tag]?.length }}篇</span>
+			</div>
+		</div>
 
-      <menu class="archive-list">
-        <TransitionGroup appear name="float-in">
-          <ZArchive
-            v-for="article, index in articlesByTag[tag]"
-            :key="article.path"
-            v-bind="article"
-            :to="article.path"
-            :style="{ '--delay': `${index * 0.03}s` }"
-          />
-        </TransitionGroup>
-      </menu>
-    </section>
-  </div>
+		<menu class="archive-list">
+			<TransitionGroup appear name="float-in">
+				<ZArchive
+					v-for="article, index in articlesByTag[tag]"
+					:key="article.path"
+					v-bind="article"
+					:to="article.path"
+					:style="{ '--delay': `${index * 0.03}s` }"
+				/>
+			</TransitionGroup>
+		</menu>
+	</section>
+</div>
 </template>
 
 <style lang="scss" scoped>
 .tags {
 	margin: 1rem;
-	mask-image: linear-gradient(#FFF 50%, #FFF5);
 }
 
 .tag-group {
@@ -86,18 +83,18 @@ const sortedTags = computed(() => {
 	justify-content: space-between;
 	gap: 1em;
 	position: sticky;
-	opacity: 0.5;
+	opacity: .5;
 	top: 0;
 	font-size: min(1.5em, 5vw);
 	color: transparent;
-	transition: color 0.2s;
+	transition: color .2s;
 
 	&::selection, :hover > & {
 		color: var(--c-text-3);
 	}
 
 	> .tag-name {
-		margin-bottom: -0.3em;
+		margin-bottom: -.3em;
 		mask-image: linear-gradient(#FFF 50%, transparent);
 		font-size: 3em;
 		font-weight: 800;
@@ -110,7 +107,7 @@ const sortedTags = computed(() => {
 		display: flex;
 		flex-wrap: wrap;
 		justify-content: flex-end;
-		column-gap: 0.5em;
+		column-gap: .5em;
 	}
 }
 </style>

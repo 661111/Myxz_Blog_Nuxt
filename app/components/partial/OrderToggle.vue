@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import type { ArticleOrderType } from '~/types/article'
+const { data: stats } = useFetch('/api/stats')
 
 const props = defineProps<{
 	// 强制允许或禁止升序

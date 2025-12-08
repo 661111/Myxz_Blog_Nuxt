@@ -14,11 +14,10 @@ layoutStore.setAside(['blog-stats', 'blog-tech', 'blog-site-info', 'blog-archive
 // 此处数据源不采用默认参数，以防归档页面刷新空白
 const { data: listRaw } = await useArticleIndex('posts%')
 const { listSorted, isAscending, sortOrder } = useArticleSort(listRaw)
-const { tag, tags, listTagzed } = useTag(listSorted, { bindQuery: 'tag' })
 const { category, categories, listCategorized } = useCategory(listSorted, { bindQuery: 'category' })
 const { page, totalPages, listPaged } = usePagination(listCategorized, { bindQuery: 'page' })
 
-watch(category || tag, () => {
+watch(category, () => {
 	page.value = 1
 })
 
@@ -55,8 +54,6 @@ const listRecommended = computed(() => sort(
 			v-model:sort-order="sortOrder"
 			v-model:category="category"
 			:categories
-			v-model:tag="tag"
-			:tags
 		/>
 	</div>
 

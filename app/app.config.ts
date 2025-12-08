@@ -94,6 +94,7 @@ export default defineAppConfig({
 			items: [
 				{ icon: 'ph:files-bold', text: '丹青妙笔', url: '/'},
                 { icon: 'ph:archive-bold', text: '经卷藏珍', url: '/archive'},
+				{ icon: 'ph:signature', text: '云篆星徽', url: '/tags' },
                 { icon: 'ph:link-bold', text: '竹林旧友', url: '/link'},
                 { icon: 'ph:fish-bold', text: '塘文集锦', url: '/fcircle' },
                 // { icon: 'ph:chats-bold', text:'​纸笺寄语', url:'/comments' },

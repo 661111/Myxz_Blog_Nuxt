@@ -4,10 +4,10 @@ const { data: stats } = useFetch('/api/stats')
 <template>
 <ZWidget card title="分类展示">
   <div class="category_cloud">
-    <div v-for="item in stats?.categories">
+    <ZRawLink v-for="item in stats?.categories" :to="'/?category=' + item.name" class="category">
       {{ item.name }}
       <sup>{{ item.posts }}</sup>
-    </div>
+    </ZRawLink>
   </div>
 </ZWidget>
 </template>
@@ -19,7 +19,7 @@ const { data: stats } = useFetch('/api/stats')
     // overflow-y: scroll;
     gap: 4px;
 
-    div {
+    .category {
       color: var(--heo-fontcolor) !important;
       padding: 2px 8px;
       border-radius: 8px;

@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { PostFooter } from '#components';
 import type ArticleProps from '~/types/article'
+const { data: stats } = useFetch('/api/stats')
 
 defineOptions({ inheritAttrs: false })
 const props = defineProps<ArticleProps>()
@@ -13,6 +14,34 @@ const item = {
 	更新时间: getLocalePostDatetime(props.updated),
 	许可协议: "CC BY-NC-SA 4.0",
 }
+
+import { sort } from 'radash'
+
+const { data: listRaw } = await useAsyncData<ArticleProps[]>('index_posts', () => useArticleIndex().then(data => data.data.value))
+
+const articlesByTag = computed(() => {
+	const result: Record<string, any[]> = {}
+	const articles = sort(listRaw.value || [], a => new Date(a.date || 0).getTime(), true)
+	for (const article of articles) {
+		if (article.tags) {
+			for (const tag of article.tags) {
+				if (!result[tag]) {
+					result[tag] = []
+				}
+				result[tag].push(article)
+			}
+		}
+	}
+	return result
+})
+
+const sortedTags = computed(() => {
+	return Object.keys(articlesByTag.value).sort((a, b) => {
+		const aCount = articlesByTag.value[a]?.length || 0
+		const bCount = articlesByTag.value[b]?.length || 0
+		return bCount - aCount
+	})
+})
 </script>
 
 <template>
@@ -51,9 +80,9 @@ const item = {
 		<div class="header">
 			<span class="authorInfo">
 				<h3 class="title">{{ title }}</h3>
-				<a :href="appConfig.url + path" class="url">
+				<ZRawLink :to="appConfig.url + path" class="url">
 					{{ appConfig.url }}{{ path }}
-				</a>
+				</ZRawLink>
 			</span>
 			<span class="authorIcon">
 				<icon name="ph:copyright-bold" />
@@ -68,11 +97,21 @@ const item = {
           <h3 class="spec-value" v-if="key === '作者' || key === '发布时间' || key === '更新时间'">
             {{ value }}
           </h3>
-					<a class="spec-value" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh-hans" v-if="key === '许可协议'">
+					<ZRawLink class="spec-value" to="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh-hans" v-if="key === '许可协议'">
 						{{ value }}
-					</a>
+					</ZRawLink>
         </div>
       </div>
+		</div>
+	</section>
+	<section class="post-bottom">
+		<div class="left">
+			<div class="tagsItem">
+				<ZRawLink class="tags" v-for="([key, value]) in Object.entries(tags ?? {})" :key="key" :to="'/?tags=' + value">
+					{{ value }}
+					<span class="tagNumber">{{ articlesByTag[value]?.length }}</span>
+				</ZRawLink>
+			</div>	
 		</div>
 	</section>
 </div>
@@ -165,6 +204,59 @@ section {
 					word-break: break-word;
 					font-size: .9rem;
     			font-weight: 500;
+				}
+			}
+		}
+	}
+}
+
+.post-bottom {
+	width: 100%;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+
+	.left {
+    white-space: nowrap;
+    display: flex;
+    text-overflow: ellipsis;
+    flex-wrap: wrap;
+
+		.tagsItem {
+			display: flex;
+			padding: 0;
+			width: 100%;
+			flex-wrap: wrap;
+			flex-direction: row;
+			gap: 8px;
+
+			.tags {
+				background: var(--heo-card-bg);
+				border: var(--style-border-always);
+				color: var(--heo-fontcolor);
+				border-radius: 8px;
+				margin: 0;
+				display: flex;
+				align-items: center;
+				white-space: nowrap;
+				height: 32px;
+				padding: 0 .6rem;
+				width: fit-content;
+				font-size: .85em;
+				transition: all .2s ease-in-out 0s;
+
+				.tagNumber {
+					padding: 2px;
+					background: var(--heo-fontcolor);
+					min-width: 22.5px;
+					display: inline-block;
+					border-radius: 4px;
+					text-align: center;
+					font-size: 0.7rem;
+					color: var(--heo-card-bg);
+					margin-left: 4px;
+					line-height: 1;
+					transition: .2s;
 				}
 			}
 		}

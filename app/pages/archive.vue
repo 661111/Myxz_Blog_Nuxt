@@ -14,6 +14,7 @@ layoutStore.setAside(['blog-stats', 'blog-tech', 'blog-site-info', 'blog-archive
 const { data: listRaw } = await useArticleIndex()
 const { listSorted, isAscending, sortOrder } = useArticleSort(listRaw)
 const { category, categories, listCategorized } = useCategory(listSorted)
+const { tag, tags, listTagzed } = useTag(listSorted, { bindQuery: 'tag' })
 
 const listGrouped = computed(() => {
 	const groupList = Object.entries(group(
@@ -40,6 +41,8 @@ const yearlyWordCount = computed(() => {
 		v-model:sort-order="sortOrder"
 		v-model:category="category"
 		:categories
+		v-model:tag="tag"
+		:tags
 	/>
 
 	<section

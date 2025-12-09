@@ -9,18 +9,12 @@ interface CategoryEntry {
 	children?: CategoryEntry[]
 }
 
-interface TagEntry {
-	name: string
-	posts: number
-	children?: TagEntry[]
-}
-
 export default defineEventHandler(async (event) => {
 	const stats = {
 		total: { posts: 0, words: 0 },
 		annual: <Record<number, StatsEntry>>{},
 		categories: <CategoryEntry[]>[],
-		tags: <TagEntry[]>[],
+		tags: <string[]>[],
 	}
 
 	const existedPath = new Map()
@@ -37,18 +31,6 @@ export default defineEventHandler(async (event) => {
 			tree.push(category)
 		}
 		return category
-	}
-
-	const findOrCreateTag = (
-		name: string,
-		tree: TagEntry[],
-	): TagEntry => {
-		let tag = tree.find(entry => entry.name === name)
-		if (!tag) {
-			tag = { name, posts: 0 }
-			tree.push(tag)
-		}
-		return tag
 	}
 
 	for (const post of posts) {
@@ -76,8 +58,6 @@ export default defineEventHandler(async (event) => {
 		// 分类文章计数
 		const categories = post.categories || []
 		let currentLevel = stats.categories
-		const tags = post.tags || []
-		let currentLevelTag = stats.tags
 
 		for (const [index, categoryName] of categories.entries()) {
 			if (typeof categoryName !== 'string')
@@ -93,19 +73,13 @@ export default defineEventHandler(async (event) => {
 			}
 		}
 
-		for (const [index, tagsName] of tags.entries()) {
-			if (typeof tagsName !== 'string')
-				continue
-
-			const tag = findOrCreateTag(tagsName, currentLevelTag)
-			tag.posts++
-
-			if (index < categories.length - 1) {
-				if (!tag.children)
-					tag.children = []
-				currentLevelTag = tag.children
-			}
-		}
+		// 标签统计
+		const tags = post.tags || []
+		tags.filter((tag: any): tag is string => typeof tag === 'string')
+			.forEach((tag: string) => {
+				if (!stats.tags.includes(tag))
+					stats.tags.push(tag)
+			})
 	}
 
 	return stats

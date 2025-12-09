@@ -1,13 +1,11 @@
 <script setup lang="ts">
 import type { ArticleOrderType } from '~/types/article'
-const { data: stats } = useFetch('/api/stats')
 
 const props = defineProps<{
 	// 强制允许或禁止升序
 	enableAscending?: boolean
 	disableAscending?: boolean
 	categories?: (string | undefined)[]
-	tags?: (string | undefined)[]
 }>()
 
 const appConfig = useAppConfig()
@@ -15,7 +13,6 @@ const orderMap = appConfig.article.order
 // 配置文件中允许升序时，且未明确禁用升序时，允许升序
 const allowAscending = computed(() => appConfig.pagination.allowAscending ? !props.disableAscending : props.enableAscending)
 
-const tag = defineModel<string>('tag') // 新增标签索引
 const category = defineModel<string>('category')
 const sortOrder = defineModel<ArticleOrderType>('sortOrder', { default: 'date' })
 const isAscending = defineModel<boolean>('isAscending')

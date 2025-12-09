@@ -41,8 +41,6 @@ const yearlyWordCount = computed(() => {
 		v-model:sort-order="sortOrder"
 		v-model:category="category"
 		:categories
-		v-model:tag="tag"
-		:tags
 	/>
 
 	<section

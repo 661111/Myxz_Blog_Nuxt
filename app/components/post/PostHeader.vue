@@ -85,7 +85,7 @@ const { copy, copied } = useCopy(shareText)
 				{{ formatNumber(readingTime?.words) }} 字
 			</span>
 			<span class="update">
-				<Icon name="ph:calendar-plus-bold" />
+				<Icon name="ri:24-hours-line" />
 				<time time :datetime="getIsoDatetime(updated)" >
 					{{ getPostDate(props.updated) }}
 				</time>
@@ -118,6 +118,9 @@ const { copy, copied } = useCopy(shareText)
     overflow: hidden;
     overflow: clip;
     position: relative;
+		@media (max-width: 768px) {
+			height: auto;
+		}
 		.post-cover {
 			height: 100%;
 			-o-object-fit: cover;

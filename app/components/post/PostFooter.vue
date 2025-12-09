@@ -3,6 +3,8 @@ import { PostFooter } from '#components';
 import type ArticleProps from '~/types/article'
 const { data: stats } = useFetch('/api/stats')
 
+const ReWardStore = useReWardStore()
+
 defineOptions({ inheritAttrs: false })
 const props = defineProps<ArticleProps>()
 
@@ -113,6 +115,14 @@ const sortedTags = computed(() => {
 				</ZRawLink>
 			</div>	
 		</div>
+		<div class="right">
+			<div class="post-reward">
+				<ZButton class="reward-button" @click="ReWardStore.open()" style="font-size: 0.85em;">
+					<Icon name="proicons:sparkle-2" />
+					打赏
+				</ZButton>
+			</div>
+		</div>
 	</section>
 </div>
 </template>
@@ -161,6 +171,7 @@ section {
 		}
 		.authorIcon {
 			position: absolute;
+			filter: blur(5px);
 			right: -26px;
 			font-size: 200px;
 			opacity: .2;
@@ -170,7 +181,10 @@ section {
 			-o-transition: all .3s ease-in-out;
 			-ms-transition: all .3s ease-in-out;
 			transition: all .3s ease-in-out;
-			top: -25%
+			top: -25%;
+			&:hover {
+				filter: none;
+			}
 		}
 	}
 	.meta {

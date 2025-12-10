@@ -7,7 +7,6 @@ import {
 	LazyWidgetEmpty,
 	LazyWidgetGithubCard,
 	LazyWidgetToc,
-	LazyWidgetBlogAccount,
 	LazyWidgetBlogArchive,
 } from '#components'
 import { pascal } from 'radash'
@@ -22,7 +21,6 @@ const rawWidgets = {
 	LazyWidgetGithubCard,
 	LazyWidgetToc,
 	LazyWidgetBlogSiteInfo,
-	LazyWidgetBlogAccount,
 	LazyWidgetBlogArchive,
 }
 

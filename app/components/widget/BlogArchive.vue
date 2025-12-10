@@ -4,10 +4,10 @@ const { data: stats } = useFetch('/api/stats')
 <template>
 <ZWidget card title="分类展示">
   <div class="category_cloud">
-    <ZRawLink v-for="item in stats?.categories" :to="'/?category=' + item.name" class="category">
+    <div v-for="item in stats?.categories" :href="'/?category=' + item.name" class="category">
       {{ item.name }}
       <sup>{{ item.posts }}</sup>
-    </ZRawLink>
+    </div>
   </div>
 </ZWidget>
 </template>

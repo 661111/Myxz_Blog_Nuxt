@@ -1,13 +1,16 @@
 <script setup lang="ts">
-const { data } = useFetch('/api/stats')
+const { data: stats } = useFetch('/api/stats')
 </script>
 <template>
-<ZWidget card title="分类展示">
+<ZWidget card title="标签展示">
   <div class="category_cloud">
-    <div v-for="item in data?.categories" :href="'/?category=' + item.name" class="category">
+    <ZRawLink v-for="item in stats?.tags.slice(0, 9).sort((a, b) => b.posts - a.posts)" :to="'/?tag=' + item.name" class="category">
       {{ item.name }}
       <sup>{{ item.posts }}</sup>
-    </div>
+    </ZRawLink>
+    <ZRawLink v-if="stats?.tags.slice(0, 9)" class="category" to="tags">
+      ......
+    </ZRawLink>
   </div>
 </ZWidget>
 </template>

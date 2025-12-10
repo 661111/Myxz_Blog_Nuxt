@@ -1,6 +1,6 @@
 ---
 title: 组件美化
-description: 该文章记录了项目版本迭代中的UI优化与功能调整，包括站点详情卡片组件化改造（采用Badge组件优化布局）、分类卡片新增文章数量统计功能、博主信息模块的拆分与重构，同时删除了冗余的左侧图片和完整博主卡片，最终形成模块化组件结构（涉及5个核心组件及数据调用逻辑调整）。
+description: 该文章记录了项目版本迭代中的UI优化与功能调整，包括站点详情卡片组件化改造（采用Badge组件优化布局）、分类卡片新增文章数量统计功能（重新严重问题）、标签卡片新增文章标签统计功能、博主信息模块的拆分与重构，同时删除了冗余的左侧图片和完整博主卡片，最终形成模块化组件结构（涉及5个核心组件及数据调用逻辑调整）。
 date: 2025-12-04 10:00
 updated: 2025-12-04 20:49
 image: https://sourceimage.s3.bitiful.net/post/img/smallCardAdd/smallCardAdd.webp
@@ -12,6 +12,13 @@ recommend: true
 由于最近的累计魔改的内容已经多到需要记录了，索性也写成一篇魔改文章。
 
 ## 功能增加与删减
+### V20251210-OFFICIAL
+增加内容
+- 由标签展示卡片代替掉分类展示卡片
+
+删减内容
+- 分类展示卡片导致其首页`index.vue`中的渲染逻辑出现错误，导致了无法正常渲染出`精选文章卡片`、`文章具体分类`，需要切换到其他页面或者文章再切回才能正常渲染
+
 ### V20251130-OFFICIAL
 新增内容
 - 站点详情卡片中的镜像节点采用`Badge`组件，在标题栏中的`title`与`description`排列为一行。
@@ -32,7 +39,8 @@ recommend: true
 - 增加博主信息卡片
 
 ## 目录结构
-- `/app/components/widget/BlogArchive.vue`：分类卡片展示，自动匹配当前站点所有文章的所属分类，并通过该分类中的文章数量进行计数。
+- `/app/components/widget/BlogTag.vue`：标签卡片展示，自动匹配当前站点所有文章的所属标签，并通过该标签中的文章数量进行计数
+- `/app/components/widget/BlogArchive.vue`：分类卡片展示，自动匹配当前站点所有文章的所属分类，并通过该分类中的文章数量进行计数（出现重大bug，因不在推荐使用）
 - `/app/components/widget/BlogStats.vue`：服务卡片的魔改文件，通过增加上方的博主信息来完成魔改
 - `/app/components/widget/BlogSiteInfo.vue`：站点详情卡片展示，通过调用`sitelink.ts`完成数据展示。
 - `/app/sitelink.ts`：站点详情卡片展示，通过调用`sitelink.ts`完成数据展示。
@@ -41,8 +49,54 @@ recommend: true
 ## 教程开始
 
 ### 主渲染组件模块
-::tab{:tabs='["分类详情", "服务卡片", "站点详情", "博主信息"]'}
+::tab{:tabs='["标签详情", "分类详情（请勿使用）", "服务卡片", "站点详情", "博主信息"]'}
 #tab1
+``` vue [BlogTag.vue] lang="vue"
+<script setup lang="ts">
+const { data: stats } = useFetch('/api/stats')
+</script>
+<template>
+<ZWidget card title="分类展示">
+  <div class="category_cloud">
+    <ZRawLink v-for="item in stats?.tags" :to="'/?tag=' + item.name" class="category">
+      {{ item.name }}
+      <sup>{{ item.posts }}</sup>
+    </ZRawLink>
+  </div>
+</ZWidget>
+</template>
+
+<style lang="scss" scoped>
+  .category_cloud {
+    display: flex;
+    flex-wrap: wrap;
+    // overflow-y: scroll;
+    gap: 4px;
+
+    .category {
+      color: var(--heo-fontcolor) !important;
+      padding: 2px 8px;
+      border-radius: 8px;
+      background: var(--heo-card-bg);
+      border: var(--style-border);
+      font-size: 14px !important;
+      font-weight: 700;
+
+      sup {
+        opacity: .6;
+        top: -.5em;
+        font-size: 75%;
+        line-height: 0;
+        position: relative;
+        vertical-align: baseline;
+      }
+    }
+  }
+  
+</style>
+```
+
+#tab2
 ``` vue [BlogArchive.vue] lang="vue"
 <script setup lang="ts">
 const { data: stats } = useFetch('/api/stats')
@@ -88,7 +142,7 @@ const { data: stats } = useFetch('/api/stats')
 </style>
 ```
 
-#tab2
+#tab3
 ``` vue [BlogStats.vue] lang="vue"
 <script setup lang="ts">
 import { NuxtTime } from '#components'
@@ -188,7 +242,7 @@ $status_backgroud: var(--status_backgroud);
 </style>
 ```
 
-#tab3
+#tab4
 ``` vue [BlogSiteInfo.vue] lang="vue"
 <script setup lang="ts">
 import { ref, onMounted } from 'vue';
@@ -346,7 +400,7 @@ button {
 </style>
 ```
 
-#tab4
+#tab5
 ``` vue [BlogAccount.vue] lang="vue"
 <script setup lang="ts">
 const appConfig = useAppConfig()

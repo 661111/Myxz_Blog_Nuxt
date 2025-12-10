@@ -3,7 +3,7 @@ import { sort } from 'radash'
 import type ArticleProps from '~/types/article'
 
 const layoutStore = useLayoutStore()
-layoutStore.setAside(['blog-stats', 'blog-tech', 'blog-log', 'comm-group'])
+layoutStore.setAside(['blog-stats', 'blog-tech', 'blog-site-info', 'blog-archive', 'blog-log'])
 
 const appConfig = useAppConfig()
 const title = '标签'

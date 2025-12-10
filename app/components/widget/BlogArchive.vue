@@ -1,10 +1,10 @@
 <script setup lang="ts">
-const { data: stats } = useFetch('/api/stats')
+const { data } = useFetch('/api/stats')
 </script>
 <template>
 <ZWidget card title="分类展示">
   <div class="category_cloud">
-    <div v-for="item in stats?.categories" :href="'/?category=' + item.name" class="category">
+    <div v-for="item in data?.categories" :href="'/?category=' + item.name" class="category">
       {{ item.name }}
       <sup>{{ item.posts }}</sup>
     </div>

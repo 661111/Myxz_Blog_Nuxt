@@ -31,7 +31,7 @@ export const siteLinkWidgetInfo: siteInfo[] = [
 export const siteLinkItems: siteTabs[] = [
     {
         name: '镜像站点',
-        itemnumber: '3',
+        itemnumber: '1',
         Item: [
             {
                 name: '博客镜像',

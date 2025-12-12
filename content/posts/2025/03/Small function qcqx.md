@@ -1,8 +1,8 @@
 ---
 title: 功能美化
 description: 从零开始魔改butterfly
-date: 2025-03-05 8:00
-updated: 2025-03-06 18:00
+date: 2025-03-05 08:00:00
+updated: 2025-03-06 18:00:00
 image: https://sourceimage.s3.bitiful.net/img/default_cover_45.avif
 categories: [博客魔改]
 tags: [hexo, butterfly]

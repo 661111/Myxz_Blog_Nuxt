@@ -1,7 +1,7 @@
 ---
 title: 2023年bbtalk部署方式
-date: 2023-01-27 20:05
-updated: 2023-01-27 22:00
+date: 2023-01-27 20:05:00
+updated: 2023-01-27 22:00:00
 categories: [搭建]
 top_img: false
 tags: [artalk, butterfly]

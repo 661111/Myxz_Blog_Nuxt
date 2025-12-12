@@ -1,8 +1,8 @@
 ---
 title: 轻笑风格背景
 description: 这篇文章讲述如何在页面中添加模块以及使用CSS添加颜色以及背景图片。
-date: 2025-03-05 8:00
-updated: 2025-03-06 18:00
+date: 2025-03-05 08:00:00
+updated: 2025-03-06 18:00:00
 image: https://sourceimage.s3.bitiful.net/img/default_cover_21.avif
 categories: [博客魔改]
 tags: [hexo, butterfly]

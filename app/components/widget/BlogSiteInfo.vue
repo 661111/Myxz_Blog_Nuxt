@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { ref, onMounted } from 'vue';
 import { siteLinkItems, siteLinkWidgetInfo } from '../../sitelink'
-const activeTab = ref(0); // 默认激活第一个标签页
+const activeTab = ref<string>('0'); // 默认激活第一个标签页
 </script>
 
 <template>

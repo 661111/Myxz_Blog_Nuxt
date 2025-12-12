@@ -1,8 +1,8 @@
 ---
 title: 文章美化
 description: 该文章记录了项目版本迭代中的UI优化与功能调整，包括增加可后期换配置且内置移动到赞赏总览触发效果的打赏弹窗、优化头部封面移动端预览、增加版权图标虚化及打赏入口、将本地desc预览改ai摘要样式、增加版权卡片及更换头部信息样式。
-date: 2025-12-09 10:00
-updated: 2025-12-09 20:49
+date: 2025-12-09 10:00:00
+updated: 2025-12-09 20:49:00
 image: https://myxzblog.cn-nb1.rains3.com/img/post/2025/12/postMeiHua/postmeihua.webp
 categories: [博客魔改]
 tags: [Nuxt, 魔改, 美化]

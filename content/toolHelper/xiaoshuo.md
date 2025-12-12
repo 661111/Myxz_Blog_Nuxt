@@ -1,8 +1,8 @@
 ---
 title: 论小说的未来发展
 description: 该文章详细介绍了基于Vue3+TypeScript开发的豆瓣追更记录系统，采用组件化架构实现两栏筛选菜单、动态加载动画和卡片式作品展示，通过Pinia状态管理+Vite构建工具实现数据流管理，集成防抖加载、虚拟滚动等性能优化方案。
-date: 2025-12-08 10:00
-updated: 2025-12-08 20:49
+date: 2025-12-08 10:00:00
+updated: 2025-12-08 20:49:00
 image: https://myxzblog.cn-nb1.rains3.com/%E5%B0%8F%E8%AF%B4%E5%8F%91%E5%B1%95.webp
 categories: [日常]
 tags: [小说, 日常]

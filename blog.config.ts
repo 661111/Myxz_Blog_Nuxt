@@ -91,7 +91,7 @@ export const myFeed: FeedEntry = {
 	title: blogConfig.title,
 	desc: blogConfig.subtitle || blogConfig.description,
 	link: blogConfig.url,
-	feed: new URL(`${blogConfig.url}/atom.xml`).toString(),
+	feed: new URL('/atom.xml', blogConfig.url).toString(),
 	icon: blogConfig.favicon,
 	avatar: blogConfig.author.avatar,
 	archs: ['Nuxt', 'Vercel'],

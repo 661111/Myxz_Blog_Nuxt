@@ -1,7 +1,7 @@
 ---
 title: 我的博客平台变迁与未来计划
 description: 2019年起，笔者先后用Gridea、Hexo、Wordpress、重用Hexo、Nuxt搭建博客；后续计划含旧站恢复改名、服务迁移、多服务器部署及动静态分离。
-date: 2025-08-17 8:00:09
+date: 2025-08-17 08:00:09
 updated: 2025-08-17 10:56:09
 image: https://sourceimage.s3.bitiful.net/img/default_cover_50.avif
 categories: [站历史]

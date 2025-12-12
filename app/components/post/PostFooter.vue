@@ -8,18 +8,18 @@ const appConfig = useAppConfig()
 
 const item = {
 	作者: appConfig.author.name,
-	发布时间: '',
-	更新时间: '',
+	发布时间: getPostDate(props.date),
+	更新时间: getPostDate(props.updated),
 	许可协议: "CC BY-NC-SA 4.0",
 }
 
 import { sort } from 'radash'
 
-const { data: listRaw } = await useAsyncData<ArticleProps[]>('index_posts', () => useArticleIndex().then(data => data.data.value))
+const { data: listRaw } = await useAsyncData('index_posts', () => useArticleIndexOptions(), { default: () => [] })
 
 const articlesByTag = computed(() => {
 	const result: Record<string, any[]> = {}
-	const articles = sort(listRaw.value || [], a => new Date(a.date || 0).getTime(), true)
+	const articles = sort(listRaw.value, a => new Date(a.date || 0).getTime(), true)
 	for (const article of articles) {
 		if (article.tags) {
 			for (const tag of article.tags) {

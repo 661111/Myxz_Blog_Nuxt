@@ -70,10 +70,13 @@ const { copy, copied } = useCopy(shareText)
 	<div class="cover-nav">
 		<div class="post-info">
 			<span class="date">
-				<Icon name="ph:calendar-dots-bold" />
-				<time :date="date">
-					{{ isTimeDiffSignificant(date) }}
-				</time>
+				<UtilDate
+					v-if="date"
+					v-tip
+					tip-prefix="创建于"
+					:date="date"
+					icon="ph:calendar-dots-bold"
+				/>
 			</span>
 			<span class="categroy" v-if="categoryLabel">
 				<Icon :name="categoryIcon" />
@@ -84,10 +87,13 @@ const { copy, copied } = useCopy(shareText)
 				{{ formatNumber(readingTime?.words) }} 字
 			</span>
 			<span class="update">
-				<Icon name="ri:24-hours-line" />
-				<time time :v-if="updated && isTimeDiffSignificant(date, updated, .999)" :date="updated">
-					{{ isTimeDiffSignificant(updated) }}
-				</time>
+				<UtilDate
+					v-if="updated && isTimeDiffSignificant(date, updated, .999)"
+					v-tip
+					tip-prefix="修改于"
+					:date="updated"
+					icon="ri:24-hours-line"
+				/>
 			</span>
 			<span class="tagItem">
 				<Icon name="ph:tag-bold" />

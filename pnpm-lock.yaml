@@ -39,13 +39,7 @@ catalogs:
     shiki:
       specifier: ^3.17.0
       version: 3.17.0
-    unist-util-visit:
-      specifier: ^5.0.0
-      version: 5.0.0
   framework:
-    '@zinkawaii/tsconfig':
-      specifier: ^0.0.2
-      version: 0.0.2
     ci-info:
       specifier: ^4.3.1
       version: 4.3.1
@@ -55,9 +49,6 @@ catalogs:
     sass-embedded:
       specifier: ^1.93.3
       version: 1.93.3
-    tsdown:
-      specifier: ^0.15.12
-      version: 0.15.12
     tsx:
       specifier: ^4.20.6
       version: 4.20.6

@@ -30,7 +30,7 @@ onMounted(() => mounted.value = true)
 <template>
 <span :title="tooltip">
 	<Icon v-if="icon" :name="icon" />
-	<template v-if="icon && !nospace">&nbsp;</template>
+	<!-- <template v-if="icon && !nospace">&nbsp;</template> -->
 
 	<span v-if="isNaN(datetime.getTime())" v-text="datetime" />
 	<NuxtTime

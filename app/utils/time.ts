@@ -20,7 +20,7 @@ export function getPostDate(date: string | Date) {
 	return toDate(date, { timeZone: appConfig.timezone })
 		.toLocaleString(undefined, {
 			year: 'numeric',
-			month: '2-digit',
+			month: 'long',
 			day: '2-digit',
 		})
 }

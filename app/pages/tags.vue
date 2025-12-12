@@ -1,21 +1,19 @@
 <script setup lang="ts">
 import { sort } from 'radash'
-import type ArticleProps from '~/types/article'
 
 const layoutStore = useLayoutStore()
-layoutStore.setAside(['blog-stats', 'blog-tech', 'blog-site-info', 'blog-archive', 'blog-log'])
+layoutStore.setAside(['blog-stats', 'blog-tech', 'blog-log', 'comm-group'])
 
 const appConfig = useAppConfig()
 const title = '标签'
 const description = `${appConfig.title}的所有文章标签。`
 useSeoMeta({ title, description })
 
-// const { data: listRaw } = await useAsyncData('index_posts', () => useArticleIndex(), { default: () => [] })
-const { data: listRaw } = await useAsyncData<ArticleProps[]>('index_posts', () => useArticleIndex().then(data => data.data.value))
+const { data: listRaw } = await useAsyncData('index_posts', () => useArticleIndexOptions(), { default: () => [] })
 
 const articlesByTag = computed(() => {
 	const result: Record<string, any[]> = {}
-	const articles = sort(listRaw.value || [], a => new Date(a.date || 0).getTime(), true)
+	const articles = sort(listRaw.value, a => new Date(a.date || 0).getTime(), true)
 	for (const article of articles) {
 		if (article.tags) {
 			for (const tag of article.tags) {
@@ -56,7 +54,7 @@ const sortedTags = computed(() => {
 
 		<menu class="archive-list">
 			<TransitionGroup appear name="float-in">
-				<ZArchive
+				<PostArchive
 					v-for="article, index in articlesByTag[tag]"
 					:key="article.path"
 					v-bind="article"

@@ -41,17 +41,17 @@ export const siteLinkItems: siteTabs[] = [
                 service: [
                     { 
                         name: 'EdgeOne', 
-                        image: '/assets/img/link/service/edgeone.jpg', 
+                        image: 'https://www.myxz.top/assets/img/link/service/edgeone.jpg', 
                         link: "https://blog-v3.edgeone.mirrors.myxz.top"
                     },
                     {
                         name: "Vercel",
-                        image: "/assets/img/link/service/vercel.jpg",
+                        image: "https://www.myxz.top/assets/img/link/service/vercel.jpg",
                         link: "https://blog-v3.vercel.mirrors.myxz.top"
                     },
                     {
                         name: "Netlify",
-                        image: "/assets/img/link/service/netlify.jpg",
+                        image: "https://www.myxz.top/assets/img/link/service/netlify.jpg",
                         link: "https://blog-v3.netifly.mirrors.myxz.top"
                     }
                 ],
@@ -70,7 +70,7 @@ export const siteLinkItems: siteTabs[] = [
                 service: [
                     { 
                         name: 'EdgeOne', 
-                        image: '/assets/img/link/service/edgeone.jpg', 
+                        image: 'https://www.myxz.top/assets/img/link/service/edgeone.jpg', 
                         link: "" 
                     }
                 ],

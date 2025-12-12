@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import { myFeed } from '~~/blog.config'
 import feeds from '~/feeds'
-import FlinkTopCard from '../components/card/FlinkTopCard.vue'
 
 const appConfig = useAppConfig()
 const layoutStore = useLayoutStore()
@@ -29,12 +28,15 @@ const copyFields = {
 
 <template>
 <div class="mobile-only">
-	<ZhiluHeader to="/" suffix="友链" />
+	<BlogHeader to="/" suffix="友链" tag="h1" />
 </div>
 
-<FlinkTopCard />
-
-<FeedGroup :feeds />
+<FeedGroup
+	v-for="group in feeds"
+	:key="group.name"
+	v-bind="group"
+	:shuffle="appConfig.link.randomInGroup"
+/>
 
 <Tab :tabs="['我的博客信息', '申请友链']" center>
 	<template #tab1>

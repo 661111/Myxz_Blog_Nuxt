@@ -1,7 +1,5 @@
 import type { FeedEntry } from './app/types/feed'
 
-export { zhCN as dateLocale } from 'date-fns/locale/zh-CN'
-
 const basicConfig = {
 	title: '歆鸢阁',
     subtitle: '柒上月日，无铭之阁',
@@ -42,6 +40,11 @@ const blogConfig = {
 			分享: { icon:'ph:desktop-tower-bold', color: '#3ab' },
 		},
 		defaultCategoryIcon: 'ph:folder-bold',
+		/** 文章版式，首个为默认版式 */
+		types: {
+			tech: {},
+			story: {},
+		},
 		/** 分类排序方式，键为排序字段，值为显示名称 */
 		order: {
 			date: '创建日期',
@@ -67,13 +70,11 @@ const blogConfig = {
 	/** 向 <head> 中添加脚本 */
 	scripts: [
 		// 自己部署的 Umami 统计服务
-		// { 'src': 'https://zhi.zhilu.cyou/zhi.js', 'data-website-id': 'a1997c81-a42b-46f6-8d1d-8fbd67a8ef41', 'defer': true },
-		// // 自己网站的 Cloudflare Insights 统计服务
-		// { 'src': 'https://static.cloudflareinsights.com/beacon.min.js', 'data-cf-beacon': '{"token": "97a4fe32ed8240ac8284e9bffaf03962"}', 'defer': true },
-		// // Twikoo 评论系统
-		// { src: 'https://lib.baomitu.com/twikoo/1.6.44/twikoo.min.js', defer: true },
-		{ src: 'https://artalk.myxz.top/ist/Artalk.js', defer: true },
-		{ src: '/assets/js/sco.js' },
+		{ 'src': 'https://zhi.zhilu.cyou/zhi.js', 'data-website-id': 'a1997c81-a42b-46f6-8d1d-8fbd67a8ef41', 'defer': true },
+		// 自己网站的 Cloudflare Insights 统计服务
+		{ 'src': 'https://static.cloudflareinsights.com/beacon.min.js', 'data-cf-beacon': '{"token": "97a4fe32ed8240ac8284e9bffaf03962"}', 'defer': true },
+		// Twikoo 评论系统
+		{ src: 'https://lib.baomitu.com/twikoo/1.6.44/twikoo.min.js', defer: true },
 	],
 
 	/** 自己部署的 Twikoo 服务 */
@@ -81,34 +82,21 @@ const blogConfig = {
 		envId: 'https://twikoo.zhilu.cyou/',
 		preload: 'https://twikoo.zhilu.cyou/',
 	},
-
-	artalk: {
-		server: 'https://artalk.myxz.top/',
-		sitename: '歆鸢阁',
-	},
-
-	PostSummary: {
-		tianliGPT_postSelector: 'article.article.md-tech',
-		tianliGPT_Title: '智能摘选',
-		tianliGPT_injectDom: '.md-tech-ai',
-		tianliGPT_theme: 'menghuan',
-		tianliGPT_key: 'S-PCTSDLSQQECB3WYB',
-	},
 }
 
 /** 用于生成 OPML 和友链页面配置 */
 export const myFeed: FeedEntry = {
 	author: blogConfig.author.name,
-	sitenick: '柒渊阁',
+	sitenick: '摸鱼处',
 	title: blogConfig.title,
 	desc: blogConfig.subtitle || blogConfig.description,
 	link: blogConfig.url,
 	feed: new URL('/atom.xml', blogConfig.url).toString(),
 	icon: blogConfig.favicon,
 	avatar: blogConfig.author.avatar,
-	archs: ['Nuxt'],
+	archs: ['Nuxt', 'Vercel'],
 	date: blogConfig.timeEstablished,
-	comment: '',
+	comment: '这是我自己',
 }
 
 export default blogConfig

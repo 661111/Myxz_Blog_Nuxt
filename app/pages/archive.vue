@@ -11,10 +11,9 @@ const birthYear = appConfig.component.stats.birthYear
 const layoutStore = useLayoutStore()
 layoutStore.setAside(['blog-stats', 'blog-tech', 'blog-site-info', 'blog-archive', 'blog-log'])
 
-const { data: listRaw } = await useArticleIndex()
+const { data: listRaw } = await useAsyncData('index_posts', () => useArticleIndexOptions(), { default: () => [] })
 const { listSorted, isAscending, sortOrder } = useArticleSort(listRaw)
 const { category, categories, listCategorized } = useCategory(listSorted)
-const { tag, tags, listTagzed } = useTag(listSorted, { bindQuery: 'tag' })
 
 const listGrouped = computed(() => {
 	const groupList = Object.entries(group(
@@ -35,8 +34,8 @@ const yearlyWordCount = computed(() => {
 </script>
 
 <template>
-<div class="archive">
-	<ZOrderToggle
+<div class="archive proper-height">
+	<PostOrderToggle
 		v-model:is-ascending="isAscending"
 		v-model:sort-order="sortOrder"
 		v-model:category="category"
@@ -65,13 +64,13 @@ const yearlyWordCount = computed(() => {
 		</div>
 
 		<TransitionGroup tag="menu" class="archive-list" name="float-in">
-			<ZArchive
+			<PostArchive
 				v-for="article, index in yearGroup"
 				:key="article.path"
 				v-bind="article"
 				:to="article.path"
 				:use-updated="sortOrder === 'updated'"
-				:style="{ '--delay': `${index * 0.03}s` }"
+				:style="getFixedDelay(index * 0.03)"
 			/>
 		</TransitionGroup>
 	</section>
@@ -80,7 +79,6 @@ const yearlyWordCount = computed(() => {
 
 <style lang="scss" scoped>
 .archive {
-	min-height: 70vh;
 	margin: 1rem;
 	mask-image: linear-gradient(#FFF 50%, #FFF5);
 }
@@ -111,7 +109,11 @@ const yearlyWordCount = computed(() => {
 	> .archive-year, .archive-age {
 		margin-bottom: -0.3em;
 		mask-image: linear-gradient(#FFF 50%, transparent);
-		font: 800 3em / 1 var(--font-stroke-free);
+		font-family: var(--font-stroke-free);
+		font-size: 3em;
+		font-variant-numeric: tabular-nums;
+		font-weight: 800;
+		line-height: 1;
 		z-index: -1;
 		-webkit-text-stroke: 1px var(--c-text-3);
 	}

@@ -14,7 +14,6 @@ const expand = useElementVisibility(anchorEl)
 
 onMounted(() => {
 	layoutStore.setTranslate('pagination', '0, -2em')
-	page.value = Number(page.value)
 })
 
 onUnmounted(() => {
@@ -27,7 +26,7 @@ onUnmounted(() => {
 	class="pagination"
 	:class="{ sticky, expand }"
 	:aria-label="`第${page}页，共${totalPages}页`"
-	:style="{ '--collapsed-width': `${pageArr.length * 2.5 + 4}em` }"
+	:style="{ '--collapsed-width': `${pageArr.length * 2 + 6}em` }"
 >
 	<ZButton
 		:disabled="page <= 1"

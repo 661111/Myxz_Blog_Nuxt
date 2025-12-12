@@ -18,16 +18,19 @@ const picEl = useCurrentElement<HTMLImageElement>(pic)
 
 const popoverStore = usePopoverStore()
 
-const { open } = popoverStore.use(() => h(LazyPopoverLightbox, {
-	el: picEl.value,
-	caption: props.caption,
-}))
+const { open } = popoverStore.use(
+	() => h(LazyPopoverLightbox, {
+		el: picEl.value,
+		caption: props.caption,
+	}),
+	{ unique: true },
+)
 </script>
 
 <template>
 <!-- <ProseImg> 被 <p> 包裹，服务端渲染时若内含块级元素会自动关闭，导致水合不匹配 -->
 <figure class="image">
-	<ZRawImg
+	<UtilImg
 		ref="pic"
 		class="image"
 		:style="{ cursor: zoom && 'zoom-in' }"

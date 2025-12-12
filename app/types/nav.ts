@@ -4,6 +4,7 @@ export interface NavItem {
 	url: string
 	external?: boolean
 }
+
 export type Nav = {
 	title: string
 	items: NavItem[]

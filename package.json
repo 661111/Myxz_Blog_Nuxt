@@ -1,10 +1,14 @@
 {
-  "name": "zhilu-blog",
+  "name": "clarity",
   "type": "module",
-  "version": "3.4.9",
+  "version": "3.5.2",
   "private": true,
-  "packageManager": "pnpm@10.18.2",
+  "packageManager": "pnpm@10.24.0",
   "homepage": "https://github.com/L33Z22L11/blog-v3",
+  "engines": {
+    "node": ">=22.15 <25",
+    "pnpm": ">=10"
+  },
   "scripts": {
     "prepare": "pnpm clean && pnpm build:packages",
     "clean": "rimraf .data node_modules/.cache",
@@ -14,12 +18,13 @@
     "build": "nuxt build",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
+    "bump": "pnpx taze -w && rimraf pnpm-lock.yaml && pnpm i",
     "lint": "stylelint '**/*.{vue,scss}'",
     "lint:fix": "eslint --fix && stylelint '**/*.{vue,scss}' --fix",
-    "new": "tsx scripts/new-blog.ts",
-    "check:feed": "tsx scripts/framework/get-feed.ts",
-    "check:feed/all": "tsx scripts/framework/check-all-feeds.ts",
-    "generate:static":"NITRO_PRESET=static nuxt generate"
+    "init-project": "tsx scripts/init-project",
+    "new": "tsx scripts/new-blog",
+    "check:feed": "tsx scripts/framework/get-feed",
+    "check:feed/all": "tsx scripts/framework/check-all-feeds"
   },
   "dependencies": {
     "@nuxt/content": "catalog:content",
@@ -36,6 +41,7 @@
     "abcjs": "catalog:content",
     "ci-info": "catalog:framework",
     "date-fns": "catalog:util",
+    "date-fns-tz": "catalog:util",
     "dayjs": "^1.11.19",
     "embla-carousel-autoplay": "catalog:ui",
     "embla-carousel-vue": "catalog:ui",
@@ -47,6 +53,8 @@
     "pug": "^3.0.3",
     "radash": "catalog:util",
     "shiki": "catalog:content",
+    "site-config-stack": "catalog:util",
+    "stylus": "^0.64.0",
     "vue": "catalog:framework",
     "vue-router": "catalog:framework",
     "vue-tippy": "catalog:ui",
@@ -55,9 +63,12 @@
   "devDependencies": {
     "@antfu/eslint-config": "catalog:quality",
     "@clack/prompts": "catalog:util",
-    "@dxup/nuxt": "catalog:framework",
     "@iconify-json/catppuccin": "catalog:ui",
     "@iconify-json/ph": "catalog:ui",
+    "@iconify-json/ri": "catalog:ui",
+    "@iconify-json/simple-icons": "catalog:ui",
+    "@iconify-json/solar": "catalog:ui",
+    "@nuxt/hints": "catalog:quality",
     "@zinkawaii/stylelint-config": "catalog:quality",
     "cspell": "catalog:quality",
     "eslint": "catalog:quality",
@@ -74,7 +85,6 @@
     "sass-embedded": "catalog:framework",
     "strip-ansi": "catalog:util",
     "stylelint": "catalog:quality",
-    "stylus": "^0.64.0",
     "tsx": "catalog:framework",
     "typescript": "catalog:framework",
     "unplugin-yaml": "catalog:framework"

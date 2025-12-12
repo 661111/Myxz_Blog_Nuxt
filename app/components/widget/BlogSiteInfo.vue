@@ -5,7 +5,7 @@ const activeTab = ref(0); // 默认激活第一个标签页
 </script>
 
 <template>
-  <ZWidget card v-for="WidgetInfo in siteLinkWidgetInfo" :key="WidgetInfo.title" :title="WidgetInfo.title">
+  <BlogWidget card v-for="WidgetInfo in siteLinkWidgetInfo" :key="WidgetInfo.title" :title="WidgetInfo.title">
     <div class="BlogSiteGroup">
       <div class="tabs-container">
         <div class="tabs">
@@ -45,7 +45,7 @@ const activeTab = ref(0); // 默认激活第一个标签页
         </div>
       </div>
     </div>
-  </ZWidget>
+  </BlogWidget>
 </template>
 
 <style lang="scss" scoped>

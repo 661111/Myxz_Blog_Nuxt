@@ -2,7 +2,7 @@
 const { data: stats } = useFetch('/api/stats')
 </script>
 <template>
-<ZWidget card title="标签展示">
+<BlogWidget card title="标签展示">
   <div class="category_cloud">
     <ZRawLink v-for="item in stats?.tags.slice(0, 9).sort((a, b) => b.posts - a.posts)" :to="'/?tag=' + item.name" class="category">
       {{ item.name }}
@@ -12,7 +12,7 @@ const { data: stats } = useFetch('/api/stats')
       ......
     </ZRawLink>
   </div>
-</ZWidget>
+</BlogWidget>
 </template>
 
 <style lang="scss" scoped>

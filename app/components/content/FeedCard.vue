@@ -1,15 +1,17 @@
 <script setup lang="ts">
 import type { CSSProperties } from 'vue'
 import type { FeedEntry } from '~/types/feed'
-import { ZRawLink } from '#components'
 
-const props = defineProps<FeedEntry & { inspect?: boolean }>()
+const props = defineProps<FeedEntry>()
+
+const appConfig = useAppConfig()
+const route = useRoute()
+const isInspect = computed(() => import.meta.dev && route.query.inspect !== undefined)
 
 const title = computed(() => props.title ?? props.sitenick ?? props.author)
 const domainTip = computed(() => getDomainType(getMainDomain(props.link, true)))
 const domainIcon = computed(() => getDomainIcon(props.link))
 
-const inspect = ref(false)
 function getInspectStyle(src: string): CSSProperties {
 	src = getMainDomain(src)
 	let color = 'red'
@@ -28,33 +30,29 @@ function getInspectStyle(src: string): CSSProperties {
 		boxSizing: 'content-box',
 	}
 }
-
-onMounted(() => {
-	inspect.value = import.meta.env.DEV && location.search.includes('inspect')
-})
 </script>
 
 <template>
 <Tooltip :delay="200" interactive hide-on-click="toggle">
-	<ZRawLink
+	<UtilLink
 		class="feed-card gradient-card"
 		:to="error ? undefined : link"
 		:data-error="error"
 	>
 		<div class="avatar">
-			<ClientOnly v-if="inspect">
+			<ClientOnly v-if="isInspect">
+				<span style="position: absolute; left: 100%; white-space: nowrap;" v-text="title" />
 				<NuxtImg :src="icon" :title="icon" :style="getInspectStyle(icon)" />
 				<NuxtImg :src="avatar" :title="avatar" :style="getInspectStyle(avatar)" />
 			</ClientOnly>
 
-			<NuxtImg v-else :src="avatar" :alt="author" loading="lazy" :title="feed ? undefined : '无订阅源'" />
-			<Icon v-if="!feed" class="no-feed" name="ph:bell-simple-slash-bold" />
+			<NuxtImg v-else class="round-cobblestone" :src="avatar" :alt="author" loading="lazy" :title="feed ? undefined : '无订阅源'" />
+			<Icon v-if="appConfig.link.remindNoFeed && !feed" class="no-feed" name="ph:bell-simple-slash-bold" />
 		</div>
 
 		<span>{{ author }}</span>
 		<span class="title">{{ sitenick }}</span>
-		<span v-if="inspect" style="position: absolute; top: 0;">{{ title }}</span>
-	</ZRawLink>
+	</UtilLink>
 
 	<template #content>
 		<div class="site-content">
@@ -95,10 +93,10 @@ onMounted(() => {
 .feed-card {
 	display: flex;
 	align-items: center;
-	gap: 0.2rem;
-	width: fit-content;
-	margin: 1rem auto;
-	padding: 0.5rem;
+	gap: 0.2em;
+	width: 14em;
+	margin: 1em auto;
+	padding: 0.5em;
 	line-height: 1.4;
 	transition: transform 0.2s;
 	animation: float-in 0.2s var(--delay) backwards;
@@ -114,13 +112,13 @@ onMounted(() => {
 
 	.avatar {
 		position: relative;
-		margin: 0 0.5rem 0 0;
+		margin: 0 0.5em 0 0;
 
 		img {
 			display: block;
-			width: 2.5rem;
-			height: 2.5rem;
-			border-radius: 4em;
+			width: 2.5em;
+			height: 2.5em;
+			border-radius: 50%;
 			box-shadow: 2px 4px 0.5em var(--ld-shadow);
 			background-color: white;
 			object-fit: cover;
@@ -147,6 +145,8 @@ onMounted(() => {
 // https://vue-tippy.netlify.app/props#appendto
 // Tooltip 位于组件根部时，interactive tippy 会插入到父组件
 :deep() ~ [data-tippy-root] > .tippy-box {
+	overflow: hidden;
+	overflow: clip;
 	padding: 0;
 
 	&[data-placement="top"] > .tippy-svg-arrow {
@@ -157,13 +157,13 @@ onMounted(() => {
 .site-content {
 	display: flex;
 	align-items: center;
-	gap: 0.5rem;
+	gap: 0.5em;
 	padding: 0.5em 1em;
 
 	.site-icon {
 		width: 1.5rem;
 		height: 1.5rem;
-		border-radius: 0.2em;
+		border-radius: 4px;
 		object-fit: contain;
 	}
 
@@ -176,7 +176,7 @@ onMounted(() => {
 		}
 
 		.domain-mark {
-			font-size: 0.4rem;
+			font-size: 0.8em;
 			vertical-align: super;
 		}
 	}
@@ -184,9 +184,7 @@ onMounted(() => {
 
 .desc-content {
 	position: relative;
-	overflow: hidden;
 	padding: 0.5em 1em;
-	border-radius: 0 0 0.5em 0.5em;
 	background-color: var(--c-bg-1);
 
 	p + p {

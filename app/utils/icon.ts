@@ -7,7 +7,9 @@ const archIcons = {
 	'Astro': 'simple-icons:astro',
 	'Cloudflare': 'simple-icons:cloudflare',
 	'Deno Deploy': 'simple-icons:deno',
+	'EdgeOne': 'simple-icons:cloudnativebuild', // 不准确
 	'GitHub Pages': 'simple-icons:github',
+	'Golang': 'simple-icons:go',
 	'Gridea': 'tabler:square-rounded-letter-g-filled', // 不准确
 	'Halo': 'material-symbols:h-mobiledata-badge', // 不准确
 	'Hexo': 'simple-icons:hexo',
@@ -18,13 +20,15 @@ const archIcons = {
 	'Netlify': 'simple-icons:netlify',
 	'Next.js': 'simple-icons:nextdotjs',
 	'Nuxt': 'simple-icons:nuxtdotjs',
+	'PHP': 'simple-icons:php',
 	'Python': 'simple-icons:python',
+	'React': 'simple-icons:react',
 	'Typecho': 'icon-park-solid:align-text-left-one', // 不准确
 	'Vercel': 'simple-icons:vercel',
 	'VitePress': 'simple-icons:vitepress',
 	'Vue': 'uim:vuejs',
+	'VuePress': 'uim:vuejs',
 	'WordPress': 'simple-icons:wordpress',
-	'ZBlog': 'mynaui:letter-z-hexagon-solid', // 不准确
 	'Zebaur': 'tabler:square-letter-z-filled', // 不准确
 }
 
@@ -183,7 +187,7 @@ const ext2lang: Record<string, string> = {
 	'shellscript': 'catppuccin:bash',
 	'sql': 'catppuccin:database',
 	'ssh-config': 'catppuccin:properties',
-	'ssh': 'catppuccin:ssh-config',
+	'ssh': 'catppuccin:properties',
 	'toml': 'catppuccin:toml',
 	'ts': 'catppuccin:typescript',
 	'tsx': 'catppuccin:typescript-react',
@@ -192,7 +196,7 @@ const ext2lang: Record<string, string> = {
 	'xml': 'catppuccin:xml',
 	'yaml': 'catppuccin:yaml',
 	'yml': 'catppuccin:yaml',
-	'zsh': 'catppuccin:zsh',
+	'zsh': 'catppuccin:bash',
 }
 
 export function getLangIcon(extension = 'file') {

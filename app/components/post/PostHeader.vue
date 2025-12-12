@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import type ArticleProps from '~/types/article'
-import { sort } from 'radash'
 
 defineOptions({ inheritAttrs: false })
 const props = defineProps<ArticleProps>()
@@ -72,8 +71,8 @@ const { copy, copied } = useCopy(shareText)
 		<div class="post-info">
 			<span class="date">
 				<Icon name="ph:calendar-dots-bold" />
-				<time :datetime="getIsoDatetime(date)">
-					{{ getPostDate(props.date) }}
+				<time :date="date">
+					{{ isTimeDiffSignificant(date) }}
 				</time>
 			</span>
 			<span class="categroy" v-if="categoryLabel">
@@ -86,8 +85,8 @@ const { copy, copied } = useCopy(shareText)
 			</span>
 			<span class="update">
 				<Icon name="ri:24-hours-line" />
-				<time time :datetime="getIsoDatetime(updated)" >
-					{{ getPostDate(props.updated) }}
+				<time time :v-if="updated && isTimeDiffSignificant(date, updated, .999)" :date="updated">
+					{{ isTimeDiffSignificant(updated) }}
 				</time>
 			</span>
 			<span class="tagItem">

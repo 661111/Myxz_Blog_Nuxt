@@ -1,9 +1,5 @@
 <script setup lang="ts">
-import { PostFooter } from '#components';
 import type ArticleProps from '~/types/article'
-const { data: stats } = useFetch('/api/stats')
-
-const ReWardStore = useReWardStore()
 
 defineOptions({ inheritAttrs: false })
 const props = defineProps<ArticleProps>()
@@ -12,8 +8,8 @@ const appConfig = useAppConfig()
 
 const item = {
 	作者: appConfig.author.name,
-	发布时间: getLocalePostDatetime(props.date),
-	更新时间: getLocalePostDatetime(props.updated),
+	发布时间: '',
+	更新时间: '',
 	许可协议: "CC BY-NC-SA 4.0",
 }
 
@@ -44,6 +40,8 @@ const sortedTags = computed(() => {
 		return bCount - aCount
 	})
 })
+
+const ReWardStore = useReWardStore()
 </script>
 
 <template>

@@ -1,10 +1,10 @@
 <script setup lang="ts">
 import type { FeedEntry, FeedGroup } from '~/types/feed'
+import { shuffle } from 'radash'
 
-defineProps<{
-	label?: string
-	feeds: FeedGroup[]
-}>()
+const props = defineProps<FeedGroup & { shuffle?: boolean }>()
+const route = useRoute()
+const entries = ref(props.entries)
 
 // 友链浮现随机延迟
 function getCardDelay(feed: FeedEntry) {
@@ -14,23 +14,32 @@ function getCardDelay(feed: FeedEntry) {
 	}
 	return (hash % 1000) / 1000
 }
+
+const shuffleEntries = () => entries.value = shuffle(entries.value)
+
+onMounted(() => {
+	if (props.shuffle && route.query.shuffle !== 'false')
+		shuffleEntries()
+})
+
+if (import.meta.dev) {
+	watch(() => props.entries, (newEntries) => {
+		entries.value = newEntries
+	})
+}
 </script>
 
 <template>
-<h2 v-if="label" class="feed-label text-creative">
-	{{ label }}
-</h2>
-
-<section v-for="group in feeds" :key="group.name" class="feed-group">
+<section class="feed-group">
 	<h3 class="feed-title">
-		{{ group.name }}
+		<button v-if="props.shuffle" role="button" title="点击随机排序" @click="shuffleEntries" v-text="name" />
+		<span v-else v-text="name" />
 	</h3>
-	<p class="feed-desc">
-		{{ group.desc }}
-	</p>
-	<TransitionGroup tag="menu" class="feed-list" appear name="float-in">
+	<p class="feed-desc" v-text="desc" />
+
+	<TransitionGroup tag="menu" class="feed-list" name="float-in">
 		<li
-			v-for="entry in group.entries"
+			v-for="entry in entries"
 			:key="entry.link"
 			:style="`--delay: ${getCardDelay(entry)}s;`"
 		>
@@ -41,14 +50,9 @@ function getCardDelay(feed: FeedEntry) {
 </template>
 
 <style lang="scss" scoped>
-.feed-label {
-	margin: 2rem 1rem -1rem;
-}
-
 .feed-group {
-	// position: relative;
 	container-type: inline-size;
-	margin: 2rem 1rem;
+	margin: 2em 1em;
 }
 
 .feed-title {
@@ -57,11 +61,13 @@ function getCardDelay(feed: FeedEntry) {
 	top: 0;
 	margin-bottom: -0.3em;
 	mask-image: linear-gradient(#FFF 50%, transparent);
-	font: 800 5em / 1 var(--font-stroke-free);
+	font-family: var(--font-stroke-free);
+	font-size: 5em;
+	font-weight: 800;
+	line-height: 1;
 	text-align: center;
 	color: transparent;
 	transition: color 0.2s;
-	z-index: -1;
 	-webkit-text-stroke: 1px var(--c-text-3);
 
 	&::selection, :hover > & {
@@ -76,12 +82,12 @@ function getCardDelay(feed: FeedEntry) {
 
 .feed-list {
 	display: grid;
-	grid-template-columns: repeat(auto-fill, minmax(12rem, 1fr));
-	gap: 0.2rem 0.5rem;
-	margin: 1rem auto;
+	grid-template-columns: repeat(auto-fill, minmax(12em, 1fr));
+	gap: 0.2em 0.5em;
+	margin: 1em auto;
 
 	@mixin feed-narrow {
-		grid-template-columns: repeat(auto-fill, minmax(5rem, 1fr));
+		grid-template-columns: repeat(auto-fill, minmax(5em, 1fr));
 		font-size: 0.9em;
 
 		:deep(.feed-card) {
@@ -89,7 +95,7 @@ function getCardDelay(feed: FeedEntry) {
 			text-align: center;
 
 			.avatar.avatar {
-				margin: 0 0 0.2rem;
+				margin: 0 0 0.2em;
 			}
 		}
 	}
@@ -106,5 +112,9 @@ function getCardDelay(feed: FeedEntry) {
 :deep(.feed-card.feed-card) {
 	width: auto;
 	margin: 0;
+}
+
+.float-in-move {
+	contain: paint; // 防止移动时出现滚动条
 }
 </style>

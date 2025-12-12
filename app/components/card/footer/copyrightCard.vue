@@ -24,7 +24,7 @@ const appConfig = useAppConfig()
     .themes
       .Themesinfo 
         p 采用 
-        a(href="https://github.com/L33Z22L11/blog-v3") {{appConfig.other.Themes_Info}}
+        a(href="https://github.com/L33Z22L11/blog-v3") Clarity
         p 主题
 </template>
 

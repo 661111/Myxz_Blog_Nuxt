@@ -1,10 +1,8 @@
 <script setup lang="ts">
 import type { CollectionType, ContentType } from '../composables/useBangumi'
-import type { BangumiCollectionItem } from '~/types/bangumi'
-import Pagination from '~/components/partial/Pagination.vue'
+// import Pagination from '~/components/partial/Pagination.vue'
 import bgmCard from '~/components/Bangumi/bgmCard.vue'
 import useBangumi from '../composables/useBangumi'
-import { debounce } from 'radash'
 
 const banguimCard = [{
   name: '克喵Kemeow',
@@ -17,7 +15,7 @@ const banguimCard = [{
 }]
 
 useSeoMeta({
-	title: '追更历史',
+  title: '追更历史',
 })
 
 const layoutStore = useLayoutStore()
@@ -33,26 +31,33 @@ const { data, error, totalPages, refresh, status } = useBangumi(contentType, col
 
 // 加载状态控制
 const isLoading = computed(() => status.value === 'pending')
-const currentData = ref<any[]>([])
-
-// 数据预加载控制
 const isDataReady = ref(false)
+const showContent = ref(false)
 
 // 监听数据变化
 watch([contentType, collectionType], async () => {
   page.value = 1
   isDataReady.value = false
+  showContent.value = false
   await refresh()
 })
 
 // 数据加载完成处理
-watch(data, (newData) => {
-  currentData.value = newData?.data || []
-  isDataReady.value = true
+watch(status, (newStatus) => {
+  if (newStatus === 'success') {
+    isDataReady.value = true
+    // 添加短暂延迟确保DOM更新
+    setTimeout(() => {
+      showContent.value = true
+    }, 100)
+  }
 }, { immediate: true })
 
-// 防抖处理连续点击
-const debouncedRefresh = debounce(refresh, 300)
+// 修复防抖实现
+// const debouncedRefresh = debounce((newPage: number) => {
+//   page.value = newPage
+//   refresh()
+// }, 300, { leading: true, trailing: false }) // 添加配置选项
 
 const games = computed(() => data.value?.data || [])
 
@@ -79,10 +84,11 @@ const orderMap = {
       <div 
         class="NavItem JiEun" 
         v-for="(label, key) in subjectMap" 
+        :key="key"
         :class="{active: contentType === key}"
         @click="contentType = key as ContentType"
       >
-        {{ key }}
+        {{ label }} <!-- 显示中文标签 -->
       </div>
     </div>
 
@@ -100,7 +106,7 @@ const orderMap = {
 
     <!-- 增强版加载状态 -->
     <Transition name="fade">
-      <div v-if="isLoading && !isDataReady" class="loading">
+      <div v-if="isLoading && !showContent" class="loading">
         <div class="loading-ripple">
           <div></div>
           <div></div>
@@ -110,11 +116,11 @@ const orderMap = {
     </Transition>
 
     <!-- 数据容器优化 -->
-    <Transition name="list" tag="div">
+    <Transition name="list" mode="out-in">
       <div 
         class="banguimCard" 
-        v-show="isDataReady"
-        :key="contentType"
+        v-if="showContent"
+        :key="`${contentType}-${collectionType}-${page}`"
       >
         <div class="banguimList" v-if="games.length > 0">
           <bgmCard
@@ -123,36 +129,26 @@ const orderMap = {
             :bangumi-collection-item="game"
           />
         </div>
-        <div class="banguimEmpty" v-else-if="games.length === 0">
-          <Icon name="ri:folder-open-line" class="error-icon"/>
+        <div class="banguimEmpty" v-else>
+          <p>暂无数据</p>
         </div>
       </div>
     </Transition>
 
-    <!-- 错误提示增强
+    <!-- 错误提示增强 -->
     <Transition name="fade">
-      <div v-if="error && isDataReady" class="error-wrapper">
+      <div v-if="error && showContent" class="error-wrapper">
         <div class="error-icon">⚠️</div>
         <div class="error-message">{{ error.message }}</div>
-        <button @click="refresh">重试</button>
+        <ZButton @click="refresh">重试</ZButton>
       </div>
-    </Transition> -->
-
-    <!-- 分页优化 -->
-    <Transition name="fade">
-      <Pagination
-        v-if="totalPages > 1 && isDataReady"
-        v-model="page"
-        :total-pages="totalPages"
-        @update:model-value="debouncedRefresh"
-      />
     </Transition>
 
     <!-- 版权信息保持原有结构 -->
     <div class="banguimCopyright">
       <div class="card_info" v-for="item in banguimCard" :key="item.link">
         基于
-        <a class="copyright" :href="item.link">
+        <a class="copyright" :href="item.link" target="_blank">
           {{ item.name }}
         </a>
         的{{ item.type }}

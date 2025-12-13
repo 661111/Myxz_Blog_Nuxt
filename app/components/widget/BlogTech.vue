@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { Icon } from '#components'
-import { packageManager, version } from '~~/package.json'
+import { packageManager, version, dependencies } from '~~/package.json'
 import pnpmWorkspace from '~~/pnpm-workspace.yaml'
 
 const appConfig = useAppConfig()
@@ -19,10 +19,14 @@ const ciPlatform = computed(() => {
 })
 
 const packages = Object.assign({}, ...Object.values(pnpmWorkspace.catalogs as any)) as Record<string, string>
+const packagesMain = {
+	pug: dependencies.pug,
+	stylus: dependencies.stylus,
+}
 const [pm, pmVersion] = packageManager.split('@') as [string, string]
 
 const service = computed(() => ([
-	...ci ? [{ label: '构建平台', value: ciPlatform }] : [],
+	...ci ? [{ label: '构建平台', value: ciPlatform }] : ['本地构建'],
 	{ label: '图片存储', value: () => [h('img', { src: 'https://console.bitiful.com/favicon.ico', alt: '缤纷云' }), '缤纷云'] },
 	{ label: '软件协议', value: 'MIT' },
 	{ label: '文章许可', value: appConfig.copyright.abbr },
@@ -38,6 +42,8 @@ const techstack = computed(() => ([
 	{ label: pm, value: pmVersion },
 	{ label: 'OS', value: platform },
 	{ label: 'Arch', value: arch },
+	{ label: 'PUG', value: packagesMain.pug },
+	{ label: 'Stylus', value: packagesMain.stylus },
 ]))
 
 const expand = ref(false)

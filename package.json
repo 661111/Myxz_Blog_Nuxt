@@ -46,6 +46,7 @@
     "embla-carousel-autoplay": "catalog:ui",
     "embla-carousel-vue": "catalog:ui",
     "embla-carousel-wheel-gestures": "catalog:ui",
+    "lodash-es": "^4.17.21",
     "minisearch": "catalog:util",
     "nuxt": "catalog:framework",
     "parse-domain": "catalog:util",

@@ -86,7 +86,7 @@ const blogConfig = {
 	artalk: {
 		server: 'https://artalk.myxz.top/',
 		sitename: '歆鸢阁',
-		src: '/assets/js/artalk.js',
+		src: 'https://jsd.myxz.top/npm/artalk@2.9.1/dist/Artalk.min.js',
 		owo_src: '/assets/owo/main.json'
 	},
 }

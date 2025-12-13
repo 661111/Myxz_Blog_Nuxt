@@ -1,3 +1,5 @@
+import appConfig from "~/app.config"
+
 /**
  * Artalk 评论系统管理器
  * - 全局单例
@@ -96,7 +98,7 @@ class ArtalkManager {
 
 		return new Promise<void>((resolve, reject) => {
 			const script = document.createElement('script')
-			script.src = 'https://cdnjs.cloudflare.com/ajax/libs/artalk/2.9.1/Artalk.min.js' // 换成你自己的地址
+			script.src = appConfig.artalk.src // 换成你自己的地址
 			script.async = true
 			script.onload = () => resolve()
 			script.onerror = () => reject(new Error('Artalk 脚本加载失败'))

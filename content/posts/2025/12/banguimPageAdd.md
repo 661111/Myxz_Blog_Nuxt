@@ -1364,7 +1364,7 @@ const rateClass = computed(() => (rate: number) => {
             sup {
               opacity: 0.6;
               top: -0.5em;
-              font-size: 75%;
+              font-size: 10px;
               line-height: 0;
               position: relative;
               vertical-align: baseline;

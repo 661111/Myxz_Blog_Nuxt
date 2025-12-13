@@ -75,7 +75,6 @@ const blogConfig = {
 		// { 'src': 'https://static.cloudflareinsights.com/beacon.min.js', 'data-cf-beacon': '{"token": "97a4fe32ed8240ac8284e9bffaf03962"}', 'defer': true },
 		// Twikoo 评论系统
 		// { src: 'https://lib.baomitu.com/twikoo/1.6.44/twikoo.min.js', defer: true },
-		{ src: 'https://artalk.myxz.top/dist/Artalk.js', defer: true },
 	],
 
 	/** 自己部署的 Twikoo 服务 */
@@ -87,6 +86,7 @@ const blogConfig = {
 	artalk: {
 		server: 'https://artalk.myxz.top/',
 		sitename: '歆鸢阁',
+		src: 'https://artalk.myxz.top/dist/Artalk.js'
 	},
 }
 

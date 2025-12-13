@@ -134,7 +134,7 @@ onUnmounted(() => {
       <div 
         class="banguimCard" 
         v-show="isDataReady"
-        :key="contentType"
+        :key="contentType "
       >
         <div class="banguimList" v-if="games.length > 0">
           <bgmCard
@@ -197,7 +197,7 @@ $animation: opacity .5s var(--animation-in) backwards, transform 1s var(--animat
     display: flex;
     justify-content: center;
     
-    &-ripple {
+    .loading-ripple {
       align-items: center;
       min-height: 50vh;
       display: inline-flex;

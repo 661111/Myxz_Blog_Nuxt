@@ -152,7 +152,7 @@ async function initArtalk() {
 			pageTitle: document.title.replace(` | ${appConfig.title}`, ''),
 			server: appConfig.artalk?.server,
 			site: appConfig.artalk?.sitename,
-			emoticons: '/assets/Owo-Artalk.json',
+			emoticons: appConfig.artalk?.owo_src,
 			darkMode: colorMode.value === 'dark',
 		})
 

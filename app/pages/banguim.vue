@@ -6,14 +6,19 @@ import useBangumi from '../composables/useBangumi'
 import { debounce } from 'radash'
 
 const banguimCard = [{
-  name: '克喵Kemeow',
+  name: '克喵的博客',
   link: 'https://blog-v3.kemeow.top/',
-  type: '页面基础',
+  type: 'API参考',
 }, {
   name: '风纪星辰',
   link: 'https://www.thyuu.com/douban/',
-  type: '页面样式'
-}]
+  type: '样式参考',
+}, {
+  name: 'Mikuの鬆',
+  link: 'https://miku.love/',
+  type: '卡片样式',
+}
+]
 
 useSeoMeta({
   title: '追更历史',
@@ -106,7 +111,7 @@ onUnmounted(() => {
       </div>
     </div>
 
-    <div class="banguimNav">
+    <div class="banguimNav" style="gap: 10px">
       <button 
         class="typeItem" 
         v-for="(label, key) in orderMap" 
@@ -150,7 +155,7 @@ onUnmounted(() => {
       </div>
     </Transition>
 
-    <!-- 分页优化 -->
+    <!-- 分页优化
     <Transition name="fade">
       <Pagination
         v-if="totalPages > 1 && isDataReady"
@@ -158,7 +163,7 @@ onUnmounted(() => {
         :total-pages="totalPages"
         @update:model-value="debouncedRefresh"
       />
-    </Transition>
+    </Transition> -->
 
     <!-- 版权信息保持原有结构 -->
     <div class="banguimCopyright">
@@ -168,6 +173,13 @@ onUnmounted(() => {
           {{ item.name }}
         </a>
         的{{ item.type }}
+      </div>
+      <div class="card_info">
+        共计
+        <a class="copyright">
+          {{ data?.total || 0 }}
+        </a>
+        部作品
       </div>
     </div>
 
@@ -257,7 +269,6 @@ $animation: opacity .5s var(--animation-in) backwards, transform 1s var(--animat
       }
     }
     .typeItem { 
-      margin-right: 10px;
       cursor: pointer;
       font-size: 12px;
       font-weight: 700;

@@ -1,8 +1,9 @@
 <script setup lang="ts">
 import type { CollectionType, ContentType } from '../composables/useBangumi'
-// import Pagination from '~/components/partial/Pagination.vue'
+import Pagination from '~/components/partial/Pagination.vue'
 import bgmCard from '~/components/Bangumi/bgmCard.vue'
 import useBangumi from '../composables/useBangumi'
+import { debounce } from 'radash'
 
 const banguimCard = [{
   name: '克喵Kemeow',
@@ -32,32 +33,41 @@ const { data, error, totalPages, refresh, status } = useBangumi(contentType, col
 // 加载状态控制
 const isLoading = computed(() => status.value === 'pending')
 const isDataReady = ref(false)
-const showContent = ref(false)
+const showLoading = ref(true) // 新增全局加载状态
+
+// 数据预加载控制
+const loadingTimeout = ref<NodeJS.Timeout | null>(null)
 
 // 监听数据变化
 watch([contentType, collectionType], async () => {
   page.value = 1
   isDataReady.value = false
-  showContent.value = false
-  await refresh()
-})
+  showLoading.value = true
+  
+  // 清除之前的超时
+  if (loadingTimeout.value) clearTimeout(loadingTimeout.value)
+  
+  // 确保最小加载时间
+  loadingTimeout.value = setTimeout(async () => {
+    await refresh()
+    showLoading.value = false
+    isDataReady.value = true
+  }, 800)
+}, { immediate: true })
 
 // 数据加载完成处理
-watch(status, (newStatus) => {
-  if (newStatus === 'success') {
+watch(data, (newData) => {
+  if (newData) {
     isDataReady.value = true
-    // 添加短暂延迟确保DOM更新
-    setTimeout(() => {
-      showContent.value = true
-    }, 100)
+    showLoading.value = false
   }
 }, { immediate: true })
 
-// 修复防抖实现
-// const debouncedRefresh = debounce((newPage: number) => {
-//   page.value = newPage
-//   refresh()
-// }, 300, { leading: true, trailing: false }) // 添加配置选项
+// 防抖处理连续点击
+const debouncedRefresh = debounce({ delay: 300 }, (newPage: number) => {
+  page.value = newPage
+  refresh()
+})
 
 const games = computed(() => data.value?.data || [])
 
@@ -75,6 +85,11 @@ const orderMap = {
   on_hold: '搁置',
   dropped: '抛弃',
 }
+
+// 组件卸载时清除定时器
+onUnmounted(() => {
+  if (loadingTimeout.value) clearTimeout(loadingTimeout.value)
+})
 </script>
 
 <template>
@@ -84,11 +99,10 @@ const orderMap = {
       <div 
         class="NavItem JiEun" 
         v-for="(label, key) in subjectMap" 
-        :key="key"
         :class="{active: contentType === key}"
         @click="contentType = key as ContentType"
       >
-        {{ label }} <!-- 显示中文标签 -->
+        {{ label }}
       </div>
     </div>
 
@@ -106,7 +120,7 @@ const orderMap = {
 
     <!-- 增强版加载状态 -->
     <Transition name="fade">
-      <div v-if="isLoading && !showContent" class="loading">
+      <div v-if="showLoading" class="loading">
         <div class="loading-ripple">
           <div></div>
           <div></div>
@@ -116,11 +130,11 @@ const orderMap = {
     </Transition>
 
     <!-- 数据容器优化 -->
-    <Transition name="list" mode="out-in">
+    <Transition name="list" tag="div">
       <div 
         class="banguimCard" 
-        v-if="showContent"
-        :key="`${contentType}-${collectionType}-${page}`"
+        v-show="isDataReady"
+        :key="contentType"
       >
         <div class="banguimList" v-if="games.length > 0">
           <bgmCard
@@ -129,26 +143,28 @@ const orderMap = {
             :bangumi-collection-item="game"
           />
         </div>
-        <div class="banguimEmpty" v-else>
+        <div class="banguimEmpty" v-else-if="games.length === 0">
+          <Icon name="ri:folder-open-line" class="error-icon"/>
           <p>暂无数据</p>
         </div>
       </div>
     </Transition>
 
-    <!-- 错误提示增强 -->
+    <!-- 分页优化 -->
     <Transition name="fade">
-      <div v-if="error && showContent" class="error-wrapper">
-        <div class="error-icon">⚠️</div>
-        <div class="error-message">{{ error.message }}</div>
-        <ZButton @click="refresh">重试</ZButton>
-      </div>
+      <Pagination
+        v-if="totalPages > 1 && isDataReady"
+        v-model="page"
+        :total-pages="totalPages"
+        @update:model-value="debouncedRefresh"
+      />
     </Transition>
 
     <!-- 版权信息保持原有结构 -->
     <div class="banguimCopyright">
       <div class="card_info" v-for="item in banguimCard" :key="item.link">
         基于
-        <a class="copyright" :href="item.link" target="_blank">
+        <a class="copyright" :href="item.link">
           {{ item.name }}
         </a>
         的{{ item.type }}

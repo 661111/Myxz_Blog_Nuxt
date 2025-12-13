@@ -166,7 +166,7 @@ const progressMessage = computed(() => {
     background: var(--ld-bg-card);
     border: 1px solid var(--c-border);
     border-radius: 0.75em;
-    margin: 1.5em 0px;
+    margin: 0 0 1.5em;
     overflow: hidden;
     transition: border-color 0.2s;
     @media (max-width: 480px) {
@@ -364,7 +364,6 @@ const progressMessage = computed(() => {
             border-radius: 0.25em;
             padding: 0.25em 0.5em;
             white-space: nowrap;
-            gap: 0.125em;
 
             sup {
               opacity: 0.6;

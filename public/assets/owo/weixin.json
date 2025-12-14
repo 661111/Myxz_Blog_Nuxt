@@ -1,442 +1,442 @@
   {
-    "name": "狐妖", 
+    "name": "微信表情", 
     "type": "image", 
     "items": [
       {
         "key": "微笑", 
-        "val": "https://static.szyink.com/common/emoji/wx/wx_001.webp"
+        "val": "/emoji/wx/wx_001.webp"
       }, 
       {
         "key": "撇嘴", 
-        "val": "https://static.szyink.com/common/emoji/wx/wx_002.webp"
+        "val": "/emoji/wx/wx_002.webp"
       }, 
       {
         "key": "色", 
-        "val": "https://static.szyink.com/common/emoji/wx/wx_003.webp"
+        "val": "/emoji/wx/wx_003.webp"
       }, 
       {
         "key": "发呆", 
-        "val": "https://static.szyink.com/common/emoji/wx/wx_004.webp"
+        "val": "/emoji/wx/wx_004.webp"
       }, 
       {
         "key": "得意", 
-        "val": "https://static.szyink.com/common/emoji/wx/wx_005.webp"
+        "val": "/emoji/wx/wx_005.webp"
       }, 
       {
         "key": "流泪", 
-        "val": "https://static.szyink.com/common/emoji/wx/wx_006.webp"
+        "val": "/emoji/wx/wx_006.webp"
       }, 
       {
         "key": "害羞", 
-        "val": "https://static.szyink.com/common/emoji/wx/wx_007.webp"
+        "val": "/emoji/wx/wx_007.webp"
       }, 
       {
         "key": "闭嘴", 
-        "val": "https://static.szyink.com/common/emoji/wx/wx_008.webp"
+        "val": "/emoji/wx/wx_008.webp"
       }, 
       {
         "key": "睡", 
-        "val": "https://static.szyink.com/common/emoji/wx/wx_009.webp"
+        "val": "/emoji/wx/wx_009.webp"
       }, 
       {
         "key": "大哭", 
-        "val": "https://static.szyink.com/common/emoji/wx/wx_010.webp"
+        "val": "/emoji/wx/wx_010.webp"
       }, 
       {
         "key": "尴尬", 
-        "val": "https://static.szyink.com/common/emoji/wx/wx_011.webp"
+        "val": "/emoji/wx/wx_011.webp"
       }, 
       {
         "key": "发怒", 
-        "val": "https://static.szyink.com/common/emoji/wx/wx_012.webp"
+        "val": "/emoji/wx/wx_012.webp"
       }, 
       {
         "key": "调皮", 
-        "val": "https://static.szyink.com/common/emoji/wx/wx_013.webp"
+        "val": "/emoji/wx/wx_013.webp"
       }, 
       {
         "key": "呲牙", 
-        "val": "https://static.szyink.com/common/emoji/wx/wx_014.webp"
+        "val": "/emoji/wx/wx_014.webp"
       }, 
       {
         "key": "惊讶", 
-        "val": "https://static.szyink.com/common/emoji/wx/wx_015.webp"
+        "val": "/emoji/wx/wx_015.webp"
       }, 
       {
         "key": "难过", 
-        "val": "https://static.szyink.com/common/emoji/wx/wx_016.webp"
+        "val": "/emoji/wx/wx_016.webp"
       }, 
       {
         "key": "囧", 
-        "val": "https://static.szyink.com/common/emoji/wx/wx_017.webp"
+        "val": "/emoji/wx/wx_017.webp"
       }, 
       {
         "key": "抓狂", 
-        "val": "https://static.szyink.com/common/emoji/wx/wx_018.webp"
+        "val": "/emoji/wx/wx_018.webp"
       }, 
       {
         "key": "吐", 
-        "val": "https://static.szyink.com/common/emoji/wx/wx_019.webp"
+        "val": "/emoji/wx/wx_019.webp"
       }, 
       {
         "key": "偷笑", 
-        "val": "https://static.szyink.com/common/emoji/wx/wx_020.webp"
+        "val": "/emoji/wx/wx_020.webp"
       }, 
       {
         "key": "愉快", 
-        "val": "https://static.szyink.com/common/emoji/wx/wx_021.webp"
+        "val": "/emoji/wx/wx_021.webp"
       }, 
       {
         "key": "白眼", 
-        "val": "https://static.szyink.com/common/emoji/wx/wx_022.webp"
+        "val": "/emoji/wx/wx_022.webp"
       }, 
       {
         "key": "傲慢", 
-        "val": "https://static.szyink.com/common/emoji/wx/wx_023.webp"
+        "val": "/emoji/wx/wx_023.webp"
       }, 
       {
         "key": "困", 
-        "val": "https://static.szyink.com/common/emoji/wx/wx_024.webp"
+        "val": "/emoji/wx/wx_024.webp"
       }, 
       {
         "key": "惊恐", 
-        "val": "https://static.szyink.com/common/emoji/wx/wx_025.webp"
+        "val": "/emoji/wx/wx_025.webp"
       }, 
       {
         "key": "憨笑", 
-        "val": "https://static.szyink.com/common/emoji/wx/wx_026.webp"
+        "val": "/emoji/wx/wx_026.webp"
       }, 
       {
         "key": "悠闲", 
-        "val": "https://static.szyink.com/common/emoji/wx/wx_027.webp"
+        "val": "/emoji/wx/wx_027.webp"
       }, 
       {
         "key": "咒骂", 
-        "val": "https://static.szyink.com/common/emoji/wx/wx_028.webp"
+        "val": "/emoji/wx/wx_028.webp"
       }, 
       {
         "key": "疑问", 
-        "val": "https://static.szyink.com/common/emoji/wx/wx_029.webp"
+        "val": "/emoji/wx/wx_029.webp"
       }, 
       {
         "key": "嘘", 
-        "val": "https://static.szyink.com/common/emoji/wx/wx_030.webp"
+        "val": "/emoji/wx/wx_030.webp"
       }, 
       {
         "key": "晕", 
-        "val": "https://static.szyink.com/common/emoji/wx/wx_031.webp"
+        "val": "/emoji/wx/wx_031.webp"
       }, 
       {
         "key": "衰", 
-        "val": "https://static.szyink.com/common/emoji/wx/wx_032.webp"
+        "val": "/emoji/wx/wx_032.webp"
       }, 
       {
         "key": "骷髅", 
-        "val": "https://static.szyink.com/common/emoji/wx/wx_033.webp"
+        "val": "/emoji/wx/wx_033.webp"
       }, 
       {
         "key": "敲打", 
-        "val": "https://static.szyink.com/common/emoji/wx/wx_034.webp"
+        "val": "/emoji/wx/wx_034.webp"
       }, 
       {
         "key": "再见", 
-        "val": "https://static.szyink.com/common/emoji/wx/wx_035.webp"
+        "val": "/emoji/wx/wx_035.webp"
       }, 
       {
         "key": "擦汗", 
-        "val": "https://static.szyink.com/common/emoji/wx/wx_036.webp"
+        "val": "/emoji/wx/wx_036.webp"
       }, 
       {
         "key": "抠鼻", 
-        "val": "https://static.szyink.com/common/emoji/wx/wx_037.webp"
+        "val": "/emoji/wx/wx_037.webp"
       }, 
       {
         "key": "鼓掌", 
-        "val": "https://static.szyink.com/common/emoji/wx/wx_038.webp"
+        "val": "/emoji/wx/wx_038.webp"
       }, 
       {
         "key": "坏笑", 
-        "val": "https://static.szyink.com/common/emoji/wx/wx_039.webp"
+        "val": "/emoji/wx/wx_039.webp"
       }, 
       {
         "key": "右哼哼", 
-        "val": "https://static.szyink.com/common/emoji/wx/wx_040.webp"
+        "val": "/emoji/wx/wx_040.webp"
       }, 
       {
         "key": "鄙视", 
-        "val": "https://static.szyink.com/common/emoji/wx/wx_041.webp"
+        "val": "/emoji/wx/wx_041.webp"
       }, 
       {
         "key": "委屈", 
-        "val": "https://static.szyink.com/common/emoji/wx/wx_042.webp"
+        "val": "/emoji/wx/wx_042.webp"
       }, 
       {
         "key": "快哭了", 
-        "val": "https://static.szyink.com/common/emoji/wx/wx_043.webp"
+        "val": "/emoji/wx/wx_043.webp"
       }, 
       {
         "key": "阴险", 
-        "val": "https://static.szyink.com/common/emoji/wx/wx_044.webp"
+        "val": "/emoji/wx/wx_044.webp"
       }, 
       {
         "key": "亲亲", 
-        "val": "https://static.szyink.com/common/emoji/wx/wx_045.webp"
+        "val": "/emoji/wx/wx_045.webp"
       }, 
       {
         "key": "可怜", 
-        "val": "https://static.szyink.com/common/emoji/wx/wx_046.webp"
+        "val": "/emoji/wx/wx_046.webp"
       }, 
       {
         "key": "笑脸", 
-        "val": "https://static.szyink.com/common/emoji/wx/wx_047.webp"
+        "val": "/emoji/wx/wx_047.webp"
       }, 
       {
         "key": "生病", 
-        "val": "https://static.szyink.com/common/emoji/wx/wx_048.webp"
+        "val": "/emoji/wx/wx_048.webp"
       }, 
       {
         "key": "脸红", 
-        "val": "https://static.szyink.com/common/emoji/wx/wx_049.webp"
+        "val": "/emoji/wx/wx_049.webp"
       }, 
       {
         "key": "破涕为笑", 
-        "val": "https://static.szyink.com/common/emoji/wx/wx_050.webp"
+        "val": "/emoji/wx/wx_050.webp"
       }, 
       {
         "key": "恐惧", 
-        "val": "https://static.szyink.com/common/emoji/wx/wx_051.webp"
+        "val": "/emoji/wx/wx_051.webp"
       }, 
       {
         "key": "失望", 
-        "val": "https://static.szyink.com/common/emoji/wx/wx_052.webp"
+        "val": "/emoji/wx/wx_052.webp"
       }, 
       {
         "key": "无语", 
-        "val": "https://static.szyink.com/common/emoji/wx/wx_053.webp"
+        "val": "/emoji/wx/wx_053.webp"
       }, 
       {
         "key": "嘿哈", 
-        "val": "https://static.szyink.com/common/emoji/wx/wx_054.webp"
+        "val": "/emoji/wx/wx_054.webp"
       }, 
       {
         "key": "捂脸", 
-        "val": "https://static.szyink.com/common/emoji/wx/wx_055.webp"
+        "val": "/emoji/wx/wx_055.webp"
       }, 
       {
         "key": "奸笑", 
-        "val": "https://static.szyink.com/common/emoji/wx/wx_056.webp"
+        "val": "/emoji/wx/wx_056.webp"
       }, 
       {
         "key": "机智", 
-        "val": "https://static.szyink.com/common/emoji/wx/wx_057.webp"
+        "val": "/emoji/wx/wx_057.webp"
       }, 
       {
         "key": "皱眉", 
-        "val": "https://static.szyink.com/common/emoji/wx/wx_058.webp"
+        "val": "/emoji/wx/wx_058.webp"
       }, 
       {
         "key": "耶", 
-        "val": "https://static.szyink.com/common/emoji/wx/wx_059.webp"
+        "val": "/emoji/wx/wx_059.webp"
       }, 
       {
         "key": "吃瓜", 
-        "val": "https://static.szyink.com/common/emoji/wx/wx_060.webp"
+        "val": "/emoji/wx/wx_060.webp"
       }, 
       {
         "key": "加油", 
-        "val": "https://static.szyink.com/common/emoji/wx/wx_061.webp"
+        "val": "/emoji/wx/wx_061.webp"
       }, 
       {
         "key": "汗", 
-        "val": "https://static.szyink.com/common/emoji/wx/wx_062.webp"
+        "val": "/emoji/wx/wx_062.webp"
       }, 
       {
         "key": "天啊", 
-        "val": "https://static.szyink.com/common/emoji/wx/wx_063.webp"
+        "val": "/emoji/wx/wx_063.webp"
       }, 
       {
         "key": "Emm", 
-        "val": "https://static.szyink.com/common/emoji/wx/wx_064.webp"
+        "val": "/emoji/wx/wx_064.webp"
       }, 
       {
         "key": "社会社会", 
-        "val": "https://static.szyink.com/common/emoji/wx/wx_065.webp"
+        "val": "/emoji/wx/wx_065.webp"
       }, 
       {
         "key": "旺柴", 
-        "val": "https://static.szyink.com/common/emoji/wx/wx_066.webp"
+        "val": "/emoji/wx/wx_066.webp"
       }, 
       {
         "key": "好的", 
-        "val": "https://static.szyink.com/common/emoji/wx/wx_067.webp"
+        "val": "/emoji/wx/wx_067.webp"
       }, 
       {
         "key": "打脸", 
-        "val": "https://static.szyink.com/common/emoji/wx/wx_068.webp"
+        "val": "/emoji/wx/wx_068.webp"
       }, 
       {
         "key": "哇", 
-        "val": "https://static.szyink.com/common/emoji/wx/wx_069.webp"
+        "val": "/emoji/wx/wx_069.webp"
       }, 
       {
         "key": "翻白眼", 
-        "val": "https://static.szyink.com/common/emoji/wx/wx_070.webp"
+        "val": "/emoji/wx/wx_070.webp"
       }, 
       {
         "key": "666", 
-        "val": "https://static.szyink.com/common/emoji/wx/wx_071.webp"
+        "val": "/emoji/wx/wx_071.webp"
       }, 
       {
         "key": "让我看看", 
-        "val": "https://static.szyink.com/common/emoji/wx/wx_072.webp"
+        "val": "/emoji/wx/wx_072.webp"
       }, 
       {
         "key": "叹气", 
-        "val": "https://static.szyink.com/common/emoji/wx/wx_073.webp"
+        "val": "/emoji/wx/wx_073.webp"
       }, 
       {
         "key": "苦涩", 
-        "val": "https://static.szyink.com/common/emoji/wx/wx_074.webp"
+        "val": "/emoji/wx/wx_074.webp"
       }, 
       {
         "key": "裂开", 
-        "val": "https://static.szyink.com/common/emoji/wx/wx_075.webp"
+        "val": "/emoji/wx/wx_075.webp"
       }, 
       {
         "key": "嘴唇", 
-        "val": "https://static.szyink.com/common/emoji/wx/wx_076.webp"
+        "val": "/emoji/wx/wx_076.webp"
       }, 
       {
         "key": "爱心", 
-        "val": "https://static.szyink.com/common/emoji/wx/wx_077.webp"
+        "val": "/emoji/wx/wx_077.webp"
       }, 
       {
         "key": "心碎", 
-        "val": "https://static.szyink.com/common/emoji/wx/wx_078.webp"
+        "val": "/emoji/wx/wx_078.webp"
       }, 
       {
         "key": "拥抱", 
-        "val": "https://static.szyink.com/common/emoji/wx/wx_079.webp"
+        "val": "/emoji/wx/wx_079.webp"
       }, 
       {
         "key": "强", 
-        "val": "https://static.szyink.com/common/emoji/wx/wx_080.webp"
+        "val": "/emoji/wx/wx_080.webp"
       }, 
       {
         "key": "弱", 
-        "val": "https://static.szyink.com/common/emoji/wx/wx_081.webp"
+        "val": "/emoji/wx/wx_081.webp"
       }, 
       {
         "key": "握手", 
-        "val": "https://static.szyink.com/common/emoji/wx/wx_082.webp"
+        "val": "/emoji/wx/wx_082.webp"
       }, 
       {
         "key": "胜利", 
-        "val": "https://static.szyink.com/common/emoji/wx/wx_083.webp"
+        "val": "/emoji/wx/wx_083.webp"
       }, 
       {
         "key": "抱拳", 
-        "val": "https://static.szyink.com/common/emoji/wx/wx_084.webp"
+        "val": "/emoji/wx/wx_084.webp"
       }, 
       {
         "key": "勾引", 
-        "val": "https://static.szyink.com/common/emoji/wx/wx_085.webp"
+        "val": "/emoji/wx/wx_085.webp"
       }, 
       {
         "key": "拳头", 
-        "val": "https://static.szyink.com/common/emoji/wx/wx_086.webp"
+        "val": "/emoji/wx/wx_086.webp"
       }, 
       {
         "key": "OK", 
-        "val": "https://static.szyink.com/common/emoji/wx/wx_087.webp"
+        "val": "/emoji/wx/wx_087.webp"
       }, 
       {
         "key": "合十", 
-        "val": "https://static.szyink.com/common/emoji/wx/wx_088.webp"
+        "val": "/emoji/wx/wx_088.webp"
       }, 
       {
         "key": "啤酒", 
-        "val": "https://static.szyink.com/common/emoji/wx/wx_089.webp"
+        "val": "/emoji/wx/wx_089.webp"
       }, 
       {
         "key": "咖啡", 
-        "val": "https://static.szyink.com/common/emoji/wx/wx_090.webp"
+        "val": "/emoji/wx/wx_090.webp"
       }, 
       {
         "key": "蛋糕", 
-        "val": "https://static.szyink.com/common/emoji/wx/wx_091.webp"
+        "val": "/emoji/wx/wx_091.webp"
       }, 
       {
         "key": "玫瑰", 
-        "val": "https://static.szyink.com/common/emoji/wx/wx_092.webp"
+        "val": "/emoji/wx/wx_092.webp"
       }, 
       {
         "key": "凋谢", 
-        "val": "https://static.szyink.com/common/emoji/wx/wx_093.webp"
+        "val": "/emoji/wx/wx_093.webp"
       }, 
       {
         "key": "菜刀", 
-        "val": "https://static.szyink.com/common/emoji/wx/wx_094.webp"
+        "val": "/emoji/wx/wx_094.webp"
       }, 
       {
         "key": "炸弹", 
-        "val": "https://static.szyink.com/common/emoji/wx/wx_095.webp"
+        "val": "/emoji/wx/wx_095.webp"
       }, 
       {
         "key": "便便", 
-        "val": "https://static.szyink.com/common/emoji/wx/wx_096.webp"
+        "val": "/emoji/wx/wx_096.webp"
       }, 
       {
         "key": "月亮", 
-        "val": "https://static.szyink.com/common/emoji/wx/wx_097.webp"
+        "val": "/emoji/wx/wx_097.webp"
       }, 
       {
         "key": "太阳", 
-        "val": "https://static.szyink.com/common/emoji/wx/wx_098.webp"
+        "val": "/emoji/wx/wx_098.webp"
       }, 
       {
         "key": "庆祝", 
-        "val": "https://static.szyink.com/common/emoji/wx/wx_099.webp"
+        "val": "/emoji/wx/wx_099.webp"
       }, 
       {
         "key": "礼物", 
-        "val": "https://static.szyink.com/common/emoji/wx/wx_100.webp"
+        "val": "/emoji/wx/wx_100.webp"
       }, 
       {
         "key": "红包", 
-        "val": "https://static.szyink.com/common/emoji/wx/wx_101.webp"
+        "val": "/emoji/wx/wx_101.webp"
       }, 
       {
         "key": "發", 
-        "val": "https://static.szyink.com/common/emoji/wx/wx_102.webp"
+        "val": "/emoji/wx/wx_102.webp"
       }, 
       {
         "key": "福", 
-        "val": "https://static.szyink.com/common/emoji/wx/wx_103.webp"
+        "val": "/emoji/wx/wx_103.webp"
       }, 
       {
         "key": "烟花", 
-        "val": "https://static.szyink.com/common/emoji/wx/wx_104.webp"
+        "val": "/emoji/wx/wx_104.webp"
       }, 
       {
         "key": "爆竹", 
-        "val": "https://static.szyink.com/common/emoji/wx/wx_105.webp"
+        "val": "/emoji/wx/wx_105.webp"
       }, 
       {
         "key": "猪头", 
-        "val": "https://static.szyink.com/common/emoji/wx/wx_106.webp"
+        "val": "/emoji/wx/wx_106.webp"
       }, 
       {
         "key": "跳跳", 
-        "val": "https://static.szyink.com/common/emoji/wx/wx_107.webp"
+        "val": "/emoji/wx/wx_107.webp"
       }, 
       {
         "key": "发抖", 
-        "val": "https://static.szyink.com/common/emoji/wx/wx_108.webp"
+        "val": "/emoji/wx/wx_108.webp"
       }, 
       {
         "key": "转圈", 
-        "val": "https://static.szyink.com/common/emoji/wx/wx_109.webp"
+        "val": "/emoji/wx/wx_109.webp"
       }
     ]
   }

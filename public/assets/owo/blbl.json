@@ -1,0 +1,182 @@
+  {
+    "name": "滑稽",
+    "type": "image",
+    "items": [
+      {
+        "key": "bilibili_tv_gif-1",
+        "val": "https://jsd.myxz.top/gh/2x-ercha/twikoo-magic@master/image/bilibili_tv_gif/doge.gif"
+      },
+      {
+        "key": "bilibili_tv_gif-2",
+        "val": "https://jsd.myxz.top/gh/2x-ercha/twikoo-magic@master/image/bilibili_tv_gif/亲亲.gif"
+      },
+      {
+        "key": "bilibili_tv_gif-3",
+        "val": "https://jsd.myxz.top/gh/2x-ercha/twikoo-magic@master/image/bilibili_tv_gif/偷笑.gif"
+      },
+      {
+        "key": "bilibili_tv_gif-4",
+        "val": "https://jsd.myxz.top/gh/2x-ercha/twikoo-magic@master/image/bilibili_tv_gif/再见.gif"
+      },
+      {
+        "key": "bilibili_tv_gif-5",
+        "val": "https://jsd.myxz.top/gh/2x-ercha/twikoo-magic@master/image/bilibili_tv_gif/发怒.gif"
+      },
+      {
+        "key": "bilibili_tv_gif-6",
+        "val": "https://jsd.myxz.top/gh/2x-ercha/twikoo-magic@master/image/bilibili_tv_gif/发财.gif"
+      },
+      {
+        "key": "bilibili_tv_gif-7",
+        "val": "https://jsd.myxz.top/gh/2x-ercha/twikoo-magic@master/image/bilibili_tv_gif/可爱.gif"
+      },
+      {
+        "key": "bilibili_tv_gif-8",
+        "val": "https://jsd.myxz.top/gh/2x-ercha/twikoo-magic@master/image/bilibili_tv_gif/吐血.gif"
+      },
+      {
+        "key": "bilibili_tv_gif-9",
+        "val": "https://jsd.myxz.top/gh/2x-ercha/twikoo-magic@master/image/bilibili_tv_gif/呆.gif"
+      },
+      {
+        "key": "bilibili_tv_gif-10",
+        "val": "https://jsd.myxz.top/gh/2x-ercha/twikoo-magic@master/image/bilibili_tv_gif/呕吐.gif"
+      },
+      {
+        "key": "bilibili_tv_gif-11",
+        "val": "https://jsd.myxz.top/gh/2x-ercha/twikoo-magic@master/image/bilibili_tv_gif/困.gif"
+      },
+      {
+        "key": "bilibili_tv_gif-12",
+        "val": "https://jsd.myxz.top/gh/2x-ercha/twikoo-magic@master/image/bilibili_tv_gif/坏笑.gif"
+      },
+      {
+        "key": "bilibili_tv_gif-13",
+        "val": "https://jsd.myxz.top/gh/2x-ercha/twikoo-magic@master/image/bilibili_tv_gif/大佬.gif"
+      },
+      {
+        "key": "bilibili_tv_gif-14",
+        "val": "https://jsd.myxz.top/gh/2x-ercha/twikoo-magic@master/image/bilibili_tv_gif/大哭.gif"
+      },
+      {
+        "key": "bilibili_tv_gif-15",
+        "val": "https://jsd.myxz.top/gh/2x-ercha/twikoo-magic@master/image/bilibili_tv_gif/委屈.gif"
+      },
+      {
+        "key": "bilibili_tv_gif-16",
+        "val": "https://jsd.myxz.top/gh/2x-ercha/twikoo-magic@master/image/bilibili_tv_gif/害羞.gif"
+      },
+      {
+        "key": "bilibili_tv_gif-17",
+        "val": "https://jsd.myxz.top/gh/2x-ercha/twikoo-magic@master/image/bilibili_tv_gif/尴尬.gif"
+      },
+      {
+        "key": "bilibili_tv_gif-18",
+        "val": "https://jsd.myxz.top/gh/2x-ercha/twikoo-magic@master/image/bilibili_tv_gif/微笑.gif"
+      },
+      {
+        "key": "bilibili_tv_gif-19",
+        "val": "https://jsd.myxz.top/gh/2x-ercha/twikoo-magic@master/image/bilibili_tv_gif/思考.gif"
+      },
+      {
+        "key": "bilibili_tv_gif-20",
+        "val": "https://jsd.myxz.top/gh/2x-ercha/twikoo-magic@master/image/bilibili_tv_gif/惊吓.gif"
+      },
+      {
+        "key": "bilibili_tv_gif-21",
+        "val": "https://jsd.myxz.top/gh/2x-ercha/twikoo-magic@master/image/bilibili_tv_gif/打脸.gif"
+      },
+      {
+        "key": "bilibili_tv_gif-22",
+        "val": "https://jsd.myxz.top/gh/2x-ercha/twikoo-magic@master/image/bilibili_tv_gif/抓狂.gif"
+      },
+      {
+        "key": "bilibili_tv_gif-23",
+        "val": "https://jsd.myxz.top/gh/2x-ercha/twikoo-magic@master/image/bilibili_tv_gif/抠鼻子.gif"
+      },
+      {
+        "key": "bilibili_tv_gif-24",
+        "val": "https://jsd.myxz.top/gh/2x-ercha/twikoo-magic@master/image/bilibili_tv_gif/斜眼笑.gif"
+      },
+      {
+        "key": "bilibili_tv_gif-25",
+        "val": "https://jsd.myxz.top/gh/2x-ercha/twikoo-magic@master/image/bilibili_tv_gif/无奈.gif"
+      },
+      {
+        "key": "bilibili_tv_gif-26",
+        "val": "https://jsd.myxz.top/gh/2x-ercha/twikoo-magic@master/image/bilibili_tv_gif/晕.gif"
+      },
+      {
+        "key": "bilibili_tv_gif-27",
+        "val": "https://jsd.myxz.top/gh/2x-ercha/twikoo-magic@master/image/bilibili_tv_gif/流汗.gif"
+      },
+      {
+        "key": "bilibili_tv_gif-28",
+        "val": "https://jsd.myxz.top/gh/2x-ercha/twikoo-magic@master/image/bilibili_tv_gif/流鼻血.gif"
+      },
+      {
+        "key": "bilibili_tv_gif-29",
+        "val": "https://jsd.myxz.top/gh/2x-ercha/twikoo-magic@master/image/bilibili_tv_gif/点赞.gif"
+      },
+      {
+        "key": "bilibili_tv_gif-30",
+        "val": "https://jsd.myxz.top/gh/2x-ercha/twikoo-magic@master/image/bilibili_tv_gif/生气.gif"
+      },
+      {
+        "key": "bilibili_tv_gif-31",
+        "val": "https://jsd.myxz.top/gh/2x-ercha/twikoo-magic@master/image/bilibili_tv_gif/生病.gif"
+      },
+      {
+        "key": "bilibili_tv_gif-32",
+        "val": "https://jsd.myxz.top/gh/2x-ercha/twikoo-magic@master/image/bilibili_tv_gif/疑问.gif"
+      },
+      {
+        "key": "bilibili_tv_gif-33",
+        "val": "https://jsd.myxz.top/gh/2x-ercha/twikoo-magic@master/image/bilibili_tv_gif/白眼.gif"
+      },
+      {
+        "key": "bilibili_tv_gif-34",
+        "val": "https://jsd.myxz.top/gh/2x-ercha/twikoo-magic@master/image/bilibili_tv_gif/睡着.gif"
+      },
+      {
+        "key": "bilibili_tv_gif-35",
+        "val": "https://jsd.myxz.top/gh/2x-ercha/twikoo-magic@master/image/bilibili_tv_gif/笑哭.gif"
+      },
+      {
+        "key": "bilibili_tv_gif-36",
+        "val": "https://jsd.myxz.top/gh/2x-ercha/twikoo-magic@master/image/bilibili_tv_gif/腼腆.gif"
+      },
+      {
+        "key": "bilibili_tv_gif-37",
+        "val": "https://jsd.myxz.top/gh/2x-ercha/twikoo-magic@master/image/bilibili_tv_gif/色.gif"
+      },
+      {
+        "key": "bilibili_tv_gif-38",
+        "val": "https://jsd.myxz.top/gh/2x-ercha/twikoo-magic@master/image/bilibili_tv_gif/调皮.gif"
+      },
+      {
+        "key": "bilibili_tv_gif-39",
+        "val": "https://jsd.myxz.top/gh/2x-ercha/twikoo-magic@master/image/bilibili_tv_gif/鄙视.gif"
+      },
+      {
+        "key": "bilibili_tv_gif-40",
+        "val": "https://jsd.myxz.top/gh/2x-ercha/twikoo-magic@master/image/bilibili_tv_gif/闭嘴.gif"
+      },
+      {
+        "key": "bilibili_tv_gif-41",
+        "val": "https://jsd.myxz.top/gh/2x-ercha/twikoo-magic@master/image/bilibili_tv_gif/难过.gif"
+      },
+      {
+        "key": "bilibili_tv_gif-42",
+        "val": "https://jsd.myxz.top/gh/2x-ercha/twikoo-magic@master/image/bilibili_tv_gif/馋.gif"
+      },
+      {
+        "key": "bilibili_tv_gif-43",
+        "val": "https://jsd.myxz.top/gh/2x-ercha/twikoo-magic@master/image/bilibili_tv_gif/黑人问号.gif"
+      },
+      {
+        "key": "bilibili_tv_gif-44",
+        "val": "https://jsd.myxz.top/gh/2x-ercha/twikoo-magic@master/image/bilibili_tv_gif/鼓掌.gif"
+      }
+    ]
+  }

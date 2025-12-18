@@ -39,6 +39,7 @@
     "@vueuse/nuxt": "catalog:util",
     "@vueuse/router": "catalog:util",
     "abcjs": "catalog:content",
+    "chinese-lunar": "^0.1.4",
     "ci-info": "catalog:framework",
     "date-fns": "catalog:util",
     "date-fns-tz": "catalog:util",

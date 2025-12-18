@@ -239,6 +239,9 @@ importers:
       abcjs:
         specifier: catalog:content
         version: 6.5.2
+      chinese-lunar:
+        specifier: ^0.1.4
+        version: 0.1.4
       ci-info:
         specifier: catalog:framework
         version: 4.3.1
@@ -2832,6 +2835,9 @@ packages:
 
   character-reference-invalid@2.0.1:
     resolution: {integrity: sha512-iBZ4F4wRbyORVsu0jPV7gXkOsGYjGHPmAyv+HiHG8gi5PtC9KI2j1+v8/tlibRvjoWX027ypmG/n0HtO5t7unw==}
+
+  chinese-lunar@0.1.4:
+    resolution: {integrity: sha512-E4seb9UZkSJtkm65Ry2ZLWTw5Z87DOyGcCePdg3ft7da342hnEliMtcDAPSn+YSo/o0xl1Egmhh671kxEJgY+g==}
 
   chokidar@4.0.3:
     resolution: {integrity: sha512-Qgzu8kfBvo+cA4962jnP1KkS6Dop5NS6g7R5LFYJr4b8Ub94PPQXUksCw9PvXoeXPRRddRNC5C1JQUR2SMGtnA==}
@@ -9699,6 +9705,8 @@ snapshots:
       is-regex: 1.2.1
 
   character-reference-invalid@2.0.1: {}
+
+  chinese-lunar@0.1.4: {}
 
   chokidar@4.0.3:
     dependencies:

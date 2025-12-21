@@ -674,3 +674,161 @@
     --bg-mask: rgba(1,8,24,.5);
     --bg-head-bar: rgba(14,29,47,.7)
 }
+
+/* ganvin */
+:root {
+    --gavin-blue1: rgb(0, 150, 255);
+    --gavin-blue2: rgb(0, 136, 255);
+    --gavin-blue3: rgb(0, 100, 255);
+    /* --gavin-theme-color: var(--gavin-blue2); */
+    --gavin-highlight: rgb(var(--gavin-theme-color));
+    --gavin-highlight-op: rgba(var(--gavin-theme-color), .18);
+    --gavin-highlight-op-1: rgba(var(--gavin-theme-color), .1);
+    --gavin-highlight-op-6: rgba(var(--gavin-theme-color), .6);
+    --gavin-theme-color-light: 0,100,255;
+    /* 129, 78, 250; */
+    --gavin-theme-color-dark: 0,150,255;
+    /* 0, 234, 208; */
+    --gavin-background: var(--gavin-grey-1);
+    /* --gavin-theme-color-dark: 26, 251, 255; 亮蓝 */
+    --font-color: rgba(var(--font-color-rgb), .85);
+    --font-color-blod: rgba(var(--font-color-rgb), 1);
+    --rightside-bg: rgba(var(--op), .1);
+    --vercel-btn-bg: var(--dis-f-0);
+    --vercel-btn-hover-bg: var(--f-0);
+    --vercel-btn-border: var(--dis-f-0);
+    --hr-border: var(--gavin-blue2);
+    --hr-before-color: var(--gavin-blue2);
+    --article-card: var(--gavin-widget-bg1);
+    /* 以下是安知鱼颜色 */
+    --gavin-shadow-border: 0 8px 16px -4px #2c2d300c;
+    --gavin-theme-op: #4259ef23;
+    --gavin-shadow-theme: 0 0px 7px -3px var(--gavin-theme-op);
+    --gavin-shadow-blackdeep: 0 2px 16px -3px rgba(0, 0, 0, 0.15);
+}
+
+.dark {
+    --gavin-bg: 17, 18, 20;
+    --gavin-op-1: rgba(0, 0, 0, .1);
+    --gavin-op-3: rgba(0, 0, 0, .3);
+    --gavin-op-5: rgba(0, 0, 0, .5);
+    --gavin-op-7: rgba(0, 0, 0, .7);
+    --gavin-op-dis-05: rgba(255, 255, 255, .05);
+    --gavin-op-dis-15: rgba(255, 255, 255, .15);
+    --gavin-op-dis-1: rgba(255, 255, 255, .1);
+    --gavin-op-dis-2: rgba(255, 255, 255, .2);
+    --gavin-op-dis-3: rgba(255, 255, 255, .3);
+    --gavin-op-dis-4: rgba(255, 255, 255, .4);
+    --gavin-op-dis-5: rgba(255, 255, 255, .5);
+    --gavin-op-dis-6: rgba(255, 255, 255, .6);
+    --gavin-op-dis-7: rgba(255, 255, 255, .7);
+    --gavin-nav-bg: rgba(0, 0, 0, .56);
+    --gavin-nav-hover: var(--gavin-highlight-op-6);
+    /* --gavin-nav-hover: #00EAD0; */
+    --gavin-mask: rgba(255, 255, 255, .18);
+    --gavin-page-bg: rgba(255, 255, 255, 0.8);
+    /*页码颜色*/
+    --gavin-toc-bg: rgba(255, 255, 255, .15);
+    /*目录颜色*/
+    /*rgba(51, 144, 255, .3); */
+    --gavin-scrollbar-dark: #242424;
+    --gavin-scrollbar-light: rgba(180, 180, 180, .4);
+    --gavin-item-bg: rgba(240, 240, 240, .2);
+    --gavin-item-border: rgba(240, 240, 240, .5);
+    --gavin-border-color: var(--gavin-grey-5);
+    --gavin-border-hover-color: var(--gavin-blue3);
+    --gavin-note-font-color: rgb(136, 136, 136);
+    --gavin-hover-font-color: rgba(255, 255, 255, .9);
+    /*17,17,17*/
+    --gavin-widget-bg1: var(--gavin-grey-4);
+    /*38, 38, 38; rgb(46, 48, 51)*/
+    --gavin-widget-bg2: var(--gavin-grey-5);
+    --gavin-widget-bg3: rgb(70, 71, 73);
+    --gavin-widget-bg4: rgb(44, 44, 46);
+    /* --gavin-grey-1: rgb(16, 19, 22);
+    --gavin-grey-2: rgb(24, 27, 30);
+    --gavin-grey-3: rgb(32, 35, 38);
+    --gavin-grey-4: rgb(40, 43, 46);
+    --gavin-grey-5: rgb(48, 51, 54);
+    --gavin-grey-6: rgb(56, 59, 62);
+    --gavin-grey-7: rgb(64, 67, 70);
+    --gavin-grey-8: rgb(72, 75, 78); */
+    --gavin-grey-1: rgb(15, 18, 21);
+    --gavin-grey-2: rgb(25, 28, 31);
+    --gavin-grey-3: rgb(35, 38, 41);
+    --gavin-grey-4: rgb(45, 48, 51);
+    --gavin-grey-5: rgb(55, 58, 61);
+    --gavin-grey-6: rgb(65, 68, 71);
+    --gavin-grey-7: rgb(75, 78, 81);
+    --gavin-grey-op-1: 136, 139, 144;
+    --gavin-grey-op-2: 136, 139, 143;
+    /*60, 60, 60; rgb(66, 67, 70)*/
+    /* --gavin-highlight: #0096FF; */
+    /* --gavin-highlight: #00EAD0; */
+    /* --gavin-highlight-op: #0096FF50; */
+    /* --gavin-highlight-op: #00EAD023; */
+    --gavin-theme-color: var(--gavin-theme-color-dark);
+    --gavin-switch-off: rgb(57, 57, 61);
+    --gavin-switch-on: rgb(48, 209, 88);
+    --gavin-ripple: rgba(255, 255, 255, .3);
+    --gavin-shadow-1: 0 8px 12px -4px #00000050;
+    --gavin-shadow-2: 0 12px 16px -4px #00000050;
+    --gavin-shadow-3: 0 0 16px -4px #66666699;
+    --gavin-shadow-4: 0 0 16px -4px #000000;
+    --gavin-scroll-bg: #5E5E6A;
+    --vercel-background: rgb(17, 17, 17);
+    --vercel-border-color: rgb(66, 68, 74);
+    --vercel-hover-bg: rgba(51, 51, 51, 1);
+    /* --card-bg: rgb(21,23,25); */
+    --card-bg: var(--gavin-grey-2);
+    /*rgba(29, 30, 34, 1);*/
+    --text-bg-hover: rgba(240, 240, 240, .24);
+    --btn-bg: rgba(100, 100, 100, .8);
+    --btn-hover-color: rgb(80, 80, 80);
+    --card-link-bg: rgba(240, 240, 240, .1);
+    --card-link-border: rgba(240, 240, 240, .3);
+    --font-color-rgb: 236, 236, 240;
+    /* rgb(210, 210, 210); */
+    --search-bg: rgba(0, 0, 0, .64);
+    --system-logo: url(https://registry.npmmirror.com/cansin-blogdata/3.0.73/files/img/f1olM.webp);
+    --web-bg: rgba(0, 0, 0, 0.25);
+    --hl-bg: rgb(40, 44, 48);
+    --hlnumber-bg: rgb(40, 44, 48);
+    --hltools-bg: rgb(36, 37, 38);
+
+
+
+    /* HarmonyOS */
+    --hmos-theme: #317AF7;
+
+    --twitter-border: rgb(47, 51, 54);
+    --twitter-item-bg: rgb(22, 24, 28);
+    --twitter-shadow: rgba(255, 255, 255, 0.2) 0px 0px 15px, rgba(255, 255, 255, 0.15) 0px 0px 3px 1px;
+    --twitter-text-note: rgb(113, 118, 123);
+    --twitter-text: rgb(231, 233, 234);
+    --twitter-btn-bg: rgb(239, 243, 244);
+    --twitter-btn-hover: rgba(231, 233, 234, 0.1);
+    --twitter-item-hover: rgba(255, 255, 255, 0.03);
+    --twitter-item-active: rgba(255, 255, 255, 0.07);
+
+
+    --supb-border: #2e2e2e;
+    --supb-bg: #1c1c1c;
+    --supb-bg2: hsla(0, 0%, 100%, .026);
+
+
+
+    --gh-bg-1: var(--light-grad-pink-blue, radial-gradient(ellipse at 40% 0%, #bf398910 0, transparent 75%), radial-gradient(ellipse at 60% 0%, #096bde10 0, transparent 75%));
+
+    --gh-dark-1: rgb(1, 4, 9);
+    --gh-dark-2: rgb(13, 17, 23);
+    --gh-dark-3: rgb(22, 27, 34);
+    --gh-dark-4: rgb(33, 38, 45);
+    --gh-dark-5: rgb(41, 47, 54);
+    --gh-dark-6: rgb(48, 54, 61);
+    --gh-dark-7: rgb(63, 67, 75);
+
+    --gh-text-1: rgb(230, 237, 243);
+    --gh-text-2: rgb(110, 118, 129);
+    --gh-text-3: rgb(125, 133, 144);
+}

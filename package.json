@@ -48,6 +48,8 @@
     "embla-carousel-vue": "catalog:ui",
     "embla-carousel-wheel-gestures": "catalog:ui",
     "lodash-es": "^4.17.21",
+    "lunar-javascript": "^1.7.7",
+    "lunar-typescript": "^1.8.6",
     "minisearch": "catalog:util",
     "nuxt": "catalog:framework",
     "parse-domain": "catalog:util",

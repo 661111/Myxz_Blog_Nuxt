@@ -28,20 +28,26 @@ const progressWeek = ref<number>(0);
 const weekProgressText = ref<string>('');
 const yearProgressText = ref<string>('');
 const monthProgressText = ref<string>('');
+const yearRemainingDays = ref<number>(0); // 新增：年剩余天数
 
 // 计算属性
 
 // 初始化数据
 const initData = () => {
   const today = now.value;
+  const monthAdd = new Date(1, 12).getMonth
   year.value = today.getFullYear();
-  month.value = today.getMonth();
-  week.value = today.getDay();
+  month.value = today.getMonth(); // 0-11
+  week.value = today.getDay(); // 0-6 (0=周日)
   date.value = today.getDate();
   
-  // 计算当月天数
+  // 计算当月天数（修复闰年计算）
   const isLeapYear = (y: number) => (y % 4 === 0 && y % 100 !== 0) || y % 400 === 0;
-  const daysInMonth = [31, isLeapYear(year.value) ? 29 : 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+  const daysInMonth = [
+    31, 
+    isLeapYear(year.value) ? 29 : 28, 
+    31, 30, 31, 30, 31, 31, 30, 31, 30, 31
+  ];
   dates.value = daysInMonth[month.value];
   
   // 星期字符串
@@ -60,9 +66,9 @@ const initData = () => {
   lunarMon.value = lunar.getMonthInChinese();
   lunarDay.value = lunar.getDayInChinese();
   
-  // 倒计时计算 (2024-12-20)
-  const anniversary = new Date(2026, 2, 20); // 月份从0开始
-  countdownDays.value = Math.max(0, Math.ceil((anniversary.getTime() - today.getTime()) / (1000 * 60 * 60 * 24)));
+  // 倒计时计算 (修复日期：2026-02-20)
+  const anniversary = new Date(2025, 12, 23).getTime(); // 月份从0开始，1=2月
+  countdownDays.value = Math.ceil((anniversary - Date.now()) / (1000 * 60 * 60 * 24));
   
   // 计算进度条
   updateProgressBars();
@@ -77,6 +83,9 @@ const updateProgressBars = () => {
   const daysPassed = (now.value.getTime() - startOfYear.getTime()) / (1000 * 60 * 60 * 24);
   progressYear.value = Math.min(100, (daysPassed / yearTotalDays) * 100);
   yearProgressText.value = `${(progressYear.value).toFixed(2)}`;
+  
+  // 修复年剩余天数计算
+  yearRemainingDays.value = Math.floor((endOfYear.getTime() - now.value.getTime()) / (1000 * 60 * 60 * 24));
   
   // 月进度
   progressMonth.value = (date.value / dates.value) * 100;
@@ -114,7 +123,8 @@ onMounted(() => {
           <div class="schedule-d0">本年</div>
           <div class="schedule-d1">
             <span id="p_span_year" class="aside-span1">{{ yearProgressText }}%</span>
-            <span class="aside-span2">还剩<a>{{ Math.floor(365 * (1 - progressYear / 100)) }}</a>天</span>
+            <!-- 修复剩余天数显示 -->
+            <span class="aside-span2">还剩<a>{{ yearRemainingDays }}</a>天</span>
             <progress :max="365" :value="Math.floor(365 * progressYear / 100)" id="pBar_year"></progress>
           </div>
         </div>

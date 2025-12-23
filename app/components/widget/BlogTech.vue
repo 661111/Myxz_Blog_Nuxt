@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { Icon } from '#components'
+import dayjs from 'dayjs'
 import { packageManager, version, dependencies } from '~~/package.json'
 import pnpmWorkspace from '~~/pnpm-workspace.yaml'
 
@@ -22,6 +23,7 @@ const packages = Object.assign({}, ...Object.values(pnpmWorkspace.catalogs as an
 const packagesMain = {
 	pug: dependencies.pug,
 	stylus: dependencies.stylus,
+	dayjs: dependencies.dayjs,
 }
 const [pm, pmVersion] = packageManager.split('@') as [string, string]
 
@@ -44,6 +46,7 @@ const techstack = computed(() => ([
 	{ label: 'Arch', value: arch },
 	{ label: 'PUG', value: packagesMain.pug },
 	{ label: 'Stylus', value: packagesMain.stylus },
+	{ label: 'Dayjs', value: packagesMain.dayjs },
 ]))
 
 const expand = ref(false)

@@ -105,6 +105,10 @@ const { copy, copied } = useCopy(shareText)
 		<div class="post-title" :class="getPostTypeClassName(type)">
 			{{ title }}
 		</div>
+		<div class="post111" v-if="categories?.includes('小说')">
+			cscs
+			{{ props.show }}
+		</div>
 	</div>
 </div>
 </template>

@@ -17,7 +17,7 @@ export default interface ArticleProps extends Partial<{
 	published: string
 	categories: string[]
 	tags: string[]
-	type: 'tech' | 'story'
+	type: 'tech' | 'story' | 'novel'
 	image: string
 	recommend: number
 	references: { title?: string, link?: string }[]
@@ -26,4 +26,11 @@ export default interface ArticleProps extends Partial<{
 		coverRevert?: boolean
 		hideInfo?: boolean
 	}
+
+	novelInfo: {
+		title?: string
+		source?: string
+	}[]
+
+	show: string
 }> { }

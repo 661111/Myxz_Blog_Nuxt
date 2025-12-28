@@ -35,6 +35,7 @@
     "@pinia/nuxt": "catalog:util",
     "@shikijs/colorized-brackets": "catalog:content",
     "@shikijs/transformers": "catalog:content",
+    "@types/blueimp-md5": "^2.18.2",
     "@vueuse/core": "catalog:util",
     "@vueuse/nuxt": "catalog:util",
     "@vueuse/router": "catalog:util",

@@ -1,4 +1,8 @@
 <script setup lang="ts">
+import type ArticleProps from '~/types/article'
+import BlogNovelInfo from '../widget/BlogNovelInfo.vue';
+const props = defineProps<ArticleProps>()
+
 const layoutStore = useLayoutStore()
 const { asideWidgets } = storeToRefs(layoutStore)
 const show = computed(() => layoutStore.isOpen('aside'))

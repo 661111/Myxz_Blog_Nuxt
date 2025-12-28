@@ -9,7 +9,6 @@ import {
 	LazyWidgetBlogSiteInfo,
 	LazyWidgetBlogArchive,
 	LazyWidgetBlogCalendar,
-	LazyWidgetBlogComment,
 	LazyWidgetBlogNovelInfo,
 } from '#components'
 import { pascal } from 'radash'
@@ -25,7 +24,6 @@ const rawWidgets = {
 	LazyWidgetBlogSiteInfo,
 	LazyWidgetBlogArchive,
 	LazyWidgetBlogCalendar,
-	LazyWidgetBlogComment,
 	LazyWidgetBlogNovelInfo,
 }
 

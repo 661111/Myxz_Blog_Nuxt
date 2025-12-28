@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import appConfig from '~/app.config'
-import md5 from 'blueimp-md5'; // 依赖 blueimp-md5 包
 
 interface Comment {
   id: number;

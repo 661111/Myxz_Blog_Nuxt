@@ -121,7 +121,7 @@ const progressMessage = computed(() => {
         </div>
         <div class="infoTagList">
           <span class="infoTag" v-for="tags in bangumiCollectionItem.subject.tags.slice(0, 10).sort((a, b) => b.count - a.count)">
-            {{ tags.name }}<sup>{{tags.count}}</sup>
+            {{ tags.name}}<sup>{{tags.count}}</sup>
           </span>
         </div>
         <div class="infoCombinedList">

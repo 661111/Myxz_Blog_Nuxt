@@ -1,9 +1,9 @@
 ---
-title: 添加关于页面
+title: 关于页面(Nuxt)
 description: 近期将博客迁移至Nuxt框架时，重新搭建了「关于页面」。过程中添加了技能展示组件（skillinfo.vue），实现标签分组渲染；新建about.vue页面，整合个人信息、技能、偏好等多模块内容，并通过ts定义数据接口（about.ts/creativity.ts）。
 date: 2025-08-22 10:00:00
 updated: 2025-09-01 20:49:00
-image: https://sourceimage.s3.bitiful.net/img/default_cover_27.avif
+image:  https://nuxtsource.s3.bitiful.net/PostCover/aboutPage.avif
 categories: [博客魔改]
 tags: [Nuxt, 魔改, 美化]
 recommend: true

@@ -3,7 +3,7 @@ title: 添加装备页面
 description: 该博客持续维护Nuxt框架博客系统，新增装备页面实现硬件/外设分类展示，支持动态过滤、标签筛选与规格参数渲染，通过TypeScript定义数据接口，结合Vue3响应式布局与SCSS响应式设计，完成设备卡片动态加载、悬停动效及跨端适配优化，集成评论跳转与购买信息展示功能。
 date: 2025-12-03 10:05:09
 updated: 2025-12-03 20:49:09
-image: https://nuxtsource.s3.bitiful.net/PostCover/equipmentPage.webp
+image: https://nuxtsource.s3.bitiful.net/PostCover/equipmentPage.avif
 categories: [博客魔改]
 tags: [Nuxt, 魔改, 美化]
 recommend: true

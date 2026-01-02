@@ -5,7 +5,7 @@ updated: 2024-10-26 08:00:09
 categories: [搭建]
 top_img: false
 tags: [artalk, butterfly]
-image: https://sourceimage.s3.bitiful.net/img/default_cover_12.avif
+image: hhttps://nuxtsource.s3.bitiful.net/PostCover/ssVeryfunction.avif
 ---
 
 artalk部署方式：

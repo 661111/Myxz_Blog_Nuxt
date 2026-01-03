@@ -17,6 +17,7 @@ defineProps<{
     技能?: Array<{
       名称?: string
       图标?: string
+      类型?: string
       描述?: string
       效果?: Array<{
         分级: string
@@ -92,7 +93,7 @@ const activeIndex = ref(0)
                   alt="技能图标"
                   class="skillIcon"
                 />
-                <span class="skillName">{{ skill.名称 || "未命名技能" }}</span>
+                <span class="skillName">{{ skill.名称 || "未命名技能" }} <br> <p style="font-size: 12px;">{{ skill.类型 || "无效果"  }}</p> </span>
               </div>
               <div class="skillDesc">{{ skill.描述 || "无技能描述" }}</div>
               <div class="skillDesc" v-for="效果 in skill.效果">{{ 效果.分级 || "无技能效果" }}</div>
@@ -260,12 +261,14 @@ const activeIndex = ref(0)
             }
             
             .skillName {
-              font-weight: bold;
               font-size: 15px;
               color: var(--c-text-title);
             }
+            .skillXg {
+              font-size: 12px;
+              color: var(--c-bg-content);
+            }
           }
-          
           .skillDesc {
             font-size: 13px;
             color: var(--c-text-content);

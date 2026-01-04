@@ -221,12 +221,58 @@ ${packageJson.homepage}
 		// https://github.com/nuxt/image/issues/1353
 		provider: NETLIFY ? 'none' : undefined,
 		format: ['avif', 'webp'],
-		screens: {
-			xs: 320,
-			sm: 640,
-			md: 768,
-			lg: 1024,
-		},
+        // 降低默认质量
+        quality: 75,
+
+        // 移动端优先的断点
+        screens: {
+            xs: 320,
+            sm: 640,
+            md: 768,
+            lg: 1024,
+            xl: 1280,
+        },
+
+        // 新增:移动端预设
+        presets: {
+            // 轮播小缩略图 (137×78)
+            carouselThumb: {
+                modifiers: {
+                    format: 'avif',
+                    quality: 70,
+                    width: 137,
+                    height: 78,
+                    fit: 'cover',
+                }
+            },
+
+            // 文章卡片封面 (271×153)
+            articleCover: {
+                modifiers: {
+                    format: 'avif',
+                    quality: 75,
+                    width: 271,
+                    height: 153,
+                    fit: 'cover',
+                }
+            },
+
+            // 轮播大图 (400×226)
+            carouselLarge: {
+                modifiers: {
+                    format: 'avif',
+                    quality: 80,
+                    width: 400,
+                    height: 226,
+                    fit: 'cover',
+                }
+            },
+        },
+
+        // 新增:IPX 配置
+        ipx: {
+            maxAge: 60 * 60 * 24 * 365, // 1年缓存
+        },
 	},
 
 	linkChecker: {

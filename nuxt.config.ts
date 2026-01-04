@@ -116,7 +116,7 @@ export default defineNuxtConfig({
 	},
 
 	/** 在生产环境启用 sourcemap */
-	// sourcemap: true,
+	sourcemap: true,
 
 	vite: {
 		css: {
@@ -135,9 +135,9 @@ export default defineNuxtConfig({
 		server: {
 			allowedHosts: true,
 		},
-		build: {
-    		cssCodeSplit: false,
-  		},
+		// build: {
+    	// 	cssCodeSplit: false,
+  		// },
 	},
 
 	// @keep-sorted
@@ -159,7 +159,7 @@ export default defineNuxtConfig({
 		fallback: 'light',
 		classSuffix: '',
 	},
-
+	
 	content: {
 		build: {
 			markdown: {

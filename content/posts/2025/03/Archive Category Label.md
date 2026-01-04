@@ -3,7 +3,7 @@ title: 给页面加上所属分类和标签以及美化
 description: 这篇简述如何给自己博客中的归档、分类、标签页三个页面的文章卡片加上所属分类和标签，并说明了具体的实践环境，以最大限度的方式进行CSS美化。但也请注意要经常备份以免出现大量错误。
 date: 2025-03-24 08:00:09
 updated: 2025-03-24 10:56:09
-image: https://source.yjluo.top/PostCover/archiveMougai.avif
+image: /PostCover/archiveMougai.avif
 categories: [博客魔改]
 tags: [hexo, butterfly]
 ---

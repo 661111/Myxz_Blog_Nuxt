@@ -76,19 +76,6 @@ dayjs.extend(relativeTime)
 
 <template>
 <BlogWidget card title="博客统计">
-	<div class="avatar">
-    <div class="avatar-img">
-      <img :src="appConfig.favicon">
-    </div>
-		<div class="author-info">
-			<div class="author-info__name">
-				{{ appConfig.title }}
-			</div>
-			<div class="author-info__description">
-				{{ appConfig.subtitle }}
-			</div>
-		</div>
-  </div>
 	<ZDlGroup :items="blogStats" size="small" />
 </BlogWidget>
 </template>

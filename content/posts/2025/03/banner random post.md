@@ -3,7 +3,7 @@ title: Banner随机文章展示(轻笑同款)
 description: 本文依照轻笑的部分内容，参考首页banner写法以及对首页banner添加鼠标滚动以及移动端滑动，通过CSS样式进行美化整个首页banner，此篇文章重点讲述了如何解决轻笑给的js内容在首页会出现不断加载的问题。
 date: 2025-03-01 10:00:00
 updated: 2025-03-05 12:09:00
-image: https://nuxtsource.s3.bitiful.net/PostCover/randomPost.avif
+image: https://source.yjluo.top/PostCover/randomPost.avif
 categories: [博客魔改]
 tags: [hexo, butterfly, 美化]
 ---

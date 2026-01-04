@@ -5,7 +5,7 @@ updated: 2023-01-27 22:00:00
 categories: [搭建]
 top_img: false
 tags: [artalk, butterfly]
-image: https://nuxtsource.s3.bitiful.net/PostCover/ssVeryfunction.avif
+image: https://source.yjluo.top/PostCover/ssVeryfunction.avif
 ---
 bbtalk部署方式：
 1. 在leancloud国际版去注册一个应用(没有就注册一个账号)

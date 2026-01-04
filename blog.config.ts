@@ -7,7 +7,7 @@ const basicConfig = {
 	description: '柒渊阁的博客网站，分享技术和魔改。网站界面简洁美观，涵盖了魔改、教程等多个领域，为读者提供了卓越的阅读体验。',
 	author: {
 		name: '缘之境',
-        avatar: 'https://sourceimage.s3.bitiful.net/myxz.avif',
+        avatar: 'https://source.yjluo.top/assets/image/myxz.avif',
         email: '3227988255@qq.com',
         homepage: 'https://www.yjluo.top/',
 	},
@@ -16,7 +16,7 @@ const basicConfig = {
 		name: '署名-非商业性使用-相同方式共享 4.0 国际',
 		url: 'https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh-hans',
 	},
-	favicon: 'https://sourceimage.s3.bitiful.net/myxz.avif',
+	favicon: 'https://source.yjluo.top/assets/image/myxz.avif',
 	language: 'zh-CN',
 	timeEstablished: '2020-07-19',
 	timeStart: '2020',
@@ -72,7 +72,7 @@ const blogConfig = {
 		// 自己部署的 Umami 统计服务
 		// { 'src': 'https://zhi.zhilu.cyou/zhi.js', 'data-website-id': 'a1997c81-a42b-46f6-8d1d-8fbd67a8ef41', 'defer': true },
 		// 自己网站的 Cloudflare Insights 统计服务
-		{ 'src': 'https://static.cloudflareinsights.com/beacon.min.js', 'data-cf-beacon': '{"token": "1d6b137b73dc40a0b01b37b6cc8e084f"}', 'defer': true },
+		{ 'src': 'https://static.cloudflareinsights.com/beacon.min.js?v=20260104', 'data-cf-beacon': '{"token": "1d6b137b73dc40a0b01b37b6cc8e084f"}', 'defer': true },
 		// Twikoo 评论系统
 		// { src: 'https://lib.baomitu.com/twikoo/1.6.44/twikoo.min.js', defer: true },
 	],

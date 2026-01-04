@@ -3,7 +3,7 @@ title: 评论优化
 description: 该文章介绍Nuxt博客适配中评论模块的Vue组件实现与Artalk评论系统单例管理逻辑，并提供具体的适配评论表情包的Json信息，评论功能有着KaTeX数学公式渲染、图片灯箱、动态监听以及管理逻辑的初始化、计数、暗黑模式切换等方式。
 date: 2025-12-23 10:00:00
 updated: 2025-12-23 20:49:00
-image: https://nuxtsource.s3.bitiful.net/PostCover/commentMeihua.avif
+image: https://source.yjluo.top/PostCover/commentMeihua.avif
 categories: [博客魔改]
 tags: [Nuxt, 魔改, 美化]
 recommend: true

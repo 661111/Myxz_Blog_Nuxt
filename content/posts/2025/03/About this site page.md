@@ -3,7 +3,7 @@ title: 关于页面(butterfly)
 description: 本文章以安知鱼的页面文件为模版进行大幅度修改，仿轻笑的关于页面的模块摆放以及调整CSS样式来进行细致魔改。
 date: 2025-03-24 09:00:00
 updated: 2025-03-25 11:20:00
-image: https://nuxtsource.s3.bitiful.net/PostCover/btfAboutPage.avif
+image: https://source.yjluo.top/PostCover/btfAboutPage.avif
 categories: [博客魔改]
 top_img: false
 tags: [hexo, butterfly]

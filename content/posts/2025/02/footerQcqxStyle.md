@@ -3,7 +3,7 @@ title: 轻笑底部美化
 description: 本篇文章讲述了如何在博客的底部模块进行魔改添加图标、来源图片、返回顶部以及建站时间，对建站时间进行js内联到模块中。
 date: 2025-02-27 10:10:55
 updated: 2025-02-28 10:00:00
-image: https://nuxtsource.s3.bitiful.net/PostCover/footerMeihua.avif
+image: https://source.yjluo.top/PostCover/footerMeihua.avif
 categories: [博客魔改]
 tags: [hexo, butterfly, 美化]
 recommend: true

@@ -14,16 +14,21 @@ const categoryIcon = computed(() => getCategoryIcon(categoryLabel.value))
 
 <template>
 <UtilLink class="article-card card">
-	<!-- 移动端优化版本 -->
+	<!-- 优化后的图片组件 -->
 	<NuxtImg 
 		v-if="image" 
 		class="article-cover" 
 		:src="image" 
 		:alt="title"
-		preset="articleCover"
+		width="320"
+		height="180"
+		format="avif"
+		quality="80"
 		loading="lazy"
-		densities="x1 x2"
-		sizes="xs:100vw sm:271px md:271px lg:271px"
+		sizes="xs:50vw sm:320px md:320px"
+		:img-attrs="{
+			fetchpriority: 'low'
+		}"
 	/>
 	
 	<article>

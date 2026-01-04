@@ -49,11 +49,14 @@ useEventListener(carouselEl, 'wheel', (e) => {
 					class="cover" 
 					:src="article.image" 
 					:alt="article.title"
-					:preset="index < 3 ? 'carouselLarge' : 'carouselThumb'"
+					width="400"
+					height="226"
+					format="avif"
+					quality="85"
 					:loading="index < 3 ? 'eager' : 'lazy'"
 					:fetchpriority="index === 0 ? 'high' : 'low'"
-					densities="x1 x2"
-					sizes="xs:80vw sm:137px md:28vw lg:400px"
+					sizes="xs:80vw sm:28vw md:400px"
+					:preload="index === 0"
 				/>
 				
 				<div class="info">

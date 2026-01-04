@@ -32,7 +32,7 @@ export default defineNuxtConfig({
                 { rel: 'stylesheet', href: 'https://source.yjluo.top/fonts/lxgw-wenkai-screen-webfont/style.css', media: 'none', onload: 'this.media="all"' },
                 // { rel: 'stylesheet', href: 'https://static.vercel.sxiaohe.top/fonts/anzhiyu/anzhiyufonts.css', media: 'none', onload: 'this.media="all"'  },
                 { rel: 'stylesheet', href: '/assets/css/color.css', media: 'none', onload: 'this.media="all"'  },
-				{ rel: 'stylesheet', href: 'https://artalk.fis.ink/dist/Artalk.css?v=20260104', media: 'none', onload: 'this.media="all"'  },
+				{ rel: 'stylesheet', href: '/assets/css/artalk.css', media: 'none', onload: 'this.media="all"'  },
 			],
 			templateParams: {
 				separator: '|',

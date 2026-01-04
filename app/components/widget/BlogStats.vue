@@ -87,9 +87,6 @@ dayjs.extend(relativeTime)
 			<div class="author-info__description">
 				{{ appConfig.subtitle }}
 			</div>
-			<div class="status"> 
-				在{{ dayjs(runtimeConfig.public.buildTime).locale('zh-cn').fromNow().replaceAll(/\s+/g,'') }}
-			</div>
 		</div>
   </div>
 	<ZDlGroup :items="blogStats" size="small" />

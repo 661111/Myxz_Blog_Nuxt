@@ -7,7 +7,7 @@ const basicConfig = {
 	description: '柒渊阁的博客网站，分享技术和魔改。网站界面简洁美观，涵盖了魔改、教程等多个领域，为读者提供了卓越的阅读体验。',
 	author: {
 		name: '缘之境',
-        avatar: 'https://source.yjluo.top/assets/image/myxz.avif',
+        avatar: 'https://source.yjluo.top/assets/image/author.avif',
         email: '3227988255@qq.com',
         homepage: 'https://www.yjluo.top/',
 	},
@@ -16,7 +16,7 @@ const basicConfig = {
 		name: '署名-非商业性使用-相同方式共享 4.0 国际',
 		url: 'https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh-hans',
 	},
-	favicon: 'https://source.yjluo.top/assets/image/myxz.avif',
+	favicon: 'https://source.yjluo.top/assets/image/author.avif',
 	language: 'zh-CN',
 	timeEstablished: '2020-07-19',
 	timeStart: '2020',

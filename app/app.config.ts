@@ -85,7 +85,7 @@ export default defineAppConfig({
 
 	/** 左侧栏顶部 Logo */
 	header: {
-		logo: 'https://sourceimage.s3.bitiful.net/myxz.avif',
+		logo: blogConfig.favicon,
 		/** 展示标题文本，否则展示纯 Logo */
 		showTitle: true,
 		subtitle: blogConfig.subtitle,

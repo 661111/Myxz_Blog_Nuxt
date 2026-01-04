@@ -3,7 +3,7 @@ title: 友链魔改
 description: 友链页面美化以及添加功能
 date: 2024-04-19 10:00:00
 updated: 2025-04-19 12:09:00
-image:  /PostCover/flinkPage.avif
+image:  https://source.yjluo.top/PostCover/flinkPage.avif
 categories: [博客魔改]
 top_img: false
 tags: [hexo, butterfly]

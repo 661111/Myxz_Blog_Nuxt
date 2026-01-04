@@ -3,7 +3,7 @@ title: 添加追更历史
 description: 该文章详细介绍了基于Vue3+TypeScript开发的豆瓣追更记录系统，采用组件化架构实现两栏筛选菜单、动态加载动画和卡片式作品展示，通过Pinia状态管理+Vite构建工具实现数据流管理，集成防抖加载、虚拟滚动等性能优化方案。
 date: 2025-12-01 10:00:00
 updated: 2025-12-01 20:49:00
-image: https://source.yjluo.top/PostCover/banguimPage.avif
+image: /PostCover/banguimPage.avif
 categories: [博客魔改]
 tags: [Nuxt, 魔改, 美化]
 recommend: true

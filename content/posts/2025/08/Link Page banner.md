@@ -3,7 +3,7 @@ title: 在友链页面添加滚动头像banner
 description: 本篇文章讲述了添加模块代码并在博客的友情链接中添加模块，且使用css美化
 date: 2025-08-11 10:00:00
 updated: 2025-08-11 20:49:00
-image: https://source.yjluo.top/PostCover/linkTop.avif
+image: /PostCover/linkTop.avif
 categories: [博客魔改]
 tags: [Nuxt, 魔改, 美化]
 recommend: true

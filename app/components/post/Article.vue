@@ -14,7 +14,23 @@ const categoryIcon = computed(() => getCategoryIcon(categoryLabel.value))
 
 <template>
 <UtilLink class="article-card card">
-	<NuxtImg v-if="image" class="article-cover" :src="image" :alt="title" />
+	<!-- 优化后的图片组件 -->
+	<NuxtImg 
+		v-if="image" 
+		class="article-cover" 
+		:src="image" 
+		:alt="title"
+		width="320"
+		height="180"
+		format="avif"
+		quality="80"
+		loading="lazy"
+		sizes="xs:50vw sm:320px md:320px"
+		:img-attrs="{
+			fetchpriority: 'low'
+		}"
+	/>
+	
 	<article>
 		<h2 class="article-title text-creative">
 			{{ title }}
@@ -112,6 +128,8 @@ const categoryIcon = computed(() => getCategoryIcon(categoryLabel.value))
 	mask-image: linear-gradient(to var(--end), transparent, #FFF 50%);
 	transition: opacity 0.2s;
 	object-fit: cover;
+	/* 添加 aspect-ratio 保持比例 */
+	aspect-ratio: 16 / 9;
 
 	:hover > & {
 		opacity: 1;

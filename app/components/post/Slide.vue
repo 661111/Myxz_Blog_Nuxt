@@ -44,7 +44,21 @@ useEventListener(carouselEl, 'wheel', (e) => {
 				:title="article.description"
 				:to="article.path"
 			>
-				<NuxtImg class="cover" :src="article.image" :alt="article.title" fetchpriority="high"/>
+				<!-- 优化后的轮播图片 -->
+				<NuxtImg 
+					class="cover" 
+					:src="article.image" 
+					:alt="article.title"
+					width="400"
+					height="226"
+					format="avif"
+					quality="85"
+					:loading="index < 3 ? 'eager' : 'lazy'"
+					:fetchpriority="index === 0 ? 'high' : 'low'"
+					sizes="xs:80vw sm:28vw md:400px"
+					:preload="index === 0"
+				/>
+				
 				<div class="info">
 					<div class="title text-creative">
 						{{ article.title }}
@@ -149,6 +163,8 @@ useEventListener(carouselEl, 'wheel', (e) => {
 		width: 100%;
 		height: 100%;
 		object-fit: cover;
+		/* 确保宽高比一致 */
+		aspect-ratio: 16 / 9;
 	}
 
 	> .info {

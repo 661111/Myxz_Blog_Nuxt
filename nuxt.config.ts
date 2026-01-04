@@ -159,7 +159,7 @@ export default defineNuxtConfig({
 		fallback: 'light',
 		classSuffix: '',
 	},
-	
+
 	content: {
 		build: {
 			markdown: {
@@ -221,6 +221,12 @@ ${packageJson.homepage}
 		// https://github.com/nuxt/image/issues/1353
 		provider: NETLIFY ? 'none' : undefined,
 		format: ['avif', 'webp'],
+		screens: {
+			xs: 320,
+			sm: 640,
+			md: 768,
+			lg: 1024,
+		},
 	},
 
 	linkChecker: {

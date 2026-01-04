@@ -1,12 +1,12 @@
 import type { FeedEntry } from './app/types/feed'
 
 const basicConfig = {
-	title: '歆鸢阁',
-    subtitle: '柒上月日，无铭之阁',
+	title: '源境录',
+    subtitle: '凡尘修行悟道，叩问仙缘之境',
 	// 长 description 利好于 SEO
 	description: '柒渊阁的博客网站，分享技术和魔改。网站界面简洁美观，涵盖了魔改、教程等多个领域，为读者提供了卓越的阅读体验。',
 	author: {
-		name: '歆天之鸢',
+		name: '缘之境',
         avatar: 'https://sourceimage.s3.bitiful.net/myxz.avif',
         email: '3227988255@qq.com',
         homepage: 'https://www.yjluo.top/',
@@ -94,14 +94,14 @@ const blogConfig = {
 /** 用于生成 OPML 和友链页面配置 */
 export const myFeed: FeedEntry = {
 	author: blogConfig.author.name,
-	sitenick: '摸鱼处',
+	sitenick: '源境录',
 	title: blogConfig.title,
 	desc: blogConfig.subtitle || blogConfig.description,
 	link: blogConfig.url,
 	feed: new URL('/atom.xml', blogConfig.url).toString(),
 	icon: blogConfig.favicon,
 	avatar: blogConfig.author.avatar,
-	archs: ['Nuxt', 'Vercel'],
+	archs: ['Nuxt', 'EdgeOne'],
 	date: blogConfig.timeEstablished,
 	comment: '这是我自己',
 }

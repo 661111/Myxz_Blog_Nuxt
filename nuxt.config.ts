@@ -88,6 +88,19 @@ export default defineNuxtConfig({
 		'/atom.xml': { prerender: true, headers: { 'Content-Type': 'application/xml' } },
 		'/favicon.ico': { redirect: { to: blogConfig.favicon } },
 		'/zhilu.opml': { prerender: true, headers: { 'Content-Type': 'application/xml' } },
+		// Nuxt 构建产物：带 hash，可永久缓存
+		'/_nuxt/**': {
+			headers: {
+				'cache-control': 'public, max-age=31536000, immutable',
+			},
+		},
+
+		// 你自己的静态资源（如果是版本化文件也可 immutable；如果会改名不带 hash，就用较短缓存）
+		'/assets/**': {
+			headers: {
+				'cache-control': 'public, max-age=604800', // 7 天（保守）
+			},
+		},
 	},
 
 	runtimeConfig: {
@@ -122,6 +135,9 @@ export default defineNuxtConfig({
 		server: {
 			allowedHosts: true,
 		},
+		build: {
+    		cssCodeSplit: false,
+  		},
 	},
 
 	// @keep-sorted

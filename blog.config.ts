@@ -9,7 +9,7 @@ const basicConfig = {
 		name: '歆天之鸢',
         avatar: 'https://sourceimage.s3.bitiful.net/myxz.avif',
         email: '3227988255@qq.com',
-        homepage: 'https://www.myxz.top/',
+        homepage: 'https://www.yjluo.top/',
 	},
 	copyright: {
 		abbr: 'CC BY-NC-SA 4.0',
@@ -21,7 +21,7 @@ const basicConfig = {
 	timeEstablished: '2020-07-19',
 	timeStart: '2020',
     timezone: 'Asia/Shanghai',
-    url: 'https://www.myxz.top',
+    url: 'https://www.yjluo.top/',
 	defaultCategory: '未分类',
 }
 

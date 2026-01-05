@@ -89,8 +89,6 @@ export default defineNuxtConfig({
 		'/atom.xml': { prerender: true, headers: { 'Content-Type': 'application/xml' } },
 		'/favicon.ico': { redirect: { to: blogConfig.favicon } },
 		'/zhilu.opml': { prerender: true, headers: { 'Content-Type': 'application/xml' } },
-		'/fonts/**': { headers: { 'cache-control': 'public, max-age=31536000, immutable' } },
-		'/_nuxt/**': { headers: { 'cache-control': 'public, max-age=31536000, immutable' } }
 	},
 
 	runtimeConfig: {

@@ -35,7 +35,7 @@ const categoryIcon = computed(() => getCategoryIcon(categoryLabel.value))
 			{{ title }}
 		</h2>
 
-		<p v-if="description" class="article-description">
+		<p v-once="description" class="article-description">
 			{{ description }}
 		</p>
 

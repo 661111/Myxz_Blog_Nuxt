@@ -44,14 +44,19 @@ useEventListener(carouselEl, 'wheel', (e) => {
 				:title="article.description"
 				:to="article.path"
 			>
+				<!-- 🔥 轮播图优化 -->
 				<NuxtImg 
 					class="cover" 
 					:src="article.image" 
 					:alt="article.title"
-					fetchpriority="high"
-					:loading="index < 3 ? 'eager' : 'lazy'"
-					sizes="xs:80vw sm:28vw md:400px"
-					:preload="index === 0"
+					:loading="index < 2 ? 'eager' : 'lazy'"
+					:fetchpriority="index === 0 ? 'high' : 'low'"
+					densities="x1"
+					sizes="xs:80vw sm:28vw md:400px lg:400px"
+					:modifiers="{ 
+						fit: 'cover',
+						quality: index === 0 ? 70 : 60
+					}"
 				/>
 				<div class="info">
 					<div class="title text-creative">

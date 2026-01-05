@@ -14,6 +14,7 @@ const categoryIcon = computed(() => getCategoryIcon(categoryLabel.value))
 
 <template>
 <UtilLink class="article-card card">
+	<!-- 🔥 关键改进:使用 preset + densities -->
 	<NuxtImg 
 		v-if="image" 
 		class="article-cover" 
@@ -21,7 +22,12 @@ const categoryIcon = computed(() => getCategoryIcon(categoryLabel.value))
 		:alt="title"
 		preset="articleCover"
 		loading="lazy"
-		fetchpriority="low"
+		densities="x1 x2"
+		sizes="sm:271px md:271px lg:271px"
+		:modifiers="{ 
+			fit: 'cover',
+			quality: 65 
+		}"
 	/>
 	
 	<article>

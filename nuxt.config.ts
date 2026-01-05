@@ -225,12 +225,7 @@ ${packageJson.homepage}
         // 配置 AVIF 压缩参数
         avif: {
             quality: 65, // AVIF 专用质量设置
-            effort: 4, // 压缩力度 (0-9,越高越慢但越小)
-        },
-
-        // WebP 备用方案
-        webp: {
-            quality: 75,
+            effort: 9, // 压缩力度 (0-9,越高越慢但越小)
         },
 
         screens: {
@@ -246,7 +241,6 @@ ${packageJson.homepage}
             articleCover: {
                 modifiers: {
                     format: 'avif',
-                    quality: 65,
                     fit: 'cover',
                 }
             },

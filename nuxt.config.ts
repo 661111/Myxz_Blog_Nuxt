@@ -21,13 +21,13 @@ export default defineNuxtConfig({
 				{ rel: 'alternate', type: 'application/atom+xml', href: '/atom.xml' },
 				{ rel: 'stylesheet', href: 'https://lib.baomitu.com/KaTeX/0.16.9/katex.min.css?v=20260104', media: 'print', onload: 'this.media="all"' },
 				// "InterVariable", "Inter", "InterDisplay"
-				{ rel: 'stylesheet', href: 'https://source.yjluo.top/fonts/InterVariable/result.css', media: 'print', onload: 'this.media="all"' },
+				{ rel: 'stylesheet', href: '/fonts/InterVariable/result.css', media: 'print', onload: 'this.media="all"' },
 				// "JetBrains Mono", 思源黑体 "Noto Sans SC", 思源宋体 "Noto Serif SC"
 				// { rel: 'preconnect', href: 'https://fonts.gstatic.cn', crossorigin: '' },
 				// { rel: 'stylesheet', href: 'https://fonts.googleapis.cn/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Noto+Sans+SC:wght@100..900&family=Noto+Serif+SC:wght@200..900&display=swap', media: 'print', onload: 'this.media="all"' },
 				// // 小米字体 "MiSans"
 				// { rel: 'stylesheet', href: 'https://cdn-font.hyperos.mi.com/font/css?family=MiSans:100,200,300,400,450,500,600,650,700,900:Chinese_Simplify,Latin&display=swap', media: 'print', onload: 'this.media="all"' },
-                { rel: 'stylesheet', href: 'https://source.yjluo.top/fonts/lxgw-wenkai-screen-webfont/style.css', media: 'none', onload: 'this.media="all"' },
+                { rel: 'stylesheet', href: '/fonts/lxgw-wenkai-screen-webfont/style.css', media: 'none', onload: 'this.media="all"' },
                 // { rel: 'stylesheet', href: 'https://static.vercel.sxiaohe.top/fonts/anzhiyu/anzhiyufonts.css', media: 'none', onload: 'this.media="all"'  },
                 { rel: 'stylesheet', href: '/assets/css/color.css', media: 'none', onload: 'this.media="all"'  },
 				{ rel: 'stylesheet', href: '/assets/css/artalk.css', media: 'none', onload: 'this.media="all"'  },
@@ -70,6 +70,7 @@ export default defineNuxtConfig({
 	},
 
 	nitro: {
+		compressPublicAssets: true,
 		prerender: {
 			// 修复部分平台会在文章路径后添加 `/`，导致闪现 404 错误
 			// https://github.com/nuxt/content/issues/2378
@@ -79,20 +80,17 @@ export default defineNuxtConfig({
 
 	// @keep-sorted
 	routeRules: {
-		'/_nuxt/**': {
-			headers: {
-				'cache-control': 'public, max-age=31536000, immutable'
-			}
-		},
-		// ...Object.entries(redirectList)
-		// 	.reduce<NitroConfig['routeRules']>((acc, [from, to]) => {
-		// 		acc![from] = { redirect: { to, statusCode: 308 } }
-		// 		return acc
-		// 	}, {}),
+		...Object.entries(redirectList)
+			.reduce<NitroConfig['routeRules']>((acc, [from, to]) => {
+				acc![from] = { redirect: { to, statusCode: 308 } }
+				return acc
+			}, {}),
 		'/api/stats': { prerender: true, headers: { 'Content-Type': 'application/json' } },
 		'/atom.xml': { prerender: true, headers: { 'Content-Type': 'application/xml' } },
 		'/favicon.ico': { redirect: { to: blogConfig.favicon } },
 		'/zhilu.opml': { prerender: true, headers: { 'Content-Type': 'application/xml' } },
+		'/fonts/**': { headers: { 'cache-control': 'public, max-age=31536000, immutable' } },
+		'/_nuxt/**': { headers: { 'cache-control': 'public, max-age=31536000, immutable' } }
 	},
 
 	runtimeConfig: {

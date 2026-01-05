@@ -190,6 +190,10 @@ onUnmounted(() => {
 		commentObserver = null
 	}
 })
+
+onMounted(async () => {
+  await import('/assets/katex.min.css')
+})
 </script>
 
 <template>

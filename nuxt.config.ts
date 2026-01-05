@@ -21,7 +21,7 @@ export default defineNuxtConfig({
 				{ rel: 'alternate', type: 'application/atom+xml', href: '/atom.xml' },
 				// "InterVariable", "Inter", "InterDisplay"
 				{ rel: 'stylesheet', href: '/fonts/InterVariable/result.css', media: 'print', onload: 'this.media="all"' },
-                { rel: 'stylesheet', href: '/fonts/lxgw-wenkai-screen-webfont/style.css', media: 'none', onload: 'this.media="all"' },
+                // { rel: 'stylesheet', href: '/fonts/lxgw-wenkai-screen-webfont/style.css', media: 'none', onload: 'this.media="all"' },
                 { rel: 'stylesheet', href: '/assets/css/color.css', media: 'none', onload: 'this.media="all"'  },
 				{ rel: 'stylesheet', href: '/assets/css/artalk.css', media: 'none', onload: 'this.media="all"'  },
 			],

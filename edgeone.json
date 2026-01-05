@@ -35,7 +35,13 @@
       "headers": [
         { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
       ]
-    }
+    },
+    {
+      "source": "/fonts/*",
+      "headers": [
+        { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
+      ]
+    },
   ],
   "caches": [
     {
@@ -48,6 +54,10 @@
     },
     {
       "source": "/assets/*",
+      "cacheTtl": 31536000
+    },
+    {
+      "source": "/fonts/*",
       "cacheTtl": 31536000
     }
   ],

@@ -192,7 +192,7 @@ onUnmounted(() => {
 })
 
 onMounted(async () => {
-  await import('/assets/katex.min.css')
+  await import('../../assets/css/katex.min.css')
 })
 </script>
 

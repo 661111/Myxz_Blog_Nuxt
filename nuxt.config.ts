@@ -134,10 +134,11 @@ export default defineNuxtConfig({
 		'@nuxtjs/critters'
 	],
 	critters: {
-		preload: 'swap',
-		pruneSource: true
+		config: {
+			preload: 'swap',
+			pruneSource: true
+		}
   	},
-	
 	colorMode: {
 		preference: 'system',
 		fallback: 'light',

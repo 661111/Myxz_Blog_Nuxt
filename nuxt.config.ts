@@ -65,7 +65,6 @@ export default defineNuxtConfig({
 	},
 
 	nitro: {
-		compressPublicAssets: true,
 		prerender: {
 			// 修复部分平台会在文章路径后添加 `/`，导致闪现 404 错误
 			// https://github.com/nuxt/content/issues/2378
@@ -99,7 +98,7 @@ export default defineNuxtConfig({
 	},
 
 	/** 在生产环境启用 sourcemap */
-	sourcemap: true,
+	// sourcemap: true,
 
 	vite: {
 		css: {
@@ -118,9 +117,6 @@ export default defineNuxtConfig({
 		server: {
 			allowedHosts: true,
 		},
-		// build: {
-    	// 	cssCodeSplit: false,
-  		// },
 	},
 
 	// @keep-sorted
@@ -200,6 +196,8 @@ ${packageJson.homepage}
 	},
 
 	image: {
+		// Neylify 下 netlify 处理器无法显示站外图片，ipx 处理器无法显示站内图片，需彻底禁用
+		// https://github.com/nuxt/image/issues/1353
 		provider: NETLIFY ? 'none' : undefined,
 		format: ['avif', 'webp'],
 	},

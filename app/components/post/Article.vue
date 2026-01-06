@@ -14,28 +14,13 @@ const categoryIcon = computed(() => getCategoryIcon(categoryLabel.value))
 
 <template>
 <UtilLink class="article-card card">
-	<!-- 🔥 关键改进:使用 preset + densities -->
-	<NuxtImg 
-		v-if="image" 
-		class="article-cover" 
-		:src="image" 
-		:alt="title"
-		preset="articleCover"
-		loading="lazy"
-		densities="x1 x2"
-		sizes="sm:271px md:271px lg:271px"
-		:modifiers="{ 
-			fit: 'cover',
-			quality: 65 
-		}"
-	/>
-	
+	<NuxtImg v-show="image" class="article-cover" :src="image" :alt="title" />
 	<article>
 		<h2 class="article-title text-creative">
 			{{ title }}
 		</h2>
 
-		<p v-once="description" class="article-description">
+		<p v-if="description" class="article-description">
 			{{ description }}
 		</p>
 
@@ -71,7 +56,6 @@ const categoryIcon = computed(() => getCategoryIcon(categoryLabel.value))
 </template>
 
 <style lang="scss" scoped>
-/* CSS 保持不变 */
 .article-card {
 	container-type: inline-size;
 	position: relative;
@@ -128,7 +112,6 @@ const categoryIcon = computed(() => getCategoryIcon(categoryLabel.value))
 	mask-image: linear-gradient(to var(--end), transparent, #FFF 50%);
 	transition: opacity 0.2s;
 	object-fit: cover;
-	aspect-ratio: 16 / 9;
 
 	:hover > & {
 		opacity: 1;

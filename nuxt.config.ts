@@ -57,8 +57,7 @@ export default defineNuxtConfig({
 	// @keep-sorted
 	experimental: {
 		extractAsyncDataHandlers: true,
-		typescriptPlugin: true,
-		inlineSSRStyles: true
+		typescriptPlugin: true
 	},
 
 	features: {
@@ -132,8 +131,13 @@ export default defineNuxtConfig({
 		'@vueuse/nuxt',
 		'nuxt-llms',
 		'unplugin-yaml/nuxt',
+		'@nuxtjs/critters'
 	],
-
+	critters: {
+		preload: 'swap',
+		pruneSource: true
+  	},
+	
 	colorMode: {
 		preference: 'system',
 		fallback: 'light',

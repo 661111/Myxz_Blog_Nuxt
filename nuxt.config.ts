@@ -5,6 +5,7 @@ import { pascal } from 'radash'
 import blogConfig from './blog.config'
 import packageJson from './package.json'
 import redirectList from './redirects.json'
+import visualizer from 'rollup-plugin-visualizer'
 
 // 此处配置无需修改
 export default defineNuxtConfig({
@@ -117,6 +118,14 @@ export default defineNuxtConfig({
 		server: {
 			allowedHosts: true,
 		},
+		plugins: [
+			visualizer({
+				filename: 'stats.html',
+				open: true,
+				gzipSize: true,
+				brotliSize: true
+			})
+    	]
 	},
 
 	// @keep-sorted
@@ -131,7 +140,7 @@ export default defineNuxtConfig({
 		'@vueuse/nuxt',
 		'nuxt-llms',
 		'unplugin-yaml/nuxt',
-		'@nuxtjs/critters'
+		'@nuxtjs/critters',
 	],
   	critters: {
     	config: {

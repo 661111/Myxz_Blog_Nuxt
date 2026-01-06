@@ -57,6 +57,7 @@
     "plain-shiki": "catalog:content",
     "pug": "^3.0.3",
     "radash": "catalog:util",
+    "rollup-plugin-visualizer": "^6.0.5",
     "shiki": "catalog:content",
     "site-config-stack": "catalog:util",
     "stylus": "^0.64.0",

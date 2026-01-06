@@ -5,6 +5,10 @@ import { version } from '~~/package.json'
 // 图标查询：https://yesicon.app/ph?s=bold
 // 图标插件：https://marketplace.visualstudio.com/items?itemName=antfu.iconify
 
+declare module 'nuxt/schema' {
+	interface AppConfigInput { }
+}
+
 // @keep-sorted
 export default defineAppConfig({
 	// 将 blog.config 中的配置项复制到 appConfig，方便调用
@@ -35,9 +39,15 @@ export default defineAppConfig({
 			caret: '_',
 		},
 
+		/** 精选文章 Slide */
+		slide: {
+			/** 适合封面图无字时启用 */
+			showTitle: true,
+		},
+
 		stats: {
 			/** 归档页面每年标题对应的年龄 */
-			birthYear: 2008,
+			birthYear: 2003,
 			/** blog-stats widget 的预置文本 */
 			wordCount: '约10万',
 		},
@@ -51,9 +61,9 @@ export default defineAppConfig({
 		iconNav: [
 			{ icon: 'ph:house-bold', text: '个人主页', url: blogConfig.author.homepage },
 			// { icon: 'ri:qq-line', text: '交流群: 169994096', url: 'https://jq.qq.com/?_wv=1027&k=lQfNSeEd' },
-			{ icon: 'ph:github-logo-bold', text: 'GitHub: L33Z22L11', url: 'https://github.com/L33Z22L11' },
+			// { icon: 'ph:github-logo-bold', text: 'GitHub: L33Z22L11', url: 'https://github.com/L33Z22L11' },
 			{ icon: 'ph:rss-simple-bold', text: 'Atom订阅', url: '/atom.xml' },
-			{ icon: 'ph:subway-bold', text: '开往', url: 'https://www.travellings.cn/go-by-clouds.html' },
+			{ icon: 'ph:subway-bold', text: '开往', url: 'https://www.travellings.cn/' },
 		] satisfies NavItem[],
 		/** 页脚站点地图 */
 		nav: [
@@ -90,7 +100,6 @@ export default defineAppConfig({
 		showTitle: true,
 		subtitle: blogConfig.subtitle,
 		emojiTail: ['📄', '🦌', '🙌', '🐟', '🏖️'],
-		avatarFrame: 'https://sourceimage.s3.bitiful.net/avatarFrame/ 143.avif',
 	},
 
 	/** 友链页面 */

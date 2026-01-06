@@ -2,7 +2,7 @@
 const route = useRoute()
 
 const layoutStore = useLayoutStore()
-layoutStore.setAside(['toc', 'blog-novel-info'])
+layoutStore.setAside(['toc'])
 
 const { data: post } = await useAsyncData(
 	route.path,
@@ -38,7 +38,10 @@ else {
 }
 
 if (import.meta.dev) {
-	watchEffect(() => setTocAndMeta())
+	watchEffect(() => {
+		setTocAndMeta()
+		layoutStore.setAside(post.value?.meta?.aside as WidgetName[] | undefined)
+	})
 }
 </script>
 

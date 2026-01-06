@@ -5,6 +5,7 @@
 	--transform-end-far: translateX(100%);
 	--delay: 0.2s;
 	--z-index-popover: 100;
+	--text-black-shadow: 0 1px 1px #0003, 0 1px 2px #0003;
 
 	overflow-wrap: break-word;
 	background-color: var(--c-bg-1);
@@ -113,22 +114,18 @@ img {
 	display: inline-block;
 
 	&::before {
-		position: absolute;
-		inset: 0;
-	}
-
-	&::before {
-		content: attr(alt);
+		all: initial;
+		content: attr(alt); // Firefox 的 ::before content 仅在 alt 不为空时展示且值为 attr(alt) 无法修改
 		display: grid;
 		place-content: center;
-		overflow: visible;
+		position: absolute;
+		inset: 0;
 		padding: 0.5em;
 		background-color: var(--c-border);
 		font: bold 1.5rem/1.2 var(--font-serif);
-		word-break: normal;
 		text-align: center;
-		text-shadow: none;
 		color: var(--c-bg-soft);
+		cursor: inherit;
 	}
 }
 
@@ -148,6 +145,7 @@ img {
 
 	> .tippy-svg-arrow {
 		fill: var(--ld-bg-card);
+		pointer-events: none;
 	}
 }
 

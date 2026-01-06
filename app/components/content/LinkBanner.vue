@@ -25,14 +25,16 @@ defineProps<{
 
 <style lang="scss" scoped>
 .link-banner {
-	display: flex;
-	flex-direction: column;
-	justify-content: space-between;
-	max-width: $breakpoint-phone;
-	margin: 2rem auto;
 	line-height: 1.4;
 
+	article & {
+		max-width: $breakpoint-phone;
+		margin: 2rem auto;
+	}
+
 	.link-banner-bg {
+		display: block;
+		width: 100%;
 		aspect-ratio: 2.4;
 		margin-bottom: -5%;
 		mask-image: linear-gradient(#FFF 50%, transparent);

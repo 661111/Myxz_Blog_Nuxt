@@ -1,12 +1,9 @@
 <script setup lang="ts">
 const appConfig = useAppConfig()
-import CopyrightCard from '../card/footer/copyrightCard.vue';
-import InfoCard from '../card/infoCard.vue';
 </script>
 
 <template>
-<footer class="z-footer">
-	<InfoCard />
+<footer class="blog-footer">
 	<nav class="footer-nav">
 		<div v-for="(group, groupIndex) in appConfig.footer.nav" :key="groupIndex" class="footer-nav-group">
 			<h3 v-if="group.title">
@@ -14,21 +11,20 @@ import InfoCard from '../card/infoCard.vue';
 			</h3>
 			<menu>
 				<li v-for="(item, itemIndex) in group.items" :key="itemIndex">
-					<ZRawLink :to="item.url">
+					<UtilLink :to="item.url">
 						<Icon :name="item.icon" />
 						<span class="nav-text">{{ item.text }}</span>
-					</ZRawLink>
+					</UtilLink>
 				</li>
 			</menu>
 		</div>
 	</nav>
-	<CopyrightCard />
-	<!-- <p v-html="appConfig.footer.copyright" /> -->
+	<p v-html="appConfig.footer.copyright" />
 </footer>
 </template>
 
 <style lang="scss" scoped>
-.z-footer {
+.blog-footer {
 	margin: 3rem 1rem;
 	font-size: 0.9em;
 	color: var(--c-text-2);

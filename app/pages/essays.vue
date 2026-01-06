@@ -1,16 +1,12 @@
 <script setup lang="ts">
-import { ref, onMounted, computed } from 'vue';
-import dayjs from 'dayjs';
-import relativeTime from 'dayjs/plugin/relativeTime';
-import 'dayjs/locale/zh-cn';
-dayjs.extend(relativeTime)
+import { ref, onMounted, computed } from 'vue'
 
 // 全局配置
 const appConfig = useAppConfig()
 const layoutStore = useLayoutStore()
 
 // 设置侧边栏组件
-layoutStore.setAside(['blog-stats', 'blog-tech', 'blog-site-info', 'blog-log'])
+layoutStore.setAside(['blog-stats', 'blog-tech', 'blog-log'])
 
 // SEO 配置
 useSeoMeta({
@@ -399,7 +395,6 @@ const yearlyTip = computed(() => talks)
                                         {{ item.user.nickname }}
                                         <Icon name="material-symbols:verified verified" class="verified" />
                                     </div>
-                                    <div class="talk-date">{{dayjs(item.date).locale('zh-cn').fromNow().replaceAll(/\s+/g,'') }}</div>
                                 </div>
                             </div>
                             <div class="talk-content">
@@ -408,7 +403,6 @@ const yearlyTip = computed(() => talks)
                                 <div v-if="item.content.music">
                                     <link src="https://jsd.myxz.top/npm/aplayer/dist/APlayer.min.css" rel="stylesheet">
                                     <meting-js 
-                                        v-if="item.music.type === 'tencent'"
                                         :server="item.content.music.server"
                                         :id="item.content.music.id"
                                         :api="item.content.music.api" 

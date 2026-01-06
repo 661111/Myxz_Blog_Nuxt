@@ -13,10 +13,8 @@
     "dist"
   ],
   "scripts": {
-    "build": "tsdown --exports"
-  },
-  "dependencies": {
-    "unist-util-visit": "catalog:content"
+    "build": "tsdown --exports",
+    "dev": "tsdown --exports --watch"
   },
   "devDependencies": {
     "@zinkawaii/tsconfig": "catalog:framework",

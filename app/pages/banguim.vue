@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import type { CollectionType, ContentType } from '../composables/useBangumi'
-import Pagination from '~/components/partial/Pagination.vue'
-import bgmCard from '~/components/Bangumi/bgmCard.vue'
+import bgmCard from '../components/yjluo/Bangumi/bgmCard.vue'
 import useBangumi from '../composables/useBangumi'
 import { debounce } from 'radash'
 
@@ -26,7 +25,7 @@ useSeoMeta({
 
 const layoutStore = useLayoutStore()
 const appConfig = useAppConfig()
-layoutStore.setAside(['blog-stats', 'blog-log'])
+layoutStore.setAside(['blog-stats', 'blog-tech', 'blog-log'])
 
 // 状态管理增强
 const route = useRoute()

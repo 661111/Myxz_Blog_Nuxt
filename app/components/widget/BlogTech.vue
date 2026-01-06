@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import { Icon } from '#components'
-import dayjs from 'dayjs'
 import { packageManager, version, dependencies } from '~~/package.json'
 import pnpmWorkspace from '~~/pnpm-workspace.yaml'
 
@@ -20,15 +19,10 @@ const ciPlatform = computed(() => {
 })
 
 const packages = Object.assign({}, ...Object.values(pnpmWorkspace.catalogs as any)) as Record<string, string>
-const packagesMain = {
-	pug: dependencies.pug,
-	stylus: dependencies.stylus,
-	dayjs: dependencies.dayjs,
-}
 const [pm, pmVersion] = packageManager.split('@') as [string, string]
 
 const service = computed(() => ([
-	...ci ? [{ label: '构建平台', value: ciPlatform }] : ['本地构建'],
+	...ci ? [{ label: '构建平台', value: ciPlatform }] : [],
 	{ label: '图片存储', value: () => [h('img', { src: '/image/DefineAssets/Service/bitful.avif', alt: '缤纷云'}), '缤纷云'] },
 	{ label: '软件协议', value: 'MIT' },
 	{ label: '文章许可', value: appConfig.copyright.abbr },
@@ -44,10 +38,10 @@ const techstack = computed(() => ([
 	{ label: pm, value: pmVersion },
 	{ label: 'OS', value: platform },
 	{ label: 'Arch', value: arch },
-	{ label: 'PUG', value: packagesMain.pug },
-	{ label: 'Stylus', value: packagesMain.stylus },
-	{ label: 'Dayjs', value: packagesMain.dayjs },
+	{ label: 'PUG', value: dependencies.pug },
+	{ label: 'Stylus', value: dependencies.stylus },
 ]))
+
 const expand = ref(false)
 </script>
 

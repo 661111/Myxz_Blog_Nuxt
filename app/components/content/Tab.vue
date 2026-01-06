@@ -22,18 +22,16 @@ const activeTab = ref(Number(props.active) || 1)
 			{{ tab }}
 		</button>
 	</div>
-	<div class="tab-content">
-		<!-- <Transition> -->
-		<!-- TODO 动画、减少布局闪烁 -->
-		<slot :name="`tab${activeTab}`" />
-		<!-- </Transition> -->
+	<div v-for="tabIndex in tabs.length" v-show="activeTab === tabIndex" :key="tabIndex" class="tab-content">
+		<slot :name="`tab${tabIndex}`" />
 	</div>
 </div>
 </template>
 
 <style lang="scss" scoped>
 .float-in-leave-active {
-	position: revert;
+	/* stylelint-disable-next-line declaration-no-important */
+	position: revert !important;
 }
 
 .center {
@@ -97,6 +95,6 @@ button {
 }
 
 .tab-content {
-	padding: 0.5em 0;
+	margin: 1em 0;
 }
 </style>

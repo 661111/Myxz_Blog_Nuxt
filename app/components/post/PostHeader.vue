@@ -13,7 +13,8 @@ const shareText = `【${appConfig.title}】${props.title}\n\n${
 	props.description ? `${props.description}\n\n` : ''}${
 	new URL(props.path!, appConfig.url).href}`
 
-const { copy, copied } = useCopy(shareText)
+// 未使用包体内容
+// const { copy, copied } = useCopy(shareText)
 </script>
 
 <template>
@@ -31,23 +32,21 @@ const { copy, copied } = useCopy(shareText)
 		</div>
 
 		<div v-if="!meta?.hideInfo" class="post-info">
-			<time
+			<UtilDate
 				v-if="date"
-				v-tip="`创建于 ${getLocaleDatetime(props.date)}`"
-				:datetime="getIsoDatetime(date)"
-			>
-				<Icon name="ph:calendar-dots-bold" />
-				{{ getPostDate(props.date) }}
-			</time>
+				v-tip
+				tip-prefix="创建于"
+				:date="date"
+				icon="ph:calendar-dots-bold"
+			/>
 
-			<time
-				v-if="isTimeDiffSignificant(date, updated, .999)"
-				v-tip="`修改于 ${getLocaleDatetime(props.updated)}`"
-				:datetime="getIsoDatetime(updated)"
-			>
-				<Icon name="ph:calendar-plus-bold" />
-				{{ getPostDate(props.updated) }}
-			</time>
+			<UtilDate
+				v-if="updated && isTimeDiffSignificant(date, updated, .999)"
+				v-tip
+				tip-prefix="修改于"
+				:date="updated"
+				icon="ph:calendar-plus-bold"
+			/>
 
 			<span v-if="categoryLabel">
 				<Icon :name="categoryIcon" />
@@ -104,10 +103,6 @@ const { copy, copied } = useCopy(shareText)
 		</div>
 		<div class="post-title" :class="getPostTypeClassName(type)">
 			{{ title }}
-		</div>
-		<div class="post111" v-if="categories?.includes('小说')">
-			cscs
-			{{ props.show }}
 		</div>
 	</div>
 </div>
@@ -236,7 +231,6 @@ const { copy, copied } = useCopy(shareText)
 }
 </style>
 
-<!-- 隐藏起来的样式 -->
 <!-- <style lang="scss" scoped>
 .post-header {
 	display: flex;
@@ -253,22 +247,17 @@ const { copy, copied } = useCopy(shareText)
 		border-radius: 0;
 	}
 
-	&:hover .operations {
+	&:hover .operations,
+	&:focus-within .operations {
 		opacity: 1;
 	}
 
 	&.has-cover {
-		aspect-ratio: 16 / 9;
-    color: #fff;
-    min-height: 200px;
-    overflow: hidden;
-    overflow: clip;
-    position: relative;
-    transition: font-size .2s;
-
-		&:hover {
-			font-size: 0.8em;
-		}
+		contain: paint; // overflow hidden + position relative
+		min-height: 16rem;
+		max-height: 20rem;
+		color: white;
+		transition: font-size 0.2s;
 
 		.post-info {
 			filter: drop-shadow(0 1px 2px #000);
@@ -276,19 +265,10 @@ const { copy, copied } = useCopy(shareText)
 
 		.post-title {
 			background-image: linear-gradient(transparent, #0003, #0005);
-			text-shadow: 0 1px 1px #0003, 0 1px 2px #0003;
+			text-shadow: var(--text-black-shadow);
 
 			&.text-story {
 				text-align: center;
-			}
-		}
-
-		&.text-revert {
-			text-shadow: 0 0 2px #FFF, 0 1px 0.5em #FFF;
-			color: #333;
-
-			.post-title {
-				background-image: linear-gradient(transparent, #FFF3, #FFF5);
 			}
 		}
 	}
@@ -306,9 +286,12 @@ const { copy, copied } = useCopy(shareText)
 .post-cover {
 	position: absolute;
 	inset: 0;
-	width: 100%;
-	height: 100%;
-	object-fit: cover;
+
+	> :deep(img) {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+	}
 }
 
 .post-title {
@@ -319,15 +302,8 @@ const { copy, copied } = useCopy(shareText)
 }
 
 .post-nav {
-	position: relative;
-	opacity: 0.9;
 	padding: 0.8em 1rem;
-
-	// 如果在父级设置字体尺寸，会影响祖先字体尺寸改变的行为
-	// 并且设置相对尺寸会导致过渡
-	>* {
-		font-size: 0.8rem;
-	}
+	font-size: 0.8em;
 
 	.post-info {
 		display: flex;

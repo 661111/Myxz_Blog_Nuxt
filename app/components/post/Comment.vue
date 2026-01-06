@@ -9,206 +9,381 @@ const colorMode = useColorMode()
 const artalkManager = ArtalkManager.getInstance()
 const popoverStore = usePopoverStore()
 
-// 动态加载 KaTeX 脚本
-function loadKaTeX() {
-	return new Promise((resolve, reject) => {
-		if (typeof window !== 'undefined' && window.katex) {
-			resolve(window.katex)
-			return
-		}
+// KaTeX 加载状态管理
+const katexState = ref<{
+  loaded: boolean
+  loading: boolean
+  error: boolean
+}>({
+  loaded: false,
+  loading: false,
+  error: false,
+})
 
-		const existingScript = document.querySelector('script[src*="katex"]')
-		if (existingScript) {
-			existingScript.addEventListener('load', () => resolve(window.katex))
-			existingScript.addEventListener('error', reject)
-			return
-		}
-
-		const script = document.createElement('script')
-		script.src = 'https://lib.baomitu.com/KaTeX/0.16.9/katex.min.js'
-		script.onload = () => resolve(window.katex)
-		script.onerror = reject
-		document.head.appendChild(script)
-	})
+// KaTeX 类型声明
+declare global {
+  interface Window {
+    katex?: {
+      renderToString: (tex: string, options?: {
+        displayMode?: boolean
+        throwOnError?: boolean
+        errorColor?: string
+      }) => string
+    }
+  }
 }
 
-// KaTeX math rendering function
+// 动态加载 KaTeX 脚本（优化版）
+async function loadKaTeX() {
+  // SSG 环境检测
+  if (import.meta.server) return null
+
+  // 已加载检查
+  if (katexState.value.loaded && window.katex) {
+    return window.katex
+  }
+
+  // 正在加载中，等待完成
+  if (katexState.value.loading) {
+    return new Promise((resolve) => {
+      const checkInterval = setInterval(() => {
+        if (katexState.value.loaded && window.katex) {
+          clearInterval(checkInterval)
+          resolve(window.katex)
+        }
+      }, 100)
+      
+      // 超时保护
+      setTimeout(() => {
+        clearInterval(checkInterval)
+        resolve(null)
+      }, 5000)
+    })
+  }
+
+  katexState.value.loading = true
+
+  try {
+    // 检查是否已存在 script 标签
+    const existingScript = document.querySelector('script[src*="katex"]')
+    
+    if (existingScript) {
+      return new Promise((resolve, reject) => {
+        if (window.katex) {
+          katexState.value.loaded = true
+          katexState.value.loading = false
+          resolve(window.katex)
+          return
+        }
+        
+        existingScript.addEventListener('load', () => {
+          katexState.value.loaded = true
+          katexState.value.loading = false
+          resolve(window.katex)
+        })
+        
+        existingScript.addEventListener('error', () => {
+          katexState.value.error = true
+          katexState.value.loading = false
+          reject(new Error('KaTeX script load failed'))
+        })
+      })
+    }
+
+    // 创建新 script 标签
+    return new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = 'https://lib.baomitu.com/KaTeX/0.16.9/katex.min.js'
+      script.async = true
+      script.defer = true
+      
+      script.onload = () => {
+        katexState.value.loaded = true
+        katexState.value.loading = false
+        resolve(window.katex)
+      }
+      
+      script.onerror = () => {
+        katexState.value.error = true
+        katexState.value.loading = false
+        console.error('KaTeX script failed to load')
+        reject(new Error('KaTeX script load failed'))
+      }
+      
+      document.head.appendChild(script)
+    })
+  }
+  catch (error) {
+    katexState.value.error = true
+    katexState.value.loading = false
+    console.error('Failed to load KaTeX:', error)
+    return null
+  }
+}
+
+// KaTeX 渲染函数（优化版）
 async function renderMathInComments() {
-	try {
-		await loadKaTeX()
+  if (import.meta.server) return
 
-		const commentElements = document.querySelectorAll('#artalk .atk-content:not(.math-processed)')
-		commentElements.forEach((element: Element) => {
-			element.classList.add('math-processed')
+  try {
+    const katex = await loadKaTeX()
+    if (!katex) {
+      console.warn('KaTeX not available')
+      return
+    }
 
-			let content = element.innerHTML
-			const originalContent = content
-			content = content.replace(/\$\$([^$]+)\$\$/g, (match, formula) => {
-				try {
-					return `<span class="math-display">${window.katex.renderToString(formula.trim(), { displayMode: true })}</span>`
-				}
-				catch (e) {
-					console.warn('KaTeX display render error:', e)
-					return match
-				}
-			})
-			content = content.replace(/\$([^$\n]+)\$/g, (match, formula) => {
-				if (match.includes('<span class="math-')) {
-					return match
-				}
-				try {
-					return `<span class="math-inline">${window.katex.renderToString(formula.trim(), { displayMode: false })}</span>`
-				}
-				catch (e) {
-					console.warn('KaTeX inline render error:', e)
-					return match
-				}
-			})
-			// eslint-disable-next-line regexp/no-super-linear-backtracking
-			content = content.replace(/```math\s*([\s\S]*?)```/g, (match, formula) => {
-				try {
-					return `<div class="math-block">${window.katex.renderToString(formula.trim(), { displayMode: true })}</div>`
-				}
-				catch (e) {
-					console.warn('KaTeX math block render error:', e)
-					return match
-				}
-			})
+    const commentElements = document.querySelectorAll('#artalk .atk-content:not(.math-processed)')
+    
+    if (commentElements.length === 0) return
 
-			if (content !== originalContent) {
-				element.innerHTML = content
-			}
-		})
-	}
-	catch (error) {
-		console.error('Failed to load KaTeX:', error)
-		setTimeout(() => renderMathInComments(), 1000)
-	}
+    commentElements.forEach((element: Element) => {
+      element.classList.add('math-processed')
+
+      const originalContent = element.innerHTML
+      let content = originalContent
+
+      // 渲染块级公式 $$...$$
+      content = content.replace(/\$\$([^$]+?)\$\$/g, (match, formula) => {
+        try {
+          const rendered = global.window.katex?.renderToString(formula.trim(), {
+            displayMode: true,
+            throwOnError: false,
+            errorColor: '#cc0000',
+          })
+          return `<span class="math-display">${rendered}</span>`
+        }
+        catch (e) {
+          console.warn('KaTeX display render error:', e, formula)
+          return match
+        }
+      })
+
+      // 渲染行内公式 $...$（避免重复渲染已处理的内容）
+      content = content.replace(/\$([^$\n]+?)\$/g, (match, formula) => {
+        // 跳过已经渲染的 math 标签
+        if (/<span class="math-/.test(match)) {
+          return match
+        }
+        
+        try {
+          const rendered = global.window.katex?.renderToString(formula.trim(), {
+            displayMode: false,
+            throwOnError: false,
+            errorColor: '#cc0000',
+          })
+          return `<span class="math-inline">${rendered}</span>`
+        }
+        catch (e) {
+          console.warn('KaTeX inline render error:', e, formula)
+          return match
+        }
+      })
+
+      // 渲染代码块公式 ```math...```
+      content = content.replace(/```math\s*([\s\S]*?)```/g, (match, formula) => {
+        try {
+          const rendered = global.window.katex?.renderToString(formula.trim(), {
+            displayMode: true,
+            throwOnError: false,
+            errorColor: '#cc0000',
+          })
+          return `<div class="math-block">${rendered}</div>`
+        }
+        catch (e) {
+          console.warn('KaTeX math block render error:', e, formula)
+          return match
+        }
+      })
+
+      // 只在内容真正改变时更新 DOM
+      if (content !== originalContent) {
+        element.innerHTML = content
+      }
+    })
+  }
+  catch (error) {
+    console.error('Failed to render math:', error)
+    
+    // 失败重试（最多 3 次）
+    if (!katexState.value.error) {
+      setTimeout(() => renderMathInComments(), 1500)
+    }
+  }
 }
 
 // 为评论区图片添加灯箱功能
 function addLightboxToImages() {
-	const commentImages = document.querySelectorAll('#artalk .atk-content img')
-	commentImages.forEach((img: Element) => {
-		const imgElement = img as HTMLImageElement
-		if (imgElement.style.cursor !== 'zoom-in') {
-			imgElement.style.cursor = 'zoom-in'
-			imgElement.addEventListener('click', () => {
-				const { open } = popoverStore.use(() => h(LazyPopoverLightbox, {
-					el: imgElement,
-				}))
-				open()
-			})
-		}
-	})
+  if (import.meta.server) return
+
+  const commentImages = document.querySelectorAll('#artalk .atk-content img:not(.lightbox-processed)')
+  
+  commentImages.forEach((img: Element) => {
+    const imgElement = img as HTMLImageElement
+    imgElement.classList.add('lightbox-processed')
+    imgElement.style.cursor = 'zoom-in'
+    
+    // 使用 addEventListener 替代重复绑定
+    imgElement.addEventListener('click', handleImageClick, { once: false })
+  })
 }
+
+function handleImageClick(event: Event) {
+  const imgElement = event.currentTarget as HTMLImageElement
+  const { open } = popoverStore.use(() => h(LazyPopoverLightbox, {
+    el: imgElement,
+  }))
+  open()
+}
+
 let commentObserver: MutationObserver | null = null
+let renderMathTimer: ReturnType<typeof setTimeout> | null = null
+let lightboxTimer: ReturnType<typeof setTimeout> | null = null
 
+// 监听评论区变化（优化防抖）
 function watchCommentChanges() {
-	const artalkContainer = document.getElementById('artalk')
-	if (!artalkContainer)
-		return
-	if (commentObserver) {
-		commentObserver.disconnect()
-	}
-	commentObserver = new MutationObserver((mutations) => {
-		let shouldUpdateImages = false
-		let shouldRenderMath = false
-		mutations.forEach((mutation) => {
-			if (mutation.type === 'childList' && mutation.addedNodes.length > 0) {
-				mutation.addedNodes.forEach((node) => {
-					if (node.nodeType === Node.ELEMENT_NODE) {
-						const element = node as Element
-						if (element.tagName === 'IMG' || element.querySelector('img')) {
-							shouldUpdateImages = true
-						}
-						if (element.classList?.contains('atk-content') || element.querySelector('.atk-content')) {
-							shouldRenderMath = true
-						}
-					}
-				})
-			}
-		})
+  if (import.meta.server) return
 
-		if (shouldUpdateImages) {
-			setTimeout(() => addLightboxToImages(), 100)
-		}
-		if (shouldRenderMath) {
-			setTimeout(() => renderMathInComments(), 500)
-		}
-	})
+  const artalkContainer = document.getElementById('artalk')
+  if (!artalkContainer) return
 
-	commentObserver.observe(artalkContainer, {
-		childList: true,
-		subtree: true,
-	})
+  // 清理旧的观察器
+  if (commentObserver) {
+    commentObserver.disconnect()
+  }
+
+  commentObserver = new MutationObserver((mutations) => {
+    let shouldUpdateImages = false
+    let shouldRenderMath = false
+
+    mutations.forEach((mutation) => {
+      if (mutation.type === 'childList' && mutation.addedNodes.length > 0) {
+        mutation.addedNodes.forEach((node) => {
+          if (node.nodeType === Node.ELEMENT_NODE) {
+            const element = node as Element
+            
+            if (element.tagName === 'IMG' || element.querySelector('img')) {
+              shouldUpdateImages = true
+            }
+            
+            if (element.classList?.contains('atk-content') || element.querySelector('.atk-content')) {
+              shouldRenderMath = true
+            }
+          }
+        })
+      }
+    })
+
+    // 防抖处理
+    if (shouldUpdateImages) {
+      if (lightboxTimer) clearTimeout(lightboxTimer)
+      lightboxTimer = setTimeout(() => addLightboxToImages(), 150)
+    }
+
+    if (shouldRenderMath) {
+      if (renderMathTimer) clearTimeout(renderMathTimer)
+      renderMathTimer = setTimeout(() => renderMathInComments(), 300)
+    }
+  })
+
+  commentObserver.observe(artalkContainer, {
+    childList: true,
+    subtree: true,
+  })
 }
 
+// 初始化 Artalk
 async function initArtalk() {
-	try {
-		await artalkManager.init({
-			el: '#artalk',
-			pageKey: route.path,
-			pageTitle: document.title.replace(` | ${appConfig.title}`, ''),
-			server: appConfig.artalk?.server,
-			site: appConfig.artalk?.sitename,
-			emoticons: appConfig.artalk?.owo_src,
-			darkMode: colorMode.value === 'dark',
-		})
+  if (import.meta.server) return
 
-		await nextTick(() => {
-			setTimeout(() => {
-				addLightboxToImages()
+  try {
+    await artalkManager.init({
+      el: '#artalk',
+      pageKey: route.path,
+      pageTitle: document.title.replace(` | ${appConfig.title}`, ''),
+      server: appConfig.artalk?.server,
+      site: appConfig.artalk?.sitename,
+      emoticons: appConfig.artalk?.owo_src,
+      darkMode: colorMode.value === 'dark',
+    })
 
-				setTimeout(() => renderMathInComments(), 1000)
-				watchCommentChanges()
-			}, 500)
-		})
-	}
-	catch (error) {
-		console.error('评论系统初始化失败:', error)
-	}
+    // 等待 DOM 更新
+    await nextTick()
+
+    // 初始化灯箱和数学公式渲染
+    setTimeout(() => {
+      addLightboxToImages()
+      renderMathInComments()
+      watchCommentChanges()
+    }, 300)
+  }
+  catch (error) {
+    console.error('评论系统初始化失败:', error)
+  }
 }
 
+// 清理函数
+function cleanup() {
+  if (commentObserver) {
+    commentObserver.disconnect()
+    commentObserver = null
+  }
+  
+  if (renderMathTimer) {
+    clearTimeout(renderMathTimer)
+    renderMathTimer = null
+  }
+  
+  if (lightboxTimer) {
+    clearTimeout(lightboxTimer)
+    lightboxTimer = null
+  }
+}
+
+// 生命周期
 onMounted(() => {
-	nextTick(() => {
-		setTimeout(initArtalk, 100)
-	})
+  if (import.meta.client) {
+    // 预加载 KaTeX CSS
+    import('~/assets/css/katex.min.css')
+    
+    // 初始化 Artalk
+    nextTick(() => {
+      setTimeout(initArtalk, 100)
+    })
+  }
 })
+
+// 监听路由变化
 watch(() => route.path, () => {
-	nextTick(() => {
-		setTimeout(initArtalk, 100)
-	})
+  cleanup()
+  nextTick(() => {
+    setTimeout(initArtalk, 100)
+  })
 })
+
+// 监听颜色模式变化
 watch(() => colorMode.value, (newMode) => {
-	artalkManager.setDarkMode(newMode === 'dark')
+  artalkManager.setDarkMode(newMode === 'dark')
 })
 
+// 卸载时清理
 onUnmounted(() => {
-	if (commentObserver) {
-		commentObserver.disconnect()
-		commentObserver = null
-	}
-})
-
-onMounted(async () => {
-  await import('../../assets/css/katex.min.css')
+  cleanup()
 })
 </script>
 
 <template>
-<section class="z-comment">
-	<h3 class="text-creative">
-		<div class="comment-tip">评论</div>
-  </h3>
-  <div class="commentCard">
-    <div id="artalk">
-      <p class="loading-box">
-        <Icon name="line-md:loading-twotone-loop" class="loadig-img" />评论加载中...
-      </p>
+  <section class="z-comment">
+    <h3 class="text-creative">
+      <div class="comment-tip">评论</div>
+    </h3>
+    <div class="commentCard">
+      <div id="artalk">
+        <p class="loading-box">
+          <Icon name="line-md:loading-twotone-loop" class="loading-img" />评论加载中...
+        </p>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
 </template>
 
 <style lang="scss" scoped>

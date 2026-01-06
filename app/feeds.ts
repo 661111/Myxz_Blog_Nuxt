@@ -4,7 +4,6 @@ import { myFeed } from '../blog.config'
 import { getFavicon, getGhAvatar, getGhIcon, getQqAvatar, QqAvatarSize } from './utils/img'
 
 export default [
-	// #region Clarity
 	{
 		name: '『推荐友链』',
 		desc: '本站推荐的友链',
@@ -18,7 +17,7 @@ export default [
 				link: 'https://blog.liushen.fun/',
 				feed: 'https://blog.liushen.fun/atom.xml',
 				icon: '/image/LinkCover/LiuShen.avif',
-				avatar: '/image/LinkCover/LiuShen.avif',
+				avatar: getQqAvatar('3162475700'),
 				archs: ['Hexo', '服务器'],
 				date: '2025-03-15',
 				comment: '',

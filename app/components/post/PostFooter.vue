@@ -2,14 +2,19 @@
 import type ArticleProps from '~/types/article'
 
 defineOptions({ inheritAttrs: false })
-const props = defineProps<ArticleProps>()
+defineProps<ArticleProps>()
+import useReWardStore from '~/components/popover/reward.vue'
+// 未读取内容
+// const [DefineTemplate, ReuseTemplate] = createReusableTemplate<{
+// 	title: string
+// }>({ inheritAttrs: false })
 
 const appConfig = useAppConfig()
 
 const item = {
 	作者: appConfig.author.name,
-	发布时间: getPostDate(props.date),
-	更新时间: getPostDate(props.updated),
+	// 发布时间: getPostDate(props.date),
+	// 更新时间: getPostDate(props.updated),
 	许可协议: "CC BY-NC-SA 4.0",
 }
 
@@ -46,36 +51,37 @@ const ReWardStore = useReWardStore()
 
 <template>
 <div class="post-footer">
-	<!-- <section v-if="references" class="reference">
-		<div id="references" class="title text-creative">
-			参考链接
-		</div>
+	<!-- <DefineTemplate v-slot="{ $slots, title }">
+		<section>
+			<div class="title text-creative">
+				{{ title }}
+			</div>
 
-		<div class="content">
-			<ul>
-				<li v-for="{ title, link }, i in references" :key="i">
-					<ProseA :href="link || ''">
-						{{ title ?? link }}
-					</ProseA>
-				</li>
-			</ul>
-		</div>
-	</section>
+			<div class="content">
+				<component :is="$slots.default" />
+			</div>
+		</section>
+	</DefineTemplate>
 
-	<section class="license">
-		<div class="title text-creative">
-			许可协议
-		</div>
-
-		<div class="content">
-			<p>
-				本文采用 <ProseA :href="appConfig.copyright.url">
-					{{ appConfig.copyright.name }}
+	<ReuseTemplate v-if="references" title="参考链接">
+		<ul>
+			<li v-for="{ title, link }, i in references" :key="i">
+				<ProseA :href="link || ''">
+					{{ title ?? link }}
 				</ProseA>
-				许可协议，转载请注明出处。
-			</p>
-		</div>
-	</section> -->
+			</li>
+		</ul>
+	</ReuseTemplate>
+
+	<ReuseTemplate :title="meta?.slots?.copyright?.props?.title as string || '许可协议'">
+		<ContentRenderer v-if="meta?.slots?.copyright" :value="meta?.slots?.copyright" />
+		<p v-else>
+			本文采用 <ProseA :href="appConfig.copyright.url">
+				{{ appConfig.copyright.name }}
+			</ProseA>
+			许可协议，转载请注明出处。
+		</p>
+	</ReuseTemplate>-->
 	<section class="authorCard">
 		<div class="header">
 			<span class="authorInfo">
@@ -289,3 +295,4 @@ section {
 // 	}
 // }
 </style>
+

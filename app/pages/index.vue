@@ -8,7 +8,7 @@ useSeoMeta({
 })
 
 const layoutStore = useLayoutStore()
-layoutStore.setAside(['blog-stats', 'blog-tech', 'blog-calendar'])
+layoutStore.setAside(['blog-stats', 'blog-tech', 'blog-log'])
 
 const { data: listRaw } = await useAsyncData('index_posts', () => useArticleIndexOptions(), { default: () => [] })
 const { listSorted, isAscending, sortOrder } = useArticleSort(listRaw, { bindDirectionQuery: 'asc', bindOrderQuery: 'sort' })

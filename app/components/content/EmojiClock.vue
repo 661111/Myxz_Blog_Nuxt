@@ -1,6 +1,4 @@
 <script setup lang="ts">
-import { toDate } from 'date-fns-tz'
-
 const props = defineProps<{
 	datetime?: string
 	rotate?: boolean
@@ -11,9 +9,8 @@ const emojiRotate = ['🕛', '🕐', '🕑', '🕒', '🕓', '🕔', '🕕', '�
 
 const now = ref(new Date())
 
-const appConfig = useAppConfig()
 const datetime = computed(() => props.datetime
-	? toDate(props.datetime, { timeZone: appConfig.timezone })
+	? toZonedDate(props.datetime)
 	: now.value)
 
 const status = computed(() => {
@@ -21,8 +18,8 @@ const status = computed(() => {
 	const minute = datetime.value.getMinutes()
 
 	if (!props.rotate) {
-		const clockIndex = hour * 2 + Math.round(minute / 30) % emojiStatic.length
-		return { emoji: emojiStatic[clockIndex] }
+		const emojiIndex = (hour * 2 + Math.round(minute / 30)) % emojiStatic.length
+		return { emoji: emojiStatic[emojiIndex] }
 	}
 
 	const minuteAt = Math.round(minute / 5)

@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import { differenceInWeeks, isSameYear } from 'date-fns'
-import { toDate } from 'date-fns-tz'
 
 const props = withDefaults(defineProps<{
 	icon?: string
@@ -13,8 +12,7 @@ const props = withDefaults(defineProps<{
 	tipPrefix: '',
 })
 
-const appConfig = useAppConfig()
-const datetime = computed(() => toDate(props.date, { timeZone: appConfig.timezone }))
+const datetime = computed(() => toZonedDate(props.date))
 
 const relative = computed(() => props.absolute
 	? false
@@ -30,9 +28,10 @@ onMounted(() => mounted.value = true)
 <template>
 <span :title="tooltip">
 	<Icon v-if="icon" :name="icon" />
-	<!-- <template v-if="icon && !nospace">&nbsp;</template> -->
+	<template v-if="icon && !nospace">&nbsp;</template>
 
-	<span v-if="isNaN(datetime.getTime())" v-text="datetime" />
+	<span v-if="Number.isNaN(datetime.getTime())" v-text="datetime" />
+	<!-- Invalid Date 传入 NuxtTime 组件或 .toISOString() 会报错 -->
 	<NuxtTime
 		v-else
 		:datetime

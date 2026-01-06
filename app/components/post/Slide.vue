@@ -6,6 +6,9 @@ import { WheelGesturesPlugin } from 'embla-carousel-wheel-gestures'
 
 defineProps<{ list: ArticleProps[] }>()
 
+const appConfig = useAppConfig()
+const compConf = computed(() => appConfig.component.slide)
+
 // @keep-sorted
 const [carouselEl, carouselApi] = emblaCarouselVue({
 	containScroll: false,
@@ -44,21 +47,13 @@ useEventListener(carouselEl, 'wheel', (e) => {
 				:title="article.description"
 				:to="article.path"
 			>
-				<!-- 🔥 轮播图优化 -->
-				<NuxtImg 
-					class="cover" 
-					:src="article.image" 
-					:alt="article.title"
-					:loading="index < 2 ? 'eager' : 'lazy'"
-					:fetchpriority="index === 0 ? 'high' : 'low'"
-					densities="x1"
-					sizes="xs:80vw sm:28vw md:400px lg:400px"
-					:modifiers="{ 
-						fit: 'cover',
-						quality: index === 0 ? 70 : 60
-					}"
-				/>
-				<div class="info">
+				<NuxtImg class="cover" :src="article.image" :alt="compConf.showTitle ? '' : article.title" />
+
+				<div v-if="compConf.showTitle" class="stable-info text-creative">
+					{{ article.title }}
+				</div>
+
+				<div class="hover-info">
 					<div class="title text-creative">
 						{{ article.title }}
 					</div>
@@ -105,7 +100,6 @@ useEventListener(carouselEl, 'wheel', (e) => {
 	align-items: center;
 	justify-content: space-between;
 	gap: 2rem;
-	overflow: hidden;
 	height: 3rem;
 	margin-bottom: -0.2rem;
 	mask-image: linear-gradient(#FFF, transparent);
@@ -146,9 +140,9 @@ useEventListener(carouselEl, 'wheel', (e) => {
 }
 
 .slide-item {
+	contain: paint;
 	flex-shrink: 0;
 	position: relative;
-	overflow: hidden;
 	width: max(12rem, 28%);
 	max-width: 80%;
 	aspect-ratio: 1.77;
@@ -157,28 +151,43 @@ useEventListener(carouselEl, 'wheel', (e) => {
 	scroll-snap-align: center;
 	scroll-snap-stop: always;
 
+	// Firefox 图片 alt 为空时 fallback 失效
+	@supports (-moz-force-broken-image-icon: 1) {
+		background-color: var(--c-border);
+	}
+
 	> .cover {
 		display: block;
 		width: 100%;
 		height: 100%;
 		object-fit: cover;
-		/* 确保宽高比一致 */
-		aspect-ratio: 16 / 9;
 	}
 
-	> .info {
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		justify-content: space-evenly;
+	>.stable-info, > .hover-info {
 		position: absolute;
+		text-align: center;
+		text-shadow: var(--text-black-shadow);
+		color: white;
+		transition: opacity 0.2s;
+	}
+
+	> .stable-info {
+		overflow: hidden;
+		bottom: 0;
+		width: 100%;
+		padding: 0.5em;
+		background-image: linear-gradient(transparent, #0003, #0005);
+		white-space: nowrap;
+		text-overflow: ellipsis;
+	}
+
+	> .hover-info {
+		display: grid;
+		place-items: center;
 		opacity: 0;
 		inset: 0;
 		padding: 1em;
 		backdrop-filter: brightness(0.8) saturate(10) contrast(0.8) blur(2em);
-		text-align: center;
-		color: white;
-		transition: opacity 0.2s;
 
 		> .title {
 			text-wrap: balance;
@@ -190,9 +199,14 @@ useEventListener(carouselEl, 'wheel', (e) => {
 		}
 	}
 
-	&:hover > .info,
-	&:focus-within > .info {
-		opacity: 1;
+	&:hover, &:focus-within {
+		>.stable-info {
+			opacity: 0;
+		}
+
+		> .hover-info {
+			opacity: 1;
+		}
 	}
 }
 </style>

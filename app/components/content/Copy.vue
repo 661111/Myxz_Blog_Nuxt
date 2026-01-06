@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import type { MountPlainShikiOptions } from 'plain-shiki'
 import { createPlainShiki } from 'plain-shiki'
 
 const props = withDefaults(defineProps<{
@@ -77,8 +76,8 @@ onMounted(async () => {
 
 <style lang="scss" scoped>
 .copy {
+	contain: paint;
 	display: flex;
-	overflow: clip;
 	margin: 0.5rem 0;
 	border: 1px solid var(--c-border);
 	border-radius: 4px;
@@ -112,8 +111,7 @@ onMounted(async () => {
 		--scrollbar-height: 4px;
 
 		flex-grow: 1;
-		position: relative;
-		overflow-x: auto;
+		overflow: auto;
 		padding: 0 1em;
 		outline: none;
 		white-space: nowrap;

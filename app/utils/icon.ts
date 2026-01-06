@@ -1,9 +1,6 @@
 /** 友链架构图标映射 */
 // @keep-sorted
 const archIcons = {
-	'服务器': 'ph:hard-drives-fill',
-	'国内 CDN': 'ph:cloud-check-fill',
-	'虚拟主机': 'ph:file-cloud-bold',
 	'Astro': 'simple-icons:astro',
 	'Cloudflare': 'simple-icons:cloudflare',
 	'Deno Deploy': 'simple-icons:deno',
@@ -16,20 +13,24 @@ const archIcons = {
 	'HTML': 'simple-icons:html5',
 	'Hugo': 'simple-icons:hugo',
 	'Jekyll': 'simple-icons:jekyll',
-	'Mix Space': 'ph:yarn',
 	'Netlify': 'simple-icons:netlify',
 	'Next.js': 'simple-icons:nextdotjs',
-	'Nuxt': 'simple-icons:nuxtdotjs',
+	'NotionNext': 'simple-icons:notion',
+	'Nuxt': 'simple-icons:nuxt',
 	'PHP': 'simple-icons:php',
 	'Python': 'simple-icons:python',
 	'React': 'simple-icons:react',
 	'Typecho': 'icon-park-solid:align-text-left-one', // 不准确
+	'Valaxy': 'tabler:letter-v', // 不准确
 	'Vercel': 'simple-icons:vercel',
 	'VitePress': 'simple-icons:vitepress',
 	'Vue': 'uim:vuejs',
 	'VuePress': 'uim:vuejs',
 	'WordPress': 'simple-icons:wordpress',
-	'Zebaur': 'tabler:square-letter-z-filled', // 不准确
+	'Zeabur': 'tabler:square-letter-z-filled', // 不准确
+	'国内 CDN': 'ph:cloud-check-fill',
+	'服务器': 'ph:hard-drives-fill',
+	'虚拟主机': 'ph:file-cloud-bold',
 }
 
 export type Arch = keyof typeof archIcons
@@ -43,7 +44,7 @@ export function getArchIcon(arch: Arch) {
 export const ciIcons: Record<string, string> = {
 	'Cloudflare Pages': 'devicon:cloudflare',
 	'Cloudflare Workers': 'devicon:cloudflareworkers',
-	'EdgeOne': 'ri:vercel-fill',
+	'EdgeOne': 'https://edgeone.ai/favicon.ico',
 	'GitHub Actions': 'ri:github-fill',
 	'Netlify CI': 'catppuccin:netlify',
 	'Vercel': 'ri:vercel-fill',

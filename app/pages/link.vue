@@ -5,7 +5,7 @@ import FlinkTopCard from '~/components/card/FlinkTopCard.vue'
 
 const appConfig = useAppConfig()
 const layoutStore = useLayoutStore()
-layoutStore.setAside(['blog-stats', 'blog-tech', 'blog-site-info', 'blog-log'])
+layoutStore.setAside(['blog-stats', 'blog-tech', 'blog-log'])
 
 const { data: postLink } = await useAsyncData(
 	'/link',
@@ -28,11 +28,11 @@ const copyFields = {
 </script>
 
 <template>
+<FlinkTopCard />
+
 <div class="mobile-only">
 	<BlogHeader to="/" suffix="友链" tag="h1" />
 </div>
-
-<FlinkTopCard />
 
 <FeedGroup
 	v-for="group in feeds"

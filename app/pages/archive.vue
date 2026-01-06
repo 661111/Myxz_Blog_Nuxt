@@ -6,10 +6,10 @@ useSeoMeta({
 	title: '归档',
 	description: `${appConfig.title}的所有文章归档。`,
 })
-const birthYear = appConfig.component.stats.birthYear
+const birthYear = computed(() => appConfig.component.stats.birthYear)
 
 const layoutStore = useLayoutStore()
-layoutStore.setAside(['blog-stats', 'blog-tech', 'blog-site-info', 'blog-log'])
+layoutStore.setAside(['blog-stats', 'blog-log'])
 
 const { data: listRaw } = await useAsyncData('index_posts', () => useArticleIndexOptions(), { default: () => [] })
 const { listSorted, isAscending, sortOrder } = useArticleSort(listRaw)

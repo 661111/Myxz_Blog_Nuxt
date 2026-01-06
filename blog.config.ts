@@ -71,12 +71,6 @@ const blogConfig = {
 	scripts: [
 	],
 
-	/** 自己部署的 Twikoo 服务 */
-	twikoo: {
-		envId: 'https://twikoo.zhilu.cyou/',
-		preload: 'https://twikoo.zhilu.cyou/',
-	},
-
 	artalk: {
 		server: 'https://artalk.myxz.top/',
 		sitename: '歆鸢阁',
@@ -95,7 +89,7 @@ export const myFeed: FeedEntry = {
 	feed: new URL('/atom.xml', blogConfig.url).toString(),
 	icon: blogConfig.favicon,
 	avatar: blogConfig.author.avatar,
-	archs: ['Nuxt', 'EdgeOne'],
+	archs: ['Nuxt', 'Vercel'],
 	date: blogConfig.timeEstablished,
 	comment: '这是我自己',
 }

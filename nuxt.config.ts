@@ -133,11 +133,11 @@ export default defineNuxtConfig({
 		'unplugin-yaml/nuxt',
 		'@nuxtjs/critters'
 	],
-	critters: {
-		config: {
-			preload: 'swap',
-			pruneSource: true
-		}
+  	critters: {
+    	config: {
+      		preload: 'media',
+      		pruneSource: true,
+    	},
   	},
 	colorMode: {
 		preference: 'system',

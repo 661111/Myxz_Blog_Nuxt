@@ -184,7 +184,7 @@ const hideModal = () => {
 
 <template>
   <!-- <link rel="stylesheet" href="/assets/css/moments.css"> -->
-  <div class="page-banner" style="background-image: url(/assets/img/page_backgroud/moment.webp)">
+  <div class="page-banner" style="background-image: url(image/PageCover/moment.avif)">
       <div class="banner-content">
           <h1>博友圈</h1>
           <p>发现更多有趣的博主</p>

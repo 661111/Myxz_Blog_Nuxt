@@ -135,7 +135,7 @@ export default defineNuxtConfig({
 	],
   	critters: {
     	config: {
-      		preload: 'media',
+      		preload: 'swap-high',
       		pruneSource: true,
     	},
   	},

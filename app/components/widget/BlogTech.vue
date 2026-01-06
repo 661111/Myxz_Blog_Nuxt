@@ -29,7 +29,7 @@ const [pm, pmVersion] = packageManager.split('@') as [string, string]
 
 const service = computed(() => ([
 	...ci ? [{ label: '构建平台', value: ciPlatform }] : ['本地构建'],
-	{ label: '图片存储', value: () => [h('img', { src: '/assets/bitful.ico', alt: '缤纷云' , width: '1.2em', height: '1.2em'}), '缤纷云'] },
+	{ label: '图片存储', value: () => [h('img', { src: '/assets/bitful.ico', alt: '缤纷云'}), '缤纷云'] },
 	{ label: '软件协议', value: 'MIT' },
 	{ label: '文章许可', value: appConfig.copyright.abbr },
 	{ label: '规范域名', value: getDomain(appConfig.url) },

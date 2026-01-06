@@ -200,45 +200,8 @@ ${packageJson.homepage}
 	},
 
 	image: {
-		// Neylify 下 netlify 处理器无法显示站外图片，ipx 处理器无法显示站内图片，需彻底禁用
-		// https://github.com/nuxt/image/issues/1353
-		provider: 'ipx',
+		provider: NETLIFY ? 'none' : undefined,
 		format: ['avif', 'webp'],
-
-        // 配置 AVIF 压缩参数
-        avif: {
-            quality: 65, // AVIF 专用质量设置
-            effort: 9, // 压缩力度 (0-9,越高越慢但越小)
-        },
-
-        screens: {
-            xs: 320,
-            sm: 640,
-            md: 768,
-            lg: 1024,
-        },
-
-        // 预设配置
-        presets: {
-            // 文章卡片封面 (271x153)
-            articleCover: {
-                modifiers: {
-                    format: 'avif',
-                    fit: 'cover',
-                }
-            },
-
-            // 轮播小图 (137x78)
-            thumbnail: {
-                modifiers: {
-                    format: 'avif',
-                    quality: 60,
-                    width: 138,
-                    height: 78,
-                    fit: 'cover',
-                }
-            },
-        }
 	},
 
 	linkChecker: {

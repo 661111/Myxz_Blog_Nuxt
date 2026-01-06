@@ -5,7 +5,7 @@ updated: 2024-10-26 08:00:09
 categories: [搭建]
 top_img: false
 tags: [artalk, butterfly]
-image: /PostCover/ssVeryfunction.avif
+image: /image/PostCover/ssVeryfunction.avif
 ---
 
 artalk部署方式：

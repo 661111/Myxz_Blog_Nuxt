@@ -3,7 +3,7 @@ title: 添加站点详情页面
 description: 本篇文章主要简述了如何给Nuxt框架添加站点详情
 date: 2025-09-02 10:00:00
 updated: 2025-09-01 20:49:00
-image: /PostCover/siteInfo.avif
+image: /image/PostCover/siteInfo.avif
 categories: [博客魔改]
 tags: [Nuxt, 魔改, 美化]
 recommend: true

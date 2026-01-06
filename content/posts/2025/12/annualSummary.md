@@ -3,7 +3,7 @@ title: 年度总结：旧去新
 description: 该文章详细记录了2025年中的上下半年所做的事情，并且还透露出后续计划中会干什么。而在前言中也写到此文为水字数而出，上下半年均写到更换框架与服务有关于的内容。对于未来计划中提到了要对一些网站进行恢复、以及明年将在文章中加入与自创小说有关的内容
 date: 2025-12-28 10:00:00
 updated: 2025-12-28 20:49:00
-image: /PostCover/annualSummary.avif
+image: /image/PostCover/annualSummary.avif
 categories: [年度总结]
 tags: [总结, 2025]
 recommend: true

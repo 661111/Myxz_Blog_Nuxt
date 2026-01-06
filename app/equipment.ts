@@ -8,7 +8,7 @@ export type manufacturers = {
 export const equipment: item[] = [
   {
     name: "天选4",
-    image: "/assets/img/equipment/tianxuan.svg",
+    image: "/image/PageImageAssets/equipment/TianXuan.avif",
     src: "https://www.myxz.top",
     categroy: '硬件',
     desc: "测试测试",

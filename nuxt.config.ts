@@ -58,6 +58,7 @@ export default defineNuxtConfig({
 	experimental: {
 		extractAsyncDataHandlers: true,
 		typescriptPlugin: true,
+		inlineSSRStyles: true
 	},
 
 	features: {

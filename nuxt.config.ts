@@ -137,35 +137,32 @@ export default defineNuxtConfig({
 
 	critters: {
 		config: {
-			/**
-			* 1) 非关键 CSS 的加载策略：优先用 swap-high（更激进、更偏向尽快补齐）
-			* - media：老派做法，通常更保守
-			* - swap / swap-high / swap-low：更偏“尽快可用 + 降阻塞”
-			* - js / js-lazy：用 JS 注入/延后（更激进，可能带来闪动风险）
-			*/
-			preload: 'media',
+			// 1) 关键：把 render-blocking CSS 变成更友好的加载方式
+			// 模块 README 也给了 preload: 'swap' 的例子（默认是 'media'）
+			preload: 'swap', // :contentReference[oaicite:2]{index=2}
 
-			/**
-			* 2) 把已 inline 的规则从原 CSS 里“剪掉”，避免重复下载/解析
-			*   （构建时会改写产物 CSS）
-			*/
-			pruneSource: true,
+			// 2) 稳定性优先：不要从外链 CSS 里“抠掉”已内联的规则（减少边缘 FOUC）
+			pruneSource: false, // 默认 false :contentReference[oaicite:3]{index=3}
 
-			// /**
-			// * 3) 小到一定程度的外链 CSS 直接整份 inline（减少请求数）
-			// *   这个值是“字节数阈值”，需要按你项目产物大小调
-			// */
-			// inlineThreshold: 20_480, // 约 20KB：常见“极限但还不太离谱”的起点
+			// 3) 如果你页面里有手写 <style>（比如组件内联样式），
+			//    有时被“重写为只保留 critical”会导致一些状态切换/首屏交互抖动
+			//    追求“绝不抖”的场景可以关掉（代价：可能内联 CSS 变大一点）
+			reduceInlineStyles: false, // 默认 true :contentReference[oaicite:4]{index=4}
 
-			// /**
-			// * 4) 如果剪掉 critical 后，剩余的非关键部分已经很小，那干脆整个文件 inline
-			// */
-			// minimumExternalSize: 1_024, // 1KB
+			// 4) 动画：只内联 critical keyframes，避免把全站动画塞进首屏
+			keyframes: 'critical', // 默认 critical :contentReference[oaicite:5]{index=5}
 
-			// /**
-			// * 5) 合并多个 inline <style>，减少标签数量
-			// */
-			// mergeStylesheets: true,
+			// 5) 字体：建议“预加载字体”但别把 font-face 全内联（容易膨胀首屏 HTML）
+			inlineFonts: false,    // 默认 false :contentReference[oaicite:6]{index=6}
+			preloadFonts: true,    // 默认 true  :contentReference[oaicite:7]{index=7}
+			// 或者用 fonts: true/false 这个快捷方式也行 :contentReference[oaicite:8]{index=8}
+
+			// 6) 体积与整洁
+			mergeStylesheets: true, // 默认 true :contentReference[oaicite:9]{index=9}
+			compress: true,         // 默认 true :contentReference[oaicite:10]{index=10}
+
+			// 7) 保险：如果你将来改成 js-based preload 策略，建议开 noscriptFallback
+			// noscriptFallback: true, // :contentReference[oaicite:11]{index=11}
 		}
 	},
 

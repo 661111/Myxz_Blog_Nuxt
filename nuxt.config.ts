@@ -138,6 +138,8 @@ export default defineNuxtConfig({
 	critters: {
 		config: {
 			preload: 'swap',
+			inlineFonts: true,
+			preloadFonts: true,
 			// 关键：字体优化
 			// 完全消除依赖树
 			inlineThreshold: 0,
@@ -146,6 +148,10 @@ export default defineNuxtConfig({
 			reduceInlineStyles: false,
 			pruneSource: false,  // 如果遇到样式丢失，设为false
 			// 外部资源全部处理
+			external: true,
+			mergeStylesheets: true,
+			compress: true,
+			noscriptFallback: true,
 		}
 	},
 

@@ -62,7 +62,7 @@ export default defineNuxtConfig({
 	},
 
 	features: {
-		inlineStyles: true,
+		inlineStyles: false,
 	},
 
 	nitro: {
@@ -132,7 +132,42 @@ export default defineNuxtConfig({
 		'@vueuse/nuxt',
 		'nuxt-llms',
 		'unplugin-yaml/nuxt',
+		'@nuxtjs/critters'
 	],
+
+	critters: {
+		config: {
+			/**
+			* 1) 非关键 CSS 的加载策略：优先用 swap-high（更激进、更偏向尽快补齐）
+			* - media：老派做法，通常更保守
+			* - swap / swap-high / swap-low：更偏“尽快可用 + 降阻塞”
+			* - js / js-lazy：用 JS 注入/延后（更激进，可能带来闪动风险）
+			*/
+			preload: 'swap-high',
+
+			/**
+			* 2) 把已 inline 的规则从原 CSS 里“剪掉”，避免重复下载/解析
+			*   （构建时会改写产物 CSS）
+			*/
+			pruneSource: true,
+
+			/**
+			* 3) 小到一定程度的外链 CSS 直接整份 inline（减少请求数）
+			*   这个值是“字节数阈值”，需要按你项目产物大小调
+			*/
+			inlineThreshold: 20_480, // 约 20KB：常见“极限但还不太离谱”的起点
+
+			/**
+			* 4) 如果剪掉 critical 后，剩余的非关键部分已经很小，那干脆整个文件 inline
+			*/
+			minimumExternalSize: 1_024, // 1KB
+
+			/**
+			* 5) 合并多个 inline <style>，减少标签数量
+			*/
+			mergeStylesheets: true,
+		}
+	},
 
 	colorMode: {
 		preference: 'system',

@@ -215,6 +215,9 @@ importers:
       '@nuxtjs/color-mode':
         specifier: catalog:ui
         version: 3.5.2(magicast@0.5.1)
+      '@nuxtjs/critters':
+        specifier: ^0.9.0
+        version: 0.9.0(magicast@0.5.1)
       '@nuxtjs/seo':
         specifier: catalog:content
         version: 3.3.0(@unhead/vue@2.0.19(vue@3.5.26(typescript@5.9.3)))(db0@0.3.4)(h3@1.15.4)(ioredis@5.8.2)(magicast@0.5.1)(rollup@4.52.5)(unhead@2.0.19)(unstorage@1.17.3(db0@0.3.4)(ioredis@5.8.2))(vite@7.3.0(@types/node@24.9.2)(jiti@2.6.1)(sass-embedded@1.97.1)(sass@1.97.1)(stylus@0.64.0)(terser@5.44.0)(tsx@4.21.0)(yaml@2.8.2))(vue@3.5.26(typescript@5.9.3))(zod@3.25.76)
@@ -1516,6 +1519,9 @@ packages:
 
   '@nuxtjs/color-mode@3.5.2':
     resolution: {integrity: sha512-cC6RfgZh3guHBMLLjrBB2Uti5eUoGM9KyauOaYS9ETmxNWBMTvpgjvSiSJp1OFljIXPIqVTJ3xtJpSNZiO3ZaA==}
+
+  '@nuxtjs/critters@0.9.0':
+    resolution: {integrity: sha512-XFspmZajsQPbgOWcMERKxQrTd/6ze4L4QOuNv1fM8YOCD3YeCyYpJ/n96Riakv3rsL6biayL3WwYSxGUO3CYOA==}
 
   '@nuxtjs/mdc@0.19.2':
     resolution: {integrity: sha512-mtwBb9D5U7H1R3kpqEmqwML1RudN6qOJqJwebrqLxk+EWhtGUXAdUBXC2L/kPWiCNA4Yz/EO+tSfSQV8Idh5nw==}
@@ -3119,6 +3125,10 @@ packages:
     resolution: {integrity: sha512-Y1fOuNDowLfgKOypdc9SPABfoWXuZHBOyCS4cD52IeZBhr4Md6CLLs6atcxVrzRmQ06E7hSlm5bHHApPKR/byA==}
     hasBin: true
 
+  beasties@0.3.5:
+    resolution: {integrity: sha512-NaWu+f4YrJxEttJSm16AzMIFtVldCvaJ68b1L098KpqXmxt9xOLtKoLkKxb8ekhOrLqEJAbvT6n6SEvB/sac7A==}
+    engines: {node: '>=14.0.0'}
+
   bindings@1.5.0:
     resolution: {integrity: sha512-p2q/t/mhvuOj/UeLlV6566GD/guowlr0hHxClI0W9m7MWYkL1F0hLo+0Aexs9HSPCtR1SXQ0TD3MMKrXZajbiQ==}
 
@@ -3514,6 +3524,9 @@ packages:
   css-select@5.2.2:
     resolution: {integrity: sha512-TizTzUddG/xYLA3NXodFM0fSbNizXjOKhqiQQwvhlspadZokn1KDy0NZFS0wuEubIYAV5/c1/lAr0TaaFXEXzw==}
 
+  css-select@6.0.0:
+    resolution: {integrity: sha512-rZZVSLle8v0+EY8QAkDWrKhpgt6SA5OtHsgBnsj6ZaLb5dmDVOWUDtQitd9ydxxvEjhewNudS6eTVU7uOyzvXw==}
+
   css-to-react-native@3.2.0:
     resolution: {integrity: sha512-e8RKaLXMOFii+02mOlqwjbD00KSEKqblnpO9e++1aXS1fPQOpS1YoqdVHBqPjHNoxeF2mimzVqawm2KCbEdtHQ==}
 
@@ -3531,6 +3544,10 @@ packages:
 
   css-what@6.2.2:
     resolution: {integrity: sha512-u/O3vwbptzhMs3L1fQE82ZSLHQQfto5gyZzwteVIEyeaY5Fc7R4dapF/BvRoSYFeqfBk4m0V1Vafq5Pjv25wvA==}
+    engines: {node: '>= 6'}
+
+  css-what@7.0.0:
+    resolution: {integrity: sha512-wD5oz5xibMOPHzy13CyGmogB3phdvcDaB5t0W/Nr5Z2O/agcB8YwOz6e2Lsp10pNDzBoDO9nVa3RGs/2BttpHQ==}
     engines: {node: '>= 6'}
 
   cssesc@3.0.0:
@@ -4504,6 +4521,9 @@ packages:
 
   html-whitespace-sensitive-tag-names@3.0.1:
     resolution: {integrity: sha512-q+310vW8zmymYHALr1da4HyXUQ0zgiIwIicEfotYPWGN0OJVEN/58IJ3A4GBYcEq3LGAZqKb+ugvP0GNB9CEAA==}
+
+  htmlparser2@10.0.0:
+    resolution: {integrity: sha512-TwAZM+zE5Tq3lrEHvOlvwgj1XLWQCtaaibSN11Q+gGBAS7Y1uZSWwXXRe4iF6OXnaq1riyQAPFOBtYc77Mxq0g==}
 
   htmlparser2@8.0.2:
     resolution: {integrity: sha512-GYdjWKDkbRLkZ5geuHs5NY1puJ+PXwP7+fHPRz06Eirsb9ugf6d8kkXav6ADhcODhFFPMIXyxkxSuMf3D6NCFA==}
@@ -8919,6 +8939,15 @@ snapshots:
     transitivePeerDependencies:
       - magicast
 
+  '@nuxtjs/critters@0.9.0(magicast@0.5.1)':
+    dependencies:
+      '@nuxt/kit': 3.20.0(magicast@0.5.1)
+      beasties: 0.3.5
+      pathe: 2.0.3
+      ufo: 1.6.1
+    transitivePeerDependencies:
+      - magicast
+
   '@nuxtjs/mdc@0.19.2(patch_hash=e0283e75f475e855851a8b791250710895e1946f9f5e93eef1d27db151c44a64)(magicast@0.5.1)':
     dependencies:
       '@nuxt/kit': 4.2.2(magicast@0.5.1)
@@ -10435,6 +10464,17 @@ snapshots:
 
   baseline-browser-mapping@2.9.8: {}
 
+  beasties@0.3.5:
+    dependencies:
+      css-select: 6.0.0
+      css-what: 7.0.0
+      dom-serializer: 2.0.0
+      domhandler: 5.0.3
+      htmlparser2: 10.0.0
+      picocolors: 1.1.1
+      postcss: 8.5.6
+      postcss-media-query-parser: 0.2.3
+
   bindings@1.5.0:
     dependencies:
       file-uri-to-path: 1.0.0
@@ -10892,6 +10932,14 @@ snapshots:
       domutils: 3.2.2
       nth-check: 2.1.1
 
+  css-select@6.0.0:
+    dependencies:
+      boolbase: 1.0.0
+      css-what: 7.0.0
+      domhandler: 5.0.3
+      domutils: 3.2.2
+      nth-check: 2.1.1
+
   css-to-react-native@3.2.0:
     dependencies:
       camelize: 1.0.1
@@ -10915,6 +10963,8 @@ snapshots:
       source-map-js: 1.2.1
 
   css-what@6.2.2: {}
+
+  css-what@7.0.0: {}
 
   cssesc@3.0.0: {}
 
@@ -12047,6 +12097,13 @@ snapshots:
   html-void-elements@3.0.0: {}
 
   html-whitespace-sensitive-tag-names@3.0.1: {}
+
+  htmlparser2@10.0.0:
+    dependencies:
+      domelementtype: 2.3.0
+      domhandler: 5.0.3
+      domutils: 3.2.2
+      entities: 6.0.1
 
   htmlparser2@8.0.2:
     dependencies:

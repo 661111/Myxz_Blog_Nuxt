@@ -62,7 +62,7 @@ export default defineNuxtConfig({
 	},
 
 	features: {
-		inlineStyles: true,
+		inlineStyles: false,
 	},
 
 	nitro: {
@@ -113,7 +113,7 @@ export default defineNuxtConfig({
 			/** 在生产环境启用 Vue DevTools */
 			// __VUE_PROD_DEVTOOLS__: 'true',
 			/** 在生产环境启用 Vue 水合不匹配详情 */
-			// __VUE_PROD_HYDRATION_MISMATCH_DETAILS__: 'true',
+			__VUE_PROD_HYDRATION_MISMATCH_DETAILS__: 'true',
 		},
 		server: {
 			allowedHosts: true,

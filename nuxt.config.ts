@@ -53,6 +53,7 @@ export default defineNuxtConfig({
 		'@/assets/css/font.scss',
 		'@/assets/css/main.scss',
 		'@/assets/css/reusable.scss',
+		'/fonts/lxgw-wenkai-screen-webfont/style.css'
 	],
 
 	// @keep-sorted

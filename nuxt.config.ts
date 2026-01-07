@@ -143,7 +143,7 @@ export default defineNuxtConfig({
 			* - swap / swap-high / swap-low：更偏“尽快可用 + 降阻塞”
 			* - js / js-lazy：用 JS 注入/延后（更激进，可能带来闪动风险）
 			*/
-			preload: 'swap-high',
+			preload: 'media',
 
 			/**
 			* 2) 把已 inline 的规则从原 CSS 里“剪掉”，避免重复下载/解析

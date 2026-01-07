@@ -27,7 +27,7 @@ withDefaults(defineProps<{
 </dl>
 </template>
 
-<style lang="scss" scoped>
+<style lang="scss">
 .dl-group {
 	> div {
 		padding: 0.2em 0;

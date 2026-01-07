@@ -63,7 +63,7 @@ function toggleDirection() {
 </div>
 </template>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .order-toggle {
 	display: flex;
 	justify-content: flex-end;

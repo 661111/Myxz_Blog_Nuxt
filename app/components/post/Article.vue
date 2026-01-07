@@ -55,7 +55,7 @@ const categoryIcon = computed(() => getCategoryIcon(categoryLabel.value))
 </UtilLink>
 </template>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .article-card {
 	container-type: inline-size;
 	position: relative;

@@ -137,32 +137,26 @@ export default defineNuxtConfig({
 
 	critters: {
 		config: {
-			// 1) 关键：把 render-blocking CSS 变成更友好的加载方式
-			// 模块 README 也给了 preload: 'swap' 的例子（默认是 'media'）
-			preload: 'swap', // :contentReference[oaicite:2]{index=2}
+			// 模块默认是 'media'，更激进但仍相对稳的是 'swap'
+			// 文档示例就是这么配的
+			preload: 'swap', // :contentReference[oaicite:0]{index=0}
 
-			// 2) 稳定性优先：不要从外链 CSS 里“抠掉”已内联的规则（减少边缘 FOUC）
-			pruneSource: false, // 默认 false :contentReference[oaicite:3]{index=3}
+			// 关键：不要让它处理字体（你要自己只 preload 字体 CSS）
+			fonts: false, // 等价于 inlineFonts=false + preloadFonts=false :contentReference[oaicite:1]{index=1}
 
-			// 3) 如果你页面里有手写 <style>（比如组件内联样式），
-			//    有时被“重写为只保留 critical”会导致一些状态切换/首屏交互抖动
-			//    追求“绝不抖”的场景可以关掉（代价：可能内联 CSS 变大一点）
-			reduceInlineStyles: false, // 默认 true :contentReference[oaicite:4]{index=4}
+			// 建议保守：避免 SPA/多路由场景“首屏内联后把外链剪掉”导致后续页面缺样式
+			pruneSource: false, // :contentReference[oaicite:2]{index=2}
 
-			// 4) 动画：只内联 critical keyframes，避免把全站动画塞进首屏
-			keyframes: 'critical', // 默认 critical :contentReference[oaicite:5]{index=5}
+			// 保持关键帧只内联必要的，避免把动画 keyframes 全塞进 critical
+			keyframes: 'critical', // :contentReference[oaicite:3]{index=3}
 
-			// 5) 字体：建议“预加载字体”但别把 font-face 全内联（容易膨胀首屏 HTML）
-			inlineFonts: false,    // 默认 false :contentReference[oaicite:6]{index=6}
-			preloadFonts: true,    // 默认 true  :contentReference[oaicite:7]{index=7}
-			// 或者用 fonts: true/false 这个快捷方式也行 :contentReference[oaicite:8]{index=8}
+			// 默认就很合理：合并 style、压缩
+			mergeStylesheets: true, // :contentReference[oaicite:4]{index=4}
+			compress: true,          // :contentReference[oaicite:5]{index=5}
 
-			// 6) 体积与整洁
-			mergeStylesheets: true, // 默认 true :contentReference[oaicite:9]{index=9}
-			compress: true,         // 默认 true :contentReference[oaicite:10]{index=10}
-
-			// 7) 保险：如果你将来改成 js-based preload 策略，建议开 noscriptFallback
-			// noscriptFallback: true, // :contentReference[oaicite:11]{index=11}
+			// 如果你有很多内联 <style>（比如组件里），又担心被改写引发布局差异：
+			// 可以先保持 true（默认），出问题再关掉
+			// reduceInlineStyles: true, // :contentReference[oaicite:6]{index=6}
 		}
 	},
 

@@ -148,7 +148,6 @@ export default defineNuxtConfig({
 			// 外部资源全部处理
 			external: true,
 			mergeStylesheets: true,
-			compress: true,
 			noscriptFallback: true,
 		}
 	},

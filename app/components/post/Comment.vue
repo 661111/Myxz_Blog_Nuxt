@@ -386,7 +386,7 @@ onUnmounted(() => {
   </section>
 </template>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .z-comment {
   margin: 3rem 0.5rem;
 

@@ -18,6 +18,7 @@ type: story
 
 ### 分类
 对于我来说的话图片确实已经好久没分类了，所以最近重构了下图片资源，采用了以`类型 + 具体用处`且采用双驼峰命名来分类图片。
+
 ::pic
 ---
 src: /image/PostInternal/2026/siteAssets/imageType-1.avif

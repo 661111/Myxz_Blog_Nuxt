@@ -137,32 +137,21 @@ export default defineNuxtConfig({
 
 	critters: {
 		config: {
-			// 1) 关键：把 render-blocking CSS 变成更友好的加载方式
-			// 模块 README 也给了 preload: 'swap' 的例子（默认是 'media'）
-			preload: 'swap', // :contentReference[oaicite:2]{index=2}
-
-			// 2) 稳定性优先：不要从外链 CSS 里“抠掉”已内联的规则（减少边缘 FOUC）
-			pruneSource: false, // 默认 false :contentReference[oaicite:3]{index=3}
-
-			// 3) 如果你页面里有手写 <style>（比如组件内联样式），
-			//    有时被“重写为只保留 critical”会导致一些状态切换/首屏交互抖动
-			//    追求“绝不抖”的场景可以关掉（代价：可能内联 CSS 变大一点）
-			reduceInlineStyles: false, // 默认 true :contentReference[oaicite:4]{index=4}
-
-			// 4) 动画：只内联 critical keyframes，避免把全站动画塞进首屏
-			keyframes: 'critical', // 默认 critical :contentReference[oaicite:5]{index=5}
-
-			// 5) 字体：建议“预加载字体”但别把 font-face 全内联（容易膨胀首屏 HTML）
-			inlineFonts: false,    // 默认 false :contentReference[oaicite:6]{index=6}
-			preloadFonts: true,    // 默认 true  :contentReference[oaicite:7]{index=7}
-			// 或者用 fonts: true/false 这个快捷方式也行 :contentReference[oaicite:8]{index=8}
-
-			// 6) 体积与整洁
-			mergeStylesheets: true, // 默认 true :contentReference[oaicite:9]{index=9}
-			compress: true,         // 默认 true :contentReference[oaicite:10]{index=10}
-
-			// 7) 保险：如果你将来改成 js-based preload 策略，建议开 noscriptFallback
-			// noscriptFallback: true, // :contentReference[oaicite:11]{index=11}
+			preload: 'swap',
+			inlineFonts: true,
+			preloadFonts: true,
+			// 关键：字体优化
+			// 完全消除依赖树
+			inlineThreshold: 0,
+			minimumExternalSize: 0,
+			// 保持布局稳定
+			reduceInlineStyles: false,
+			pruneSource: false,  // 如果遇到样式丢失，设为false
+			// 外部资源全部处理
+			external: true,
+			mergeStylesheets: true,
+			compress: true,
+			noscriptFallback: true,
 		}
 	},
 

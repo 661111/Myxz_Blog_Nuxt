@@ -139,20 +139,20 @@ export default defineNuxtConfig({
 	critters: {
 		config: {
 			preload: 'swap-high',
-			// inlineFonts: true,
-			// preloadFonts: true,
+			inlineFonts: true,
+			preloadFonts: true,
 			// 关键：字体优化
 			// 完全消除依赖树
-			// inlineThreshold: 0,
-			// minimumExternalSize: 0,
+			inlineThreshold: 0,
+			minimumExternalSize: 0,
 			// 保持布局稳定
 			reduceInlineStyles: false,
 			pruneSource: false,  // 如果遇到样式丢失，设为false
 			// 外部资源全部处理
-			// external: true,
-			// mergeStylesheets: true,
-			// compress: true,
-			// noscriptFallback: true,
+			external: true,
+			mergeStylesheets: true,
+			compress: true,
+			noscriptFallback: true,
 		}
 	},
 

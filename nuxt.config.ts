@@ -53,7 +53,7 @@ export default defineNuxtConfig({
 		'@/assets/css/font.scss',
 		'@/assets/css/main.scss',
 		'@/assets/css/reusable.scss',
-		'@/assets/lxgw.font.scss'
+		'@/assets/css/lxgw.font.scss'
 	],
 
 	// @keep-sorted

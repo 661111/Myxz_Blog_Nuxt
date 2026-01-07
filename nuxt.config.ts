@@ -151,21 +151,21 @@ export default defineNuxtConfig({
 			*/
 			pruneSource: true,
 
-			/**
-			* 3) 小到一定程度的外链 CSS 直接整份 inline（减少请求数）
-			*   这个值是“字节数阈值”，需要按你项目产物大小调
-			*/
-			inlineThreshold: 20_480, // 约 20KB：常见“极限但还不太离谱”的起点
+			// /**
+			// * 3) 小到一定程度的外链 CSS 直接整份 inline（减少请求数）
+			// *   这个值是“字节数阈值”，需要按你项目产物大小调
+			// */
+			// inlineThreshold: 20_480, // 约 20KB：常见“极限但还不太离谱”的起点
 
-			/**
-			* 4) 如果剪掉 critical 后，剩余的非关键部分已经很小，那干脆整个文件 inline
-			*/
-			minimumExternalSize: 1_024, // 1KB
+			// /**
+			// * 4) 如果剪掉 critical 后，剩余的非关键部分已经很小，那干脆整个文件 inline
+			// */
+			// minimumExternalSize: 1_024, // 1KB
 
-			/**
-			* 5) 合并多个 inline <style>，减少标签数量
-			*/
-			mergeStylesheets: true,
+			// /**
+			// * 5) 合并多个 inline <style>，减少标签数量
+			// */
+			// mergeStylesheets: true,
 		}
 	},
 

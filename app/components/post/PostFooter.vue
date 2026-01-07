@@ -3,7 +3,6 @@ import type ArticleProps from '~/types/article'
 
 defineOptions({ inheritAttrs: false })
 defineProps<ArticleProps>()
-import useReWardStore from '~/components/popover/reward.vue'
 // 未读取内容
 // const [DefineTemplate, ReuseTemplate] = createReusableTemplate<{
 // 	title: string
@@ -15,10 +14,11 @@ const item = {
 	作者: appConfig.author.name,
 	// 发布时间: getPostDate(props.date),
 	// 更新时间: getPostDate(props.updated),
-	许可协议: "CC BY-NC-SA 4.0",
+	许可协议: appConfig.copyright.abbr,
 }
 
 import { sort } from 'radash'
+import { useReWardStore } from '~/types/reward';
 
 const { data: listRaw } = await useAsyncData('index_posts', () => useArticleIndexOptions(), { default: () => [] })
 

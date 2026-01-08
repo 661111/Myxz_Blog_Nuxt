@@ -1,9 +1,13 @@
 <script setup lang="ts">
+import CopyrightCard from '../card/footer/copyrightCard.vue';
+import InfoCard from '../card/infoCard.vue';
+
 const appConfig = useAppConfig()
 </script>
 
 <template>
 <footer class="blog-footer">
+	<InfoCard />
 	<nav class="footer-nav">
 		<div v-for="(group, groupIndex) in appConfig.footer.nav" :key="groupIndex" class="footer-nav-group">
 			<h3 v-if="group.title">
@@ -19,7 +23,8 @@ const appConfig = useAppConfig()
 			</menu>
 		</div>
 	</nav>
-	<p v-html="appConfig.footer.copyright" />
+	<CopyrightCard />
+	<!-- <p v-html="appConfig.footer.copyright" /> -->
 </footer>
 </template>
 

@@ -29,7 +29,7 @@ caption: 图片分类位置，以Image为根目录
 ### 优化
 分类完成之后就要优化了，把图片的位置内置后基本上就已经去除了一些缓存问题，但是没有优化完整的话也是不行的。
 
-::tabs{:tabs='["Vercel", "EdgeOne"]'}
+::tab{:tabs='["Vercel", "EdgeOne"]'}
 #tab1
 ``` json [vercel.json] lang="json"
 {
@@ -76,7 +76,7 @@ caption: 图片分类位置，以Image为根目录
 ### 优化
 对于字体的优化，通过分包后进行以下配置后会进行缓存
 
-::tabs{:tabs='["Vercel", "EdgeOne"]'}
+::tab{:tabs='["Vercel", "EdgeOne"]'}
 #tab1
 ``` json [vercel.json] lang="json"
 {

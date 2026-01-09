@@ -8,9 +8,9 @@
     },
     {
       "source": "/zhilu.opml",
-      "headers": [
-        { "key": "Content-Type", "value": "application/xml" }
-      ]
+      "headers": {
+        "key": "Content-Type", "value": "application/xml"
+      }
     },
     {
       "src": "/_payload.json",

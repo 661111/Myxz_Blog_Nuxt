@@ -8,9 +8,9 @@
     },
     {
       "source": "/zhilu.opml",
-      "headers": {
-        "key": "Content-Type", "value": "application/xml"
-      }
+      "headers": [
+        { "key": "Content-Type", "value": "application/xml" }
+      ]
     },
     {
       "source": "/image/(.*)",
@@ -38,9 +38,9 @@
     },
     {
       "source": "/_payload.json",
-      "headers": {
-        "key": "Cache-Control", "value": "public, max-age=300, s-maxage=300, stale-while-revalidate=3600"
-      }
+      "headers": [
+        { "key": "Cache-Control", "value": "public, max-age=300, s-maxage=300, stale-while-revalidate=3600" }
+      ]
     },
     {
       "source": "/(.*)/(.*)/(.*)/_payload.json",

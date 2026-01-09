@@ -47,7 +47,7 @@ useEventListener(carouselEl, 'wheel', (e) => {
 				:title="article.description"
 				:to="article.path"
 			>
-				<NuxtImg class="cover" :src="article.image" :alt="compConf.showTitle ? '' : article.title" fetchpriority="high"/>
+				<NuxtImg class="cover" :src="article.image" :alt="compConf.showTitle ? '' : article.title"/>
 
 				<div v-if="compConf.showTitle" class="stable-info text-creative">
 					{{ article.title }}

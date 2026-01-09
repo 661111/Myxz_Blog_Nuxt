@@ -1,5 +1,6 @@
 <script setup>
 import { ref, reactive, onMounted, onUnmounted } from 'vue'
+import Header from '~/components/yjluo/page/header.vue'
 
 const appConfig = useAppConfig()
 const layoutStore = useLayoutStore()
@@ -11,6 +12,11 @@ useSeoMeta({
     ogType: 'profile',
     description: `${appConfig.title}的友链朋友圈页面。`,
 })
+
+const seo = {   
+  title: '友链朋友圈',
+  ogType: 'profile',
+  description: `${appConfig.title}的友链朋友圈页面。`,}
 
 // 配置选项
 const UserConfig = reactive({
@@ -183,19 +189,7 @@ const hideModal = () => {
 </script>
 
 <template>
-  <!-- <link rel="stylesheet" href="/assets/css/moments.css"> -->
-  <div class="page-banner" style="background-image: url(image/PageCover/moment.avif)">
-      <div class="banner-content">
-          <h1>博友圈</h1>
-          <p>发现更多有趣的博主</p>
-      </div>
-      <div class="banner-extra">
-          <div class="friend-stats">
-              <div class="update-time">Updated at 2025-07-17</div>
-              <div class="powered-by">Powered by FriendCircleLite</div>
-          </div>
-      </div>
-  </div>
+  <Header background="/image/PageCover/moment.avif" :title="seo.title" :desc="seo.description"/>
   <div class="page-fcircle">
     <div class="article-list">
       <!-- 随机文章区域 -->
@@ -342,62 +336,6 @@ $banner-min-height: 256px;
 @keyframes pulse {
   0%, 100% { opacity: 1; }
   50% { opacity: 0.5; }
-}
-
-// 顶部banner样式 - 关键渲染路径优先
-.page-banner {
-  background-position: 50%;
-  background-size: cover;
-  border-radius: $border-radius;
-  margin: 1rem;
-  max-height: $banner-max-height;
-  min-height: $banner-min-height;
-  overflow: hidden;
-  position: relative;
-  
-  .banner-content {
-    color: #eee;
-    display: flex;
-    flex-direction: column;
-    @include absolute-cover;
-    justify-content: space-between;
-    padding: 1rem;
-    text-shadow: 0 4px 5px rgba(0,0,0,.5);
-    
-    h1 {
-      font-size: 2rem;
-      margin: 0;
-    }
-    
-    p {
-      font-size: 1rem;
-      opacity: .9;
-      margin: 0;
-    }
-  }
-  
-  .banner-extra {
-    align-items: flex-end;
-    display: flex;
-    @include absolute-cover;
-    justify-content: flex-end;
-    margin: 1rem;
-  }
-  
-  .friend-stats {
-    align-items: flex-end;
-    color: #eee;
-    display: flex;
-    flex-direction: column;
-    font-family: var(--font-monospace);
-    font-size: .7rem;
-    gap: .1rem;
-    opacity: .7;
-    text-shadow: 0 4px 5px rgba(0,0,0,.5);
-    
-    .update-time { opacity: 1; }
-    .powered-by { opacity: .8; }
-  }
 }
 
 // 主内容区域

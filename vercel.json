@@ -37,13 +37,13 @@
       ]
     },
     {
-      "src": "/_payload.json",
+      "source": "/_payload.json",
       "headers": {
         "Cache-Control": "public, max-age=300, s-maxage=300, stale-while-revalidate=3600"
       }
     },
     {
-      "src": "/(.*)/(.*)/(.*)/_payload.json",
+      "source": "/(.*)/(.*)/(.*)/_payload.json",
       "headers": {
         "Cache-Control": "public, max-age=300, s-maxage=300, stale-while-revalidate=3600"
       }

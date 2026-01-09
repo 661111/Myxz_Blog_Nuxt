@@ -13,10 +13,16 @@
       ]
     },
     {
-      "source": "/(.*)/_payload.json$",
-      "headers": [
-        { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
-      ]
+      "src": "/_payload.json",
+      "headers": {
+        "Cache-Control": "public, max-age=31536000, immutable"
+      }
+    },
+    {
+      "src": "/**/_payload.json",
+      "headers": {
+        "Cache-Control": "public, max-age=86400, immutable"
+      }
     },
     {
       "source": "/image/(.*)",

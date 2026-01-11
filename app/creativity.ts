@@ -59,12 +59,12 @@ export const creativityData: CreativityData[] = [
         icon: "/image/BannerCover/about/git.avif"
       },
       {
-        name: "Css",
+        name: "CSS",
         color: "#2c51db",
         icon: "/image/BannerCover/about/css.avif"
       },
       {
-        name: "Js",
+        name: "JS",
         color: "#f7cb4f",
         icon: "/image/BannerCover/about/js.avif"
       }

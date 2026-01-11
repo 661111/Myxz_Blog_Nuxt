@@ -1,4 +1,3 @@
-
 // 滚动
 var pursuitInterval = null;
 pursuitInterval = setInterval(function () {
@@ -15,7 +14,3 @@ pursuitInterval = setInterval(function () {
     
     next.setAttribute('data-show', '')
 }, 2000)
-
-document.addEventListener('pjax:send', function(){
-  clearInterval(pursuitInterval);
-});

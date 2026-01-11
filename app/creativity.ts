@@ -51,7 +51,7 @@ export const creativityData: CreativityData[] = [
       {
         name: "Node",
         color: "#333",
-        icon: "/image/BannerCover/about/node-logo.svg"
+        icon: "/image/BannerCover/about/node-logo.avif"
       },
       {
         name: "Git",

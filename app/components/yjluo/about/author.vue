@@ -17,7 +17,7 @@ const appConfig = useAppConfig()
                 <!-- <NuxtImg :src="appConfig.header" class="avatarFrame" alt="头像框占位"/> -->
                 <div class="author-box" style="z-index:0">
                     <div class="author-img">
-                        <img class="no-lightbox" :src="author.logo" style="width: 180px;">
+                        <NuxtImg class="no-lightbox" :src="appConfig.author.avatar" style="width: 180px;" />
                     </div>
                 </div>
             </div>

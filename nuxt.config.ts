@@ -23,7 +23,7 @@ export default defineNuxtConfig({
 				// "InterVariable", "Inter", "InterDisplay"
 				{ rel: 'stylesheet', href: 'https://source.yjluo.top/fonts/InterVariable/result.css', media: 'print', onload: 'this.media="all"' },
 				// { rel: 'stylesheet', href: 'https://cdn-font.hyperos.mi.com/font/css?family=MiSans:100,200,300,400,450,500,600,650,700,900:Chinese_Simplify,Latin&display=swap', media: 'print', onload: 'this.media="all"' },
-                { rel: 'stylesheet', href: 'https://jsdmirror.yjluo.top/npm/@chinese-fonts/moon-stars-kai@2.0.0/dist/MoonStarsKai-Bold/result.css', media: 'none', onload: 'this.media="all"' },
+                { rel: 'stylesheet', href: 'https://cdn.jsdmirror.com/npm/@chinese-fonts/moon-stars-kai@2.0.0/dist/MoonStarsKai-Bold/result.css', media: 'none', onload: 'this.media="all"', integrity: "sha384-X4zm7tBLu4D8F52F49u20W1Cc+GP7c3/HFr+1CyvyyljcFPSXn1mLamNTrD1fAsS", crossorigin: "anonymous" },
                 // { rel: 'stylesheet', href: 'https://static.vercel.sxiaohe.top/fonts/anzhiyu/anzhiyufonts.css', media: 'none', onload: 'this.media="all"'  },
                 { rel: 'stylesheet', href: '/assets/css/color.css', media: 'none', onload: 'this.media="all"'  },
 				{ rel: 'stylesheet', href: '/assets/css/artalk.css', media: 'none', onload: 'this.media="all"'  },

@@ -17,8 +17,8 @@ useSeoMeta({
 
 // API 配置常量
 const API_CONFIG = {
-    MEMO_API: 'https://bb.myxz.top/api/memo/list',
-    USER_API: 'https://bb.myxz.top/api/user/profile',
+    MEMO_API: 'https://moment.say.yjluo.top/api/memo/list',
+    USER_API: 'https://moment.say.yjluo.top/api/user/profile',
     PAGE_SIZE: 30,
 }
 // ---------- 新增：用户信息状态管理 ----------

@@ -76,11 +76,11 @@ export default defineNuxtConfig({
 
 	// @keep-sorted
 	routeRules: {
-		...Object.entries(redirectList)
-			.reduce<NitroConfig['routeRules']>((acc, [from, to]) => {
-				acc![from] = { redirect: { to, statusCode: 308 } }
-				return acc
-			}, {}),
+		// ...Object.entries(redirectList)
+		// 	.reduce<NitroConfig['routeRules']>((acc, [from, to]) => {
+		// 		acc![from] = { redirect: { to, statusCode: 308 } }
+		// 		return acc
+		// 	}, {}),
 		'/api/stats': { prerender: true, headers: { 'Content-Type': 'application/json' } },
 		'/atom.xml': { prerender: true, headers: { 'Content-Type': 'application/xml' } },
 		'/favicon.ico': { redirect: { to: blogConfig.favicon } },

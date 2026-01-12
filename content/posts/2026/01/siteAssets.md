@@ -1,8 +1,8 @@
 ---
 title: 站点资源优化
 description: 该文章记录了项目中对于字体、图片以及构建产物等静态资源的优化与处理，并且表示自身对于图片的存放位置进行优化。
-date: 2026-01-01 10:00:00
-updated: 2026-01-01 20:49:00
+date: 2026-01-05 10:00:00
+updated: 2026-01-07 20:49:00
 image: /image/PostCover/siteAssets.avif
 categories: [博客魔改]
 tags: [Nuxt, 魔改, 美化]

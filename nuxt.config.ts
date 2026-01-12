@@ -150,7 +150,7 @@ export default defineNuxtConfig({
 			pruneSource: false,  // 如果遇到样式丢失，设为false
 			// 外部资源全部处理
 			external: true,
-			mergeStylesheets: true,
+			// mergeStylesheets: true,
 			// compress: true,
 			noscriptFallback: true,
 		}

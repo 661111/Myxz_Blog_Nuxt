@@ -68,7 +68,7 @@ const appConfig = useAppConfig()
 }
 
 .header-title {
-	font-family: "ChillRoundFBold", "Noto Sans SC", sans-serif;
+	font-family: "Moon Stars Kai", "Noto Sans SC", sans-serif;
 	font-size: 1.5em;
 	font-synthesis: none;
 	font-variation-settings: "wght" 600, "BEVL" 100;

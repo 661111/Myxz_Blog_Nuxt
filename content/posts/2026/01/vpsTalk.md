@@ -29,55 +29,51 @@ recommend: true
 ::tab{:tabs='["精简版", "完整版"]'}
 #tab1
 ``` sh [vpsInfo] lang="sh"
------------------------A Bench Script By spiritlhl-----------------------
-                   测评频道: https://t.me/+UHVoo2U4VyA5NTQ1                    
-VPS融合怪版本：2025.11.29
+-------------------------------------VPS融合怪测试-------------------------------------
+版本：v0.1.111
+测评频道: https://t.me/+UHVoo2U4VyA5NTQ1
+Go项目地址：https://github.com/oneclickvirt/ecs
 Shell项目地址：https://github.com/spiritLHLS/ecs
-Go项目地址 [推荐]：https://github.com/oneclickvirt/ecs
----------------------基础信息查询--感谢所有开源项目----------------------
- CPU 型号          : Intel(R) Xeon(R) CPU E5-2682 v4 @ 2.50GHz
- CPU 核心数        : 2
- CPU 频率          : 2499.996 MHz
- CPU 缓存          : L1: 32.00 KB / L2: 256.00 KB / L3: 40.00 MB
- AES-NI指令集      : ✔ Enabled
- VM-x/AMD-V支持    : ✔ Enabled
- 内存              : 629.03 MiB / 1.92 GiB
- Swap              : 36.36 MiB / 1.00 GiB
- 硬盘空间          : 6.69 GiB / 19.20 GiB
- 启动盘路径        : /dev/vda1
- 系统在线时间      : 0 days, 21 hour 49 min
- 负载              : 0.25, 0.21, 0.14
- 系统              : Ubuntu 24.04.1 LTS (x86_64)
- 架构              : x86_64 (64 Bit)
- 内核              : 6.8.0-48-generic
- TCP加速方式       : cubic
- 虚拟化架构        : KVM
- NAT类型           : Inconclusive
- IPV4 ASN          : AS134365 Ansheng Network Technology Co., Limited
- IPV4 位置         : Hong Kong / Hong Kong / HK
-------------------------CPU测试--通过sysbench测试-------------------------
- -> CPU 测试中 (Fast Mode, 1-Pass @ 5sec)
- 1 线程测试(单核)得分:          600 Scores
- 2 线程测试(多核)得分:          1638 Scores
---------------------内存测试--感谢lemonbench开源----------------------------
- -> 内存测试 Test (Fast Mode, 1-Pass @ 5sec)
- 单线程读测试:          15368.94 MB/s
- 单线程写测试:          10492.09 MB/s
-----------------------磁盘fio读写测试--感谢yabs开源-----------------------
-Block Size | 4k            (IOPS) | 64k           (IOPS)
-  ------   | ---            ----  | ----           ---- 
-Read       | 119.78 MB/s  (29.9k) | 1.02 GB/s    (16.0k)
-Write      | 120.09 MB/s  (30.0k) | 1.03 GB/s    (16.1k)
-Total      | 239.87 MB/s  (59.9k) | 2.06 GB/s    (32.2k)
-           |                      |                     
-Block Size | 512k          (IOPS) | 1m            (IOPS)
-  ------   | ---            ----  | ----           ---- 
-Read       | 1.40 GB/s     (2.7k) | 1.34 GB/s     (1.3k)
-Write      | 1.48 GB/s     (2.8k) | 1.43 GB/s     (1.4k)
-Total      | 2.89 GB/s     (5.6k) | 2.78 GB/s     (2.7k)
----------------流媒体解锁--感谢oneclickvirt/UnlockTests测试----------------
-Can not detect IPv6 Address
-测试时间:  2026-01-12 12:15:23
+--------------------------------------系统基础信息--------------------------------------
+ CPU 型号            : Intel(R) Xeon(R) CPU E5-2682 v4 @ 2.50GHz
+ CPU 数量            : 2 Virtual CPU(s)
+ CPU 缓存            : L1: 64 KB / L2: 256 KB / L3: 40 MB
+ GPU 型号            : GD 5446
+ AES-NI              : ✔️ Enabled
+ VM-x/AMD-V/Hyper-V  : ✔️ Enabled
+ 内存                : 664.48 MB / 1.92 GB
+ 气球驱动            : ❌ Undetected
+ 内核页合并          : ❌ Undetected
+ 虚拟内存 Swap       : 103.94 MB / 1.00 GB
+ 硬盘空间            : 6.78 GB / 19.20 GB [35.3%%] /dev/vda1 - /
+ 启动盘路径          : /dev/vda1
+ 系统                : ubuntu 24.04 [x86_64] 
+ 内核                : 6.8.0-48-generic
+ 系统在线时间        : 2 days, 00 hours, 26 minutes
+ 时区                : UTC
+ 负载                : 0.16 / 0.10 / 0.03
+ 虚拟化架构          : KVM
+ NAT类型             : Inconclusive
+ TCP加速方式         : cubic
+ IPV4 ASN            : AS134365 Ansheng Network Technology Co., Limited
+ IPV4 Location       : United States
+ IPV4 Active IPs     : 65/256 (subnet /24) 408/1024 (prefix /22)
+--------------------------------CPU测试-通过sysbench测试--------------------------------
+1 线程测试(单核)得分:    835.85
+2 线程测试(多核)得分:   1423.72
+---------------------------------内存测试-通过stream测试----------------------------------
+Function    Best Rate MB/s  Avg time     Min time     Max time
+Copy:           14800.9     0.011329     0.010810     0.013002
+Scale:           7930.2     0.021317     0.020176     0.026987
+Add:             8657.3     0.029648     0.027722     0.037663
+Triad:           8625.4     0.029657     0.027825     0.037671
+-----------------------------------硬盘测试-通过fio测试-----------------------------------
+测试路径         块大小       读测试(IOPS)            写测试(IOPS)            总和(IOPS)            
+/root             4k        123.00 MB/s(30.7k)      123.32 MB/s(30.8k)      246.32 MB/s(61.6k)     
+/root             64k       532.90 MB/s(8326)       535.71 MB/s(8370)       1.07 GB/s(16.7k)       
+/root             512k      897.97 MB/s(1753)       945.68 MB/s(1847)       1.84 GB/s(3600)        
+/root             1m        961.88 MB/s(939)        1.03 GB/s(1001)         1.99 GB/s(1940)        
+--------------------------------------跨国平台解锁--------------------------------------
 IPV4:
 ============[ 跨国平台 ]============
 Apple                     YES (Region: HKG) [Native]
@@ -96,7 +92,7 @@ Netflix                   YES (Region: US) [Native]
 Netflix CDN               US
 OneTrust                  YES (Region: HK) [Via DNS]
 ChatGPT                   YES (Only Available with Mobile APP) [Via DNS]
-Paramount+                YES [Native]
+Paramount+                Failed (Network Connection Failed)
 Amazon Prime Video        YES (Region: US) [Native]
 Reddit                    YES
 SonyLiv                   YES (Region: HK) [Native]
@@ -109,22 +105,46 @@ Viu.com                   YES [Native]
 Wikipedia Editability     YES
 YouTube Region            YES (Region: HK) [Native]
 YouTube CDN               HKG
----------------------TikTok解锁--感谢lmc999的源脚本---------------------
- Tiktok Region:         Failed
----------------------自动更新测速节点列表--本脚本原创----------------------
-位置             上传速度        下载速度        延迟
-Speedtest.net    1.89Mbps        0.08Mbps        693.83ms
-联通上海5G       5.08Mbps        0.00Mbps        87.37ms
-电信Suzhou5G     5.98Mbps        5.76Mbps        50.13ms
-移动Suzhou       5.49Mbps        0.32Mbps        87.00ms
-------------------------------------------------------------------------
- 总共花费      : 9 分 18 秒
- 时间          : Mon Jan 12 12:18:28 UTC 2026
-------------------------------------------------------------------------
+-------------------------------------三网回程路由检测-------------------------------------
+[NextTrace API] preferred API IP - 104.26.12.151 - 398.64ms - Misaka.LAX
+广州电信 - ICMP v4 - traceroute to 58.60.188.222, 30 hops max, 52 byte packets
+16.04 ms     AS137443   *                  中国, 香港, 51idc.com 
+1.51 ms      *          *                  *
+21.58 ms     *          *                  *
+12.74 ms     *          *                  *
+2.32 ms      *          *                  *
+*
+广州联通 - ICMP v4 - traceroute to 210.21.196.6, 30 hops max, 52 byte packets
+15.37 ms     AS137443   *                  中国, 香港, 51idc.com 
+1.47 ms      *          *                  *
+72.11 ms     *          *                  *
+13.57 ms     *          *                  *
+2.55 ms      *          *                  *
+*
+16.89 ms     AS17623    *                  中国, 广东, 深圳, chinaunicom.cn  联通
+广州移动 - ICMP v4 - traceroute to 120.196.165.24, 30 hops max, 52 byte packets
+8.31 ms      AS137443   *                  中国, 香港, 51idc.com 
+1.12 ms      *          *                  *
+72.12 ms     *          *                  *
+13.61 ms     *          *                  *
+2.50 ms      *          *                  *
+*
+55.61 ms     AS56040    [APNIC-AP]         中国, 广东, 深圳, gd.10086.cn  移动
+--------------------------------------就近节点测速--------------------------------------
+位置            上传速度        下载速度        延迟            丢包率          
+Speedtest.net   6.25 Mbps       5.82 Mbps       835.756002ms    0.00% (Sent: 403/Dup: 0/Max: 402)
+其他Shanghai     11.09 Mbps      6.18 Mbps       50.82 ms        N/A             
+联通Shenzhen     6.30 Mbps       6.48 Mbps       258.56 ms       N/A             
+电信Shenzhen     7.52 Mbps       5.95 Mbps       63.29 ms        N/A             
+移动Shanghai     9.75 Mbps       6.05 Mbps       179.33 ms       N/A             
+----------------------------------------------------------------------------------
+花费          : 7 分 28 秒
+时间          : Tue Jan 13 14:55:57 UTC 2026
+----------------------------------------------------------------------------------
 ```
 
 #tab2
-``` sh [] lang="sh"
+``` sh [vpsInfo] lang="sh"
 -------------------------------------VPS融合怪测试-------------------------------------
 版本：v0.1.110
 测评频道: https://t.me/+UHVoo2U4VyA5NTQ1

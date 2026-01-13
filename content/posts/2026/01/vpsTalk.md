@@ -124,7 +124,223 @@ Speedtest.net    1.89Mbps        0.08Mbps        693.83ms
 ```
 
 #tab2
-还未测试出来
+``` sh [] lang="sh"
+-------------------------------------VPS融合怪测试-------------------------------------
+版本：v0.1.110
+测评频道: https://t.me/+UHVoo2U4VyA5NTQ1
+Go项目地址：https://github.com/oneclickvirt/ecs
+Shell项目地址：https://github.com/spiritLHLS/ecs
+--------------------------------------系统基础信息--------------------------------------
+ CPU 型号            : Intel(R) Xeon(R) CPU E5-2682 v4 @ 2.50GHz
+ CPU 数量            : 2 Virtual CPU(s)
+ CPU 缓存            : L1: 64 KB / L2: 256 KB / L3: 40 MB
+ GPU 型号            : GD 5446
+ AES-NI              : ✔️ Enabled
+ VM-x/AMD-V/Hyper-V  : ✔️ Enabled
+ 内存                : 677.90 MB / 1.92 GB
+ 气球驱动            : ❌ Undetected
+ 内核页合并          : ❌ Undetected
+ 虚拟内存 Swap       : 102.18 MB / 1.00 GB
+ 硬盘空间            : 6.78 GB / 19.20 GB [35.3%%] /dev/vda1 - /
+ 启动盘路径          : /dev/vda1
+ 系统                : ubuntu 24.04 [x86_64] 
+ 内核                : 6.8.0-48-generic
+ 系统在线时间        : 1 days, 14 hours, 31 minutes
+ 时区                : UTC
+ 负载                : 0.00 / 0.09 / 0.16
+ 虚拟化架构          : KVM
+ NAT类型             : Inconclusive
+ TCP加速方式         : cubic
+ IPV4 ASN            : AS134365 Ansheng Network Technology Co., Limited
+ IPV4 Location       : United States
+ IPV4 Active IPs     : 65/256 (subnet /24)
+--------------------------------CPU测试-通过sysbench测试--------------------------------
+1 线程测试(单核)得分:    685.81
+2 线程测试(多核)得分:   1558.64
+---------------------------------内存测试-通过stream测试----------------------------------
+Function    Best Rate MB/s  Avg time     Min time     Max time
+Copy:           15016.2     0.011082     0.010655     0.011821
+Scale:           7972.9     0.020528     0.020068     0.021185
+Add:             8808.0     0.028036     0.027248     0.029124
+Triad:           8782.5     0.028411     0.027327     0.029184
+-----------------------------------硬盘测试-通过fio测试-----------------------------------
+测试路径         块大小       读测试(IOPS)            写测试(IOPS)            总和(IOPS)            
+/root             4k        131.45 MB/s(32.9k)      131.80 MB/s(32.9k)      263.25 MB/s(65.8k)     
+/root             64k       1.07 GB/s(16.7k)        1.08 GB/s(16.8k)        2.15 GB/s(33.6k)       
+/root             512k      1.20 GB/s(2349)         1.27 GB/s(2474)         2.47 GB/s(4823)        
+/root             1m        1.47 GB/s(1436)         1.57 GB/s(1531)         3.04 GB/s(2967)        
+--------------------------------------跨国平台解锁--------------------------------------
+IPV4:
+============[ 跨国平台 ]============
+Apple                     YES (Region: HKG) [Native]
+BingSearch                YES (Region: US)
+Claude                    YES [Native]
+Dazn                      YES (Region: US) [Native]
+Disney+                   YES (Region: US) [Native]
+Gemini                    NO
+GoogleSearch              YES
+Google Play Store         YES (Region: HK) [Native]
+IQiYi                     YES (Region: HK) [Native]
+Instagram Licensed Audio  YES [Native]
+KOCOWA                    YES [Native]
+MetaAI                    YES (Region: US) [Native]
+Netflix                   YES (Region: US) [Native]
+Netflix CDN               US
+OneTrust                  YES (Region: HK) [Via DNS]
+ChatGPT                   YES (Only Available with Mobile APP) [Via DNS]
+Paramount+                YES [Native]
+Amazon Prime Video        YES (Region: US) [Native]
+Reddit                    YES
+SonyLiv                   YES (Region: HK) [Native]
+Sora                      Banned (VPN Blocked)
+Spotify Registration      NO
+Steam Store               YES (Community Available) (Region: US)
+TVBAnywhere+              YES (Region: US) [Native]
+TikTok                    YES (Region: US) [Native]
+Viu.com                   YES [Native]
+Wikipedia Editability     YES
+YouTube Region            YES (Region: HK) [Native]
+YouTube CDN               HKG
+--------------------------------------IP质量检测--------------------------------------
+以下为各数据库编号，输出结果后将自带数据库来源对应的编号
+ipinfo数据库  [0] | scamalytics数据库 [1] | virustotal数据库   [2] | abuseipdb数据库   [3] | ip2location数据库    [4]
+ip-api数据库  [5] | ipwhois数据库     [6] | ipregistry数据库   [7] | ipdata数据库      [8] | db-ip数据库          [9]
+ipapiis数据库 [A] | ipapicom数据库    [B] | bigdatacloud数据库 [C] | dkly数据库        [D] | ipqualityscore数据库 [E]
+ipintel数据库 [F] | ipfighter数据库   [G] | fraudlogix数据库   [H] | cloudflare数据库  [I] |
+IPV4:
+安全得分:
+信任得分(越高越好): 33 [8] 
+VPN得分(越低越好): 100 [8] 
+代理得分(越低越好): 0 [8] 
+社区投票-无害: 0 [2] 
+社区投票-恶意: 0 [2] 
+威胁得分(越低越好): 100 [8] 
+欺诈得分(越低越好): 0 [E] 
+滥用得分(越低越好): 0 [3 H] 
+ASN滥用得分(越低越好): 0.0108 (Elevated) [A] 
+公司滥用得分(越低越好): 0.0313 (High) [A] 
+威胁级别: Low [H] low [9]
+流量占比: 真人(越高越好)14% [I] 机器人(越低越好)85% [I]
+黑名单记录统计:(有多少黑名单网站有记录):
+无害记录数: 0 [2]  恶意记录数: 0 [2]  可疑记录数: 0 [2]  无记录数: 93 [2] 
+安全信息:
+使用类型: hosting [0 3 7 A C] residential [H] business [9] unknown [8]
+公司类型: hosting [0 7] business [A]
+浏览器类型: 主流87% 其他12% [I] 
+设备类型: 桌面93% 移动6% 其他0% [I] 
+操作系统类型: 主流93% 其他6% [I] 
+是否云提供商: Yes [7 D] 
+是否数据中心: No [5 8 A G H] Yes [0 C]
+是否移动设备: No [5 A C G] Yes [E]
+是否代理: No [0 4 5 7 8 9 A C D E H] Yes [G]
+是否VPN: No [0 7 A C D E G H] 
+是否TorExit: No [7 D] 
+是否Tor出口: No [7 D] 
+是否网络爬虫: No [9 A E] 
+是否匿名: Yes [8] No [7 D]
+是否攻击者: No [7 8 D] 
+是否滥用者: No [7 8 A C D E] 
+是否威胁: No [7 8 C D] 
+是否中继: No [0 7 8 C D] 
+是否Bogon: No [7 8 A C D] 
+是否机器人: No [E H] 
+--------------------------------------邮件端口检测--------------------------------------
+Platform  SMTP  SMTPS POP3  POP3S IMAP  IMAPS
+LocalPort ✔     ✔     ✔     ✔     ✔     ✔    
+QQ        ✔     ✔     ✔     ✘     ✔     ✘    
+163       ✔     ✔     ✔     ✘     ✔     ✘    
+Sohu      ✔     ✔     ✔     ✘     ✔     ✘    
+Yandex    ✔     ✔     ✔     ✘     ✔     ✘    
+Gmail     ✔     ✔     ✘     ✘     ✘     ✘    
+Outlook   ✔     ✘     ✔     ✘     ✔     ✘    
+Office365 ✔     ✘     ✔     ✘     ✔     ✘    
+Yahoo     ✔     ✔     ✘     ✘     ✘     ✘    
+MailCOM   ✔     ✔     ✔     ✘     ✔     ✘    
+MailRU    ✔     ✔     ✘     ✘     ✔     ✘    
+AOL       ✔     ✔     ✘     ✘     ✘     ✘    
+GMX       ✔     ✔     ✔     ✘     ✔     ✘    
+Sina      ✔     ✘     ✔     ✘     ✔     ✘    
+Apple     ✘     ✘     ✘     ✘     ✘     ✘    
+FastMail  ✘     ✔     ✘     ✘     ✘     ✘    
+ProtonMail✘     ✘     ✘     ✘     ✘     ✘    
+MXRoute   ✔     ✘     ✔     ✘     ✔     ✘    
+Namecrane ✔     ✔     ✔     ✘     ✔     ✘    
+XYAMail   ✘     ✘     ✘     ✘     ✘     ✘    
+ZohoMail  ✘     ✔     ✘     ✘     ✘     ✘    
+Inbox_eu  ✔     ✔     ✔     ✘     ✘     ✘    
+Free_fr   ✘     ✘     ✔     ✘     ✔     ✘    
+------------------------------------上游及回程线路检测-------------------------------------
+北京电信v4 219.141.140.10  检测不到回程路由节点的IPV4地址
+北京联通v4 202.106.195.68  检测不到回程路由节点的IPV4地址
+北京移动v4 221.179.155.161 检测不到回程路由节点的IPV4地址
+上海电信v4 202.96.209.133  检测不到回程路由节点的IPV4地址
+上海联通v4 210.22.97.1     检测不到回程路由节点的IPV4地址
+上海移动v4 211.136.112.200 检测不到回程路由节点的IPV4地址
+广州电信v4 58.60.188.222   检测不到回程路由节点的IPV4地址
+广州联通v4 210.21.196.6    检测不到回程路由节点的IPV4地址
+广州移动v4 120.196.165.24  检测不到回程路由节点的IPV4地址
+成都电信v4 61.139.2.69     检测不到回程路由节点的IPV4地址
+成都联通v4 119.6.6.6       检测不到回程路由节点的IPV4地址
+成都移动v4 211.137.96.205  检测不到回程路由节点的IPV4地址
+准确线路自行查看详细路由，本测试结果仅作参考
+同一目标地址多个线路时，检测可能已越过汇聚层，除第一个线路外，后续信息可能无效
+-------------------------------------三网回程路由检测-------------------------------------
+广州电信 - ICMP v4 - traceroute to 58.60.188.222, 30 hops max, 52 byte packets
+8.57 ms      AS137443   *                  中国, 香港, 51idc.com 
+1.43 ms      *          *                  *
+4.60 ms      *          *                  *
+42.72 ms     *          *                  *
+2.93 ms      *          *                  *
+*
+广州联通 - ICMP v4 - traceroute to 210.21.196.6, 30 hops max, 52 byte packets
+13.37 ms     AS137443   *                  中国, 香港, 51idc.com 
+1.52 ms      *          *                  *
+4.64 ms      *          *                  *
+14.20 ms     *          *                  *
+2.98 ms      *          *                  *
+*
+17.33 ms     AS17623    *                  中国, 广东, 深圳, chinaunicom.cn  联通
+广州移动 - ICMP v4 - traceroute to 120.196.165.24, 30 hops max, 52 byte packets
+4.97 ms      AS137443   *                  中国, 香港, 51idc.com 
+1.33 ms      *          *                  *
+4.82 ms      *          *                  *
+13.92 ms     *          *                  *
+2.99 ms      *          *                  *
+*
+45.68 ms     AS56040    [APNIC-AP]         中国, 广东, 深圳, gd.10086.cn  移动
+-------------------------------------PING值检测--------------------------------------
+TG-DC5 Singapore      65 | TG-DC4 AMS NL        199 | TG-DC2 AMS NL        199 | 
+TG-DC3 MIA USA       230 | TG-DC1 MIA USA       251 | 
+Sora                  50 | StackOverflow         82 | Google                95 | 
+Wikipedia            111 | Bilibili             111 | OpenAI               114 | 
+DisneyPlus           201 | TVB Anywhere         209 | MetaAI               254 | 
+AliExpress           281 | DigitalOcean         304 | Microsoft            323 | 
+Facebook             356 | Bing                 368 | Apple                379 | 
+Amazon               421 | iQIYI                454 | Steam                474 | 
+eBay                 485 | Instagram            504 | Spotify              514 | 
+GitLab               540 | Reddit               546 | BBC                  554 | 
+AWS                  579 | Twitch               600 | Docker Hub           642 | 
+NYTimes              706 | CNN                  742 | YouTube              826 | 
+TikTok               903 | Twitter/X            920 | Claude               993 | 
+GitHub              1128 | Azure               1278 | Gemini              1302 | 
+PrimeVideo          1489 | Google Cloud        1583 | ViuTV               1963 | 
+Netflix             9999 | 
+--------------------------------------就近节点测速--------------------------------------
+位置            上传速度        下载速度        延迟            丢包率          
+Speedtest.net   5.11 Mbps       4.41 Mbps       803.19659ms     0.50% (Sent: 401/Dup: 0/Max: 402)
+中国香港        5.51 Mbps       5.73 Mbps       4.128719ms      N/A             
+新加坡          5.71 Mbps       5.76 Mbps       47.097017ms     N/A             
+联通Shanghai     31.26 Mbps      N/A             35.02 ms        N/A             
+联通Shenzhen     9.78 Mbps       5.99 Mbps       49.61 ms        N/A             
+电信Shanghai     9.99 Mbps       5.20 Mbps       242.81 ms       N/A             
+电信Chengdu      10.23 Mbps      6.48 Mbps       266.59 ms       N/A             
+移动Shanghai     8.94 Mbps       6.29 Mbps       164.15 ms       N/A             
+移动Shenzhen     8.00 Mbps       5.91 Mbps       170.18 ms       N/A             
+----------------------------------------------------------------------------------
+花费          : 10 分 34 秒
+时间          : Tue Jan 13 05:04:39 UTC 2026
+----------------------------------------------------------------------------------
+```
 ::
 
 ## 面板

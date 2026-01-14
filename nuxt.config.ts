@@ -23,7 +23,7 @@ export default defineNuxtConfig({
 				// "InterVariable", "Inter", "InterDisplay"
 				{ rel: 'stylesheet', href: 'https://source.yjluo.top/fonts/InterVariable/result.css', media: 'print', onload: 'this.media="all"' },
 				// { rel: 'stylesheet', href: 'https://cdn-font.hyperos.mi.com/font/css?family=MiSans:100,200,300,400,450,500,600,650,700,900:Chinese_Simplify,Latin&display=swap', media: 'print', onload: 'this.media="all"' },
-                { rel: 'stylesheet', href: 'https://cdn.jsdmirror.com/npm/@chinese-fonts/lywkpmydb@2.0.0/dist/LXGWWenKaiScreen/result.css', media: 'none', onload: 'this.media="all"', integrity: "sha512-H/6q0ZCB8t8FRzVxGnujXV2t6pKevObP0qoPIP0jmgJM/YD7CM+Dfx6o+q7LbaNRihXOm0rwSTTmrb/T/CBfQg==", crossorigin: "anonymous" },
+                { rel: 'stylesheet', href: '/fonts/jxzk/result.css', media: 'none', onload: 'this.media="all"', integrity: "sha512-H/6q0ZCB8t8FRzVxGnujXV2t6pKevObP0qoPIP0jmgJM/YD7CM+Dfx6o+q7LbaNRihXOm0rwSTTmrb/T/CBfQg==", crossorigin: "anonymous" },
                 // { rel: 'stylesheet', href: 'https://static.vercel.sxiaohe.top/fonts/anzhiyu/anzhiyufonts.css', media: 'none', onload: 'this.media="all"'  },
                 { rel: 'stylesheet', href: '/assets/css/color.css', media: 'none', onload: 'this.media="all"'  },
 				{ rel: 'stylesheet', href: '/assets/css/artalk.css', media: 'none', onload: 'this.media="all"'  },

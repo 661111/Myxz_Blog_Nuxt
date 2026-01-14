@@ -3,7 +3,7 @@ title: 随笔：低价主机试水
 description: 该文章主要写了对于低价机器的试水，并提醒是超开类型的机器。在测试的过程中发现机器性能较高，且展示出机器的具体价格，并单独列出只有精简版未采用完整版测试。
 date: 2026-01-12 10:00:00
 updated: 2026-01-12 20:49:00
-image: /image/PostCover/NewYear.avif
+image: /image/PostCover/vpsTalk.avif
 categories: [博客魔改]
 tags: [Nuxt, 魔改, 美化]
 recommend: true
@@ -383,3 +383,6 @@ src: /image/PostInternal/2026/vpsTalk/panelBenchMarking.avif
 caption: 跑分详情
 ---
 ::
+
+## 总结
+本次购机价格便宜，但是需要挂代理才能不会超时，这是一个非常弱项的方面。不过价格低廉就可以了。

@@ -23,7 +23,7 @@ export default defineNuxtConfig({
 				// "InterVariable", "Inter", "InterDisplay"
 				{ rel: 'stylesheet', href: 'https://source.yjluo.top/fonts/InterVariable/result.css', media: 'print', onload: 'this.media="all"' },
 				// { rel: 'stylesheet', href: 'https://cdn-font.hyperos.mi.com/font/css?family=MiSans:100,200,300,400,450,500,600,650,700,900:Chinese_Simplify,Latin&display=swap', media: 'print', onload: 'this.media="all"' },
-                { rel: 'stylesheet', href: 'https://jsdmirror.yjluo.top/npm/@chinese-fonts/yozai@3.0.0/dist/Yozai-Bold/result.css?v=20260102', media: 'none', onload: 'this.media="all"'},
+                { rel: 'stylesheet', href: 'https://jsdmirror.yjluo.top/gh/661111/Myxz_Blog_Nuxt@master/public/fonts/zihunff/result.css?v=20260102', media: 'none', onload: 'this.media="all"'},
                 // { rel: 'stylesheet', href: 'https://static.vercel.sxiaohe.top/fonts/anzhiyu/anzhiyufonts.css', media: 'none', onload: 'this.media="all"'  },
                 { rel: 'stylesheet', href: '/assets/css/color.css', media: 'none', onload: 'this.media="all"'  },
 				{ rel: 'stylesheet', href: '/assets/css/artalk.css', media: 'none', onload: 'this.media="all"'  },

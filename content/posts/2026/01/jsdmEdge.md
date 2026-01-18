@@ -7,6 +7,10 @@ image: /image/PostCover/NewYear.avif
 categories: [折腾]
 tags: [镜像, EdgeOne, jsdmirror]
 recommend: true
+aiTip: {
+    type: 自定义,
+    content: 文章中的表格数据均使用腾讯元宝的图片转表格
+}
 ---
 ## 前言
 最近对于网站的字体加速，vercel虽然好用但是用了代理就不能添加`header`的配置项，所以看向了`EdgeOne`。本身自己有免费版但是放到海外的腾讯云上，那么就来看如何配置出属于自己的镜像吧。
@@ -56,8 +60,6 @@ recommend: true
 | | **操作2**: 行为 → **强制缓存** |
 | | **操作3**: 配置自定义 Cache Key |
 | | **操作4**: 启用 Brotli/Gzip 压缩、智能压缩 |
-
----
 
 ### **全局压缩与响应头**（嵌套条件）
 

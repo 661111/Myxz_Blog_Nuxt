@@ -28,4 +28,10 @@ export default interface ArticleProps extends Partial<{
 		hideInfo?: boolean
 		slots?: Record<string, MetaSlotsTree>
 	}
+
+	aiTip: {
+		type: '默认' | '自定义' | string
+		content: string
+		aitype: string | '腾讯元宝'
+	}
 }> { }

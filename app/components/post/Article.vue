@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import type ArticleProps from '~/types/article'
+import AiTip from '../yjluo/post/aiTip.vue';
 
 const props = defineProps<{ useUpdated?: boolean } & ArticleProps>()
 

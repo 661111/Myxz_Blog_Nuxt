@@ -5,6 +5,7 @@ defineProps<{
 	dim?: boolean
 	bgImg?: string
 	bgRight?: boolean
+	desc?: string
 }>()
 </script>
 
@@ -14,6 +15,9 @@ defineProps<{
 		<slot name="title">
 			{{ title }}
 		</slot>
+		<div class="desc">
+			{{ desc }}
+		</div>
 	</hgroup>
 
 	<div class="widget-body" :class="{ 'widget-card': card, 'with-bg': bgImg }">
@@ -53,6 +57,10 @@ defineProps<{
 
 	a {
 		transition: color 0.2s;
+	}
+	.desc {
+		font-size: 0.5em;
+		color: var(--c-text-3);
 	}
 
 	> [onclick]:hover, > [href]:hover {

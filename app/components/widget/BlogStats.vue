@@ -68,7 +68,7 @@ const blogStats = [{
 </script>
 
 <template>
-<BlogWidget card title="博客统计">
+<BlogWidget card title="博客统计" desc="整站具体信息">
 	<ZDlGroup :items="blogStats" size="small" />
 </BlogWidget>
 </template>

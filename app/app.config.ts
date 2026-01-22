@@ -121,7 +121,7 @@ export default defineAppConfig({
                 { icon: 'ph:link-bold', text: '竹林旧友', url: '/link'},
                 { icon: 'ph:fish-bold', text: '塘文集锦', url: '/fcircle' },
                 // { icon: 'ph:chats-bold', text:'​纸笺寄语', url:'/comments' },
-                { icon: 'ph:lightning-bold', text:'闲言碎语', url:'/essays' },
+                // { icon: 'ph:lightning-bold', text:'闲言碎语', url:'/essays' },
 				{ icon:'i-mingcute:bilibili-line', text: '追更历史', url: '/banguim' },
 				{ icon: 'ph:star-of-david-bold', text:'优良精装', url:'/equipment'},
 				// { icon: 'ph:aperture-bold', text:'探索发现', url:'/discovery'},

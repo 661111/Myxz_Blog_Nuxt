@@ -30,7 +30,7 @@ export default interface ArticleProps extends Partial<{
 	}
 
 	aiTip: {
-		type: '默认' | '自定义' | string
+		type: '默认' | '自定义'
 		content: string
 		aitype: string | '腾讯元宝'
 	}

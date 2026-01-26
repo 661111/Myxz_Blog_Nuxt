@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { computed } from 'vue';
 // 导入外部数据
 import { creativityData } from '~/creativity';
 </script>

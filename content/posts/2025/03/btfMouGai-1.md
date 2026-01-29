@@ -1,32 +1,28 @@
 ---
 title: 博客魔改教程总结(一)
 description: 从零开始魔改butterfly
-date: '2025-03-05 8:00'
-updated: '2025-03-06 18:00'
-image: 'https://sourceimage.s3.bitiful.net/img/default_cover_21.avif'
-category:
-  - hexo
-top_img: false
-tags:
-  - hexo
-  - butterfly
+date: 2025-03-05 8:00:00
+updated: 2025-03-06 18:00:00
+image: https://sourceimage.s3.bitiful.net/img/default_cover_21.avif
+category: [hexo]
+tags: [hexo, butterfly]
 ---
 ## 仿轻笑博客背景美化
 
 **原作者**
 {% link 轻笑Chuckle,漫天倾尘 风中轻笑,https://qcqx.cn/ %}
-{% folding cyan, 请查看教程内容 %}
-一.前言
+
+### 1.前言
 因为这部分内容轻笑并没有有关于这个内容，所以我在这里写好了，方便以后查找
 
-二.教程开始
-1. 在 [BlogRoot]\themes\butterfly\layout\includes\head.pug 中引入 div模块
+### 2.教程开始
+- 在 [BlogRoot]\themes\butterfly\layout\includes\head.pug 中引入 div模块
 ``` pug
 #web_bg
 #svg_bg
 ```
 
-2. 在自定义css里面引入以下样式
+- 在自定义css里面引入以下样式
 ``` css
 #web_bg {
     position: fixed;
@@ -58,18 +54,15 @@ tags:
     z-index: -998;
 }
 ```
-{% endfolding %}
 
 ## 侧边栏美化以及侧边栏卡片美化（轻笑）
 **原作者**
 {% link 轻笑Chuckle,漫天倾尘 风中轻笑,https://qcqx.cn/ %}
 
-{% folding cyan, 请查看教程内容 %}
-
-1. 前言
+### 1. 前言
 因为这部分内容轻笑并没有有关于这个内容，所以我在这里写好了，方便以后查找，喜欢这个风格的可以进行CTRL+C和CTRL+V
 
-2. 教程开始
+### 2. 教程开始
 大部分已经有进行标识，对于以后可以进行维护
 ``` CSS
 /* 侧边栏整体卡片样式调整 */
@@ -146,12 +139,11 @@ tags:
 ## 首页文章卡片美化（轻笑）
 **原作者**
 {% link 轻笑Chuckle,漫天倾尘 风中轻笑,https://qcqx.cn/ %}
-{% folding cyan, 请查看教程内容 %}
 
-1. 前言
+### 1. 前言
 因为这部分内容轻笑并没有有关于这个内容，所以我在这里写好了，方便以后查找，喜欢这个风格的可以进行CTRL+C和CTRL+V
 
-2. 在[BlogRoot]\source\css下新建自定义css并粘贴：
+### 2. 在[BlogRoot]\source\css下新建自定义css并粘贴：
 ``` CSS
 /* 首页文章卡片样式表调整 */
 #recent-posts > .recent-post-item >.recent-post-info > .article-title {
@@ -203,13 +195,10 @@ tags:
     transform: none;
 }
 ```
-{% endfolding %}
 
 ## 首页文章隐藏文字
 **效果来源**
 {% link 轻笑Chuckle,漫天倾尘 风中轻笑,https://qcqx.cn/ %}
-
-{% folding cyan, 请查看教程内容 %}
 
 这种隐藏文字的方式可以给大家展示出来，整个效果是非常可观的。
 ``` CSS
@@ -231,13 +220,11 @@ tags:
     bottom: 0
 }
 ```
-{% endfolding %}
 
 ## 首页文章卡片美化
 **效果来源**
 {% link 轻笑Chuckle,漫天倾尘 风中轻笑,https://qcqx.cn/ %}
 
-{% folding cyan, 请查看教程内容 %}
 既然已经添加了文章文字隐藏，那么就可以进行美化文章卡片
 ``` CSS
 /* 首页文章卡片颜色 */
@@ -380,16 +367,15 @@ tags:
     }
 }
 ```
-{% endfolding %}
 
 ## 首页分类条美化
 **效果来源**
 {% link 轻笑Chuckle,漫天倾尘 风中轻笑,https://qcqx.cn/ %}
 {% link 魔改笔记七：分类条及外链卡片,清羽飞扬,https://blog.liushen.fun/posts/a64defb4/ %}
 
-{% folding cyan, 请查看教程内容 %}
 教程基于清羽飞扬的教程和轻笑的样式进行魔改，感兴趣的可以去看。
-1. 在[BlogRoot]\themes\butterfly\layout\includes中新建categoryBar.pug
+### 1. 添加模块文件
+在[BlogRoot]\themes\butterfly\layout\includes中新建categoryBar.pug
 ``` PUG
 .home-catalog-bar#catalog-bar
   i.fa-fw.fas.fa-shapes
@@ -401,7 +387,8 @@ tags:
         a(href=url_for(item.path))= item.name
   a.category-bar-more(href=url_for('/categories/'))= __('更多分类')
 ```
-2. 然后将其添加到不同的位置，比如我这里实现了添加到分类页面等位置，配合上pjax可以做到无刷更新，效果很好，打开分类文件地址：[BlogRoot]\themes\butterfly\layout\category.pug和主页文件地址：[BlogRoot]\themes\butterfly\layout\index.pug，添加其中两行代码，去掉加号即为正常缩进。这个和原教程基本一样
+### 2. 添加指定文件
+然后将其添加到不同的位置，比如我这里实现了添加到分类页面等位置，配合上pjax可以做到无刷更新，效果很好，打开分类文件地址：[BlogRoot]\themes\butterfly\layout\category.pug和主页文件地址：[BlogRoot]\themes\butterfly\layout\index.pug，添加其中两行代码，去掉加号即为正常缩进。这个和原教程基本一样
 {% tabs 分栏 %}
 
 <!-- tab 分类文件 -->
@@ -445,7 +432,9 @@ block content
 ```
 <!-- endtab -->
 {% endtabs %}
-3. 在[BlogRoot]\source\css\custom.css自定义样式的文件中引入如下代码（这是我的，你可以自行微调）：
+
+### 3. 引入样式
+在[BlogRoot]\source\css\custom.css自定义样式的文件中引入如下代码（这是我的，你可以自行微调）：
 ```CSS
 /* 首页分类条 */
 .layout #recent-posts .home-catalog-bar {
@@ -551,7 +540,9 @@ block content
     }
 };
 ```
-4. 然后再在引用部分执行这个函数，在同一个文件，找到下面的函数并添加函数的调用，位置看下方注释:
+
+### 4. 添加js代码
+然后再在引用部分执行这个函数，在同一个文件，找到下面的函数并添加函数的调用，位置看下方注释:
 ``` JS
 window.refreshFn = function () {
   initAdjust()

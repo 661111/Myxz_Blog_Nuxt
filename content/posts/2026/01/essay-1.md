@@ -3,7 +3,7 @@ title: 随笔：近况
 description:
 date: 2026-01-12 10:00:00
 updated: 2026-01-12 20:49:00
-image: /image/PostCover/vpsTalk.avif
+image: /image/PostCover/essayImage-1.avif
 categories: [随笔]
 tags: [日常]
 recommend: true

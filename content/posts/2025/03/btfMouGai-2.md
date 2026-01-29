@@ -1,16 +1,11 @@
 ---
 title: 博客魔改教程总结(二)
 description: 从零开始魔改butterfly
-date: '2025-03-07 8:00'
-ipdate: '2025-03-25 8:00'
-cover: 'https://sourceimage.s3.bitiful.net/img/default_cover_37.avif'
-category:
-  - hexo
-tags:
-  - hexo
-  - butterfly
-top_img: false
-abbrlink: 53464
+date: 2025-03-07 09:00:00
+update: 2025-03-25 8:00:00
+image: https://sourceimage.s3.bitiful.net/img/default_cover_21.avif
+category: [hexo]
+tags: [hexo, butterfly]
 ---
 ## 节日弹窗与公祭日变灰(fomal)
 ::link-card
@@ -23,9 +18,12 @@ link: "https://www.fomal.cc/posts/2d7ac914.html"
 ---
 ::
 
-{% note info flat %}
+::alert{type="warning" card}
+#title
+注意
+#default
 本质就是用的sessionStorage这个本地存储对象去确定是不是同一个会话，如果是同一个的话，就弹窗一次，如果下次进来了就不是同一个会话了，又会弹窗一次
-{% endnote %}
+::
 
 1. 新建[BlogRoot]\source\js\day.js，并写入以下代码，这里公祭日灰度我设置的为60%：
 ```js [day.js] lang="js"
@@ -277,10 +275,10 @@ nav#pagination {
 {% link 归档、分类、标签页文章卡片加上所属分类和标签以及美化页面,莫言小栈,https://www.myxz.top/posts/a19bb7fb.html %}
 
 ## 美化打赏并优化CSS
-{% folding cyan, 请查看教程内容 %}
 效果如下：
 ![效果](https://sourceimage.s3.bitiful.net/post%2Fimg%2F%E5%8D%9A%E5%AE%A2%E9%AD%94%E6%94%B9%E6%95%99%E7%A8%8B%E6%80%BB%E7%BB%93(%E4%BA%8C)%2Fdashang.png)
-1. 将以下内容覆盖到[BlogRoot:]\themes\butterfly\layout\includes\post\reward.pug：
+### 1. 添加PUG组件
+将以下内容覆盖到[BlogRoot:]\themes\butterfly\layout\includes\post\reward.pug：
 
 ``` pug [reward.pug] lang="pug"
 .post-reward
@@ -363,7 +361,8 @@ nav#pagination {
         }
 ```
 
-2. 重启项目，如果是日子对了自动会有弹窗的:
-``` BASH
+### 2. 重启大法
+重启项目，如果是日子对了自动会有弹窗的:
+``` bash lang="bash"
 hexo cl; hexo s
 ```

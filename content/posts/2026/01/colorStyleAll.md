@@ -1,9 +1,9 @@
 ---
 title: 自定义全局颜色
 description:
-date: 2026-01-12 10:00:00
-updated: 2026-01-12 20:49:00
-image: /image/PostCover/vpsTalk.avif
+date: 2026-01-27 10:00:00
+updated: 2026-01-27 20:49:00
+image: /image/PostCover/colorStyleAll.avif
 categories: [随笔]
 tags: [日常]
 recommend: true

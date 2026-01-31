@@ -1,13 +1,15 @@
 ---
 title: 自定义全局颜色
-description:
+description: 自定义全局的样式颜色，具有对特定CSS中所具有的自定义样式颜色来进行整合，并且作者还顺便水了一篇文章
 date: 2026-01-27 10:00:00
 updated: 2026-01-27 20:49:00
 image: /image/PostCover/colorStyleAll.avif
-categories: [随笔]
-tags: [日常]
+categories: [美化]
+tags: [全局颜色,自定义]
 recommend: true
 ---
+## 前言
+最近打算写一篇整合全部目前站点上的各类全局颜色的样式，并水篇文章。
 
 ## 张洪HEO
 ``` css [heo.css] lang="css"

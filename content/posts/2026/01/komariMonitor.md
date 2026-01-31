@@ -1,11 +1,11 @@
 ---
 title: komari：全新的探针站点
-description:
+description: 本文是一篇关于 Komari Monitor（一款服务器监控系统）的详细介绍与实用指南。文章以作者个人经验为引，对比了哪吒监控（V0/V1版本）与 Komari 在各方面的差异，并逐步演示了如何部署、配置和使用 Komari。
 date: 2026-01-28 19:00:00
 updated: 2026-01-29 13:00:00
 image: /image/PostCover/komariMonitor.avif
-categories: [随笔]
-tags: [日常]
+categories: [折腾]
+tags: [探针,监控]
 recommend: true
 ---
 ## 前言

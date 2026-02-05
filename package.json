@@ -52,6 +52,7 @@
     "plain-shiki": "catalog:content",
     "pug": "^3.0.3",
     "radash": "catalog:util",
+    "sharp": "^0.34.5",
     "shiki": "catalog:content",
     "site-config-stack": "catalog:util",
     "stylus": "^0.64.0",

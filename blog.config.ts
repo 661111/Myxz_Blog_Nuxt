@@ -1,15 +1,15 @@
 import type { FeedEntry } from './app/types/feed'
 
 const basicConfig = {
-	title: '源境录',
+	title: '闻絮语',
     subtitle: '凡尘修行悟道，叩问仙缘之境',
 	// 长 description 利好于 SEO
-	description: '柒渊阁的博客网站，分享技术和魔改。网站界面简洁美观，涵盖了魔改、教程等多个领域，为读者提供了卓越的阅读体验。',
+	description: '闻絮语的博客网站，分享技术和魔改。网站界面简洁美观，涵盖了魔改、教程等多个领域，为读者提供了卓越的阅读体验。',
 	author: {
-		name: '缘之境',
+		name: '絮语',
         avatar: '/avatar.avif',
         email: '3227988255@qq.com',
-        homepage: 'https://www.yjluo.top',
+        homepage: 'https://www.wxuyu.top',
 	},
 	copyright: {
 		abbr: 'CC BY-NC-SA 4.0',
@@ -21,7 +21,7 @@ const basicConfig = {
 	timeEstablished: '2020-07-19',
 	timeStart: '2020',
     timezone: 'Asia/Shanghai',
-    url: 'https://www.yjluo.top',
+    url: 'https://www.wxuyu.top',
 	defaultCategory: '未分类',
 }
 

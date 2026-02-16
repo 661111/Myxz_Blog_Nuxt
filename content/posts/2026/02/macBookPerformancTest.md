@@ -19,6 +19,7 @@ GPU 型号: Haswell-ULT Integrated Graphics Controller
 内存: 4GB
 硬盘: 128G
 ```
+
 ## C/M/S测试
 ### CPU测试
 | 测试类型               | 得分    |
